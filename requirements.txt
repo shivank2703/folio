@@ -1,0 +1,16 @@
+# Praman v1 dependencies — the decided v1 stack (SPEC.md §5).
+# A library is added the first time a stage needs it; nothing here is
+# speculative. The one deliberate hole is the embedding backend: choosing
+# local sentence-transformers vs an embedding API is a Stage 4 decision
+# gate (§5), so it is intentionally NOT listed yet. Do not fill it in early.
+
+python-dotenv>=1.0        # load API keys from .env; keys never live in code (hard constraint)
+pymupdf>=1.24             # Stage 2 extraction — raw page text; our page->cite mapping (AGPL, §7)
+tiktoken>=0.7             # Stage 3 chunking — token counts for ~200-token windows
+lancedb>=0.13             # Stage 4 vector store — embedded, metadata beside vectors (§5)
+anthropic>=0.34           # Stage 6 generation — cite-every-claim answers (§5)
+streamlit>=1.37           # Stage 8 UI — question box + cited-sources panel (§5)
+
+# Stage 4 decision gate — embeddings backend (local vs API), see SPEC.md §5
+# "Embeddings". Left blank on purpose: do NOT add sentence-transformers or an
+# embedding-API SDK before the Stage 4 tradeoff review.

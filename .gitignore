@@ -1,0 +1,19 @@
+# --- Secrets & real data (hard constraint: keys/real data never in git) ---
+.env
+watchlist.yaml          # v4: real watchlists never committed; only watchlist.sample.yaml ships (SPEC.md §7)
+
+# --- Source filings: not committed; corpus/SOURCES.md lists where to get them (SPEC.md §7) ---
+corpus/*.pdf
+
+# --- Python ---
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# --- Generated artifacts: data/ is tracked as a folder, its contents are not ---
+data/*
+!data/.gitkeep
+
+# --- OS / editor noise ---
+.DS_Store
