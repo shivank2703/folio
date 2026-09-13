@@ -17,11 +17,12 @@ visibly beats a model we cannot ship.
 Output: data/<company>_<fiscal_year>_clean.jsonl, one record per PDF page:
 
     {"company": "HCC", "fiscal_year": "FY25", "page": 114, "text": "...",
+     "title": "Standalone Balance Sheet as at March 31, 2025",
      "units": [...], "headers": [...], "columns": 1,
      "excluded": null, "furniture": [...]}
 
-"units" and "headers" are copies: those lines also stay in "text" where they
-sit, and the chunker prefixes the copies to every chunk from the page.
+"title", "units" and "headers" are copies: those lines also stay in "text"
+where they sit, and the chunker gives each chunk the copies it lacks.
 "columns" and "furniture" exist for the eyeball check — which pages were
 re-ordered, and what was stripped.
 """
@@ -115,6 +116,19 @@ PERIOD_PART = re.compile(
 )
 # A finished heading: period words plus a date, or plus a date range.
 PERIOD_COMPLETE = re.compile(rf"^{PERIOD_WORDS}\s+{DATE}(?:\s+to\s+{DATE})?$", re.IGNORECASE)
+
+# A financial statement's own title: "Standalone Balance Sheet as at March 31,
+# 2025", "CONSOLIDATION STATEMENT OF CASH FLOW for the year ended ...". The
+# scope word is optional because a company with no subsidiaries prints a plain
+# "Balance Sheet". The whole row must be the title, so a sentence that merely
+# mentions "the Statement of Profit and Loss" never matches.
+STATEMENT_TITLE = re.compile(
+    r"^(?:(?:standalone|consolidated|consolidation)\s+)?"
+    r"(?:balance sheet|cash flow statement|statement of (?:profit and loss|cash flows?|changes? in equity))"
+    rf"(?:\s+(?:as at and for the year ended|{PERIOD_WORDS})\s+{DATE})?"
+    r"(?:\s*\(?contd\.?\)?)?$",
+    re.IGNORECASE,
+)
 
 # A table value: amounts with Indian or Western digit grouping, negatives in
 # brackets, percentages, or a dash for nil.
@@ -615,9 +629,17 @@ def clean_page(lines: list[Line]) -> dict:
             if is_period_header(texts) and row_text not in headers:
                 headers.append(row_text)
 
+    # A statement prints its title once, as the first line of each of its pages,
+    # yet the title is true of every row below it: a balance-sheet page is the
+    # standalone balance sheet for its full length. Only the first row counts,
+    # so a sub-heading such as "Statement of profit and loss" inside a note is
+    # never taken for the page's statement.
+    title = text_rows[0] if text_rows and STATEMENT_TITLE.match(text_rows[0]) else None
+
     words = sum(len(line.text.split()) for line in lines)
     return {
         "text": "\n".join(text_rows),
+        "title": title,
         "units": units,
         "headers": headers,
         "columns": columns,
@@ -670,6 +692,7 @@ def print_summary(records: list[dict], out_path: Path) -> None:
     multi = [r["page"] for r in records if r["columns"] > 1]
     print(f"  multi-column pages ({len(multi)}): {multi}")
     print(f"  excluded pages: {[r['page'] for r in records if r['excluded']]}")
+    print(f"  pages with a statement title: {[r['page'] for r in included if r['title']]}")
     print(f"  pages with a unit line: {sum(1 for r in included if r['units'])}")
     print(f"  pages with a period header: {sum(1 for r in included if r['headers'])}")
     print(f"  glyph residue (expect all 0): {residue}")

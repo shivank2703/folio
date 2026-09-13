@@ -1,8 +1,7 @@
 # Praman v1 dependencies — the decided v1 stack (SPEC.md §5).
 # A library is added the first time a stage needs it; nothing here is
-# speculative. The one deliberate hole is the embedding backend: choosing
-# local sentence-transformers vs an embedding API is a Stage 4 decision
-# gate (§5), so it is intentionally NOT listed yet. Do not fill it in early.
+# speculative. The embedding backend was the one deliberate hole, left open
+# until the Stage 4 decision gate (§5); it is filled at the bottom.
 
 python-dotenv>=1.0        # load API keys from .env; keys never live in code (hard constraint)
 pymupdf>=1.24             # Stage 2 extraction — raw page text; our page->cite mapping (AGPL, §7)
@@ -11,6 +10,9 @@ lancedb>=0.13             # Stage 4 vector store — embedded, metadata beside v
 anthropic>=0.34           # Stage 6 generation — cite-every-claim answers (§5)
 streamlit>=1.37           # Stage 8 UI — question box + cited-sources panel (§5)
 
-# Stage 4 decision gate — embeddings backend (local vs API), see SPEC.md §5
-# "Embeddings". Left blank on purpose: do NOT add sentence-transformers or an
-# embedding-API SDK before the Stage 4 tradeoff review.
+# Stage 4 decision gate, decided: bge-small-en-v1.5 through ONNX Runtime
+# (SPEC.md §5). fastembed runs the model without PyTorch, so a 2-core CPU
+# Space installs a small runtime rather than a deep-learning framework.
+fastembed>=0.8            # Stage 4 embeddings — bge-small-en-v1.5 via ONNX Runtime (Apache-2.0; model MIT)
+numpy>=1.26               # Stage 4 — vector arrays; imported directly by retrieve/embed.py
+pyarrow>=15               # Stage 4 — typed table handed to LanceDB; imported directly by retrieve/embed.py

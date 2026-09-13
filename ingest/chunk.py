@@ -7,11 +7,14 @@ the wrong page. Within a page, chunks are packed from whole rows — the lines
 preprocess.py rebuilt — so a table row is never cut between its label and its
 figures.
 
-A chunk that starts part-way down a table has lost the lines that give its
-numbers meaning: the unit declaration and the period header. preprocess.py
-left those lines in place and listed them, so this file tracks which ones are
-in force at each row and gives a chunk the ones it does not state itself
-(SPEC.md §3.2: a value is never orphaned from its unit).
+A chunk that starts part-way down a page has lost the lines that give its
+numbers meaning: the statement title, the unit declaration and the period
+header. Without the title, a standalone balance-sheet chunk reads exactly like
+its consolidated twin — same row labels, same layout. preprocess.py left those
+lines in place and listed them, so this file tracks which ones are in force at
+each row and gives a chunk the ones it does not state itself (SPEC.md §3.2: a
+value is never orphaned from its unit). Inheritance stops at the page edge:
+the next page may be a different statement.
 
 Output: data/chunks.jsonl, one record per chunk:
 
@@ -61,7 +64,9 @@ def has_figures(row: str) -> bool:
 
 
 def context_kind(row: str, page: dict) -> str | None:
-    """Return "header" or "unit" if preprocess.py listed this row as context, else None."""
+    """Return "title", "header" or "unit" if preprocess.py listed this row as context, else None."""
+    if row == page["title"]:
+        return "title"
     if row in page["headers"]:
         return "header"
     if any(cell in page["units"] for cell in cells(row)):
@@ -78,7 +83,7 @@ def with_context(body: list[str], in_force: dict[str, str], page: dict) -> str:
     still inherits the page's unit line if it doesn't restate it.
     """
     stated = {context_kind(row, page) for row in body}
-    prefix = [in_force[kind] for kind in ("unit", "header") if kind in in_force and kind not in stated]
+    prefix = [in_force[kind] for kind in ("title", "unit", "header") if kind in in_force and kind not in stated]
     return "\n".join(prefix + body)
 
 
@@ -101,7 +106,7 @@ def chunk_page(page: dict) -> list[str]:
     """Split one clean page into chunk texts made of whole rows.
 
     A chunk closes for one of three reasons. The budget: the next row would
-    take it past TARGET_TOKENS. A new table: a unit or header row arriving
+    take it past TARGET_TOKENS. A new table: a context row arriving
     after figures closes the chunk, so rows under one period header never
     share a chunk with rows under another. The page end: chunks never cross
     pages.

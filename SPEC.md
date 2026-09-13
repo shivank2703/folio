@@ -58,7 +58,7 @@ Deployed cited Q&A over one HCC annual report.
 7. Guardrails: low-score → "not in the filing"; scrub recommendation language · ~30m
 8. UI: Streamlit question box → answer + expandable cited-sources panel · ~45m
 9. Scale: batch-ingest 2 more companies' filings · ~40m
-10. Deploy: HF Spaces + README with demo GIF → **ship v1** · ~45m
+10. Deploy: Streamlit Community Cloud from the GitHub repo + README with demo GIF → **ship v1** · ~45m
 
 ### v2 — "good" · ships Sun 13 Sep 2026
 
@@ -95,10 +95,10 @@ Cut order if behind: Langfuse → charts. The agent loop and memo generator are 
 |---|---|---|---|---|
 | Extraction | v1 | Raw PyMuPDF page text | Own every layer first; simplest page→cite mapping | Never for v1 |
 | Chunking | v1 | Hand-rolled ~200-token windows (tiktoken counts) | Predictable, page-faithful; failure modes stay visible | Eval evidence in v2 |
-| Embeddings | v1 | **Decided at Stage 4**: local sentence-transformers (bge-small class) vs API | Public demo must run free on CPU | Stage 4 tradeoff review |
-| Vector store | v1 | LanceDB | Embedded, file-based, metadata beside vectors; nothing to host | Corpus outgrows a Space |
-| Generation | v1 | Anthropic API, cite-every-claim prompt | Cheap model + rate limit on the public Space | — |
-| UI / deploy | v1 | Streamlit on Hugging Face Spaces | Free tier, shareable URL | — |
+| Embeddings | v1 | **Decided at Stage 4**: BAAI/bge-small-en-v1.5, local, via fastembed (ONNX Runtime, no PyTorch) | Public demo must run free on CPU; MIT; largest chunk (393 tokens) fits its 512 limit | Stage 5 smoke test misses relevant chunks → granite-embedding-small-english-r2 |
+| Vector store | v1 | LanceDB | Embedded, file-based, metadata beside vectors; nothing to host | Corpus outgrows the deploy host |
+| Generation | v1 | Anthropic API, cite-every-claim prompt | Cheap model + rate limit on the public app | — |
+| UI / deploy | v1 | Streamlit on Streamlit Community Cloud, deployed from the GitHub repo; the app rebuilds its index on start | Free; a public repo gives a public app; nothing else to host | Cold starts after the 12-hour sleep, or the 2-core / 2.7 GB ceiling, hurt the demo |
 | Tables | v2 | pymupdf4llm **classic table strategies** (`page_chunks=True` preserves page numbers) | Open-source path; strong on gridlined, born-digital financial tables | Classic strategies fail on target docs |
 | Table escalation | v2 | Public table-structure models (e.g. Table Transformer) | Keeps the stack open-source | Only if triggered |
 | Evaluation | v2 | RAGAS over the tagged eval set, run in CI | No retrieval/chunking/prompt change lands without before/after scores | — |
@@ -116,7 +116,7 @@ Cut order if behind: Langfuse → charts. The agent loop and memo generator are 
 
 - A covered-filing question returns a correct answer with working page citations, or an honest "not in the filing" — never an uncited claim.
 - Every chart datum and memo sentence is click-traceable to its source page.
-- Public Space answers in roughly ≤10s on the free tier.
+- The public app answers in roughly ≤10s on the free tier.
 - Eval scores are published (static table in README from v3) and move only with evidence.
 
 ## 7. Licensing, IP & data policy
