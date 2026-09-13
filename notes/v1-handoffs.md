@@ -100,3 +100,50 @@ the first visitor after each 12-hour idle waits minutes, far outside SPEC.md
 §6's 10-second bar. Embedding one question takes about 8 ms, so query time is
 not the issue. The Anthropic key goes in Community Cloud's secrets settings,
 never in the repo (SPEC.md §7).
+
+## Stage 5 -> Stages 6-7: what the retrieval smoke test showed (2026-09-13)
+
+`python -m retrieve.smoke`, vector search only. Rank is the position of the
+first chunk from an expected page, searched to depth 20; the generator will
+see the top 5.
+
+| Question | Expected | Rank | Top 5 |
+|---|---|---|---|
+| 001 standalone total assets, FY24 vs FY25 | p114 | not in top 20 (answer chunk 28th) | no |
+| 002 consolidated total income, FY25 | p195, p265 | 17 (answer chunk 44th) | no |
+| 003 standalone receivables over 3 years | p138 | 2 (consolidated p220 first) | yes |
+| 004 share of India's hydropower capacity | p15 | 1 | yes |
+| 005 EV charging stations (not in filing) | none | best score 0.673 | n/a |
+
+Statement-title inheritance, run on the same questions before and after:
+identical except 002, which rose from outside the top 20 to 17. Scope was not
+what kept 001 and 002 out.
+
+Why they missed, from a scratch diagnostic (plain BM25 keyword scoring and
+reciprocal-rank fusion with the vector ranking; not project code):
+
+| Question as asked, or rephrased | Vector | Keyword | Fused |
+|---|---|---|---|
+| 001 "from FY24 to FY25" | 23 | 101 | 16 |
+| 001 "from March 31, 2024 to March 31, 2025" | 10 | 1 | 1 |
+| 002 "for FY25" | 17 | 4 | 4 |
+| 002 "for the year ended March 31, 2025" | 1 | 2 | 1 |
+| 003 as asked | 2 | 1 | 2 |
+| 004 as asked | 1 | 3 | 1 |
+
+- The statements never print "FY25"; they print "As at March 31, 2025" and
+  "Year ended March 31, 2025". Questions follow FY convention (SPEC.md §3.1),
+  so the words never meet. Rewriting FY terms as period-end dates lifts both
+  misses, and with keyword fusion both reach rank 1.
+- Keyword fusion alone helps where row labels carry the match (002: 17 to 4)
+  and changed nothing else measured, but it cannot fix 001 without the date
+  rewrite: "FY 24" and "FY 25" match BRSR pages that print exactly those
+  tokens.
+- Pending decision: fuse keyword search with vector search, expand FY terms
+  into dates on the query side, or both. Each is a retrieval change and needs
+  a before/after run on these questions (rag-eval).
+- Not in the filing: the negative's best score (0.673) sat only 0.016 below
+  the weakest answerable top score (0.689). A similarity threshold alone
+  cannot carry Stage 7's "not in the filing".
+- Scope on notes pages: for 003 the consolidated schedule (p220) outranks the
+  standalone one (p138). Notes pages carry no statement title; v2 scope tag.
