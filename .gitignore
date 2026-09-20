@@ -11,9 +11,13 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 
-# --- Generated artifacts: data/ is tracked as a folder, its contents are not ---
+# --- Generated artifacts: data/ is tracked as a folder, its contents are not.
+# One exception: the built LanceDB index ships, so the deployed app loads it
+# read-only instead of spending minutes rebuilding it (SPEC.md §5, §7). The
+# source PDF and the downloaded model stay out. ---
 data/*
 !data/.gitkeep
+!data/lancedb/
 
 # --- OS / editor noise ---
 .DS_Store
