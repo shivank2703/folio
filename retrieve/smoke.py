@@ -37,10 +37,22 @@ def main() -> None:
     parser.add_argument("--db", type=Path, default=Path("data/lancedb"), help="LanceDB directory from retrieve.embed")
     parser.add_argument("--no-expand", action="store_true", help="skip fiscal-year expansion")
     parser.add_argument("--vector-only", action="store_true", help="skip the keyword ranking")
+    parser.add_argument(
+        "--answer", action="store_true", help="also answer each question through the guardrails (spends API credit)"
+    )
     args = parser.parse_args()
 
     table = open_index(args.db)
     model = load_model()
+    # The harness reaches up into gen on purpose: these are the same questions
+    # the answer path must handle. The import sits here, not at module level,
+    # so a retrieval-only run needs no API credentials at all.
+    client = None
+    if args.answer:
+        from gen.answer import build_client, guarded_answer
+        from gen.guardrails import cited_pages
+
+        client = build_client()
     with args.questions.open(encoding="utf-8") as f:
         questions = [json.loads(line) for line in f]
 
@@ -66,6 +78,14 @@ def main() -> None:
             # here". Stage 7 sets that threshold, and this line is its evidence.
             negative_best.append(best)
             print(f"  not in the filing: best similarity in the top {SHOWN} is {best:.3f}")
+        if client is not None:
+            verdict = guarded_answer(q["question"], hits[:SHOWN], client)
+            if verdict["refused"]:
+                print(f"  ANSWER: refused - {verdict['reason']}")
+            else:
+                print(f"  ANSWER: {verdict['text']}")
+                print(f"  cited pages {sorted(set(cited_pages(verdict['text'])))}"
+                      f" | invalid {verdict['invalid_citations']} | advice removed {len(verdict['scrubbed'])}")
 
     print(f"\n{found}/{len(answerable)} answerable questions found an expected page in the top {SHOWN}")
     if answerable_best and negative_best:

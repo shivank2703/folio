@@ -29,6 +29,16 @@ from pathlib import Path
 import anthropic
 from dotenv import load_dotenv
 
+from gen.guardrails import (
+    MIN_SIMILARITY,
+    REFUSAL,
+    best_similarity,
+    cited_pages,
+    has_enough_context,
+    is_refusal,
+    scrub_advice,
+    validate_citations,
+)
 from retrieve.embed import load_model
 from retrieve.search import DEFAULT_K, open_index, search
 
@@ -42,7 +52,7 @@ MODEL = "claude-haiku-4-5"
 # length target.
 MAX_TOKENS = 1024
 
-SYSTEM_PROMPT = """You answer questions about an Indian listed company's annual \
+SYSTEM_PROMPT = f"""You answer questions about an Indian listed company's annual \
 report, using only the extracts you are given.
 
 Rules:
@@ -60,6 +70,8 @@ the page does not state its unit. Never assume crore, lakh or rupees.
 example in a statement title. Never infer which one it is.
 - Report what the filing says. Do not offer investment advice, views on the \
 share price, or suggestions about what an investor should do.
+- If the extracts do not answer the question, reply with exactly: {REFUSAL} \
+Add nothing else. A hedged half-answer is worse than that one sentence.
 - Be brief: two or three sentences unless the question needs more."""
 
 
@@ -106,12 +118,42 @@ def generate(client: anthropic.Anthropic, question: str, hits: list[dict]) -> st
     return "".join(block.text for block in message.content if block.type == "text").strip()
 
 
+def guarded_answer(question: str, hits: list[dict], client: anthropic.Anthropic) -> dict:
+    """Gate, answer, then check what came back (Stage 7 over Stage 6).
+
+    Order is the point. The similarity gate runs before the model is called,
+    so a question the filing cannot answer costs nothing and cannot be talked
+    into an answer. The citation check runs after, because only the model's
+    own words can be checked against the pages it was shown. A refusal from
+    either end reads the same to the caller.
+    """
+    verdict = {"question": question, "hits": hits, "refused": True, "invalid_citations": [], "scrubbed": []}
+
+    if not has_enough_context(hits):
+        best = best_similarity(hits)
+        return {**verdict, "text": REFUSAL, "reason": f"best similarity {best:.3f} is below the {MIN_SIMILARITY} floor"}
+
+    text = generate(client, question, hits)
+    if is_refusal(text):
+        return {**verdict, "text": REFUSAL, "reason": "the model found no answer in the extracts"}
+
+    text, invalid = validate_citations(text, {hit["page"] for hit in hits})
+    text, scrubbed = scrub_advice(text)
+    if not cited_pages(text):
+        # Either every citation was invented, or none was given. An uncited
+        # claim is exactly what this project promises never to publish (§6),
+        # so the answer is withheld rather than shown with a warning.
+        reason = f"every citation was to a page not retrieved ({invalid})" if invalid else "the answer carried no citation"
+        return {**verdict, "text": REFUSAL, "reason": reason, "invalid_citations": invalid, "scrubbed": scrubbed}
+
+    return {**verdict, "text": text, "refused": False, "reason": "", "invalid_citations": invalid, "scrubbed": scrubbed}
+
+
 def answer_question(question: str, db_path: Path, k: int = DEFAULT_K) -> dict:
-    """Search, then answer: the whole path from a question to a cited answer."""
+    """The whole path from a question to a cited answer, or to an honest refusal."""
     table = open_index(db_path)
     hits = search(table, load_model(), question, k)
-    client = build_client()
-    return {"question": question, "hits": hits, "text": generate(client, question, hits)}
+    return guarded_answer(question, hits, build_client())
 
 
 def main() -> None:
@@ -133,6 +175,12 @@ def main() -> None:
         raise SystemExit("could not reach the API; check the network connection")
 
     print(result["text"])
+    if result["refused"]:
+        print(f"  (refused: {result['reason']})")
+    if result["invalid_citations"]:
+        print(f"  (citations to pages never retrieved: {result['invalid_citations']})")
+    if result["scrubbed"]:
+        print(f"  (removed {len(result['scrubbed'])} sentence(s) of investment advice)")
     print("\nRetrieved:")
     for rank, hit in enumerate(result["hits"], start=1):
         print(f"  {rank}. page {hit['page']} chunk {hit['chunk']}  cos {hit['score']:.3f}")
