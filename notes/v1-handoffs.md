@@ -87,19 +87,27 @@ What the platform imposes (Streamlit docs, checked 2026-09-13):
 - An app gets 0.078 to 2 CPU cores and 690 MB to 2.7 GB of memory, and sleeps
   after 12 hours without traffic.
 
-Decision: deploy rebuilds the index instead of shipping it. With no build
-hook, the app must do it itself on start: download the source PDF (never in
-git, SPEC.md §7, so corpus/SOURCES.md must carry its exact URL, a TODO still
-open), run preprocess, chunk and embed, and cache the result for the life of
-the process. `data/lancedb/` and `data/models/` stay gitignored.
+Decision (corrected 2026-09-20): the index ships in git and the app only
+loads it. Rebuilding on start would cost minutes against SPEC.md §6's
+10-second bar, on a host that sleeps every 12 hours, so `data/lancedb/` is
+un-ignored and committed, and the app opens it read-only. It must not call
+`retrieve.embed`, and it never needs the source PDF at runtime.
 
-The cost to plan for at Stage 10: embedding alone ran about 7 chunks/s on two
-laptop threads (about 4 minutes for 1,620 chunks), and Community Cloud grants
-at most two cores. If the disk does not survive sleep (the docs do not say),
-the first visitor after each 12-hour idle waits minutes, far outside SPEC.md
-§6's 10-second bar. Embedding one question takes about 8 ms, so query time is
-not the issue. The Anthropic key goes in Community Cloud's secrets settings,
-never in the repo (SPEC.md §7).
+What the app still does on start: download the 64 MB embedding model (about
+13 seconds here, on every cold start, since the container is fresh) so it can
+embed the question. Query embedding itself takes about 8 ms.
+
+Rebuilding is a local developer step — `ingest.preprocess`, `ingest.chunk`,
+`retrieve.embed` — run whenever chunking or the model changes, and the new
+index is committed with the change that caused it. `retrieve.embed` drops the
+table before writing so a rebuild does not add the previous version's bytes
+to the repository; the index is about 4 MB with its vector and full-text data.
+`data/models/` stays ignored.
+
+What still has to be true at ship (SPEC.md §7): the demo attributes the
+filing to the issuing company and links to the source; `corpus/SOURCES.md`
+still carries a TODO for the exact URL, and that link is now load-bearing
+because the repository ships text derived from the document.
 
 ## Stage 5 -> Stages 6-7: what the retrieval smoke test showed (2026-09-13)
 
@@ -139,11 +147,37 @@ reciprocal-rank fusion with the vector ranking; not project code):
   and changed nothing else measured, but it cannot fix 001 without the date
   rewrite: "FY 24" and "FY 25" match BRSR pages that print exactly those
   tokens.
-- Pending decision: fuse keyword search with vector search, expand FY terms
-  into dates on the query side, or both. Each is a retrieval change and needs
-  a before/after run on these questions (rag-eval).
+- Decided and implemented on 2026-09-20; measurements below.
 - Not in the filing: the negative's best score (0.673) sat only 0.016 below
   the weakest answerable top score (0.689). A similarity threshold alone
   cannot carry Stage 7's "not in the filing".
 - Scope on notes pages: for 003 the consolidated schedule (p220) outranks the
   standalone one (p138). Notes pages carry no statement title; v2 scope tag.
+
+### Fixed 2026-09-20: fiscal-year expansion and hybrid retrieval
+
+Both landed together, measured on the same five questions. Rank is the first
+chunk from an expected page, searched 20 deep:
+
+| Retrieval | 001 | 002 | 003 | 004 | top 5 | score gap |
+|---|---|---|---|---|---|---|
+| vector only, no expansion (before) | >20 | 17 | 2 | 1 | 2/4 | +0.016 |
+| vector only, FY expanded | 12 | 5 | 2 | 1 | 3/4 | +0.033 |
+| hybrid, no expansion | >20 | 5 | 3 | 1 | 3/4 | +0.058 |
+| hybrid, FY expanded (now) | 5 | 2 | 3 | 1 | 4/4 | +0.088 |
+
+Score gap is the weakest answerable question's best similarity within its top
+5 minus the not-in-the-filing question's. Stage 7 designs its refusal on
++0.088 (0.732 against 0.644), not on the +0.016 vector-only left.
+
+- The expansion appends one phrase per fiscal year, "as at March 31, YYYY".
+  Appending the "year ended" form as well dropped 001 from rank 5 to outside
+  the top 20: two date phrases per year outweigh the question's own words.
+- Neither change alone is enough for 001: expansion alone leaves it 12th,
+  hybrid alone leaves it outside the top 20.
+- Results are ordered by fusion score, not similarity, so printed
+  similarities are not monotonic down the list. "Best similarity in the top
+  5" is a maximum over those five, which is what Stage 7 will see.
+- 003 slipped from rank 2 to 3, and the consolidated schedule (p220) still
+  outranks the standalone one (p138). Notes pages carry no statement title,
+  so v2's scope tag is still the fix.

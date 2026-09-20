@@ -13,7 +13,12 @@ size and speed, and the benchmark scores on BAAI's model card describe the
 original weights — so Stage 5's smoke test, not the card, is the quality check.
 
 Output: data/lancedb/, table "chunks", one row per chunk: its vector plus the
-{company, fiscal_year, page, chunk, tokens, text} it came from.
+{company, fiscal_year, page, chunk, tokens, text} it came from, and a
+full-text index over the chunk text for the keyword half of hybrid search.
+
+This index ships in git (SPEC.md §5, §7): the deployed app loads it read-only
+rather than spending minutes rebuilding it on a platform that sleeps every 12
+hours. Rebuilding is a local step, run whenever chunking or the model changes.
 """
 
 from __future__ import annotations
@@ -27,6 +32,7 @@ import lancedb
 import numpy as np
 import pyarrow as pa
 from fastembed import TextEmbedding
+from lancedb.index import FTS
 
 # The one place the model is named. Stage 5 must embed questions with this
 # same model: vectors from two models share no geometry, so a mismatched
@@ -99,15 +105,23 @@ def to_arrow(chunks: list[dict], vectors: np.ndarray) -> pa.Table:
 
 
 def write_index(table: pa.Table, db_path: Path) -> None:
-    """Replace the chunks table with this run's rows.
+    """Replace the chunks table with this run's rows, then index it for search.
 
-    Overwrite, never append: each run embeds the whole chunks file, so the
-    table always holds one model's vectors for one set of chunks. An append
-    would keep the previous run's rows, and every search hit would come
-    back twice.
+    The table is dropped rather than overwritten. Both end with one set of
+    rows, but an overwrite leaves the superseded version's files in place, and
+    this directory is committed: a rebuilt index would add its predecessor's
+    bytes to the repository every time.
+
+    Two indexes are built on the same rows. The vectors answer "what reads
+    like this question"; the full-text index answers "what contains these
+    words", which is how a table row is found by its label. Stage 5 measured
+    both as necessary (notes/v1-handoffs.md).
     """
     db = lancedb.connect(str(db_path))
-    db.create_table(TABLE_NAME, data=table, mode="overwrite")
+    if TABLE_NAME in db.list_tables():
+        db.drop_table(TABLE_NAME)
+    written = db.create_table(TABLE_NAME, data=table)
+    written.create_index("text", config=FTS(), replace=True)
 
 
 def main() -> None:
@@ -129,6 +143,8 @@ def main() -> None:
 
     print(f"{len(chunks)} chunks -> {args.db}/{TABLE_NAME}.lance ({MODEL_NAME}, {DIMENSION} dims)")
     print(f"  embedding took {seconds:.1f}s ({len(chunks) / seconds:.0f} chunks/s on this machine)")
+    indexes = lancedb.connect(str(args.db)).open_table(TABLE_NAME).list_indices()
+    print(f"  indexes: {[(index.name, index.index_type) for index in indexes]}")
 
 
 if __name__ == "__main__":
