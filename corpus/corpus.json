@@ -1,0 +1,26 @@
+[
+  {
+    "file": "0_14711100_1755498593_HCC_Annual_Report_2025.pdf",
+    "company": "HCC",
+    "name": "Hindustan Construction Company",
+    "fiscal_year": "FY25",
+    "source_url": "https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf",
+    "sha256": "9417307d85a84e78963b0cde625d3337efc2c8357affec37bd3832abae764a26"
+  },
+  {
+    "file": "Annual-Report-for-the-Financial-Year-2024-2025.pdf",
+    "company": "CHAMBAL",
+    "name": "Chambal Fertilisers and Chemicals",
+    "fiscal_year": "FY25",
+    "source_url": "https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf",
+    "sha256": "165dfdf87214cb36a3c51506468e2fdc168b2079eae3af0acd77ebb9c2ce7cb7"
+  },
+  {
+    "file": "annual-report-24-25.pdf",
+    "company": "NAVNEET",
+    "name": "Navneet Education",
+    "fiscal_year": "FY25",
+    "source_url": "https://navneet.com/annual-report-24-25.pdf",
+    "sha256": "ed2eca6940e5e07d5e2784e71104b029e77a560dc9545fe78856677279116e48"
+  }
+]

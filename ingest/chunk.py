@@ -169,18 +169,23 @@ def main() -> None:
     parser.add_argument(
         "--out",
         type=Path,
-        default=Path("data/chunks.jsonl"),
-        help="generated artifact; disposable and gitignored",
+        default=None,
+        help="defaults to data/<company>_<fiscal_year>_chunks.jsonl, beside the clean file",
     )
     args = parser.parse_args()
 
     with args.clean.open(encoding="utf-8") as f:
         pages = [json.loads(line) for line in f]
     chunks = chunk_report(pages)
-    write_jsonl(chunks, args.out)
+    # One file per filing, named from the records themselves: several filings
+    # now share data/, and a single chunks.jsonl would have each rebuild
+    # overwrite the last company's work.
+    identity = pages[0]
+    out_path = args.out or args.clean.parent / f"{identity['company'].lower()}_{identity['fiscal_year'].lower()}_chunks.jsonl"
+    write_jsonl(chunks, out_path)
 
     sizes = [chunk["tokens"] for chunk in chunks]
-    print(f"{len(chunks)} chunks from {len({c['page'] for c in chunks})} pages -> {args.out}")
+    print(f"{len(chunks)} chunks from {len({c['page'] for c in chunks})} pages -> {out_path}")
     print(f"  tokens: min {min(sizes)}, median {statistics.median(sizes):.0f}, max {max(sizes)}")
     print(f"  over {TARGET_TOKENS} tokens: {sum(1 for s in sizes if s > TARGET_TOKENS)}")
 

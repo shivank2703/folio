@@ -28,12 +28,17 @@ import re
 # refusal by equality instead of by guessing at phrasing.
 REFUSAL = "Not in the filing."
 
-# Calibrated on the Stage 5 smoke set: the weakest answerable question's best
-# similarity was 0.732 and the not-in-the-filing question's was 0.644, so the
-# midpoint leaves room on both sides. That is five questions, not an eval:
-# v2's 20-pair set (SPEC.md §4 v2.3) is what validates this number or moves
-# it, and it should move on evidence rather than on taste.
-MIN_SIMILARITY = 0.69
+# Calibrated twice, both times on the smoke set rather than on an eval.
+# With one filing and five questions the weakest answerable question scored
+# 0.732 against the not-in-the-filing question's 0.644, and the floor sat at
+# their midpoint, 0.69. With three filings and nine questions the weakest
+# answerable is 0.702 — a narrative page, not a statement — so the midpoint
+# moved to 0.673 and the floor follows it down.
+#
+# The direction is the thing to watch: more documents compress the gap, which
+# is the failure mode this number has. Nine questions cannot settle it; v2's
+# 20-pair set (SPEC.md §4 v2.3) is what validates it or moves it again.
+MIN_SIMILARITY = 0.67
 
 CITATION = re.compile(r"\[page (\d+)\]")
 

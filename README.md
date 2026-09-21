@@ -4,8 +4,11 @@
 
 Ask a question about an Indian listed company's annual report and get an answer
 where **every claim cites the page it came from** — or an honest *"Not in the
-filing."* Currently covering Hindustan Construction Company's FY25 annual
-report: 296 pages, 1,620 chunks.
+filing."* Currently covering three FY25 annual reports — Hindustan
+Construction, Chambal Fertilisers and Navneet Education — 896 pages and 4,704
+chunks in one index. Each question is asked of one filing: page numbers repeat
+across reports, and a citation to "page 114" means nothing without knowing
+whose page 114 it is.
 
 <!-- TODO at deploy: add docs/demo.gif and the live Streamlit link here. -->
 
@@ -79,11 +82,12 @@ Four checks, because no single one keeps a citation honest:
 
 | | |
 |---|---|
-| Corpus | 296 pages → 1,620 chunks, index 3.8 MB |
-| Retrieval (5 smoke questions) | 4/4 expected pages in the top 5 |
-| Answer availability | 4/4 questions have the answer-bearing chunk in context |
-| Refusal margin | weakest answerable 0.732 vs not-in-filing 0.644 |
-| Warm retrieval | ~20 ms |
+| Corpus | 3 filings, 896 pages → 4,704 chunks, index 10.6 MB |
+| Rebuild | 2 min 37 s end to end (ingest 19 s, embed 139 s) |
+| Retrieval (9 smoke questions) | 7/8 expected pages in the top 5 |
+| Answer availability | 8/8 questions have the answer-bearing chunk in context |
+| Refusal margin | weakest answerable 0.702 vs not-in-filing 0.644 |
+| Warm retrieval | ~21 ms search, ~10 ms page expansion |
 
 ## Run locally
 
@@ -95,14 +99,16 @@ cp .env.example .env          # then paste your Anthropic API key into it
 ```
 
 The search index ships in the repository (`data/lancedb/`), so nothing has to
-be rebuilt to try it. To rebuild from source instead, download the PDF named in
-[`corpus/SOURCES.md`](corpus/SOURCES.md) into `corpus/`, then:
+be rebuilt to try it. To rebuild from source instead, download the PDFs listed
+in [`corpus/SOURCES.md`](corpus/SOURCES.md) into `corpus/`, then:
 
 ```bash
-.venv/bin/python -m ingest.preprocess corpus/<file>.pdf --company HCC --fiscal-year FY25
-.venv/bin/python -m ingest.chunk data/hcc_fy25_clean.jsonl
-.venv/bin/python -m retrieve.embed
+.venv/bin/python -m ingest.build
 ```
+
+That verifies each file's SHA-256 against `corpus/corpus.json`, runs extract →
+preprocess → chunk for every filing, and embeds them all into one table. Adding
+a company means adding its PDF and one manifest entry — no code changes.
 
 Retrieval alone needs no API key: `.venv/bin/python -m retrieve.smoke`.
 
@@ -110,8 +116,14 @@ Retrieval alone needs no API key: `.venv/bin/python -m retrieve.smoke`.
 
 Stated plainly, because the point of the project is not overclaiming:
 
-- **One company, one year.** Multi-company and multi-year ingest is the next
-  version's work.
+- **One fiscal year, and one filing per question.** Multi-year ingest is the
+  next version's work, and comparing companies in a single answer is a v3 tool
+  rather than something search should do by accident.
+- **Adding filings shifts retrieval for the ones already there.** Full-text
+  scores use collection-wide word statistics, so a third report moved one of
+  HCC's pages from rank 5 to 6 even though the query is filtered to HCC. The
+  context is built from more of the ranking than is shown, which absorbs that,
+  but it is a property to watch as the corpus grows.
 - **The 0.69 refusal floor is calibrated on five questions.** A 20-pair
   evaluation set, scored with RAGAS, is what will validate or move it.
 - **Notes pages carry no standalone/consolidated tag.** For a question about
@@ -127,10 +139,11 @@ Stated plainly, because the point of the project is not overclaiming:
 
 ## Data and licence
 
-The source PDF is a public statutory filing and is **not** committed;
-[`corpus/SOURCES.md`](corpus/SOURCES.md) records its exact URL and SHA-256. The
-derived chunk index is committed so the demo can load it, with attribution to
-the issuing company and a link to the source document.
+The source PDFs are public statutory filings and are **not** committed;
+[`corpus/SOURCES.md`](corpus/SOURCES.md) records each exact URL and SHA-256,
+and `corpus/corpus.json` carries the same in machine-readable form. The derived
+chunk index is committed so the demo can load it, with attribution to each
+issuing company and a link to its source document.
 
 Licensed under [AGPL-3.0](LICENSE), matching PyMuPDF's terms for a
 network-served application.

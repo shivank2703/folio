@@ -40,7 +40,7 @@ from gen.guardrails import (
     validate_citations,
 )
 from retrieve.embed import load_model
-from retrieve.search import DEFAULT_K, open_index, page_context, search
+from retrieve.search import DEFAULT_K, EXPANSION_SEEDS, open_index, page_context, search
 
 # The public demo spends the maintainer's key, so the cheapest current model
 # answers: this is extraction and quotation from five short extracts, not
@@ -163,10 +163,12 @@ def guarded_answer(
     return {**verdict, "text": text, "refused": False, "reason": "", "invalid_citations": invalid, "scrubbed": scrubbed}
 
 
-def answer_question(question: str, db_path: Path, k: int = DEFAULT_K) -> dict:
+def answer_question(question: str, db_path: Path, k: int = DEFAULT_K, company: str | None = None) -> dict:
     """The whole path from a question to a cited answer, or to an honest refusal."""
     table = open_index(db_path)
-    hits = search(table, load_model(), question, k)
+    # The ranking runs deeper than k: k is what a reader is shown, while the
+    # context is built by widening every page near the top of the ranking.
+    hits = search(table, load_model(), question, max(k, EXPANSION_SEEDS), company)
     return guarded_answer(question, hits, build_client(), page_context(table, hits))
 
 
@@ -175,10 +177,11 @@ def main() -> None:
     parser.add_argument("question", help="a question about the filing, in plain English")
     parser.add_argument("-k", type=int, default=DEFAULT_K, help="how many chunks to put in front of the model")
     parser.add_argument("--db", type=Path, default=Path("data/lancedb"), help="LanceDB directory from retrieve.embed")
+    parser.add_argument("--company", help="which filing to answer from, e.g. HCC; pages repeat across filings")
     args = parser.parse_args()
 
     try:
-        result = answer_question(args.question, args.db, args.k)
+        result = answer_question(args.question, args.db, args.k, args.company)
     except anthropic.AuthenticationError:
         raise SystemExit("the API key was rejected; check ANTHROPIC_API_KEY in .env")
     except anthropic.RateLimitError as error:
@@ -198,7 +201,7 @@ def main() -> None:
     print("\nContext the model read:")
     for chunk in result["context"]:
         score = "same page" if chunk.get("sibling") else f"cos {chunk['score']:.3f}"
-        print(f"  page {chunk['page']} chunk {chunk['chunk']}  {score}")
+        print(f"  {chunk['company']} page {chunk['page']} chunk {chunk['chunk']}  {score}")
 
 
 if __name__ == "__main__":

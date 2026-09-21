@@ -182,16 +182,16 @@ Score gap is the weakest answerable question's best similarity within its top
   outranks the standalone one (p138). Notes pages carry no statement title,
   so v2's scope tag is still the fix.
 
-## v1 stage 9 dropped (2026-09-21)
+## v1 stage 9 done (2026-09-22), refactor pulled forward
 
-v1's milestone is cited Q&A over HCC's annual report, and Stages 1-8 meet it.
-Batch-ingesting two more companies would first need a multi-document refactor:
-`ingest.chunk` reads a single clean file and writes one `chunks.jsonl`, and
-`retrieve.embed` drops and rewrites a single table. v2.2 (multi-year ingest)
-needs exactly that refactor for several fiscal years of one company, so the
-work is done once there instead of twice. SPEC.md §3 and §4 record the change.
+Stage 9 was briefly dropped on 2026-09-21 and then pulled forward instead: the
+multi-document refactor v2.2 needs is the same one scaling to three companies
+needs, and doing it now means v2 inherits it rather than the reverse.
 
-What this means for what ships: one company, one fiscal year, one index of
-1,620 chunks. The pipeline is not company-specific anywhere - company and
-fiscal year ride on every chunk (CLAUDE.md) - so the refactor is about file
-and table handling, not about the rules.
+What it took: `ingest.build` as one entrypoint over `corpus/corpus.json`
+(identity and SHA-256 per filing, because filenames like
+"annual-report-24-25.pdf" say nothing about whose report they are), one chunk
+file per filing, one embed run into one table, and a company filter on every
+query. Page numbers repeat across filings — all three have a page 114 — so an
+unscoped question returns several balance sheets, each citation correct for a
+company nobody asked about. Comparing companies stays a v3 tool.

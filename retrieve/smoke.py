@@ -71,11 +71,14 @@ def main() -> None:
     answerable = [q for q in questions if q["expected_pages"]]
     for q in questions:
         hits = search(
-            table, model, q["question"], SEARCH_DEPTH, expand=not args.no_expand, hybrid=not args.vector_only
+            table, model, q["question"], SEARCH_DEPTH, q["company"],
+            expand=not args.no_expand, hybrid=not args.vector_only,
         )
         best = max(hit["score"] for hit in hits[:SHOWN])
-        context = hits[:SHOWN] if args.no_page_expansion else page_context(table, hits[:SHOWN])
-        print(f"\n{q['id']} [{q['type']}] {q['question']}")
+        # Expansion seeds from the ranking itself, not from the five shown: the
+        # page holding the answer often ranks just below them.
+        context = hits[:SHOWN] if args.no_page_expansion else page_context(table, hits)
+        print(f"\n{q['id']} [{q['company']} · {q['type']}] {q['question']}")
         print("  top %d: %s" % (SHOWN, ", ".join(f"p{h['page']} {h['score']:.3f}" for h in hits[:SHOWN])))
         if q["expected_pages"]:
             rank = first_rank(hits, q["expected_pages"])

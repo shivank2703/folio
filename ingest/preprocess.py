@@ -66,6 +66,7 @@ SPANNING_WIDTH = 0.6   # wider blocks cross the columns: full-width headings, ta
 COLUMN_GAP = 0.15      # left edges further apart start a new column; indents stay inside one
 PROSE_MIN_WIDTH = 0.3  # prose columns are wide; a table's value columns are narrow
 PROSE_MAX_FIGURES = 0.2  # ...and made of words: mostly bare figures means a value column
+PROSE_MIN_SHARE = 0.15 # ...and a real share of the page's lines, not a footer's worth
 GRID_ALIGNMENT = 0.5   # share of block tops lining up across columns that marks a grid
 ALIGN_TOLERANCE = 2.0  # points
 
@@ -255,14 +256,16 @@ def find_furniture(pages: list[list[Line]], heights: list[float]) -> set[tuple[i
     every citation lands two pages off. The offset differs between reports,
     so the footer is removed, never corrected.
 
-    Detection is by repetition, and three guards decide what may even be a
+    Detection is by repetition, and four guards decide what may even be a
     candidate. Body-size lines never are: list numbers like "1." recur at
     page tops at body size. Lines outside the margins never are: a table's
-    column header recurs mid-page on every notes page. Unit declarations
-    never are: "(Amount in ₹ crore, unless otherwise stated)" is typeset
-    exactly like furniture — small, top margin, same spot on a hundred
-    pages — yet it changes the meaning of every number below it. A
-    candidate becomes furniture only if the same content sits at the same
+    column header recurs mid-page on every notes page. Unit declarations and
+    period headings never are: both are typeset exactly like furniture —
+    small, top margin, same spot on a hundred pages — yet both change what
+    the figures below them mean. One report heads 135 pages with "FOR THE
+    YEAR ENDED 31st MARCH, 2025"; removing it as furniture left 36 of those
+    pages with no period at all, which is rule 4's failure by another route.
+    A candidate becomes furniture only if the same content sits at the same
     height on a large share of pages.
     """
     body_size = modal_body_size(pages)
@@ -270,7 +273,12 @@ def find_furniture(pages: list[list[Line]], heights: list[float]) -> set[tuple[i
     for page_index, (lines, height) in enumerate(zip(pages, heights)):
         top, bottom = height * MARGIN_FRACTION, height * (1 - MARGIN_FRACTION)
         for line_index, line in enumerate(lines):
-            if abs(line.size - body_size) <= SIZE_TOLERANCE or is_unit_declaration(line.text):
+            load_bearing = (
+                is_unit_declaration(line.text)
+                or PERIOD_COMPLETE.match(line.text)
+                or PERIOD_PART.match(line.text)
+            )
+            if abs(line.size - body_size) <= SIZE_TOLERANCE or load_bearing:
                 continue
             if line.y1 <= top or line.y0 >= bottom:
                 candidates[signature(line.text)].append((line.y0, page_index, line_index))
@@ -343,7 +351,7 @@ def reading_groups(lines: list[Line]) -> tuple[list[list[Line]], int]:
             clusters[-1].append(block)
         else:
             clusters.append([block])
-    columns = [c for c in clusters if is_prose(c, width)]
+    columns = [c for c in clusters if is_prose(c, width, len(lines))]
     if len(columns) < 2 or is_grid(columns):
         return [lines], 1
 
@@ -373,18 +381,22 @@ def reading_groups(lines: list[Line]) -> tuple[list[list[Line]], int]:
     return groups, len(columns)
 
 
-def is_prose(cluster: list[Block], width: float) -> bool:
+def is_prose(cluster: list[Block], width: float, page_lines: int) -> bool:
     """True if a cluster of blocks reads like a column of running text.
 
-    Width alone is not enough: PyMuPDF sometimes groups a table's unit cell
-    with the figures to its right into one wide block, which then passes for
-    a column. Prose is made of words, so a cluster whose lines are largely
-    bare figures is a table's value column, however wide.
+    Three tests, each earned by a page that broke without it. A column is
+    wide: narrow clusters are a table's value columns. It is made of words:
+    PyMuPDF sometimes groups a unit cell with the figures beside it into one
+    wide block, which would otherwise pass. And it carries a real share of
+    the page, because a balance sheet's signature block — "Place: New Delhi"
+    beside two signatories, eleven lines out of two hundred — otherwise reads
+    as two columns and splits the whole page, scattering the table's header
+    into different halves.
     """
     lines = [line for block in cluster for line in block[4]]
     figures = sum(bool(VALUE.match(line.text)) for line in lines) / len(lines)
     wide = statistics.median(b[2] - b[0] for b in cluster) >= PROSE_MIN_WIDTH * width
-    return wide and figures <= PROSE_MAX_FIGURES
+    return wide and figures <= PROSE_MAX_FIGURES and len(lines) >= PROSE_MIN_SHARE * page_lines
 
 
 def is_grid(columns: list[list[Block]]) -> bool:
@@ -432,7 +444,16 @@ def merge_stacked_periods(lines: list[Line]) -> list[Line]:
                 below = ordered[j]
                 if PERIOD_COMPLETE.match(cell.text) or below.y0 > cell.y1 + line_height:
                     break
-                stacked = below.y0 >= cell.y1 - 1 and below.x0 < cell.x1 and below.x1 > cell.x0
+                # "Below" cannot mean "starts after the line above ends": tight
+                # leading makes a stacked date's box overlap the word above it,
+                # and a fixed one-point tolerance once decided a two-year header
+                # on a margin of 0.03pt. Half a line lower is the judgement a
+                # reader makes, and it does not depend on the leading.
+                stacked = (
+                    below.y0 >= cell.y0 + line_height / 2
+                    and below.x0 < cell.x1
+                    and below.x1 > cell.x0
+                )
                 if j not in absorbed and stacked and PERIOD_PART.match(below.text):
                     cell = Line(
                         f"{cell.text} {below.text}",

@@ -16,6 +16,7 @@ Run it with: streamlit run ui/app.py
 
 from __future__ import annotations
 
+import json
 import time
 from pathlib import Path
 
@@ -24,7 +25,7 @@ import streamlit as st
 from gen.answer import build_client, guarded_answer
 from gen.guardrails import cited_pages, has_enough_context
 from retrieve.embed import load_model
-from retrieve.search import DEFAULT_K, open_index, page_context, search
+from retrieve.search import DEFAULT_K, EXPANSION_SEEDS, open_index, page_context, search
 
 DB_PATH = Path("data/lancedb")
 
@@ -35,6 +36,12 @@ EXAMPLE = "How did HCC's standalone total assets change from FY24 to FY25?"
 def load_retrieval():
     """Open the committed index and the embedding model, once per session."""
     return open_index(DB_PATH), load_model()
+
+
+@st.cache_resource(show_spinner=False)
+def load_filings() -> list[dict]:
+    """The filings in the index, with the display names from the corpus manifest."""
+    return json.loads(Path("corpus/corpus.json").read_text(encoding="utf-8"))
 
 
 @st.cache_resource(show_spinner=False)
@@ -79,13 +86,21 @@ def main() -> None:
     # A form so Enter submits: the question box is the whole interface, and
     # reaching for the mouse to ask is friction the demo does not need.
     with st.form("ask"):
+        # One filing at a time. Page numbers repeat across annual reports, so a
+        # question asked of "the filings" would return three balance sheets,
+        # each citation right for a company nobody asked about.
+        # The options are the labels themselves, not the records behind them:
+        # Streamlit filters the dropdown on each option's own text, so passing
+        # records made typing a company's name match nothing.
+        filings = {f"{f['name']} — {f['fiscal_year']}": f for f in load_filings()}
+        filing = filings[st.selectbox("Filing", list(filings))]
         question = st.text_input("Question", placeholder=EXAMPLE)
         submitted = st.form_submit_button("Ask", type="primary")
     if not submitted or not question.strip():
         st.stop()
 
     started = time.perf_counter()
-    hits = search(table, model, question, DEFAULT_K)
+    hits = search(table, model, question, max(DEFAULT_K, EXPANSION_SEEDS), filing["company"])
     # The ranking decides whether to answer; the widened context is what the
     # model reads and what the panel below shows.
     context = page_context(table, hits)
@@ -117,7 +132,7 @@ def main() -> None:
 
     # Two decimals, because a refusal costs retrieval only and rounds to 0.0s
     # at one: the number is there to show where the time actually goes.
-    st.caption(f"answered in {elapsed:.2f}s")
+    st.caption(f"answered in {elapsed:.2f}s · {filing['name']} {filing['fiscal_year']}")
     render_sources(verdict["context"], cited=set(cited_pages(verdict["text"])))
 
 

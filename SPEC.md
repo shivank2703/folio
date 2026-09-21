@@ -27,7 +27,7 @@ The differentiator is the citation layer. Aggregate stats and screening are a so
 
 ## 3. Corpus
 
-**v1–v3: annual reports** of Indian listed companies — statutory filings, typically 200–400 pages. First company: Hindustan Construction Company (HCC). v1 ships HCC only (see §4 v1.9); v2 adds further companies and 3+ fiscal years per company.
+**v1–v3: annual reports** of Indian listed companies — statutory filings, typically 200–400 pages. First company: Hindustan Construction Company (HCC). v1 scales to 3 companies; v2 adds 3+ fiscal years per company.
 
 Report anatomy the pipeline serves: Management Discussion & Analysis, Directors'/Governance/BRSR reports, financial statements (standalone **and** consolidated), notes to accounts, auditor's report.
 
@@ -57,13 +57,13 @@ Deployed cited Q&A over one HCC annual report.
 6. Generate: Anthropic API, cite-every-claim prompt → answer + [page] cites · ~45m
 7. Guardrails: low-score → "not in the filing"; scrub recommendation language · ~30m
 8. UI: Streamlit question box → answer + expandable cited-sources panel · ~45m
-9. ~~Scale: batch-ingest 2 more companies' filings~~ — **dropped 2026-09-21.** The v1 milestone is cited Q&A over HCC's filing, and that is met. Scaling needs a multi-document refactor (`ingest.chunk` reads one clean file; `retrieve.embed` overwrites one table) that v2.2's multi-year ingest needs anyway, so it is done once, in v2, rather than twice.
+9. Scale: batch-ingest 2 more companies' filings · ~40m — **done 2026-09-22.** `ingest.build` runs extract → preprocess → chunk over every filing in `corpus/corpus.json` and embeds them into one table; every query is scoped to one filing, because page numbers repeat across documents. The multi-document refactor v2.2 also needs was pulled forward here rather than deferred.
 10. Deploy: Streamlit Community Cloud from the GitHub repo + README with demo GIF → **ship v1** · ~45m
 
 ### v2 — "good" · ships Sun 13 Sep 2026
 
 1. Table extraction → structured rows (target Sun 16 Aug)
-2. Multi-year, multi-company ingest with fiscal-year tags — absorbs the dropped v1 stage 9 (Sat 22 Aug)
+2. Multi-year ingest with fiscal-year tags — the multi-document refactor landed early, in v1.9 (Sat 22 Aug)
 3. Eval set: 20 tagged Q&A pairs — numeric-lookup / multi-hop / not-in-filing / one units-in-crores trap — with expected pages recorded (Sat 29 Aug)
 4. RAGAS harness in CI: faithfulness, answer relevance, context recall (Sat 05 Sep)
 5. Cross-encoder reranker — **sacrificial: cut if table extraction overruns** (Wed 09 Sep)

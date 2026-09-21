@@ -54,14 +54,21 @@ FISCAL_YEAR = re.compile(r"\bFY\s?(\d{4}|\d{2})(?:\s*[-–]\s*(\d{4}|\d{2}))?\b"
 FIELDS = ["company", "fiscal_year", "page", "chunk", "tokens", "text", "vector"]
 TEXT_FIELDS = [field for field in FIELDS if field != "vector"]
 
-# How many tokens of chunk text the model may be given. Five ranked chunks come
-# to roughly a thousand; the rest buys the siblings that turn a retrieved page
-# into a readable one. Measured on the five smoke questions: 2,500 tokens left
-# the balance-sheet answer outside the context, and 4,000 reached it, because
-# that page ranked fifth and its answer sat two chunks from the match. The
-# blunt fix costs about 20 chunks of context per question; the sharper one is
-# better ranking, which v2's eval set is there to drive.
-CONTEXT_TOKENS = 4000
+# How many tokens of chunk text the model may be given, and how far down the
+# ranking the pages worth widening are looked for.
+#
+# Seeding only from the chunks shown was too narrow once the index held three
+# filings: full-text scores are computed over the whole collection, so adding
+# two annual reports shifted the keyword ranking of the first one, and a
+# balance sheet that had ranked fifth ranked sixth — outside the seeds, so its
+# answer never entered the context however large the budget grew.
+#
+# Swept over all eight answerable smoke questions: 5 seeds reached 6/8 at any
+# budget, 8 seeds reached 7/8 at 4,000 tokens and 8/8 at 6,000. That costs
+# about 32 chunks of context per question. The sharper fix is ranking that
+# puts the answer-bearing chunk first, which v2's eval set is there to drive.
+CONTEXT_TOKENS = 6000
+EXPANSION_SEEDS = 8
 
 
 def expand_fiscal_years(question: str) -> str:
@@ -103,14 +110,25 @@ def open_index(db_path: Path) -> lancedb.table.Table:
     return table
 
 
-def vector_hits(table: lancedb.table.Table, vector: np.ndarray) -> list[dict]:
+def scoped(query, company: str | None):
+    """Restrict a query to one filing.
+
+    Page numbers are only unique within a document: every filing in the index
+    has a page 114. Without this filter a question about total assets returns
+    three balance sheets, each citation correct for a company nobody asked
+    about. Comparing companies is a v3 tool, not an accident of search.
+    """
+    return query if company is None else query.where(f"company = '{company}'")
+
+
+def vector_hits(table: lancedb.table.Table, vector: np.ndarray, company: str | None) -> list[dict]:
     """The chunks nearest the question's vector, closest first."""
-    return table.search(vector).distance_type("cosine").limit(FUSION_DEPTH).select(FIELDS).to_list()
+    return scoped(table.search(vector).distance_type("cosine"), company).limit(FUSION_DEPTH).select(FIELDS).to_list()
 
 
-def keyword_hits(table: lancedb.table.Table, text: str) -> list[dict]:
+def keyword_hits(table: lancedb.table.Table, text: str, company: str | None) -> list[dict]:
     """The chunks whose words best match the question, from LanceDB's full-text index."""
-    return table.search(text, query_type="fts").limit(FUSION_DEPTH).select(FIELDS).to_list()
+    return scoped(table.search(text, query_type="fts"), company).limit(FUSION_DEPTH).select(FIELDS).to_list()
 
 
 def fuse(rankings: list[list[dict]]) -> list[dict]:
@@ -135,6 +153,7 @@ def search(
     model: TextEmbedding,
     question: str,
     k: int = DEFAULT_K,
+    company: str | None = None,
     expand: bool = True,
     hybrid: bool = True,
 ) -> list[dict]:
@@ -148,9 +167,9 @@ def search(
     """
     text_query = expand_fiscal_years(question) if expand else question
     vector = embed_texts(model, [QUERY_INSTRUCTION + text_query])[0]
-    rankings = [vector_hits(table, vector)]
+    rankings = [vector_hits(table, vector, company)]
     if hybrid:
-        rankings.append(keyword_hits(table, text_query))
+        rankings.append(keyword_hits(table, text_query, company))
 
     results = []
     for hit in fuse(rankings)[:k]:
@@ -159,7 +178,12 @@ def search(
     return results
 
 
-def page_context(table: lancedb.table.Table, hits: list[dict], budget: int = CONTEXT_TOKENS) -> list[dict]:
+def page_context(
+    table: lancedb.table.Table,
+    hits: list[dict],
+    budget: int = CONTEXT_TOKENS,
+    seeds: int = EXPANSION_SEEDS,
+) -> list[dict]:
     """Widen the ranked chunks to their page siblings, nearest first, within a budget.
 
     SPEC.md §3.3 makes the page the citation unit, so the other chunks of a
@@ -171,8 +195,11 @@ def page_context(table: lancedb.table.Table, hits: list[dict], budget: int = CON
 
     Pages are widened in the order their best chunk ranked, so a weak page never
     crowds out a strong one, and the result reads in page order: page by page,
-    chunks in the order the page prints them.
+    chunks in the order the page prints them. Seeds reach deeper than the
+    chunks a caller shows, because the page holding the answer is often ranked
+    just below them.
     """
+    hits = hits[:seeds]
     context = {(hit["page"], hit["chunk"]): {**hit, "sibling": False} for hit in hits}
     spent = sum(hit["tokens"] for hit in context.values())
     first_seen: dict[int, int] = {}
@@ -185,7 +212,14 @@ def page_context(table: lancedb.table.Table, hits: list[dict], budget: int = CON
     # fifth - the one holding the answer - never got its turn.
     candidates: list[tuple[int, int, dict]] = []
     for hit in hits:
-        siblings = table.search().where(f"page = {hit['page']}").limit(100).select(TEXT_FIELDS).to_list()
+        # Scoped to the hit's own filing: page 114 exists in every document.
+        siblings = (
+            table.search()
+            .where(f"company = '{hit['company']}' AND page = {hit['page']}")
+            .limit(100)
+            .select(TEXT_FIELDS)
+            .to_list()
+        )
         for row in siblings:
             distance = abs(row["chunk"] - hit["chunk"])
             if distance:
@@ -207,17 +241,19 @@ def main() -> None:
     parser.add_argument("question", help="a question about the filing, in plain English")
     parser.add_argument("-k", type=int, default=DEFAULT_K, help="how many chunks to return")
     parser.add_argument("--db", type=Path, default=Path("data/lancedb"), help="LanceDB directory from retrieve.embed")
+    parser.add_argument("--company", help="restrict the search to one filing, e.g. HCC")
     parser.add_argument("--no-expand", action="store_true", help="skip fiscal-year expansion")
     parser.add_argument("--vector-only", action="store_true", help="skip the keyword ranking")
     args = parser.parse_args()
 
     table = open_index(args.db)
     hits = search(
-        table, load_model(), args.question, args.k, expand=not args.no_expand, hybrid=not args.vector_only
+        table, load_model(), args.question, args.k, args.company,
+        expand=not args.no_expand, hybrid=not args.vector_only,
     )
     for rank, hit in enumerate(hits, start=1):
         opening = hit["text"].split("\n")[0]
-        print(f"{rank}. p{hit['page']} chunk {hit['chunk']}  cos {hit['score']:.3f}  {opening[:85]}")
+        print(f"{rank}. {hit['company']} p{hit['page']} chunk {hit['chunk']}  cos {hit['score']:.3f}  {opening[:72]}")
 
 
 if __name__ == "__main__":

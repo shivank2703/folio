@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from collections import Counter
 import time
 from pathlib import Path
 
@@ -118,7 +119,11 @@ def write_index(table: pa.Table, db_path: Path) -> None:
     both as necessary (notes/v1-handoffs.md).
     """
     db = lancedb.connect(str(db_path))
-    if TABLE_NAME in db.list_tables():
+    # list_tables() returns a response object, not a list of names: a plain
+    # membership test against it is silently always False, so the drop never
+    # ran and a rebuild either failed or kept its predecessor's files.
+    listed = db.list_tables()
+    if TABLE_NAME in getattr(listed, "tables", listed):
         db.drop_table(TABLE_NAME)
     written = db.create_table(TABLE_NAME, data=table)
     written.create_index("text", config=FTS(), replace=True)
@@ -127,21 +132,32 @@ def write_index(table: pa.Table, db_path: Path) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Embed chunks with bge-small-en-v1.5 into LanceDB.")
     parser.add_argument(
-        "chunks", type=Path, nargs="?", default=Path("data/chunks.jsonl"), help="chunk records from ingest.chunk"
+        "chunks",
+        type=Path,
+        nargs="*",
+        help="chunk files from ingest.chunk; defaults to every data/*_chunks.jsonl",
     )
     parser.add_argument(
         "--db", type=Path, default=Path("data/lancedb"), help="LanceDB directory; generated and gitignored"
     )
     args = parser.parse_args()
 
-    chunks = load_chunks(args.chunks)
+    # Every filing lands in one table: a question is answered from one
+    # company's chunks (the search filters on it), but sharing a table keeps
+    # one model, one index and one file to ship.
+    paths = args.chunks or sorted(Path("data").glob("*_chunks.jsonl"))
+    if not paths:
+        raise SystemExit("no chunk files found; run python -m ingest.chunk first")
+    chunks = [chunk for path in paths for chunk in load_chunks(path)]
     model = load_model()
     started = time.perf_counter()
     vectors = embed_texts(model, [chunk["text"] for chunk in chunks])
     seconds = time.perf_counter() - started
     write_index(to_arrow(chunks, vectors), args.db)
 
-    print(f"{len(chunks)} chunks -> {args.db}/{TABLE_NAME}.lance ({MODEL_NAME}, {DIMENSION} dims)")
+    counts = Counter(chunk["company"] for chunk in chunks)
+    print(f"{len(chunks)} chunks from {len(paths)} filing(s) {dict(counts)} -> {args.db}/{TABLE_NAME}.lance "
+          f"({MODEL_NAME}, {DIMENSION} dims)")
     print(f"  embedding took {seconds:.1f}s ({len(chunks) / seconds:.0f} chunks/s on this machine)")
     indexes = lancedb.connect(str(args.db)).open_table(TABLE_NAME).list_indices()
     print(f"  indexes: {[(index.name, index.index_type) for index in indexes]}")
