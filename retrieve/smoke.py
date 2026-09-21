@@ -1,8 +1,11 @@
 """Smoke test: run the recorded questions and show which pages retrieval found.
 
 Stage 5 (SPEC.md §4). This is not the v2 eval — no answer is generated or
-graded. It asks one question of retrieval alone: for each recorded question,
-does a page holding the answer come back, and how high?
+graded. It asks two questions of retrieval alone. Does a page holding the
+answer come back, and how high? And - the one that decides whether an answer is
+possible at all - is the chunk that actually prints the answer among the chunks
+the model will read? A page can rank first while its figure sits in a chunk
+that was never retrieved, and page rank alone scores that as a success.
 
 The switches matter as much as the numbers. Every retrieval change has to show
 a before and after on these questions (rag-eval), so --no-expand and
@@ -16,7 +19,7 @@ import json
 from pathlib import Path
 
 from retrieve.embed import load_model
-from retrieve.search import open_index, search
+from retrieve.search import open_index, page_context, search
 
 # The generator will see SHOWN chunks. Searching deeper tells a near miss (the
 # right page at rank 8) apart from a true miss (nowhere in the top 20).
@@ -38,6 +41,11 @@ def main() -> None:
     parser.add_argument("--no-expand", action="store_true", help="skip fiscal-year expansion")
     parser.add_argument("--vector-only", action="store_true", help="skip the keyword ranking")
     parser.add_argument(
+        "--no-page-expansion",
+        action="store_true",
+        help="give the model only the ranked chunks, not their page siblings",
+    )
+    parser.add_argument(
         "--answer", action="store_true", help="also answer each question through the guardrails (spends API credit)"
     )
     args = parser.parse_args()
@@ -57,14 +65,16 @@ def main() -> None:
         questions = [json.loads(line) for line in f]
 
     label = ("vector" if args.vector_only else "hybrid") + (", no FY expansion" if args.no_expand else ", FY expanded")
+    label += ", ranked chunks only" if args.no_page_expansion else ", pages expanded"
     print(f"retrieval: {label}")
-    found, answerable_best, negative_best = 0, [], []
+    found, available, answerable_best, negative_best = 0, 0, [], []
     answerable = [q for q in questions if q["expected_pages"]]
     for q in questions:
         hits = search(
             table, model, q["question"], SEARCH_DEPTH, expand=not args.no_expand, hybrid=not args.vector_only
         )
         best = max(hit["score"] for hit in hits[:SHOWN])
+        context = hits[:SHOWN] if args.no_page_expansion else page_context(table, hits[:SHOWN])
         print(f"\n{q['id']} [{q['type']}] {q['question']}")
         print("  top %d: %s" % (SHOWN, ", ".join(f"p{h['page']} {h['score']:.3f}" for h in hits[:SHOWN])))
         if q["expected_pages"]:
@@ -73,13 +83,21 @@ def main() -> None:
             answerable_best.append(best)
             wanted = ", ".join(f"p{p}" for p in q["expected_pages"])
             print(f"  expected {wanted}: " + (f"rank {rank}" if rank else f"not in the top {SEARCH_DEPTH}"))
+            present = any(q["expected_answer_text"] in chunk["text"] for chunk in context)
+            available += present
+            where = next(
+                (f"page {c['page']} chunk {c['chunk']}" for c in context if q["expected_answer_text"] in c["text"]),
+                "nowhere in the context",
+            )
+            print(f"  answer text {'PRESENT' if present else 'MISSING'} ({where}); "
+                  f"context {len(context)} chunks, {sum(c['tokens'] for c in context)} tokens")
         else:
             # Retrieval always returns chunks; only a score can say "nothing
             # here". Stage 7 sets that threshold, and this line is its evidence.
             negative_best.append(best)
             print(f"  not in the filing: best similarity in the top {SHOWN} is {best:.3f}")
         if client is not None:
-            verdict = guarded_answer(q["question"], hits[:SHOWN], client)
+            verdict = guarded_answer(q["question"], hits[:SHOWN], client, context)
             if verdict["refused"]:
                 print(f"  ANSWER: refused - {verdict['reason']}")
             else:
@@ -88,6 +106,7 @@ def main() -> None:
                       f" | invalid {verdict['invalid_citations']} | advice removed {len(verdict['scrubbed'])}")
 
     print(f"\n{found}/{len(answerable)} answerable questions found an expected page in the top {SHOWN}")
+    print(f"{available}/{len(answerable)} had the answer text inside the context the model reads")
     if answerable_best and negative_best:
         gap = min(answerable_best) - max(negative_best)
         print(f"score gap: weakest answerable {min(answerable_best):.3f} - strongest not-in-filing "

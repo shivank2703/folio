@@ -40,7 +40,7 @@ from gen.guardrails import (
     validate_citations,
 )
 from retrieve.embed import load_model
-from retrieve.search import DEFAULT_K, open_index, search
+from retrieve.search import DEFAULT_K, open_index, page_context, search
 
 # The public demo spends the maintainer's key, so the cheapest current model
 # answers: this is extraction and quotation from five short extracts, not
@@ -118,7 +118,9 @@ def generate(client: anthropic.Anthropic, question: str, hits: list[dict]) -> st
     return "".join(block.text for block in message.content if block.type == "text").strip()
 
 
-def guarded_answer(question: str, hits: list[dict], client: anthropic.Anthropic) -> dict:
+def guarded_answer(
+    question: str, hits: list[dict], client: anthropic.Anthropic, context: list[dict] | None = None
+) -> dict:
     """Gate, answer, then check what came back (Stage 7 over Stage 6).
 
     Order is the point. The similarity gate runs before the model is called,
@@ -127,17 +129,29 @@ def guarded_answer(question: str, hits: list[dict], client: anthropic.Anthropic)
     own words can be checked against the pages it was shown. A refusal from
     either end reads the same to the caller.
     """
-    verdict = {"question": question, "hits": hits, "refused": True, "invalid_citations": [], "scrubbed": []}
+    # "hits" is the ranking the gate judges; "context" is what the model reads,
+    # which page expansion may have widened. Citations are checked against the
+    # context, whose pages are the same set either way: expansion only ever adds
+    # siblings of pages that were already retrieved.
+    context = hits if context is None else context
+    verdict = {
+        "question": question,
+        "hits": hits,
+        "context": context,
+        "refused": True,
+        "invalid_citations": [],
+        "scrubbed": [],
+    }
 
     if not has_enough_context(hits):
         best = best_similarity(hits)
         return {**verdict, "text": REFUSAL, "reason": f"best similarity {best:.3f} is below the {MIN_SIMILARITY} floor"}
 
-    text = generate(client, question, hits)
+    text = generate(client, question, context)
     if is_refusal(text):
         return {**verdict, "text": REFUSAL, "reason": "the model found no answer in the extracts"}
 
-    text, invalid = validate_citations(text, {hit["page"] for hit in hits})
+    text, invalid = validate_citations(text, {chunk["page"] for chunk in context})
     text, scrubbed = scrub_advice(text)
     if not cited_pages(text):
         # Either every citation was invented, or none was given. An uncited
@@ -153,7 +167,7 @@ def answer_question(question: str, db_path: Path, k: int = DEFAULT_K) -> dict:
     """The whole path from a question to a cited answer, or to an honest refusal."""
     table = open_index(db_path)
     hits = search(table, load_model(), question, k)
-    return guarded_answer(question, hits, build_client())
+    return guarded_answer(question, hits, build_client(), page_context(table, hits))
 
 
 def main() -> None:
@@ -181,9 +195,10 @@ def main() -> None:
         print(f"  (citations to pages never retrieved: {result['invalid_citations']})")
     if result["scrubbed"]:
         print(f"  (removed {len(result['scrubbed'])} sentence(s) of investment advice)")
-    print("\nRetrieved:")
-    for rank, hit in enumerate(result["hits"], start=1):
-        print(f"  {rank}. page {hit['page']} chunk {hit['chunk']}  cos {hit['score']:.3f}")
+    print("\nContext the model read:")
+    for chunk in result["context"]:
+        score = "same page" if chunk["sibling"] else f"cos {chunk['score']:.3f}"
+        print(f"  page {chunk['page']} chunk {chunk['chunk']}  {score}")
 
 
 if __name__ == "__main__":

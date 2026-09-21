@@ -51,7 +51,17 @@ RRF_K = 60
 # "FY25", "FY 25", "FY2025", "FY24-25", "FY 2024-25".
 FISCAL_YEAR = re.compile(r"\bFY\s?(\d{4}|\d{2})(?:\s*[-–]\s*(\d{4}|\d{2}))?\b", re.IGNORECASE)
 
-FIELDS = ["company", "fiscal_year", "page", "chunk", "text", "vector"]
+FIELDS = ["company", "fiscal_year", "page", "chunk", "tokens", "text", "vector"]
+TEXT_FIELDS = [field for field in FIELDS if field != "vector"]
+
+# How many tokens of chunk text the model may be given. Five ranked chunks come
+# to roughly a thousand; the rest buys the siblings that turn a retrieved page
+# into a readable one. Measured on the five smoke questions: 2,500 tokens left
+# the balance-sheet answer outside the context, and 4,000 reached it, because
+# that page ranked fifth and its answer sat two chunks from the match. The
+# blunt fix costs about 20 chunks of context per question; the sharper one is
+# better ranking, which v2's eval set is there to drive.
+CONTEXT_TOKENS = 4000
 
 
 def expand_fiscal_years(question: str) -> str:
@@ -147,6 +157,49 @@ def search(
         stored = np.asarray(hit.pop("vector"), dtype=np.float32)
         results.append({**hit, "score": float(stored @ vector)})
     return results
+
+
+def page_context(table: lancedb.table.Table, hits: list[dict], budget: int = CONTEXT_TOKENS) -> list[dict]:
+    """Widen the ranked chunks to their page siblings, nearest first, within a budget.
+
+    SPEC.md §3.3 makes the page the citation unit, so the other chunks of a
+    retrieved page are the same citable source — already trusted, already
+    cite-able to the same number. They are also where the answer often sits: a
+    question about total assets matched the balance sheet's opening chunk while
+    the TOTAL ASSETS row was two chunks further down, and a page that is
+    retrieved but cannot answer is no better than a miss.
+
+    Pages are widened in the order their best chunk ranked, so a weak page never
+    crowds out a strong one, and the result reads in page order: page by page,
+    chunks in the order the page prints them.
+    """
+    context = {(hit["page"], hit["chunk"]): {**hit, "sibling": False} for hit in hits}
+    spent = sum(hit["tokens"] for hit in context.values())
+    first_seen: dict[int, int] = {}
+    for position, hit in enumerate(hits):
+        first_seen.setdefault(hit["page"], position)
+
+    # Candidates are ordered by distance first and rank second: every hit gets
+    # its immediate neighbours before any hit gets its far ends. Ordering by
+    # page instead let the first page swallow the budget, and the page ranked
+    # fifth - the one holding the answer - never got its turn.
+    candidates: list[tuple[int, int, dict]] = []
+    for hit in hits:
+        siblings = table.search().where(f"page = {hit['page']}").limit(100).select(TEXT_FIELDS).to_list()
+        for row in siblings:
+            distance = abs(row["chunk"] - hit["chunk"])
+            if distance:
+                candidates.append((distance, first_seen[row["page"]], row))
+    candidates.sort(key=lambda candidate: candidate[:2])
+
+    for _, _, row in candidates:
+        key = (row["page"], row["chunk"])
+        if key in context or spent + row["tokens"] > budget:
+            continue
+        # A sibling was never ranked, so it carries no similarity of its own.
+        context[key] = {**row, "score": None, "sibling": True}
+        spent += row["tokens"]
+    return sorted(context.values(), key=lambda row: (first_seen[row["page"]], row["chunk"]))
 
 
 def main() -> None:
