@@ -16,8 +16,9 @@ Do not skip a step just because only one piece was asked about.
    deps (no PyMuPDF-Layout, no OCR engine) (§5, §7).
 4. **README** — what & why, architecture diagram, demo GIF, and
    run-locally instructions.
-5. **Deploy** — push to Hugging Face Spaces, then smoke-test **3 real
-   questions** end to end.
+5. **Deploy** — push to Streamlit Community Cloud from the GitHub repo
+   (SPEC.md §5; a public app needs a public repo), then smoke-test **3 real
+   questions** end to end, one of which must be answerable only by refusing.
 6. **Pin** the repo.
 7. **LinkedIn post skeleton** — problem → what it does → what I learned
    → link.

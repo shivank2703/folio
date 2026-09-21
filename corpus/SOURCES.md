@@ -17,10 +17,13 @@ the filename in the table, then verify its SHA-256 (command at the bottom).
 - **BSE** — https://www.bseindia.com (Corporate Announcements / Annual Reports; scrip code 500185).
 - **NSE** — https://www.nseindia.com (symbol HCC).
 
-> **Exact download URL — TODO:** paste the precise link you downloaded this
-> PDF from, replacing this line. It is left blank rather than guessed: a
-> fabricated URL is worse than an honest gap. (Exchange IDs above are provided
-> for convenience; confirm them against the source before relying on them.)
+**Exact download URL (verified 2026-09-21):**
+<https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf>
+
+Verified by downloading it and comparing SHA-256 against the local copy and
+the checksum in the table: all three match, so this is the exact file the
+index was built from. This link is load-bearing — the repository ships text
+derived from this document (SPEC.md §7), and the demo attributes it here.
 
 ## Verify a download
 ```
