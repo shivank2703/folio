@@ -181,3 +181,17 @@ Score gap is the weakest answerable question's best similarity within its top
 - 003 slipped from rank 2 to 3, and the consolidated schedule (p220) still
   outranks the standalone one (p138). Notes pages carry no statement title,
   so v2's scope tag is still the fix.
+
+## v1 stage 9 dropped (2026-09-21)
+
+v1's milestone is cited Q&A over HCC's annual report, and Stages 1-8 meet it.
+Batch-ingesting two more companies would first need a multi-document refactor:
+`ingest.chunk` reads a single clean file and writes one `chunks.jsonl`, and
+`retrieve.embed` drops and rewrites a single table. v2.2 (multi-year ingest)
+needs exactly that refactor for several fiscal years of one company, so the
+work is done once there instead of twice. SPEC.md §3 and §4 record the change.
+
+What this means for what ships: one company, one fiscal year, one index of
+1,620 chunks. The pipeline is not company-specific anywhere - company and
+fiscal year ride on every chunk (CLAUDE.md) - so the refactor is about file
+and table handling, not about the rules.
