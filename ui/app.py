@@ -24,7 +24,7 @@ import streamlit as st
 from gen.answer import build_client, guarded_answer
 from gen.guardrails import cited_pages, has_enough_context
 from retrieve.embed import load_model
-from retrieve.search import DEFAULT_K, open_index, search
+from retrieve.search import DEFAULT_K, open_index, page_context, search
 
 DB_PATH = Path("data/lancedb")
 
@@ -51,18 +51,21 @@ def load_client():
         return None, str(error)
 
 
-def render_sources(hits: list[dict], cited: set[int]) -> None:
-    """Show every retrieved chunk, the cited ones first and already open.
+def render_sources(context: list[dict], cited: set[int]) -> None:
+    """Show every chunk the model read, in page order, cited ones already open.
 
-    Uncited chunks are shown too: what retrieval offered and the answer did
-    not use is part of judging the answer.
+    Chunks the answer did not use are shown too: what the model could have
+    used and did not is part of judging the answer. A chunk pulled in because
+    its page was retrieved carries no similarity of its own and says so,
+    rather than borrowing its page's score.
     """
     st.subheader("Sources")
-    for hit in sorted(hits, key=lambda hit: (hit["page"] not in cited, -hit["score"])):
-        was_cited = hit["page"] in cited
-        label = f"{'cited · ' if was_cited else ''}page {hit['page']} · chunk {hit['chunk']} · similarity {hit['score']:.3f}"
+    for chunk in context:
+        was_cited = chunk["page"] in cited
+        score = "same page as a hit" if chunk.get("sibling") else f"similarity {chunk['score']:.3f}"
+        label = f"{'cited · ' if was_cited else ''}page {chunk['page']} · chunk {chunk['chunk']} · {score}"
         with st.expander(label, expanded=was_cited):
-            st.text(hit["text"])
+            st.text(chunk["text"])
 
 
 def main() -> None:
@@ -83,16 +86,19 @@ def main() -> None:
 
     started = time.perf_counter()
     hits = search(table, model, question, DEFAULT_K)
+    # The ranking decides whether to answer; the widened context is what the
+    # model reads and what the panel below shows.
+    context = page_context(table, hits)
     if has_enough_context(hits) and client is None:
         # The model is only needed when the gate passes: a question nothing in
         # the filing resembles is refused without it. Retrieval worked either
         # way, so the chunks are shown and the failure costs the reader
         # nothing they already had.
         st.error(client_error)
-        render_sources(hits, cited=set())
+        render_sources(context, cited=set())
         st.stop()
 
-    verdict = guarded_answer(question, hits, client)
+    verdict = guarded_answer(question, hits, client, context)
     elapsed = time.perf_counter() - started
 
     if verdict["refused"]:
@@ -112,7 +118,7 @@ def main() -> None:
     # Two decimals, because a refusal costs retrieval only and rounds to 0.0s
     # at one: the number is there to show where the time actually goes.
     st.caption(f"answered in {elapsed:.2f}s")
-    render_sources(hits, cited=set(cited_pages(verdict["text"])))
+    render_sources(verdict["context"], cited=set(cited_pages(verdict["text"])))
 
 
 if __name__ == "__main__":

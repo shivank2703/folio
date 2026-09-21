@@ -197,7 +197,7 @@ def main() -> None:
         print(f"  (removed {len(result['scrubbed'])} sentence(s) of investment advice)")
     print("\nContext the model read:")
     for chunk in result["context"]:
-        score = "same page" if chunk["sibling"] else f"cos {chunk['score']:.3f}"
+        score = "same page" if chunk.get("sibling") else f"cos {chunk['score']:.3f}"
         print(f"  page {chunk['page']} chunk {chunk['chunk']}  {score}")
 
 
