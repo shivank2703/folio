@@ -17,6 +17,7 @@ Run it with: streamlit run ui/app.py
 from __future__ import annotations
 
 import json
+import os
 import time
 from pathlib import Path
 
@@ -36,6 +37,23 @@ EXAMPLE = "How did HCC's standalone total assets change from FY24 to FY25?"
 def load_retrieval():
     """Open the committed index and the embedding model, once per session."""
     return open_index(DB_PATH), load_model()
+
+
+def adopt_streamlit_secret() -> None:
+    """Move Streamlit's secret into the environment if that is where the key lives.
+
+    Community Cloud hands secrets to the app through st.secrets, while the SDK
+    and the local .env path both read the environment. Bridging once, here,
+    keeps a single code path reading the key and leaves the hosting mechanism a
+    detail of the UI. Reading st.secrets raises when no secrets file exists at
+    all — the normal local case — so the miss is caught rather than predicted.
+    """
+    if os.getenv("ANTHROPIC_API_KEY"):
+        return
+    try:
+        os.environ["ANTHROPIC_API_KEY"] = st.secrets["ANTHROPIC_API_KEY"]
+    except Exception:
+        return
 
 
 @st.cache_resource(show_spinner=False)
@@ -80,6 +98,7 @@ def main() -> None:
     st.title("Praman")
     st.caption("Cited answers from an annual report. Every claim carries the page it came from.")
 
+    adopt_streamlit_secret()
     table, model = load_retrieval()
     client, client_error = load_client()
 

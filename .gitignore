@@ -1,6 +1,9 @@
 # --- Secrets & real data (hard constraint: keys/real data never in git) ---
 .env
-watchlist.yaml          # v4: real watchlists never committed; only watchlist.sample.yaml ships (SPEC.md §7)
+# the deployed app gets this from Community Cloud's settings box instead
+.streamlit/secrets.toml
+# v4: real watchlists never committed; only watchlist.sample.yaml ships (SPEC.md §7)
+watchlist.yaml
 
 # --- Source filings: not committed; corpus/SOURCES.md lists where to get them (SPEC.md §7) ---
 corpus/*.pdf
