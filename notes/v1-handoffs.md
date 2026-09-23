@@ -195,3 +195,27 @@ file per filing, one embed run into one table, and a company filter on every
 query. Page numbers repeat across filings — all three have a page 114 — so an
 unscoped question returns several balance sheets, each citation correct for a
 company nobody asked about. Comparing companies stays a v3 tool.
+
+## Deploy readiness, measured from a fresh clone (2026-09-23)
+
+Verified by cloning the repo to a scratch directory with no `.env`, no
+`secrets.toml` and no `data/models`, then installing the pinned requirements
+into a new venv (Python 3.13.1):
+
+| | |
+|---|---|
+| Cold start | 19.5 s — imports 5.8 s, index open 0.01 s, model download + first embed 13.7 s |
+| Warm start | 1.35 s (model cached on disk) |
+| Resident memory | 468 MB for the running Streamlit process (Cloud limit 2,700 MB) |
+| Model cache | 201 MB written to `data/models` on first run |
+| Retrieval | 30-50 ms per question, cold process |
+
+The index opens in 10 ms because it ships in the repository; nothing is built
+at startup. The download is the whole of the cold start, and it happens once
+per container, not once per question.
+
+Both no-key paths were exercised in the running app: an answerable question
+renders the missing-key message and the sources panel (retrieval worked, only
+generation is unavailable), and a not-in-filing question refuses at the
+similarity floor without any API call at all. The key is needed for one path
+of three.
