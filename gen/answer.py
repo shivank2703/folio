@@ -87,8 +87,10 @@ def build_client() -> anthropic.Anthropic:
     client = anthropic.Anthropic()
     if not (client.api_key or client.auth_token):
         raise RuntimeError(
-            "no Anthropic credentials found: put your key after ANTHROPIC_API_KEY= in .env "
-            "(copy .env.example if it is missing)"
+            "No Anthropic API key, so answers cannot be generated — retrieval and the "
+            "sources below still work. Locally: put your key after ANTHROPIC_API_KEY= in "
+            ".env (copy .env.example). Deployed: add ANTHROPIC_API_KEY in the app's "
+            "Secrets settings (see .streamlit/secrets.toml.example)."
         )
     return client
 
