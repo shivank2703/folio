@@ -219,3 +219,24 @@ renders the missing-key message and the sources panel (retrieval worked, only
 generation is unavailable), and a not-in-filing question refuses at the
 similarity floor without any API call at all. The key is needed for one path
 of three.
+
+## Retrieval tested against the pushed repo (2026-09-23)
+
+Run from the GitHub clone, not the working tree, so the code under test is
+what a deploy gets. 11 questions, no API key, generation untested.
+
+Unchanged and confirmed: 7/8 answerable questions put an expected page in the
+top 5 (hcc-fy25-001 still ranks 6, the full-text drift case), and 8/8 have the
+answer text inside the context the model reads — 3,400 to 6,000 tokens per
+question, 30-50 ms.
+
+Changed: the refusal gate. Two negatives added, one per filing that lacked
+one, both plausible in their document's vocabulary and both absent from it.
+They score 0.695 and 0.696 against a 0.67 floor, so both pass. The weakest
+answerable question is 0.702. See notes/v2-ideas.md for what that means.
+
+Also fixed here: smoke reported the best score over the top 5 while the app
+gates on the best over the 8-chunk ranking it expands from. The two differ —
+navneet-fy25-003 is 0.677 over five and 0.696 over eight — so the harness was
+calibrating a threshold the app never applied. It now reports the gate's own
+number.

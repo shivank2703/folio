@@ -83,7 +83,7 @@ Four checks, because no single one keeps a citation honest.
 
 | Check | When | What it stops |
 |---|---|---|
-| Similarity floor (0.67) | before the model is called | answering a question the filing never addresses — and it costs nothing, since the model is never called |
+| Similarity floor (0.67) | before the model is called | a question nothing in the filing resembles, caught before a paid call. It catches gross mismatches only — see Limitations |
 | Refusal contract in the prompt | during the call | a hedged half-answer built from plausible but unhelpful extracts |
 | Citation validation | after the call | a page the model was never shown; an answer whose citations were all invented, or which carried none, is withheld entirely |
 | Advice scrub | after the call | investment advice, which this project never produces |
@@ -144,9 +144,9 @@ Retrieval alone, with no key and no UI: `.venv/bin/python -m retrieve.smoke`.
 |---|---|
 | Corpus | 3 filings, 896 pages → 4,704 chunks, index 10.6 MB |
 | Rebuild | 2 min 37 s end to end (ingest 19 s, embed 139 s) |
-| Retrieval, 9 smoke questions | 7/8 expected pages in the top 5 |
+| Retrieval, 11 eval questions | 7/8 expected pages in the top 5 |
 | Answer availability | 8/8 questions have the answer-bearing chunk in context |
-| Refusal margin | weakest answerable 0.702 vs not-in-filing 0.644 |
+| Refusal margin | +0.006 — weakest answerable 0.702, strongest not-in-filing 0.696. The floor no longer separates them (see Limitations) |
 | Warm retrieval | ~21 ms search, ~10 ms page expansion |
 
 ## Limitations
@@ -154,9 +154,18 @@ Retrieval alone, with no key and no UI: `.venv/bin/python -m retrieve.smoke`.
 Stated plainly, because overclaiming is the failure this project is built
 against:
 
-- **The refusal floor is calibrated on nine questions**, not on an evaluation
-  set. It sits at the midpoint of a gap those nine produce (0.702 against
-  0.644). A 20-pair set scored with RAGAS is what will validate it or move it.
+- **The similarity floor no longer separates answerable questions from
+  unanswerable ones**, and this is measured, not suspected. It was calibrated
+  on one not-in-filing question, whose best score was 0.644. Giving each of the
+  three filings its own negative — plausible questions in the document's own
+  vocabulary, absent from it — put two of them at 0.695 and 0.696, above the
+  0.67 floor. The weakest answerable question scores 0.702, so the only
+  separating threshold is a 0.006-wide window, which is noise. The floor is
+  left where it is rather than fitted into that window: it still stops a
+  grossly unrelated question cheaply, but refusal now rests on the prompt's
+  refusal contract, the layer that reads the extracts instead of a number
+  about them. Whether that layer holds is the first thing to measure when the
+  API key lands.
 - **The expansion width was tuned on the same nine questions.** Eight seed
   chunks and a 6,000-token budget is the smallest setting that put every
   answer in front of the model on this set; it is a fitted number, not a

@@ -19,12 +19,19 @@ import json
 from pathlib import Path
 
 from retrieve.embed import load_model
-from retrieve.search import open_index, page_context, search
+from retrieve.search import EXPANSION_SEEDS, open_index, page_context, search
 
 # The generator will see SHOWN chunks. Searching deeper tells a near miss (the
 # right page at rank 8) apart from a true miss (nowhere in the top 20).
 SHOWN = 5
 SEARCH_DEPTH = 20
+
+# The refusal gate is handed the ranking the app expands from, not the five
+# chunks it shows, so the score it judges is the best of these. Calibrating a
+# threshold on a different slice measures a number the app never applies:
+# navneet-fy25-003 scores 0.677 over the top five and 0.696 over this ranking,
+# and the floor sits between them.
+GATE_DEPTH = EXPANSION_SEEDS
 
 
 def first_rank(hits: list[dict], pages: list[int]) -> int | None:
@@ -74,7 +81,7 @@ def main() -> None:
             table, model, q["question"], SEARCH_DEPTH, q["company"],
             expand=not args.no_expand, hybrid=not args.vector_only,
         )
-        best = max(hit["score"] for hit in hits[:SHOWN])
+        best = max(hit["score"] for hit in hits[:GATE_DEPTH])
         # Expansion seeds from the ranking itself, not from the five shown: the
         # page holding the answer often ranks just below them.
         context = hits[:SHOWN] if args.no_page_expansion else page_context(table, hits)
@@ -98,7 +105,7 @@ def main() -> None:
             # Retrieval always returns chunks; only a score can say "nothing
             # here". Stage 7 sets that threshold, and this line is its evidence.
             negative_best.append(best)
-            print(f"  not in the filing: best similarity in the top {SHOWN} is {best:.3f}")
+            print(f"  not in the filing: best similarity in the top {GATE_DEPTH} is {best:.3f}")
         if client is not None:
             verdict = guarded_answer(q["question"], hits[:SHOWN], client, context)
             if verdict["refused"]:

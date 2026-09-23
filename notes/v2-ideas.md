@@ -64,9 +64,26 @@ as the corpus grows, and the floor is a single number calibrated on nine
 questions. At some corpus size the distributions overlap and no single
 threshold separates them.
 
-The eval set already carries not-in-filing questions per company, so the gap
-is measurable at every corpus size rather than discovered when it closes. v2
-decides whether a similarity gate survives at all, or whether refusal moves
-to evidence the gate cannot see — a reranker score, or the model's own
-judgement of the extracts under the refusal contract, which is the only
-check of the four that reads the text rather than a number about it.
+**Measured 2026-09-23, and it closed sooner than this note predicted.** The
+eval set carried one negative, HCC's, so "the gap" was one company's. Adding a
+negative per filing — a drone question to a fertiliser company that discusses
+crop nutrition, a television-advertising question to a publisher that discloses
+ad spend — scored 0.695 and 0.696 against the weakest answerable question's
+0.702. Two of three negatives now clear the 0.67 floor, and the only
+separating threshold is a 0.006 window. At three filings, not twelve, a single
+similarity threshold no longer does the job.
+
+The floor stays at 0.67 rather than being fitted into that window: 0.006 is
+noise, and a floor at 0.70 starts refusing real questions on the next
+document. What it buys is the cheap case — a grossly unrelated question, still
+caught before a paid call. Refusal itself now rests on the prompt contract,
+the only check of the four that reads the extracts rather than a number about
+them, and it has never been exercised.
+
+So v2's question is no longer whether the gate survives but what replaces it:
+a reranker score, the model's own judgement under the refusal contract, or a
+gate on whether the retrieved pages agree with each other. Whichever it is,
+it is chosen on the 20-pair set with negatives per filing, and the answer-side
+run comes first — if the prompt contract refuses all three negatives on its
+own, the gate is a cost optimisation, not a guardrail, and should be described
+as one.
