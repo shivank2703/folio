@@ -4,6 +4,15 @@ Things that came up on Sat 03 Oct while shipping Public and were deliberately
 not done then (CLAUDE.md: log, don't build). Each entry: what, the evidence,
 and which Accurate item it belongs to, if any.
 
+## Derived figures are stated without a source
+
+hcc-fy25-001 answered "an increase of ₹605.34 crore". The arithmetic is
+right (8,743.37 - 8,138.03), but the difference is printed nowhere in the
+filing, and it sits in a sentence whose citation covers only the two
+inputs. Belongs with answer-quality scoring (item 2): decide whether the
+judge accepts computed differences, and whether the prompt should label them
+("difference computed from [page 114]").
+
 ## Refusal contract leaks on near-miss negatives (item 3: reranker / refusal gate)
 
 First generation run, 2026-10-03, Haiku 4.5. Both CHAMBAL and NAVNEET
@@ -22,15 +31,6 @@ is still a contract the prompt states and the model breaks half the time.
 Decide in Accurate: either make "refusal + nearest cited fact" a defined
 output (and render it as a refusal with context), or enforce the bare
 refusal. Measure either way on the 20-question eval, with the reranker gate.
-
-## Derived figures are stated without a source
-
-hcc-fy25-001 answered "an increase of ₹605.34 crore". The arithmetic is
-right (8,743.37 - 8,138.03), but the difference is printed nowhere in the
-filing, and it sits in a sentence whose citation covers only the two
-inputs. Belongs with answer-quality scoring (item 2): decide whether the
-judge accepts computed differences, and whether the prompt should label them
-("difference computed from [page 114]").
 
 ## LanceDB deprecation warnings on every hybrid search
 
