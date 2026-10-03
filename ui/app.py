@@ -11,7 +11,7 @@ The model and the index load once per session rather than once per question
 answer time, and the index is read-only, so sharing one handle is safe
 (SPEC.md §5).
 
-Run it with: streamlit run ui/app.py
+Run it with: streamlit run streamlit_app.py (from the repo root)
 """
 
 from __future__ import annotations

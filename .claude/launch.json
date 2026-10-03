@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "folio-ui",
-      "runtimeExecutable": ".venv/bin/python",
-      "runtimeArgs": ["-m", "streamlit", "run", "ui/app.py", "--server.port", "8501", "--server.headless", "true"],
+      "runtimeExecutable": ".venv/bin/streamlit",
+      "runtimeArgs": ["run", "streamlit_app.py", "--server.port", "8501", "--server.headless", "true"],
       "port": 8501
     }
   ]

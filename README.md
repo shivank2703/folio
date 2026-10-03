@@ -119,7 +119,7 @@ answer must say the page gives no unit rather than assume one.
 ```bash
 git clone https://github.com/shivank2703/folio.git && cd folio
 python3 -m venv .venv && .venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python -m streamlit run ui/app.py
+.venv/bin/streamlit run streamlit_app.py
 ```
 
 Python 3.13. The search index ships in the repository, so nothing is rebuilt to
