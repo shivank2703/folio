@@ -1,6 +1,6 @@
-# Praman
+# Folio
 
-*praman (प्रमाण): proof, evidence. Every claim carries its source.*
+*folio: a numbered page of a book or filing. Every claim carries the folio it came from.*
 
 Ask a question about an Indian listed company's annual report and get an answer
 where **every claim cites the page it came from** — or an honest *"Not in the
@@ -25,7 +25,7 @@ know three things the page knows and a chatbot usually loses:
 - **Its scope.** Standalone and consolidated statements repeat the same row
   labels with different numbers, eighty pages apart.
 
-Praman is built so a claim missing any of the three never reaches the reader.
+Folio is built so a claim missing any of the three never reaches the reader.
 
 ## Architecture
 
@@ -117,7 +117,7 @@ answer must say the page gives no unit rather than assume one.
 ## Run locally
 
 ```bash
-git clone <this repo> && cd praman
+git clone https://github.com/shivank2703/folio.git && cd folio
 python3 -m venv .venv && .venv/bin/python -m pip install -r requirements.txt
 .venv/bin/python -m streamlit run ui/app.py
 ```

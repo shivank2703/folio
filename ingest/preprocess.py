@@ -250,7 +250,7 @@ def find_furniture(pages: list[list[Line]], heights: list[float]) -> set[tuple[i
     """Return (page index, line index) for every running header and footer line.
 
     This is citation protection. The footer prints the report's own page
-    number, which runs behind the PDF page number Praman cites (§3.3) — two
+    number, which runs behind the PDF page number Folio cites (§3.3) — two
     behind in HCC FY25. If "112" survives into the text of PDF page 114, the
     generator can cite the number it reads instead of the metadata page, and
     every citation lands two pages off. The offset differs between reports,

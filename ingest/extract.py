@@ -1,6 +1,6 @@
 """Page-wise text extraction: one PDF in, one JSONL of page records out.
 
-The page is Praman's citation unit (SPEC.md §3.3): chunk, retrieved
+The page is Folio's citation unit (SPEC.md §3.3): chunk, retrieved
 context, and the final [page] cite all point back to a viewer page number.
 So extraction preserves exactly one boundary — the page — and interprets
 nothing finer. Blocks, columns, and tables stay unparsed in v1 (SPEC.md

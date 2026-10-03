@@ -1,6 +1,6 @@
 ---
 name: ship-checklist
-description: Release checklist for shipping Praman v1/v2/v3/v4. Use whenever deploying, releasing, writing the README, or preparing the public repo — even if only one piece is mentioned.
+description: Release checklist for shipping each Folio step (Public, Accurate, Funds, Agent). Use whenever deploying, releasing, writing the README, or preparing the public repo — even if only one piece is mentioned.
 ---
 
 # Ship checklist

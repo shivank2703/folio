@@ -1,4 +1,4 @@
-# Praman v1 dependencies — the decided v1 stack (SPEC.md §5).
+# Folio dependencies — the decided stack (SPEC.md §5).
 #
 # A library is added the first time a stage needs it; nothing here is
 # speculative. Versions are pinned exactly rather than floored: the committed

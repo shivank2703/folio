@@ -1,4 +1,4 @@
-# CLAUDE.md — how we work on Praman
+# CLAUDE.md — how we work on Folio
 
 SPEC.md is the source of truth: scope (§1–2), corpus rules
 (§3 — fiscal years, units, page-cite convention, standalone vs

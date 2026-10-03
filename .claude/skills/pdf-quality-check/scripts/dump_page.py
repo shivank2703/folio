@@ -11,7 +11,7 @@ Usage:
     python dump_page.py <path-to.pdf> <viewer-page>
 
 <viewer-page> is the PDF page number a viewer shows (1-based) — the same
-number Praman cites (SPEC.md §3.3), NOT PyMuPDF's 0-based index.
+number Folio cites (SPEC.md §3.3), NOT PyMuPDF's 0-based index.
 """
 
 from __future__ import annotations

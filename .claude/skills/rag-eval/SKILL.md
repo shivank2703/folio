@@ -1,11 +1,11 @@
 ---
 name: rag-eval
-description: How to build and run Praman's retrieval evaluation. Use whenever creating eval Q&A pairs, running RAGAS, measuring faithfulness/relevance/context-recall, testing the reranker, or whenever ANY change touches retrieval, chunking, or prompts — always propose a before/after eval run for such changes.
+description: How to build and run Folio's retrieval evaluation. Use whenever creating eval Q&A pairs, running RAGAS, measuring faithfulness/relevance/context-recall, testing the reranker, or whenever ANY change touches retrieval, chunking, or prompts — always propose a before/after eval run for such changes.
 ---
 
 # rag-eval
 
-Praman's retrieval eval. The eval set formally lands in v2 (SPEC.md §4
+Folio's retrieval eval. The eval set formally lands in v2 (SPEC.md §4
 v2.3–4); this skill is the standing contract for how it is built and used.
 
 ## The eval set

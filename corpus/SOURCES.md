@@ -1,8 +1,7 @@
 # Corpus sources
 
-Praman does not commit source PDFs (SPEC.md §7) — same principle as the v4
-fetcher: the code ships, the data doesn't. The filings below are public
-statutory documents. This file records where to obtain each one and a
+Folio does not commit source PDFs (SPEC.md §7): the code ships, the data
+doesn't. The filings below are public statutory documents. This file records where to obtain each one and a
 checksum so you can confirm you have the exact file the index was built from.
 
 **To rebuild the corpus:** download each PDF into this `corpus/` folder under

@@ -1,6 +1,8 @@
-# Praman — Project Specification
+# Folio — Project Specification
 
-*praman (प्रमाण): proof, evidence. Every claim carries its source.*
+*folio: a numbered page of a book or filing. Every claim carries the folio it came from.*
+
+*Renamed from Praman on 03 Oct 2026; the history before that date uses the old name.*
 
 **Status:** spec finalized 14 Jul 2026 · roadmap reset 03 Oct 2026 (§4) · single maintainer
 **License:** AGPL-3.0 (see §7)
@@ -16,7 +18,7 @@ Two modes, one engine:
 - **Companies** — any covered company: cited Q&A over its annual report, and (Agent step) one-page cited research memos. The user reviews the evidence and draws their own conclusions.
 - **Funds** (Funds step) — a mutual fund's holdings and weights from its monthly portfolio disclosure, its costs and benchmark from its factsheet, and a drill-down into its top holdings through the company Q&A. Every claim cited.
 
-The differentiator is the citation layer. Aggregate stats and screening are a solved problem (screener.in, Tickertape, Value Research); Praman's value is that every number and memo sentence is one click from the page that proves it.
+The differentiator is the citation layer. Aggregate stats and screening are a solved problem (screener.in, Tickertape, Value Research); Folio's value is that every number and memo sentence is one click from the page that proves it.
 
 ## 2. What this is not (guardrails)
 

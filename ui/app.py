@@ -94,8 +94,8 @@ def render_sources(context: list[dict], cited: set[int]) -> None:
 
 
 def main() -> None:
-    st.set_page_config(page_title="Praman", page_icon="📄", layout="centered")
-    st.title("Praman")
+    st.set_page_config(page_title="Folio", page_icon="📄", layout="centered")
+    st.title("Folio")
     st.caption("Cited answers from an annual report. Every claim carries the page it came from.")
 
     adopt_streamlit_secret()
