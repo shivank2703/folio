@@ -3,28 +3,29 @@
 SPEC.md is the source of truth: scope (§1–2), corpus rules
 (§3 — fiscal years, units, page-cite convention, standalone vs
 consolidated, born-digital only), roadmap (§4), and tool
-decisions (§5). Consult it before proposing any design. We are
-in v1. NEVER build ahead of the current stage or version — flag
-future-impacting decisions instead (e.g. chunk metadata carries
-company + fiscal_year + page from day one because v2/v4 need it).
+decisions (§5). Consult it before proposing any design. Work
+proceeds one roadmap step at a time (Public → Accurate → Funds →
+Agent). NEVER build ahead of the current step — flag
+future-impacting decisions instead, and log anything out of
+scope in the next step's notes file (e.g. notes/accurate-step.md).
 
-## Teaching mode (non-negotiable)
-- Before each stage: the plan in plain English — the 1–2 design
-  decisions, the alternatives, why this choice.
-- Comments teach, don't narrate. "# loop over pages" is banned;
-  "# PyMuPDF returns blocks in reading order, so page text stays
-  coherent for chunking" is the standard. Docstrings explain
+## Working agreement: build first, explain after
+- Build the whole step without stopping to teach. No line-by-line
+  walkthroughs or comprehension questions mid-build; stop only at
+  steps the plan marks as mine ([ME]).
+- At the end of each sitting, run a review: walk me through what
+  changed until I can explain it. Queued comprehension questions
+  live in notes/review-queue.md; they never block work.
+- Comments still teach, don't narrate. "# loop over pages" is
+  banned; "# PyMuPDF returns blocks in reading order, so page text
+  stays coherent for chunking" is the standard. Docstrings explain
   WHY. Type hints, small functions, no premature abstraction.
-- After each file: walk me through it top to bottom, ask 2–3
-  comprehension questions, and WAIT for my answers.
-- ONE stage per session; STOP at stage end. I work in 25–45 min
-  sittings.
-- Raw Python in v1 — no LangChain/LlamaIndex until v3. I need
-  to see every layer.
-- Suggest a git commit message after each stage.
+- Raw Python, no LangChain/LlamaIndex/LangGraph. The Agent step is
+  one plain Anthropic tool-use loop.
+- Suggest a git commit message after each step.
 
 ## Hard constraints
-- Python 3.11+, python-dotenv; keys never in code or git
+- Python 3.13, python-dotenv; keys never in code or git
 - If it can't be cited to a page, the model doesn't say it
 - Zero buy/sell/recommendation language anywhere, incl. prompts
 - License is AGPL-3.0; never add PyMuPDF-Layout or any other
