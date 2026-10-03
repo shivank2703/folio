@@ -107,7 +107,10 @@ def main() -> None:
             negative_best.append(best)
             print(f"  not in the filing: best similarity in the top {GATE_DEPTH} is {best:.3f}")
         if client is not None:
-            verdict = guarded_answer(q["question"], hits[:SHOWN], client, context)
+            # The gate judges the same 8-chunk ranking the app hands it, not the
+            # five shown: a harness that gates on a narrower slice passes a
+            # different set of negatives than the deployed app does.
+            verdict = guarded_answer(q["question"], hits[:GATE_DEPTH], client, context)
             if verdict["refused"]:
                 print(f"  ANSWER: refused - {verdict['reason']}")
             else:
