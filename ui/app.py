@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 import time
 from pathlib import Path
 
@@ -38,6 +39,13 @@ EXAMPLE = "How did HCC's standalone total assets change from FY24 to FY25?"
 # because session state lives in the browser tab and a refresh resets it. The
 # hard ceiling is the monthly spend limit on the key itself.
 MAX_QUESTIONS = 10
+
+# Community Cloud picks Python in the deploy dialog, defaults to 3.12, and reads
+# no version file; the choice cannot be changed without deleting the app. Every
+# pinned wheel was resolved on 3.13 and the committed index was built by them, so
+# a wrong pick is stopped here, visibly, instead of serving from a runtime the
+# index was never tested against.
+PYTHON = (3, 13)
 
 
 @st.cache_resource(show_spinner="Loading the index and the embedding model...")
@@ -103,6 +111,11 @@ def render_sources(context: list[dict], cited: set[int]) -> None:
 def main() -> None:
     st.set_page_config(page_title="Folio", page_icon="📄", layout="centered")
     st.title("Folio")
+    if sys.version_info[:2] != PYTHON:
+        st.error(f"Folio needs Python {PYTHON[0]}.{PYTHON[1]}; this is {sys.version.split()[0]}. "
+                 "On Streamlit Community Cloud, delete the app and redeploy it with Python "
+                 f"{PYTHON[0]}.{PYTHON[1]} chosen under Advanced settings.")
+        st.stop()
     st.caption("Cited answers from Indian annual reports. Every claim carries the page it came from.")
 
     adopt_streamlit_secret()
