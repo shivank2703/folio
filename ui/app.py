@@ -137,6 +137,13 @@ def main() -> None:
         submitted = st.form_submit_button("Ask", type="primary")
     if not submitted or not question.strip():
         st.stop()
+    # The index ships text derived from these filings, so every result names
+    # the issuer and links the exact document it came from (SPEC.md §7), the
+    # same URL corpus/SOURCES.md verifies by checksum. It is drawn after submit
+    # because widgets inside a form do not rerun the page: drawn above, it
+    # kept linking the previous filing after the dropdown changed.
+    st.caption(f"Source: [{filing['name']} annual report, {filing['fiscal_year']}]({filing['source_url']}), "
+               "published by the company. Page numbers are the PDF's own.")
 
     # Counted on submit, refusals included: a question is a question to the
     # reader, and counting only model calls would make the limit unpredictable.

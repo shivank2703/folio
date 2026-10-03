@@ -6,9 +6,9 @@ Ask a question about an Indian listed company's annual report and get an answer
 where **every claim cites the page it came from** — or an honest *"Not in the
 filing."*
 
-**[LIVE DEMO — link goes here]**
+**Live demo: [folio-india.streamlit.app](https://folio-india.streamlit.app)** · ten questions per visit
 
-**[GIF — question typed, cited answer, cited source expanded]**
+![A question about HCC's standalone total assets gets a cited answer and opens the cited page 114 chunk; a question about EV charging stations is refused as not in the filing](docs/demo.gif)
 
 Three FY25 annual reports, 896 pages, 4,704 chunks in one index: Hindustan
 Construction, Chambal Fertilisers, and Navneet Education.
@@ -144,10 +144,12 @@ Retrieval alone, with no key and no UI: `.venv/bin/python -m retrieve.smoke`.
 |---|---|
 | Corpus | 3 filings, 896 pages → 4,704 chunks, index 10.6 MB |
 | Rebuild | 2 min 37 s end to end (ingest 19 s, embed 139 s) |
-| Retrieval, 11 eval questions | 7/8 expected pages in the top 5 |
+| Answers, 11 eval questions | 8/8 answerable questions correct with a valid page citation (scope and lakhs traps included); 3/3 not-in-filing questions refused |
+| Retrieval, same questions | 7/8 expected pages in the top 5 |
 | Answer availability | 8/8 questions have the answer-bearing chunk in context |
 | Refusal margin | +0.006 — weakest answerable 0.702, strongest not-in-filing 0.696. The floor no longer separates them (see Limitations) |
 | Warm retrieval | ~21 ms search, ~10 ms page expansion |
+| Live answer time | 1.4–1.6 s for a cited answer, ~0.1 s for a refusal at the floor |
 
 ## Limitations
 
@@ -164,8 +166,11 @@ against:
   left where it is rather than fitted into that window: it still stops a
   grossly unrelated question cheaply, but refusal now rests on the prompt's
   refusal contract, the layer that reads the extracts instead of a number
-  about them. Whether that layer holds is the first thing to measure when the
-  API key lands.
+  about them. Measured: all three negatives are refused, but the contract
+  leaks. Asked about Navneet's television advertising, the model sometimes
+  replies "Not in the filing." and then adds a true, cited sentence about
+  total advertising spend, which passes every check and is shown as an answer.
+  A reranker replaces the floor in the next step.
 - **The expansion width was tuned on the same nine questions.** Eight seed
   chunks and a 6,000-token budget is the smallest setting that put every
   answer in front of the model on this set; it is a fitted number, not a
@@ -174,8 +179,8 @@ against:
   scores use collection-wide word statistics, so a third report moved one
   page's rank even though queries are filtered to one company. The wider
   expansion absorbs that today; more documents may not be so forgiving.
-- **One fiscal year, one filing per question.** Multi-year ingest is next;
-  comparing companies in a single answer is a later feature.
+- **One fiscal year, one filing per question.** Multi-year ingest and
+  comparing companies in a single answer are not built.
 - **Notes pages carry no standalone/consolidated tag.** Statement pages do, via
   their titles, so a balance-sheet chunk knows which it is. A note does not:
   for a question about receivables ageing, the consolidated schedule can
@@ -184,11 +189,34 @@ against:
   equity, ageing schedules, sustainability grids. Core statements are clean.
 - **The embedding model is a quantized export**, so published benchmark scores
   describe slightly different weights.
-- **Answer quality is not yet measured.** Retrieval is; the numbers above are
-  all retrieval numbers. Faithfulness and answer relevance arrive with the
-  evaluation set.
+- **Answer quality is checked by hand, on 11 questions.** Each answer was
+  compared with its recorded figure; there is no automated scoring yet. One
+  pattern it showed: the model states computed differences ("an increase of
+  ₹605.34 crore") that no page prints. The arithmetic is right, but the
+  number has no page of its own.
+- **The ten-question limit is per browser session.** A refresh resets it; the
+  real ceiling is a monthly spend limit on the demo's API key.
 - **Not advice.** The system reports what a filing says. It produces no
   recommendations and strips advice language if a model drifts into it.
+
+## Roadmap
+
+One step per Saturday ([SPEC.md §4](SPEC.md)):
+
+- **Public** (03 Oct 2026, this release): cited Q&A over three annual reports, deployed.
+- **Accurate** (10 Oct): tables read with pymupdf4llm; the eval grows to 20
+  questions with answer-quality scoring (a local script, Haiku as judge); a
+  cross-encoder reranker whose score replaces the 0.67 similarity floor as the
+  refusal gate.
+- **Funds** (17 Oct): mutual fund mode. Holdings and weights from a fund's
+  monthly portfolio disclosure, read as a table; expense ratio, benchmark and
+  exit load from its factsheet; the top 10–15 holdings drilled into through the
+  annual-report Q&A. Every claim cited, no buy or sell language.
+- **Agent** (24 Oct): one plain Anthropic tool-use loop over company and fund
+  tools, producing a one-page memo with every sentence cited.
+
+Cut: RAGAS in CI, LangGraph, Langfuse. Later, maybe: trend charts, multi-year
+ingest, daily exchange-disclosure flags.
 
 ## Data and licence
 

@@ -105,9 +105,10 @@ to the repository; the index is about 4 MB with its vector and full-text data.
 `data/models/` stays ignored.
 
 What still has to be true at ship (SPEC.md §7): the demo attributes the
-filing to the issuing company and links to the source; `corpus/SOURCES.md`
-still carries a TODO for the exact URL, and that link is now load-bearing
-because the repository ships text derived from the document.
+filing to the issuing company and links to the source, because the
+repository ships text derived from the document. Done: `corpus/SOURCES.md`
+carries each filing's exact URL, verified by SHA-256 (2026-09-21/22), and
+since 2026-10-04 the app links the selected filing's URL under the form.
 
 ## Stage 5 -> Stages 6-7: what the retrieval smoke test showed (2026-09-13)
 
