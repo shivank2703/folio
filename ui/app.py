@@ -21,6 +21,7 @@ import os
 import time
 from pathlib import Path
 
+import anthropic
 import streamlit as st
 
 from gen.answer import build_client, guarded_answer
@@ -31,6 +32,12 @@ from retrieve.search import DEFAULT_K, EXPANSION_SEEDS, open_index, page_context
 DB_PATH = Path("data/lancedb")
 
 EXAMPLE = "How did HCC's standalone total assets change from FY24 to FY25?"
+
+# The public demo spends the maintainer's key. Ten questions is enough to try
+# an answer, a refusal and a scope trap; it is a courtesy limit, not a wall,
+# because session state lives in the browser tab and a refresh resets it. The
+# hard ceiling is the monthly spend limit on the key itself.
+MAX_QUESTIONS = 10
 
 
 @st.cache_resource(show_spinner="Loading the index and the embedding model...")
@@ -96,7 +103,7 @@ def render_sources(context: list[dict], cited: set[int]) -> None:
 def main() -> None:
     st.set_page_config(page_title="Folio", page_icon="📄", layout="centered")
     st.title("Folio")
-    st.caption("Cited answers from an annual report. Every claim carries the page it came from.")
+    st.caption("Cited answers from Indian annual reports. Every claim carries the page it came from.")
 
     adopt_streamlit_secret()
     table, model = load_retrieval()
@@ -118,6 +125,19 @@ def main() -> None:
     if not submitted or not question.strip():
         st.stop()
 
+    # Counted on submit, refusals included: a question is a question to the
+    # reader, and counting only model calls would make the limit unpredictable.
+    asked = st.session_state.get("asked", 0)
+    if asked >= MAX_QUESTIONS:
+        st.info(
+            f"That's the {MAX_QUESTIONS}-question limit for this demo session — thanks for trying Folio. "
+            "It runs on a personal API key, so each visit gets a few questions. To keep going, "
+            "clone the repo and run it locally with your own key: "
+            "https://github.com/shivank2703/folio"
+        )
+        st.stop()
+    st.session_state["asked"] = asked + 1
+
     started = time.perf_counter()
     hits = search(table, model, question, max(DEFAULT_K, EXPANSION_SEEDS), filing["company"])
     # The ranking decides whether to answer; the widened context is what the
@@ -132,7 +152,16 @@ def main() -> None:
         render_sources(context, cited=set())
         st.stop()
 
-    verdict = guarded_answer(question, hits, client, context)
+    try:
+        verdict = guarded_answer(question, hits, client, context)
+    except anthropic.APIError:
+        # Spend limit reached, rate limited or the API is down: none of these
+        # is the reader's fault, and a traceback on a public page explains
+        # nothing. Retrieval still worked, so the sources are still shown.
+        st.error("The answer service is unavailable right now, so this question was not answered. "
+                 "The extracts retrieval found are below.")
+        render_sources(context, cited=set())
+        st.stop()
     elapsed = time.perf_counter() - started
 
     if verdict["refused"]:
@@ -151,7 +180,10 @@ def main() -> None:
 
     # Two decimals, because a refusal costs retrieval only and rounds to 0.0s
     # at one: the number is there to show where the time actually goes.
-    st.caption(f"answered in {elapsed:.2f}s · {filing['name']} {filing['fiscal_year']}")
+    st.caption(
+        f"answered in {elapsed:.2f}s · {filing['name']} {filing['fiscal_year']}"
+        f" · question {asked + 1} of {MAX_QUESTIONS} this session"
+    )
     render_sources(verdict["context"], cited=set(cited_pages(verdict["text"])))
 
 
