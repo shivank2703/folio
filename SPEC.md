@@ -46,7 +46,7 @@ Report anatomy the pipeline serves: Management Discussion & Analysis, Directors'
 
 ## 4. Roadmap
 
-Four steps, one per Saturday sitting. A step's scope is never expanded
+Five steps, roughly one per Saturday sitting. A step's scope is never expanded
 mid-flight; anything that comes up for a later step is logged in that step's
 notes file, not built. Dates are targets; scope moves before dates do.
 
@@ -67,14 +67,41 @@ Education), built in v1 Stages 1–9 (history in `notes/v1-handoffs.md`).
 4. Deploy on Streamlit Community Cloud (Python 3.13), repo public
 5. README with live link, demo GIF and roadmap → tag **v1.0**
 
-### Accurate · Sat 10 Oct 2026
+### Accurate · Sun 04 Oct 2026 (pulled forward from Sat 10 Oct)
 
-1. Tables via pymupdf4llm (classic table strategies, §5)
-2. Eval grown to 20 questions with answer-quality scoring: a local script,
-   Haiku as judge
-3. Cross-encoder reranker; its score replaces the 0.67 similarity floor as the
-   refusal gate (the floor stopped separating once every filing had a
-   negative — `notes/v2-ideas.md`)
+1. Eval first: 20 questions (the 11, plus multi-hop, a units trap, a computed
+   figure, and tables from the known-bad pages), scored by a local script with
+   Haiku as judge — faithfulness to the cited pages, correctness against the
+   expected answer, refusal correctness. Baseline committed before any change.
+2. Computed figures only when labelled as computed with every input cited
+   ("an increase of ₹605.34 crore (computed from [page 114])"). Refusals are
+   strict: exactly "Not in the filing."; anything after it is stripped, and the
+   eval fails a non-bare refusal.
+3. Tables via pymupdf4llm (classic table strategies, §5); all filings
+   re-indexed; known-bad pages checked by eye
+4. Cross-encoder reranker; its score replaces the 0.67 similarity floor as the
+   refusal gate. Threshold fitted on half the questions, reported on the other
+   half
+5. LanceDB deprecations, a full lock file, sources panel in page order,
+   `#page=N` deep links
+6. Eval re-run after 3 and after 4, so each change has its own before/after
+
+### Ingest · Sat 10 Oct 2026
+
+One offline command: give it a listed company and it finds the latest annual
+report, downloads it, checks it is born-digital (scanned reports are skipped —
+no OCR, §3.5), records the source URL and SHA-256 in `corpus/SOURCES.md`, runs
+extract → chunk → embed → index, and adds the company to `corpus/corpus.json`
+so it appears in the app. Idempotent; a batch mode takes a list of companies.
+
+1. First: find out whether BSE/NSE permit automated downloads. Fallback: a
+   maintained list of investor-relations URLs
+2. Decide where the index lives once it outgrows git (~30 filings): a GitHub
+   release asset or a Hugging Face dataset, downloaded at startup
+3. No in-app "add any company" button for now
+
+Funds depends on Ingest: its top-holdings drill-down needs those companies'
+annual reports indexed.
 
 ### Funds · Sat 17 Oct 2026
 
@@ -84,7 +111,8 @@ funds.
 1. Read a fund's monthly portfolio disclosure (holdings + weights). It is often
    a spreadsheet: read it as a table, don't chunk it
 2. Read the fund's factsheet: expense ratio, benchmark, exit load
-3. Drill into the top 10–15 holdings through the annual-report Q&A
+3. Drill into the top 10–15 holdings through the annual-report Q&A, using
+   companies indexed by Ingest
 4. Every claim cited; no buy/sell language (§2)
 5. Public demo on popular funds
 
@@ -101,7 +129,8 @@ heuristic.
 
 ### Later, maybe
 
-Trend charts (click a bar → source page), multi-year ingest, Sentinel (daily
+Trend charts (click a bar → source page), multi-year ingest, an in-app
+"add any company" button, Sentinel (daily
 exchange-disclosure flags for a watchlist).
 
 ## 5. Architecture & tool decisions

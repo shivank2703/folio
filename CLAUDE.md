@@ -4,7 +4,7 @@ SPEC.md is the source of truth: scope (§1–2), corpus rules
 (§3 — fiscal years, units, page-cite convention, standalone vs
 consolidated, born-digital only), roadmap (§4), and tool
 decisions (§5). Consult it before proposing any design. Work
-proceeds one roadmap step at a time (Public → Accurate → Funds →
+proceeds one roadmap step at a time (Public → Accurate → Ingest → Funds →
 Agent). NEVER build ahead of the current step — flag
 future-impacting decisions instead, and log anything out of
 scope in the next step's notes file (e.g. notes/accurate-step.md).
