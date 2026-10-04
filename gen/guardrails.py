@@ -41,8 +41,12 @@ REFUSAL = "Not in the filing."
 # moved to 0.673 and the floor follows it down.
 #
 # The direction is the thing to watch: more documents compress the gap, which
-# is the failure mode this number has. Nine questions cannot settle it; v2's
-# 20-pair set (SPEC.md §4 v2.3) is what validates it or moves it again.
+# is the failure mode this number has. On the 20-question eval it no longer
+# separates (0.702 weakest answerable vs 0.697 strongest negative), so it is a
+# pre-filter only: it stops grossly unrelated questions before a paid call and
+# has refused no answerable question in any eval run. Refusal itself rests on
+# the prompt contract and strip_after_refusal. A cross-encoder gate was tried
+# as its replacement and lost answers on held-out questions (evals/RESULTS.md).
 MIN_SIMILARITY = 0.67
 
 CITATION = re.compile(r"\[page (\d+)\]")

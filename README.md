@@ -34,9 +34,10 @@ flowchart TB
     subgraph build["build — offline, python -m ingest.build"]
         PDF[Annual report PDFs<br/>corpus/ + corpus.json manifest] --> EX[extract<br/>PyMuPDF, page-wise]
         EX --> PRE[preprocess<br/>furniture, columns, rows,<br/>titles, units, period headers]
-        PRE --> CH[chunk<br/>~200 tokens, never across a page]
+        PRE --> TB[tables<br/>pymupdf4llm on ruled pages,<br/>accepted behind four checks]
+        TB --> CH[chunk<br/>~200 tokens, never across a page]
         CH --> EM[embed<br/>bge-small-en-v1.5 via ONNX]
-        EM --> DB[(LanceDB<br/>vectors + full-text index<br/>ships in git, 10.6 MB)]
+        EM --> DB[(LanceDB<br/>vectors + full-text index<br/>ships in git, 10.8 MB)]
     end
     subgraph ask["ask — per question"]
         Q[Question + chosen filing] --> FY[expand FY25<br/>into 'as at March 31, 2025']
@@ -46,7 +47,7 @@ flowchart TB
         PX --> G{guardrails}
         G -->|below the floor| R[Not in the filing.]
         G -->|passes| GEN[Claude Haiku 4.5<br/>cite-every-claim prompt]
-        GEN --> V[validate citations<br/>scrub advice]
+        GEN --> V[strict refusal · validate citations<br/>ground every figure on its page<br/>scrub advice]
         V --> UI[answer + sources panel]
     end
 ```
@@ -79,14 +80,18 @@ March 31, 2025*.
 
 ## Guardrails
 
-Four checks, because no single one keeps a citation honest.
+No single check keeps a citation honest, so there are six.
 
 | Check | When | What it stops |
 |---|---|---|
-| Similarity floor (0.67) | before the model is called | a question nothing in the filing resembles, caught before a paid call. It catches gross mismatches only — see Limitations |
+| Similarity floor (0.67) | before the model is called | a question nothing in the filing resembles, caught before a paid call. A pre-filter only — see Limitations |
 | Refusal contract in the prompt | during the call | a hedged half-answer built from plausible but unhelpful extracts |
+| Strict refusal | after the call | "Not in the filing." followed by anything: the rest is cut, so a refusal is always one sentence |
 | Citation validation | after the call | a page the model was never shown; an answer whose citations were all invented, or which carried none, is withheld entirely |
+| Figure grounding | after the call | a figure that is not printed on the page it cites. If exactly one page the model was shown prints all of a claim's figures, the citation is moved there and the reader is told; otherwise the figure is flagged. A computed figure must say "(computed from [page N])" |
 | Advice scrub | after the call | investment advice, which this project never produces |
+
+Every `[page N]` in an answer links to the issuer's PDF opened at that page.
 
 ## The corpus, and a worked example
 
@@ -137,17 +142,37 @@ into `corpus/`:
 
 Adding a company means adding its PDF and one manifest entry — no code changes.
 Retrieval alone, with no key and no UI: `.venv/bin/python -m retrieve.smoke`.
+The answer-quality eval (spends API credit, about $0.50 a run):
+`.venv/bin/python -m evals.score --label mine`.
 
 ## Measured
 
+Answer quality on 20 questions — 15 answerable (lookups, three tables from the
+pages extraction handles worst, a two-column page, a computed figure, a
+multi-hop, a lakhs-vs-crore trap) and 5 not in the filing — each answered three
+times through the app's own path ([evals/RESULTS.md](evals/RESULTS.md)).
+Correctness is judged by Haiku 4.5 without the pages; faithfulness by a second
+Haiku call without the reference answer.
+
+| | Before (v1.0) | Now (v1.1) |
+|---|---|---|
+| Answerable questions passed | 34/45 (76%) | **43/45 (96%)** |
+| Correct figure, unit, period and scope | 42/45 (93%) | **45/45 (100%)** |
+| Every claim supported by the cited page | 34/45 (76%) | **44/45 (98%)** |
+| Not in the filing: bare refusal | 13/15 (87%) | **15/15 (100%)** |
+
+What moved it: computed figures labelled with their inputs cited; refusals cut
+to one sentence; every figure checked against the page it cites; extracts no
+longer numbered ("[2] page 190" made the model cite page 2); ruled tables
+re-read by pymupdf4llm. A cross-encoder reranker was tried as the refusal gate
+and **not shipped**: fitted on half the questions, it lost answers on the other
+half (26/27 → 19/27).
+
 | | |
 |---|---|
-| Corpus | 3 filings, 896 pages → 4,704 chunks, index 10.6 MB |
-| Rebuild | 2 min 37 s end to end (ingest 19 s, embed 139 s) |
-| Answers, 11 eval questions | 8/8 answerable questions correct with a valid page citation (scope and lakhs traps included); 3/3 not-in-filing questions refused |
-| Retrieval, same questions | 7/8 expected pages in the top 5 |
-| Answer availability | 8/8 questions have the answer-bearing chunk in context |
-| Refusal margin | +0.006 — weakest answerable 0.702, strongest not-in-filing 0.696. The floor no longer separates them (see Limitations) |
+| Corpus | 3 filings, 896 pages → 4,773 chunks, index 10.8 MB; 202 pages' tables read by pymupdf4llm |
+| Rebuild | 8 min 50 s end to end (ingest with tables 372 s, embed 154 s) |
+| Retrieval, 20 questions | 13/15 expected pages in the top 5; 13/15 answer text inside the context |
 | Warm retrieval | ~21 ms search, ~10 ms page expansion |
 | Live answer time | 1.4–1.6 s for a cited answer, ~0.1 s for a refusal at the floor |
 
@@ -156,21 +181,16 @@ Retrieval alone, with no key and no UI: `.venv/bin/python -m retrieve.smoke`.
 Stated plainly, because overclaiming is the failure this project is built
 against:
 
-- **The similarity floor no longer separates answerable questions from
-  unanswerable ones**, and this is measured, not suspected. It was calibrated
-  on one not-in-filing question, whose best score was 0.644. Giving each of the
-  three filings its own negative — plausible questions in the document's own
-  vocabulary, absent from it — put two of them at 0.695 and 0.696, above the
-  0.67 floor. The weakest answerable question scores 0.702, so the only
-  separating threshold is a 0.006-wide window, which is noise. The floor is
-  left where it is rather than fitted into that window: it still stops a
-  grossly unrelated question cheaply, but refusal now rests on the prompt's
-  refusal contract, the layer that reads the extracts instead of a number
-  about them. Measured: all three negatives are refused, but the contract
-  leaks. Asked about Navneet's television advertising, the model sometimes
-  replies "Not in the filing." and then adds a true, cited sentence about
-  total advertising spend, which passes every check and is shown as an answer.
-  A reranker replaces the floor in the next step.
+- **The similarity floor does not separate answerable questions from
+  unanswerable ones**, measured: the weakest answerable question scores
+  0.702 and the strongest not-in-filing one 0.697. It stays as a cheap
+  pre-filter for gross mismatches, and has refused no answerable question in
+  any eval run; refusal rests on the prompt contract plus the strict-refusal
+  cut, which refused all 15 not-in-filing samples. A cross-encoder gate was
+  tried and lost answers on held-out questions.
+- **Five not-in-filing questions are too few to fit a refusal threshold.**
+  That is part of why the reranker's threshold did not hold; the eval needs
+  more negatives before the next attempt.
 - **The expansion width was tuned on the same nine questions.** Eight seed
   chunks and a 6,000-token budget is the smallest setting that put every
   answer in front of the model on this set; it is a fitted number, not a
@@ -185,15 +205,18 @@ against:
   their titles, so a balance-sheet chunk knows which it is. A note does not:
   for a question about receivables ageing, the consolidated schedule can
   outrank the standalone one, and only the page number distinguishes them.
-- **Complex tables reassemble only partially** — statements of changes in
-  equity, ageing schedules, sustainability grids. Core statements are clean.
+- **Tables are read well only where they are ruled.** pymupdf4llm reads
+  gridded notes exactly (ageing schedules, borrowings, cash flow), but merges
+  whole columns on shaded statements and fails on rotated ones, so it is
+  accepted page by page behind four checks, and 670 of 872 pages keep the
+  geometry-based reading. Statements of changes in equity and sustainability
+  grids remain the weakest pages.
 - **The embedding model is a quantized export**, so published benchmark scores
   describe slightly different weights.
-- **Answer quality is checked by hand, on 11 questions.** Each answer was
-  compared with its recorded figure; there is no automated scoring yet. One
-  pattern it showed: the model states computed differences ("an increase of
-  ₹605.34 crore") that no page prints. The arithmetic is right, but the
-  number has no page of its own.
+- **The judge is a model.** Read by hand, it made three mistakes in the
+  runs above (it called "(146.98)" bad arithmetic, and "5.8 km" computed when
+  the page prints it). It was kept frozen across the step so that every run is
+  graded the same way; disagreements are listed in evals/RESULTS.md.
 - **The ten-question limit is per browser session.** A refresh resets it; the
   real ceiling is a monthly spend limit on the demo's API key.
 - **Not advice.** The system reports what a filing says. It produces no
@@ -203,20 +226,24 @@ against:
 
 One step per Saturday ([SPEC.md §4](SPEC.md)):
 
-- **Public** (03 Oct 2026, this release): cited Q&A over three annual reports, deployed.
-- **Accurate** (10 Oct): tables read with pymupdf4llm; the eval grows to 20
-  questions with answer-quality scoring (a local script, Haiku as judge); a
-  cross-encoder reranker whose score replaces the 0.67 similarity floor as the
-  refusal gate.
+- **Public** (03 Oct 2026, v1.0): cited Q&A over three annual reports, deployed.
+- **Accurate** (04 Oct 2026, v1.1, this release): a 20-question eval with a
+  Haiku judge; figure-level citation checks; labelled computed figures; strict
+  refusals; ruled tables via pymupdf4llm. Reranker measured and not shipped.
+- **Ingest** (10 Oct): one offline command that finds a listed company's latest
+  annual report, checks it is born-digital, records its URL and checksum, and
+  indexes it; a batch mode; and a decision on where the index lives once it
+  outgrows git.
 - **Funds** (17 Oct): mutual fund mode. Holdings and weights from a fund's
   monthly portfolio disclosure, read as a table; expense ratio, benchmark and
   exit load from its factsheet; the top 10–15 holdings drilled into through the
-  annual-report Q&A. Every claim cited, no buy or sell language.
+  annual-report Q&A (companies indexed by Ingest). Every claim cited, no buy or
+  sell language.
 - **Agent** (24 Oct): one plain Anthropic tool-use loop over company and fund
   tools, producing a one-page memo with every sentence cited.
 
 Cut: RAGAS in CI, LangGraph, Langfuse. Later, maybe: trend charts, multi-year
-ingest, daily exchange-disclosure flags.
+ingest, an in-app "add a company" button, daily exchange-disclosure flags.
 
 ## Data and licence
 
