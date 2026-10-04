@@ -1,0 +1,38 @@
+# Folio's direct dependencies — the decided stack (SPEC.md §5).
+#
+# This file is the decision log; requirements.txt is generated from it and pins
+# every transitive dependency too (onnxruntime, tokenizers, ...), because a
+# runtime that drifts under a committed index fails silently. Regenerate with:
+#   uv pip compile requirements.in -o requirements.txt \
+#     --python-version 3.13 --python-platform x86_64-unknown-linux-gnu
+# (Linux: that is what Streamlit Community Cloud runs.)
+#
+# A library is added the first time a stage needs it; nothing here is
+# speculative. Versions are pinned exactly rather than floored: the committed
+# index was built by these wheels, and an index embedded by one version of the
+# model runtime and searched by another fails silently — plausible scores,
+# wrong neighbours — instead of raising.
+#
+# Python 3.13 (3.13.1 here). Streamlit Community Cloud's deploy dialog defaults
+# to 3.12, so pick 3.13 in Advanced settings: that is what every wheel below
+# was resolved against and what the measurements in the README were taken on.
+
+python-dotenv==1.2.2      # load the API key from .env; keys never live in code (hard constraint)
+pymupdf==1.28.0           # Stage 2 extraction — page text and geometry; our page->cite mapping (AGPL, §7)
+tiktoken==0.13.0          # Stage 3 chunking — token counts for ~200-token windows
+lancedb==0.34.0           # Stage 4 vector store — embedded, metadata beside vectors, full-text index (§5)
+anthropic==0.116.0        # Stage 6 generation — cite-every-claim answers (§5)
+streamlit==1.59.2         # Stage 8 UI — question box + cited-sources panel (§5)
+
+# Stage 4 decision gate, decided: bge-small-en-v1.5 through ONNX Runtime
+# (SPEC.md §5). fastembed runs the model without PyTorch, so a 2-core host
+# installs a small runtime rather than a deep-learning framework.
+fastembed==0.8.0          # Stage 4 embeddings — bge-small-en-v1.5 via ONNX Runtime (Apache-2.0; model MIT)
+numpy==2.5.1              # Stage 4 — vector arrays; imported directly by retrieve/embed.py
+pyarrow==24.0.0           # Stage 4 — typed table handed to LanceDB; imported directly by retrieve/embed.py
+
+# Accurate step: ruled tables. Ingest-only (the app never imports it). 0.3.4,
+# not the latest: from 1.27 on pymupdf4llm requires pymupdf_layout, the
+# proprietary layout model SPEC.md §7 excludes; here it is an optional extra,
+# and the extra is not installed. ingest/tables.py says why it is gated per page.
+pymupdf4llm==0.3.4        # AGPL-3.0, like PyMuPDF

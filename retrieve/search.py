@@ -123,12 +123,17 @@ def scoped(query, company: str | None):
 
 def vector_hits(table: lancedb.table.Table, vector: np.ndarray, company: str | None) -> list[dict]:
     """The chunks nearest the question's vector, closest first."""
-    return scoped(table.search(vector).distance_type("cosine"), company).limit(FUSION_DEPTH).select(FIELDS).to_list()
+    # LanceDB is deprecating the silent addition of its score columns to a
+    # selection. Naming them keeps today's output and stops a future release
+    # from changing it underneath us; the ranking itself never reads them.
+    query = scoped(table.search(vector).distance_type("cosine"), company)
+    return query.limit(FUSION_DEPTH).select([*FIELDS, "_distance"]).to_list()
 
 
 def keyword_hits(table: lancedb.table.Table, text: str, company: str | None) -> list[dict]:
     """The chunks whose words best match the question, from LanceDB's full-text index."""
-    return scoped(table.search(text, query_type="fts"), company).limit(FUSION_DEPTH).select(FIELDS).to_list()
+    query = scoped(table.search(text, query_type="fts"), company)
+    return query.limit(FUSION_DEPTH).select([*FIELDS, "_score"]).to_list()
 
 
 def fuse(rankings: list[list[dict]]) -> list[dict]:

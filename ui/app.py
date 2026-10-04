@@ -26,7 +26,7 @@ import anthropic
 import streamlit as st
 
 from gen.answer import build_client, guarded_answer
-from gen.guardrails import cited_pages, has_enough_context
+from gen.guardrails import CITATION, cited_pages, has_enough_context
 from retrieve.embed import load_model
 from retrieve.search import DEFAULT_K, EXPANSION_SEEDS, open_index, page_context, search
 
@@ -91,20 +91,38 @@ def load_client():
         return None, str(error)
 
 
-def render_sources(context: list[dict], cited: set[int]) -> None:
+def page_link(url: str, page: int) -> str:
+    """The filing's own PDF, opened at one page.
+
+    Browser PDF viewers honour #page=N, and all three issuers serve their
+    reports inline rather than as downloads (checked 2026-10-04), so a
+    citation lands the reader on the page it names.
+    """
+    return f"{url}#page={page}"
+
+
+def link_citations(text: str, url: str) -> str:
+    """Turn every [page N] in an answer into a link to that page of the filing."""
+    return CITATION.sub(lambda m: f"[page {m.group(1)}]({page_link(url, int(m.group(1)))})", text)
+
+
+def render_sources(context: list[dict], cited: set[int], url: str) -> None:
     """Show every chunk the model read, in page order, cited ones already open.
 
     Chunks the answer did not use are shown too: what the model could have
     used and did not is part of judging the answer. A chunk pulled in because
     its page was retrieved carries no similarity of its own and says so,
-    rather than borrowing its page's score.
+    rather than borrowing its page's score. The context arrives in retrieval
+    order; it is sorted here because a reader checking a citation looks for a
+    page number, not a rank.
     """
     st.subheader("Sources")
-    for chunk in context:
+    for chunk in sorted(context, key=lambda c: (c["page"], c["chunk"])):
         was_cited = chunk["page"] in cited
         score = "same page as a hit" if chunk.get("sibling") else f"similarity {chunk['score']:.3f}"
         label = f"{'cited · ' if was_cited else ''}page {chunk['page']} · chunk {chunk['chunk']} · {score}"
         with st.expander(label, expanded=was_cited):
+            st.markdown(f"[Open page {chunk['page']} of the filing]({page_link(url, chunk['page'])})")
             st.text(chunk["text"])
 
 
@@ -169,7 +187,7 @@ def main() -> None:
         # way, so the chunks are shown and the failure costs the reader
         # nothing they already had.
         st.error(client_error)
-        render_sources(context, cited=set())
+        render_sources(context, cited=set(), url=filing["source_url"])
         st.stop()
 
     try:
@@ -180,7 +198,7 @@ def main() -> None:
         # nothing. Retrieval still worked, so the sources are still shown.
         st.error("The answer service is unavailable right now, so this question was not answered. "
                  "The extracts retrieval found are below.")
-        render_sources(context, cited=set())
+        render_sources(context, cited=set(), url=filing["source_url"])
         st.stop()
     elapsed = time.perf_counter() - started
 
@@ -189,7 +207,7 @@ def main() -> None:
         # as an empty box or an error.
         st.warning(f"**{verdict['text']}**\n\nWhy: {verdict['reason']}")
     else:
-        st.markdown(verdict["text"])
+        st.markdown(link_citations(verdict["text"], filing["source_url"]))
         if verdict["invalid_citations"]:
             st.error(
                 "This answer cited pages that were never retrieved: "
@@ -209,7 +227,7 @@ def main() -> None:
         f"answered in {elapsed:.2f}s · {filing['name']} {filing['fiscal_year']}"
         f" · question {asked + 1} of {MAX_QUESTIONS} this session"
     )
-    render_sources(verdict["context"], cited=set(cited_pages(verdict["text"])))
+    render_sources(verdict["context"], cited=set(cited_pages(verdict["text"])), url=filing["source_url"])
 
 
 if __name__ == "__main__":

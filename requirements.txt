@@ -1,25 +1,226 @@
-# Folio dependencies — the decided stack (SPEC.md §5).
-#
-# A library is added the first time a stage needs it; nothing here is
-# speculative. Versions are pinned exactly rather than floored: the committed
-# index was built by these wheels, and an index embedded by one version of the
-# model runtime and searched by another fails silently — plausible scores,
-# wrong neighbours — instead of raising.
-#
-# Python 3.13 (3.13.1 here). Streamlit Community Cloud's deploy dialog defaults
-# to 3.12, so pick 3.13 in Advanced settings: that is what every wheel below
-# was resolved against and what the measurements in the README were taken on.
+# Generated from requirements.in by uv pip compile (Linux, Python 3.13): every
+# package pinned, transitive ones included. Edit requirements.in, not this file.
 
-python-dotenv==1.2.2      # load the API key from .env; keys never live in code (hard constraint)
-pymupdf==1.28.0           # Stage 2 extraction — page text and geometry; our page->cite mapping (AGPL, §7)
-tiktoken==0.13.0          # Stage 3 chunking — token counts for ~200-token windows
-lancedb==0.34.0           # Stage 4 vector store — embedded, metadata beside vectors, full-text index (§5)
-anthropic==0.116.0        # Stage 6 generation — cite-every-claim answers (§5)
-streamlit==1.59.2         # Stage 8 UI — question box + cited-sources panel (§5)
-
-# Stage 4 decision gate, decided: bge-small-en-v1.5 through ONNX Runtime
-# (SPEC.md §5). fastembed runs the model without PyTorch, so a 2-core host
-# installs a small runtime rather than a deep-learning framework.
-fastembed==0.8.0          # Stage 4 embeddings — bge-small-en-v1.5 via ONNX Runtime (Apache-2.0; model MIT)
-numpy==2.5.1              # Stage 4 — vector arrays; imported directly by retrieve/embed.py
-pyarrow==24.0.0           # Stage 4 — typed table handed to LanceDB; imported directly by retrieve/embed.py
+altair==6.3.0
+    # via streamlit
+annotated-types==0.8.0
+    # via pydantic
+anthropic==0.116.0
+    # via -r requirements.in
+anyio==4.15.1
+    # via
+    #   anthropic
+    #   httpx
+    #   starlette
+    #   streamlit
+attrs==26.1.0
+    # via
+    #   jsonschema
+    #   referencing
+blinker==1.9.0
+    # via streamlit
+cachetools==7.2.0
+    # via streamlit
+certifi==2026.7.22
+    # via
+    #   httpcore
+    #   httpx
+    #   requests
+charset-normalizer==3.5.2
+    # via requests
+click==8.5.0
+    # via
+    #   huggingface-hub
+    #   streamlit
+    #   uvicorn
+deprecation==2.1.0
+    # via lancedb
+distro==1.9.0
+    # via anthropic
+docstring-parser==0.18.0
+    # via anthropic
+fastembed==0.8.0
+    # via -r requirements.in
+filelock==4.0.10
+    # via huggingface-hub
+flatbuffers==25.12.19
+    # via onnxruntime
+fsspec==2026.9.0
+    # via huggingface-hub
+gitdb==4.0.12
+    # via gitpython
+gitpython==3.2.0
+    # via streamlit
+h11==0.16.0
+    # via
+    #   httpcore
+    #   uvicorn
+hf-xet==1.6.0
+    # via huggingface-hub
+httpcore==1.0.9
+    # via httpx
+httptools==0.8.0
+    # via streamlit
+httpx==0.28.1
+    # via
+    #   anthropic
+    #   huggingface-hub
+huggingface-hub==1.33.0
+    # via
+    #   fastembed
+    #   tokenizers
+idna==3.20
+    # via
+    #   anyio
+    #   httpx
+    #   requests
+itsdangerous==2.2.0
+    # via streamlit
+jinja2==3.1.6
+    # via
+    #   altair
+    #   pydeck
+jiter==0.17.0
+    # via anthropic
+jsonschema==4.26.0
+    # via altair
+jsonschema-specifications==2025.9.1
+    # via jsonschema
+lance-namespace==0.13.0
+    # via lancedb
+lance-namespace-urllib3-client==0.13.0
+    # via lance-namespace
+lancedb==0.34.0
+    # via -r requirements.in
+loguru==0.7.3
+    # via fastembed
+markupsafe==3.0.4
+    # via jinja2
+mmh3==5.3.1
+    # via fastembed
+narwhals==2.26.0
+    # via altair
+numpy==2.5.1
+    # via
+    #   -r requirements.in
+    #   fastembed
+    #   lancedb
+    #   onnxruntime
+    #   pandas
+    #   pydeck
+    #   streamlit
+onnxruntime==1.30.0
+    # via fastembed
+packaging==26.3
+    # via
+    #   altair
+    #   deprecation
+    #   huggingface-hub
+    #   lancedb
+    #   onnxruntime
+    #   streamlit
+pandas==3.0.6
+    # via streamlit
+pillow==12.3.0
+    # via
+    #   fastembed
+    #   streamlit
+protobuf==7.36.2
+    # via
+    #   onnxruntime
+    #   streamlit
+py-rust-stemmers==0.1.8
+    # via fastembed
+pyarrow==24.0.0
+    # via
+    #   -r requirements.in
+    #   lancedb
+    #   streamlit
+pydantic==2.13.5
+    # via
+    #   anthropic
+    #   lance-namespace-urllib3-client
+    #   lancedb
+pydantic-core==2.46.5
+    # via pydantic
+pydeck==0.9.3
+    # via streamlit
+pymupdf==1.28.0
+    # via
+    #   -r requirements.in
+    #   pymupdf4llm
+pymupdf4llm==0.3.4
+    # via -r requirements.in
+python-dateutil==2.9.0.post0
+    # via
+    #   lance-namespace-urllib3-client
+    #   pandas
+python-dotenv==1.2.2
+    # via -r requirements.in
+python-multipart==0.0.32
+    # via streamlit
+pyyaml==6.0.3
+    # via huggingface-hub
+referencing==0.37.0
+    # via
+    #   jsonschema
+    #   jsonschema-specifications
+regex==2026.9.29
+    # via tiktoken
+requests==2.34.2
+    # via
+    #   fastembed
+    #   streamlit
+    #   tiktoken
+rpds-py==2026.6.3
+    # via
+    #   jsonschema
+    #   referencing
+six==1.17.0
+    # via python-dateutil
+smmap==5.0.3
+    # via gitdb
+sniffio==1.3.1
+    # via anthropic
+starlette==1.7.0
+    # via streamlit
+streamlit==1.59.2
+    # via -r requirements.in
+tabulate==0.10.0
+    # via pymupdf4llm
+tenacity==9.1.4
+    # via streamlit
+tiktoken==0.13.0
+    # via -r requirements.in
+tokenizers==0.23.2
+    # via fastembed
+toml==0.10.2
+    # via streamlit
+tqdm==4.70.1
+    # via
+    #   fastembed
+    #   huggingface-hub
+    #   lancedb
+typing-extensions==4.16.0
+    # via
+    #   altair
+    #   anthropic
+    #   anyio
+    #   huggingface-hub
+    #   lance-namespace-urllib3-client
+    #   pydantic
+    #   pydantic-core
+    #   streamlit
+    #   typing-inspection
+typing-inspection==0.4.4
+    # via pydantic
+urllib3==2.8.0
+    # via
+    #   lance-namespace-urllib3-client
+    #   requests
+uvicorn==0.54.0
+    # via streamlit
+watchdog==6.0.0
+    # via streamlit
+websockets==17.2
+    # via streamlit
