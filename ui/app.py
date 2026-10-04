@@ -213,6 +213,11 @@ def main() -> None:
                 "This answer cited pages that were never retrieved: "
                 f"{verdict['invalid_citations']}. They are marked in the text above."
             )
+        if verdict["recited"]:
+            # Said out loud: the reader should know the page shown is the
+            # guard's, taken from where the figure is printed, not the model's.
+            moves = "; ".join(f"page {', '.join(map(str, old))} → page {new}" for old, new in verdict["recited"])
+            st.caption(f"Citation corrected to the page that prints the figure: {moves}.")
         if verdict["ungrounded"]:
             # Shown, not hidden: the reader decides what a figure is worth once
             # told that the page it cites does not print it.

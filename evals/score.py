@@ -168,7 +168,8 @@ def grade(q: dict, verdict: dict, client: anthropic.Anthropic) -> dict:
     leaked = raw.startswith(REFUSAL) and raw != REFUSAL
     row = {"text": text, "raw": raw, "refused": verdict["refused"], "reason": verdict.get("reason", ""),
            "cited": sorted(set(cited_pages(text))), "invalid": verdict["invalid_citations"],
-           "ungrounded": verdict.get("ungrounded", []), "leaked_refusal": leaked}
+           "ungrounded": verdict.get("ungrounded", []), "recited": verdict.get("recited", []),
+           "leaked_refusal": leaked}
     if not q["expected_pages"]:
         row.update(passed=bare_refusal and not leaked)
         return row
@@ -184,14 +185,30 @@ def grade(q: dict, verdict: dict, client: anthropic.Anthropic) -> dict:
     return row
 
 
-def run(label: str, samples: int, only: set[str] | None) -> dict:
+def run(label: str, samples: int, only: set[str] | None, rerank_gate: tuple[str, float] | None = None) -> dict:
     questions = [json.loads(line) for line in QUESTIONS.open(encoding="utf-8")]
     if only:
         questions = [q for q in questions if q["id"] in only]
     table, model, client = open_index(Path("data/lancedb")), load_model(), build_client()
+    reranker = None
+    if rerank_gate:
+        # Experiment only: the app does not rerank (evals/RESULTS.md says why).
+        from retrieve.rerank import CANDIDATES, load_reranker, rerank
+        reranker = load_reranker(rerank_gate[0])
     out = {"label": label, "samples": samples, "when": time.strftime("%Y-%m-%d %H:%M"), "questions": []}
     for q in questions:
         hits = search(table, model, q["question"], max(DEFAULT_K, EXPANSION_SEEDS), q["company"])
+        if reranker is not None:
+            ranked = rerank(reranker, q["question"], search(table, model, q["question"], CANDIDATES, q["company"]))
+            hits = ranked[: max(DEFAULT_K, EXPANSION_SEEDS)]
+            if ranked[0]["rerank"] < rerank_gate[1]:
+                refused = {"text": REFUSAL, "refused": True, "invalid_citations": [], "context": [],
+                           "reason": f"rerank {ranked[0]['rerank']:.3f} below {rerank_gate[1]}"}
+                rows = [grade(q, refused, client) for _ in range(samples)]
+                out["questions"].append({**{k: q[k] for k in ("id", "type", "company", "split")},
+                                         "answerable": bool(q["expected_pages"]), "samples": rows})
+                print(f"{q['id']:<18} {q['type']:<14} {sum(r['passed'] for r in rows)}/{samples}  gate refused")
+                continue
         context = page_context(table, hits)
         rows = [grade(q, guarded_answer(q["question"], hits, client, context), client) for _ in range(samples)]
         out["questions"].append({**{k: q[k] for k in ("id", "type", "company", "split")},
@@ -205,7 +222,7 @@ def summarise(result: dict) -> str:
     """A markdown table per question plus totals by question type and split."""
     n = result["samples"]
     lines = [f"### {result['label']} ({result['when']}, {n} samples per question)", "",
-             "| Question | Type | Split | Pass | Correct | Faithful | Leaked refusal | Ungrounded figure |", "|---|---|---|---|---|---|---|---|"]
+             "| Question | Type | Split | Pass | Correct | Faithful | Leaked refusal | Ungrounded figure | Citation corrected |", "|---|---|---|---|---|---|---|---|---|"]
     by_type: dict[str, list[int]] = defaultdict(lambda: [0, 0])
     by_split: dict[str, list[int]] = defaultdict(lambda: [0, 0])
     totals = {"answerable": [0, 0], "negative": [0, 0], "correct": [0, 0], "faithful": [0, 0], "leaks": 0}
@@ -228,7 +245,11 @@ def summarise(result: dict) -> str:
         else:
             cf = ("–", "–")
         ungrounded = sum(bool(r.get("ungrounded")) for r in rows)
-        lines.append(f"| {q['id']} | {q['type']} | {q['split']} | {p}/{n} | {cf[0]} | {cf[1]} | {leaks or '–'} | {ungrounded or '–'} |")
+        # A corrected citation still passes (the reader sees the right page),
+        # but it is counted: it is the model getting the page wrong.
+        recited = sum(bool(r.get("recited")) for r in rows)
+        lines.append(f"| {q['id']} | {q['type']} | {q['split']} | {p}/{n} | {cf[0]} | {cf[1]} | {leaks or '–'} "
+                     f"| {ungrounded or '–'} | {recited or '–'} |")
 
     def pct(pair: list[int]) -> str:
         return f"{pair[0]}/{pair[1]} ({100 * pair[0] / pair[1]:.0f}%)" if pair[1] else "–"
@@ -246,8 +267,11 @@ def main() -> None:
     parser.add_argument("--label", required=True, help="name for this run, e.g. baseline or tables")
     parser.add_argument("--samples", type=int, default=3, help="answers generated per question")
     parser.add_argument("--only", nargs="*", help="question ids to run, for debugging")
+    parser.add_argument("--rerank-gate", nargs=2, metavar=("MODEL", "THRESHOLD"),
+                        help="experiment: rerank candidates and gate on the best score (python -m evals.fit_gate)")
     args = parser.parse_args()
-    result = run(args.label, args.samples, set(args.only) if args.only else None)
+    gate = (args.rerank_gate[0], float(args.rerank_gate[1])) if args.rerank_gate else None
+    result = run(args.label, args.samples, set(args.only) if args.only else None, gate)
     RESULTS.mkdir(parents=True, exist_ok=True)
     (RESULTS / f"{args.label}.json").write_text(json.dumps(result, ensure_ascii=False, indent=1), encoding="utf-8")
     print("\n" + summarise(result))

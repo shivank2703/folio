@@ -36,6 +36,7 @@ from gen.guardrails import (
     cited_pages,
     has_enough_context,
     is_refusal,
+    recite,
     scrub_advice,
     strip_after_refusal,
     ungrounded_figures,
@@ -61,9 +62,10 @@ Rules:
 - Use only the numbered extracts below. Nothing you know about the company from \
 elsewhere may enter the answer.
 - End every sentence that states a fact from the filing with its page marker, \
-written exactly as [page N]. Take N from the "page N" label on the extract's \
-first line. Never take a page number from the body of an extract, and never \
-cite a page that is not among the extracts.
+written exactly as [page N]. Take N from the "extract from page N" label \
+above the extract. Never take a page number from the body of an extract (note \
+numbers, years and printed page numbers look the same), and never cite a page \
+that is not among the extracts.
 - State a figure's unit only when the extract states it, for example in a line \
 such as "(Amount in ₹ crore, unless otherwise stated)" or in a column header. \
 If an extract gives a figure with no unit on the page, give the figure and say \
@@ -112,8 +114,12 @@ def build_prompt(question: str, hits: list[dict]) -> str:
     what let the answer name a unit or a statement without guessing.
     """
     extracts = []
-    for number, hit in enumerate(hits, start=1):
-        extracts.append(f"[{number}] page {hit['page']} (chunk {hit['chunk']})\n{hit['text']}")
+    # No running number on the extracts. They used to open "[2] page 190", and
+    # with thirty extracts in front of it the model cited [page 2]: a bracketed
+    # small number is exactly what a citation looks like. The page is now the
+    # only number in the label.
+    for hit in hits:
+        extracts.append(f"--- extract from page {hit['page']} (chunk {hit['chunk']}) ---\n{hit['text']}")
     return f"Question: {question}\n\nExtracts:\n\n" + "\n\n".join(extracts)
 
 
@@ -151,6 +157,7 @@ def guarded_answer(
         "refused": True,
         "invalid_citations": [],
         "ungrounded": [],
+        "recited": [],
         "scrubbed": [],
         "raw": "",
     }
@@ -168,6 +175,10 @@ def guarded_answer(
         reason = "the model found no answer in the extracts"
         return {**verdict, "text": REFUSAL, "reason": reason + (" (text after the refusal removed)" if trailed else "")}
 
+    # Re-citation runs before validation, so a [page 6] the model took from
+    # "Note 6" is moved to the page that prints the figure instead of being
+    # thrown away as a page that was never retrieved.
+    text, recited = recite(text, context)
     text, invalid = validate_citations(text, {chunk["page"] for chunk in context})
     text, scrubbed = scrub_advice(text)
     ungrounded = ungrounded_figures(text, context)
@@ -179,7 +190,7 @@ def guarded_answer(
         return {**verdict, "text": REFUSAL, "reason": reason, "invalid_citations": invalid, "scrubbed": scrubbed}
 
     return {**verdict, "text": text, "refused": False, "reason": "", "invalid_citations": invalid,
-            "ungrounded": ungrounded, "scrubbed": scrubbed}
+            "ungrounded": ungrounded, "recited": recited, "scrubbed": scrubbed}
 
 
 def answer_question(question: str, db_path: Path, k: int = DEFAULT_K, company: str | None = None) -> dict:

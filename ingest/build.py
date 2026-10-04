@@ -28,6 +28,7 @@ from pathlib import Path
 from ingest.chunk import chunk_report
 from ingest.extract import extract_pages, write_jsonl
 from ingest.preprocess import preprocess
+from ingest.tables import apply_tables
 from retrieve.embed import embed_texts, load_model, to_arrow, write_index
 
 
@@ -56,13 +57,19 @@ def ingest_filing(entry: dict, corpus_dir: Path, data_dir: Path) -> Path:
     write_jsonl(extract_pages(pdf_path, company, fiscal_year), data_dir / f"{stem}_pages.jsonl")
 
     pages = preprocess(pdf_path, company, fiscal_year)
+    # Ruled tables are re-read by pymupdf4llm where it reads them cleanly; every
+    # other page keeps preprocess's text. The clean file records which reader
+    # each page got and, where pymupdf4llm was refused, which gate refused it.
+    pages = apply_tables(pdf_path, pages)
     write_jsonl(pages, data_dir / f"{stem}_clean.jsonl")
     chunks = chunk_report(pages)
     chunk_path = data_dir / f"{stem}_chunks.jsonl"
     write_jsonl(chunks, chunk_path)
 
     kept = sum(1 for page in pages if not page["excluded"])
-    print(f"  {entry['name']} ({company}): {len(pages)} pages, {kept} kept -> {len(chunks)} chunks")
+    tabled = sum(1 for page in pages if page.get("table_reader") == "pymupdf4llm")
+    print(f"  {entry['name']} ({company}): {len(pages)} pages, {kept} kept, {tabled} read as tables "
+          f"-> {len(chunks)} chunks")
     return chunk_path
 
 

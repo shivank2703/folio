@@ -55,6 +55,10 @@ CITATION_RUN = re.compile(r"(?:\s*\[page \d+\])+")
 # parenthesised negatives, whose parentheses the comparison ignores.
 FIGURE = re.compile(r"(?<![\w.])\d(?:[\d,]*\d)?(?:\.\d+)?(?![\w])")
 
+# References written out in prose are not figures: "Based on extract [2] from
+# page 220" or "Note 6.6" must not be checked as amounts the page should print.
+REFERENCE = re.compile(r"\b(?:pages?|extracts?|chunks?|notes?)\s*\[?\d+(?:\.\d+)*\]?", re.IGNORECASE)
+
 # A claim labelled this way may state a figure no page prints; the prompt
 # requires the label, and the judge checks the arithmetic behind it.
 COMPUTED = re.compile(r"\b(?:computed|calculated)\b", re.IGNORECASE)
@@ -128,6 +132,60 @@ def checkable(figure: str) -> str | None:
     return digits
 
 
+def printed_figures(context: list[dict]) -> dict[int, set[str]]:
+    """Every checkable figure each page in the context prints, by page."""
+    printed: dict[int, set[str]] = {}
+    for chunk in context:
+        found = {checkable(f) for f in FIGURE.findall(chunk["text"])}
+        printed.setdefault(chunk["page"], set()).update(found - {None})
+    return printed
+
+
+def claim_figures(claim: str) -> set[str]:
+    """The figures a claim states, with written-out page and note references removed."""
+    return {d for d in (checkable(f) for f in FIGURE.findall(REFERENCE.sub(" ", claim))) if d}
+
+
+def split_claims(text: str) -> tuple[list[tuple[str, re.Match[str]]], str]:
+    """The answer as (claim, citation run) pairs, plus any text after the last run."""
+    claims, start = [], 0
+    for run in CITATION_RUN.finditer(text):
+        claims.append((text[start:run.start()], run))
+        start = run.end()
+    return claims, text[start:]
+
+
+def recite(text: str, context: list[dict]) -> tuple[str, list[tuple[list[int], int]]]:
+    """Move a citation to the page that prints the claim's figures, when exactly one does.
+
+    The model sometimes reads a note number or a nearby label as the page:
+    "Note 6 Trade receivables" became [page 6], and a page-5 capacity was cited
+    to page 4, while the figure itself was right. The page a figure came from
+    is a fact the context can settle, so the guard settles it: if the cited
+    pages do not print every figure in the claim, and exactly one page in front
+    of the model prints all of them, that page is cited instead. Zero or
+    several candidates leave the citation alone, for the checks after this one
+    to flag. Labelled computations are left alone; their result is printed
+    nowhere by design. Returns the text and each correction made.
+    """
+    printed = printed_figures(context)
+    claims, tail = split_claims(text)
+    out, corrections = [], []
+    for claim, run in claims:
+        cited = [int(p) for p in CITATION.findall(run.group(0))]
+        figures = claim_figures(claim)
+        on_cited = set().union(*(printed.get(p, set()) for p in cited))
+        if figures and not COMPUTED.search(claim) and not figures <= on_cited:
+            pages = [page for page, found in printed.items() if figures <= found]
+            if len(pages) == 1:
+                corrections.append((cited, pages[0]))
+                leading = run.group(0)[: len(run.group(0)) - len(run.group(0).lstrip())]
+                out.append(claim + f"{leading}[page {pages[0]}]")
+                continue
+        out.append(claim + run.group(0))
+    return "".join(out) + tail, corrections
+
+
 def ungrounded_figures(text: str, context: list[dict]) -> list[tuple[str, list[int]]]:
     """Figures the answer states that are not printed on the pages it cites for them.
 
@@ -136,27 +194,21 @@ def ungrounded_figures(text: str, context: list[dict]) -> list[tuple[str, list[i
     after the last citation is held to every page the answer cites. A claim
     labelled as computed is exempt: its result is printed nowhere by design.
     """
-    printed: dict[int, set[str]] = {}
-    for chunk in context:
-        found = {checkable(f) for f in FIGURE.findall(chunk["text"])}
-        printed.setdefault(chunk["page"], set()).update(found - {None})
-    claims: list[tuple[str, list[int]]] = []
-    start = 0
-    for run in CITATION_RUN.finditer(text):
-        claims.append((text[start:run.start()], [int(p) for p in CITATION.findall(run.group(0))]))
-        start = run.end()
-    every = [page for _, pages in claims for page in pages]
-    if text[start:].strip() and every:
-        claims.append((text[start:], every))
+    printed = printed_figures(context)
+    claims, tail = split_claims(text)
+    pairs = [(claim, [int(p) for p in CITATION.findall(run.group(0))]) for claim, run in claims]
+    every = [page for _, pages in pairs for page in pages]
+    if tail.strip() and every:
+        pairs.append((tail, every))
 
     missing: list[tuple[str, list[int]]] = []
-    for claim, pages in claims:
+    for claim, pages in pairs:
         if COMPUTED.search(claim):
             continue
         on_pages = set().union(*(printed.get(page, set()) for page in pages))
-        for figure in FIGURE.findall(claim):
+        for figure in FIGURE.findall(REFERENCE.sub(" ", claim)):
             digits = checkable(figure)
-            if digits and digits not in on_pages:
+            if digits and digits not in on_pages and (figure, pages) not in missing:
                 missing.append((figure, pages))
     return missing
 

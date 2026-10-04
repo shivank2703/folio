@@ -143,14 +143,14 @@ exchange-disclosure flags for a watchlist).
 | Vector store | Public | LanceDB | Embedded, file-based, metadata beside vectors; nothing to host | Corpus outgrows the deploy host |
 | Generation | Public | Anthropic API (Haiku), cite-every-claim prompt | Cheap model + a per-session question cap on the public app | — |
 | UI / deploy | Public | Streamlit on Streamlit Community Cloud, deployed from the GitHub repo; the committed index is loaded read-only | Free; a public repo gives a public app; rebuilding on start would cost minutes on a platform that sleeps every 12h | The index outgrows what belongs in git, or the 2-core / 2.7 GB ceiling hurts the demo |
-| Tables | Accurate | pymupdf4llm **classic table strategies** (`page_chunks=True` preserves page numbers) | Open-source path; strong on gridlined, born-digital financial tables | Classic strategies fail on target docs |
+| Tables | Accurate | **pymupdf4llm 0.3.4**, `lines` strategy, accepted per page only when it passes four gates (a table found, no cell swallowing a column, no repeated rows, no figure lost against preprocess's text); every other page keeps preprocess's text. Pinned below 1.27, which hard-requires pymupdf_layout | Exact on ruled notes (ageing, borrowings, cash flow); fails on shaded or rotated statements and on `lines_strict`, so it cannot replace preprocess wholesale | A version without the layout dependency reads unruled statements |
 | Table escalation | Accurate | Public table-structure models (e.g. Table Transformer) | Keeps the stack open-source | Only if triggered |
-| Evaluation | Accurate | 20-question eval set, answer quality scored by a local script with Haiku as judge (RAGAS in CI cut) | No retrieval/chunking/prompt change lands without before/after scores | — |
+| Evaluation | Accurate | `evals.score`: 20 questions × 3 samples through the app's own answer path; two blind Haiku 4.5 calls at temperature 0 — correctness without the pages, faithfulness without the reference — plus mechanical refusal and citation checks (RAGAS in CI cut) | No retrieval/chunking/prompt change lands without before/after scores; one judge seeing both lets a wrong citation mark a right figure wrong | Judge disagreements on a re-read |
 | Reranker | Accurate | Cross-encoder; its score replaces the 0.67 similarity floor as the refusal gate | Similarity stopped separating answerable from not-in-filing questions | Eval results |
 | Fund data | Funds | Portfolio disclosure read as a table (spreadsheet rows, not chunks); factsheet through the PDF path | Holdings and weights are already structured; chunking them would only lose that | — |
 | Orchestration | Agent | One plain Anthropic tool-use loop over company and fund tools (LangGraph cut) | Every layer stays visible; the loop is a few dozen lines | — |
 
-**Explicitly excluded:** PyMuPDF-Layout (the GNN/ONNX layout model) — proprietary component with its own license; excluded unless its terms are reviewed and found compatible with public distribution. LangChain, LlamaIndex, LangGraph. OCR engines (see §3.5).
+**Explicitly excluded:** PyMuPDF-Layout (`pymupdf_layout`, the GNN/ONNX layout model) — proprietary component with its own license; excluded unless its terms are reviewed and found compatible with public distribution. pymupdf4llm 1.27+ requires it, so pymupdf4llm stays on 0.3.4, where it is an optional extra that is not installed. LangChain, LlamaIndex, LangGraph. OCR engines (see §3.5).
 
 ## 6. Quality bars
 
