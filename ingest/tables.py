@@ -23,13 +23,20 @@ hint suggesting it. The hint is advice, not a dependency.
 
 from __future__ import annotations
 
+import contextlib
+import io
 import re
 import signal
 from contextlib import contextmanager
 from pathlib import Path
 
 import fitz
-import pymupdf4llm
+
+# pymupdf4llm prints a suggestion to install pymupdf_layout when imported
+# without it. That package is the one SPEC.md §7 excludes, so the suggestion is
+# swallowed here rather than repeated on every ingest run.
+with contextlib.redirect_stdout(io.StringIO()):
+    import pymupdf4llm
 
 from gen.guardrails import FIGURE, checkable
 from ingest.preprocess import normalize_glyphs

@@ -36,3 +36,8 @@ pyarrow==24.0.0           # Stage 4 — typed table handed to LanceDB; imported 
 # proprietary layout model SPEC.md §7 excludes; here it is an optional extra,
 # and the extra is not installed. ingest/tables.py says why it is gated per page.
 pymupdf4llm==0.3.4        # AGPL-3.0, like PyMuPDF
+
+# Ingest step: corpus/urls.yaml, the list of where each company's reports are.
+# Already installed as a transitive dependency; named here because ingest.add
+# imports it directly.
+pyyaml==6.0.3

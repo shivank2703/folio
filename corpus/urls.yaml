@@ -1,0 +1,35 @@
+# Where ingest.add looks for each company's annual reports.
+#
+# Each company, keyed by the code Folio uses for it, gives either or both of:
+#   investor_page: a page linking the company's annual-report PDFs. ingest.add
+#                  reads every PDF link on it and takes the latest fiscal year.
+#   reports:       report URLs kept by hand, for sites that block scripts or
+#                  archives that cannot be searched (NSE's file archive).
+#                  fiscal_year is optional; the report's own pages say it.
+# Explicit reports win over the investor page when both offer the same year.
+
+HCC:
+  name: Hindustan Construction Company
+  listing: BSE 500185 · NSE HCC
+  reports:
+    - url: https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf
+      fiscal_year: FY25
+
+CHAMBAL:
+  name: Chambal Fertilisers and Chemicals
+  listing: CIN L24124RJ1985PLC003293
+  reports:
+    - url: https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf
+      fiscal_year: FY25
+
+NAVNEET:
+  name: Navneet Education
+  listing: BSE 508989 · NSE NAVNETEDUL
+  reports:
+    - url: https://navneet.com/annual-report-24-25.pdf
+      fiscal_year: FY25
+
+UNIHEALTH:
+  name: Unihealth Hospitals
+  listing: NSE SME (Emerge) UNIHEALTH
+  investor_page: https://www.unihealthfinancials.com/annual-reports

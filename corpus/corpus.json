@@ -5,7 +5,8 @@
     "name": "Hindustan Construction Company",
     "fiscal_year": "FY25",
     "source_url": "https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf",
-    "sha256": "9417307d85a84e78963b0cde625d3337efc2c8357affec37bd3832abae764a26"
+    "sha256": "9417307d85a84e78963b0cde625d3337efc2c8357affec37bd3832abae764a26",
+    "listing": "BSE 500185 · NSE HCC"
   },
   {
     "file": "Annual-Report-for-the-Financial-Year-2024-2025.pdf",
@@ -13,7 +14,8 @@
     "name": "Chambal Fertilisers and Chemicals",
     "fiscal_year": "FY25",
     "source_url": "https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf",
-    "sha256": "165dfdf87214cb36a3c51506468e2fdc168b2079eae3af0acd77ebb9c2ce7cb7"
+    "sha256": "165dfdf87214cb36a3c51506468e2fdc168b2079eae3af0acd77ebb9c2ce7cb7",
+    "listing": "CIN L24124RJ1985PLC003293"
   },
   {
     "file": "annual-report-24-25.pdf",
@@ -21,6 +23,18 @@
     "name": "Navneet Education",
     "fiscal_year": "FY25",
     "source_url": "https://navneet.com/annual-report-24-25.pdf",
-    "sha256": "ed2eca6940e5e07d5e2784e71104b029e77a560dc9545fe78856677279116e48"
+    "sha256": "ed2eca6940e5e07d5e2784e71104b029e77a560dc9545fe78856677279116e48",
+    "listing": "BSE 508989 · NSE NAVNETEDUL"
+  },
+  {
+    "file": "unihealth_fy26.pdf",
+    "company": "UNIHEALTH",
+    "name": "Unihealth Hospitals",
+    "fiscal_year": "FY26",
+    "source_url": "https://www.unihealthfinancials.com/_files/ugd/93e6b9_1d94f97033a14cd2ac3d6c9f25db0118.pdf",
+    "sha256": "74c31fa1987a5befa5b4bb1fb2da74e3a0780855fbe2f3905408f77c13cc7c5b",
+    "listing": "NSE SME (Emerge) UNIHEALTH",
+    "pages_without_text": [],
+    "retrieved": "2026-10-04"
   }
 ]

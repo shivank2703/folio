@@ -24,6 +24,7 @@ hours. Rebuilding is a local step, run whenever chunking or the model changes.
 from __future__ import annotations
 
 import argparse
+from datetime import timedelta
 import json
 from collections import Counter
 import time
@@ -127,6 +128,29 @@ def write_index(table: pa.Table, db_path: Path) -> None:
         db.drop_table(TABLE_NAME)
     written = db.create_table(TABLE_NAME, data=table)
     written.create_index("text", config=FTS(), replace=True)
+
+
+def replace_filing(table: pa.Table, company: str, db_path: Path) -> None:
+    """Swap one company's rows in the index for these, leaving every other filing alone.
+
+    The incremental path behind ingest.add: adding a company must not re-embed
+    the others, which is minutes per filing. Delete-then-add rather than merge,
+    because a re-ingested report can have a different number of chunks and a
+    stale chunk 41 must not survive beside a new chunk 40. The full-text index
+    is rebuilt over the whole table, since its word statistics span every
+    filing (notes/v2-ideas.md), and old table versions are pruned so the files
+    shipped with the index hold one version, not every past one.
+    """
+    db = lancedb.connect(str(db_path))
+    listed = db.list_tables()
+    if TABLE_NAME not in getattr(listed, "tables", listed):
+        write_index(table, db_path)
+        return
+    index = db.open_table(TABLE_NAME)
+    index.delete(f"company = '{company}'")
+    index.add(table)
+    index.create_index("text", config=FTS(), replace=True)
+    index.optimize(cleanup_older_than=timedelta(0))
 
 
 def main() -> None:
