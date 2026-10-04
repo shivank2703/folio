@@ -36,3 +36,12 @@ title, so its chunks do not say "standalone". Notes pages never have one
 (v2-ideas.md). hcc-fy25-003 was answered once with the consolidated p220
 figure for a standalone question. The scope tag (SPEC.md §3.4) is still owed;
 Ingest is where every new filing would need it.
+
+## Carried from Accurate: a computed figure stated twice
+
+Live check, 04 Oct (chambal-fy25-004): the answer opened "decreased by
+₹146.98 crore" unlabelled, then gave the inputs and ended "(computed from
+[page 98])". The grounding guard flags the first mention, correctly by the
+rule, so the reader sees a warning beside a right answer. Seen in 1 of 3 eval
+samples too. A prompt line ("state a computed figure once, where you label
+it") is the likely fix; it needs its own eval run, so it waits.
