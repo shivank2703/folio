@@ -33,7 +33,7 @@ from pathlib import Path
 
 import anthropic
 
-from gen.answer import build_client, guarded_answer
+from gen.answer import build_client, filing_label, guarded_answer
 from gen.guardrails import REFUSAL, cited_pages
 from retrieve.embed import load_model
 from retrieve.search import DEFAULT_K, EXPANSION_SEEDS, open_index, page_context, search
@@ -210,7 +210,8 @@ def run(label: str, samples: int, only: set[str] | None, rerank_gate: tuple[str,
                 print(f"{q['id']:<18} {q['type']:<14} {sum(r['passed'] for r in rows)}/{samples}  gate refused")
                 continue
         context = page_context(table, hits)
-        rows = [grade(q, guarded_answer(q["question"], hits, client, context), client) for _ in range(samples)]
+        label = filing_label(q["company"])
+        rows = [grade(q, guarded_answer(q["question"], hits, client, context, label), client) for _ in range(samples)]
         out["questions"].append({**{k: q[k] for k in ("id", "type", "company", "split")},
                                  "answerable": bool(q["expected_pages"]), "samples": rows})
         passed = sum(r["passed"] for r in rows)

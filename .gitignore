@@ -15,12 +15,12 @@ __pycache__/
 *.egg-info/
 
 # --- Generated artifacts: data/ is tracked as a folder, its contents are not.
-# One exception: the built LanceDB index ships, so the deployed app loads it
-# read-only instead of spending minutes rebuilding it (SPEC.md §5, §7). The
-# source PDF and the downloaded model stay out. ---
+# The LanceDB index was committed until v1.1; it now lives as a release asset
+# that corpus/index.json names and the app downloads at startup
+# (retrieve/store.py), because every rebuild added ~10 MB to git history.
+# Earlier commits keep their copy; nothing new is committed. ---
 data/*
 !data/.gitkeep
-!data/lancedb/
 
 # --- OS / editor noise ---
 .DS_Store

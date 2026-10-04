@@ -24,6 +24,7 @@ away with different numbers.
 from __future__ import annotations
 
 import argparse
+import json
 from pathlib import Path
 
 import anthropic
@@ -59,7 +60,11 @@ SYSTEM_PROMPT = f"""You answer questions about an Indian listed company's annual
 report, using only the extracts you are given.
 
 Rules:
-- Use only the numbered extracts below. Nothing you know about the company from \
+- Every extract comes from the one filing named on the first line of the \
+message. A company named in the question by a short name ("Unihealth", "HCC") \
+is that filing's company; its figures, standalone or consolidated, are that \
+company's figures.
+- Use only the extracts below. Nothing you know about the company from \
 elsewhere may enter the answer.
 - End every sentence that states a fact from the filing with its page marker, \
 written exactly as [page N]. Take N from the "extract from page N" label \
@@ -105,8 +110,13 @@ def build_client() -> anthropic.Anthropic:
     return client
 
 
-def build_prompt(question: str, hits: list[dict]) -> str:
-    """Lay out the question and the extracts, each headed by the page it came from.
+def build_prompt(question: str, hits: list[dict], filing: str | None = None) -> str:
+    """Lay out the filing, the question and the extracts, each headed by the page it came from.
+
+    The filing's name comes first because the extracts rarely say whose they
+    are: asked about "Unihealth", the model refused a consolidated figure from
+    Unihealth Hospitals Limited's own balance sheet as being "the group's, not
+    Unihealth's".
 
     The header line is the only place a page number is offered as a citation,
     and it is written from the chunk's metadata. The extract's own text follows
@@ -120,22 +130,24 @@ def build_prompt(question: str, hits: list[dict]) -> str:
     # only number in the label.
     for hit in hits:
         extracts.append(f"--- extract from page {hit['page']} (chunk {hit['chunk']}) ---\n{hit['text']}")
-    return f"Question: {question}\n\nExtracts:\n\n" + "\n\n".join(extracts)
+    heading = f"Filing: {filing}\n\n" if filing else ""
+    return f"{heading}Question: {question}\n\nExtracts:\n\n" + "\n\n".join(extracts)
 
 
-def generate(client: anthropic.Anthropic, question: str, hits: list[dict]) -> str:
+def generate(client: anthropic.Anthropic, question: str, hits: list[dict], filing: str | None = None) -> str:
     """Ask the model for an answer grounded in these extracts, and return its text."""
     message = client.messages.create(
         model=MODEL,
         max_tokens=MAX_TOKENS,
         system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": build_prompt(question, hits)}],
+        messages=[{"role": "user", "content": build_prompt(question, hits, filing)}],
     )
     return "".join(block.text for block in message.content if block.type == "text").strip()
 
 
 def guarded_answer(
-    question: str, hits: list[dict], client: anthropic.Anthropic, context: list[dict] | None = None
+    question: str, hits: list[dict], client: anthropic.Anthropic, context: list[dict] | None = None,
+    filing: str | None = None,
 ) -> dict:
     """Gate, answer, then check what came back (Stage 7 over Stage 6).
 
@@ -166,7 +178,7 @@ def guarded_answer(
         best = best_similarity(hits)
         return {**verdict, "text": REFUSAL, "reason": f"best similarity {best:.3f} is below the {MIN_SIMILARITY} floor"}
 
-    raw = generate(client, question, context)
+    raw = generate(client, question, context, filing)
     # The model's own words are kept beside what the reader is shown, so the
     # eval can grade the contract even where a guard has already repaired it.
     verdict["raw"] = raw
@@ -193,13 +205,21 @@ def guarded_answer(
             "ungrounded": ungrounded, "recited": recited, "scrubbed": scrubbed}
 
 
+def filing_label(company: str | None, manifest: Path = Path("corpus/corpus.json")) -> str | None:
+    """"Unihealth Hospitals annual report, FY26": the filing name the prompt opens with."""
+    for entry in json.loads(manifest.read_text(encoding="utf-8")):
+        if entry["company"] == company:
+            return f"{entry['name']} annual report, {entry['fiscal_year']}"
+    return None
+
+
 def answer_question(question: str, db_path: Path, k: int = DEFAULT_K, company: str | None = None) -> dict:
     """The whole path from a question to a cited answer, or to an honest refusal."""
     table = open_index(db_path)
     # The ranking runs deeper than k: k is what a reader is shown, while the
     # context is built by widening every page near the top of the ranking.
     hits = search(table, load_model(), question, max(k, EXPANSION_SEEDS), company)
-    return guarded_answer(question, hits, build_client(), page_context(table, hits))
+    return guarded_answer(question, hits, build_client(), page_context(table, hits), filing_label(company))
 
 
 def main() -> None:

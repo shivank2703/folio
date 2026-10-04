@@ -29,6 +29,7 @@ from gen.answer import build_client, guarded_answer
 from gen.guardrails import CITATION, cited_pages, has_enough_context
 from retrieve.embed import load_model
 from retrieve.search import DEFAULT_K, EXPANSION_SEEDS, open_index, page_context, search
+from retrieve.store import ensure_index
 
 DB_PATH = Path("data/lancedb")
 
@@ -50,7 +51,14 @@ PYTHON = (3, 13)
 
 @st.cache_resource(show_spinner="Loading the index and the embedding model...")
 def load_retrieval():
-    """Open the committed index and the embedding model, once per session."""
+    """Fetch the published index if needed, then open it and the embedding model, once per container.
+
+    The index is no longer in git (retrieve/store.py): a fresh container
+    downloads the tarball corpus/index.json names and checks its SHA-256
+    before opening anything, so the app still serves exactly the index its
+    commit was tested with.
+    """
+    ensure_index(DB_PATH)
     return open_index(DB_PATH), load_model()
 
 
@@ -191,7 +199,7 @@ def main() -> None:
         st.stop()
 
     try:
-        verdict = guarded_answer(question, hits, client, context)
+        verdict = guarded_answer(question, hits, client, context, f"{filing['name']} annual report, {filing['fiscal_year']}")
     except anthropic.APIError:
         # Spend limit reached, rate limited or the API is down: none of these
         # is the reader's fault, and a traceback on a public page explains

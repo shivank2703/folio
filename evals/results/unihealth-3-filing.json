@@ -1,0 +1,241 @@
+{
+ "label": "unihealth-3-filing",
+ "samples": 3,
+ "when": "2026-10-04 22:52",
+ "questions": [
+  {
+   "id": "unihealth-fy26-001",
+   "type": "numeric-lookup",
+   "company": "UNIHEALTH",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs [page 98].",
+     "raw": "Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs [page 98].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact figure of ₹25,416.02 lakhs as at March 31, 2026, which matches the reference answer. The unit (lakhs), period (March 31, 2026), and scope (consolidated) are all correct. The system answer does not include the prior year comparison, but the question only asked for the 2026 figure, so this omission is acceptable. | faithful: The answer states that Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs. This figure appears directly on page 98, chunk 9, in the Consolidated Balance Sheet where 'Total Assets' for 'As at March 31, 2026' is listed as 25,416.02 lakhs. No computation is involved, and the figure is directly supported by the cited page.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs [page 98].",
+     "raw": "Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs [page 98].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact figure of ₹25,416.02 lakhs as at March 31, 2026, which matches the reference answer. The unit (lakhs), period (March 31, 2026), and scope (consolidated) are all correct. The system answer does not include the prior year comparison, but the question only asked for the 2026 figure, so this omission is acceptable. | faithful: The answer states that Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs. This figure appears directly on page 98, chunk 9, in the Consolidated Balance Sheet where 'Total Assets' for 'As at March 31, 2026' is listed as 25,416.02 lakhs. No computation is involved, and the figure is directly supported by the cited page.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs [page 98].",
+     "raw": "Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs [page 98].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact figure of ₹25,416.02 lakhs as at March 31, 2026, which matches the reference answer. The unit (lakhs), period (March 31, 2026), and scope (consolidated) are all correct. The page citation is ignored as per instructions. | faithful: The answer states that Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs. This figure appears directly on page 98, chunk 9, in the Consolidated Balance Sheet where 'Total Assets' for 'As at March 31, 2026' is listed as 25,416.02 lakhs. No computation is involved, and the figure is directly supported by the cited page.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "unihealth-fy26-002",
+   "type": "numeric-lookup",
+   "company": "UNIHEALTH",
+   "split": "fit",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Unihealth's Uganda hospital network reached 150 beds in FY26 [page 6]. This capacity was achieved following the acquisition of UMC Hospital Entebbe, a 30-bed facility, which was added to the existing UMC Victoria Hospital in Kampala with 120 beds [page 6].",
+     "raw": "Unihealth's Uganda hospital network reached 150 beds in FY26 [page 6]. This capacity was achieved following the acquisition of UMC Hospital Entebbe, a 30-bed facility, which was added to the existing UMC Victoria Hospital in Kampala with 120 beds [page 6].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      6
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the correct total bed capacity of 150 beds for FY26, matches the reference answer's detail about the 30-bed UMC Hospital in Entebbe acquisition, and adds accurate supporting information about the existing 120-bed UMC Victoria Hospital in Kampala. All figures and scope align with the reference answer. | faithful: All factual claims in the answer are directly supported by the cited page 6 text. The answer states: (1) Uganda hospital network reached 150 beds in FY26 - this is explicitly stated in page 6 chunk 1: 'Uganda network capacity reached 150 beds in FY26 following the Entebbe acquisition.' (2) UMC Hospital Entebbe is a 30-bed facility - this is shown in page 6 chunk 0 under the Entebbe facility listing: 'Capacity: 30 beds'. (3) UMC Victoria Hospital in Kampala has 120 beds - this is shown in page 6 chunk 0: 'Capacity: 120 beds' for UMC Victoria Hospital. (4) The acquisition of UMC Hospital Entebbe was added to the existing UMC Victoria Hospital - this is supported by the statement that the 150-bed capacity was achieved 'following the Entebbe acquisition.' No computed figures are present in the answer; all numbers are directly cited from the pages.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Unihealth's Uganda hospital network reached 150 beds in FY26 following the Entebbe acquisition [page 6]. This comprised UMC Victoria Hospital, Kampala with 120 beds (established 2017) and UMC Hospital, Entebbe with 30 beds (established 2026) [page 6].",
+     "raw": "Unihealth's Uganda hospital network reached 150 beds in FY26 following the Entebbe acquisition [page 6]. This comprised UMC Victoria Hospital, Kampala with 120 beds (established 2017) and UMC Hospital, Entebbe with 30 beds (established 2026) [page 6].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      6
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer correctly identifies the total bed capacity of 150 beds in FY26, matching the reference answer. It also correctly breaks down the composition (120 beds in Kampala + 30 beds in Entebbe) and confirms that the Entebbe hospital was acquired and commissioned, which aligns with the reference answer's explanation of how the 150-bed capacity was reached. | faithful: All factual claims in the answer are directly supported by page 6. The answer states: (1) Uganda hospital network reached 150 beds in FY26 following Entebbe acquisition - this is explicitly stated in page 6 chunk 1. (2) UMC Victoria Hospital, Kampala with 120 beds established 2017 - page 6 chunk 0 confirms 120 beds capacity, Kampala location, and 2017 establishment date. (3) UMC Hospital, Entebbe with 30 beds established 2026 - page 6 chunk 0 confirms 30 beds capacity, Entebbe location, and 2026 establishment date. No computed figures are present in the answer; all numbers are directly cited from the pages.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Unihealth's Uganda hospital network reached 150 beds in FY26 [page 6]. This capacity was achieved following the acquisition of UMC Entebbe, which added 30 beds to the existing UMC Victoria Hospital in Kampala (120 beds) [page 6].",
+     "raw": "Unihealth's Uganda hospital network reached 150 beds in FY26 [page 6]. This capacity was achieved following the acquisition of UMC Entebbe, which added 30 beds to the existing UMC Victoria Hospital in Kampala (120 beds) [page 6].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      6
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the correct bed capacity of 150 beds for FY26, matching the reference answer. It also correctly identifies that this was achieved through the acquisition of the 30-bed UMC Hospital in Entebbe, and provides additional accurate detail about the existing 120-bed UMC Victoria Hospital in Kampala. All key figures and facts align with the reference answer. | faithful: All factual claims in the answer are directly supported by page 6. The answer states: (1) Uganda hospital network reached 150 beds in FY26 - this is explicitly stated in page 6 chunk 1: 'Uganda network capacity reached 150 beds in FY26 following the Entebbe acquisition.' (2) UMC Entebbe added 30 beds - page 6 chunk 0 shows 'Capacity: 30 beds' for 'UMC Hospital Location: Entebbe, Uganda'. (3) UMC Victoria Hospital in Kampala has 120 beds - page 6 chunk 0 shows 'Capacity: 120 beds' for 'UMC Victoria Hospital Location: Kampala, Uganda'. (4) The acquisition of UMC Entebbe caused the capacity increase - page 6 chunk 1 confirms 'Uganda network capacity reached 150 beds in FY26 following the Entebbe acquisition.' There are no computed figures in the answer - all numbers are directly cited from the pages.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "unihealth-fy26-003",
+   "type": "table",
+   "company": "UNIHEALTH",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Based on the extracts provided, Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026 was ₹11,526.88 Lakhs [page 118].",
+     "raw": "Based on the extracts provided, Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026 was ₹11,526.88 Lakhs [page 118].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      118
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact figure of ₹11,526.88 Lakhs for Uganda's consolidated segment revenue for the year ended March 31, 2026, which matches the reference answer. The unit (lakhs) is correct, the period is correct (year ended March 31, 2026), and the scope is consolidated as required. The system answer does not include the comparison year (FY25) or segment result information, but the question only asked for the consolidated segment revenue for FY26, so this omission is acceptable. | faithful: The answer states that Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026 was ₹11,526.88 Lakhs. This figure appears directly in page 118 chunk 5, in the Segment Revenue table under the Uganda row for March 31, 2026. No computation is involved - the figure is explicitly stated in the cited page. The answer is faithful to the source material.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "According to the segment information in the filing, Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026 was ₹11,526.88 Lakhs [page 118].",
+     "raw": "According to the segment information in the filing, Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026 was ₹11,526.88 Lakhs [page 118].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      118
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact figure of ₹11,526.88 Lakhs for Uganda's consolidated segment revenue for the year ended March 31, 2026, which matches the reference answer. The unit (lakhs) is correct, the period is correct (FY26), and the scope is consolidated as required. The system answer does not include the prior year comparison or segment result, but the question only asked for the revenue figure for FY26, so this is acceptable. | faithful: The answer states that Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026 was ₹11,526.88 Lakhs. This figure appears directly in page 118 chunk 5, in the segment information table showing Uganda's segment revenue for March 31, 2026 as 11,526.88. No computation is involved - the figure is directly cited from the source material. The answer is faithful to the cited pages.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Based on the extracts provided, Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026 was ₹11,526.88 Lakhs [page 118].",
+     "raw": "Based on the extracts provided, Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026 was ₹11,526.88 Lakhs [page 118].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      118
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact figure of ₹11,526.88 Lakhs for Uganda's consolidated segment revenue for the year ended March 31, 2026, which matches the reference answer. The unit (lakhs) is correct, the period is correct (year ended March 31, 2026), and the scope is consolidated as required. The system answer does not include the comparison year (FY25) or segment result information, but the question only asked for the consolidated segment revenue for FY26, so this omission is acceptable. | faithful: The answer states that Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026 was ₹11,526.88 Lakhs. This figure appears directly in page 118 chunk 5, in the Segment Revenue table under the Uganda row for March 31, 2026. No computation is involved - the figure is explicitly stated in the cited page. The answer is faithful to the source material.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "unihealth-fy26-004",
+   "type": "not-in-filing",
+   "company": "UNIHEALTH",
+   "split": "test",
+   "answerable": false,
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    }
+   ]
+  }
+ ]
+}

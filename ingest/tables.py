@@ -39,7 +39,7 @@ with contextlib.redirect_stdout(io.StringIO()):
     import pymupdf4llm
 
 from gen.guardrails import FIGURE, checkable
-from ingest.preprocess import normalize_glyphs
+from ingest.preprocess import is_period_header, is_unit_declaration, normalize_glyphs
 
 STRATEGY = "lines"
 
@@ -161,4 +161,14 @@ def apply_tables(pdf_path: Path, records: list[dict]) -> list[dict]:
             record["table_gate"] = failed
             if failed is None:
                 record["text"] = "\n".join(rows)
+                # The chunker recognises a header or unit row by exact match
+                # against these lists, so they must describe the rows now on
+                # the page. Left as preprocess wrote them, every year header in
+                # pymupdf4llm's format went unrecognised and was never carried
+                # into later chunks: a "Total Assets" row lost its "As at
+                # March 31, 2026" (found on Unihealth p98, true of all 202
+                # pages read this way in v1.1).
+                record["headers"] = list(dict.fromkeys(r for r in rows if is_period_header(r.split(" | "))))
+                found_units = [c for r in rows for c in r.split(" | ") if is_unit_declaration(c)]
+                record["units"] = list(dict.fromkeys(record["units"] + found_units))
     return records

@@ -1,0 +1,227 @@
+{
+ "label": "unihealth-1",
+ "samples": 3,
+ "when": "2026-10-04 22:46",
+ "questions": [
+  {
+   "id": "unihealth-fy26-001",
+   "type": "numeric-lookup",
+   "company": "UNIHEALTH",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "According to the Consolidated Balance Sheet, Unihealth's consolidated total assets as at March 31, 2026 were 25,416.02 lakhs [page 98].",
+     "raw": "According to the Consolidated Balance Sheet, Unihealth's consolidated total assets as at March 31, 2026 were 25,416.02 lakhs [page 98].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same figure as the reference answer: ₹25,416.02 lakhs as at March 31, 2026. The unit (lakhs), period (March 31, 2026), and scope (consolidated) all match correctly. The answer directly addresses what was asked without requiring the comparison year from 2025. | faithful: The answer states that Unihealth's consolidated total assets as at March 31, 2026 were 25,416.02 lakhs. This figure is directly stated in page 98 chunk 9, which shows 'Total Assets | | 25,416.02' for the period ending March 31, 2026. No computation is involved - the figure is explicitly printed on the cited page. Therefore, the answer is faithful.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": false,
+     "faithful": false,
+     "passed": false,
+     "judge": "refused"
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.\n\nThe extracts provided discuss Unihealth Hospitals Limited and its subsidiaries on a consolidated basis, but do not contain information about \"Unihealth\" as a standalone entity or its total assets as at March 31, 2026. The consolidated total assets of Unihealth Hospitals Limited (the parent company and its subsidiaries together) as at March 31, 2026 were ₹25,416.02 lakhs [page 98], but this is not the figure you asked for.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts (text after the refusal removed)",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": true,
+     "correct": false,
+     "faithful": false,
+     "passed": false,
+     "judge": "refused"
+    }
+   ]
+  },
+  {
+   "id": "unihealth-fy26-002",
+   "type": "numeric-lookup",
+   "company": "UNIHEALTH",
+   "split": "fit",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "According to the filing, Unihealth's Uganda hospital network reached 150 beds in FY26 [page 6]. This capacity was achieved following the acquisition of UMC Hospital, Entebbe, which added 30 beds to the existing Uganda network [page 18].",
+     "raw": "According to the filing, Unihealth's Uganda hospital network reached 150 beds in FY26 [page 6]. This capacity was achieved following the acquisition of UMC Hospital, Entebbe, which added 30 beds to the existing Uganda network [page 18].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      6,
+      18
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer correctly states that Unihealth's Uganda hospital network reached 150 beds in FY26, and accurately identifies that this was achieved through the acquisition and commissioning of the 30-bed UMC Hospital in Entebbe. The figure (150 beds), unit, period (FY26), and scope all match the reference answer. The additional detail about the source of the capacity increase is consistent with the reference answer. | faithful: The answer makes two factual claims: (1) Uganda hospital network reached 150 beds in FY26, and (2) UMC Hospital, Entebbe acquisition added 30 beds. Both claims are directly supported by the cited pages. Page 6 chunk 1 explicitly states 'Uganda network capacity reached 150 beds in FY26 following the Entebbe acquisition.' Page 18 chunk 7 explicitly states 'UMC Entebbe (Uganda): Acquired and commissioned during FY26, adding 30 beds to the East African network.' No computed figures are presented in the answer - all numbers cited are directly stated in the source material. The answer is faithful to the cited text.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Unihealth's Uganda hospital network reached 150 beds in FY26 [page 6]. This capacity was achieved following the acquisition of UMC Hospital, Entebbe, which added 30 beds to the network [page 6].",
+     "raw": "Unihealth's Uganda hospital network reached 150 beds in FY26 [page 6]. This capacity was achieved following the acquisition of UMC Hospital, Entebbe, which added 30 beds to the network [page 6].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      6
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the same figure (150 beds) for the same period (FY26) and includes the same key detail about the 30-bed UMC Hospital in Entebbe acquisition that contributed to reaching this capacity. The answer matches the reference answer in all material respects. | faithful: The answer states that Uganda's hospital network reached 150 beds in FY26 following the Entebbe acquisition which added 30 beds. Page 6 chunk 1 explicitly states: 'Uganda network capacity reached 150 beds in FY26 following the Entebbe acquisition.' Page 6 chunk 0 shows UMC Hospital, Entebbe has a capacity of 30 beds and was established in 2026. Both factual claims in the answer are directly supported by the cited text. No computed figures are present - the answer only cites figures that appear on the pages (150 beds and 30 beds are both stated in the source material).",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Unihealth's Uganda hospital network reached 150 beds in FY26 [page 6]. This capacity was achieved following the acquisition of UMC Hospital, Entebbe, which added 30 beds to the existing network [page 6].",
+     "raw": "Unihealth's Uganda hospital network reached 150 beds in FY26 [page 6]. This capacity was achieved following the acquisition of UMC Hospital, Entebbe, which added 30 beds to the existing network [page 6].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      6
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the same figure (150 beds) for the same period (FY26) and scope (Uganda hospital network). It also correctly identifies the 30-bed UMC Hospital in Entebbe acquisition as the driver of this capacity increase. The answer matches the reference answer in all material respects. | faithful: The answer states that Uganda's hospital network reached 150 beds in FY26 following the Entebbe acquisition. Page 6 chunk 1 explicitly states: 'Uganda network capacity reached 150 beds in FY26 following the Entebbe acquisition.' The answer also states that UMC Hospital, Entebbe added 30 beds, which is confirmed by page 6 chunk 0 showing 'Capacity: 30 beds' for UMC Hospital, Entebbe. All factual claims in the answer are directly supported by the cited text with no computed figures requiring calculation or labeling.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "unihealth-fy26-003",
+   "type": "table",
+   "company": "UNIHEALTH",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": false,
+     "faithful": false,
+     "passed": false,
+     "judge": "refused"
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": false,
+     "faithful": false,
+     "passed": false,
+     "judge": "refused"
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": false,
+     "faithful": false,
+     "passed": false,
+     "judge": "refused"
+    }
+   ]
+  },
+  {
+   "id": "unihealth-fy26-004",
+   "type": "not-in-filing",
+   "company": "UNIHEALTH",
+   "split": "test",
+   "answerable": false,
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    }
+   ]
+  }
+ ]
+}

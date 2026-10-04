@@ -99,7 +99,7 @@ def main() -> None:
 
     print(f"\n{len(chunks)} chunks from {len(manifest)} filing(s) -> {args.db}")
     print(f"  ingest {ingested - started:.0f}s, embed {finished - ingested:.0f}s, total {finished - started:.0f}s")
-    print(f"  index on disk: {directory_size(args.db) / 1e6:.1f} MB (it ships in git)")
+    print(f"  index on disk: {directory_size(args.db) / 1e6:.1f} MB; publish it with python -m ingest.publish")
 
 
 if __name__ == "__main__":

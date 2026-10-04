@@ -629,6 +629,24 @@ def is_period_header(cells: list[str]) -> bool:
 # --- One page, then the whole report -----------------------------------------
 
 
+def statement_title(row: str) -> str | None:
+    """The statement a page's first row names, or None.
+
+    Some reports print two pages per PDF page, a printed spread (Unihealth
+    FY26: printed 194 and 195 on PDF page 98). A statement crossing the
+    spread repeats its title on both halves, and the row arrives as
+    "Consolidated Balance Sheet | Consolidated Balance Sheet". A row whose
+    cells all say the same title is that title. A row pairing a title with
+    something else (an auditor's annexure on the other half) is left
+    untitled: the title would be wrong for half the page.
+    """
+    cells = {cell.strip() for cell in row.split(" | ")}
+    if len(cells) == 1:
+        (only,) = cells
+        return only if STATEMENT_TITLE.match(only) else None
+    return None
+
+
 def clean_page(lines: list[Line]) -> dict:
     """Turn one page's body lines (furniture already removed) into text plus context."""
     groups, columns = reading_groups(lines)
@@ -655,7 +673,7 @@ def clean_page(lines: list[Line]) -> dict:
     # standalone balance sheet for its full length. Only the first row counts,
     # so a sub-heading such as "Statement of profit and loss" inside a note is
     # never taken for the page's statement.
-    title = text_rows[0] if text_rows and STATEMENT_TITLE.match(text_rows[0]) else None
+    title = statement_title(text_rows[0]) if text_rows else None
 
     words = sum(len(line.text.split()) for line in lines)
     return {
@@ -670,6 +688,53 @@ def clean_page(lines: list[Line]) -> dict:
     }
 
 
+# A spread is two printed pages on one landscape PDF page. Its gutter is the
+# tell: almost no text line crosses the middle. Unihealth FY26: 128 of 130
+# landscape pages have none; the other filings have no landscape pages at all.
+SPREAD_ASPECT = 1.2
+SPREAD_MAX_CROSSING = 0.02
+
+
+def split_spread(lines: list[Line], width: float, height: float) -> tuple[list[Line], list[Line]] | None:
+    """The left and right printed pages of a two-page spread, or None if this is one page.
+
+    Read as one page, a spread's halves interleave: a row on the left and a
+    row on the right at the same height become one row, so two unrelated
+    tables fuse column by column (Unihealth p118: trade payables beside
+    segment revenue). Read as two, each half keeps its own rows.
+    """
+    if width <= SPREAD_ASPECT * height or not lines:
+        return None
+    middle = width / 2
+    crossing = sum(1 for line in lines if line.x0 < middle - 5 and line.x1 > middle + 5)
+    if crossing > SPREAD_MAX_CROSSING * len(lines):
+        return None
+    left = [line for line in lines if (line.x0 + line.x1) / 2 < middle]
+    right = [line for line in lines if (line.x0 + line.x1) / 2 >= middle]
+    return (left, right) if left and right else None
+
+
+def clean_spread(left: list[Line], right: list[Line]) -> dict:
+    """One record for a spread: the left page's rows, then the right page's.
+
+    The PDF page stays the citation unit (SPEC.md §3.3), so both halves share
+    one record. The title is kept only when both halves name the same
+    statement: a spread pairing an auditor's annexure with a balance sheet
+    has no title true of all its rows.
+    """
+    a, b = clean_page(left), clean_page(right)
+    words = sum(len(line.text.split()) for line in left + right)
+    return {
+        "text": "\n".join(t for t in (a["text"], b["text"]) if t),
+        "title": a["title"] if a["title"] and a["title"] == b["title"] else None,
+        "units": list(dict.fromkeys(a["units"] + b["units"])),
+        "headers": list(dict.fromkeys(a["headers"] + b["headers"])),
+        "columns": max(a["columns"], b["columns"]),
+        "excluded": f"fewer than {MIN_BODY_WORDS} body words" if words < MIN_BODY_WORDS else None,
+        "spread": True,
+    }
+
+
 def preprocess(pdf_path: Path, company: str, fiscal_year: str) -> list[dict]:
     """Return one clean record per PDF page, in page order.
 
@@ -679,17 +744,19 @@ def preprocess(pdf_path: Path, company: str, fiscal_year: str) -> list[dict]:
     with fitz.open(pdf_path) as doc:
         pages = [read_lines(page) for page in doc]
         heights = [page.rect.height for page in doc]
+        widths = [page.rect.width for page in doc]
     furniture = find_furniture(pages, heights)
 
     records = []
     for index, lines in enumerate(pages):
         body = [line for i, line in enumerate(lines) if (index, i) not in furniture]
+        halves = split_spread(body, widths[index], heights[index])
         records.append(
             {
                 "company": company,
                 "fiscal_year": fiscal_year,
                 "page": index + 1,  # viewer page number, the citation convention (§3.3)
-                **clean_page(body),
+                **(clean_spread(*halves) if halves else clean_page(body)),
                 "furniture": [line.text for i, line in enumerate(lines) if (index, i) in furniture],
             }
         )

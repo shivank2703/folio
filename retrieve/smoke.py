@@ -20,6 +20,7 @@ from pathlib import Path
 
 from retrieve.embed import load_model
 from retrieve.search import EXPANSION_SEEDS, open_index, page_context, search
+from retrieve.store import ensure_index
 
 # The generator will see SHOWN chunks. Searching deeper tells a near miss (the
 # right page at rank 8) apart from a true miss (nowhere in the top 20).
@@ -57,6 +58,7 @@ def main() -> None:
     )
     args = parser.parse_args()
 
+    print(f"index: {ensure_index(args.db)}")
     table = open_index(args.db)
     model = load_model()
     # The harness reaches up into gen on purpose: these are the same questions
@@ -64,7 +66,7 @@ def main() -> None:
     # so a retrieval-only run needs no API credentials at all.
     client = None
     if args.answer:
-        from gen.answer import build_client, guarded_answer
+        from gen.answer import build_client, filing_label, guarded_answer
         from gen.guardrails import cited_pages
 
         client = build_client()
@@ -110,7 +112,7 @@ def main() -> None:
             # The gate judges the same 8-chunk ranking the app hands it, not the
             # five shown: a harness that gates on a narrower slice passes a
             # different set of negatives than the deployed app does.
-            verdict = guarded_answer(q["question"], hits[:GATE_DEPTH], client, context)
+            verdict = guarded_answer(q["question"], hits[:GATE_DEPTH], client, context, filing_label(q["company"]))
             if verdict["refused"]:
                 print(f"  ANSWER: refused - {verdict['reason']}")
             else:

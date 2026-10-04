@@ -1,0 +1,238 @@
+{
+ "label": "unihealth-2-spreads",
+ "samples": 3,
+ "when": "2026-10-04 22:51",
+ "questions": [
+  {
+   "id": "unihealth-fy26-001",
+   "type": "numeric-lookup",
+   "company": "UNIHEALTH",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs [page 98].",
+     "raw": "Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs [page 98].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact figure of ₹25,416.02 lakhs as at March 31, 2026, which matches the reference answer. The unit (lakhs), period (March 31, 2026), and scope (consolidated) are all correct. The system answer does not include the prior year comparison, but the question only asked for the 2026 figure, so this omission is acceptable. | faithful: The answer states that Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs. This figure appears directly on page 98, chunk 9, in the Consolidated Balance Sheet where 'Total Assets' for 'As at March 31, 2026' is listed as 25,416.02 lakhs. No computation is involved, and the figure is directly supported by the cited page.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs [page 98].",
+     "raw": "Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs [page 98].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact figure of ₹25,416.02 lakhs as at March 31, 2026, which matches the reference answer. The unit (lakhs), period (March 31, 2026), and scope (consolidated) are all correct. The page citation is ignored as per instructions. | faithful: The answer states that Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs. This figure appears directly on page 98, chunk 9, in the Consolidated Balance Sheet where 'Total Assets' for 'As at March 31, 2026' is listed as 25,416.02 lakhs. No computation is involved, and the figure is directly supported by the cited page.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs [page 98].",
+     "raw": "Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs [page 98].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact figure of ₹25,416.02 lakhs as at March 31, 2026, which matches the reference answer. The unit (lakhs), period (March 31, 2026), and scope (consolidated) are all correct. The page citation is ignored as per instructions. | faithful: The answer states that Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs. This figure appears directly on page 98, chunk 9, in the Consolidated Balance Sheet where 'Total Assets' for 'As at March 31, 2026' is listed as 25,416.02 lakhs. No computation is involved, and the figure is directly supported by the cited page.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "unihealth-fy26-002",
+   "type": "numeric-lookup",
+   "company": "UNIHEALTH",
+   "split": "fit",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Unihealth's Uganda hospital network reached 150 beds in FY26 following the Entebbe acquisition [page 6].",
+     "raw": "Unihealth's Uganda hospital network reached 150 beds in FY26 following the Entebbe acquisition [page 6].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      6
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer correctly states that Unihealth's Uganda hospital network reached 150 beds in FY26, which matches the reference answer. Both answers provide the same figure (150 beds) and the same period (FY26). The system answer also correctly identifies the Entebbe acquisition as the reason for reaching this capacity, consistent with the reference answer's mention of the 30-bed UMC Hospital in Entebbe being acquired and commissioned. | faithful: The answer states that 'Unihealth's Uganda hospital network reached 150 beds in FY26 following the Entebbe acquisition.' This statement is directly supported by page 6 chunk 1, which explicitly states: 'Uganda network capacity reached 150 beds in FY26 following the Entebbe acquisition.' No computed figures are present in the answer - it is a direct factual claim that is verbatim supported by the cited page.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Unihealth's Uganda hospital network reached 150 beds in FY26 [page 6]. This capacity was achieved following the acquisition of UMC Hospital in Entebbe, which added 30 beds to the existing UMC Victoria Hospital in Kampala (120 beds) [page 6].",
+     "raw": "Unihealth's Uganda hospital network reached 150 beds in FY26 [page 6]. This capacity was achieved following the acquisition of UMC Hospital in Entebbe, which added 30 beds to the existing UMC Victoria Hospital in Kampala (120 beds) [page 6].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      6
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": false,
+     "judge": "correct: The system answer provides the correct bed capacity of 150 beds for FY26, matches the reference answer's figure, and includes accurate supporting details about how this capacity was achieved (acquisition of the 30-bed UMC Hospital in Entebbe and the existing 120-bed UMC Victoria Hospital in Kampala). The breakdown of the composition (120 + 30 = 150) is consistent with the reference answer's information. | faithful: The answer states that the 150 beds capacity was 'achieved following the acquisition of UMC Hospital in Entebbe, which added 30 beds to the existing UMC Victoria Hospital in Kampala (120 beds)'. While page 6 confirms that Uganda network capacity reached 150 beds in FY26 following the Entebbe acquisition, and lists UMC Victoria Hospital at 120 beds and UMC Hospital at 30 beds, the answer presents the arithmetic (120 + 30 = 150) as an unlabelled computed figure. The answer should have explicitly labeled this as a computed total or calculation, but instead presents it as a straightforward statement of fact without indicating the computation. Additionally, the answer's phrasing 'which added 30 beds to the existing UMC Victoria Hospital in Kampala (120 beds)' implies a direct addition calculation that is not explicitly labeled as computed.",
+     "computed": [
+      {
+       "figure": "150 beds",
+       "labelled": false,
+       "arithmetic_right": true
+      }
+     ],
+     "passed": false
+    },
+    {
+     "text": "Unihealth's Uganda hospital network reached 150 beds in FY26 following the Entebbe acquisition [page 6]. This comprised UMC Victoria Hospital in Kampala with 120 beds and UMC Hospital in Entebbe with 30 beds [page 6].",
+     "raw": "Unihealth's Uganda hospital network reached 150 beds in FY26 following the Entebbe acquisition [page 6]. This comprised UMC Victoria Hospital in Kampala with 120 beds and UMC Hospital in Entebbe with 30 beds [page 6].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      6
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the same bed capacity figure (150 beds) as the reference answer, with the same scope (Uganda hospital network in FY26) and the same context (the 30-bed Entebbe hospital acquisition). The system answer additionally breaks down the composition (120 beds in Kampala + 30 beds in Entebbe) which is extra true detail that does not contradict the reference answer. | faithful: All factual claims in the answer are directly supported by the cited page 6 text. The answer states: (1) Uganda hospital network reached 150 beds in FY26 following Entebbe acquisition - this is explicitly stated in page 6 chunk 1. (2) UMC Victoria Hospital in Kampala with 120 beds - this is shown in page 6 chunk 0 under the Kampala facility. (3) UMC Hospital in Entebbe with 30 beds - this is shown in page 6 chunk 0 under the Entebbe facility. The total of 120 + 30 = 150 beds is already stated as a fact in the source material, not computed by the answer. No computed figures are present in the answer.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "unihealth-fy26-003",
+   "type": "table",
+   "company": "UNIHEALTH",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": false,
+     "faithful": false,
+     "passed": false,
+     "judge": "refused"
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.\n\nThe extracts provide segment revenue information for Uganda (₹11,526.88 lakhs for the year ended March 31, 2026) [page 118], but this is segment revenue, not specifically Unihealth's consolidated segment revenue from Uganda. The extracts do not contain a breakdown of consolidated segment revenue attributed to Unihealth as a separate entity for Uganda.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts (text after the refusal removed)",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": true,
+     "correct": false,
+     "faithful": false,
+     "passed": false,
+     "judge": "refused"
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.\n\nThe extracts provide consolidated segment revenue data for Uganda of ₹11,526.88 lakhs [page 118], but this figure relates to the consolidated group's revenue from Uganda, not specifically to \"Unihealth's\" segment revenue from Uganda. The filing does not separately identify consolidated segment revenue attributed specifically to an entity named \"Unihealth\" from Uganda.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts (text after the refusal removed)",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": true,
+     "correct": false,
+     "faithful": false,
+     "passed": false,
+     "judge": "refused"
+    }
+   ]
+  },
+  {
+   "id": "unihealth-fy26-004",
+   "type": "not-in-filing",
+   "company": "UNIHEALTH",
+   "split": "test",
+   "answerable": false,
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    }
+   ]
+  }
+ ]
+}

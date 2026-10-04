@@ -121,7 +121,8 @@ def fy_number(label: str | None) -> int:
     return int(label[2:]) if label else -1
 
 
-def add_company(company: str, config: dict, manifest: list[dict], seen: dict, model, verify: bool) -> str:
+def add_company(company: str, config: dict, manifest: list[dict], seen: dict, model, verify: bool,
+                force: bool = False) -> str:
     """Bring one company up to date. Returns what happened, in a few words."""
     print(f"\n{company} — {config['name']}")
     existing = next((e for e in manifest if e["company"] == company), None)
@@ -146,14 +147,18 @@ def add_company(company: str, config: dict, manifest: list[dict], seen: dict, mo
     fy = latest["fiscal_year"]
     print(f"    latest: {fy} from {latest['how']}\n    {latest['url']}")
 
-    if existing and fy_number(existing["fiscal_year"]) >= fy_number(fy):
+    if existing and fy_number(existing["fiscal_year"]) >= fy_number(fy) and not force:
         on_disk = CORPUS / existing["file"]
         if on_disk.exists() and sha256(on_disk) == existing["sha256"]:
             return f"up to date ({existing['fiscal_year']} already indexed)"
 
     file_name = existing["file"] if existing and existing["source_url"] == latest["url"] else f"{company.lower()}_{fy.lower()}.pdf"
     target = CORPUS / file_name
-    if latest.get("path"):
+    if force and existing and existing["source_url"] == latest["url"] and target.exists() \
+            and sha256(target) == existing["sha256"]:
+        # Re-indexing after a pipeline change needs the file, not a new copy.
+        pass
+    elif latest.get("path"):
         shutil.copyfile(latest["path"], target)
     else:
         download(latest["url"], target)
@@ -175,7 +180,9 @@ def add_company(company: str, config: dict, manifest: list[dict], seen: dict, mo
         manifest[manifest.index(existing)] = entry
     else:
         manifest.append(entry)
-    return f"added {fy}" if not existing else f"replaced {existing['fiscal_year']} with {fy}"
+    if not existing:
+        return f"added {fy}"
+    return f"re-indexed {fy}" if existing["fiscal_year"] == fy else f"replaced {existing['fiscal_year']} with {fy}"
 
 
 def write_sources(manifest: list[dict]) -> None:
@@ -200,6 +207,8 @@ def main() -> None:
     parser.add_argument("companies", nargs="*", help="company codes from corpus/urls.yaml, e.g. UNIHEALTH HCC")
     parser.add_argument("--all", action="store_true", help="every company in corpus/urls.yaml")
     parser.add_argument("--verify", action="store_true", help="re-download each indexed report and compare its SHA-256")
+    parser.add_argument("--force", action="store_true",
+                        help="re-index even if up to date, after a change to the pipeline itself")
     args = parser.parse_args()
 
     config = yaml.safe_load(URLS.read_text(encoding="utf-8"))
@@ -214,7 +223,7 @@ def main() -> None:
     results = {}
     for company in companies:
         try:
-            results[company] = add_company(company, config[company], manifest, seen, model, args.verify)
+            results[company] = add_company(company, config[company], manifest, seen, model, args.verify, args.force)
         except Refused as error:
             results[company] = f"refused: {error}"
 

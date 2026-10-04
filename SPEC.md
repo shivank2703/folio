@@ -29,7 +29,7 @@ The differentiator is the citation layer. Aggregate stats and screening are a so
 
 ## 3. Corpus
 
-**Annual reports** of Indian listed companies — statutory filings, typically 200–400 pages. Public ships three FY25 reports: Hindustan Construction Company (HCC), Chambal Fertilisers and Navneet Education. Multi-year ingest is on the "later, maybe" list.
+**Annual reports** of Indian listed companies — statutory filings, typically 70–400 pages. Public shipped three FY25 reports (Hindustan Construction Company, Chambal Fertilisers, Navneet Education); Ingest added Unihealth Hospitals FY26, an NSE SME listing, through `ingest.add`. One filing per company, the latest; multi-year ingest is on the "later, maybe" list.
 
 Report anatomy the pipeline serves: Management Discussion & Analysis, Directors'/Governance/BRSR reports, financial statements (standalone **and** consolidated), notes to accounts, auditor's report.
 
@@ -86,7 +86,7 @@ Education), built in v1 Stages 1–9 (history in `notes/v1-handoffs.md`).
    `#page=N` deep links
 6. Eval re-run after 3 and after 4, so each change has its own before/after
 
-### Ingest · Sat 10 Oct 2026
+### Ingest · Sun 04 Oct 2026 (pulled forward from Sat 10 Oct)
 
 One offline command: give it a listed company and it finds the latest annual
 report, downloads it, checks it is born-digital (scanned reports are skipped —
@@ -99,6 +99,11 @@ so it appears in the app. Idempotent; a batch mode takes a list of companies.
 2. Decide where the index lives once it outgrows git (~30 filings): a GitHub
    release asset or a Hugging Face dataset, downloaded at startup
 3. No in-app "add any company" button for now
+
+**Outcome:** `python -m ingest.add CODE [CODE ...]`, `--verify`, `--force`, and
+`python -m ingest.publish`. Sources (§5): company investor pages, plus
+hand-listed URLs for NSE's file archive; NSE's site/API and BSE's API refuse
+scripted clients and are not used. Index moved to a GitHub release asset.
 
 Funds depends on Ingest: its top-holdings drill-down needs those companies'
 annual reports indexed.
@@ -142,6 +147,10 @@ exchange-disclosure flags for a watchlist).
 | Embeddings | Public | **Decided at Stage 4**: BAAI/bge-small-en-v1.5, local, via fastembed (ONNX Runtime, no PyTorch) | Public demo must run free on CPU; MIT; largest chunk (393 tokens) fits its 512 limit | Stage 5 smoke test misses relevant chunks → granite-embedding-small-english-r2 |
 | Vector store | Public | LanceDB | Embedded, file-based, metadata beside vectors; nothing to host | Corpus outgrows the deploy host |
 | Generation | Public | Anthropic API (Haiku), cite-every-claim prompt | Cheap model + a per-session question cap on the public app | — |
+| Report sources | Ingest | Company investor pages, read for PDF links; report URLs listed by hand in `corpus/urls.yaml` (NSE's file archive serves PDFs but cannot be listed). Plain requests with an honest User-Agent, robots.txt checked, 4 s between calls to a host | NSE's website and annual-report API reset scripted connections; BSE's API answers Access Denied. Imitating a browser to get past either is not done | An exchange publishes a documented, scriptable listing |
+| Born-digital check | Ingest | Pages with no text layer are skipped and recorded; a report with more than 20% such pages is refused | A real report has a few image pages (covers, photos: 1% of HCC's); a scan has most. No OCR path (§3.5) | — |
+| Two-page spreads | Ingest | A landscape page whose middle no text line crosses is read as two pages, left then right, under one PDF page number; a title is kept only if both halves name the same statement | Unihealth prints two pages per PDF page; read as one, two tables fused row by row | Spreads that pair unrelated documents need per-half titles |
+| Index storage | Ingest | A tarball on the repository's `index` release; `corpus/index.json` (committed) names it and its SHA-256; the app downloads and verifies it at startup. Not a Hugging Face dataset: `gh` is already authenticated and assets on a public repo need no credentials | Committed, every rebuild added ~10 MB to git history, and Funds adds 20–30 filings | Assets accumulate; prune those no commit names |
 | Citation guard | Accurate | Every figure in a cited claim must be printed on the cited page; a computed figure must say "(computed from [page N])"; a citation is moved to the one page that prints all of a claim's figures when the cited page does not; anything after "Not in the filing." is stripped | "Shown to the model" was the only check, and a right figure cited to the wrong page passed it | — |
 | UI / deploy | Public | Streamlit on Streamlit Community Cloud, deployed from the GitHub repo; the committed index is loaded read-only | Free; a public repo gives a public app; rebuilding on start would cost minutes on a platform that sleeps every 12h | The index outgrows what belongs in git, or the 2-core / 2.7 GB ceiling hurts the demo |
 | Tables | Accurate | **pymupdf4llm 0.3.4**, `lines` strategy, accepted per page only when it passes four gates (a table found, no cell swallowing a column, no repeated rows, no figure lost against preprocess's text); every other page keeps preprocess's text. Pinned below 1.27, which hard-requires pymupdf_layout | Exact on ruled notes (ageing, borrowings, cash flow); fails on shaded or rotated statements and on `lines_strict`, so it cannot replace preprocess wholesale | A version without the layout dependency reads unruled statements |
@@ -164,5 +173,5 @@ exchange-disclosure flags for a watchlist).
 
 - **Repo license: AGPL-3.0.** PyMuPDF and pymupdf4llm are AGPL-dual-licensed and this app is network-served, so AGPL is the clean, compliant choice.
 - **Clean-room policy.** The author works professionally in an adjacent domain. This project shares only public open-source libraries with that work — no code, configurations, heuristics, prompts, or models originate from any employer. Built entirely from public documentation, on personal time and hardware.
-- **Data policy.** Annual reports are public statutory documents. Fund portfolio disclosures and factsheets are public documents published by each fund house. Source PDFs are not committed; `corpus/SOURCES.md` lists where to obtain them — the code ships, not the data. **Exception:** `data/lancedb/` ships, holding chunks of text derived from public statutory filings, so the demo loads an index instead of rebuilding one on a host that sleeps every 12 hours. The demo attributes each filing to the issuing company and links to the source document (`corpus/SOURCES.md`); the PDF itself stays out of git.
+- **Data policy.** Annual reports are public statutory documents. Fund portfolio disclosures and factsheets are public documents published by each fund house. Source PDFs are not committed; `corpus/SOURCES.md` lists where to obtain them — the code ships, not the data. **Exception:** the search index, holding chunks of text derived from public statutory filings, is published (a release asset since the Ingest step; committed before) so the demo loads an index instead of rebuilding one on a host that sleeps every 12 hours. The demo attributes each filing to the issuing company and links to the source document (`corpus/SOURCES.md`); the PDF itself stays out of git.
 - **Privacy.** Real watchlists and holdings are never committed (`watchlist.yaml` stays gitignored). API keys live in `.env` and `.streamlit/secrets.toml`, both gitignored; the deployed key lives only in the host's secrets settings, with a monthly spend limit and a per-session question cap.

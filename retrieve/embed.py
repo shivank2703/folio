@@ -36,6 +36,8 @@ import pyarrow as pa
 from fastembed import TextEmbedding
 from lancedb.index import FTS
 
+from retrieve.store import mark_local
+
 # The one place the model is named. Stage 5 must embed questions with this
 # same model: vectors from two models share no geometry, so a mismatched
 # query returns confident nonsense instead of an error.
@@ -128,6 +130,7 @@ def write_index(table: pa.Table, db_path: Path) -> None:
         db.drop_table(TABLE_NAME)
     written = db.create_table(TABLE_NAME, data=table)
     written.create_index("text", config=FTS(), replace=True)
+    mark_local(db_path)
 
 
 def replace_filing(table: pa.Table, company: str, db_path: Path) -> None:
@@ -151,6 +154,7 @@ def replace_filing(table: pa.Table, company: str, db_path: Path) -> None:
     index.add(table)
     index.create_index("text", config=FTS(), replace=True)
     index.optimize(cleanup_older_than=timedelta(0))
+    mark_local(db_path)
 
 
 def main() -> None:

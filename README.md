@@ -10,8 +10,9 @@ filing."*
 
 ![A question about HCC's standalone total assets gets a cited answer and opens the cited page 114 chunk; a question about EV charging stations is refused as not in the filing](docs/demo.gif)
 
-Three FY25 annual reports, 896 pages, 4,704 chunks in one index: Hindustan
-Construction, Chambal Fertilisers, and Navneet Education.
+Four annual reports in one index: Hindustan Construction, Chambal Fertilisers
+and Navneet Education (FY25), and Unihealth Hospitals (FY26, an NSE SME
+listing), added by one command (see [Add a company](#add-a-company)).
 
 ## Why
 
@@ -31,13 +32,14 @@ Folio is built so a claim missing any of the three never reaches the reader.
 
 ```mermaid
 flowchart TB
-    subgraph build["build — offline, python -m ingest.build"]
-        PDF[Annual report PDFs<br/>corpus/ + corpus.json manifest] --> EX[extract<br/>PyMuPDF, page-wise]
+    subgraph build["build — offline, python -m ingest.add CODE"]
+        SRC[investor page or<br/>listed URL, corpus/urls.yaml] --> PDF[latest annual report<br/>born-digital check, SHA-256]
+        PDF --> EX[extract<br/>PyMuPDF, page-wise]
         EX --> PRE[preprocess<br/>furniture, columns, rows,<br/>titles, units, period headers]
         PRE --> TB[tables<br/>pymupdf4llm on ruled pages,<br/>accepted behind four checks]
         TB --> CH[chunk<br/>~200 tokens, never across a page]
         CH --> EM[embed<br/>bge-small-en-v1.5 via ONNX]
-        EM --> DB[(LanceDB<br/>vectors + full-text index<br/>ships in git, 10.8 MB)]
+        EM --> DB[(LanceDB<br/>vectors + full-text index<br/>a release asset, fetched at startup)]
     end
     subgraph ask["ask — per question"]
         Q[Question + chosen filing] --> FY[expand FY25<br/>into 'as at March 31, 2025']
@@ -95,7 +97,7 @@ Every `[page N]` in an answer links to the issuer's PDF opened at that page.
 
 ## The corpus, and a worked example
 
-Three filings, listed with their exact download URL and SHA-256 in
+Four filings, listed with their exact download URL and SHA-256 in
 [`corpus/SOURCES.md`](corpus/SOURCES.md); `corpus/corpus.json` carries the same
 in machine-readable form, and the build verifies every checksum before
 indexing. The PDFs themselves are not committed.
@@ -127,23 +129,51 @@ python3 -m venv .venv && .venv/bin/python -m pip install -r requirements.txt
 .venv/bin/streamlit run streamlit_app.py
 ```
 
-Python 3.13. The search index ships in the repository, so nothing is rebuilt to
-try it, and **no API key is needed** for retrieval, the sources panel or the
+Python 3.13. Nothing is built to try it: on first start the app downloads the
+search index named in `corpus/index.json` (a release asset, ~14 MB) and checks
+its SHA-256. **No API key is needed** for retrieval, the sources panel or the
 refusal path — only for generating prose answers. To add a key, copy
 `.streamlit/secrets.toml.example` to `.streamlit/secrets.toml`, or put
 `ANTHROPIC_API_KEY=` in a `.env` file.
 
-Rebuilding from source, after downloading the PDFs named in `corpus/SOURCES.md`
-into `corpus/`:
-
-```bash
-.venv/bin/python -m ingest.build
-```
-
-Adding a company means adding its PDF and one manifest entry — no code changes.
+Rebuilding everything from source, after downloading the PDFs named in
+`corpus/SOURCES.md` into `corpus/`: `.venv/bin/python -m ingest.build`.
 Retrieval alone, with no key and no UI: `.venv/bin/python -m retrieve.smoke`.
 The answer-quality eval (spends API credit, about $0.50 a run):
 `.venv/bin/python -m evals.score --label mine`.
+
+## Add a company
+
+One offline command finds a listed company's latest annual report, downloads
+it, checks it, and indexes it — that filing only, not the whole corpus:
+
+```bash
+.venv/bin/python -m ingest.add UNIHEALTH          # one company
+.venv/bin/python -m ingest.add UNIHEALTH HCC      # several
+.venv/bin/python -m ingest.add HCC --verify       # re-download, compare SHA-256, change nothing
+.venv/bin/python -m ingest.publish                # upload the index; commit corpus/index.json
+```
+
+A company is one entry in [`corpus/urls.yaml`](corpus/urls.yaml): its investor
+page, report URLs kept by hand, or both. The command reads every PDF the page
+links, works out each report's fiscal year from its link text or its own first
+pages, and takes the latest. It refuses a report whose pages are more than 20%
+images with no text (there is no OCR path), records the URL and SHA-256 in
+`corpus.json` and `SOURCES.md`, and replaces only that company's rows in the
+index. Run it again and nothing changes.
+
+Where reports can come from, checked with plain, self-identifying requests
+that respect robots.txt and wait between calls:
+
+| Source | Find reports | Download a report |
+|---|---|---|
+| Company investor-relations pages | yes | yes |
+| NSE file archive (archives.nseindia.com) | no — no listing to read | yes, from a URL in `urls.yaml` |
+| NSE website and annual-report API | no — scripted requests are reset | — |
+| BSE | no — its API answers "Access Denied" | — |
+
+Folio does not imitate a browser to get past a site that refuses scripts; a
+blocked company's report URL goes in `urls.yaml` by hand.
 
 ## Measured
 
@@ -249,7 +279,8 @@ ingest, an in-app "add a company" button, daily exchange-disclosure flags.
 
 The source PDFs are public statutory filings and are **not** committed;
 `corpus/SOURCES.md` records each exact URL and SHA-256. The derived chunk index
-is committed so the demo loads instantly, with attribution to each issuing
+is published as an asset on this repository's `index` release (it was committed
+until v1.1) and fetched by the app at startup, with attribution to each issuing
 company and a link to its source document.
 
 Licensed under [AGPL-3.0](LICENSE), matching PyMuPDF's terms for a
