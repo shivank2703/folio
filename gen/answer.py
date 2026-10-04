@@ -37,6 +37,8 @@ from gen.guardrails import (
     has_enough_context,
     is_refusal,
     scrub_advice,
+    strip_after_refusal,
+    ungrounded_figures,
     validate_citations,
 )
 from retrieve.embed import load_model
@@ -70,8 +72,14 @@ the page does not state its unit. Never assume crore, lakh or rupees.
 example in a statement title. Never infer which one it is.
 - Report what the filing says. Do not offer investment advice, views on the \
 share price, or suggestions about what an investor should do.
+- If you state a figure that no extract prints (a difference, a total, a \
+ratio, a percentage change, a unit conversion), give the printed figures it \
+comes from with their citations, then write the result followed by \
+"(computed from [page N])", naming every page its inputs come from. Never \
+present a computed figure as if the filing printed it.
 - If the extracts do not answer the question, reply with exactly: {REFUSAL} \
-Add nothing else. A hedged half-answer is worse than that one sentence.
+Add nothing else: no explanation, no related figure, no partial answer. A \
+hedged half-answer is worse than that one sentence.
 - Be brief: two or three sentences unless the question needs more."""
 
 
@@ -142,19 +150,27 @@ def guarded_answer(
         "context": context,
         "refused": True,
         "invalid_citations": [],
+        "ungrounded": [],
         "scrubbed": [],
+        "raw": "",
     }
 
     if not has_enough_context(hits):
         best = best_similarity(hits)
         return {**verdict, "text": REFUSAL, "reason": f"best similarity {best:.3f} is below the {MIN_SIMILARITY} floor"}
 
-    text = generate(client, question, context)
+    raw = generate(client, question, context)
+    # The model's own words are kept beside what the reader is shown, so the
+    # eval can grade the contract even where a guard has already repaired it.
+    verdict["raw"] = raw
+    text, trailed = strip_after_refusal(raw)
     if is_refusal(text):
-        return {**verdict, "text": REFUSAL, "reason": "the model found no answer in the extracts"}
+        reason = "the model found no answer in the extracts"
+        return {**verdict, "text": REFUSAL, "reason": reason + (" (text after the refusal removed)" if trailed else "")}
 
     text, invalid = validate_citations(text, {chunk["page"] for chunk in context})
     text, scrubbed = scrub_advice(text)
+    ungrounded = ungrounded_figures(text, context)
     if not cited_pages(text):
         # Either every citation was invented, or none was given. An uncited
         # claim is exactly what this project promises never to publish (§6),
@@ -162,7 +178,8 @@ def guarded_answer(
         reason = f"every citation was to a page not retrieved ({invalid})" if invalid else "the answer carried no citation"
         return {**verdict, "text": REFUSAL, "reason": reason, "invalid_citations": invalid, "scrubbed": scrubbed}
 
-    return {**verdict, "text": text, "refused": False, "reason": "", "invalid_citations": invalid, "scrubbed": scrubbed}
+    return {**verdict, "text": text, "refused": False, "reason": "", "invalid_citations": invalid,
+            "ungrounded": ungrounded, "scrubbed": scrubbed}
 
 
 def answer_question(question: str, db_path: Path, k: int = DEFAULT_K, company: str | None = None) -> dict:

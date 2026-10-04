@@ -162,11 +162,13 @@ def grade(q: dict, verdict: dict, client: anthropic.Anthropic) -> dict:
     text = verdict["text"].strip()
     bare_refusal = verdict["refused"] and text == REFUSAL
     # A reply that opens with the refusal sentence and keeps going broke the
-    # contract whether or not a guard later caught it.
-    leaked = text.startswith(REFUSAL) and text != REFUSAL
-    row = {"text": text, "refused": verdict["refused"], "reason": verdict.get("reason", ""),
+    # contract whether or not a guard later caught it, so this reads the
+    # model's raw words, not the repaired text the reader is shown.
+    raw = (verdict.get("raw") or verdict["text"]).strip()
+    leaked = raw.startswith(REFUSAL) and raw != REFUSAL
+    row = {"text": text, "raw": raw, "refused": verdict["refused"], "reason": verdict.get("reason", ""),
            "cited": sorted(set(cited_pages(text))), "invalid": verdict["invalid_citations"],
-           "leaked_refusal": leaked}
+           "ungrounded": verdict.get("ungrounded", []), "leaked_refusal": leaked}
     if not q["expected_pages"]:
         row.update(passed=bare_refusal and not leaked)
         return row
@@ -175,7 +177,10 @@ def grade(q: dict, verdict: dict, client: anthropic.Anthropic) -> dict:
         return row
     j = judge(client, q, text, verdict["context"])
     row.update(correct=j["correct"], faithful=j["faithful"], judge=j["reason"], computed=j["computed_figures"])
-    row["passed"] = j["correct"] and j["faithful"] and not verdict["invalid_citations"]
+    # A figure the guard flagged as missing from its cited page reaches the
+    # reader with a warning; that is a failure to cite, whatever the judge says.
+    row["passed"] = (j["correct"] and j["faithful"] and not verdict["invalid_citations"]
+                     and not verdict.get("ungrounded"))
     return row
 
 
@@ -200,7 +205,7 @@ def summarise(result: dict) -> str:
     """A markdown table per question plus totals by question type and split."""
     n = result["samples"]
     lines = [f"### {result['label']} ({result['when']}, {n} samples per question)", "",
-             "| Question | Type | Split | Pass | Correct | Faithful | Leaked refusal |", "|---|---|---|---|---|---|---|"]
+             "| Question | Type | Split | Pass | Correct | Faithful | Leaked refusal | Ungrounded figure |", "|---|---|---|---|---|---|---|---|"]
     by_type: dict[str, list[int]] = defaultdict(lambda: [0, 0])
     by_split: dict[str, list[int]] = defaultdict(lambda: [0, 0])
     totals = {"answerable": [0, 0], "negative": [0, 0], "correct": [0, 0], "faithful": [0, 0], "leaks": 0}
@@ -222,7 +227,8 @@ def summarise(result: dict) -> str:
             cf = (f"{c}/{n}", f"{f}/{n}")
         else:
             cf = ("–", "–")
-        lines.append(f"| {q['id']} | {q['type']} | {q['split']} | {p}/{n} | {cf[0]} | {cf[1]} | {leaks or '–'} |")
+        ungrounded = sum(bool(r.get("ungrounded")) for r in rows)
+        lines.append(f"| {q['id']} | {q['type']} | {q['split']} | {p}/{n} | {cf[0]} | {cf[1]} | {leaks or '–'} | {ungrounded or '–'} |")
 
     def pct(pair: list[int]) -> str:
         return f"{pair[0]}/{pair[1]} ({100 * pair[0] / pair[1]:.0f}%)" if pair[1] else "–"

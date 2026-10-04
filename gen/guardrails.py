@@ -14,6 +14,11 @@ single check delivers that:
    the worst failure this product has: the citation is the whole promise
    (§1), and a reader cannot check it without the filing open beside them.
 
+Since the Accurate step, the citation check also reads the figures: a page
+that was shown is not enough, the number has to be printed on it. A correct
+capacity cited to the page before the one that prints it passed every check
+and was shown as an answer (chambal-fy25-002, evals/RESULTS.md).
+
 A recommendation scrub runs alongside, because the project states zero
 buy-or-sell language anywhere (§2) and a model that has just read a
 chairman's letter can drift into it.
@@ -41,6 +46,18 @@ REFUSAL = "Not in the filing."
 MIN_SIMILARITY = 0.67
 
 CITATION = re.compile(r"\[page (\d+)\]")
+
+# One or more adjacent citations close a claim: "... 8,743.37 crore [page 114]".
+# Everything since the previous run is the claim those pages must support.
+CITATION_RUN = re.compile(r"(?:\s*\[page \d+\])+")
+
+# Figures as filings print them: Indian grouping (2,28,299), decimals, and
+# parenthesised negatives, whose parentheses the comparison ignores.
+FIGURE = re.compile(r"(?<![\w.])\d(?:[\d,]*\d)?(?:\.\d+)?(?![\w])")
+
+# A claim labelled this way may state a figure no page prints; the prompt
+# requires the label, and the judge checks the arithmetic behind it.
+COMPUTED = re.compile(r"\b(?:computed|calculated)\b", re.IGNORECASE)
 
 # Language this project never produces (SPEC.md §2). The patterns target
 # advice, not vocabulary: a filing legitimately says "the Board recommended a
@@ -95,6 +112,67 @@ def validate_citations(text: str, retrieved: set[int]) -> tuple[str, list[int]]:
         return f"[unverified citation to page {page} — not in the retrieved context]"
 
     return CITATION.sub(check, text), invalid
+
+
+def checkable(figure: str) -> str | None:
+    """The digits of a figure worth checking against a page, or None to skip it.
+
+    Years and one- or two-digit numbers are skipped: "March 31, 2025", "25%"
+    and "5 per share" would match almost any page, so checking them proves
+    nothing, and the figures this check exists for are amounts.
+    """
+    digits = figure.replace(",", "")
+    if "," not in figure and "." not in figure:
+        if len(digits) < 3 or (len(digits) == 4 and 1900 <= int(digits) <= 2099):
+            return None
+    return digits
+
+
+def ungrounded_figures(text: str, context: list[dict]) -> list[tuple[str, list[int]]]:
+    """Figures the answer states that are not printed on the pages it cites for them.
+
+    The answer is cut into claims, each ending at a run of citations, and each
+    claim's figures are looked up in the text of exactly those pages. Text
+    after the last citation is held to every page the answer cites. A claim
+    labelled as computed is exempt: its result is printed nowhere by design.
+    """
+    printed: dict[int, set[str]] = {}
+    for chunk in context:
+        found = {checkable(f) for f in FIGURE.findall(chunk["text"])}
+        printed.setdefault(chunk["page"], set()).update(found - {None})
+    claims: list[tuple[str, list[int]]] = []
+    start = 0
+    for run in CITATION_RUN.finditer(text):
+        claims.append((text[start:run.start()], [int(p) for p in CITATION.findall(run.group(0))]))
+        start = run.end()
+    every = [page for _, pages in claims for page in pages]
+    if text[start:].strip() and every:
+        claims.append((text[start:], every))
+
+    missing: list[tuple[str, list[int]]] = []
+    for claim, pages in claims:
+        if COMPUTED.search(claim):
+            continue
+        on_pages = set().union(*(printed.get(page, set()) for page in pages))
+        for figure in FIGURE.findall(claim):
+            digits = checkable(figure)
+            if digits and digits not in on_pages:
+                missing.append((figure, pages))
+    return missing
+
+
+def strip_after_refusal(text: str) -> tuple[str, bool]:
+    """Cut a reply that opens with the refusal down to the refusal itself.
+
+    The contract is one sentence. A refusal followed by "but the extracts show
+    ..." is a hedged half-answer, which the prompt forbids, and it was shown to
+    readers as an answer because it was neither a bare refusal nor uncited.
+    Returns the text to show and whether anything was cut.
+    """
+    stripped = text.strip()
+    if stripped.startswith(REFUSAL) and stripped != REFUSAL:
+        return REFUSAL, True
+    return text, False
 
 
 def scrub_advice(text: str) -> tuple[str, list[str]]:

@@ -195,6 +195,11 @@ def main() -> None:
                 "This answer cited pages that were never retrieved: "
                 f"{verdict['invalid_citations']}. They are marked in the text above."
             )
+        if verdict["ungrounded"]:
+            # Shown, not hidden: the reader decides what a figure is worth once
+            # told that the page it cites does not print it.
+            listed = "; ".join(f"{fig} (cited to page {', '.join(map(str, pages))})" for fig, pages in verdict["ungrounded"])
+            st.warning(f"Not found on the cited page, so check these before relying on them: {listed}.")
         if verdict["scrubbed"]:
             st.info(f"Removed {len(verdict['scrubbed'])} sentence(s) that strayed into investment advice.")
 
