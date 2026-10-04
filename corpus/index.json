@@ -1,0 +1,15 @@
+{
+  "asset": "folio-index-38d44cc5544d.tar.gz",
+  "url": "https://github.com/shivank2703/folio/releases/download/index/folio-index-38d44cc5544d.tar.gz",
+  "sha256": "38d44cc5544d1444a822b46ac29cb554845f58c9658d5fc0343e9d961b34159b",
+  "bytes": 10083039,
+  "chunks": 6040,
+  "filings": [
+    "CHAMBAL FY25",
+    "HCC FY25",
+    "NAVNEET FY25",
+    "UNIHEALTH FY26"
+  ],
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "published": "2026-10-04 23:06"
+}
