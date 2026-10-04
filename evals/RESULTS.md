@@ -200,3 +200,61 @@ net. Two judge disagreements, both read by hand: hcc-009's "5.8 km" is printed
 on p22 (the judge called it computed), and one chambal-004 sample states the
 decrease unlabelled before labelling it, which the guard flags and the judge
 let through. The guard is right by the rule; the judge is frozen.
+
+### rerank-jina (2026-10-04 13:46, 3 samples per question)
+
+| Question | Type | Split | Pass | Correct | Faithful | Leaked refusal | Ungrounded figure | Citation corrected |
+|---|---|---|---|---|---|---|---|---|
+| hcc-fy25-001 | numeric-lookup | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-002 | numeric-lookup | test | 0/3 | 0/3 | 0/3 | – | – | – |
+| hcc-fy25-003 | numeric-lookup | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-004 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-005 | not-in-filing | fit | 3/3 | – | – | – | – | – |
+| chambal-fy25-001 | numeric-lookup | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| chambal-fy25-002 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| navneet-fy25-001 | numeric-lookup | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| navneet-fy25-002 | numeric-lookup | test | 0/3 | 0/3 | 0/3 | – | – | – |
+| chambal-fy25-003 | not-in-filing | test | 3/3 | – | – | – | – | – |
+| navneet-fy25-003 | not-in-filing | fit | 3/3 | – | – | – | – | – |
+| hcc-fy25-006 | table | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-007 | table | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-008 | table | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-009 | two-column | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-010 | not-in-filing | test | 3/3 | – | – | – | – | – |
+| chambal-fy25-004 | computed | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| chambal-fy25-005 | multi-hop | test | 1/3 | 1/3 | 3/3 | – | – | – |
+| navneet-fy25-004 | units-trap | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| navneet-fy25-005 | not-in-filing | fit | 3/3 | – | – | – | – | – |
+
+- Answerable passed: 37/45 (82%) · correct 37/45 (82%) · faithful 39/45 (87%)
+- Not-in-filing refused bare: 15/15 (100%) · refusal leaks (any question): 0
+- By type: computed 3/3 (100%), multi-hop 1/3 (33%), not-in-filing 15/15 (100%), numeric-lookup 18/24 (75%), table 9/9 (100%), two-column 3/3 (100%), units-trap 3/3 (100%)
+- By split: fit 33/33 (100%), test 19/27 (70%)
+
+What changed (experiment, not shipped): the 20 best hybrid candidates are
+reordered by jina-reranker-v1-tiny-en and the best score gates refusal, at the
+threshold fitted on the fit half only (1.613; `python -m evals.fit_gate`).
+
+Rejected. The fit half passes 33/33; the held-out test half falls from 26/27
+to 19/27. The gate refuses two answerable questions (hcc-002 at 1.337,
+navneet-002 at 1.392, both under a threshold the fit half put at 1.613), and
+reordering drops the second page of the multi-hop question (chambal-005 3/3 to
+1/3). It refuses nothing the prompt contract and strict guard were not already
+refusing (15/15 either way). ms-marco-MiniLM-L-6 did worse on the gate alone
+(test: 4/7 answerable let through vs jina's 5/7). Both rerankers are trained on
+web search pairs and read financial tables poorly; with five negatives, a
+threshold fitted on three of them cannot be trusted anyway. The 0.67 floor
+stays as a cheap pre-filter: across every run it refused no answerable
+question.
+
+## Final: baseline -> shipped
+
+| | Baseline | Shipped (labels) |
+|---|---|---|
+| Answerable passed | 34/45 (76%) | 43/45 (96%) |
+| Correct | 42/45 (93%) | 45/45 (100%) |
+| Faithful to cited pages | 34/45 (76%) | 44/45 (98%) |
+| Not-in-filing, bare refusal | 13/15 (87%) | 15/15 (100%) |
+| Refusal leaks (raw replies) | 3 | 0 |
+| Test half only | 25/27 | 26/27 |
+| Citations the guard had to correct | (no guard) | 0 |

@@ -6,6 +6,8 @@ and which Accurate item it belongs to, if any.
 
 ## Derived figures are stated without a source
 
+**Done 04 Oct.** Prompt requires "(computed from [page N])"; the citation check flags any figure not printed on its cited page unless the claim is labelled computed; the judge fails unlabelled computations. hcc-001 0/3 -> 3/3, chambal-004 0/3 -> 2-3/3 (evals/RESULTS.md).
+
 hcc-fy25-001 answered "an increase of ₹605.34 crore". The arithmetic is
 right (8,743.37 - 8,138.03), but the difference is printed nowhere in the
 filing, and it sits in a sentence whose citation covers only the two
@@ -14,6 +16,8 @@ judge accepts computed differences, and whether the prompt should label them
 ("difference computed from [page 114]").
 
 ## Refusal contract leaks on near-miss negatives (item 3: reranker / refusal gate)
+
+**Done 04 Oct.** Text after the refusal is stripped before a reader sees it; the eval grades the raw reply and counts any leak as a failure. Bare refusals 13/15 -> 15/15, leaks 3 -> 0 after the prompt change.
 
 First generation run, 2026-10-03, Haiku 4.5. Both CHAMBAL and NAVNEET
 negatives pass the 0.67 similarity floor (0.695, 0.696), so their refusal
@@ -34,6 +38,8 @@ refusal. Measure either way on the 20-question eval, with the reranker gate.
 
 ## LanceDB deprecation warnings on every hybrid search
 
+**Done 04 Oct.** Score columns are selected by name; zero warnings.
+
 lancedb 0.34 warns twice per query that `_distance` / `_score` will stop
 being auto-projected. Harmless today, but a future upgrade silently drops
 the columns `search` reads scores from. Fix when tables work touches
@@ -41,6 +47,8 @@ retrieval: select the score columns explicitly. It also floods the Cloud
 logs (two lines per question).
 
 ## Transitive dependencies are not pinned
+
+**Done 04 Oct.** requirements.in is the decision log; requirements.txt is a uv-compiled Linux/3.13 lock of all 76 packages.
 
 requirements.txt pins the nine direct dependencies exactly, but not what they
 pull in (onnxruntime, tokenizers, huggingface-hub and so on). Those resolve at
@@ -52,6 +60,8 @@ and deploy from that.
 
 ## The sources panel is not in page order
 
+**Done 04 Oct.** Sorted by page and chunk.
+
 `render_sources` says it shows chunks "in page order"; the live hcc-001 answer
 listed p46, p101, p116 and then p114. It follows the context order from
 `page_context`. Either sort it or fix the docstring; small, but the panel is
@@ -59,11 +69,15 @@ the citation UI.
 
 ## Cited pages could open the PDF at that page
 
+**Done 04 Oct.** Every [page N] in an answer, and every source chunk, links to the issuer's PDF at #page=N (all three hosts serve inline).
+
 The app now links each filing's source PDF (SPEC.md §7). A `#page=N` fragment
 on that URL would make each [page N] citation open the page it cites. Most PDF
 viewers honour it; check the three issuers' hosts serve the PDF inline.
 
 ## Local preview launcher cannot read the venv in some sessions
+
+**Skipped** (tooling only, per the plan).
 
 2026-10-04: `preview_start folio-ui` failed with PermissionError on
 `.venv/pyvenv.cfg` (macOS file access for the launcher, not the app); starting

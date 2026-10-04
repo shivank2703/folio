@@ -81,7 +81,7 @@ Education), built in v1 Stages 1–9 (history in `notes/v1-handoffs.md`).
    re-indexed; known-bad pages checked by eye
 4. Cross-encoder reranker; its score replaces the 0.67 similarity floor as the
    refusal gate. Threshold fitted on half the questions, reported on the other
-   half
+   half. **Outcome: not shipped** — it lost answers on the held-out half (§5)
 5. LanceDB deprecations, a full lock file, sources panel in page order,
    `#page=N` deep links
 6. Eval re-run after 3 and after 4, so each change has its own before/after
@@ -142,11 +142,12 @@ exchange-disclosure flags for a watchlist).
 | Embeddings | Public | **Decided at Stage 4**: BAAI/bge-small-en-v1.5, local, via fastembed (ONNX Runtime, no PyTorch) | Public demo must run free on CPU; MIT; largest chunk (393 tokens) fits its 512 limit | Stage 5 smoke test misses relevant chunks → granite-embedding-small-english-r2 |
 | Vector store | Public | LanceDB | Embedded, file-based, metadata beside vectors; nothing to host | Corpus outgrows the deploy host |
 | Generation | Public | Anthropic API (Haiku), cite-every-claim prompt | Cheap model + a per-session question cap on the public app | — |
+| Citation guard | Accurate | Every figure in a cited claim must be printed on the cited page; a computed figure must say "(computed from [page N])"; a citation is moved to the one page that prints all of a claim's figures when the cited page does not; anything after "Not in the filing." is stripped | "Shown to the model" was the only check, and a right figure cited to the wrong page passed it | — |
 | UI / deploy | Public | Streamlit on Streamlit Community Cloud, deployed from the GitHub repo; the committed index is loaded read-only | Free; a public repo gives a public app; rebuilding on start would cost minutes on a platform that sleeps every 12h | The index outgrows what belongs in git, or the 2-core / 2.7 GB ceiling hurts the demo |
 | Tables | Accurate | **pymupdf4llm 0.3.4**, `lines` strategy, accepted per page only when it passes four gates (a table found, no cell swallowing a column, no repeated rows, no figure lost against preprocess's text); every other page keeps preprocess's text. Pinned below 1.27, which hard-requires pymupdf_layout | Exact on ruled notes (ageing, borrowings, cash flow); fails on shaded or rotated statements and on `lines_strict`, so it cannot replace preprocess wholesale | A version without the layout dependency reads unruled statements |
 | Table escalation | Accurate | Public table-structure models (e.g. Table Transformer) | Keeps the stack open-source | Only if triggered |
 | Evaluation | Accurate | `evals.score`: 20 questions × 3 samples through the app's own answer path; two blind Haiku 4.5 calls at temperature 0 — correctness without the pages, faithfulness without the reference — plus mechanical refusal and citation checks (RAGAS in CI cut) | No retrieval/chunking/prompt change lands without before/after scores; one judge seeing both lets a wrong citation mark a right figure wrong | Judge disagreements on a re-read |
-| Reranker | Accurate | Cross-encoder; its score replaces the 0.67 similarity floor as the refusal gate | Similarity stopped separating answerable from not-in-filing questions | Eval results |
+| Reranker | Accurate | **Evaluated and not shipped.** ONNX cross-encoders through fastembed (no PyTorch): ms-marco-MiniLM-L-6 and jina-reranker-v1-tiny. Gate threshold fitted on the fit half, scored on the test half: answerable test questions fell 26/27 → 19/27 end to end. The 0.67 similarity floor stays as a cheap pre-filter; refusal rests on the prompt contract and the strict-refusal guard (15/15) | A held-out half showed the fit was overfitted; reordering also lost a multi-hop page | A finance-tuned reranker, or an eval with enough negatives (≥10) to fit a threshold |
 | Fund data | Funds | Portfolio disclosure read as a table (spreadsheet rows, not chunks); factsheet through the PDF path | Holdings and weights are already structured; chunking them would only lose that | — |
 | Orchestration | Agent | One plain Anthropic tool-use loop over company and fund tools (LangGraph cut) | Every layer stays visible; the loop is a few dozen lines | — |
 
