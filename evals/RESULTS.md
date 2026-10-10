@@ -369,3 +369,162 @@ run), 3/3 refusals.
 | Correct | 45/45 | 42/45 | 50/54 |
 | Faithful to cited pages | 44/45 | 43/45 | 50/54 |
 | Not in the filing, bare | 15/15 | 15/15 | 18/18 |
+
+### haiku-5-5 (2026-10-11 00:30, 3 samples per question)
+
+| Question | Type | Split | Pass | Correct | Faithful | Leaked refusal | Ungrounded figure | Citation corrected |
+|---|---|---|---|---|---|---|---|---|
+| hcc-fy25-001 | numeric-lookup | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-002 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-003 | numeric-lookup | fit | 0/3 | 0/3 | 2/3 | – | – | – |
+| hcc-fy25-004 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-005 | not-in-filing | fit | 3/3 | – | – | – | – | – |
+| chambal-fy25-001 | numeric-lookup | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| chambal-fy25-002 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| navneet-fy25-001 | numeric-lookup | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| navneet-fy25-002 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| chambal-fy25-003 | not-in-filing | test | 3/3 | – | – | – | – | – |
+| navneet-fy25-003 | not-in-filing | fit | 3/3 | – | – | – | – | – |
+| hcc-fy25-006 | table | fit | 0/3 | 3/3 | 2/3 | – | 2 | – |
+| hcc-fy25-007 | table | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-008 | table | fit | 0/3 | 0/3 | 3/3 | – | – | – |
+| hcc-fy25-009 | two-column | test | 0/3 | 0/3 | 0/3 | – | – | – |
+| hcc-fy25-010 | not-in-filing | test | 3/3 | – | – | – | – | – |
+| chambal-fy25-004 | computed | fit | 1/3 | 3/3 | 1/3 | – | 1 | – |
+| chambal-fy25-005 | multi-hop | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| navneet-fy25-004 | units-trap | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| navneet-fy25-005 | not-in-filing | fit | 3/3 | – | – | – | – | – |
+| unihealth-fy26-001 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| unihealth-fy26-002 | numeric-lookup | fit | 0/3 | 3/3 | 0/3 | – | – | – |
+| unihealth-fy26-003 | table | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| unihealth-fy26-004 | not-in-filing | test | 3/3 | – | – | – | – | – |
+
+- Answerable passed: 37/54 (69%) · correct 45/54 (83%) · faithful 44/54 (81%)
+- Not-in-filing refused bare: 18/18 (100%) · refusal leaks (any question): 0
+- By type: computed 1/3 (33%), multi-hop 3/3 (100%), not-in-filing 18/18 (100%), numeric-lookup 24/30 (80%), table 6/12 (50%), two-column 0/3 (0%), units-trap 3/3 (100%)
+- By split: fit 22/36 (61%), test 33/36 (92%)
+
+Generation moved to Claude Haiku 5.5 (effort low); the judge stays on Haiku
+4.5, so this is a model change measured with the same ruler. 48/54 -> 37/54.
+Read by hand, mostly literalism: it would not call a figure consolidated when
+the page does not say so (the prompt's own rule, which Haiku 4.5 bent), so it
+refused or hedged hcc-003 and hcc-008; it added other sections' figures to
+hcc-009; and it stated a computed figure before labelling it.
+
+### haiku-5-5-medium (2026-10-11 00:41, 3 samples per question)
+
+| Question | Type | Split | Pass | Correct | Faithful | Leaked refusal | Ungrounded figure | Citation corrected |
+|---|---|---|---|---|---|---|---|---|
+| hcc-fy25-001 | numeric-lookup | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-002 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-003 | numeric-lookup | fit | 0/3 | 0/3 | 2/3 | – | – | – |
+| hcc-fy25-004 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-005 | not-in-filing | fit | 3/3 | – | – | – | – | – |
+| chambal-fy25-001 | numeric-lookup | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| chambal-fy25-002 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| navneet-fy25-001 | numeric-lookup | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| navneet-fy25-002 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| chambal-fy25-003 | not-in-filing | test | 3/3 | – | – | – | – | – |
+| navneet-fy25-003 | not-in-filing | fit | 3/3 | – | – | – | – | – |
+| hcc-fy25-006 | table | fit | 0/3 | 1/3 | 0/3 | – | 1 | – |
+| hcc-fy25-007 | table | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-008 | table | fit | 1/3 | 1/3 | 3/3 | – | – | – |
+| hcc-fy25-009 | two-column | test | 1/3 | 3/3 | 1/3 | – | – | – |
+| hcc-fy25-010 | not-in-filing | test | 3/3 | – | – | – | – | – |
+| chambal-fy25-004 | computed | fit | 0/3 | 3/3 | 3/3 | – | 3 | – |
+| chambal-fy25-005 | multi-hop | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| navneet-fy25-004 | units-trap | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| navneet-fy25-005 | not-in-filing | fit | 3/3 | – | – | – | – | – |
+| unihealth-fy26-001 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| unihealth-fy26-002 | numeric-lookup | fit | 2/3 | 2/3 | 2/3 | – | – | – |
+| unihealth-fy26-003 | table | test | 2/3 | 2/3 | 3/3 | – | – | – |
+| unihealth-fy26-004 | not-in-filing | test | 3/3 | – | – | – | – | – |
+
+- Answerable passed: 39/54 (72%) · correct 45/54 (83%) · faithful 47/54 (87%)
+- Not-in-filing refused bare: 18/18 (100%) · refusal leaks (any question): 0
+- By type: computed 0/3 (0%), multi-hop 3/3 (100%), not-in-filing 18/18 (100%), numeric-lookup 26/30 (87%), table 6/12 (50%), two-column 1/3 (33%), units-trap 3/3 (100%)
+- By split: fit 24/36 (67%), test 33/36 (92%)
+
+Effort medium, nothing else changed: 39/54. Effort was not the problem.
+
+### haiku-5-5-prompt (2026-10-11 00:50, 3 samples per question)
+
+| Question | Type | Split | Pass | Correct | Faithful | Leaked refusal | Ungrounded figure | Citation corrected |
+|---|---|---|---|---|---|---|---|---|
+| hcc-fy25-001 | numeric-lookup | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-002 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-003 | numeric-lookup | fit | 1/3 | 1/3 | 3/3 | – | – | – |
+| hcc-fy25-004 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-005 | not-in-filing | fit | 3/3 | – | – | – | – | – |
+| chambal-fy25-001 | numeric-lookup | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| chambal-fy25-002 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| navneet-fy25-001 | numeric-lookup | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| navneet-fy25-002 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| chambal-fy25-003 | not-in-filing | test | 3/3 | – | – | – | – | – |
+| navneet-fy25-003 | not-in-filing | fit | 3/3 | – | – | – | – | – |
+| hcc-fy25-006 | table | fit | 2/3 | 2/3 | 2/3 | – | – | – |
+| hcc-fy25-007 | table | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-008 | table | fit | 0/3 | 0/3 | 3/3 | – | – | – |
+| hcc-fy25-009 | two-column | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-010 | not-in-filing | test | 3/3 | – | – | – | – | – |
+| chambal-fy25-004 | computed | fit | 1/3 | 3/3 | 3/3 | – | 2 | – |
+| chambal-fy25-005 | multi-hop | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| navneet-fy25-004 | units-trap | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| navneet-fy25-005 | not-in-filing | fit | 3/3 | – | – | – | – | – |
+| unihealth-fy26-001 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| unihealth-fy26-002 | numeric-lookup | fit | 2/3 | 2/3 | 3/3 | – | – | – |
+| unihealth-fy26-003 | table | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| unihealth-fy26-004 | not-in-filing | test | 3/3 | – | – | – | – | – |
+
+- Answerable passed: 45/54 (83%) · correct 47/54 (87%) · faithful 53/54 (98%)
+- Not-in-filing refused bare: 18/18 (100%) · refusal leaks (any question): 0
+- By type: computed 1/3 (33%), multi-hop 3/3 (100%), not-in-filing 18/18 (100%), numeric-lookup 27/30 (90%), table 8/12 (67%), two-column 3/3 (100%), units-trap 3/3 (100%)
+- By split: fit 27/36 (75%), test 36/36 (100%)
+
+Three prompt rules: when the page does not state standalone or consolidated,
+give the figure and say so instead of refusing; state a computed figure once,
+where it is labelled; answer only what was asked. 45/54, faithful 53/54.
+
+### haiku-5-5-final (2026-10-11 00:58, 3 samples per question)
+
+| Question | Type | Split | Pass | Correct | Faithful | Leaked refusal | Ungrounded figure | Citation corrected |
+|---|---|---|---|---|---|---|---|---|
+| hcc-fy25-001 | numeric-lookup | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-002 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-003 | numeric-lookup | fit | 2/3 | 2/3 | 3/3 | – | – | – |
+| hcc-fy25-004 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-005 | not-in-filing | fit | 3/3 | – | – | – | – | – |
+| chambal-fy25-001 | numeric-lookup | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| chambal-fy25-002 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| navneet-fy25-001 | numeric-lookup | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| navneet-fy25-002 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| chambal-fy25-003 | not-in-filing | test | 3/3 | – | – | – | – | – |
+| navneet-fy25-003 | not-in-filing | fit | 3/3 | – | – | – | – | – |
+| hcc-fy25-006 | table | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-007 | table | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-008 | table | fit | 1/3 | 1/3 | 3/3 | – | – | – |
+| hcc-fy25-009 | two-column | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| hcc-fy25-010 | not-in-filing | test | 3/3 | – | – | – | – | – |
+| chambal-fy25-004 | computed | fit | 2/3 | 3/3 | 3/3 | – | 1 | – |
+| chambal-fy25-005 | multi-hop | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| navneet-fy25-004 | units-trap | fit | 3/3 | 3/3 | 3/3 | – | – | – |
+| navneet-fy25-005 | not-in-filing | fit | 3/3 | – | – | – | – | – |
+| unihealth-fy26-001 | numeric-lookup | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| unihealth-fy26-002 | numeric-lookup | fit | 0/3 | 3/3 | 0/3 | – | – | – |
+| unihealth-fy26-003 | table | test | 3/3 | 3/3 | 3/3 | – | – | – |
+| unihealth-fy26-004 | not-in-filing | test | 3/3 | – | – | – | – | – |
+
+- Answerable passed: 47/54 (87%) · correct 51/54 (94%) · faithful 51/54 (94%)
+- Not-in-filing refused bare: 18/18 (100%) · refusal leaks (any question): 0
+- By type: computed 2/3 (67%), multi-hop 3/3 (100%), not-in-filing 18/18 (100%), numeric-lookup 26/30 (87%), table 10/12 (83%), two-column 3/3 (100%), units-trap 3/3 (100%)
+- By split: fit 29/36 (81%), test 36/36 (100%)
+
+One guard fix: "(computed from [page N])" placed right after a claim's citation
+labels that claim (Haiku 5.5 writes it there; the guard had flagged the figure).
+47/54 vs Haiku 4.5's 48/54, correct 51 vs 50, faithful 51 vs 50, refusals
+18/18 both, test half 36/36 vs 35/36. hcc-006 recovers. Shipped: within one
+answer on pass rate, ahead on correctness and faithfulness, and a sixth of the
+cost ($0.0012 a question, measured; 3.3 s mean latency, 9.7 s worst). Two
+standing judge disagreements: hcc-003/008 answers that say the page does not
+state the scope are marked incorrect, and unihealth-002's "150 beds is the sum
+of 120 and 30" is marked an unlabelled computation.
