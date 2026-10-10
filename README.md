@@ -177,34 +177,37 @@ blocked company's report URL goes in `urls.yaml` by hand.
 
 ## Measured
 
-Answer quality on 20 questions — 15 answerable (lookups, three tables from the
-pages extraction handles worst, a two-column page, a computed figure, a
-multi-hop, a lakhs-vs-crore trap) and 5 not in the filing — each answered three
-times through the app's own path ([evals/RESULTS.md](evals/RESULTS.md)).
-Correctness is judged by Haiku 4.5 without the pages; faithfulness by a second
-Haiku call without the reference answer.
+Answer quality on 24 questions — 18 answerable (lookups, tables from the pages
+extraction handles worst, a two-column page, a two-page spread, a computed
+figure, a multi-hop, lakhs-vs-crore traps) and 6 not in the filing — each
+answered three times through the app's own path
+([evals/RESULTS.md](evals/RESULTS.md)). Correctness is judged by Haiku 4.5
+without the pages; faithfulness by a second Haiku call without the reference
+answer.
 
-| | Before (v1.0) | Now (v1.1) |
-|---|---|---|
-| Answerable questions passed | 34/45 (76%) | **43/45 (96%)** |
-| Correct figure, unit, period and scope | 42/45 (93%) | **45/45 (100%)** |
-| Every claim supported by the cited page | 34/45 (76%) | **44/45 (98%)** |
-| Not in the filing: bare refusal | 13/15 (87%) | **15/15 (100%)** |
+| | v1.0 | v1.1 | v1.2 (same 20) | v1.2 (all 24) |
+|---|---|---|---|---|
+| Answerable questions passed | 34/45 | 43/45 | 42/45 | **48/54 (89%)** |
+| Correct figure, unit, period and scope | 42/45 | 45/45 | 42/45 | 50/54 |
+| Every claim supported by the cited page | 34/45 | 44/45 | 43/45 | 50/54 |
+| Not in the filing: bare refusal | 13/15 | 15/15 | 15/15 | **18/18** |
 
-What moved it: computed figures labelled with their inputs cited; refusals cut
-to one sentence; every figure checked against the page it cites; extracts no
-longer numbered ("[2] page 190" made the model cite page 2); ruled tables
-re-read by pymupdf4llm. A cross-encoder reranker was tried as the refusal gate
-and **not shipped**: fitted on half the questions, it lost answers on the other
-half (26/27 → 19/27).
+v1.1 labelled computed figures, cut refusals to one sentence, checked every
+figure against its cited page, and re-read ruled tables with pymupdf4llm; a
+cross-encoder reranker was tried and **not shipped** (it lost answers on
+held-out questions). v1.2 added Unihealth through `ingest.add`, which exposed
+three bugs fixed for every filing: two-page spreads fused tables, re-read table
+pages dropped their year headers, and the prompt never said whose report it
+was. The one question lost (a statement of changes in equity) is a context-
+budget casualty of the header fix, explained in RESULTS.md.
 
 | | |
 |---|---|
-| Corpus | 3 filings, 896 pages → 4,773 chunks, index 10.8 MB; 202 pages' tables read by pymupdf4llm |
-| Rebuild | 8 min 50 s end to end (ingest with tables 372 s, embed 154 s) |
-| Retrieval, 20 questions | 13/15 expected pages in the top 5; 13/15 answer text inside the context |
+| Corpus | 4 filings, 1,028 pages → 6,040 chunks, index 10.1 MB as a release asset; 248 pages' tables read by pymupdf4llm |
+| Full rebuild | ~12.5 min; adding one company with `ingest.add` ~3–4 min |
+| Retrieval, 24 questions | 14/18 expected pages in the top 5; 15/18 answer text inside the context |
 | Warm retrieval | ~21 ms search, ~10 ms page expansion |
-| Live answer time | 1.4–1.6 s for a cited answer, ~0.1 s for a refusal at the floor |
+| Live answer time | 1.4–1.9 s for a cited answer, ~0.1 s for a refusal at the floor |
 
 ## Limitations
 
@@ -247,8 +250,21 @@ against:
   runs above (it called "(146.98)" bad arithmetic, and "5.8 km" computed when
   the page prints it). It was kept frozen across the step so that every run is
   graded the same way; disagreements are listed in evals/RESULTS.md.
-- **The ten-question limit is per browser session.** A refresh resets it; the
-  real ceiling is a monthly spend limit on the demo's API key.
+- **The demo is rate-limited, for visitors only.** Ten questions per browser
+  session, 25 answered questions per connection per day, 150 across everyone
+  per day (about $1), resetting at midnight UTC. Questions refused at the
+  similarity floor are free and never count. Counts live in the server
+  process, so a restart resets them, and an address can be spoofed: this is
+  fair use, not security, and the monthly spend limit on the API key is the
+  hard ceiling. Local runs and the maintainer's keyed session are exempt.
+- **Finding reports needs a cooperative website.** NSE's site and API and
+  BSE's API refuse scripted requests, so reports are found on company
+  investor pages or listed by hand; a company whose page blocks scripts needs
+  its URL added to `corpus/urls.yaml`. One filing per company, the latest.
+- **New report layouts need a look.** Two-page spreads are now read as two
+  pages, but a spread pairing two different documents (an auditor's annexure
+  beside a balance sheet) gets no statement title, and a scanned report is
+  refused outright (no OCR).
 - **Not advice.** The system reports what a filing says. It produces no
   recommendations and strips advice language if a model drifts into it.
 
@@ -257,13 +273,12 @@ against:
 One step per Saturday ([SPEC.md §4](SPEC.md)):
 
 - **Public** (03 Oct 2026, v1.0): cited Q&A over three annual reports, deployed.
-- **Accurate** (04 Oct 2026, v1.1, this release): a 20-question eval with a
+- **Accurate** (04 Oct 2026, v1.1): a 20-question eval with a
   Haiku judge; figure-level citation checks; labelled computed figures; strict
   refusals; ruled tables via pymupdf4llm. Reranker measured and not shipped.
-- **Ingest** (10 Oct): one offline command that finds a listed company's latest
-  annual report, checks it is born-digital, records its URL and checksum, and
-  indexes it; a batch mode; and a decision on where the index lives once it
-  outgrows git.
+- **Ingest** (04–11 Oct 2026, v1.2, this release): `ingest.add` finds, verifies
+  and indexes a listed company's latest annual report; the index moved out of
+  git to a release asset; the public demo got per-visitor and daily limits.
 - **Funds** (17 Oct): mutual fund mode. Holdings and weights from a fund's
   monthly portfolio disclosure, read as a table; expense ratio, benchmark and
   exit load from its factsheet; the top 10–15 holdings drilled into through the

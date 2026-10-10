@@ -45,3 +45,14 @@ records the source URL for exactly this reason.
 Each `ingest.publish` adds a tarball (~11-14 MB) to the "index" release and
 keeps the old ones, so older commits still find their index. With 20-30
 filings and frequent rebuilds, prune assets that no commit on main names.
+
+## Regression: hcc-fy25-006 lost to the context budget
+
+Ingest's full eval: the SOCIE question fell from 3/3 to 0/3. p118 is a seed,
+six of its seven chunks reach the model, but chunk 4 (holding (1,965.62)) is
+cut when the 6,000-token budget fills. Since table pages now carry their year
+header into every chunk, HCC's table pages are longer and the budget fills
+sooner. Candidate fixes, each needing its own before/after: fill a seed page's
+chunks in reading order outward from the seed chunk before moving to the next
+seed; or give the top seed's page priority over lower seeds' siblings. Do not
+just raise the budget: it costs every question and dilutes attention.

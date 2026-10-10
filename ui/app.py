@@ -30,6 +30,7 @@ from gen.guardrails import CITATION, cited_pages, has_enough_context
 from retrieve.embed import load_model
 from retrieve.search import DEFAULT_K, EXPANSION_SEEDS, open_index, page_context, search
 from retrieve.store import ensure_index
+from ui.limits import DailyLimiter, is_owner, visitor_address
 
 DB_PATH = Path("data/lancedb")
 
@@ -114,6 +115,34 @@ def link_citations(text: str, url: str) -> str:
     return CITATION.sub(lambda m: f"[page {m.group(1)}]({page_link(url, int(m.group(1)))})", text)
 
 
+@st.cache_resource(show_spinner=False)
+def daily_limiter() -> DailyLimiter:
+    """One counter for the whole server process, shared by every visitor's session."""
+    return DailyLimiter()
+
+
+def resolve_owner() -> bool:
+    """Whether this session belongs to the maintainer, who is never rate-limited.
+
+    Decided once per session: a local run, or ?owner=<FOLIO_OWNER_KEY> on the
+    first visit. The key is removed from the address bar straight away, so a
+    copied link or a screenshot does not carry it.
+    """
+    if st.session_state.get("owner"):
+        return True
+    offered = st.query_params.get("owner")
+    try:
+        owner_key = st.secrets.get("FOLIO_OWNER_KEY")
+    except Exception:
+        # No secrets file at all: the normal local case, decided by URL below.
+        owner_key = None
+    owner = is_owner(st.context.url, offered, owner_key)
+    if offered is not None:
+        del st.query_params["owner"]
+    st.session_state["owner"] = owner
+    return owner
+
+
 def render_sources(context: list[dict], cited: set[int], url: str) -> None:
     """Show every chunk the model read, in page order, cited ones already open.
 
@@ -145,6 +174,7 @@ def main() -> None:
     st.caption("Cited answers from Indian annual reports. Every claim carries the page it came from.")
 
     adopt_streamlit_secret()
+    owner = resolve_owner()
     table, model = load_retrieval()
     client, client_error = load_client()
 
@@ -174,7 +204,7 @@ def main() -> None:
     # Counted on submit, refusals included: a question is a question to the
     # reader, and counting only model calls would make the limit unpredictable.
     asked = st.session_state.get("asked", 0)
-    if asked >= MAX_QUESTIONS:
+    if asked >= MAX_QUESTIONS and not owner:
         st.info(
             f"That's the {MAX_QUESTIONS}-question limit for this demo session — thanks for trying Folio. "
             "It runs on a personal API key, so each visit gets a few questions. To keep going, "
@@ -197,6 +227,22 @@ def main() -> None:
         st.error(client_error)
         render_sources(context, cited=set(), url=filing["source_url"])
         st.stop()
+
+    if has_enough_context(hits) and not owner:
+        # The daily limits guard spend, so they are taken only here, just
+        # before the paid call: a question refused at the floor above costs
+        # nothing and does not count.
+        over = daily_limiter().take(daily_limiter().visitor(visitor_address(st.context.ip_address, st.context.headers)))
+        if over:
+            st.info(
+                "Folio has answered as many questions as it can today"
+                + (" for this connection" if over == "visitor" else " across all visitors")
+                + ". It runs on a personal API key with a daily budget, which resets at midnight UTC. "
+                "The extracts retrieval found are below, and the code is free to run with your own key: "
+                "https://github.com/shivank2703/folio"
+            )
+            render_sources(context, cited=set(), url=filing["source_url"])
+            st.stop()
 
     try:
         verdict = guarded_answer(question, hits, client, context, f"{filing['name']} annual report, {filing['fiscal_year']}")
@@ -238,7 +284,7 @@ def main() -> None:
     # at one: the number is there to show where the time actually goes.
     st.caption(
         f"answered in {elapsed:.2f}s · {filing['name']} {filing['fiscal_year']}"
-        f" · question {asked + 1} of {MAX_QUESTIONS} this session"
+        + (" · maintainer session, no limits" if owner else f" · question {asked + 1} of {MAX_QUESTIONS} this session")
     )
     render_sources(verdict["context"], cited=set(cited_pages(verdict["text"])), url=filing["source_url"])
 
