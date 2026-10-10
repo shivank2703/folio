@@ -47,14 +47,23 @@ from retrieve.embed import load_model
 from retrieve.search import DEFAULT_K, EXPANSION_SEEDS, open_index, page_context, search
 
 # The public demo spends the maintainer's key, so the cheapest current model
-# answers: this is extraction and quotation from five short extracts, not
-# open-ended reasoning. Exact ID, no date suffix.
-MODEL = "claude-haiku-4-5"
+# answers: this is extraction and quotation from short extracts, not
+# open-ended reasoning. Haiku 5.5 (Oct 2026) costs a tenth of Haiku 4.5 per
+# token ($0.10 / $0.50 per million under 100k-token prompts) and counts the
+# same text as ~30% more tokens. Fixed ID, no date suffix.
+MODEL = "claude-haiku-5-5"
 
-# Answers are two or three sentences with citations. A low ceiling keeps a
-# runaway response from spending the demo's budget; it is a cost cap, not a
-# length target.
-MAX_TOKENS = 1024
+# Haiku 5.5 thinks adaptively by default, and effort is the lever on how much.
+# Medium, the model's default: low answered 37/54 eval questions against
+# medium's 39/54 before the prompt rules below, at the same ~$0.0012 a
+# question (evals/RESULTS.md). Sampling parameters (temperature) are rejected
+# by this model, so none are sent.
+EFFORT = "medium"
+
+# A cost cap, not a length target: answers are a few sentences. It is higher
+# than Haiku 4.5's 1,024 because thinking tokens now count against it, and a
+# reply that spends the cap thinking ends before writing any text.
+MAX_TOKENS = 4096
 
 SYSTEM_PROMPT = f"""You answer questions about an Indian listed company's annual \
 report, using only the extracts you are given.
@@ -76,17 +85,23 @@ such as "(Amount in ₹ crore, unless otherwise stated)" or in a column header. 
 If an extract gives a figure with no unit on the page, give the figure and say \
 the page does not state its unit. Never assume crore, lakh or rupees.
 - Call a figure standalone or consolidated only when the extract says so, for \
-example in a statement title. Never infer which one it is.
+example in a statement title. Never infer which one it is. If the question \
+asks for one and the extract does not say, still give the figure and add that \
+the page does not state whether it is standalone or consolidated; do not \
+refuse for that reason alone.
 - Report what the filing says. Do not offer investment advice, views on the \
 share price, or suggestions about what an investor should do.
 - If you state a figure that no extract prints (a difference, a total, a \
 ratio, a percentage change, a unit conversion), give the printed figures it \
 comes from with their citations, then write the result followed by \
 "(computed from [page N])", naming every page its inputs come from. Never \
-present a computed figure as if the filing printed it.
+present a computed figure as if the filing printed it. State a computed \
+figure once, in the sentence that labels it.
 - If the extracts do not answer the question, reply with exactly: {REFUSAL} \
 Add nothing else: no explanation, no related figure, no partial answer. A \
 hedged half-answer is worse than that one sentence.
+- Answer only what was asked. Do not add other figures, other sections' \
+versions of the same figure, or background the question did not ask for.
 - Be brief: two or three sentences unless the question needs more."""
 
 
@@ -134,15 +149,32 @@ def build_prompt(question: str, hits: list[dict], filing: str | None = None) -> 
     return f"{heading}Question: {question}\n\nExtracts:\n\n" + "\n\n".join(extracts)
 
 
+class NoAnswer(Exception):
+    """The model ended without an answer for a reason that is not "not in the filing"."""
+
+
 def generate(client: anthropic.Anthropic, question: str, hits: list[dict], filing: str | None = None) -> str:
-    """Ask the model for an answer grounded in these extracts, and return its text."""
+    """Ask the model for an answer grounded in these extracts, and return its text.
+
+    Only text blocks are the answer: a Haiku 5.5 response can open with
+    thinking blocks. Two endings carry no answer and say so, rather than
+    returning empty text the citation check would misreport as "carried no
+    citation": a safety-classifier refusal, and a reply that spent its token
+    cap thinking.
+    """
     message = client.messages.create(
         model=MODEL,
         max_tokens=MAX_TOKENS,
+        output_config={"effort": EFFORT},
         system=SYSTEM_PROMPT,
         messages=[{"role": "user", "content": build_prompt(question, hits, filing)}],
     )
-    return "".join(block.text for block in message.content if block.type == "text").strip()
+    text = "".join(block.text for block in message.content if block.type == "text").strip()
+    if message.stop_reason == "refusal":
+        raise NoAnswer("the model's safety check declined this request")
+    if message.stop_reason == "max_tokens" and not text:
+        raise NoAnswer("the model ran out of room before writing an answer")
+    return text
 
 
 def guarded_answer(
@@ -178,7 +210,10 @@ def guarded_answer(
         best = best_similarity(hits)
         return {**verdict, "text": REFUSAL, "reason": f"best similarity {best:.3f} is below the {MIN_SIMILARITY} floor"}
 
-    raw = generate(client, question, context, filing)
+    try:
+        raw = generate(client, question, context, filing)
+    except NoAnswer as declined:
+        return {**verdict, "text": REFUSAL, "reason": str(declined)}
     # The model's own words are kept beside what the reader is shown, so the
     # eval can grade the contract even where a guard has already repaired it.
     verdict["raw"] = raw

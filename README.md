@@ -48,7 +48,7 @@ flowchart TB
         HY --> PX[widen each hit page<br/>to its sibling chunks]
         PX --> G{guardrails}
         G -->|below the floor| R[Not in the filing.]
-        G -->|passes| GEN[Claude Haiku 4.5<br/>cite-every-claim prompt]
+        G -->|passes| GEN[Claude Haiku 5.5<br/>cite-every-claim prompt]
         GEN --> V[strict refusal · validate citations<br/>ground every figure on its page<br/>scrub advice]
         V --> UI[answer + sources panel]
     end
@@ -185,12 +185,14 @@ answered three times through the app's own path
 without the pages; faithfulness by a second Haiku call without the reference
 answer.
 
-| | v1.0 | v1.1 | v1.2 (same 20) | v1.2 (all 24) |
+| | v1.0 | v1.1 | v1.2 on Haiku 4.5 (all 24) | **v1.2 on Haiku 5.5 (all 24)** |
 |---|---|---|---|---|
-| Answerable questions passed | 34/45 | 43/45 | 42/45 | **48/54 (89%)** |
-| Correct figure, unit, period and scope | 42/45 | 45/45 | 42/45 | 50/54 |
-| Every claim supported by the cited page | 34/45 | 44/45 | 43/45 | 50/54 |
-| Not in the filing: bare refusal | 13/15 | 15/15 | 15/15 | **18/18** |
+| Answerable questions passed | 34/45 | 43/45 | 48/54 | **47/54 (87%)** |
+| Correct figure, unit, period and scope | 42/45 | 45/45 | 50/54 | **51/54** |
+| Every claim supported by the cited page | 34/45 | 44/45 | 50/54 | **51/54** |
+| Not in the filing: bare refusal | 13/15 | 15/15 | 18/18 | **18/18** |
+
+v1.0 and v1.1 were measured on the first 20 questions; v1.2 on all 24.
 
 v1.1 labelled computed figures, cut refusals to one sentence, checked every
 figure against its cited page, and re-read ruled tables with pymupdf4llm; a
@@ -198,8 +200,12 @@ cross-encoder reranker was tried and **not shipped** (it lost answers on
 held-out questions). v1.2 added Unihealth through `ingest.add`, which exposed
 three bugs fixed for every filing: two-page spreads fused tables, re-read table
 pages dropped their year headers, and the prompt never said whose report it
-was. The one question lost (a statement of changes in equity) is a context-
-budget casualty of the header fix, explained in RESULTS.md.
+was. It also moved generation from Claude Haiku 4.5 to Claude Haiku 5.5, about
+a sixth of the cost per question: at first 5.5 answered 9 fewer questions,
+because it follows the prompt's rules more literally (it will not call a figure
+consolidated when the page does not say so) and added material nobody asked
+for; three prompt rules and one guard fix brought it level, and its answers
+are now more often correct and faithful than 4.5's (evals/RESULTS.md).
 
 | | |
 |---|---|
@@ -207,7 +213,8 @@ budget casualty of the header fix, explained in RESULTS.md.
 | Full rebuild | ~12.5 min; adding one company with `ingest.add` ~3–4 min |
 | Retrieval, 24 questions | 14/18 expected pages in the top 5; 15/18 answer text inside the context |
 | Warm retrieval | ~21 ms search, ~10 ms page expansion |
-| Live answer time | 1.4–1.9 s for a cited answer, ~0.1 s for a refusal at the floor |
+| Live answer time | ~3.3 s on average for a cited answer (9.7 s worst, Haiku 5.5 thinks first), ~0.1 s for a refusal at the floor |
+| Cost per answered question | $0.0012 on average on Haiku 5.5 (was ~$0.008 on Haiku 4.5) |
 
 ## Limitations
 
@@ -251,8 +258,8 @@ against:
   the page prints it). It was kept frozen across the step so that every run is
   graded the same way; disagreements are listed in evals/RESULTS.md.
 - **The demo is rate-limited, for visitors only.** Ten questions per browser
-  session, 25 answered questions per connection per day, 150 across everyone
-  per day (about $1), resetting at midnight UTC. Questions refused at the
+  session, 25 answered questions per connection per day, 500 across everyone
+  per day (about $1 on Haiku 5.5), resetting at midnight UTC. Questions refused at the
   similarity floor are free and never count. Counts live in the server
   process, so a restart resets them, and an address can be spoofed: this is
   fair use, not security, and the monthly spend limit on the API key is the

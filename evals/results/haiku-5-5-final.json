@@ -1,0 +1,1514 @@
+{
+ "label": "haiku-5-5-final",
+ "samples": 3,
+ "when": "2026-10-11 00:58",
+ "questions": [
+  {
+   "id": "hcc-fy25-001",
+   "type": "numeric-lookup",
+   "company": "HCC",
+   "split": "fit",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Standalone total assets rose from ₹8,138.03 crore at March 31, 2024 to ₹8,743.37 crore at March 31, 2025 [page 114]. That is an increase of ₹605.34 crore, or about 7.44% (computed from [page 114]).",
+     "raw": "Standalone total assets rose from ₹8,138.03 crore at March 31, 2024 to ₹8,743.37 crore at March 31, 2025 [page 114]. That is an increase of ₹605.34 crore, or about 7.44% (computed from [page 114]).",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      114
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the same figures as the reference answer for both FY24 (₹8,138.03 crore) and FY25 (₹8,743.37 crore) on a standalone basis. The answer correctly identifies the change as an increase and even provides the absolute change (₹605.34 crore) and percentage change (7.44%), which are accurate calculations and represent extra true detail. The units (crore), period (FY24 to FY25), and scope (standalone) all match the reference answer. | faithful: The cited page 114 shows total assets of ₹8,743.37 crore at March 31, 2025 and ₹8,138.03 crore at March 31, 2024. The answer correctly identifies these figures and labels both computed figures as computed from page 114. The arithmetic is correct: ₹8,743.37 - ₹8,138.03 = ₹605.34 crore, and ₹605.34 / ₹8,138.03 × 100 = 7.44%. All factual claims are supported by the cited page.",
+     "computed": [
+      {
+       "figure": "₹605.34 crore",
+       "labelled": true,
+       "arithmetic_right": true
+      },
+      {
+       "figure": "7.44%",
+       "labelled": true,
+       "arithmetic_right": true
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "HCC's standalone total assets rose from ₹8,138.03 crore at March 31, 2024 to ₹8,743.37 crore at March 31, 2025 [page 114]. That is an increase of ₹605.34 crore, or about 7.44% (computed from [page 114]).",
+     "raw": "HCC's standalone total assets rose from ₹8,138.03 crore at March 31, 2024 to ₹8,743.37 crore at March 31, 2025 [page 114]. That is an increase of ₹605.34 crore, or about 7.44% (computed from [page 114]).",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      114
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the same figures as the reference answer for both FY24 (₹8,138.03 crore) and FY25 (₹8,743.37 crore) standalone total assets, with the correct unit (crore), correct periods (March 31, 2024 and March 31, 2025), and correct scope (standalone). The system answer also correctly calculates the change (₹605.34 crore increase, approximately 7.44%), which is additional accurate detail that does not contradict the reference answer. The page citations are ignored as instructed. | faithful: The cited page 114 shows total assets of ₹8,743.37 crore at March 31, 2025 and ₹8,138.03 crore at March 31, 2024. The answer correctly identifies these figures and labels both computed figures as computed from page 114. The arithmetic is correct: ₹8,743.37 - ₹8,138.03 = ₹605.34 crore, and ₹605.34 / ₹8,138.03 × 100 = 7.44%. All factual claims are supported by the cited text.",
+     "computed": [
+      {
+       "figure": "₹605.34 crore",
+       "labelled": true,
+       "arithmetic_right": true
+      },
+      {
+       "figure": "7.44%",
+       "labelled": true,
+       "arithmetic_right": true
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "HCC's standalone total assets rose from ₹8,138.03 crore at March 31, 2024 to ₹8,743.37 crore at March 31, 2025 [page 114]. That is an increase of ₹605.34 crore, or about 7.4% (computed from [page 114]).",
+     "raw": "HCC's standalone total assets rose from ₹8,138.03 crore at March 31, 2024 to ₹8,743.37 crore at March 31, 2025 [page 114]. That is an increase of ₹605.34 crore, or about 7.4% (computed from [page 114]).",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      114
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the same figures as the reference answer for both FY24 (₹8,138.03 crore) and FY25 (₹8,743.37 crore) on a standalone basis. The calculated change of ₹605.34 crore increase is accurate and represents the correct period comparison. The unit (crore) is consistent throughout. The additional calculation of the percentage increase is extra detail that does not contradict the reference answer. | faithful: The cited page 114 shows total assets of ₹8,743.37 crore at March 31, 2025 and ₹8,138.03 crore at March 31, 2024. The difference is ₹605.34 crore (8,743.37 - 8,138.03 = 605.34), which is correctly computed and labelled. The percentage increase is 605.34 / 8,138.03 = 0.0743 or approximately 7.4%, which is correctly computed and labelled. All factual claims are supported by the cited page.",
+     "computed": [
+      {
+       "figure": "₹605.34 crore",
+       "labelled": true,
+       "arithmetic_right": true
+      },
+      {
+       "figure": "7.4%",
+       "labelled": true,
+       "arithmetic_right": true
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "hcc-fy25-002",
+   "type": "numeric-lookup",
+   "company": "HCC",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "HCC's consolidated total income for FY25 was ₹5,726.57 crore, for the year ended March 31, 2025 [page 195].",
+     "raw": "HCC's consolidated total income for FY25 was ₹5,726.57 crore, for the year ended March 31, 2025 [page 195].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      195
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same consolidated total income figure of ₹5,726.57 crore for FY25 as the reference answer, with the correct unit (crore) and correct period (year ended March 31, 2025). The answer matches the reference on all key criteria: figure, unit, period, and scope (consolidated). | faithful: The answer states that HCC's consolidated total income for FY25 was ₹5,726.57 crore for the year ended March 31, 2025. This figure is directly stated in page 195, chunk 0, in the Consolidated Statement of Profit and Loss under 'Total income' for the year ended March 31, 2025. No computation is required as the figure is explicitly printed on the cited page. The answer is faithful to the source material.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "HCC's consolidated total income for FY25 was ₹5,726.57 crore, for the year ended March 31, 2025 [page 195].",
+     "raw": "HCC's consolidated total income for FY25 was ₹5,726.57 crore, for the year ended March 31, 2025 [page 195].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      195
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same consolidated total income figure of ₹5,726.57 crore for FY25 as the reference answer, with the correct unit (crore) and correct period (year ended March 31, 2025). The answer matches the reference on all key criteria: figure, unit, period, and scope (consolidated). | faithful: The answer states that HCC's consolidated total income for FY25 was ₹5,726.57 crore for the year ended March 31, 2025. This figure is directly stated in page 195, chunk 0, in the Consolidated Statement of Profit and Loss under 'Total income' for the year ended March 31, 2025. No computation is required as the figure is explicitly printed on the cited page. The answer is faithful to the source material.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "HCC's consolidated total income for the year ended March 31, 2025 was ₹5,726.57 crore [page 195].",
+     "raw": "HCC's consolidated total income for the year ended March 31, 2025 was ₹5,726.57 crore [page 195].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      195
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same consolidated total income figure of ₹5,726.57 crore for FY25 (year ended March 31, 2025) as the reference answer. The unit (crore), period (FY25), and scope (consolidated) all match correctly. The system answer does not include the FY24 comparison figure, but this is acceptable since the question only asked for FY25 data. | faithful: The answer states that HCC's consolidated total income for the year ended March 31, 2025 was ₹5,726.57 crore. This figure is directly stated in page 195 chunk 0, in the Consolidated Statement of Profit and Loss, where 'Total income' for the year ended March 31, 2025 is shown as 5,726.57 crore. No computation is involved - this is a figure directly printed on the cited page. Therefore, the answer is faithful.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "hcc-fy25-003",
+   "type": "numeric-lookup",
+   "company": "HCC",
+   "split": "fit",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Undisputed trade receivables considered good outstanding for more than 3 years as at March 31, 2025 were ₹294.38 crore [page 138]. The page does not state whether this figure is standalone or consolidated.",
+     "raw": "Undisputed trade receivables considered good outstanding for more than 3 years as at March 31, 2025 were ₹294.38 crore [page 138]. The page does not state whether this figure is standalone or consolidated.",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      138
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the correct figure of ₹294.38 crore, which matches the reference answer exactly. The amount, unit (crore), period (March 31, 2025), and the classification (undisputed trade receivables considered good outstanding for more than 3 years) all align with the reference. While the system answer notes uncertainty about standalone vs consolidated status, the question specifically asks for standalone figures, and the reference confirms this is the standalone figure. The system's answer of ₹294.38 crore is correct. | faithful: The answer states that undisputed trade receivables considered good outstanding for more than 3 years as at March 31, 2025 were ₹294.38 crore. This figure is directly found in page 138 chunk 0, in the row '(i) Undisputed trade receivables - considered good' under the 'More than 3 years' column, showing the value 294.38. The answer correctly cites this figure and accurately notes that the page does not specify whether this is standalone or consolidated data. No computed figures are present in the answer, and all factual claims are supported by the cited text.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "HCC's undisputed trade receivables considered good that were outstanding for more than 3 years as at March 31, 2025 were ₹294.38 crore [page 138]. The page does not state whether this is standalone or consolidated.",
+     "raw": "HCC's undisputed trade receivables considered good that were outstanding for more than 3 years as at March 31, 2025 were ₹294.38 crore [page 138]. The page does not state whether this is standalone or consolidated.",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      138
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the correct figure of ₹294.38 crore for undisputed trade receivables considered good outstanding for more than 3 years as at March 31, 2025. While the system answer notes uncertainty about whether this is standalone or consolidated, the question specifically asks for standalone figures, and the reference answer confirms this is the standalone figure. The core numerical answer matches the reference answer exactly with the correct unit (crore) and period (March 31, 2025). | faithful: The answer states that HCC's undisputed trade receivables considered good outstanding for more than 3 years as at March 31, 2025 were ₹294.38 crore. This figure is directly found in page 138, chunk 0, in the row '(i) Undisputed trade receivables - considered good' under the 'More than 3 years' column. The answer correctly cites this figure and accurately notes that the page does not specify whether this is standalone or consolidated data. No computed figures are present in the answer, and all factual claims are supported by the cited text.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "The filing shows two different figures for undisputed trade receivables considered good outstanding more than 3 years as at March 31, 2025: ₹294.38 crore on one page [page 138] and ₹342.75 crore on another [page 220]. Neither extract states whether its figure is standalone or consolidated, so I cannot tell which one answers your question.",
+     "raw": "The filing shows two different figures for undisputed trade receivables considered good outstanding more than 3 years as at March 31, 2025: ₹294.38 crore on one page [page 138] and ₹342.75 crore on another [page 220]. Neither extract states whether its figure is standalone or consolidated, so I cannot tell which one answers your question.",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      138,
+      220
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": false,
+     "faithful": true,
+     "judge": "correct: The system answer fails to provide a definitive answer to the question. While it correctly identifies ₹294.38 crore as one of the figures in the filing, it expresses uncertainty about whether this is the standalone figure and mentions an alternative figure of ₹342.75 crore. The reference answer clearly states ₹294.38 crore as the standalone figure for undisputed trade receivables considered good outstanding for more than 3 years. The system should have confirmed this as the correct standalone figure rather than expressing doubt about which figure applies to standalone vs consolidated. | faithful: The answer makes no arithmetic computations. It simply reports two figures that appear directly in the cited pages: ₹294.38 crore from page 138 (shown in the 'More than 3 years' column for 'Undisputed trade receivables - considered good' as at March 31, 2025) and ₹342.75 crore from page 220 (shown in the same row and column for the same date). The answer accurately notes that neither extract specifies whether these figures are standalone or consolidated, which is a faithful observation based on the text provided. All factual claims are supported by the cited pages.",
+     "computed": [],
+     "passed": false
+    }
+   ]
+  },
+  {
+   "id": "hcc-fy25-004",
+   "type": "numeric-lookup",
+   "company": "HCC",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "HCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity [page 15]. The extract does not say whether this figure is standalone or consolidated.",
+     "raw": "HCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity [page 15]. The extract does not say whether this figure is standalone or consolidated.",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      15
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the same figure (25% of the country's hydropower capacity) as the reference answer. The additional context about HCC's contributions to infrastructure development and the note about standalone vs consolidated status does not contradict or change the core answer. The figure matches exactly. | faithful: The answer states that 'HCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity' and cites page 15. The cited text from page 15 chunk 0 contains the exact sentence: 'HCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity, more than 60% of its nuclear power generation capacity, 4,036 lane km of roads and expressways, 395 bridges, and 360 km of intricate tunnelling.' The figure of 25% is directly stated in the cited page, not computed. The answer's observation that 'The extract does not say whether this figure is standalone or consolidated' is a reasonable interpretation of what the text does and does not specify. All factual claims are supported by the cited text.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "HCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity [page 15]. The extracts do not give a unit or basis for this percentage beyond that wording.",
+     "raw": "HCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity [page 15]. The extracts do not give a unit or basis for this percentage beyond that wording.",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      15
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the same figure (25%) and the same scope (India's hydropower capacity) as the reference answer. The additional context about HCC's contributions to infrastructure development is extra true detail that does not contradict the reference answer. The fact that the extracts don't provide additional unit or basis information does not make the core answer incorrect, as it matches the reference figure exactly. | faithful: The answer states that HCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity. This figure is directly quoted from page 15 chunk 0, which states: 'HCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity, more than 60% of its nuclear power generation capacity, 4,036 lane km of roads and expressways, 395 bridges, and 360 km of intricate tunnelling.' The answer accurately cites this information without adding any computed figures or making claims beyond what appears in the cited text. The note about the extracts not giving a unit or basis beyond the wording is an accurate observation about the source material itself.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "HCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity [page 15]. The filing does not say whether this figure is standalone or consolidated.",
+     "raw": "HCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity [page 15]. The filing does not say whether this figure is standalone or consolidated.",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      15
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the same figure (25% of the country's hydropower capacity) as the reference answer. The additional context about infrastructure development and the note about standalone vs consolidated status does not contradict or change the core answer. The figure matches exactly. | faithful: The answer states that 'HCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity' and cites page 15. The cited text from page 15 chunk 0 explicitly states: 'HCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity, more than 60% of its nuclear power generation capacity, 4,036 lane km of roads and expressways, 395 bridges, and 360 km of intricate tunnelling.' This directly supports the figure of 25% for hydropower capacity. The answer also notes that 'The filing does not say whether this figure is standalone or consolidated,' which is a reasonable observation about what the cited text does not specify. There are no computed figures in the answer - all figures are directly stated in the cited page. The answer is faithful to the cited text.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "hcc-fy25-005",
+   "type": "not-in-filing",
+   "company": "HCC",
+   "split": "fit",
+   "answerable": false,
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "best similarity 0.644 is below the 0.67 floor",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "best similarity 0.644 is below the 0.67 floor",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "best similarity 0.644 is below the 0.67 floor",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "chambal-fy25-001",
+   "type": "numeric-lookup",
+   "company": "CHAMBAL",
+   "split": "fit",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Chambal Fertilisers' standalone total assets as at March 31, 2025 were Rs. 11,146.51 crore [page 98].",
+     "raw": "Chambal Fertilisers' standalone total assets as at March 31, 2025 were Rs. 11,146.51 crore [page 98].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact figure of Rs. 11,146.51 crore for standalone total assets as at March 31, 2025, which matches the reference answer. The unit (crore), period (March 31, 2025), and scope (standalone) are all correct. The page citation is ignored as per instructions. | faithful: The answer states that Chambal Fertilisers' standalone total assets as at March 31, 2025 were Rs. 11,146.51 crore. This figure is directly printed on page 98, chunk 3, in the Standalone Balance Sheet where 'Total Assets' for March 31, 2025 is explicitly stated as 11,146.51 crore. No computation is required, and the figure is directly supported by the cited page.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Chambal Fertilisers' standalone total assets as at March 31, 2025 were Rs. 11,146.51 crore [page 98]. The balance sheet title identifies the statement as standalone, and the figure is stated in Rs. crore.",
+     "raw": "Chambal Fertilisers' standalone total assets as at March 31, 2025 were Rs. 11,146.51 crore [page 98]. The balance sheet title identifies the statement as standalone, and the figure is stated in Rs. crore.",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact figure of Rs. 11,146.51 crore for standalone total assets as at March 31, 2025, which matches the reference answer. The unit (crore) is correct, the period (March 31, 2025) is correct, and the scope (standalone) is correct. The system answer correctly identifies the statement as standalone and provides the figure in the correct unit. | faithful: The answer states that Chambal Fertilisers' standalone total assets as at March 31, 2025 were Rs. 11,146.51 crore. This figure is directly stated on page 98, chunk 3, in the Standalone Balance Sheet line item 'Total Assets' for the period ending March 31, 2025. The answer correctly identifies the statement as standalone and the currency as Rs. crore. No computed figures are present in the answer - it only cites a figure that appears directly in the source material.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Chambal Fertilisers' standalone total assets as at March 31, 2025 were Rs. 11,146.51 crore [page 98]. The balance sheet is titled \"Standalone Balance Sheet as at March 31, 2025\" and states its unit as Rs. in Crore [page 98].",
+     "raw": "Chambal Fertilisers' standalone total assets as at March 31, 2025 were Rs. 11,146.51 crore [page 98]. The balance sheet is titled \"Standalone Balance Sheet as at March 31, 2025\" and states its unit as Rs. in Crore [page 98].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the correct figure of Rs. 11,146.51 crore for standalone total assets as at March 31, 2025, matching the reference answer exactly. The unit (crore) is correct, the period (March 31, 2025) is correct, and the scope (standalone) is correct. The system answer also appropriately cites the source document. | faithful: The answer states that Chambal Fertilisers' standalone total assets as at March 31, 2025 were Rs. 11,146.51 crore. This figure is directly stated in page 98 chunk 3, which shows 'Total Assets | 11,146.51 | 11,293.49' for the periods ending March 31, 2025 and March 31, 2024 respectively. The answer also correctly identifies the balance sheet as 'Standalone Balance Sheet as at March 31, 2025' with units in 'Rs. in Crore', both of which are confirmed in the cited pages. No computed figures are present in the answer - all statements are directly supported by the cited text.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "chambal-fy25-002",
+   "type": "numeric-lookup",
+   "company": "CHAMBAL",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "The Weak Nitric Acid plant, part of the TAN project at Gadepan, has a manufacturing capacity of 2,10,000 MTPA [page 5].",
+     "raw": "The Weak Nitric Acid plant, part of the TAN project at Gadepan, has a manufacturing capacity of 2,10,000 MTPA [page 5].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      5
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the same figure (2,10,000 MTPA) as the reference answer for the manufacturing capacity of Chambal's Weak Nitric Acid plant. The unit (MTPA - Metric Tonnes Per Annum) matches, and the additional context about it being part of the TAN project at Gadepan is extra detail that does not contradict the reference answer. | faithful: The cited page 5 explicitly states in chunk 3: 'Your Company is setting up a TAN plant at its existing plant site at Gadepan, District Kota (Rajasthan), for manufacture of 2,40,000 MTPA of TAN, including a Weak Nitric Acid (WNA) plant with manufacturing capacity of 2,10,000 MTPA.' The answer's claim that the Weak Nitric Acid plant has a manufacturing capacity of 2,10,000 MTPA is directly supported by this text. No computed figures are present in the answer.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "The Weak Nitric Acid plant, part of the TAN project at Gadepan, has a manufacturing capacity of 2,10,000 MTPA [page 5].",
+     "raw": "The Weak Nitric Acid plant, part of the TAN project at Gadepan, has a manufacturing capacity of 2,10,000 MTPA [page 5].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      5
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the same figure (2,10,000 MTPA) as the reference answer for the manufacturing capacity of Chambal's Weak Nitric Acid plant. The unit (MTPA - Metric Tonnes Per Annum) matches, and the additional context about it being part of the TAN project at Gadepan is extra detail that does not contradict the reference answer. | faithful: The cited page 5 explicitly states in chunk 3: 'Your Company is setting up a TAN plant at its existing plant site at Gadepan, District Kota (Rajasthan), for manufacture of 2,40,000 MTPA of TAN, including a Weak Nitric Acid (WNA) plant with manufacturing capacity of 2,10,000 MTPA.' The answer's claim that the Weak Nitric Acid plant has a manufacturing capacity of 2,10,000 MTPA is directly supported by this text. No computed figures are present in the answer.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "The Weak Nitric Acid plant, part of the TAN project at Gadepan, has a manufacturing capacity of 2,10,000 MTPA [page 5].",
+     "raw": "The Weak Nitric Acid plant, part of the TAN project at Gadepan, has a manufacturing capacity of 2,10,000 MTPA [page 5].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      5
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the same figure (2,10,000 MTPA) as the reference answer for the manufacturing capacity of Chambal's Weak Nitric Acid plant. The unit (MTPA - Metric Tonnes Per Annum) matches, and the additional context about it being part of the TAN project at Gadepan is extra detail that does not contradict the reference answer. | faithful: The cited page 5 explicitly states in chunk 3: 'Your Company is setting up a TAN plant at its existing plant site at Gadepan, District Kota (Rajasthan), for manufacture of 2,40,000 MTPA of TAN, including a Weak Nitric Acid (WNA) plant with manufacturing capacity of 2,10,000 MTPA.' The answer's claim that the Weak Nitric Acid plant has a manufacturing capacity of 2,10,000 MTPA is directly supported by this text. No computed figures are present in the answer.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "navneet-fy25-001",
+   "type": "numeric-lookup",
+   "company": "NAVNEET",
+   "split": "fit",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Navneet Education's standalone total assets as at 31st March, 2025 were ₹2,28,299 lakhs, per the standalone balance sheet [page 190]. The same figure matches total equity and liabilities on that statement [page 190].",
+     "raw": "Navneet Education's standalone total assets as at 31st March, 2025 were ₹2,28,299 lakhs, per the standalone balance sheet [page 190]. The same figure matches total equity and liabilities on that statement [page 190].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      190
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the correct standalone total assets figure of Rs. 2,28,299 lakhs as at 31st March, 2025, matching the reference answer exactly. The unit (lakhs), period (31st March, 2025), and scope (standalone) are all correct. The additional detail about the figure matching total equity and liabilities is accurate and does not contradict the reference answer. | faithful: The answer states that Navneet Education's standalone total assets as at 31st March, 2025 were ₹2,28,299 lakhs. This figure is directly stated in page 190 chunk 3 under 'TOTAL ASSETS' for the date 31st March, 2025. The answer also states that this same figure matches total equity and liabilities on that statement. Page 190 chunk 5 shows 'TOTAL EQUITY AND LIABILITIES' as ₹2,28,299 for 31st March, 2025, which matches the total assets figure. Both facts are directly supported by the cited pages with no computed figures involved.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Navneet Education's standalone total assets as at 31st March 2025 were ₹2,28,299 lakhs (₹ in Lakhs, per the standalone balance sheet heading) [page 190]. The total equity and liabilities figure on the same statement is also ₹2,28,299 lakhs [page 190].",
+     "raw": "Navneet Education's standalone total assets as at 31st March 2025 were ₹2,28,299 lakhs (₹ in Lakhs, per the standalone balance sheet heading) [page 190]. The total equity and liabilities figure on the same statement is also ₹2,28,299 lakhs [page 190].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      190
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the correct figure of Rs. 2,28,299 lakhs for standalone total assets as at 31st March 2025, matching the reference answer exactly. The unit (lakhs) is correct, the period is correct (31st March 2025), and the scope is correct (standalone). The additional detail about total equity and liabilities being the same figure is accurate and does not contradict the reference answer. | faithful: Both figures cited in the answer are directly stated on page 190. The TOTAL ASSETS figure of ₹2,28,299 lakhs as at 31st March 2025 appears in chunk 3, and the TOTAL EQUITY AND LIABILITIES figure of ₹2,28,299 lakhs as at 31st March 2025 appears in chunk 5. Both are explicitly printed on the cited page, so no computed figures are involved. The answer accurately reflects what is stated in the standalone balance sheet.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Navneet Education's standalone total assets as at 31st March, 2025 were ₹2,28,299 lakhs. The standalone balance sheet gives this figure in ₹ lakhs [page 190].",
+     "raw": "Navneet Education's standalone total assets as at 31st March, 2025 were ₹2,28,299 lakhs. The standalone balance sheet gives this figure in ₹ lakhs [page 190].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      190
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the correct figure of Rs. 2,28,299 lakhs for standalone total assets as at 31st March, 2025, matching the reference answer exactly. The unit (lakhs) is correct, the period is correct (31st March, 2025), and the scope is correct (standalone). The page citation is ignored as instructed. | faithful: The answer states that Navneet Education's standalone total assets as at 31st March, 2025 were ₹2,28,299 lakhs. This figure is directly printed on page 190 chunk 3, which shows 'TOTAL ASSETS | 2,28,299 | 1,74,089' for the period ending 31st March, 2025. No computation is involved - the figure is explicitly stated in the cited source. The answer is faithful to the cited text.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "navneet-fy25-002",
+   "type": "numeric-lookup",
+   "company": "NAVNEET",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Navneet's \"Numbers that Define us\" section lists 5,800+ titles. [page 7]",
+     "raw": "Navneet's \"Numbers that Define us\" section lists 5,800+ titles. [page 7]",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      7
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer states '5,800+ titles' which matches the reference answer of 'More than 5,800 titles'. Both convey the same information with the same figure and unit. The page citation is ignored as instructed. | faithful: The answer states that Navneet's 'Numbers that Define us' section lists 5,800+ titles, and this is directly supported by page 7 chunk 1, which shows '5,800+ Number of Titles' in the 'Numbers that Define us' section. No computed figures are present in the answer - it is simply citing a figure that appears directly on the cited page.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Navneet's filing lists \"5,800+ Number of Titles\" under its key numbers. [page 7]",
+     "raw": "Navneet's filing lists \"5,800+ Number of Titles\" under its key numbers. [page 7]",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      7
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer states 'Navneet's filing lists \"5,800+ Number of Titles\"' which matches the reference answer of 'More than 5,800 titles.' Both convey the same information - that Navneet publishes more than 5,800 titles. The phrasing is slightly different but the figures and meaning are identical. | faithful: The answer states that Navneet's filing lists '5,800+ Number of Titles' under its key numbers, and this exact figure appears verbatim on page 7 chunk 1 in the 'Numbers that Define us' section. No computed figures are present in the answer - it is simply citing a figure that appears directly on the cited page. All factual claims are supported by the text provided.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Navneet has \"5,800+ Number of Titles\" [page 7].",
+     "raw": "Navneet has \"5,800+ Number of Titles\" [page 7].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      7
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer states 'more than 5,800 titles' (5,800+), which matches the reference answer of 'More than 5,800 titles.' Both convey the same information with the same figure and qualifier. | faithful: The answer states that Navneet has '5,800+ Number of Titles' and this exact figure appears verbatim on page 7 chunk 1. No computation is involved - the figure is directly stated on the cited page. All factual claims are supported by the cited text.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "chambal-fy25-003",
+   "type": "not-in-filing",
+   "company": "CHAMBAL",
+   "split": "test",
+   "answerable": false,
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "navneet-fy25-003",
+   "type": "not-in-filing",
+   "company": "NAVNEET",
+   "split": "fit",
+   "answerable": false,
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "hcc-fy25-006",
+   "type": "table",
+   "company": "HCC",
+   "split": "fit",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "The extracts do not print the standalone retained earnings balance as at March 31, 2025. Computed from the rolled-forward figures: about ₹(1,965.62) crore, a deficit. This starts from the opening balance of ₹(2,049.31) crore, adds the FY25 profit of ₹84.92 crore, and deducts the ₹(1.23) crore OCI in retained earnings (computed from [page 118]). The result is a computed figure, not a printed one.",
+     "raw": "The extracts do not print the standalone retained earnings balance as at March 31, 2025. Computed from the rolled-forward figures: about ₹(1,965.62) crore, a deficit. This starts from the opening balance of ₹(2,049.31) crore, adds the FY25 profit of ₹84.92 crore, and deducts the ₹(1.23) crore OCI in retained earnings (computed from [page 118]). The result is a computed figure, not a printed one.",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      118
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the same figure as the reference answer: a deficit of ₹1,965.62 crore as at March 31, 2025, with the same unit (crore) and scope (standalone). The system answer also correctly identifies this as a deficit (shown in parentheses). The additional detail about the computation methodology and the prior year comparison figure of ₹(2,049.31) crore aligns with the reference answer. The fact that the figure was computed rather than directly printed does not make it incorrect, as the computed result matches the reference figure exactly. | faithful: The answer correctly identifies a computed figure and labels it as such with the citation '[page 118]'. The arithmetic is verifiable from page 118: opening retained earnings of ₹(2,049.31) crore + profit of ₹84.92 crore - OCI of ₹(1.23) crore = ₹(1,965.62) crore. All input figures are present on the cited page, and the computation is correctly performed. The answer appropriately notes that this is a computed figure, not a printed standalone balance.",
+     "computed": [
+      {
+       "figure": "₹(1,965.62) crore retained earnings balance as at March 31, 2025",
+       "labelled": true,
+       "arithmetic_right": true
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "The extracts do not print the closing retained earnings balance for March 31, 2025. Starting from the March 31, 2024 balance of (2,049.31), adding the 2024-25 profit of 84.92 and the retained-earnings OCI of (1.23) gives approximately (1,965.62) crore (computed from [page 118]). The statement of changes in equity on that page is standalone, and its amounts are in ₹ crore.",
+     "raw": "The extracts do not print the closing retained earnings balance for March 31, 2025. Starting from the March 31, 2024 balance of (2,049.31), adding the 2024-25 profit of 84.92 and the retained-earnings OCI of (1.23) gives approximately (1,965.62) crore (computed from [page 118]). The statement of changes in equity on that page is standalone, and its amounts are in ₹ crore.",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      118
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer correctly identifies HCC's standalone retained earnings deficit of ₹1,965.62 crore as at March 31, 2025, matching the reference answer exactly. The system also correctly notes this is a deficit (shown in parentheses as negative), provides the correct unit (crore), the correct period (March 31, 2025), and correctly identifies the scope as standalone. The system's calculation methodology and verification against the prior year figure of (2,049.31) crore are accurate and consistent with the reference answer. | faithful: The answer correctly identifies a computed figure and labels it as such with '(computed from [page 118])'. The arithmetic is verifiable: starting balance of (2,049.31) + profit of 84.92 + OCI of (1.23) = (2,049.31 + 84.92 - 1.23) = (1,965.62). All input figures are present on page 118: the March 31, 2024 retained earnings balance of (2,049.31) appears in chunk 2, the 2024-25 profit of 84.92 appears in chunk 2, and the retained-earnings OCI of (1.23) appears in chunk 3. The statement is correctly identified as standalone and amounts are confirmed to be in ₹ crore per the table header in chunk 0.",
+     "computed": [
+      {
+       "figure": "(1,965.62) crore",
+       "labelled": true,
+       "arithmetic_right": true
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "The extracts do not print the closing retained earnings balance as at March 31, 2025. The standalone Statement of Changes in Equity gives the opening balance of ₹(2,049.31) crore as at March 31, 2024, a profit of 84.92 and an OCI net-of-tax movement of (1.23) in the retained earnings column [page 118]. Adding these gives ₹(1,965.62) crore (computed from [page 118]), assuming no other retained earnings movements fall outside the extracts.",
+     "raw": "The extracts do not print the closing retained earnings balance as at March 31, 2025. The standalone Statement of Changes in Equity gives the opening balance of ₹(2,049.31) crore as at March 31, 2024, a profit of 84.92 and an OCI net-of-tax movement of (1.23) in the retained earnings column [page 118]. Adding these gives ₹(1,965.62) crore (computed from [page 118]), assuming no other retained earnings movements fall outside the extracts.",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      118
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer correctly identifies the standalone retained earnings balance as at March 31, 2025 as a deficit of ₹(1,965.62) crore, which matches the reference answer exactly. The system answer also shows the calculation methodology (opening balance of ₹(2,049.31) crore + profit of ₹84.92 crore - OCI movement of ₹1.23 crore = ₹(1,965.62) crore), demonstrating how this figure was derived from the Statement of Changes in Equity. The figure, unit (crore), period (March 31, 2025), scope (standalone), and the negative designation are all correct. | faithful: The answer correctly identifies a computed figure and labels it as such with '(computed from [page 118])'. The arithmetic is verifiable: opening retained earnings of ₹(2,049.31) crore + profit of ₹84.92 crore + OCI net-of-tax movement of ₹(1.23) crore = ₹(1,965.62) crore. All input figures are present on page 118. The answer's caveat about 'assuming no other retained earnings movements fall outside the extracts' is appropriately cautious. All factual claims are supported by the cited page.",
+     "computed": [
+      {
+       "figure": "₹(1,965.62) crore",
+       "labelled": true,
+       "arithmetic_right": true
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "hcc-fy25-007",
+   "type": "table",
+   "company": "HCC",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "HCC's total consolidated current borrowings as at March 31, 2025 were ₹634.35 crore [page 194].",
+     "raw": "HCC's total consolidated current borrowings as at March 31, 2025 were ₹634.35 crore [page 194].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      194
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact figure of ₹634.35 crore for HCC's total consolidated current borrowings as at March 31, 2025, which matches the reference answer. The unit (crore), period (March 31, 2025), and scope (consolidated) are all correct. The system answer does not include the prior year comparison, but the question only asked for the 2025 figure, so this omission is acceptable. | faithful: The answer states that HCC's total consolidated current borrowings as at March 31, 2025 were ₹634.35 crore. This figure is directly stated in page 194, chunk 5, in the Consolidated Balance Sheet under 'Current liabilities' > 'Financial liabilities' > 'Borrowings' with Note No. 20, showing the exact amount of ₹634.35 crore for March 31, 2025. No computation is involved, and the figure is explicitly present in the cited page.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "HCC's total consolidated current borrowings as at March 31, 2025 were ₹634.35 crore [page 194].",
+     "raw": "HCC's total consolidated current borrowings as at March 31, 2025 were ₹634.35 crore [page 194].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      194
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact figure of ₹634.35 crore for HCC's total consolidated current borrowings as at March 31, 2025, which matches the reference answer. The unit (crore), period (March 31, 2025), and scope (consolidated) are all correct. The system answer does not include the prior year comparison, but the question only asked for the 2025 figure, so this omission is acceptable. | faithful: The answer states that HCC's total consolidated current borrowings as at March 31, 2025 were ₹634.35 crore. This figure is directly stated in page 194, chunk 5, in the Consolidated Balance Sheet under 'Current liabilities' > 'Financial liabilities' > 'Borrowings' with Note No. 20, showing the exact amount of ₹634.35 crore for March 31, 2025. No computation is involved, and the figure is explicitly present in the cited page.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "HCC's consolidated current borrowings as at March 31, 2025 were ₹634.35 crore [page 194].",
+     "raw": "HCC's consolidated current borrowings as at March 31, 2025 were ₹634.35 crore [page 194].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      194
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact figure of ₹634.35 crore for HCC's total consolidated current borrowings as at March 31, 2025, which matches the reference answer. The unit (crore), period (March 31, 2025), and scope (consolidated) are all correct. The system answer does not include the prior year comparison, but the question only asked for the 2025 figure, so this omission is acceptable. | faithful: The answer states that HCC's consolidated current borrowings as at March 31, 2025 were ₹634.35 crore. This figure is directly stated in page 194, chunk 5, in the Consolidated Balance Sheet under 'Current liabilities' > 'Financial liabilities' > 'Borrowings' with Note No. 20, showing the exact amount of ₹634.35 crore for March 31, 2025. No computation is involved, and the figure is explicitly present in the cited page.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "hcc-fy25-008",
+   "type": "table",
+   "company": "HCC",
+   "split": "fit",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Disputed trade receivables considered good that were outstanding for more than 3 years as at March 31, 2025 were ₹772.28 crore [page 138] and also ₹772.28 crore [page 220]. The extracts do not state whether either page is standalone or consolidated, so I cannot confirm which figure is the consolidated one.",
+     "raw": "Disputed trade receivables considered good that were outstanding for more than 3 years as at March 31, 2025 were ₹772.28 crore [page 138] and also ₹772.28 crore [page 220]. The extracts do not state whether either page is standalone or consolidated, so I cannot confirm which figure is the consolidated one.",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      138,
+      220
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": false,
+     "faithful": true,
+     "judge": "correct: The system answer provides the correct figure of ₹772.28 crore but fails to confirm it is the consolidated figure. The question specifically asks for consolidated disputed trade receivables, and while the reference answer clearly states this is consolidated data, the system answer expresses uncertainty about whether the figure is standalone or consolidated. Since the question requires confirmation of the scope (consolidated vs standalone) and the system answer does not definitively confirm the consolidated nature, the answer is incomplete and does not fully satisfy the requirement. | faithful: The answer states that disputed trade receivables considered good outstanding for more than 3 years as at March 31, 2025 were ₹772.28 crore on both page 138 and page 220. Both figures are directly stated in the cited pages: page 138 chunk 1 shows row (iv) 'Disputed trade receivables - considered good' with 'More than 3 years' column value of 772.28, and page 220 chunk 1 shows the identical row and value. The answer correctly identifies both figures and accurately notes that the extracts do not indicate whether either is standalone or consolidated. No computed figures are present in the answer - all numbers cited are directly from the pages. The answer is faithful to the cited text.",
+     "computed": [],
+     "passed": false
+    },
+    {
+     "text": "Per the page 220 ageing schedule (Note 7.5), disputed trade receivables considered good and outstanding for more than 3 years were ₹772.28 crore as at March 31, 2025 [page 220]. The extract does not state whether this table is standalone or consolidated, so the consolidated label rests on the question.",
+     "raw": "Per the page 220 ageing schedule (Note 7.5), disputed trade receivables considered good and outstanding for more than 3 years were ₹772.28 crore as at March 31, 2025 [page 220]. The extract does not state whether this table is standalone or consolidated, so the consolidated label rests on the question.",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      220
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the correct figure of ₹772.28 crore for disputed trade receivables considered good outstanding for more than 3 years as at March 31, 2025, matching the reference answer exactly. The unit (crore), period (March 31, 2025), and scope (consolidated, as indicated by the question) all align with the reference. The system answer also appropriately notes the total disputed trade receivables considered good (₹1,651.17 crore), which matches the reference answer's context. | faithful: The answer states that disputed trade receivables considered good and outstanding for more than 3 years were ₹772.28 crore as at March 31, 2025. This figure is directly found in page 220 chunk 1, row (iv) 'Disputed trade receivables - considered good', in the 'More than 3 years' column, showing exactly ₹772.28 crore. The answer correctly cites page 220 and Note 7.5. The answer appropriately notes that the extract does not explicitly state whether the table is standalone or consolidated, which is an accurate observation about the cited text. No computed figures are present in the answer - all stated figures are directly from the cited pages.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Disputed trade receivables considered good that were outstanding for more than 3 years as at March 31, 2025 were ₹772.28 crore [page 220]. The same figure appears on page 138 [page 138]. Neither page states whether its table is standalone or consolidated.",
+     "raw": "Disputed trade receivables considered good that were outstanding for more than 3 years as at March 31, 2025 were ₹772.28 crore [page 220]. The same figure appears on page 138 [page 138]. Neither page states whether its table is standalone or consolidated.",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      138,
+      220
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": false,
+     "faithful": true,
+     "judge": "correct: The system answer provides the correct figure of ₹772.28 crore, but fails to confirm that this is consolidated data as required by the question. The system explicitly states 'Neither page states whether its table is standalone or consolidated,' which means the answer does not definitively establish the scope (consolidated vs standalone) that the question specifically asks for. The reference answer clearly identifies this as consolidated data, but the system answer leaves this critical requirement unconfirmed. | faithful: The answer states that disputed trade receivables considered good outstanding for more than 3 years as at March 31, 2025 were ₹772.28 crore. This figure appears exactly in both cited pages: on page 138 in row (iv) under the 'More than 3 years' column, and on page 220 in the same row and column. The answer correctly identifies that the figure appears on both pages. The answer also accurately notes that neither page explicitly states whether its table is standalone or consolidated, which is a factual observation supported by the text provided. No computed figures are present in the answer, and all stated facts are directly supported by the cited pages.",
+     "computed": [],
+     "passed": false
+    }
+   ]
+  },
+  {
+   "id": "hcc-fy25-009",
+   "type": "two-column",
+   "company": "HCC",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "The Vishnugad Pipalkoti Head Race Tunnel had a cumulative excavation of 5,991 m, of which 5,604 m was completed using a Tunnel Boring Machine [page 12]. The same figures are repeated in the Projects Update [page 23].",
+     "raw": "The Vishnugad Pipalkoti Head Race Tunnel had a cumulative excavation of 5,991 m, of which 5,604 m was completed using a Tunnel Boring Machine [page 12]. The same figures are repeated in the Projects Update [page 23].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      12,
+      23
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same figures as the reference answer: cumulative 5,991 m total excavation, with 5,604 m excavated using a TBM (Double Shield TBM as specified in the reference). The system answer includes the additional detail about the TBM type being mentioned on specific pages, which is extra true detail and does not contradict the reference answer. Both key figures match perfectly with the same units (meters). | faithful: All factual claims in the answer are directly supported by the cited pages. Page 12 states that the Vishnugad Pipalkoti HRT 'has achieved a cumulative excavation of 5,991 m' with '5,604 m completed using a 9.86 m diameter Double Shield Tunnel Boring Machine.' Page 23 repeats these exact figures, stating 'the Head Race Tunnel (HRT) has reached a cumulative excavation of 5,991 meters, with 5,604 meters completed using a Tunnel Boring Machine (TBM).' The answer accurately reflects both the figures and their locations on the cited pages. No computed figures are present in the answer.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "The Head Race Tunnel of the Vishnugad Pipalkoti Hydropower Project had reached a cumulative excavation of 5,991 meters, of which 5,604 meters was completed using a Tunnel Boring Machine [page 12]. The project section gives the same figures [page 23].",
+     "raw": "The Head Race Tunnel of the Vishnugad Pipalkoti Hydropower Project had reached a cumulative excavation of 5,991 meters, of which 5,604 meters was completed using a Tunnel Boring Machine [page 12]. The project section gives the same figures [page 23].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      12,
+      23
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same figures as the reference answer: a cumulative 5,991 m total excavation, of which 5,604 m was excavated with the TBM (the reference specifies 9.86 m Double Shield TBM, while the system answer just says 'Tunnel Boring Machine', but this is not a contradiction - it's just less specific detail). The figures, units (meters), and scope all match the reference answer. | faithful: All factual claims in the answer are directly supported by the cited pages. Page 12 states that the Head Race Tunnel has achieved a cumulative excavation of 5,991 m, with 5,604 m completed using a Tunnel Boring Machine. Page 23 repeats these exact same figures: 'the Head Race Tunnel (HRT) has reached a cumulative excavation of 5,991 meters, with 5,604 meters completed using a Tunnel Boring Machine (TBM).' The answer accurately cites both pages and contains no computed figures that would require arithmetic verification.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "HCC had achieved a cumulative excavation of 5,991 meters in the Head Race Tunnel of the Vishnugad Pipalkoti Hydropower Project, of which 5,604 meters were completed using a Tunnel Boring Machine [page 12]. The same figures appear on [page 23].",
+     "raw": "HCC had achieved a cumulative excavation of 5,991 meters in the Head Race Tunnel of the Vishnugad Pipalkoti Hydropower Project, of which 5,604 meters were completed using a Tunnel Boring Machine [page 12]. The same figures appear on [page 23].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      12,
+      23
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same figures as the reference answer: 5,991 m cumulative excavation with 5,604 m completed using a TBM (specifically the 9.86 m Double Shield TBM as mentioned in the reference). The answer matches the reference in both the total length and the breakdown of TBM excavation. The page citations are ignored per instructions. | faithful: All factual claims in the answer are directly supported by the cited pages. Page 12 explicitly states that the Head Race Tunnel has 'achieved a cumulative excavation of 5,991 m' with '5,604 m completed using a 9.86 m diameter Double Shield Tunnel Boring Machine.' Page 23 confirms these same figures, stating 'the Head Race Tunnel (HRT) has reached a cumulative excavation of 5,991 meters, with 5,604 meters completed using a Tunnel Boring Machine (TBM).' No computed figures are present in the answer—all numbers cited are directly printed on the cited pages.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "hcc-fy25-010",
+   "type": "not-in-filing",
+   "company": "HCC",
+   "split": "test",
+   "answerable": false,
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "chambal-fy25-004",
+   "type": "computed",
+   "company": "CHAMBAL",
+   "split": "fit",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Standalone total assets fell by Rs. 146.98 crore, from Rs. 11,293.49 crore at March 31, 2024 to Rs. 11,146.51 crore at March 31, 2025 (computed) [page 98]. (computed from [page 98])",
+     "raw": "Standalone total assets fell by Rs. 146.98 crore, from Rs. 11,293.49 crore at March 31, 2024 to Rs. 11,146.51 crore at March 31, 2025 [page 98]. (computed from [page 98])",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same figures as the reference answer: a decrease of ₹146.98 crore, with the opening balance of ₹11,293.49 crore and closing balance of ₹11,146.51 crore. The period (March 31, 2024 to March 31, 2025), scope (standalone), and unit (crore) all match correctly. | faithful: The answer states that standalone total assets fell by Rs. 146.98 crore from Rs. 11,293.49 crore (March 31, 2024) to Rs. 11,146.51 crore (March 31, 2025). Both the starting and ending figures are directly stated on page 98. The difference is computed as 11,293.49 - 11,146.51 = 146.98 crore, which is arithmetically correct. The answer explicitly labels this as '(computed from [page 98])', satisfying the labelling requirement. All inputs are present on the cited page and the arithmetic is correct.",
+     "computed": [
+      {
+       "figure": "Rs. 146.98 crore",
+       "labelled": true,
+       "arithmetic_right": true
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "Chambal Fertilisers' standalone total assets fell by Rs. 146.98 crore, from Rs. 11,293.49 crore at March 31, 2024 to Rs. 11,146.51 crore at March 31, 2025 [page 98]. This change is computed from those two printed figures (computed from [page 98]).",
+     "raw": "Chambal Fertilisers' standalone total assets fell by Rs. 146.98 crore, from Rs. 11,293.49 crore at March 31, 2024 to Rs. 11,146.51 crore at March 31, 2025 [page 98]. This change is computed from those two printed figures (computed from [page 98]).",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [
+      [
+       "146.98",
+       [
+        98
+       ]
+      ]
+     ],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same figures as the reference answer: a decrease of ₹146.98 crore, with the opening balance of ₹11,293.49 crore as of March 31, 2024 and closing balance of ₹11,146.51 crore as of March 31, 2025. The unit (crore), period (March 31, 2024 to March 31, 2025), and scope (standalone) all match correctly. The page citation is ignored per instructions. | faithful: The answer states that total assets fell by Rs. 146.98 crore from Rs. 11,293.49 crore (March 31, 2024) to Rs. 11,146.51 crore (March 31, 2025). Both figures are clearly printed on page 98 chunk 3. The computation is correct: 11,293.49 - 11,146.51 = 146.98. The answer explicitly labels this as 'computed from [page 98]', satisfying the labelling requirement. All inputs are present on the cited page and the arithmetic is correct.",
+     "computed": [
+      {
+       "figure": "Rs. 146.98 crore",
+       "labelled": true,
+       "arithmetic_right": true
+      }
+     ],
+     "passed": false
+    },
+    {
+     "text": "Standalone total assets fell from Rs. 11,293.49 crore at March 31, 2024 to Rs. 11,146.51 crore at March 31, 2025 [page 98]. The decrease is Rs. 146.98 crore (computed from [page 98]).",
+     "raw": "Standalone total assets fell from Rs. 11,293.49 crore at March 31, 2024 to Rs. 11,146.51 crore at March 31, 2025 [page 98]. The decrease is Rs. 146.98 crore (computed from [page 98]).",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the same figures as the reference answer: standalone total assets of ₹11,293.49 crore at March 31, 2024 and ₹11,146.51 crore at March 31, 2025, with a decrease of ₹146.98 crore. The unit (crore), period (March 31, 2024 to March 31, 2025), and scope (standalone) all match the reference answer. The negative change is correctly represented. | faithful: The answer states that standalone total assets fell from Rs. 11,293.49 crore (March 31, 2024) to Rs. 11,146.51 crore (March 31, 2025). Both figures are directly found in page 98 chunk 3. The computed decrease of Rs. 146.98 crore is properly labelled as 'computed from [page 98]' and the arithmetic is correct: 11,293.49 - 11,146.51 = 146.98. All factual claims are supported by the cited page.",
+     "computed": [
+      {
+       "figure": "Rs. 146.98 crore",
+       "labelled": true,
+       "arithmetic_right": true
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "chambal-fy25-005",
+   "type": "multi-hop",
+   "company": "CHAMBAL",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Chambal Fertilisers' standalone profit for FY25 was Rs. 1,656.79 crore [page 99]. The Board recommended a final dividend of Rs. 5 per equity share (50% on a Rs. 10 share) for FY25, subject to shareholder approval at the AGM [page 29].",
+     "raw": "Chambal Fertilisers' standalone profit for FY25 was Rs. 1,656.79 crore [page 99]. The Board recommended a final dividend of Rs. 5 per equity share (50% on a Rs. 10 share) for FY25, subject to shareholder approval at the AGM [page 29].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      29,
+      99
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides both required figures correctly: (1) standalone profit of ₹1,656.79 crore for FY25, matching the reference answer exactly, and (2) final dividend of ₹5 per equity share, also matching the reference. The additional context about it being 50% on a ₹10 share and subject to shareholder approval is extra true detail that does not contradict the reference answer. Both figures have the correct units and scope (standalone profit, per share dividend). | faithful: Both factual claims in the answer are directly supported by the cited pages. Page 99 chunk 2 explicitly states 'Profit for the Year | 1,656.79' for the year ended March 31, 2025. Page 29 chunk 4 explicitly states 'The Board of Directors have recommended final dividend of Rs. 5 (i.e. @ 50%) per equity share of Rs. 10 each of the Company for the Financial Year 2024-25, which, if declared by the shareholders at the ensuing Annual General Meeting, shall be paid within 30 (thirty) days from the date of declaration of dividend.' The answer's characterization of the dividend as 'subject to shareholder approval at the AGM' is consistent with the cited text's conditional language 'if declared by the shareholders at the ensuing Annual General Meeting.' No computed figures are present in the answer.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Chambal Fertilisers' standalone profit for FY25 was Rs. 1,656.79 crore [page 99]. The Board recommended a final dividend of Rs. 5 per equity share (50% on a Rs. 10 share) for FY25 [page 29].",
+     "raw": "Chambal Fertilisers' standalone profit for FY25 was Rs. 1,656.79 crore [page 99]. The Board recommended a final dividend of Rs. 5 per equity share (50% on a Rs. 10 share) for FY25 [page 29].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      29,
+      99
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides both required figures correctly: (1) standalone profit of ₹1,656.79 crore for FY25, matching the reference answer exactly, and (2) final dividend of ₹5 per equity share, also matching the reference. Both figures have the correct units and scope (standalone profit, per share dividend). The additional clarification about the 50% dividend on a ₹10 share is extra detail that does not contradict the reference answer. | faithful: Both factual claims in the answer are directly supported by the cited pages. Page 99 chunk 2 explicitly states 'Profit for the Year | 1,656.79' for the year ended March 31, 2025. Page 29 chunk 4 explicitly states 'The Board of Directors have recommended final dividend of Rs. 5 (i.e. @ 50%) per equity share of Rs. 10 each of the Company for the Financial Year 2024-25'. No computed figures are present in the answer - both numbers are directly cited from the pages.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Chambal Fertilisers' standalone profit for FY25 was Rs. 1,656.79 crore (profit for the year, year ended March 31, 2025) [page 99]. The Board recommended a final dividend of Rs. 5 per equity share (50% on Rs. 10 shares) for FY25, subject to shareholder approval at the AGM [page 29].",
+     "raw": "Chambal Fertilisers' standalone profit for FY25 was Rs. 1,656.79 crore (profit for the year, year ended March 31, 2025) [page 99]. The Board recommended a final dividend of Rs. 5 per equity share (50% on Rs. 10 shares) for FY25, subject to shareholder approval at the AGM [page 29].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      29,
+      99
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides both required figures correctly: (1) standalone profit of ₹1,656.79 crore for FY25, matching the reference answer exactly, and (2) final dividend of ₹5 per equity share, also matching the reference. The system answer includes additional context (50% on Rs. 10 shares, subject to shareholder approval) which is accurate supplementary detail. Both figures have the correct units and period. The page citations differ but are to be ignored per instructions. | faithful: Both factual claims in the answer are directly supported by the cited pages. Page 99 explicitly states 'Profit for the Year | 1,656.79' for the year ended March 31, 2025. Page 29 explicitly states 'The Board of Directors have recommended final dividend of Rs. 5 (i.e. @ 50%) per equity share of Rs. 10 each of the Company for the Financial Year 2024-25'. No computed figures are present in the answer - both numbers are directly cited from the pages.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "navneet-fy25-004",
+   "type": "units-trap",
+   "company": "NAVNEET",
+   "split": "fit",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Navneet Education's standalone profit for the year (profit after tax) for FY25 was ₹80,073 lakhs [page 191]. The statement is headed in ₹ lakhs [page 191].",
+     "raw": "Navneet Education's standalone profit for the year (profit after tax) for FY25 was ₹80,073 lakhs [page 191]. The statement is headed in ₹ lakhs [page 191].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      191
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides ₹80,073 lakhs as the standalone profit after tax for FY25, which matches the reference answer exactly (₹80,073 lakhs = ₹801 crore). The unit (lakhs), period (FY25), and scope (standalone) are all correct. The answer correctly cites the standalone statement of profit and loss from page 191. | faithful: The answer states that Navneet Education's standalone profit for the year (profit after tax) for FY25 was ₹80,073 lakhs. This figure is directly found in page 191 chunk 3, which shows 'IX | Profit for the year (VII - VIII) | 80,073' for the year ended 31st March, 2025. The answer also correctly notes that the statement is headed in ₹ lakhs, which is confirmed by the header '(₹ in Lakhs)' appearing on page 191. No computed figures are present in the answer - it only cites figures that appear directly on the cited pages. Therefore, the answer is faithful to the cited text.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Navneet Education's standalone profit for the year (profit after tax, before other comprehensive income) was ₹80,073 lakhs for FY25 [page 191]. The page is in ₹ lakhs and refers to the standalone financial statements [page 191].",
+     "raw": "Navneet Education's standalone profit for the year (profit after tax, before other comprehensive income) was ₹80,073 lakhs for FY25 [page 191]. The page is in ₹ lakhs and refers to the standalone financial statements [page 191].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      191
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides ₹80,073 lakhs for standalone profit after tax for FY25, which matches the reference answer exactly (₹80,073 lakhs = ₹801 crore). The answer correctly identifies it as standalone financial statements and provides the figure in lakhs with the proper unit specification. The period (FY25) and scope (standalone) are both correct. | faithful: The answer states that Navneet Education's standalone profit for the year (profit after tax, before other comprehensive income) was ₹80,073 lakhs for FY25. Page 191 chunk 3 clearly shows 'IX | Profit for the year (VII - VIII) | 80,073 | 18,853' with the currency noted as '(₹ in Lakhs)' at the top of the table. The figure of ₹80,073 lakhs is directly stated on the cited page, and the answer correctly identifies it as profit after tax before other comprehensive income (line IX, which is before line X on other comprehensive income). No computed figures are present in the answer - all numbers cited are directly from the page.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Navneet Education's standalone profit for the year ended 31 March 2025 (profit for the year after tax) was ₹80,073 lakhs [page 191]. The standalone statement of profit and loss is stated in ₹ lakhs [page 191].",
+     "raw": "Navneet Education's standalone profit for the year ended 31 March 2025 (profit for the year after tax) was ₹80,073 lakhs [page 191]. The standalone statement of profit and loss is stated in ₹ lakhs [page 191].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      191
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides ₹80,073 lakhs as the standalone profit after tax for FY25, which matches the reference answer exactly (₹80,073 lakhs = ₹801 crore). The answer correctly identifies it as standalone, specifies the correct period (year ended 31 March 2025), provides the figure in lakhs with the proper unit, and cites the appropriate page. The answer is accurate and complete. | faithful: The answer states that Navneet Education's standalone profit for the year ended 31 March 2025 was ₹80,073 lakhs. This figure is directly stated in page 191 chunk 3, which shows 'IX | Profit for the year (VII - VIII) | 80,073' for the year ended 31st March, 2025. The answer also correctly notes that the standalone statement of profit and loss is stated in ₹ lakhs, which is confirmed by the header '(₹ in Lakhs)' appearing on page 191. No computed figures are present in the answer - it only cites figures that appear directly in the cited pages. Therefore, the answer is faithful to the cited text.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "navneet-fy25-005",
+   "type": "not-in-filing",
+   "company": "NAVNEET",
+   "split": "fit",
+   "answerable": false,
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "unihealth-fy26-001",
+   "type": "numeric-lookup",
+   "company": "UNIHEALTH",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs. [page 98]",
+     "raw": "Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs. [page 98]",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact figure of ₹25,416.02 lakhs for consolidated total assets as at March 31, 2026, which matches the reference answer. The unit (lakhs), period (March 31, 2026), and scope (consolidated) are all correct. The system answer does not include the prior year comparison, but this is acceptable since the question only asked for the 2026 figure. | faithful: The answer states that Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs. This figure is directly stated in page 98, chunk 9, which shows 'Total Assets | | 25,416.02 | 18,537.83 | 15,315.76' for the period ending March 31, 2026. No computation is involved - the figure is explicitly printed on the cited page. The answer is faithful.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs [page 98]. The consolidated balance sheet on that page is headed \"(₹ in Lakhs)\" and shows the same figure as total equity and liabilities.",
+     "raw": "Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs [page 98]. The consolidated balance sheet on that page is headed \"(₹ in Lakhs)\" and shows the same figure as total equity and liabilities.",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact figure of ₹25,416.02 lakhs as at March 31, 2026, which matches the reference answer. The unit (lakhs) is correct, the period (March 31, 2026) is correct, and the scope (consolidated) is correct. The system answer also correctly notes that this represents total equity and liabilities, which equals total assets on a balance sheet. The additional context about the page reference and the balance sheet heading does not detract from the accuracy of the core answer. | faithful: The answer states that Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs. This figure appears directly on page 98 chunk 9, which shows 'Total Assets | | 25,416.02' for the period ending March 31, 2026. The answer also correctly notes that the balance sheet is headed '(₹ in Lakhs)' (visible in multiple chunks) and that this same figure appears as total equity and liabilities, which is confirmed in page 98 chunk 3 showing 'Total Equity and Liabilities | | 25,416.02'. All factual claims are directly supported by the cited text with no computed figures requiring calculation or labeling.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs, per the Consolidated Balance Sheet [page 98]. The same balance sheet shows total equity and liabilities of ₹25,416.02 lakhs for that date [page 98].",
+     "raw": "Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs, per the Consolidated Balance Sheet [page 98]. The same balance sheet shows total equity and liabilities of ₹25,416.02 lakhs for that date [page 98].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact figure of ₹25,416.02 lakhs as at March 31, 2026, which matches the reference answer. The unit (lakhs), period (March 31, 2026), and scope (consolidated) are all correct. The system answer includes additional accurate detail about the balance sheet but this does not detract from the correctness of the primary answer. | faithful: The answer states two facts: (1) Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs, and (2) total equity and liabilities for that date were ₹25,416.02 lakhs. Both figures are directly printed on page 98. Page 98 chunk 9 shows 'Total Assets | | 25,416.02' for March 31, 2026, and page 98 chunk 3 shows 'Total Equity and Liabilities | | 25,416.02' for the same date. No computed figures are present in the answer - both numbers are explicitly stated on the cited page. The answer is faithful to the cited text.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "unihealth-fy26-002",
+   "type": "numeric-lookup",
+   "company": "UNIHEALTH",
+   "split": "fit",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "The Uganda network reached 150 beds in FY26 following the Entebbe acquisition [page 6]. This is the sum of UMC Victoria Hospital's 120 beds in Kampala and UMC Hospital, Entebbe's 30 beds [page 6].",
+     "raw": "The Uganda network reached 150 beds in FY26 following the Entebbe acquisition [page 6]. This is the sum of UMC Victoria Hospital's 120 beds in Kampala and UMC Hospital, Entebbe's 30 beds [page 6].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      6
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": false,
+     "judge": "correct: The system answer correctly identifies the total bed capacity of 150 beds in FY26 for Unihealth's Uganda hospital network, matching the reference answer. It also provides accurate supporting detail about the composition (120 beds in Kampala + 30 beds in Entebbe) and correctly identifies the Entebbe acquisition as the driver of reaching this capacity. The figures, units, period, and scope all align with the reference answer. | faithful: The answer states '150 beds' as a computed figure (the sum of 120 + 30), but this is not labelled as computed or calculated. While the cited page does state 'Uganda network capacity reached 150 beds in FY26 following the Entebbe acquisition,' this is actually a directly stated figure on page 6, not a computed figure that needs to be derived. However, the answer presents it as if it were computing the sum from the two component figures (120 + 30), which is misleading since the page already provides the total. The arithmetic is correct (120 + 30 = 150), but the presentation is unfaithful because the answer treats as a computation what the source page states as a direct fact.",
+     "computed": [
+      {
+       "figure": "150 beds",
+       "labelled": false,
+       "arithmetic_right": true
+      }
+     ],
+     "passed": false
+    },
+    {
+     "text": "Uganda's network capacity reached 150 beds in FY26, following the Entebbe acquisition [page 6]. This is the sum of the 120-bed UMC Victoria Hospital in Kampala and the 30-bed UMC Hospital in Entebbe [page 6].",
+     "raw": "Uganda's network capacity reached 150 beds in FY26, following the Entebbe acquisition [page 6]. This is the sum of the 120-bed UMC Victoria Hospital in Kampala and the 30-bed UMC Hospital in Entebbe [page 6].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      6
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": false,
+     "judge": "correct: The system answer correctly identifies the total bed capacity of 150 beds in FY26 for Unihealth's Uganda hospital network. It provides the same figure as the reference answer and includes accurate supporting details about the composition (120-bed Victoria Hospital in Kampala and 30-bed UMC Hospital in Entebbe). The answer matches the reference in terms of the final number, the period (FY26), and the scope (Uganda hospital network). | faithful: The answer states that Uganda's network capacity of 150 beds is 'the sum of the 120-bed UMC Victoria Hospital in Kampala and the 30-bed UMC Hospital in Entebbe.' While page 6 confirms both facilities and their capacities (120 beds and 30 beds respectively), and also states 'Uganda network capacity reached 150 beds in FY26 following the Entebbe acquisition,' the answer presents the 150-bed figure as a computed sum without labeling it as such. The arithmetic is correct (120 + 30 = 150), but since the answer treats this as a computation without explicitly labeling it as computed or calculated, and the cited page already provides the 150-bed figure directly, the answer is unfaithful to the requirement that computed figures must be labeled.",
+     "computed": [
+      {
+       "figure": "150 beds",
+       "labelled": false,
+       "arithmetic_right": true
+      }
+     ],
+     "passed": false
+    },
+    {
+     "text": "Uganda's network capacity reached 150 beds in FY26, following the Entebbe acquisition [page 6]. This is the sum of UMC Victoria Hospital (120 beds) and UMC Hospital, Entebbe (30 beds) [page 6].",
+     "raw": "Uganda's network capacity reached 150 beds in FY26, following the Entebbe acquisition [page 6]. This is the sum of UMC Victoria Hospital (120 beds) and UMC Hospital, Entebbe (30 beds) [page 6].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      6
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": false,
+     "judge": "correct: The system answer correctly identifies the total bed capacity of 150 beds in FY26 for Unihealth's Uganda hospital network, matching the reference answer. It also provides the correct breakdown (120 beds + 30 beds) and correctly identifies the Entebbe acquisition as the reason for reaching this capacity. All key details align with the reference answer. | faithful: The answer states '150 beds' as a computed figure (the sum of 120 beds and 30 beds), but this is not labelled as computed or calculated. While the cited page does state 'Uganda network capacity reached 150 beds in FY26 following the Entebbe acquisition,' this figure actually appears directly in the source text rather than being computed by the answer. However, the more critical issue is that the answer presents this as a computation ('This is the sum of...') when the page already provides the total figure. The answer is unfaithful because it misrepresents how the 150 beds figure should be treated - it should be cited as a direct statement from the page, not presented as a computed sum.",
+     "computed": [
+      {
+       "figure": "150 beds",
+       "labelled": false,
+       "arithmetic_right": true
+      }
+     ],
+     "passed": false
+    }
+   ]
+  },
+  {
+   "id": "unihealth-fy26-003",
+   "type": "table",
+   "company": "UNIHEALTH",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Uganda's segment revenue for the year ended March 31, 2026 was ₹11,526.88 lakhs [page 118]. The page does not state whether this figure is standalone or consolidated, although the segment note refers to the \"Group\" [page 118].",
+     "raw": "Uganda's segment revenue for the year ended March 31, 2026 was ₹11,526.88 lakhs [page 118]. The page does not state whether this figure is standalone or consolidated, although the segment note refers to the \"Group\" [page 118].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      118
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the correct consolidated segment revenue figure of ₹11,526.88 lakhs for Uganda for the year ended March 31, 2026, matching the reference answer exactly. The unit (lakhs) is correct, the period is correct (year ended March 31, 2026), and the scope is consolidated as required by the question. The system's note about the ambiguity regarding standalone vs consolidated is reasonable given the source material, but the figure itself is accurate. | faithful: The answer states Uganda's segment revenue for the year ended March 31, 2026 was ₹11,526.88 lakhs. This exact figure appears in page 118 chunk 5, in the row for Uganda under Segment Revenue for March 31, 2026. The answer correctly cites page 118. The answer also accurately notes that the page does not explicitly state whether this is standalone or consolidated, though it references the 'Group' in the segment note (visible in chunk 4). No computed figures are presented in the answer, so there are no arithmetic claims to verify. All factual claims are directly supported by the cited text.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Uganda's segment revenue for the year ended March 31, 2026 was ₹11,526.88 lakhs, per the Note 41 segment table [page 118]. That page describes the figures as \"Group\" figures but does not explicitly state whether they are consolidated or standalone.",
+     "raw": "Uganda's segment revenue for the year ended March 31, 2026 was ₹11,526.88 lakhs, per the Note 41 segment table [page 118]. That page describes the figures as \"Group\" figures but does not explicitly state whether they are consolidated or standalone.",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      118
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the correct consolidated segment revenue figure for Uganda (₹11,526.88 lakhs) for the year ended March 31, 2026, matching the reference answer exactly. The unit (lakhs) is correct, the period is correct, and the scope is consolidated as required by the question. The system's note about the page not explicitly stating 'consolidated' is a minor caveat, but the figure itself is accurate and matches the reference answer. | faithful: The answer states that Uganda's segment revenue for the year ended March 31, 2026 was ₹11,526.88 lakhs per Note 41 segment table on page 118. This figure is directly supported by page 118 chunk 5, which shows Uganda's Segment Revenue for March 31, 2026 as 11,526.88 lakhs. The answer also correctly notes that the page describes these as 'Group' figures but does not explicitly state whether they are consolidated or standalone, which is an accurate observation about the cited text. No computed figures are present in the answer - it only cites a figure that appears directly on the cited page.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "Uganda's segment revenue for the year ended March 31, 2026 was ₹11,526.88 lakhs [page 118]. The segment note on that page refers to \"the Group\" and does not use the word \"consolidated,\" so the page does not explicitly state it is the consolidated figure.",
+     "raw": "Uganda's segment revenue for the year ended March 31, 2026 was ₹11,526.88 lakhs [page 118]. The segment note on that page refers to \"the Group\" and does not use the word \"consolidated,\" so the page does not explicitly state it is the consolidated figure.",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      118
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the correct figure of ₹11,526.88 lakhs for Uganda's segment revenue for the year ended March 31, 2026, matching the reference answer exactly. The unit (lakhs) is correct, the period is correct (FY26), and the figure matches. While the system answer notes that the page doesn't explicitly use the word 'consolidated,' the reference answer confirms this is the consolidated figure, and the system has provided the correct amount. The question asked only for the consolidated segment revenue for FY26, which the system answered correctly. | faithful: The answer states that Uganda's segment revenue for the year ended March 31, 2026 was ₹11,526.88 lakhs. This figure is directly found in page 118 chunk 5, which shows Uganda's segment revenue as 11,526.88 for March 31, 2026. The answer also correctly notes that the page refers to 'the Group' and does not explicitly use the word 'consolidated.' This observation is accurate based on the text in chunk 4, which states 'Group is engaged predominantly in Healthcare Segment' without explicitly labeling the figures as consolidated. No computed figures are present in the answer, and the cited figure is directly supported by the source material.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "unihealth-fy26-004",
+   "type": "not-in-filing",
+   "company": "UNIHEALTH",
+   "split": "test",
+   "answerable": false,
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "passed": true
+    }
+   ]
+  }
+ ]
+}

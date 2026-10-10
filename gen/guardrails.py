@@ -150,11 +150,27 @@ def claim_figures(claim: str) -> set[str]:
     return {d for d in (checkable(f) for f in FIGURE.findall(REFERENCE.sub(" ", claim))) if d}
 
 
+# A computed-figure label placed straight after a claim's citation, as in
+# "fell by 146.98 crore [page 98]. (computed from [page 98])", labels that
+# claim; Haiku 5.5 writes it this way. Without this, the label became a claim
+# of its own and the figure it labels was flagged as unprinted.
+TRAILING_LABEL = re.compile(r"^[\s.]*\((?:computed|calculated)\b", re.IGNORECASE)
+
+
 def split_claims(text: str) -> tuple[list[tuple[str, re.Match[str]]], str]:
-    """The answer as (claim, citation run) pairs, plus any text after the last run."""
+    """The answer as (claim, citation run) pairs, plus any text after the last run.
+
+    A claim followed directly by a "(computed from ...)" label carries the
+    label's words, so the computed-figure exemption sees it.
+    """
     claims, start = [], 0
-    for run in CITATION_RUN.finditer(text):
-        claims.append((text[start:run.start()], run))
+    runs = list(CITATION_RUN.finditer(text))
+    for i, run in enumerate(runs):
+        claim = text[start:run.start()]
+        following = text[run.end(): runs[i + 1].start() if i + 1 < len(runs) else len(text)]
+        if TRAILING_LABEL.match(following):
+            claim += " (computed)"
+        claims.append((claim, run))
         start = run.end()
     return claims, text[start:]
 

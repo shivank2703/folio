@@ -5,9 +5,10 @@ Three layers, each stopping a different kind of over-use:
 - per browser session, 10 questions (ui/app.py): keeps a casual visit short;
   a refresh resets it, so it is a courtesy, not a control;
 - per visitor per day, 25 answered questions: a refresh does not reset it;
-- all visitors together per day, 150 answered questions: the spend ceiling.
-  At ~₹0.6 (~$0.007) a question that is about $1 a day, so $20 of credit
-  outlasts a month of abuse rather than an afternoon of it.
+- all visitors together per day, 500 answered questions: the spend ceiling.
+  On Claude Haiku 5.5 a question costs $0.0012 on average and $0.0020 at
+  most (measured 11 Oct 2026), so the ceiling is about $1 a day and $20 of
+  credit outlasts a month of abuse rather than an afternoon of it.
 
 Only questions that reach the model count against the daily limits. A
 question refused at the similarity floor costs nothing and stays free.
@@ -33,7 +34,7 @@ import time
 import urllib.parse
 
 PER_VISITOR_DAILY = 25
-GLOBAL_DAILY = 150
+GLOBAL_DAILY = 500
 
 
 class DailyLimiter:
