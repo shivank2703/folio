@@ -56,3 +56,15 @@ sooner. Candidate fixes, each needing its own before/after: fill a seed page's
 chunks in reading order outward from the seed chunk before moving to the next
 seed; or give the top seed's page priority over lower seeds' siblings. Do not
 just raise the budget: it costs every question and dilutes attention.
+
+## Haiku 5.5: latency and two judge disagreements
+
+Generation moved to Claude Haiku 5.5 on 11 Oct. Mean answer latency is 3.3 s
+but the worst measured was 9.7 s, just inside SPEC.md §6's ~10 s bar, because
+it thinks before answering. If fund questions (longer contexts) push past it,
+try effort "low" again now that the prompt rules exist (it was 37/54 before
+them). The judge (still Haiku 4.5) marks two honest behaviours wrong: an
+answer saying "the page does not state whether this is standalone or
+consolidated" (hcc-003, hcc-008), and "150 beds is the sum of 120 and 30"
+(unihealth-002) as an unlabelled computation. The scope tag fixes the first;
+the second is a prompt or judge decision.
