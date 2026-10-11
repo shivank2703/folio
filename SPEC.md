@@ -98,7 +98,11 @@ so it appears in the app. Idempotent; a batch mode takes a list of companies.
    maintained list of investor-relations URLs
 2. Decide where the index lives once it outgrows git (~30 filings): a GitHub
    release asset or a Hugging Face dataset, downloaded at startup
-3. No in-app "add any company" button for now
+3. No in-app "add any company" button for now. **Reversed 11 Oct 2026:** an
+   owner-only "Add a company" panel in the deployed app runs the same
+   `ingest.add`, uploads the index and commits the record files through the
+   GitHub API. Visitors never see it. A paid version for others is not built:
+   it needs legal review first (notes/funds-step.md)
 
 **Outcome:** `python -m ingest.add CODE [CODE ...]`, `--verify`, `--force`, and
 `python -m ingest.publish`. Sources (§5): company investor pages, plus
@@ -134,8 +138,7 @@ heuristic.
 
 ### Later, maybe
 
-Trend charts (click a bar → source page), multi-year ingest, an in-app
-"add any company" button, Sentinel (daily
+Trend charts (click a bar → source page), multi-year ingest,  Sentinel (daily
 exchange-disclosure flags for a watchlist).
 
 ## 5. Architecture & tool decisions
@@ -150,6 +153,7 @@ exchange-disclosure flags for a watchlist).
 | Report sources | Ingest | Company investor pages, read for PDF links; report URLs listed by hand in `corpus/urls.yaml` (NSE's file archive serves PDFs but cannot be listed). Plain requests with an honest User-Agent, robots.txt checked, 4 s between calls to a host | NSE's website and annual-report API reset scripted connections; BSE's API answers Access Denied. Imitating a browser to get past either is not done | An exchange publishes a documented, scriptable listing |
 | Born-digital check | Ingest | Pages with no text layer are skipped and recorded; a report with more than 20% such pages is refused | A real report has a few image pages (covers, photos: 1% of HCC's); a scan has most. No OCR path (§3.5) | — |
 | Two-page spreads | Ingest | A landscape page whose middle no text line crosses is read as two pages, left then right, under one PDF page number; a title is kept only if both halves name the same statement | Unihealth prints two pages per PDF page; read as one, two tables fused row by row | Spreads that pair unrelated documents need per-half titles |
+| In-app add company | Ingest | Owner-only panel (owner key or localhost). Runs `ingest.add` in a background thread, then `ingest.publish` and one commit of `urls.yaml`, `corpus.json`, `SOURCES.md` and `index.json` to main via the GitHub API (a fine-grained token, this repo only, Contents: write, in the host's secrets). Refuses to commit if main's record files differ from the deployed ones; never force-pushes | The container's disk does not survive a restart, so a company added in-app must be saved to the repository to stay | Anyone else may add companies (needs payment, abuse controls and legal review) |
 | Demo rate limits | Ingest | Per browser session 10 questions; per connection per day 25 answered questions; all visitors per day 500 (~$1 on Haiku 5.5). Only questions that reach the model count. Counted in the server process; a visitor is a salted hash of their address. Local runs and a session opened with `?owner=<FOLIO_OWNER_KEY>` are exempt | The public demo spends the maintainer's prepaid credit; the session cap alone resets on refresh | Traffic outgrows one process, or abuse comes from many addresses |
 | Index storage | Ingest | A tarball on the repository's `index` release; `corpus/index.json` (committed) names it and its SHA-256; the app downloads and verifies it at startup. Not a Hugging Face dataset: `gh` is already authenticated and assets on a public repo need no credentials | Committed, every rebuild added ~10 MB to git history, and Funds adds 20–30 filings | Assets accumulate; prune those no commit names |
 | Citation guard | Accurate | Every figure in a cited claim must be printed on the cited page; a computed figure must say "(computed from [page N])"; a citation is moved to the one page that prints all of a claim's figures when the cited page does not; anything after "Not in the filing." is stripped | "Shown to the model" was the only check, and a right figure cited to the wrong page passed it | — |

@@ -68,3 +68,15 @@ answer saying "the page does not state whether this is standalone or
 consolidated" (hcc-003, hcc-008), and "150 beds is the sum of 120 and 30"
 (unihealth-002) as an unlabelled computation. The scope tag fixes the first;
 the second is a prompt or judge decision.
+
+## Charging others to add a company: legal review before building
+
+Asked 11 Oct. Not built; the in-app panel is owner-only. Before any paid
+tier: (1) SEBI (Research Analysts) Regulations, 2014: whether a paid tool
+over listed companies' filings, even facts-only, is research-analyst
+activity needing registration (the largest risk); (2) copyright in the
+reports' text, where India's fair dealing (s.52) is narrower than fair use,
+especially for commercial use; (3) the maintainer's employment terms (SPEC.md
+§7 clean-room note); (4) Streamlit Community Cloud's and NSE's terms for
+commercial use; (5) payments through a provider (Razorpay/Stripe), GST, a
+refund policy. AGPL-3.0 permits charging while the source stays public.

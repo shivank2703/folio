@@ -154,6 +154,16 @@ it, checks it, and indexes it — that filing only, not the whole corpus:
 .venv/bin/python -m ingest.publish                # upload the index; commit corpus/index.json
 ```
 
+**From the app (maintainer only).** Open the live app once with
+`?owner=<FOLIO_OWNER_KEY>` (or run it locally) and an **Add a company** panel
+appears above the question box: give a code, a name and the company's
+investor-relations page or a report PDF URL. It runs the same command in the
+background (3–10 minutes, progress shown), uploads the new index and commits
+the record files to GitHub, which redeploys the app with the company in the
+Filing list. Visitors never see the panel. It needs `GITHUB_TOKEN` in the
+app's secrets: a fine-grained GitHub token for this repository only, with
+"Contents: Read and write" and nothing else.
+
 A company is one entry in [`corpus/urls.yaml`](corpus/urls.yaml): its investor
 page, report URLs kept by hand, or both. The command reads every PDF the page
 links, works out each report's fiscal year from its link text or its own first
@@ -295,7 +305,7 @@ One step per Saturday ([SPEC.md §4](SPEC.md)):
   tools, producing a one-page memo with every sentence cited.
 
 Cut: RAGAS in CI, LangGraph, Langfuse. Later, maybe: trend charts, multi-year
-ingest, an in-app "add a company" button, daily exchange-disclosure flags.
+ingest, daily exchange-disclosure flags.
 
 ## Data and licence
 

@@ -26,6 +26,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import shutil
 import time
 from pathlib import Path
@@ -200,6 +201,55 @@ def save_if_changed(path: Path, text: str) -> None:
     """Write only on a real change, so an up-to-date run leaves every file untouched."""
     if not path.exists() or path.read_text(encoding="utf-8") != text:
         path.write_text(text, encoding="utf-8")
+
+
+CODE = re.compile(r"^[A-Z0-9]{2,20}$")
+
+
+def register(code: str, entry: dict) -> None:
+    """Append a company to corpus/urls.yaml, leaving every comment and existing entry as written.
+
+    Appended as text rather than re-dumped: yaml.safe_dump would discard the
+    file's comments, which are its documentation. Refuses a code that is
+    already there, so the app cannot overwrite a hand-kept entry.
+    """
+    if not CODE.match(code):
+        raise ValueError("a company code is 2-20 capital letters or digits, e.g. UNIHEALTH")
+    if code in (yaml.safe_load(URLS.read_text(encoding="utf-8")) or {}):
+        raise ValueError(f"{code} is already in {URLS}")
+    lines = [f"\n{code}:", f"  name: {json.dumps(entry['name'], ensure_ascii=False)}"]
+    if entry.get("listing"):
+        lines.append(f"  listing: {json.dumps(entry['listing'], ensure_ascii=False)}")
+    if entry.get("investor_page"):
+        lines.append(f"  investor_page: {entry['investor_page']}")
+    if entry.get("reports"):
+        lines.append("  reports:")
+        for report in entry["reports"]:
+            lines.append(f"    - url: {report['url']}")
+            if report.get("fiscal_year"):
+                lines.append(f"      fiscal_year: {report['fiscal_year']}")
+    with URLS.open("a", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
+
+
+def add_one(code: str, model, force: bool = False) -> str:
+    """Run one company from corpus/urls.yaml through ingest and save the record files.
+
+    The command line's batch loop, for one company, so the app's add-company
+    panel takes exactly the path `python -m ingest.add CODE` does.
+    """
+    config = yaml.safe_load(URLS.read_text(encoding="utf-8"))
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    seen = json.loads(SEEN.read_text(encoding="utf-8")) if SEEN.exists() else {}
+    try:
+        result = add_company(code, config[code], manifest, seen, model, False, force)
+    except Refused as error:
+        return f"refused: {error}"
+    save_if_changed(MANIFEST, json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")
+    SEEN.parent.mkdir(exist_ok=True)
+    save_if_changed(SEEN, json.dumps(seen, indent=1, sort_keys=True) + "\n")
+    write_sources(manifest)
+    return result
 
 
 def main() -> None:

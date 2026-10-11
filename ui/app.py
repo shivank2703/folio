@@ -30,6 +30,7 @@ from gen.guardrails import CITATION, cited_pages, has_enough_context
 from retrieve.embed import load_model
 from retrieve.search import DEFAULT_K, EXPANSION_SEEDS, open_index, page_context, search
 from retrieve.store import ensure_index
+from ui import add_company
 from ui.limits import DailyLimiter, is_owner, visitor_address
 
 DB_PATH = Path("data/lancedb")
@@ -72,12 +73,21 @@ def adopt_streamlit_secret() -> None:
     detail of the UI. Reading st.secrets raises when no secrets file exists at
     all — the normal local case — so the miss is caught rather than predicted.
     """
-    if os.getenv("ANTHROPIC_API_KEY"):
-        return
-    try:
-        os.environ["ANTHROPIC_API_KEY"] = st.secrets["ANTHROPIC_API_KEY"]
-    except Exception:
-        return
+    # GITHUB_TOKEN rides the same bridge: only the owner's add-company panel
+    # uses it (ingest/github.py), to save a new company to the repository.
+    for name in ("ANTHROPIC_API_KEY", "GITHUB_TOKEN"):
+        if os.getenv(name):
+            continue
+        try:
+            os.environ[name] = st.secrets[name]
+        except Exception:
+            continue
+
+
+def reopen_index() -> None:
+    """After an in-app ingest: drop the cached index handle and filing list for every session."""
+    load_retrieval.clear()
+    load_filings.clear()
 
 
 @st.cache_resource(show_spinner=False)
@@ -175,8 +185,13 @@ def main() -> None:
 
     adopt_streamlit_secret()
     owner = resolve_owner()
+    # Snapshot the record files as deployed, before any add-company job can
+    # change them (ui/add_company.py checks main against this before saving).
+    add_company.deployed_records()
     table, model = load_retrieval()
     client, client_error = load_client()
+    if owner:
+        add_company.render(model, on_index_changed=reopen_index)
 
     # A form so Enter submits: the question box is the whole interface, and
     # reaching for the mouse to ask is friction the demo does not need.
