@@ -197,8 +197,8 @@ returns a filing to the same generation and guardrail path as Companies mode.
   no detected credential values. No tracked PDFs/XLSX, `.env`, secrets file or
   real watchlist; AGPL-3.0 present; excluded proprietary/OCR dependencies absent.
 - Final expanded-corpus evaluation passed 53/54 answerable samples, 54/54
-  correct, 53/54 faithful and 18/18 bare refusals. Deployed smoke tests and
-  owner-session verification remain release gates. No v1.3 tag has been created yet.
+  correct, 53/54 faithful and 18/18 bare refusals. Public deployed smoke tests passed. Owner-session verification and
+  GitHub profile pinning remain release gates. No v1.3 tag has been created yet.
 - GitHub reports the repository public. Profile currently has no pinned repos;
   pinning still needs verification through the signed-in profile interface.
 
@@ -282,3 +282,30 @@ Deployment preparation: published the 93.1 MB checksum-pinned index asset
 `folio-index-654edb14fd97.tar.gz`. A fresh anonymous download through the app's
 own startup path verified the SHA-256, 56,112 chunks, all 32 filing identities
 and valid scope values. The baseline file's original SHA-256 is unchanged.
+
+
+### Live deployment · 19 October 2026
+
+Deployment candidate `3281e0d` was pushed to main. Streamlit was sleeping;
+waking it loaded the new Funds reader and scope-labelled index successfully.
+Visitor mode showed no maintainer panel.
+
+- Kotak: “What is the Direct-plan expense ratio?” returned 0.65% BER with
+  its definition, 2026-09-30 date and factsheet viewer page 20.
+- Kotak: “What is the Regular-plan expense ratio?” returned exactly
+  “Not in the filing.”
+- HDFC → Bharat Electronics: “What were BEL standalone total assets at the
+  end of FY26?” returned ₹44,09,039 lakh on viewer page 98 in 2.39 seconds,
+  with standalone-labelled source excerpts and visitor question counter.
+- Additional wording probe “What were BEL standalone total assets at March
+  31, 2026?” retrieved page 98 but was refused at similarity 0.663, below 0.67.
+  This is a false-refusal limitation, not a deployment/index failure; the gate
+  was not relaxed. The probe is retained here rather than omitted from the
+  live record. A broader paraphrase evaluation is deferred in Agent notes.
+
+Remaining user actions: privately open the live keyed owner session, let the
+app remove the key from the URL, then verify its panel and no-limits status;
+pin `shivank2703/folio` through the signed-in GitHub profile. The available
+browser was signed out and GitHub reported zero pinned repositories. Neither
+a key value nor a secret file was read for verification. Until these gates are
+verified, v1.3 remains untagged. The LinkedIn draft above is not published.

@@ -290,6 +290,9 @@ against:
   on the prompt contract plus the strict-refusal cut, which refused all 18
   not-in-filing samples in the final evaluation. A cross-encoder gate was
   tried and lost answers on held-out questions.
+  A live BEL query phrased “at March 31, 2026” scored 0.663 and was refused
+  despite retrieving the balance sheet; the equivalent “at the end of FY26”
+  query passed and returned the cited total. Wording can cause false refusals.
 - **Six not-in-filing questions are too few to fit a refusal threshold.**
   That is part of why the reranker's threshold did not hold; the eval needs
   more negatives before the next attempt.

@@ -14,3 +14,10 @@ Ten oversized whole rows still exceed the embedding tokenizer's input limit
 (maximum 865 versus 512), although keyword search and cited context retain
 their full text. Consider tokenizer-aware chunk sizing in a separately measured
 change; do not cut a financial label away from its values or unit declaration.
+
+
+- Funds live probe: BEL's total-assets question with “at March 31, 2026”
+  retrieved page 98 but scored 0.663 and was refused; “at the end of FY26”
+  passed. Build a broader paraphrase/date-format evaluation before revisiting
+  query normalization or the similarity gate. Do not tune the threshold on
+  this single example; Funds retains the existing 0.67 floor.
