@@ -1,0 +1,232 @@
+{
+ "label": "funds-reports",
+ "samples": 3,
+ "when": "2026-10-18 19:36",
+ "questions": [
+  {
+   "id": "bel-standalone",
+   "type": "scope",
+   "company": "BEL",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": false,
+     "faithful": false,
+     "passed": false,
+     "judge": "refused"
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": false,
+     "faithful": false,
+     "passed": false,
+     "judge": "refused"
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": false,
+     "faithful": false,
+     "passed": false,
+     "judge": "refused"
+    }
+   ]
+  },
+  {
+   "id": "bel-consolidated",
+   "type": "scope",
+   "company": "BEL",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": false,
+     "faithful": false,
+     "passed": false,
+     "judge": "refused"
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": false,
+     "faithful": false,
+     "passed": false,
+     "judge": "refused"
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": false,
+     "faithful": false,
+     "passed": false,
+     "judge": "refused"
+    }
+   ]
+  },
+  {
+   "id": "hdfcbank-units",
+   "type": "units-in-thousands",
+   "company": "HDFCBANK",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "HDFC Bank's standalone total assets at March 31, 2026 were ₹43,648,863,308 thousand, as printed on the standalone balance sheet [page 353].",
+     "raw": "HDFC Bank's standalone total assets at March 31, 2026 were ₹43,648,863,308 thousand, as printed on the standalone balance sheet [page 353].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      353
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same figure (₹43,648,863,308 thousand) for HDFC Bank's standalone total assets at the end of FY26 (March 31, 2026) as the reference answer. The unit (thousand) matches what is printed on the balance sheet. The scope (standalone) is correct. The page citation is ignored per instructions. | faithful: The answer states that HDFC Bank's standalone total assets at March 31, 2026 were ₹43,648,863,308 thousand. This figure is directly printed on page 353, appearing in multiple chunks of the standalone balance sheet (chunks 1 and 2 both show 'Total | 43,648,863,308' for assets as at March 31, 2026). The answer correctly cites this as being from page 353 and accurately reproduces the figure without any computation. No computed figures are present in the answer.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "HDFC Bank's standalone total assets at 31 March 2026 were 43,648,863,308, in ₹ thousands as printed on the standalone balance sheet [page 353]. This is the same figure as the total liabilities and equity line on that balance sheet [page 353].",
+     "raw": "HDFC Bank's standalone total assets at 31 March 2026 were 43,648,863,308, in ₹ thousands as printed on the standalone balance sheet [page 353]. This is the same figure as the total liabilities and equity line on that balance sheet [page 353].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      353
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same figure (43,648,863,308) in the same unit (₹ thousands) for the same period (31 March 2026) and scope (standalone) as the reference answer. The additional detail about it matching the total liabilities and equity line is accurate and does not contradict the reference answer. The page citations are ignored per instructions. | faithful: The answer states that HDFC Bank's standalone total assets at 31 March 2026 were 43,648,863,308 in ₹ thousands. This figure is directly printed on page 353 chunk 1 and chunk 2 in the 'Total' row under ASSETS. The answer also correctly notes that this is the same as the total liabilities and equity line, which is also shown as 43,648,863,308 in page 353 chunk 1 under the CAPITAL AND LIABILITIES section. Both figures are explicitly stated on the cited pages, so no computed figures are involved. All factual claims are supported by the cited text.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "HDFC Bank's standalone total assets as at March 31, 2026 were 43,648,863,308 in ₹ thousands, as printed on the standalone balance sheet [page 353]. The balance sheet heading states \"(₹ in thousands)\" [page 353].",
+     "raw": "HDFC Bank's standalone total assets as at March 31, 2026 were 43,648,863,308 in ₹ thousands, as printed on the standalone balance sheet [page 353]. The balance sheet heading states \"(₹ in thousands)\" [page 353].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      353
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same figure (43,648,863,308) in the same unit (₹ thousands) for the same period (March 31, 2026) and scope (standalone) as the reference answer. The answer correctly identifies the unit as printed on the balance sheet and cites the relevant page. All key requirements are met. | faithful: The answer states that HDFC Bank's standalone total assets as at March 31, 2026 were 43,648,863,308 in ₹ thousands. This figure is directly printed on page 353, appearing in multiple chunks of the standalone balance sheet (chunks 1 and 2 both show 'Total | 43,648,863,308'). The answer also correctly notes that the balance sheet heading states '(₹ in thousands)' which is confirmed in the cited pages. No computed figures are present in the answer - it only cites figures that are directly printed on the balance sheet. Therefore, the answer is faithful to the cited pages.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "indomim-drill",
+   "type": "numeric",
+   "company": "INDOMIM",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": false,
+     "faithful": false,
+     "passed": false,
+     "judge": "refused"
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": false,
+     "faithful": false,
+     "passed": false,
+     "judge": "refused"
+    },
+    {
+     "text": "Not in the filing.",
+     "raw": "Not in the filing.",
+     "refused": true,
+     "reason": "the model found no answer in the extracts",
+     "cited": [],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": false,
+     "faithful": false,
+     "passed": false,
+     "judge": "refused"
+    }
+   ]
+  }
+ ]
+}

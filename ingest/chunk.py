@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import statistics
 from pathlib import Path
 
@@ -111,7 +112,9 @@ def chunk_page(page: dict) -> list[str]:
     share a chunk with rows under another. The page end: chunks never cross
     pages.
     """
-    rows = [row for row in page["text"].split("\n") if row.strip()]
+    # Dot leaders are visual padding, not evidence. Hundreds of dots cost few
+    # tiktoken tokens but thousands of BGE tokens, truncating the actual row.
+    rows = [re.sub(r"\.{4,}", " ", row) for row in page["text"].split("\n") if row.strip()]
     texts: list[str] = []
     body: list[str] = []
     in_force: dict[str, str] = {}  # context kind -> the row currently in force
@@ -156,6 +159,7 @@ def chunk_report(pages: list[dict]) -> list[dict]:
                     "fiscal_year": page["fiscal_year"],
                     "page": page["page"],
                     "chunk": index,
+                    "scope": page.get("scope", "unstated"),
                     "tokens": count_tokens(text),
                     "text": text,
                 }

@@ -528,3 +528,55 @@ cost ($0.0012 a question, measured; 3.3 s mean latency, 9.7 s worst). Two
 standing judge disagreements: hcc-003/008 answers that say the page does not
 state the scope are marked incorrect, and unihealth-002's "150 beds is the sum
 of 120 and 30" is marked an unlabelled computation.
+
+
+## Funds · 19 October 2026 · release candidate
+
+The before run is `results/funds-v1.2-baseline.json`, preserved byte-for-byte.
+The after run is `results/funds-release-final.json`. Both use the existing
+24-question set, three samples per question, the same generation model and
+frozen blind correctness/faithfulness judges. The latter uses the complete
+32-filing index. No score is manually overridden.
+
+| Measure | Saved v1.2 before | Funds after |
+|---|---|---|
+| Answerable passed | 44/54 (81%) | 53/54 (98%) |
+| Correct | 51/54 (94%) | 54/54 (100%) |
+| Faithful | 49/54 (91%) | 53/54 (98%) |
+| Bare refusals | 18/18 | 18/18 |
+| Refusal leaks | 0 | 0 |
+
+After by type: numeric 30/30, table 12/12, computed 3/3, multi-hop 3/3,
+units trap 3/3, two-column 2/3. HCC's previously missing continuation and
+Chambal's computed-answer formatting each pass 3/3. The sole after failure is
+`hcc-fy25-009`: the faithfulness judge invents a “387 meters” computation absent
+from the answer and flags differences between tunnel figures attributed to
+separate report sections. The automated failure remains recorded.
+
+Additional sets:
+
+- `funds-cases.jsonl` → `results/funds-disclosures-release.json`: **24/24**
+  deterministic factsheet, holding, date/plan, BER/TER, coverage and refusal checks.
+- `funds-reports.jsonl` → `results/funds-reports-release.json`: four questions ×
+  three samples, **12/12 correct, 11/12 faithful, 11/12 passed**. Covers BEL
+  standalone/consolidated, HDFC Bank and Indo-MIM. The one BEL standalone
+  failure calls a printed total an unlabelled computation because the answer
+  also describes the sum of its printed components. All figures match viewer
+  page 98; the failure remains in the score.
+- Local regression suite: **18 passed**. Retrieval smoke: **17/18** expected
+  pages in the top five and **16/18** exact answer strings in packed context.
+  These are string-match checks, not substitutes for end-to-end correctness.
+
+Retained intermediate evidence: `funds-retrieval-candidate.json` (50/54 passed),
+`funds-final.json` (47/54), `funds-reports.json` (3/12),
+`funds-reports-query.json` (12/12), and `funds-computed-format.json` (3/3).
+`funds-release-interrupted.json` records a stopped candidate: using the rewritten
+ranking query for the calibrated gate score rejected Navneet's answerable
+question. The final implementation keeps the original question representation
+for that gate, without changing the 0.67 floor. Failed and interrupted runs are
+retained rather than replaced by the better result.
+
+The threshold still cannot separate answerable questions (weakest 0.702) from
+negatives (strongest 0.757). Ten oversized whole rows retain full keyword/context
+text but exceed the embedding model's input limit. Quality exclusions reduce
+coverage; no claim of exhaustive validation follows from these small eval sets.

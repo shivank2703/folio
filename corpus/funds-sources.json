@@ -1,0 +1,238 @@
+[
+  {
+    "id": "kotak-manufacture",
+    "name": "Kotak Manufacture in India Fund",
+    "plan": "Direct",
+    "portfolio_date": "2026-09-30",
+    "factsheet_date": "2026-09-30",
+    "holding_count": 62,
+    "disclosed_total_pct": 100,
+    "benchmark": {
+      "value": "Nifty India Manufacturing TRI",
+      "page": 20
+    },
+    "expense_ratio": {
+      "value": "0.65%",
+      "page": 20,
+      "definition": "Base expense ratio including statutory levies on expenses forming part of BER; excludes brokerage, transaction costs and related statutory levies.",
+      "kind": "BER"
+    },
+    "exit_load": {
+      "value": "0.5% within 90 days of allotment; nil on or after 90 days. Applies to redemption and switch-out.",
+      "page": 20
+    },
+    "sources": {
+      "portfolio": {
+        "file": "kotak-portfolio.xlsx",
+        "url": "https://vatseelabs-s3.kotakmf.com/FAD/Portfolios/Consolidated-SEBI-Portfolio-as-on-September-30,-2026/ConsolidatedSEBIPortfolioSeptember2026.xlsx",
+        "sha256": "27601dff56908f2d50672c7d84032eeb25af79d4fb7fdc3042b94b6ea7d0a36c"
+      },
+      "factsheet": {
+        "file": "kotak-factsheet.pdf",
+        "url": "https://www.kotakmf.com/kotakflipbook/docs/download/sep2026",
+        "sha256": "79d5e16a893978be54a6f75a73594a03fd324093a1a12fbb4ff6900a1b9b94a3"
+      }
+    },
+    "layout": {
+      "sheet": "KMI",
+      "name": "C",
+      "isin": "D",
+      "weight": "I",
+      "checks": {
+        "C1": "Portfolio of Kotak Manufacture In India Fund as on 30-Sep-2026",
+        "I2": "% to Net Assets",
+        "E76": "Grand Total",
+        "I76": 100
+      },
+      "sections": [
+        {
+          "start": 5,
+          "end": 63,
+          "asset_type": "domestic equity"
+        },
+        {
+          "start": 68,
+          "end": 68,
+          "asset_type": "mutual fund units"
+        },
+        {
+          "start": 72,
+          "end": 72,
+          "asset_type": "money market"
+        },
+        {
+          "start": 74,
+          "end": 74,
+          "asset_type": "net current assets",
+          "name": "A"
+        }
+      ]
+    },
+    "companies": {
+      "INE044A01036": "SUNPHARMA",
+      "INE506V01022": "RUBICON",
+      "INE361B01024": "DIVISLAB",
+      "INE101A01026": "MAHINDRA",
+      "INE081A01020": "TATASTEEL",
+      "INE494B01023": "TVSMOTOR",
+      "INE084101034": "INDOMIM",
+      "INE841L01016": "DEEDEV",
+      "INE002A01018": "RELIANCE",
+      "INE158A01026": "HEROMOTOCO"
+    }
+  },
+  {
+    "id": "hdfc-defence",
+    "name": "HDFC Defence Fund",
+    "plan": "Direct",
+    "portfolio_date": "2026-09-30",
+    "factsheet_date": "2026-09-30",
+    "holding_count": 26,
+    "disclosed_total_pct": 100,
+    "benchmark": {
+      "value": "NIFTY India Defence Index TRI (Total Returns Index)",
+      "page": 29
+    },
+    "expense_ratio": {
+      "value": "0.82%",
+      "page": 29,
+      "definition": "Base expense ratio including statutory levies on expenses part of BER; excludes brokerage, transaction costs and execution-related statutory levies.",
+      "kind": "BER"
+    },
+    "exit_load": {
+      "value": "1% for redemption or switch-out within 1 year of allotment; no exit load after 1 year. See the factsheet for the full terms.",
+      "page": 29
+    },
+    "sources": {
+      "portfolio": {
+        "file": "hdfc-portfolio.xlsx",
+        "url": "https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA",
+        "sha256": "f6ac54d3befa8690d7dba2b94e82f1fa964890a699433694a13e1c3605aa45c5"
+      },
+      "factsheet": {
+        "file": "hdfc-factsheet.pdf",
+        "url": "https://files.hdfcfund.com/s3fs-public/2026-10/HDFC%20MF%20Factsheet%20-%20September%202026.pdf?VersionId=xjdQxQp4UEchOirw4TsCE9jEGenOREzw",
+        "sha256": "ab3d561bbacbc40aeb4ac5630f6e85b64e22a3433094b0312e279636907dcab4"
+      }
+    },
+    "layout": {
+      "sheet": "HDFCDFNFND",
+      "name": "D",
+      "isin": "B",
+      "weight": "H",
+      "checks": {
+        "A2": "Portfolio as on 30-Sep-2026",
+        "H5": "% to NAV",
+        "B46": "Grand Total",
+        "H46": 100
+      },
+      "sections": [
+        {
+          "start": 9,
+          "end": 32,
+          "asset_type": "domestic equity"
+        },
+        {
+          "start": 37,
+          "end": 37,
+          "asset_type": "money market"
+        },
+        {
+          "start": 42,
+          "end": 42,
+          "asset_type": "net current assets"
+        }
+      ]
+    },
+    "companies": {
+      "INE263A01024": "BEL",
+      "INE465A01025": "BHARATFORG",
+      "INE066F01020": "HAL",
+      "INE343H01029": "SOLARINDS",
+      "INE386C01029": "ASTRAMICRO",
+      "INE258A01024": "BEML",
+      "INE864I01014": "MTARTECH",
+      "INE066A01021": "EICHERMOT",
+      "INE323A01026": "BOSCHLTD",
+      "INE171Z01026": "BDL"
+    }
+  },
+  {
+    "id": "motilal-nifty500",
+    "name": "Motilal Oswal Nifty 500 Index Fund",
+    "plan": "Direct Growth",
+    "portfolio_date": "2026-09-30",
+    "factsheet_date": "2026-08-31",
+    "holding_count": 500,
+    "disclosed_total_pct": 100,
+    "benchmark": {
+      "value": "Nifty 500 Index TRI",
+      "page": 5
+    },
+    "expense_ratio": {
+      "value": "0.23%",
+      "page": 5,
+      "definition": "Total TER. The same table separately discloses a Direct base expense ratio of 0.13%.",
+      "kind": "TER",
+      "base_value": "0.13%"
+    },
+    "exit_load": {
+      "value": "1% on or before 15 days from allotment; nil after 15 days. Applies to switches between schemes; no load between options within the scheme or from Regular to Direct within the same scheme.",
+      "page": 5
+    },
+    "sources": {
+      "portfolio": {
+        "file": "motilal-portfolio.xlsx",
+        "url": "https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx",
+        "sha256": "1614a16f1a3ee6d19512f1a31373f4478636c18988d5bc62e721309248b944c0"
+      },
+      "factsheet": {
+        "file": "motilal-factsheet.pdf",
+        "url": "https://www.motilaloswalmf.com/content/dam/motilal-mf/downloads/mf/factsheet/2026/sep/Factsheet%20August%202026%20Passive.pdf",
+        "sha256": "16fd2d34216a09916c2159d3d8a7bf82f6c8499806a9721738989028f1fb5141"
+      }
+    },
+    "layout": {
+      "sheet": "YO18",
+      "name": "B",
+      "isin": "C",
+      "weight": "G",
+      "checks": {
+        "A6": "MONTHLY PORTFOLIO STATEMENT AS ON SEPTEMBER 30, 2026",
+        "A8": "Motilal Oswal Nifty 500 Index Fund",
+        "G10": "% to Net Assets",
+        "B521": "GRAND TOTAL",
+        "G521": 100
+      },
+      "sections": [
+        {
+          "start": 13,
+          "end": 510,
+          "asset_type": "domestic equity"
+        },
+        {
+          "start": 517,
+          "end": 517,
+          "asset_type": "money market"
+        },
+        {
+          "start": 520,
+          "end": 520,
+          "asset_type": "net receivables / payables"
+        }
+      ]
+    },
+    "companies": {
+      "INE040A01034": "HDFCBANK",
+      "INE090A01021": "ICICIBANK",
+      "INE002A01018": "RELIANCE",
+      "INE397D01024": "BHARTIARTL",
+      "INE018A01030": "LT",
+      "INE062A01020": "SBIN",
+      "INE238A01034": "AXISBANK",
+      "INE009A01021": "INFY",
+      "INE237A01036": "KOTAKBANK",
+      "INE101A01026": "MAHINDRA"
+    }
+  }
+]

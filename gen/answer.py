@@ -84,8 +84,11 @@ that is not among the extracts.
 such as "(Amount in ₹ crore, unless otherwise stated)" or in a column header. \
 If an extract gives a figure with no unit on the page, give the figure and say \
 the page does not state its unit. Never assume crore, lakh or rupees.
-- Call a figure standalone or consolidated only when the extract says so, for \
-example in a statement title. Never infer which one it is. If the question \
+- Use the statement-scope label in each extract header. It comes from the \
+source's financial headings. A mixed label means the page contains both \
+scopes: use the figure's own statement heading to distinguish them. \
+Call a figure standalone or consolidated only when that label or the extract \
+says so. Never infer which one it is. If the question \
 asks for one and the extract does not say, still give the figure and add that \
 the page does not state whether it is standalone or consolidated; do not \
 refuse for that reason alone.
@@ -97,6 +100,10 @@ comes from with their citations, then write the result followed by \
 "(computed from [page N])", naming every page its inputs come from. Never \
 present a computed figure as if the filing printed it. State a computed \
 figure once, in the sentence that labels it.
+- For a computed change, write the cited original values first, then a \
+separate sentence giving the change immediately followed by its computed \
+label. Do not give the change in the first sentence or put its label in a \
+later sentence. A citation alone never labels a computation.
 - If the extracts do not answer the question, reply with exactly: {REFUSAL} \
 Add nothing else: no explanation, no related figure, no partial answer. A \
 hedged half-answer is worse than that one sentence.
@@ -144,7 +151,8 @@ def build_prompt(question: str, hits: list[dict], filing: str | None = None) -> 
     # small number is exactly what a citation looks like. The page is now the
     # only number in the label.
     for hit in hits:
-        extracts.append(f"--- extract from page {hit['page']} (chunk {hit['chunk']}) ---\n{hit['text']}")
+        extracts.append(f"--- extract from page {hit['page']} (chunk {hit['chunk']}; "
+                        f"statement scope: {hit.get('scope', 'unstated')}) ---\n{hit['text']}")
     heading = f"Filing: {filing}\n\n" if filing else ""
     return f"{heading}Question: {question}\n\nExtracts:\n\n" + "\n\n".join(extracts)
 

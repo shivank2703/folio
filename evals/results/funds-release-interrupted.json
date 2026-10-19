@@ -1,0 +1,6 @@
+{
+  "label": "funds-release-interrupted",
+  "status": "interrupted",
+  "reason": "Retrieval smoke detected that ranking query rewriting moved a valid title-count question below the existing similarity floor. Stopped this run and restored original-question vectors for the refusal score; the ranking representation is separate.",
+  "partial_stdout": "hcc-fy25-001       numeric-lookup 3/3  'Standalone total assets were \u20b98,138.03 crore as at March 31, 2024 and \u20b98,743.37 crore as a'\nhcc-fy25-002       numeric-lookup 3/3  \"HCC's consolidated total income for FY25 (year ended March 31, 2025) was \u20b95,726.57 crore [\"\nhcc-fy25-003       numeric-lookup 3/3  'Standalone undisputed trade receivables considered good that were outstanding for more tha'\nhcc-fy25-004       numeric-lookup 3/3  \"HCC's contributions to India's infrastructure development include 25% of the country's hyd\"\nhcc-fy25-005       not-in-filing  3/3  'Not in the filing.'\nchambal-fy25-001   numeric-lookup 3/3  \"Chambal Fertilisers and Chemicals' standalone total assets as at March 31, 2025 were Rs. 1\"\n"
+}

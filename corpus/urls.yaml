@@ -33,3 +33,199 @@ UNIHEALTH:
   name: Unihealth Hospitals
   listing: NSE SME (Emerge) UNIHEALTH
   investor_page: https://www.unihealthfinancials.com/annual-reports
+
+ASTRAMICRO:
+  name: "Astra Microwave Products Ltd."
+  listing: "NSE main board"
+  reports:
+    - url: https://astramwp.com/wp-content/uploads/2026/08/Astra-21.8.26.pdf
+      fiscal_year: FY26
+
+BDL:
+  name: "Bharat Dynamics Limited"
+  listing: "NSE main board"
+  reports:
+    - url: https://www.bdl-india.in/sites/default/files/Annual-Report-2025-26.pdf
+      fiscal_year: FY26
+
+BEL:
+  name: "Bharat Electronics Ltd."
+  listing: "NSE main board"
+  reports:
+    - url: https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf
+      fiscal_year: FY26
+
+BEML:
+  name: "BEML Limited"
+  listing: "NSE main board"
+  reports:
+    - url: https://www.bemlindia.in/wp-content/uploads/2026/09/BEML62ndAnnualReport2025-26.pdf
+      fiscal_year: FY26
+
+BHARATFORG:
+  name: "Bharat Forge Ltd."
+  listing: "NSE main board"
+  reports:
+    - url: https://www.bharatforge.com/AR2026/pdf/annual-report-2026.pdf
+      fiscal_year: FY26
+
+BHARTIARTL:
+  name: "Bharti Airtel Limited"
+  listing: "NSE main board"
+  reports:
+    - url: https://assets.airtel.in/static-assets/cms/investor/docs/annual_results_2025_26/Airtel-Annual-Report-2026-(Single-Page.pdf
+      fiscal_year: FY26
+
+BOSCHLTD:
+  name: "Bosch Limited"
+  listing: "NSE main board"
+  reports:
+    - url: https://www.bosch.in/media/our_company/shareholder_information/2026/bosch_annual_report_2025-26.pdf
+      fiscal_year: FY26
+
+DEEDEV:
+  name: "DEE DEVELOPMENT ENGINEEERS LTD"
+  listing: "NSE main board"
+  reports:
+    - url: https://www.deepiping.com/document/investor/37th-Annual-Report.pdf
+      fiscal_year: FY26
+
+EICHERMOT:
+  name: "Eicher Motors Ltd."
+  listing: "NSE main board"
+  reports:
+    - url: https://eicher.in/content/dam/eicher-motors/investor/financial-and-reports/annual-reports/eml-ir-2026-high-res.pdf
+      fiscal_year: FY26
+
+HEROMOTOCO:
+  name: "Hero MotoCorp Ltd."
+  listing: "NSE main board"
+  reports:
+    - url: https://www.heromotocorp.com/content/dam/hero-aem-website/in/en-in/company-section/investors/annual-report/annual-reports/2025-26/Hero_MotoCorp_IR_25_26_Web_final_v2_hq.pdf
+      fiscal_year: FY26
+
+INFY:
+  name: "Infosys Limited"
+  listing: "NSE main board"
+  reports:
+    - url: https://www.infosys.com/investors/reports-filings/annual-report/annual/documents/infosys-ar-26.pdf
+      fiscal_year: FY26
+
+LT:
+  name: "Larsen & Toubro Limited"
+  listing: "NSE main board"
+  reports:
+    - url: https://investors.larsentoubro.com/upload/AnnualRep/FY2026AnnualRepLNTIARFY2026.pdf
+      fiscal_year: FY26
+
+MAHINDRA:
+  name: "Mahindra & Mahindra Limited"
+  listing: "NSE main board"
+  reports:
+    - url: https://www.mahindra.com/annual-report-FY2026/files/assets/common/downloads/Mahindra%20Annual%20Report%202025-26.pdf?uni=28cb2cc2a9f7a5229c066b0b9f0a8fbe
+      fiscal_year: FY26
+
+MTARTECH:
+  name: "MTAR Technologies Limited"
+  listing: "NSE main board"
+  reports:
+    - url: https://mtar.in/wp-content/uploads/2026/09/Annual-Report-FY-2025-26.pdf
+      fiscal_year: FY26
+
+RUBICON:
+  name: "RUBICON RESEARCH LIMITED"
+  listing: "NSE main board"
+  reports:
+    - url: https://www.rubicon.co.in/pdf/financials/Annual%20Report-2025-2026.pdf
+      fiscal_year: FY26
+
+SUNPHARMA:
+  name: "SUN PHARMACEUTICAL INDUSTRIES LTD."
+  listing: "NSE main board"
+  reports:
+    - url: https://sunpharma.com/wp-content/uploads/2026/07/Sun-Pharma_AR-2025-26.pdf
+      fiscal_year: FY26
+
+TATASTEEL:
+  name: "Tata Steel Ltd."
+  listing: "NSE main board"
+  reports:
+    - url: https://www.tatasteel.com/investors/integrated-report-2025-26/pdf/tatasteel-iar-2025-26.pdf
+      fiscal_year: FY26
+
+AXISBANK:
+  name: "Axis Bank Limited"
+  listing: "NSE main board"
+  reports:
+    - url: https://www.axis.bank.in/docs/default-source/annual-reports/for-axis-bank/annual-report-for-the-year-2025-2026.pdf
+      fiscal_year: FY26
+
+DIVISLAB:
+  name: "Divis Laboratories Ltd."
+  listing: "NSE main board"
+  reports:
+    - url: https://www.divislabs.com/wp-content/uploads/2026/07/Annual-Report2025-26.pdf
+      fiscal_year: FY26
+
+HDFCBANK:
+  name: "HDFC Bank Limited"
+  listing: "NSE main board"
+  reports:
+    - url: https://www.hdfc.bank.in/content/dam/hdfcbankpws/in/en/pdf/annual-reports/2025-26/reports/HDFC_Bank_IR26.pdf
+      fiscal_year: FY26
+
+ICICIBANK:
+  name: "ICICI Bank Limited"
+  listing: "NSE main board"
+  reports:
+    - url: https://www.icici.bank.in/ms/aboutus/annual-reports/2025-26/html/assets/pdf/icici-bank-annual-report-2025-26.pdf
+      fiscal_year: FY26
+
+KOTAKBANK:
+  name: "Kotak Mahindra Bank Ltd"
+  listing: "NSE main board"
+  reports:
+    - url: https://www.kotak.bank.in/content/dam/Kotak/investor-relation/Financial-Result/Annual-Reports/FY-2026/kotak-mahindra-bank/Kotak-Mahindra-Bank-Limited-FY26.pdf
+      fiscal_year: FY26
+
+RELIANCE:
+  name: "Reliance Industries Limited"
+  listing: "NSE main board"
+  reports:
+    - url: https://www.ril.com/ar2025-26/RIL_IAR%202026.pdf
+      fiscal_year: FY26
+
+SBIN:
+  name: "State Bank of India"
+  listing: "NSE main board"
+  reports:
+    - url: https://sbi.bank.in/documents/17836/58092042/Annual%2BReport%2BFY2026.pdf/0f165880-8752-4d67-6d87-422984f5cc3f?t=1778164340579
+      fiscal_year: FY26
+
+TVSMOTOR:
+  name: "TVS Motor Company Ltd."
+  listing: "NSE main board"
+  reports:
+    - url: https://www.tvsmotor.com/-/media/Feature/Investors/Financial-Reports/28-07-26/34th-Annual-Report-2025-26.pdf
+      fiscal_year: FY26
+
+SOLARINDS:
+  name: "Solar Industries India Ltd."
+  listing: "NSE main board"
+  reports:
+    - url: https://www.solargroup.com/api/download-file?file=Investors-Relation%2FFinancialReporting%2FAnnual%20Reports%2FFY%202025-26%20Annual%20Reports%2FSolar_AR_20.%2007%2026%20%281%29.pdf
+      fiscal_year: FY26
+
+HAL:
+  name: "Hindustan Aeronautics Limited"
+  listing: "NSE main board"
+  reports:
+    - url: https://hal-india.co.in/backend/wp-content/uploads/2026/07/HAL_AR-2025-26.pdf
+      fiscal_year: FY26
+
+INDOMIM:
+  name: "INDO-MIM LTD"
+  listing: "NSE main board"
+  reports:
+    - url: https://nsearchives.nseindia.com/annual_reports/AR_30812_INDOMIM_2025_2026_A_5788504_29082026140615.pdf
+      fiscal_year: FY26

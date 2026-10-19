@@ -21,6 +21,7 @@ import os
 import sys
 import time
 from pathlib import Path
+from urllib.parse import quote
 
 import anthropic
 import streamlit as st
@@ -30,7 +31,7 @@ from gen.guardrails import CITATION, cited_pages, has_enough_context
 from retrieve.embed import load_model
 from retrieve.search import DEFAULT_K, EXPANSION_SEEDS, open_index, page_context, search
 from retrieve.store import ensure_index
-from ui import add_company
+from ui import add_company, funds
 from ui.limits import DailyLimiter, is_owner, visitor_address
 
 DB_PATH = Path("data/lancedb")
@@ -117,7 +118,7 @@ def page_link(url: str, page: int) -> str:
     reports inline rather than as downloads (checked 2026-10-04), so a
     citation lands the reader on the page it names.
     """
-    return f"{url}#page={page}"
+    return f"{quote(url, safe=':/?&=%')}#page={page}"
 
 
 def link_citations(text: str, url: str) -> str:
@@ -167,7 +168,8 @@ def render_sources(context: list[dict], cited: set[int], url: str) -> None:
     for chunk in sorted(context, key=lambda c: (c["page"], c["chunk"])):
         was_cited = chunk["page"] in cited
         score = "same page as a hit" if chunk.get("sibling") else f"similarity {chunk['score']:.3f}"
-        label = f"{'cited · ' if was_cited else ''}page {chunk['page']} · chunk {chunk['chunk']} · {score}"
+        label = (f"{'cited · ' if was_cited else ''}page {chunk['page']} · "
+                 f"{chunk.get('scope', 'unstated')} · chunk {chunk['chunk']} · {score}")
         with st.expander(label, expanded=was_cited):
             st.markdown(f"[Open page {chunk['page']} of the filing]({page_link(url, chunk['page'])})")
             st.text(chunk["text"])
@@ -181,7 +183,7 @@ def main() -> None:
                  "On Streamlit Community Cloud, delete the app and redeploy it with Python "
                  f"{PYTHON[0]}.{PYTHON[1]} chosen under Advanced settings.")
         st.stop()
-    st.caption("Cited answers from Indian annual reports. Every claim carries the page it came from.")
+    st.caption("Cited research from Indian annual reports and public fund disclosures.")
 
     adopt_streamlit_secret()
     owner = resolve_owner()
@@ -193,6 +195,11 @@ def main() -> None:
     if owner:
         add_company.render(model, on_index_changed=reopen_index)
 
+    mode = st.radio("Research", ["Companies", "Funds"], horizontal=True)
+    selected_filing = funds.render(load_filings()) if mode == "Funds" else None
+    if mode == "Funds" and selected_filing is None:
+        st.stop()
+
     # A form so Enter submits: the question box is the whole interface, and
     # reaching for the mouse to ask is friction the demo does not need.
     with st.form("ask"):
@@ -203,8 +210,14 @@ def main() -> None:
         # Streamlit filters the dropdown on each option's own text, so passing
         # records made typing a company's name match nothing.
         filings = {f"{f['name']} — {f['fiscal_year']}": f for f in load_filings()}
-        filing = filings[st.selectbox("Filing", list(filings))]
-        question = st.text_input("Question", placeholder=EXAMPLE)
+        if selected_filing:
+            filing = selected_filing
+            st.markdown(f"**{filing['name']} · {filing['fiscal_year']} annual report**")
+        else:
+            filing = filings[st.selectbox("Filing", list(filings))]
+        example = (f"What were standalone total assets at the end of {filing['fiscal_year']}?"
+                   if selected_filing else EXAMPLE)
+        question = st.text_input("Question", placeholder=example)
         submitted = st.form_submit_button("Ask", type="primary")
     if not submitted or not question.strip():
         st.stop()
@@ -213,7 +226,7 @@ def main() -> None:
     # same URL corpus/SOURCES.md verifies by checksum. It is drawn after submit
     # because widgets inside a form do not rerun the page: drawn above, it
     # kept linking the previous filing after the dropdown changed.
-    st.caption(f"Source: [{filing['name']} annual report, {filing['fiscal_year']}]({filing['source_url']}), "
+    st.caption(f"Source: [{filing['name']} annual report, {filing['fiscal_year']}]({quote(filing['source_url'], safe=':/?&=%')}), "
                "published by the company. Page numbers are the PDF's own.")
 
     # Counted on submit, refusals included: a question is a question to the

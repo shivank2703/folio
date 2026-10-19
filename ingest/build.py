@@ -29,6 +29,8 @@ from ingest.chunk import chunk_report
 from ingest.extract import extract_pages, write_jsonl
 from ingest.preprocess import preprocess
 from ingest.tables import apply_tables
+from ingest.scope import tag_pages
+from ingest.quality import exclude_unreadable
 from retrieve.embed import embed_texts, load_model, to_arrow, write_index
 
 
@@ -61,6 +63,10 @@ def ingest_filing(entry: dict, corpus_dir: Path, data_dir: Path) -> Path:
     # other page keeps preprocess's text. The clean file records which reader
     # each page got and, where pymupdf4llm was refused, which gate refused it.
     pages = apply_tables(pdf_path, pages)
+    pages = tag_pages(pdf_path, exclude_unreadable(pages))
+    for page in pages:
+        if str(page["page"]) in entry.get("quality_exclusions", {}):
+            page["excluded"] = entry["quality_exclusions"][str(page["page"]) ]
     write_jsonl(pages, data_dir / f"{stem}_clean.jsonl")
     chunks = chunk_report(pages)
     chunk_path = data_dir / f"{stem}_chunks.jsonl"

@@ -138,7 +138,7 @@ def judge(client: anthropic.Anthropic, q: dict, answer: str, context: list[dict]
     )
     cited = set(cited_pages(answer))
     pages = "\n\n".join(
-        f"--- page {c['page']} chunk {c['chunk']} ---\n{c['text']}"
+        f"--- page {c['page']} chunk {c['chunk']}; statement scope: {c.get('scope', 'unstated')} ---\n{c['text']}"
         for c in sorted(context, key=lambda c: (c["page"], c["chunk"]))
         if c["page"] in cited
     )
@@ -185,8 +185,9 @@ def grade(q: dict, verdict: dict, client: anthropic.Anthropic) -> dict:
     return row
 
 
-def run(label: str, samples: int, only: set[str] | None, rerank_gate: tuple[str, float] | None = None) -> dict:
-    questions = [json.loads(line) for line in QUESTIONS.open(encoding="utf-8")]
+def run(label: str, samples: int, only: set[str] | None, rerank_gate: tuple[str, float] | None = None,
+        questions_path: Path = QUESTIONS) -> dict:
+    questions = [json.loads(line) for line in questions_path.open(encoding="utf-8")]
     if only:
         questions = [q for q in questions if q["id"] in only]
     table, model, client = open_index(Path("data/lancedb")), load_model(), build_client()
@@ -268,13 +269,20 @@ def main() -> None:
     parser.add_argument("--label", required=True, help="name for this run, e.g. baseline or tables")
     parser.add_argument("--samples", type=int, default=3, help="answers generated per question")
     parser.add_argument("--only", nargs="*", help="question ids to run, for debugging")
+    parser.add_argument("--questions", type=Path, default=QUESTIONS, help="verified question JSONL")
     parser.add_argument("--rerank-gate", nargs=2, metavar=("MODEL", "THRESHOLD"),
                         help="experiment: rerank candidates and gate on the best score (python -m evals.fit_gate)")
     args = parser.parse_args()
+    if args.samples < 1:
+        parser.error("samples must be positive")
+    destination = RESULTS / f"{args.label}.json"
+    if destination.exists():
+        parser.error("that result already exists; choose a new label to preserve the comparison")
     gate = (args.rerank_gate[0], float(args.rerank_gate[1])) if args.rerank_gate else None
-    result = run(args.label, args.samples, set(args.only) if args.only else None, gate)
+    result = run(args.label, args.samples, set(args.only) if args.only else None, gate, args.questions)
     RESULTS.mkdir(parents=True, exist_ok=True)
-    (RESULTS / f"{args.label}.json").write_text(json.dumps(result, ensure_ascii=False, indent=1), encoding="utf-8")
+    with destination.open("x", encoding="utf-8") as output:
+        json.dump(result, output, ensure_ascii=False, indent=1)
     print("\n" + summarise(result))
 
 

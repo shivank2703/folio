@@ -138,7 +138,7 @@ VALUE = re.compile(r"^\(?[-–]?[\d,]*\.?\d+\)?%?$|^[-–]$")
 # Unit declarations name a currency and a magnitude: "(Amount in ₹ crore,
 # unless otherwise stated)", "₹ in crore, except earnings per share",
 # "Standalone (₹ in crore)", a column's "₹ Lacs".
-CURRENCY = re.compile(r"₹|\brs\b|\binr\b|\bamounts?\b|\bcurrency\b|\bfigures\b", re.IGNORECASE)
+CURRENCY = re.compile(r"₹|\brs\b|\binr\b|\bamounts?\b|\bcurrency\b|\bfigures\b|\brupees\b", re.IGNORECASE)
 MAGNITUDE = re.compile(r"\b(?:crores?|lakhs?|lacs?|millions?|billions?|thousands?)\b", re.IGNORECASE)
 MAX_UNIT_WORDS = 8  # a declaration is a label, not a sentence
 
@@ -179,6 +179,12 @@ def normalize_glyphs(text: str) -> str:
     patterns and the final chunks all see ₹ and "fi", never ` or U+FB01.
     """
     text = RUPEE_BACKTICK.sub("₹", text)
+    # Verified currency-font mappings in the new bank and engineering reports.
+    # Restrict substitution to a complete unit label, never ordinary prose.
+    if re.fullmatch(r"[([]?[CHvIK]\s+(?:in\s+)?(?:crores?|millions?|thousands?|[‘’\']?000s?)[)\]]?", text.strip(), re.I):
+        text = re.sub(r"[CHvIK]", "₹", text, count=1)
+    if re.fullmatch(r"[([]?₹\s+in\s+[‘’\']?000s?[)\]]?", text.strip(), re.I):
+        text = re.sub(r"[‘’\']?000s?", "thousands", text)
     for ligature, letters in LIGATURES.items():
         text = text.replace(ligature, letters)
     text = CONTROL_CHARS.sub("", text)
@@ -603,8 +609,11 @@ def is_unit_declaration(text: str) -> bool:
     merely mentions crores is not. Digit-free, because a declaration names a
     unit, never an amount: "(HCC's share: ₹3,472 crore)" is a figure.
     """
+    if re.fullmatch(r"\(?000s? omitted\)?", text, re.I):
+        return True
     return (
-        len(text.split()) <= MAX_UNIT_WORDS
+        (len(text.split()) <= MAX_UNIT_WORDS
+         or (len(text.split()) <= 24 and bool(re.match(r"^\(?all amounts?\b", text, re.I))))
         and not re.search(r"\d", text)
         and bool(CURRENCY.search(text))
         and bool(MAGNITUDE.search(text))

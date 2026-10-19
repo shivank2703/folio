@@ -40,7 +40,7 @@ Report anatomy the pipeline serves: Management Discussion & Analysis, Directors'
 1. **Fiscal year = April–March.** FY25 means Apr 2024–Mar 2025. All year tags and eval questions use FY convention.
 2. **Units are declared at table headers** ("₹ in crore" / "in lakhs"). Chunking must never orphan values from their unit declaration.
 3. **Citations use the PDF page number** (as displayed by a PDF viewer), not the printed page number. Decided; do not revisit.
-4. **Standalone vs consolidated** statements repeat the same line items with different numbers. Chunks carry a statement-scope tag once table work (Accurate) lands; until then a statement page's title is inherited by every chunk on it.
+4. **Standalone vs consolidated** statements repeat the same line items with different numbers. Every chunk carries a scope tag from explicit financial headings: standalone, consolidated, mixed or unstated. Statement titles remain in chunk text where available. Never infer a missing scope.
 5. **Born-digital only.** Recent-year filings are text-based; there is no OCR path. If a target-year document turns out to be scanned, it is out of scope until this decision is revisited.
 6. **Two-column narrative layouts** can scramble extraction order. Every new document format gets an eyeball check before its text is trusted.
 
@@ -120,10 +120,29 @@ funds.
 1. Read a fund's monthly portfolio disclosure (holdings + weights). It is often
    a spreadsheet: read it as a table, don't chunk it
 2. Read the fund's factsheet: expense ratio, benchmark, exit load
-3. Drill into the top 10–15 holdings through the annual-report Q&A, using
-   companies indexed by Ingest
+3. Drill into exactly the top 10 domestic equity holdings per fund through
+   annual-report Q&A; index their deduplicated union using Ingest
 4. Every claim cited; no buy/sell language (§2)
 5. Public demo on popular funds
+
+**Funds implementation (17–19 Oct 2026):** Kotak Manufacture in India Direct,
+HDFC Defence Direct, and Motilal Oswal Nifty 500 Index Direct Growth. September
+portfolios contribute 588 instrument rows and 28 distinct top-ten companies.
+Each original row keeps its weight, asset class, rank, source sheet and row;
+only top-ten domestic equities are eligible. All other instruments remain
+visible as not indexed, including a company covered through another fund.
+Portfolio and factsheet dates remain separate: Motilal's latest linked
+factsheet was August when rechecked on 18 October; the others were September.
+BER/TER definitions remain attached to the disclosed percentages.
+
+The Funds reader answers bounded factual lookups deterministically and returns
+a selected annual report to the existing Q&A path. No orchestration loop is
+introduced. All chunks carry explicit-heading scope (standalone, consolidated,
+mixed or unstated). Search excludes an explicitly opposite scope; context
+packing reserves ranked seed chunks, then prioritizes the strongest page's
+continuations within the existing 6,000-token budget. Known scrambled prose
+pages are excluded and recorded rather than embedded. Release status and
+verification evidence are tracked in `notes/funds-step.md`.
 
 ### Agent · Sat 24 Oct 2026
 
@@ -147,22 +166,26 @@ exchange-disclosure flags for a watchlist).
 |---|---|---|---|---|
 | Extraction | Public | Raw PyMuPDF page text | Own every layer first; simplest page→cite mapping | Tables move to pymupdf4llm in Accurate |
 | Chunking | Public | Hand-rolled ~200-token windows (tiktoken counts) | Predictable, page-faithful; failure modes stay visible | Eval evidence in Accurate |
-| Embeddings | Public | **Decided at Stage 4**: BAAI/bge-small-en-v1.5, local, via fastembed (ONNX Runtime, no PyTorch) | Public demo must run free on CPU; MIT; largest chunk (393 tokens) fits its 512 limit | Stage 5 smoke test misses relevant chunks → granite-embedding-small-english-r2 |
+| Embeddings | Public | **Decided at Stage 4**: BAAI/bge-small-en-v1.5, local, via fastembed (ONNX Runtime, no PyTorch) | Public demo must run free on CPU; MIT; original corpus fit its 512-token limit, with ten oversized rows recorded after Funds | Stage 5 smoke test misses relevant chunks → granite-embedding-small-english-r2 |
 | Vector store | Public | LanceDB | Embedded, file-based, metadata beside vectors; nothing to host | Corpus outgrows the deploy host |
 | Generation | Public → Ingest | Anthropic API, cite-every-claim prompt. **Claude Haiku 5.5** since Ingest (11 Oct 2026), effort `medium`, `max_tokens` 4,096 (thinking counts against it); was Haiku 4.5. The judge stays on Haiku 4.5 so evals stay comparable | Cheapest current model ($0.0012/question measured); at parity with 4.5 on the eval after three prompt rules (state scope as unstated rather than refuse; one labelled statement of a computed figure; answer only what was asked) | A new Haiku, or the scope tag landing |
 | Report sources | Ingest | Company investor pages, read for PDF links; report URLs listed by hand in `corpus/urls.yaml` (NSE's file archive serves PDFs but cannot be listed). Plain requests with an honest User-Agent, robots.txt checked, 4 s between calls to a host | NSE's website and annual-report API reset scripted connections; BSE's API answers Access Denied. Imitating a browser to get past either is not done | An exchange publishes a documented, scriptable listing |
 | Born-digital check | Ingest | Pages with no text layer are skipped and recorded; a report with more than 20% such pages is refused | A real report has a few image pages (covers, photos: 1% of HCC's); a scan has most. No OCR path (§3.5) | — |
 | Two-page spreads | Ingest | A landscape page whose middle no text line crosses is read as two pages, left then right, under one PDF page number; a title is kept only if both halves name the same statement | Unihealth prints two pages per PDF page; read as one, two tables fused row by row | Spreads that pair unrelated documents need per-half titles |
 | In-app add company | Ingest | Owner-only panel (owner key or localhost). Runs `ingest.add` in a background thread, then `ingest.publish` and one commit of `urls.yaml`, `corpus.json`, `SOURCES.md` and `index.json` to main via the GitHub API (a fine-grained token, this repo only, Contents: write, in the host's secrets). Refuses to commit if main's record files differ from the deployed ones; never force-pushes | The container's disk does not survive a restart, so a company added in-app must be saved to the repository to stay | Anyone else may add companies (needs payment, abuse controls and legal review) |
-| Demo rate limits | Ingest | Per browser session 10 questions; per connection per day 25 answered questions; all visitors per day 500 (~$1 on Haiku 5.5). Only questions that reach the model count. Counted in the server process; a visitor is a salted hash of their address. Local runs and a session opened with `?owner=<FOLIO_OWNER_KEY>` are exempt | The public demo spends the maintainer's prepaid credit; the session cap alone resets on refresh | Traffic outgrows one process, or abuse comes from many addresses |
+| Demo rate limits | Ingest | Per browser session 10 questions; per connection per day 25 answered questions; all visitors per day 500 (~$1 on Haiku 5.5). Fund disclosure lookups are deterministic and unmetered. Only report questions that reach the model count against daily limits. Counted in the server process; a visitor is a salted hash of their address. Local runs and a session opened with `?owner=<FOLIO_OWNER_KEY>` are exempt | The public demo spends the maintainer's prepaid credit; the session cap alone resets on refresh | Traffic outgrows one process, or abuse comes from many addresses |
 | Index storage | Ingest | A tarball on the repository's `index` release; `corpus/index.json` (committed) names it and its SHA-256; the app downloads and verifies it at startup. Not a Hugging Face dataset: `gh` is already authenticated and assets on a public repo need no credentials | Committed, every rebuild added ~10 MB to git history, and Funds adds 20–30 filings | Assets accumulate; prune those no commit names |
 | Citation guard | Accurate | Every figure in a cited claim must be printed on the cited page; a computed figure must say "(computed from [page N])"; a citation is moved to the one page that prints all of a claim's figures when the cited page does not; anything after "Not in the filing." is stripped | "Shown to the model" was the only check, and a right figure cited to the wrong page passed it | — |
-| UI / deploy | Public | Streamlit on Streamlit Community Cloud, deployed from the GitHub repo; the committed index is loaded read-only | Free; a public repo gives a public app; rebuilding on start would cost minutes on a platform that sleeps every 12h | The index outgrows what belongs in git, or the 2-core / 2.7 GB ceiling hurts the demo |
+| UI / deploy | Public | Streamlit on Streamlit Community Cloud, deployed from the GitHub repo; the checksum-pinned release index is downloaded at startup and loaded read-only | Free; a public repo gives a public app; rebuilding on start would cost minutes on a platform that sleeps every 12h | The index outgrows what belongs in git, or the 2-core / 2.7 GB ceiling hurts the demo |
 | Tables | Accurate | **pymupdf4llm 0.3.4**, `lines` strategy, accepted per page only when it passes four gates (a table found, no cell swallowing a column, no repeated rows, no figure lost against preprocess's text); every other page keeps preprocess's text. Pinned below 1.27, which hard-requires pymupdf_layout | Exact on ruled notes (ageing, borrowings, cash flow); fails on shaded or rotated statements and on `lines_strict`, so it cannot replace preprocess wholesale | A version without the layout dependency reads unruled statements |
 | Table escalation | Accurate | Public table-structure models (e.g. Table Transformer) | Keeps the stack open-source | Only if triggered |
 | Evaluation | Accurate | `evals.score`: 20 questions × 3 samples through the app's own answer path; two blind Haiku 4.5 calls at temperature 0 — correctness without the pages, faithfulness without the reference — plus mechanical refusal and citation checks (RAGAS in CI cut) | No retrieval/chunking/prompt change lands without before/after scores; one judge seeing both lets a wrong citation mark a right figure wrong | Judge disagreements on a re-read |
 | Reranker | Accurate | **Evaluated and not shipped.** ONNX cross-encoders through fastembed (no PyTorch): ms-marco-MiniLM-L-6 and jina-reranker-v1-tiny. Gate threshold fitted on the fit half, scored on the test half: answerable test questions fell 26/27 → 19/27 end to end. The 0.67 similarity floor stays as a cheap pre-filter; refusal rests on the prompt contract and the strict-refusal guard (15/15) | A held-out half showed the fit was overfitted; reordering also lost a multi-hop page | A finance-tuned reranker, or an eval with enough negatives (≥10) to fit a threshold |
-| Fund data | Funds | Portfolio disclosure read as a table (spreadsheet rows, not chunks); factsheet through the PDF path | Holdings and weights are already structured; chunking them would only lose that | — |
+| Fund data | Funds | Verified cached XLSX cells, reviewed factsheet fields, deterministic lookups, original row/page citations; top 10 domestic equities per fund | Preserves exact weights and source dates without generating them; 28-company union feeds existing Q&A | A new public disclosure is reviewed |
+| Statement scope | Funds | Explicit financial headings produce standalone/consolidated/mixed/unstated metadata on every chunk and source label | Repeated note headings survive furniture removal; unknown scope is never guessed | A verified layout needs finer per-table scope |
+| Query representation | Funds | Remove selected-company and repeated metadata terms for ranking; retain the original FY-expanded question for the calibrated similarity floor | Repeated headings displaced account labels; rewriting the gate score rejected an answerable question | A separately evaluated retrieval change |
+| Context packing | Funds | Reserve eight ranked seeds, then complete stronger pages before weaker continuations, within 6,000 tokens | HCC SOCIE continuation was previously omitted by distance-first expansion | Before/after retrieval evaluation reveals another coverage loss |
+| Prose quality | Funds | Conservative repeated prose-cell detection and visually reviewed exclusions, recorded per viewer page | Avoid embedding visibly interleaved columns; may omit legitimate narrative tables | A separately evaluated open-source layout reader |
 | Orchestration | Agent | One plain Anthropic tool-use loop over company and fund tools (LangGraph cut) | Every layer stays visible; the loop is a few dozen lines | — |
 
 **Explicitly excluded:** PyMuPDF-Layout (`pymupdf_layout`, the GNN/ONNX layout model) — proprietary component with its own license; excluded unless its terms are reviewed and found compatible with public distribution. pymupdf4llm 1.27+ requires it, so pymupdf4llm stays on 0.3.4, where it is an optional extra that is not installed. LangChain, LlamaIndex, LangGraph. OCR engines (see §3.5).
@@ -178,5 +201,5 @@ exchange-disclosure flags for a watchlist).
 
 - **Repo license: AGPL-3.0.** PyMuPDF and pymupdf4llm are AGPL-dual-licensed and this app is network-served, so AGPL is the clean, compliant choice.
 - **Clean-room policy.** The author works professionally in an adjacent domain. This project shares only public open-source libraries with that work — no code, configurations, heuristics, prompts, or models originate from any employer. Built entirely from public documentation, on personal time and hardware.
-- **Data policy.** Annual reports are public statutory documents. Fund portfolio disclosures and factsheets are public documents published by each fund house. Source PDFs are not committed; `corpus/SOURCES.md` lists where to obtain them — the code ships, not the data. **Exception:** the search index, holding chunks of text derived from public statutory filings, is published (a release asset since the Ingest step; committed before) so the demo loads an index instead of rebuilding one on a host that sleeps every 12 hours. The demo attributes each filing to the issuing company and links to the source document (`corpus/SOURCES.md`); the PDF itself stays out of git.
+- **Data policy.** Annual reports are public statutory documents. Fund portfolio disclosures and factsheets are public documents published by each fund house. Source PDFs are not committed; `corpus/SOURCES.md` lists where to obtain them — the code ships, not the data. **Exception:** the search index, holding chunks of text derived from public statutory filings, is published (a release asset since the Ingest step; committed before) so the demo loads an index instead of rebuilding one on a host that sleeps every 12 hours. The demo attributes each filing to the issuing company and links to the source document (`corpus/SOURCES.md`); the PDF itself stays out of git. A second exception is `corpus/funds.json`: normalized **public scheme disclosures**, with exact source hashes, dates and page/row citations. Original fund PDFs and spreadsheets stay ignored; no personal holdings are included.
 - **Privacy.** Real watchlists and holdings are never committed (`watchlist.yaml` stays gitignored). API keys live in `.env` and `.streamlit/secrets.toml`, both gitignored; the deployed key lives only in the host's secrets settings, with a monthly spend limit, a per-session question cap and daily per-visitor and total caps. Visitors are counted by a salted hash of their address, held in memory only.

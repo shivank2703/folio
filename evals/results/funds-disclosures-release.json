@@ -1,0 +1,265 @@
+{
+  "passed": 24,
+  "total": 24,
+  "cases": [
+    {
+      "id": "kotak-cost",
+      "kind": "lookup",
+      "fund": "kotak-manufacture",
+      "question": "What is the Direct-plan expense ratio?",
+      "contains": [
+        "0.65%",
+        "Base expense ratio",
+        "2026-09-30",
+        "page=20"
+      ],
+      "actual": "Direct-plan expense ratio: 0.65%. Base expense ratio including statutory levies on expenses forming part of BER; excludes brokerage, transaction costs and related statutory levies. As of 2026-09-30 [factsheet page 20](https://www.kotakmf.com/kotakflipbook/docs/download/sep2026#page=20).",
+      "passed": true
+    },
+    {
+      "id": "hdfc-cost",
+      "kind": "lookup",
+      "fund": "hdfc-defence",
+      "question": "What is the Direct-plan expense ratio?",
+      "contains": [
+        "0.82%",
+        "Base expense ratio",
+        "2026-09-30",
+        "page=29"
+      ],
+      "actual": "Direct-plan expense ratio: 0.82%. Base expense ratio including statutory levies on expenses part of BER; excludes brokerage, transaction costs and execution-related statutory levies. As of 2026-09-30 [factsheet page 29](https://files.hdfcfund.com/s3fs-public/2026-10/HDFC%20MF%20Factsheet%20-%20September%202026.pdf?VersionId=xjdQxQp4UEchOirw4TsCE9jEGenOREzw#page=29).",
+      "passed": true
+    },
+    {
+      "id": "motilal-cost",
+      "kind": "lookup",
+      "fund": "motilal-nifty500",
+      "question": "What is the Direct-plan expense ratio?",
+      "contains": [
+        "0.23%",
+        "0.13%",
+        "2026-08-31",
+        "page=5"
+      ],
+      "actual": "Direct-plan expense ratio: 0.23%. Total TER. The same table separately discloses a Direct base expense ratio of 0.13%. As of 2026-08-31 [factsheet page 5](https://www.motilaloswalmf.com/content/dam/motilal-mf/downloads/mf/factsheet/2026/sep/Factsheet%20August%202026%20Passive.pdf#page=5).",
+      "passed": true
+    },
+    {
+      "id": "hdfc-benchmark",
+      "kind": "lookup",
+      "fund": "hdfc-defence",
+      "question": "What is the benchmark?",
+      "contains": [
+        "NIFTY India Defence Index",
+        "page=29"
+      ],
+      "actual": "Benchmark: NIFTY India Defence Index TRI (Total Returns Index). As of 2026-09-30 [factsheet page 29](https://files.hdfcfund.com/s3fs-public/2026-10/HDFC%20MF%20Factsheet%20-%20September%202026.pdf?VersionId=xjdQxQp4UEchOirw4TsCE9jEGenOREzw#page=29).",
+      "passed": true
+    },
+    {
+      "id": "kotak-exit",
+      "kind": "lookup",
+      "fund": "kotak-manufacture",
+      "question": "What is the exit load?",
+      "contains": [
+        "0.5%",
+        "90 days",
+        "page=20"
+      ],
+      "actual": "Exit load: 0.5% within 90 days of allotment; nil on or after 90 days. Applies to redemption and switch-out.. As of 2026-09-30 [factsheet page 20](https://www.kotakmf.com/kotakflipbook/docs/download/sep2026#page=20).",
+      "passed": true
+    },
+    {
+      "id": "motilal-exit",
+      "kind": "lookup",
+      "fund": "motilal-nifty500",
+      "question": "What is the exit load?",
+      "contains": [
+        "1%",
+        "15 days",
+        "page=5"
+      ],
+      "actual": "Exit load: 1% on or before 15 days from allotment; nil after 15 days. Applies to switches between schemes; no load between options within the scheme or from Regular to Direct within the same scheme.. As of 2026-08-31 [factsheet page 5](https://www.motilaloswalmf.com/content/dam/motilal-mf/downloads/mf/factsheet/2026/sep/Factsheet%20August%202026%20Passive.pdf#page=5).",
+      "passed": true
+    },
+    {
+      "id": "hdfc-bel-weight",
+      "kind": "lookup",
+      "fund": "hdfc-defence",
+      "question": "What is the BEL weight?",
+      "contains": [
+        "14.87%",
+        "HDFCDFNFND row 9",
+        "2026-09-30"
+      ],
+      "actual": "Bharat Electronics Ltd.: 14.87% of net assets as of 2026-09-30 [HDFCDFNFND row 9](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+      "passed": true
+    },
+    {
+      "id": "kotak-sun-weight",
+      "kind": "lookup",
+      "fund": "kotak-manufacture",
+      "question": "What is the SUNPHARMA weight?",
+      "contains": [
+        "4.35%",
+        "KMI row 5"
+      ],
+      "actual": "SUN PHARMACEUTICAL INDUSTRIES LTD.: 4.35% of net assets as of 2026-09-30 [KMI row 5](https://vatseelabs-s3.kotakmf.com/FAD/Portfolios/Consolidated-SEBI-Portfolio-as-on-September-30,-2026/ConsolidatedSEBIPortfolioSeptember2026.xlsx).",
+      "passed": true
+    },
+    {
+      "id": "motilal-hdfc-weight",
+      "kind": "lookup",
+      "fund": "motilal-nifty500",
+      "question": "What is the HDFCBANK weight?",
+      "contains": [
+        "5.66%",
+        "YO18 row 13"
+      ],
+      "actual": "HDFC Bank Limited: 5.66% of net assets as of 2026-09-30 [YO18 row 13](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+      "passed": true
+    },
+    {
+      "id": "hdfc-net-assets",
+      "kind": "lookup",
+      "fund": "hdfc-defence",
+      "question": "What is the net current assets allocation?",
+      "contains": [
+        "-0.60%",
+        "row 42"
+      ],
+      "actual": "Net Current Assets: -0.60% of net assets as of 2026-09-30 [HDFCDFNFND row 42](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+      "passed": true
+    },
+    {
+      "id": "wrong-period",
+      "kind": "lookup",
+      "fund": "motilal-nifty500",
+      "question": "What is the September 2026 expense ratio?",
+      "refusal": true,
+      "actual": "Not in the filing.",
+      "passed": true
+    },
+    {
+      "id": "wrong-plan",
+      "kind": "lookup",
+      "fund": "hdfc-defence",
+      "question": "What is the Regular-plan expense ratio?",
+      "refusal": true,
+      "actual": "Not in the filing.",
+      "passed": true
+    },
+    {
+      "id": "advice-refusal",
+      "kind": "lookup",
+      "fund": "kotak-manufacture",
+      "question": "Which fund is best for me?",
+      "refusal": true,
+      "actual": "Not in the filing.",
+      "passed": true
+    },
+    {
+      "id": "unindexed-financial",
+      "kind": "lookup",
+      "fund": "kotak-manufacture",
+      "question": "What is the revenue of Bharat Electronics?",
+      "refusal": true,
+      "actual": "Not in the filing.",
+      "passed": true
+    },
+    {
+      "id": "unknown-holding",
+      "kind": "lookup",
+      "fund": "motilal-nifty500",
+      "question": "What is the weight of Example Unknown Company?",
+      "refusal": true,
+      "actual": "Not in the filing.",
+      "passed": true
+    },
+    {
+      "id": "wrong-day",
+      "kind": "lookup",
+      "fund": "hdfc-defence",
+      "question": "What was the benchmark on 29 September 2026?",
+      "refusal": true,
+      "actual": "Not in the filing.",
+      "passed": true
+    },
+    {
+      "id": "hdfc-drill",
+      "kind": "coverage",
+      "fund": "hdfc-defence",
+      "row": 9,
+      "expected": "BEL",
+      "actual": "BEL",
+      "passed": true
+    },
+    {
+      "id": "kotak-drill",
+      "kind": "coverage",
+      "fund": "kotak-manufacture",
+      "row": 5,
+      "expected": "SUNPHARMA",
+      "actual": "SUNPHARMA",
+      "passed": true
+    },
+    {
+      "id": "motilal-drill",
+      "kind": "coverage",
+      "fund": "motilal-nifty500",
+      "row": 13,
+      "expected": "HDFCBANK",
+      "actual": "HDFCBANK",
+      "passed": true
+    },
+    {
+      "id": "cash-unindexed",
+      "kind": "coverage",
+      "fund": "hdfc-defence",
+      "row": 37,
+      "expected": "Not indexed",
+      "actual": "Not indexed",
+      "passed": true
+    },
+    {
+      "id": "tiny-unindexed",
+      "kind": "coverage",
+      "fund": "motilal-nifty500",
+      "row": 510,
+      "expected": "Not indexed",
+      "actual": "Not indexed",
+      "passed": true
+    },
+    {
+      "id": "cross-fund-unindexed",
+      "kind": "coverage",
+      "fund": "kotak-manufacture",
+      "row": 15,
+      "expected": "Not indexed",
+      "actual": "Not indexed",
+      "passed": true
+    },
+    {
+      "id": "hdfc-total-ter-unavailable",
+      "kind": "lookup",
+      "fund": "hdfc-defence",
+      "question": "What is the total TER?",
+      "refusal": true,
+      "actual": "Not in the filing.",
+      "passed": true
+    },
+    {
+      "id": "motilal-base-expense",
+      "kind": "lookup",
+      "fund": "motilal-nifty500",
+      "question": "What is the base expense ratio?",
+      "contains": [
+        "0.13%",
+        "base expense ratio",
+        "page=5"
+      ],
+      "actual": "Direct-plan base expense ratio: 0.13%. As of 2026-08-31 [factsheet page 5](https://www.motilaloswalmf.com/content/dam/motilal-mf/downloads/mf/factsheet/2026/sep/Factsheet%20August%202026%20Passive.pdf#page=5).",
+      "passed": true
+    }
+  ]
+}

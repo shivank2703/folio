@@ -4,8 +4,9 @@ Stage 4 decision (SPEC.md §5): BAAI/bge-small-en-v1.5, run through
 fastembed's ONNX export instead of sentence-transformers. The public demo
 runs on 2 CPU cores; ONNX Runtime needs no PyTorch, so the deployed image
 stays small and a Space waking from sleep loads a 67 MB model, not a
-framework. Measured before choosing: the largest chunk is 393 tokens under
-this model's tokenizer, inside its 512 limit, so no chunk is truncated.
+framework. The original corpus fit the model's 512-token limit. Funds checks found
+ten oversized whole rows whose vectors are truncated; full text is retained
+for keyword search and cited context (notes/funds-step.md).
 
 fastembed serves Qdrant's quantized export of the model
 (qdrant/bge-small-en-v1.5-onnx-q). Quantization trades a little accuracy for
@@ -100,6 +101,7 @@ def to_arrow(chunks: list[dict], vectors: np.ndarray) -> pa.Table:
             pa.field("page", pa.int32()),
             pa.field("chunk", pa.int32()),
             pa.field("tokens", pa.int32()),
+            pa.field("scope", pa.string()),
         ],
         metadata={"embedding_model": MODEL_NAME},
     )

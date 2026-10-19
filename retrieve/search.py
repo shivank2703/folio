@@ -51,7 +51,7 @@ RRF_K = 60
 # "FY25", "FY 25", "FY2025", "FY24-25", "FY 2024-25".
 FISCAL_YEAR = re.compile(r"\bFY\s?(\d{4}|\d{2})(?:\s*[-–]\s*(\d{4}|\d{2}))?\b", re.IGNORECASE)
 
-FIELDS = ["company", "fiscal_year", "page", "chunk", "tokens", "text", "vector"]
+FIELDS = ["company", "fiscal_year", "page", "chunk", "tokens", "scope", "text", "vector"]
 TEXT_FIELDS = [field for field in FIELDS if field != "vector"]
 
 # How many tokens of chunk text the model may be given, and how far down the
@@ -69,6 +69,24 @@ TEXT_FIELDS = [field for field in FIELDS if field != "vector"]
 # puts the answer-bearing chunk first, which v2's eval set is there to drive.
 CONTEXT_TOKENS = 6000
 EXPANSION_SEEDS = 8
+
+# Company, period and statement scope already constrain the search. Repeating
+# them in BM25 lets ubiquitous report headers outrank the requested row label.
+QUESTION_WORDS = set("what were was is are how did does do the a an at end of for to from in on its their s as and by with please give state report filing standalone consolidated financial year".split())
+
+
+def without_company(question: str, company: str | None) -> str:
+    """A selected filing supplies identity; avoid rewarding incidental short names."""
+    if not company:
+        return question
+    pattern = r"\b" + r"[\s-]*".join(re.escape(c) for c in company) + r"\b"
+    return re.sub(pattern, " ", question, flags=re.I)
+
+
+def keyword_query(question: str, company: str | None) -> str:
+    text = FISCAL_YEAR.sub(" ", without_company(question, company)).lower()
+    words = [word for word in re.findall(r"\b\w+\b", text) if word not in QUESTION_WORDS]
+    return " ".join(words) or question
 
 
 def expand_fiscal_years(question: str) -> str:
@@ -107,10 +125,12 @@ def open_index(db_path: Path) -> lancedb.table.Table:
             f"{db_path} was embedded with {built_with or 'an unrecorded model'}, not {MODEL_NAME}; "
             "re-run python -m retrieve.embed"
         )
+    if "scope" not in table.schema.names:
+        raise RuntimeError("This index predates statement-scope metadata; rebuild it with python -m ingest.build")
     return table
 
 
-def scoped(query, company: str | None):
+def scoped(query, company: str | None, scope: str | None = None):
     """Restrict a query to one filing.
 
     Page numbers are only unique within a document: every filing in the index
@@ -118,21 +138,28 @@ def scoped(query, company: str | None):
     three balance sheets, each citation correct for a company nobody asked
     about. Comparing companies is a v3 tool, not an accident of search.
     """
-    return query if company is None else query.where(f"company = '{company}'")
+    clauses = []
+    if company is not None:
+        clauses.append("company = '" + company.replace("'", "''") + "'")
+    if scope:
+        if scope not in {"standalone", "consolidated"}:
+            raise ValueError("Scope must be standalone or consolidated")
+        clauses.append(f"scope IN ('{scope}', 'unstated', 'mixed')")
+    return query.where(" AND ".join(clauses)) if clauses else query
 
 
-def vector_hits(table: lancedb.table.Table, vector: np.ndarray, company: str | None) -> list[dict]:
+def vector_hits(table: lancedb.table.Table, vector: np.ndarray, company: str | None, scope: str | None = None) -> list[dict]:
     """The chunks nearest the question's vector, closest first."""
     # LanceDB is deprecating the silent addition of its score columns to a
     # selection. Naming them keeps today's output and stops a future release
     # from changing it underneath us; the ranking itself never reads them.
-    query = scoped(table.search(vector).distance_type("cosine"), company)
+    query = scoped(table.search(vector).distance_type("cosine"), company, scope)
     return query.limit(FUSION_DEPTH).select([*FIELDS, "_distance"]).to_list()
 
 
-def keyword_hits(table: lancedb.table.Table, text: str, company: str | None) -> list[dict]:
+def keyword_hits(table: lancedb.table.Table, text: str, company: str | None, scope: str | None = None) -> list[dict]:
     """The chunks whose words best match the question, from LanceDB's full-text index."""
-    query = scoped(table.search(text, query_type="fts"), company)
+    query = scoped(table.search(text, query_type="fts"), company, scope)
     return query.limit(FUSION_DEPTH).select([*FIELDS, "_score"]).to_list()
 
 
@@ -144,10 +171,10 @@ def fuse(rankings: list[list[dict]]) -> list[dict]:
     rescaling them would invent a comparison the numbers do not support; their
     orderings, though, are directly comparable.
     """
-    fused: dict[tuple[int, int], dict] = {}
+    fused: dict[tuple[str, str, int, int], dict] = {}
     for ranking in rankings:
         for rank, hit in enumerate(ranking, start=1):
-            key = (hit["page"], hit["chunk"])
+            key = (hit["company"], hit["fiscal_year"], hit["page"], hit["chunk"])
             entry = fused.setdefault(key, {field: hit[field] for field in FIELDS} | {"rrf": 0.0})
             entry["rrf"] += 1 / (RRF_K + rank)
     return sorted(fused.values(), key=lambda hit: -hit["rrf"])
@@ -170,16 +197,26 @@ def search(
     does not answer at all. The expand and hybrid switches exist so a change
     here can be measured against the retrieval it replaces (rag-eval).
     """
-    text_query = expand_fiscal_years(question) if expand else question
-    vector = embed_texts(model, [QUERY_INSTRUCTION + text_query])[0]
-    rankings = [vector_hits(table, vector, company)]
+    neutral = without_company(question, company)
+    text_query = expand_fiscal_years(neutral) if expand else neutral
+    if re.search(r"\btotal (?:assets|liabilities|equity)\b", neutral, re.I) and 'balance sheet' not in neutral.lower():
+        text_query += " balance sheet"
+    # Keep the refusal floor on the original question representation it was
+    # calibrated against. Ranking rewrites otherwise depress ordinary prose
+    # questions (for example a publisher's title count) below that floor.
+    gate_query = expand_fiscal_years(question) if expand else question
+    vector, gate_vector = embed_texts(model, [QUERY_INSTRUCTION + text_query,
+                                             QUERY_INSTRUCTION + gate_query])
+    scopes = set(re.findall(r"\b(standalone|consolidated)\b", question.lower()))
+    requested_scope = next(iter(scopes)) if len(scopes) == 1 else None
+    rankings = [vector_hits(table, vector, company, requested_scope)]
     if hybrid:
-        rankings.append(keyword_hits(table, text_query, company))
+        rankings.append(keyword_hits(table, keyword_query(question, company), company, requested_scope))
 
     results = []
     for hit in fuse(rankings)[:k]:
         stored = np.asarray(hit.pop("vector"), dtype=np.float32)
-        results.append({**hit, "score": float(stored @ vector)})
+        results.append({**hit, "score": float(stored @ gate_vector)})
     return results
 
 
@@ -205,22 +242,29 @@ def page_context(
     just below them.
     """
     hits = hits[:seeds]
-    context = {(hit["page"], hit["chunk"]): {**hit, "sibling": False} for hit in hits}
+    if len({(h['company'], h['fiscal_year']) for h in hits}) > 1:
+        raise ValueError("Page context must belong to one filing")
+    context = {}
+    spent = 0
+    for hit in hits:
+        key = (hit["page"], hit["chunk"])
+        if key not in context and spent + hit["tokens"] <= budget:
+            context[key] = {**hit, "sibling": False}
+            spent += hit["tokens"]
     spent = sum(hit["tokens"] for hit in context.values())
     first_seen: dict[int, int] = {}
     for position, hit in enumerate(hits):
         first_seen.setdefault(hit["page"], position)
 
-    # Candidates are ordered by distance first and rank second: every hit gets
-    # its immediate neighbours before any hit gets its far ends. Ordering by
-    # page instead let the first page swallow the budget, and the page ranked
-    # fifth - the one holding the answer - never got its turn.
+    # Reserve ranked seeds first, then finish the strongest page before
+    # spending on weaker pages' continuations. Distance-first expansion lost
+    # HCC's SOCIE continuation even though its page was highly ranked.
     candidates: list[tuple[int, int, dict]] = []
     for hit in hits:
         # Scoped to the hit's own filing: page 114 exists in every document.
         siblings = (
             table.search()
-            .where(f"company = '{hit['company']}' AND page = {hit['page']}")
+            .where("company = '" + hit["company"].replace("'", "''") + f"' AND page = {int(hit['page'])}")
             .limit(100)
             .select(TEXT_FIELDS)
             .to_list()
@@ -228,7 +272,7 @@ def page_context(
         for row in siblings:
             distance = abs(row["chunk"] - hit["chunk"])
             if distance:
-                candidates.append((distance, first_seen[row["page"]], row))
+                candidates.append((first_seen[row["page"]], distance, row))
     candidates.sort(key=lambda candidate: candidate[:2])
 
     for _, _, row in candidates:

@@ -1,0 +1,265 @@
+{
+ "label": "funds-reports-release",
+ "samples": 3,
+ "when": "2026-10-19 00:57",
+ "questions": [
+  {
+   "id": "bel-standalone",
+   "type": "scope",
+   "company": "BEL",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "BEL's standalone total assets as at 31 March 2026 were ₹44,09,039 lakh, as shown in the standalone balance sheet [page 98]. The balance sheet header gives the unit as ₹ in lakhs.",
+     "raw": "BEL's standalone total assets as at 31 March 2026 were ₹44,09,039 lakh, as shown in the standalone balance sheet [page 98]. The balance sheet header gives the unit as ₹ in lakhs.",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same figure (₹44,09,039 lakh), for the correct entity (BEL standalone), at the correct date (31 March 2026), with the correct unit (lakhs). All key details match the reference answer. | faithful: The answer states that BEL's standalone total assets as at 31 March 2026 were ₹44,09,039 lakh. This figure appears directly in the cited page 98, specifically in chunk 7 which shows 'TOTAL ASSETS | | | 44,09,039 | 40,41,808' and also in chunk 2 which shows 'TOTAL EQUITY AND LIABILITIES | | | 44,09,039 | 40,41,808'. The answer correctly identifies the unit as ₹ in lakhs, which is stated in the balance sheet header. No computed figures are present in the answer - it only cites a figure that appears directly on the cited page. Therefore, the answer is faithful to the cited text.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "BEL's standalone total assets as at 31 March 2026 were ₹44,09,039 lakh. The standalone balance sheet gives this as \"TOTAL ASSETS\" with the header \"(₹ in Lakhs)\" [page 98]. The non-current assets (₹6,31,699 lakh) and current assets (₹37,77,340 lakh) on the same page add up to this total [page 98].",
+     "raw": "BEL's standalone total assets as at 31 March 2026 were ₹44,09,039 lakh. The standalone balance sheet gives this as \"TOTAL ASSETS\" with the header \"(₹ in Lakhs)\" [page 98]. The non-current assets (₹6,31,699 lakh) and current assets (₹37,77,340 lakh) on the same page add up to this total [page 98].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": false,
+     "judge": "correct: The system answer provides the exact same figure (₹44,09,039 lakh) for BEL's standalone total assets as at 31 March 2026, matching the reference answer in both amount and unit (lakhs). The answer correctly identifies the scope as standalone and the period as FY26 (31 March 2026). The additional detail about the breakdown of non-current and current assets is accurate and supportive. | faithful: The answer claims that non-current assets (₹6,31,699 lakh) and current assets (₹37,77,340 lakh) add up to the total assets of ₹44,09,039 lakh. While this arithmetic is correct (6,31,699 + 37,77,340 = 44,09,039), this is a computed figure that is not explicitly labelled as such in the answer. The answer uses the phrase 'add up to' which indicates computation but does not explicitly state this is a computed or calculated figure. According to the faithfulness criteria, computed figures must be labelled to maintain faithfulness. The answer presents this sum as if it is simply being verified from the page, rather than being explicitly identified as a computation.",
+     "computed": [
+      {
+       "figure": "₹44,09,039 lakh (sum of non-current and current assets)",
+       "labelled": false,
+       "arithmetic_right": true
+      }
+     ],
+     "passed": false
+    },
+    {
+     "text": "BEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakhs. The standalone balance sheet prints this as \"TOTAL ASSETS\" with the header \"(₹ in Lakhs)\" [page 98].",
+     "raw": "BEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakhs. The standalone balance sheet prints this as \"TOTAL ASSETS\" with the header \"(₹ in Lakhs)\" [page 98].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same figure (₹44,09,039 lakhs) for the same period (31 March 2026) and scope (standalone) as the reference answer. The unit (lakhs) matches correctly. The additional detail about the balance sheet presentation does not contradict or change the core answer. | faithful: The answer states that BEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakhs. This figure appears directly on page 98 in the Standalone Balance Sheet under 'TOTAL ASSETS' for 'As at 31 March 2026' with the header '(₹ in Lakhs)'. The figure is printed on the cited page and is not computed; therefore, no computed figures need to be listed. All factual claims in the answer are supported by the cited text.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "bel-consolidated",
+   "type": "scope",
+   "company": "BEL",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "BEL's consolidated total assets at 31 March 2026 were ₹ 44,53,752 lakhs, as printed in the consolidated balance sheet [page 145].",
+     "raw": "BEL's consolidated total assets at 31 March 2026 were ₹ 44,53,752 lakhs, as printed in the consolidated balance sheet [page 145].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      145
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same figure (₹44,53,752 lakhs) for the same period (31 March 2026) and scope (consolidated) as the reference answer. The unit (lakhs) matches, and the answer correctly identifies this as consolidated total assets. The page citation is ignored per instructions. | faithful: The answer states that BEL's consolidated total assets at 31 March 2026 were ₹ 44,53,752 lakhs. This figure is directly printed in page 145 chunk 6, which shows 'TOTAL ASSETS | | 44,53,752 | 40,83,186' for the consolidated balance sheet as at 31 March 2026. The answer correctly cites this figure from the consolidated balance sheet on page 145, and no computation is involved. The claim is fully supported by the cited text.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "BEL's consolidated total assets at 31 March 2026 were ₹44,53,752 lakh. The consolidated balance sheet prints this as \"TOTAL ASSETS\" in a table headed ₹ in lakhs [page 145].",
+     "raw": "BEL's consolidated total assets at 31 March 2026 were ₹44,53,752 lakh. The consolidated balance sheet prints this as \"TOTAL ASSETS\" in a table headed ₹ in lakhs [page 145].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      145
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same figure (₹44,53,752 lakh), for the same period (31 March 2026), and the same scope (consolidated) as the reference answer. The unit (lakh) matches correctly. The additional detail about the source (page reference and table description) does not contradict the answer and is acceptable per the grading criteria. | faithful: The answer states that BEL's consolidated total assets at 31 March 2026 were ₹44,53,752 lakh. This figure appears directly in page 145 chunk 6 in the consolidated balance sheet row labeled 'TOTAL ASSETS' with the value 44,53,752 for 'As at 31 March 2026'. The answer correctly identifies the source as the consolidated balance sheet with the table headed '₹ in lakhs'. No computed figures are present in the answer - it simply cites a figure that appears directly on the cited page. Therefore, the answer is faithful.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "BEL's consolidated total assets at 31 March 2026 were ₹ 44,53,752 lakhs [page 145]. The page labels the figures \"(₹ in lakhs)\" and is consolidated.",
+     "raw": "BEL's consolidated total assets at 31 March 2026 were ₹ 44,53,752 lakhs [page 145]. The page labels the figures \"(₹ in lakhs)\" and is consolidated.",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      145
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same figure (₹44,53,752 lakhs) for the same period (31 March 2026) and scope (consolidated) as the reference answer. The unit (lakhs) matches correctly. The additional detail about page labeling and confirmation of consolidated nature is extra true detail that does not contradict the reference answer. | faithful: The answer states that BEL's consolidated total assets at 31 March 2026 were ₹44,53,752 lakhs. This figure appears directly in page 145 chunk 6 in the 'TOTAL ASSETS' row for 'As at 31 March 2026'. The answer correctly identifies the statement scope as consolidated and notes that the figures are labeled '(₹ in lakhs)'. No computed figures are present in the answer - it only cites a figure that appears directly on the cited page. Therefore, the answer is faithful to the cited pages.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "hdfcbank-units",
+   "type": "units-in-thousands",
+   "company": "HDFCBANK",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "HDFC Bank's standalone total assets as at March 31, 2026 were 43,648,863,308, in ₹ thousands as printed on the standalone balance sheet [page 353]. The same total appears on both the liabilities and assets sides.",
+     "raw": "HDFC Bank's standalone total assets as at March 31, 2026 were 43,648,863,308, in ₹ thousands as printed on the standalone balance sheet [page 353]. The same total appears on both the liabilities and assets sides.",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      353
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same figure (43,648,863,308) in the same unit (₹ thousands), for the same period (March 31, 2026), and the same scope (standalone). The answer correctly identifies this as the balance sheet figure and notes it appears on both sides of the balance sheet, which is accurate. The page citation is ignored per instructions. | faithful: The answer states that HDFC Bank's standalone total assets as at March 31, 2026 were 43,648,863,308 in ₹ thousands. This figure is directly printed on page 353, appearing in both the liabilities section (chunk 1) and the assets section (chunk 2) as the 'Total' line item for March 31, 2026. The answer correctly notes that the same total appears on both sides of the balance sheet. No computed figures are present in the answer - it only cites figures that are explicitly printed on the cited page. The answer is therefore faithful to the source material.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "HDFC Bank's standalone total assets at March 31, 2026 were 43,648,863,308, stated in ₹ thousands as printed on the standalone balance sheet [page 353]. The balance sheet's total row matches the liabilities total, so this is the assets total.",
+     "raw": "HDFC Bank's standalone total assets at March 31, 2026 were 43,648,863,308, stated in ₹ thousands as printed on the standalone balance sheet [page 353]. The balance sheet's total row matches the liabilities total, so this is the assets total.",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      353
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same figure (43,648,863,308) in the same unit (₹ thousands), for the same period (March 31, 2026), and the same scope (standalone). The answer correctly identifies this as the total assets from the standalone balance sheet. The page citation is ignored per instructions. | faithful: The answer states that HDFC Bank's standalone total assets at March 31, 2026 were 43,648,863,308 (in ₹ thousands). This figure is directly printed on page 353, appearing in both the liabilities section (chunk 1) and the assets section (chunk 2) as the 'Total' row for March 31, 2026. The answer correctly identifies this as the assets total and notes that it matches the liabilities total. No computed figures are present in the answer - the figure cited is directly stated on the balance sheet. The answer is faithful to the cited pages.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "HDFC Bank's standalone total assets as at March 31, 2026 were 43,648,863,308, in ₹ thousands as printed on the standalone balance sheet [page 353]. The assets total equals the liabilities total for that date [page 353].",
+     "raw": "HDFC Bank's standalone total assets as at March 31, 2026 were 43,648,863,308, in ₹ thousands as printed on the standalone balance sheet [page 353]. The assets total equals the liabilities total for that date [page 353].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      353
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same figure (43,648,863,308) in the same unit (₹ thousands) for the same period (March 31, 2026) and scope (standalone) as the reference answer. The additional detail about assets equaling liabilities is accurate and does not contradict the reference answer. The page citation is ignored per instructions. | faithful: The answer states that HDFC Bank's standalone total assets as at March 31, 2026 were 43,648,863,308 in ₹ thousands. This figure is directly printed on page 353, appearing in both the liabilities section (chunk 1) and assets section (chunk 2) as 'Total | 43,648,863,308'. The answer also correctly states that the assets total equals the liabilities total for that date, which is confirmed by both sections showing the same total figure. No computed figures are present in the answer - all numbers are directly cited from the balance sheet. The answer is faithful to the cited pages.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "indomim-drill",
+   "type": "numeric",
+   "company": "INDOMIM",
+   "split": "test",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "INDO-MIM's standalone total assets at 31 March 2026 were ₹40,808.66 million (amounts in INR million, per the page heading) [page 129].",
+     "raw": "INDO-MIM's standalone total assets at 31 March 2026 were ₹40,808.66 million (amounts in INR million, per the page heading) [page 129].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      129
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same figure (₹40,808.66 million), confirms it is standalone, specifies the correct date (31 March 2026), and matches the unit (million). The page citation is ignored per instructions. All key details align with the reference answer. | faithful: The answer states that INDO-MIM's standalone total assets at 31 March 2026 were ₹40,808.66 million. This figure appears directly in the cited page 129, in the 'TOTAL ASSETS' row showing 40,808.66 for 31 March 2026. The answer correctly identifies the amounts as being in INR million per the page heading. No computed figures are present in the answer - it simply cites a figure that appears directly on the balance sheet. The citation is accurate and the statement is faithful to the source material.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "INDO-MIM's standalone total assets at 31 March 2026 were 40,808.66 (INR million), per the standalone balance sheet [page 129]. The page states the unit as \"Amounts in INR million, unless otherwise stated.\"",
+     "raw": "INDO-MIM's standalone total assets at 31 March 2026 were 40,808.66 (INR million), per the standalone balance sheet [page 129]. The page states the unit as \"Amounts in INR million, unless otherwise stated.\"",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      129
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the same figure (40,808.66 INR million), the same scope (standalone), and the same period (31 March 2026) as the reference answer. The unit is correctly stated as INR million, matching the reference. All key details align. | faithful: The answer states that INDO-MIM's standalone total assets at 31 March 2026 were 40,808.66 INR million. This figure appears directly in page 129 chunk 2, in the row 'TOTAL ASSETS | 40,808.66 | 35,412.95'. The answer also correctly notes that the page states the unit as 'Amounts in INR million, unless otherwise stated,' which is confirmed in the header of all chunks from page 129. No computed figures are present in the answer - it simply cites a figure that appears directly on the cited page. Therefore, the answer is faithful.",
+     "computed": [],
+     "passed": true
+    },
+    {
+     "text": "INDO-MIM's standalone total assets at 31 March 2026 were INR 40,808.66 million, as printed in the standalone balance sheet [page 129]. The page states the unit as \"Amounts in INR million, unless otherwise stated\" [page 129].",
+     "raw": "INDO-MIM's standalone total assets at 31 March 2026 were INR 40,808.66 million, as printed in the standalone balance sheet [page 129]. The page states the unit as \"Amounts in INR million, unless otherwise stated\" [page 129].",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      129
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the exact same figure (INR 40,808.66 million), for the correct scope (standalone), at the correct date (31 March 2026), and with the correct unit (million). All key details match the reference answer. | faithful: The answer states that INDO-MIM's standalone total assets at 31 March 2026 were INR 40,808.66 million. This figure is directly printed in page 129 chunk 2, which shows 'TOTAL ASSETS | 40,808.66 | 35,412.95'. The answer also correctly cites that the unit is 'Amounts in INR million, unless otherwise stated' as stated in page 129. No computed figures are present in the answer - it only reports a figure that is explicitly printed on the cited page. Therefore, the answer is faithful to the cited pages.",
+     "computed": [],
+     "passed": true
+    }
+   ]
+  }
+ ]
+}

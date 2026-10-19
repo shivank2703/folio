@@ -1,0 +1,24 @@
+{"id": "kotak-cost", "kind": "lookup", "fund": "kotak-manufacture", "question": "What is the Direct-plan expense ratio?", "contains": ["0.65%", "Base expense ratio", "2026-09-30", "page=20"]}
+{"id": "hdfc-cost", "kind": "lookup", "fund": "hdfc-defence", "question": "What is the Direct-plan expense ratio?", "contains": ["0.82%", "Base expense ratio", "2026-09-30", "page=29"]}
+{"id": "motilal-cost", "kind": "lookup", "fund": "motilal-nifty500", "question": "What is the Direct-plan expense ratio?", "contains": ["0.23%", "0.13%", "2026-08-31", "page=5"]}
+{"id": "hdfc-benchmark", "kind": "lookup", "fund": "hdfc-defence", "question": "What is the benchmark?", "contains": ["NIFTY India Defence Index", "page=29"]}
+{"id": "kotak-exit", "kind": "lookup", "fund": "kotak-manufacture", "question": "What is the exit load?", "contains": ["0.5%", "90 days", "page=20"]}
+{"id": "motilal-exit", "kind": "lookup", "fund": "motilal-nifty500", "question": "What is the exit load?", "contains": ["1%", "15 days", "page=5"]}
+{"id": "hdfc-bel-weight", "kind": "lookup", "fund": "hdfc-defence", "question": "What is the BEL weight?", "contains": ["14.87%", "HDFCDFNFND row 9", "2026-09-30"]}
+{"id": "kotak-sun-weight", "kind": "lookup", "fund": "kotak-manufacture", "question": "What is the SUNPHARMA weight?", "contains": ["4.35%", "KMI row 5"]}
+{"id": "motilal-hdfc-weight", "kind": "lookup", "fund": "motilal-nifty500", "question": "What is the HDFCBANK weight?", "contains": ["5.66%", "YO18 row 13"]}
+{"id": "hdfc-net-assets", "kind": "lookup", "fund": "hdfc-defence", "question": "What is the net current assets allocation?", "contains": ["-0.60%", "row 42"]}
+{"id": "wrong-period", "kind": "lookup", "fund": "motilal-nifty500", "question": "What is the September 2026 expense ratio?", "refusal": true}
+{"id": "wrong-plan", "kind": "lookup", "fund": "hdfc-defence", "question": "What is the Regular-plan expense ratio?", "refusal": true}
+{"id": "advice-refusal", "kind": "lookup", "fund": "kotak-manufacture", "question": "Which fund is best for me?", "refusal": true}
+{"id": "unindexed-financial", "kind": "lookup", "fund": "kotak-manufacture", "question": "What is the revenue of Bharat Electronics?", "refusal": true}
+{"id": "unknown-holding", "kind": "lookup", "fund": "motilal-nifty500", "question": "What is the weight of Example Unknown Company?", "refusal": true}
+{"id": "wrong-day", "kind": "lookup", "fund": "hdfc-defence", "question": "What was the benchmark on 29 September 2026?", "refusal": true}
+{"id": "hdfc-drill", "kind": "coverage", "fund": "hdfc-defence", "row": 9, "expected": "BEL"}
+{"id": "kotak-drill", "kind": "coverage", "fund": "kotak-manufacture", "row": 5, "expected": "SUNPHARMA"}
+{"id": "motilal-drill", "kind": "coverage", "fund": "motilal-nifty500", "row": 13, "expected": "HDFCBANK"}
+{"id": "cash-unindexed", "kind": "coverage", "fund": "hdfc-defence", "row": 37, "expected": "Not indexed"}
+{"id": "tiny-unindexed", "kind": "coverage", "fund": "motilal-nifty500", "row": 510, "expected": "Not indexed"}
+{"id": "cross-fund-unindexed", "kind": "coverage", "fund": "kotak-manufacture", "row": 15, "expected": "Not indexed"}
+{"id": "hdfc-total-ter-unavailable", "kind": "lookup", "fund": "hdfc-defence", "question": "What is the total TER?", "refusal": true}
+{"id": "motilal-base-expense", "kind": "lookup", "fund": "motilal-nifty500", "question": "What is the base expense ratio?", "contains": ["0.13%", "base expense ratio", "page=5"]}

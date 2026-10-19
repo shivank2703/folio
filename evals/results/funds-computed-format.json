@@ -1,0 +1,88 @@
+{
+ "label": "funds-computed-format",
+ "samples": 3,
+ "when": "2026-10-19 00:56",
+ "questions": [
+  {
+   "id": "chambal-fy25-004",
+   "type": "computed",
+   "company": "CHAMBAL",
+   "split": "fit",
+   "answerable": true,
+   "samples": [
+    {
+     "text": "Standalone total assets were ₹11,146.51 crore at March 31, 2025 and ₹11,293.49 crore at March 31, 2024 [page 98]. Standalone total assets therefore decreased by ₹146.98 crore (computed from [page 98]).",
+     "raw": "Standalone total assets were ₹11,146.51 crore at March 31, 2025 and ₹11,293.49 crore at March 31, 2024 [page 98]. Standalone total assets therefore decreased by ₹146.98 crore (computed from [page 98]).",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the same figures as the reference answer: standalone total assets of ₹11,146.51 crore at March 31, 2025 and ₹11,293.49 crore at March 31, 2024, resulting in a decrease of ₹146.98 crore. The unit (crore), period (March 31, 2024 and March 31, 2025), and scope (standalone) all match the reference answer. The calculation is correct. | faithful: The answer cites page 98 for the total assets figures of ₹11,146.51 crore at March 31, 2025 and ₹11,293.49 crore at March 31, 2024, which are both present in the cited page (shown in chunk 3 as 'Total Assets'). The computed decrease of ₹146.98 crore is explicitly labelled as 'computed from [page 98]' and the arithmetic is correct: ₹11,293.49 crore - ₹11,146.51 crore = ₹146.98 crore. All factual claims are supported by the cited text.",
+     "computed": [
+      {
+       "figure": "₹146.98 crore",
+       "labelled": true,
+       "arithmetic_right": true
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "Total assets were ₹11,146.51 crore at March 31, 2025 and ₹11,293.49 crore at March 31, 2024 [page 98]. The standalone total assets therefore decreased by ₹146.98 crore (computed from [page 98]).",
+     "raw": "Total assets were ₹11,146.51 crore at March 31, 2025 and ₹11,293.49 crore at March 31, 2024 [page 98]. The standalone total assets therefore decreased by ₹146.98 crore (computed from [page 98]).",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the same figures as the reference answer: total assets of ₹11,146.51 crore at March 31, 2025 and ₹11,293.49 crore at March 31, 2024, resulting in a decrease of ₹146.98 crore. The amounts are in the correct unit (crore), the periods are correct (standalone basis), and the direction of change (decrease/fell) is accurately represented. The answer matches the reference answer in all material respects. | faithful: The answer cites page 98 for the total assets figures of ₹11,146.51 crore at March 31, 2025 and ₹11,293.49 crore at March 31, 2024, which are both present in the cited page (shown in chunk 3 as 'Total Assets'). The computed decrease of ₹146.98 crore is explicitly labelled as 'computed from [page 98]' and the arithmetic is correct: ₹11,293.49 crore - ₹11,146.51 crore = ₹146.98 crore. All factual claims are supported by the cited text.",
+     "computed": [
+      {
+       "figure": "₹146.98 crore",
+       "labelled": true,
+       "arithmetic_right": true
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "Standalone total assets were Rs. 11,293.49 crore as at March 31, 2024 and Rs. 11,146.51 crore as at March 31, 2025 [page 98]. The change is a decrease of Rs. 146.98 crore (computed from [page 98]).",
+     "raw": "Standalone total assets were Rs. 11,293.49 crore as at March 31, 2024 and Rs. 11,146.51 crore as at March 31, 2025 [page 98].\n\nThe change is a decrease of Rs. 146.98 crore (computed from [page 98]).",
+     "refused": false,
+     "reason": "",
+     "cited": [
+      98
+     ],
+     "invalid": [],
+     "ungrounded": [],
+     "recited": [],
+     "leaked_refusal": false,
+     "correct": true,
+     "faithful": true,
+     "judge": "correct: The system answer provides the same figures as the reference answer: standalone total assets of ₹11,293.49 crore as at March 31, 2024 and ₹11,146.51 crore as at March 31, 2025, with a decrease of ₹146.98 crore. The unit (crore), period (March 31, 2024 to March 31, 2025), scope (standalone), and the computed change are all correct and match the reference answer. | faithful: The answer states standalone total assets were Rs. 11,293.49 crore as at March 31, 2024 and Rs. 11,146.51 crore as at March 31, 2025, both of which are directly supported by page 98 (Total Assets row showing 11,146.51 for 2025 and 11,293.49 for 2024). The computed decrease of Rs. 146.98 crore is properly labelled as computed and the arithmetic is correct: 11,293.49 - 11,146.51 = 146.98. All factual claims are supported by the cited page.",
+     "computed": [
+      {
+       "figure": "decrease of Rs. 146.98 crore",
+       "labelled": true,
+       "arithmetic_right": true
+      }
+     ],
+     "passed": true
+    }
+   ]
+  }
+ ]
+}

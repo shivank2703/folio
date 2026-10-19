@@ -80,3 +80,17 @@ Stage 9, ingest/build.py and company scoping (skipped 2026-09-22):
     `list_tables()` actually returning, why did the membership test fail
     silently instead of raising, and what would have caught it: a second
     build in the same session, or a unit test?
+
+## Funds · October 2026 — review after build
+
+Interview topics: structured disclosure ingestion versus retrieval; provenance
+and page numbering; scope-aware hybrid search; fixed-budget context packing;
+evaluation with blind judges and deterministic coverage checks.
+
+1. Why does BEL remain "Not indexed" in Kotak even though its annual report is
+   searchable through HDFC? Trace eligibility, manifest coverage and UI routing.
+2. How can HCC's answer page be retrieved yet its answer still be missing?
+   Explain seed reservation, continuation priority and the unchanged token budget.
+3. Why do factsheet and portfolio dates, BER/TER definitions, and statement scope
+   need separate fields? Give an example where collapsing them creates a plausible
+   but unsupported answer.

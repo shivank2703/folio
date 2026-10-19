@@ -2,17 +2,22 @@
 
 *folio: a numbered page of a book or filing. Every claim carries the folio it came from.*
 
-Ask a question about an Indian listed company's annual report and get an answer
-where **every claim cites the page it came from** — or an honest *"Not in the
-filing."*
+Read public mutual-fund disclosures and ask questions about Indian annual
+reports. **Every reported fact links to its source page or spreadsheet row**,
+or the answer is *"Not in the filing."*
 
-**Live demo: [folio-india.streamlit.app](https://folio-india.streamlit.app)** · ten questions per visit
+**Live demo: [folio-india.streamlit.app](https://folio-india.streamlit.app)** · ten annual-report questions per visit
 
 ![A question about HCC's standalone total assets gets a cited answer and opens the cited page 114 chunk; a question about EV charging stations is refused as not in the filing](docs/demo.gif)
 
-Four annual reports in one index: Hindustan Construction, Chambal Fertilisers
-and Navneet Education (FY25), and Unihealth Hospitals (FY26, an NSE SME
-listing), added by one command (see [Add a company](#add-a-company)).
+The Funds reader covers Kotak Manufacture in India, HDFC Defence, and Motilal
+Oswal Nifty 500 Index Fund. Their complete September 2026 portfolios contain
+588 instrument rows; the top ten domestic equities from each form a union of
+28 companies. These FY26 reports join the four existing filings.
+
+Choose **Funds** for costs, benchmark, exit load, holdings and report drill-down,
+or **Companies** for annual-report Q&A. Coverage is per fund: a company outside
+one fund’s top ten remains **Not indexed** there, even if another fund includes it.
 
 ## Why
 
@@ -22,11 +27,12 @@ know three things the page knows and a chatbot usually loses:
 
 - **Which page it came from**, so it can be verified in seconds.
 - **Its unit.** "2,28,299" means nothing until the page says *₹ in Lakhs* — and
-  one of these three companies reports in lakhs while the others use crore.
+  reports use crore, lakh, million and thousand units.
 - **Its scope.** Standalone and consolidated statements repeat the same row
   labels with different numbers, eighty pages apart.
 
-Folio is built so a claim missing any of the three never reaches the reader.
+Folio preserves these labels through retrieval and shows the evidence beside the answer.
+Ambiguous scope remains explicitly unstated; figure-grounding warnings remain visible.
 
 ## Architecture
 
@@ -37,7 +43,8 @@ flowchart TB
         PDF --> EX[extract<br/>PyMuPDF, page-wise]
         EX --> PRE[preprocess<br/>furniture, columns, rows,<br/>titles, units, period headers]
         PRE --> TB[tables<br/>pymupdf4llm on ruled pages,<br/>accepted behind four checks]
-        TB --> CH[chunk<br/>~200 tokens, never across a page]
+        TB --> QA[exclude suspect prose pages<br/>label statement scope]
+        QA --> CH[chunk<br/>~200 tokens, never across a page]
         CH --> EM[embed<br/>bge-small-en-v1.5 via ONNX]
         EM --> DB[(LanceDB<br/>vectors + full-text index<br/>a release asset, fetched at startup)]
     end
@@ -51,12 +58,14 @@ flowchart TB
         G -->|passes| GEN[Claude Haiku 5.5<br/>cite-every-claim prompt]
         GEN --> V[strict refusal · validate citations<br/>ground every figure on its page<br/>scrub advice]
         V --> UI[answer + sources panel]
+        FS[verified fund factsheet fields<br/>and original spreadsheet rows] --> LOOKUP[deterministic cited lookups]
+        LOOKUP --> UI
     end
 ```
 
 ## How a question becomes a cited answer
 
-1. **Pick the filing.** Page numbers repeat across reports — all three have a
+1. **Pick the filing.** Page numbers repeat across reports — many have a
    page 114 — so every query is filtered to one company. Comparing companies is
    a later feature, not something search should do by accident.
 2. **Expand the fiscal year.** Questions say "FY25"; statements say "As at
@@ -97,7 +106,7 @@ Every `[page N]` in an answer links to the issuer's PDF opened at that page.
 
 ## The corpus, and a worked example
 
-Four filings, listed with their exact download URL and SHA-256 in
+Annual reports are listed with their exact download URL and SHA-256 in
 [`corpus/SOURCES.md`](corpus/SOURCES.md); `corpus/corpus.json` carries the same
 in machine-readable form, and the build verifies every checksum before
 indexing. The PDFs themselves are not committed.
@@ -114,7 +123,7 @@ Particulars | Notes | As at 31st March, 2025 | As at 31st March, 2024
 TOTAL ASSETS | 2,28,299 | 1,74,089
 ```
 
-The other two filings report in crore. Read "2,28,299" with the wrong unit and
+Many other filings report in crore. Read "2,28,299" with the wrong unit and
 the answer is wrong by a factor of a hundred, while still citing the correct
 page. So the unit line is treated as load-bearing throughout: it is never
 stripped as repeated page furniture, it is carried into every chunk of its
@@ -130,7 +139,7 @@ python3 -m venv .venv && .venv/bin/python -m pip install -r requirements.txt
 ```
 
 Python 3.13. Nothing is built to try it: on first start the app downloads the
-search index named in `corpus/index.json` (a release asset, ~14 MB) and checks
+search index named in `corpus/index.json` (a release asset; its exact size is recorded in that pointer) and checks
 its SHA-256. **No API key is needed** for retrieval, the sources panel or the
 refusal path — only for generating prose answers. To add a key, copy
 `.streamlit/secrets.toml.example` to `.streamlit/secrets.toml`, or put
@@ -141,6 +150,27 @@ Rebuilding everything from source, after downloading the PDFs named in
 Retrieval alone, with no key and no UI: `.venv/bin/python -m retrieve.smoke`.
 The answer-quality eval (spends API credit, about $0.50 a run):
 `.venv/bin/python -m evals.score --label mine`.
+
+## Refresh a public fund snapshot
+
+Download the exact official files referenced in `corpus/funds-sources.json`
+into the ignored `data/funds/` paths named there. Inspect the original cells
+and rendered factsheet pages, update the source hashes, row ranges, dates and
+reviewed company mappings, then run:
+
+```bash
+.venv/bin/python -m funds.build
+.venv/bin/python -m unittest discover -s tests
+.venv/bin/python -m evals.funds --output evals/results/my-fund-checks.json
+.venv/bin/python -m evals.score --label my-fund-reports --questions evals/funds-reports.jsonl
+```
+
+The builder verifies checksums, sheet identity, headers and the disclosed total.
+It reads cached spreadsheet cells without executing formulas. Every disclosed
+instrument remains in the table; only ten domestic equities per fund are eligible
+for annual-report Q&A. Negative net-current-asset rows and tiny weight bounds
+are retained. Factsheet fields are reviewed transcriptions, not generated text.
+Use a new result filename on every evaluation; existing results are preserved.
 
 ## Add a company
 
@@ -204,6 +234,28 @@ answer.
 
 v1.0 and v1.1 were measured on the first 20 questions; v1.2 on all 24.
 
+Funds comparison, measured 19 October on the same 24 questions × three samples.
+The saved pre-change run is preserved; the historical release table above is a
+separate run, not the before score for this step.
+
+| Measure | Saved v1.2 baseline | Funds candidate |
+|---|---|---|
+| Answerable passed | 44/54 (81%) | 53/54 (98%) |
+| Correct | 51/54 (94%) | 54/54 (100%) |
+| Faithful | 49/54 (91%) | 53/54 (98%) |
+| Bare refusals | 18/18 | 18/18 |
+
+The new annual-report set scored 12/12 correct and 11/12 faithful; the
+24 deterministic fund disclosure/coverage cases and 18 local tests passed.
+Both faithfulness disagreements remain in the automated scores; details and
+intermediate runs are in [evals/RESULTS.md](evals/RESULTS.md).
+
+The expanded index contains **32 filings, 56,112 chunks**, 11,601 source PDF
+pages and 10,015 included pages. It records 1,299 quality exclusions; 1,974
+included pages use the ruled-table reader. Retrieval finds an expected page
+in the top five for 17/18 questions and exact answer text in context for 16/18.
+
+
 v1.1 labelled computed figures, cut refusals to one sentence, checked every
 figure against its cited page, and re-read ruled tables with pymupdf4llm; a
 cross-encoder reranker was tried and **not shipped** (it lost answers on
@@ -219,12 +271,12 @@ are now more often correct and faithful than 4.5's (evals/RESULTS.md).
 
 | | |
 |---|---|
-| Corpus | 4 filings, 1,028 pages → 6,040 chunks, index 10.1 MB as a release asset; 248 pages' tables read by pymupdf4llm |
-| Full rebuild | ~12.5 min; adding one company with `ingest.add` ~3–4 min |
-| Retrieval, 24 questions | 14/18 expected pages in the top 5; 15/18 answer text inside the context |
-| Warm retrieval | ~21 ms search, ~10 ms page expansion |
-| Live answer time | ~3.3 s on average for a cited answer (9.7 s worst, Haiku 5.5 thinks first), ~0.1 s for a refusal at the floor |
-| Cost per answered question | $0.0012 on average on Haiku 5.5 (was ~$0.008 on Haiku 4.5) |
+| v1.2 corpus (historical) | 4 filings, 1,028 pages → 6,040 chunks, index 10.1 MB as a release asset; 248 pages' tables read by pymupdf4llm |
+| v1.2 full rebuild | ~12.5 min; adding one company with `ingest.add` ~3–4 min |
+| v1.2 retrieval, 24 questions | 14/18 expected pages in the top 5; 15/18 answer text inside the context |
+| v1.2 warm retrieval | ~21 ms search, ~10 ms page expansion |
+| v1.2 live answer time | ~3.3 s on average for a cited answer (9.7 s worst, Haiku 5.5 thinks first), ~0.1 s for a refusal at the floor |
+| v1.2 cost per answered question | $0.0012 on average on Haiku 5.5 (was ~$0.008 on Haiku 4.5) |
 
 ## Limitations
 
@@ -233,12 +285,12 @@ against:
 
 - **The similarity floor does not separate answerable questions from
   unanswerable ones**, measured: the weakest answerable question scores
-  0.702 and the strongest not-in-filing one 0.697. It stays as a cheap
-  pre-filter for gross mismatches, and has refused no answerable question in
-  any eval run; refusal rests on the prompt contract plus the strict-refusal
-  cut, which refused all 15 not-in-filing samples. A cross-encoder gate was
+  0.702 and the strongest not-in-filing one 0.757 in the final Funds smoke
+  check. It stays as a cheap pre-filter for gross mismatches; refusal rests
+  on the prompt contract plus the strict-refusal cut, which refused all 18
+  not-in-filing samples in the final evaluation. A cross-encoder gate was
   tried and lost answers on held-out questions.
-- **Five not-in-filing questions are too few to fit a refusal threshold.**
+- **Six not-in-filing questions are too few to fit a refusal threshold.**
   That is part of why the reranker's threshold did not hold; the eval needs
   more negatives before the next attempt.
 - **The expansion width was tuned on the same nine questions.** Eight seed
@@ -251,18 +303,34 @@ against:
   expansion absorbs that today; more documents may not be so forgiving.
 - **One fiscal year, one filing per question.** Multi-year ingest and
   comparing companies in a single answer are not built.
-- **Notes pages carry no standalone/consolidated tag.** Statement pages do, via
-  their titles, so a balance-sheet chunk knows which it is. A note does not:
-  for a question about receivables ageing, the consolidated schedule can
-  outrank the standalone one, and only the page number distinguishes them.
+- **Scope follows explicit financial headings.** Every chunk carries standalone,
+  consolidated, mixed, or unstated. Repeated note headings count; the pipeline
+  does not infer a missing heading from a nearby section. A requested scope
+  excludes the opposite explicit scope but retains ambiguous pages.
+- **Some pages are deliberately excluded.** Visual QA and a conservative prose
+  check remove suspect interleaved columns. This may also omit legitimate
+  narrative tables. It reduces coverage; it does not repair their layout.
+  Excluded viewer pages and reasons are recorded in the corpus manifest.
+- **Fund dates are independent.** All portfolios are dated 30 September 2026.
+  Kotak and HDFC factsheets share that date; Motilal's product page still linked
+  an August 2026 factsheet when checked on 18 October. The reader labels both
+  dates and refuses incompatible dated lookups. It is a verified snapshot,
+  not a live feed. Kotak/HDFC disclose base expense ratios including specified
+  levies; Motilal discloses total TER and a separate base ratio. These labels
+  are preserved rather than presented as directly interchangeable costs.
 - **Tables are read well only where they are ruled.** pymupdf4llm reads
   gridded notes exactly (ageing schedules, borrowings, cash flow), but merges
   whole columns on shaded statements and fails on rotated ones, so it is
-  accepted page by page behind four checks, and 670 of 872 pages keep the
-  geometry-based reading. Statements of changes in equity and sustainability
+  accepted page by page behind four checks, while other pages retain the
+  geometry-based reading or are excluded by the quality check. Statements of changes in equity and sustainability
   grids remain the weakest pages.
 - **The embedding model is a quantized export**, so published benchmark scores
   describe slightly different weights.
+- **Ten whole rows exceed the embedding model’s 512-token input limit.**
+  Their vectors are truncated; full text remains available to keyword search
+  and the answer context. Decorative dotted leaders have been removed before
+  embedding. This is a retrieval limitation on those rows, not a claim that
+  every page has been exhaustively validated.
 - **The judge is a model.** Read by hand, it made three mistakes in the
   runs above (it called "(146.98)" bad arithmetic, and "5.8 km" computed when
   the page prints it). It was kept frozen across the step so that every run is
@@ -293,14 +361,12 @@ One step per Saturday ([SPEC.md §4](SPEC.md)):
 - **Accurate** (04 Oct 2026, v1.1): a 20-question eval with a
   Haiku judge; figure-level citation checks; labelled computed figures; strict
   refusals; ruled tables via pymupdf4llm. Reranker measured and not shipped.
-- **Ingest** (04–11 Oct 2026, v1.2, this release): `ingest.add` finds, verifies
+- **Ingest** (04–11 Oct 2026, v1.2): `ingest.add` finds, verifies
   and indexes a listed company's latest annual report; the index moved out of
   git to a release asset; the public demo got per-visitor and daily limits.
-- **Funds** (17 Oct): mutual fund mode. Holdings and weights from a fund's
-  monthly portfolio disclosure, read as a table; expense ratio, benchmark and
-  exit load from its factsheet; the top 10–15 holdings drilled into through the
-  annual-report Q&A (companies indexed by Ingest). Every claim cited, no buy or
-  sell language.
+- **Funds** (17–19 Oct, v1.3 candidate): three public fund snapshots, full
+  holdings tables, source-row citations, top-ten annual-report drill-down,
+  explicit statement scope and improved page-continuation packing.
 - **Agent** (24 Oct): one plain Anthropic tool-use loop over company and fund
   tools, producing a one-page memo with every sentence cited.
 
@@ -314,6 +380,11 @@ The source PDFs are public statutory filings and are **not** committed;
 is published as an asset on this repository's `index` release (it was committed
 until v1.1) and fetched by the app at startup, with attribution to each issuing
 company and a link to its source document.
+
+`corpus/funds.json` is a normalized snapshot of public scheme disclosures,
+with source URLs, SHA-256 hashes, PDF pages and original spreadsheet row numbers.
+The original PDFs and spreadsheets stay out of git. No personal portfolios,
+folios or invested amounts are included.
 
 Licensed under [AGPL-3.0](LICENSE), matching PyMuPDF's terms for a
 network-served application.
