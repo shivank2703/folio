@@ -1,0 +1,488 @@
+{
+ "label": "agent-phrasing",
+ "samples": 3,
+ "when": "2026-10-25T07:10:57.585571+00:00",
+ "questions": [
+  {
+   "id": "bel-code-fy",
+   "samples": [
+    {
+     "text": "**Bharat Electronics Ltd. annual report, FY26**\n\nBEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakh, as printed in the standalone balance sheet [page 98](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=98). That page also gives the 31 March 2025 figure of ₹40,41,808 lakh [page 98](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=98).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "BEL",
+        "question": "What were BEL standalone total assets at the end of FY26?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "BEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakh, as printed in the standalone balance sheet [page 98]. That page also gives the 31 March 2025 figure of ₹40,41,808 lakh [page 98].",
+        "source": "Bharat Electronics Ltd. annual report, FY26",
+        "query": "What were BEL standalone total assets at the end of FY26?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Bharat Electronics Ltd. annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer cites two figures from page 98: BEL's standalone total assets at 31 March 2026 of ₹44,09,039 lakh and at 31 March 2025 of ₹40,41,808 lakh. Both figures appear exactly as stated in page 98, chunk 2 and chunk 7, in the 'TOTAL ASSETS' and 'TOTAL EQUITY AND LIABILITIES' rows of the Standalone Balance Sheet. No computed figures are presented in the answer - only direct citations from the balance sheet. All factual claims are supported by the cited page."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Bharat Electronics Ltd. annual report, FY26**\n\nBEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakhs, as printed in the standalone balance sheet [page 98](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=98).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "BEL",
+        "question": "What were BEL standalone total assets at the end of FY26?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "BEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakhs, as printed in the standalone balance sheet [page 98].",
+        "source": "Bharat Electronics Ltd. annual report, FY26",
+        "query": "What were BEL standalone total assets at the end of FY26?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Bharat Electronics Ltd. annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that BEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakhs. This figure appears directly in the cited page 98, specifically in chunk 2 (showing 'TOTAL EQUITY AND LIABILITIES | | | 44,09,039 | 40,41,808') and chunk 7 (showing 'TOTAL ASSETS | | | 44,09,039 | 40,41,808'). The figure is printed in the standalone balance sheet as stated, with no computation required. There are no computed figures in the answer."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Bharat Electronics Ltd. annual report, FY26**\n\nThe standalone balance sheet also reports total equity and liabilities of the same amount [page 98](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=98).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "BEL",
+        "question": "What were BEL standalone total assets at the end of FY26?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "The standalone balance sheet also reports total equity and liabilities of the same amount [page 98].",
+        "source": "Bharat Electronics Ltd. annual report, FY26",
+        "query": "What were BEL standalone total assets at the end of FY26?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct": false,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Bharat Electronics Ltd. annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that the standalone balance sheet reports total equity and liabilities of the same amount. Page 98 chunk 2 clearly shows 'TOTAL EQUITY AND LIABILITIES' as 44,09,039 (as at 31 March 2026) and 40,41,808 (as at 31 March 2025). Page 98 chunk 7 also shows 'TOTAL ASSETS' as 44,09,039 and 40,41,808 respectively. The statement that total equity and liabilities equals the same amount (matching total assets) is directly supported by the cited page. No computed figures are present in the answer - it simply references what the balance sheet reports."
+      }
+     ],
+     "passed": false
+    }
+   ]
+  },
+  {
+   "id": "bel-legal-fy",
+   "samples": [
+    {
+     "text": "**Bharat Electronics Ltd. annual report, FY26**\n\nBEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakh, per the standalone balance sheet [page 98](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=98). The balance sheet is stated in ₹ in lakhs [page 98](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=98).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "BEL",
+        "question": "What were Bharat Electronics Ltd. standalone total assets at the end of FY26?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "BEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakh, per the standalone balance sheet [page 98]. The balance sheet is stated in ₹ in lakhs [page 98].",
+        "source": "Bharat Electronics Ltd. annual report, FY26",
+        "query": "What were BEL standalone total assets at the end of FY26?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Bharat Electronics Ltd. annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that BEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakh. This figure appears directly on page 98 in multiple chunks (chunks 2 and 7) as 'TOTAL ASSETS' with the value 44,09,039 for 'As at 31 March 2026'. The answer also correctly notes that the balance sheet is stated in ₹ in lakhs, which is confirmed in the header 'Standalone Balance Sheet (₹ in Lakhs)' appearing throughout page 98. No computed figures are present in the answer - it only cites figures that appear directly in the source material. All factual claims are supported by the cited pages."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Bharat Electronics Ltd. annual report, FY26**\n\nBEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakh, as printed on the standalone balance sheet [page 98](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=98). The same balance sheet shows total assets of ₹40,41,808 lakh at 31 March 2025 [page 98](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=98).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "BEL",
+        "question": "What were Bharat Electronics Ltd. standalone total assets at the end of FY26?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "BEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakh, as printed on the standalone balance sheet [page 98]. The same balance sheet shows total assets of ₹40,41,808 lakh at 31 March 2025 [page 98].",
+        "source": "Bharat Electronics Ltd. annual report, FY26",
+        "query": "What were BEL standalone total assets at the end of FY26?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Bharat Electronics Ltd. annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "Both figures cited in the answer are directly printed on page 98. The standalone balance sheet shows 'TOTAL ASSETS' of ₹44,09,039 lakh at 31 March 2026 and ₹40,41,808 lakh at 31 March 2025. These exact figures appear in multiple chunks of page 98 (chunks 2 and 7). No computed figures are present in the answer - both numbers are stated as printed on the balance sheet. The answer is faithful to the cited pages."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Bharat Electronics Ltd. annual report, FY26**\n\nBEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakh, as printed in the standalone balance sheet [page 98](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=98). The same balance sheet shows total equity and liabilities of the same amount [page 98](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=98).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "BEL",
+        "question": "What were Bharat Electronics Ltd. standalone total assets at the end of FY26?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "BEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakh, as printed in the standalone balance sheet [page 98]. The same balance sheet shows total equity and liabilities of the same amount [page 98].",
+        "source": "Bharat Electronics Ltd. annual report, FY26",
+        "query": "What were BEL standalone total assets at the end of FY26?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Bharat Electronics Ltd. annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states two facts: (1) BEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakh, and (2) total equity and liabilities were the same amount. Both figures are directly printed in the cited page 98. Page 98 chunk 7 shows 'TOTAL ASSETS | | | 44,09,039 | 40,41,808' and page 98 chunk 2 shows 'TOTAL EQUITY AND LIABILITIES | | | 44,09,039 | 40,41,808'. These are not computed figures but rather figures explicitly stated in the balance sheet. No arithmetic or calculations are performed by the answer. All factual claims are directly supported by the cited text."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "bel-code-date",
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "BEL",
+        "question": "What were BEL standalone total assets at March 31, 2026?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "What were BEL standalone total assets at March 31, 2026?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "correct": false,
+     "faithful": false,
+     "faithfulness_judge": [],
+     "passed": false
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "BEL",
+        "question": "What were BEL standalone total assets at March 31, 2026?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "What were BEL standalone total assets at March 31, 2026?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "correct": false,
+     "faithful": false,
+     "faithfulness_judge": [],
+     "passed": false
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "BEL",
+        "question": "What were BEL standalone total assets at March 31, 2026?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "What were BEL standalone total assets at March 31, 2026?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "correct": false,
+     "faithful": false,
+     "faithfulness_judge": [],
+     "passed": false
+    }
+   ]
+  },
+  {
+   "id": "bel-consolidated-fy",
+   "samples": [
+    {
+     "text": "**Bharat Electronics Ltd. annual report, FY26**\n\nBEL's consolidated total assets at 31 March 2026 were ₹44,53,752 lakh [page 145](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=145).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "BEL",
+        "question": "What were BEL consolidated total assets at the end of FY26?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "BEL's consolidated total assets at 31 March 2026 were ₹44,53,752 lakh [page 145].",
+        "source": "Bharat Electronics Ltd. annual report, FY26",
+        "query": "What were BEL consolidated total assets at the end of FY26?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Bharat Electronics Ltd. annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that BEL's consolidated total assets at 31 March 2026 were ₹44,53,752 lakh. This figure appears directly in page 145 chunk 6, in the row labeled 'TOTAL ASSETS' with the value 44,53,752 for 'As at 31 March 2026'. No computation is involved - the figure is explicitly stated on the cited page. The answer is faithful."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Bharat Electronics Ltd. annual report, FY26**\n\nBEL's consolidated total assets at 31 March 2026 were ₹44,53,752 lakhs [page 145](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=145). The comparative figure at 31 March 2025 was ₹40,83,186 lakhs [page 145](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=145).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "BEL",
+        "question": "What were BEL consolidated total assets at the end of FY26?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "BEL's consolidated total assets at 31 March 2026 were ₹44,53,752 lakhs [page 145]. The comparative figure at 31 March 2025 was ₹40,83,186 lakhs [page 145].",
+        "source": "Bharat Electronics Ltd. annual report, FY26",
+        "query": "What were BEL consolidated total assets at the end of FY26?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Bharat Electronics Ltd. annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "Both figures cited in the answer are directly stated in page 145 chunk 6, which shows the consolidated balance sheet with TOTAL ASSETS of ₹44,53,752 lakhs as at 31 March 2026 and ₹40,83,186 lakhs as at 31 March 2025. No computed figures are present in the answer - both numbers are explicitly printed on the cited page."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Bharat Electronics Ltd. annual report, FY26**\n\nBEL's consolidated total assets at 31 March 2026 were ₹44,53,752 lakhs (₹ in lakhs, as stated on the page) [page 145](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=145).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "BEL",
+        "question": "What were BEL consolidated total assets at the end of FY26?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "BEL's consolidated total assets at 31 March 2026 were ₹44,53,752 lakhs (₹ in lakhs, as stated on the page) [page 145].",
+        "source": "Bharat Electronics Ltd. annual report, FY26",
+        "query": "What were BEL consolidated total assets at the end of FY26?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Bharat Electronics Ltd. annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that BEL's consolidated total assets at 31 March 2026 were ₹44,53,752 lakhs. This figure appears directly in page 145 chunk 6, in the row labeled 'TOTAL ASSETS' with the value 44,53,752 for 'As at 31 March 2026'. The answer correctly cites this figure and specifies the currency unit (₹ in lakhs) as stated on the page. No computed figures are involved, and the cited text directly supports the claim."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "indomim-fy",
+   "samples": [
+    {
+     "text": "**INDO-MIM LTD annual report, FY26**\n\nThe balance sheet states its amounts are in INR million [page 129](https://nsearchives.nseindia.com/annual_reports/AR_30812_INDOMIM_2025_2026_A_5788504_29082026140615.pdf#page=129).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "INDOMIM",
+        "question": "What were INDO-MIM standalone total assets at the end of FY26?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "The balance sheet states its amounts are in INR million [page 129].",
+        "source": "INDO-MIM LTD annual report, FY26",
+        "query": "What were INDOMIM standalone total assets at the end of FY26?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct": false,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "INDO-MIM LTD annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that the balance sheet amounts are in INR million, and this is directly supported by the header text on page 129 which states '(Amounts in INR million, unless otherwise stated)'. This is a factual claim that is explicitly stated in the cited page, not a computed figure. No calculations or derivations are involved."
+      }
+     ],
+     "passed": false
+    },
+    {
+     "text": "**INDO-MIM LTD annual report, FY26**\n\nStandalone total assets at 31 March 2026 were INR 40,808.66 million [page 129](https://nsearchives.nseindia.com/annual_reports/AR_30812_INDOMIM_2025_2026_A_5788504_29082026140615.pdf#page=129).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "INDOMIM",
+        "question": "What were INDO-MIM standalone total assets at the end of FY26?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Standalone total assets at 31 March 2026 were INR 40,808.66 million [page 129].",
+        "source": "INDO-MIM LTD annual report, FY26",
+        "query": "What were INDOMIM standalone total assets at the end of FY26?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "INDO-MIM LTD annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that standalone total assets at 31 March 2026 were INR 40,808.66 million. This figure appears directly in page 129 chunk 2, in the row labeled 'TOTAL ASSETS' with the value 40,808.66 for 31 March 2026. No computation is required - the figure is explicitly stated on the cited page. Therefore, there are no computed figures to evaluate, and the answer is faithful to the cited text."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**INDO-MIM LTD annual report, FY26**\n\nStandalone total assets at 31 March 2026 were INR 40,808.66 million [page 129](https://nsearchives.nseindia.com/annual_reports/AR_30812_INDOMIM_2025_2026_A_5788504_29082026140615.pdf#page=129).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "INDOMIM",
+        "question": "What were INDO-MIM standalone total assets at the end of FY26?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Standalone total assets at 31 March 2026 were INR 40,808.66 million [page 129].",
+        "source": "INDO-MIM LTD annual report, FY26",
+        "query": "What were INDOMIM standalone total assets at the end of FY26?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "INDO-MIM LTD annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that standalone total assets at 31 March 2026 were INR 40,808.66 million. This figure appears directly in page 129 chunk 2, in the row labeled 'TOTAL ASSETS' with the value 40,808.66 for 31 March 2026. No computation is required - the figure is explicitly stated on the cited page. Therefore, there are no computed figures to evaluate, and the answer is faithful to the cited text."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  }
+ ]
+}

@@ -94,3 +94,13 @@ evaluation with blind judges and deterministic coverage checks.
 3. Why do factsheet and portfolio dates, BER/TER definitions, and statement scope
    need separate fields? Give an example where collapsing them creates a plausible
    but unsupported answer.
+
+## Agent · 25 October 2026 — review after build
+
+1. Why does the final model select evidence IDs instead of rewriting a memo?
+   Trace a BEL page citation and a fund spreadsheet row through the registry.
+2. Why does one memo consume several daily allowances? Trace an orchestration
+   call, a nested report answer, an exact repeated tool call and a download rerun.
+3. Why can a correct source page still produce a refusal? Contrast the original
+   precise question, a generated subquestion, the similarity floor, and the
+   sentence-level citation filter. What does the blind judge add?

@@ -150,6 +150,17 @@ verification evidence are tracked in `notes/funds-step.md`.
 2. Cited memo: one page, every sentence cited
 3. Demo video and write-up
 
+**Implementation (25 Oct 2026):** a bounded Messages API loop calls the
+existing annual-report answer path and verified fund fields/rows. Final output
+selects evidence IDs; Python renders their cited text against each filing's
+own URL. A memo contains at most 450 words including source labels and eight
+evidence selections. The UI exposes the tool trace and a Markdown download.
+Six turns, eight tool calls and twelve API calls bound each request; nested
+company generation and orchestration share the public daily limiter. Precise
+company questions retain their original wording. Generated subquestions use
+the catalog's company code in place of its legal name; dates and statement
+scope are preserved. Release status is recorded in `notes/agent-step.md`.
+
 ### Cut
 
 RAGAS in CI, LangGraph, Langfuse, further work on the text-geometry table
@@ -173,7 +184,7 @@ exchange-disclosure flags for a watchlist).
 | Born-digital check | Ingest | Pages with no text layer are skipped and recorded; a report with more than 20% such pages is refused | A real report has a few image pages (covers, photos: 1% of HCC's); a scan has most. No OCR path (§3.5) | — |
 | Two-page spreads | Ingest | A landscape page whose middle no text line crosses is read as two pages, left then right, under one PDF page number; a title is kept only if both halves name the same statement | Unihealth prints two pages per PDF page; read as one, two tables fused row by row | Spreads that pair unrelated documents need per-half titles |
 | In-app add company | Ingest | Owner-only panel (owner key or localhost). Runs `ingest.add` in a background thread, then `ingest.publish` and one commit of `urls.yaml`, `corpus.json`, `SOURCES.md` and `index.json` to main via the GitHub API (a fine-grained token, this repo only, Contents: write, in the host's secrets). Refuses to commit if main's record files differ from the deployed ones; never force-pushes | The container's disk does not survive a restart, so a company added in-app must be saved to the repository to stay | Anyone else may add companies (needs payment, abuse controls and legal review) |
-| Demo rate limits | Ingest | Per browser session 10 questions; per connection per day 25 answered questions; all visitors per day 500 (~$1 on Haiku 5.5). Fund disclosure lookups are deterministic and unmetered. Only report questions that reach the model count against daily limits. Counted in the server process; a visitor is a salted hash of their address. Local runs and a session opened with `?owner=<FOLIO_OWNER_KEY>` are exempt | The public demo spends the maintainer's prepaid credit; the session cap alone resets on refresh | Traffic outgrows one process, or abuse comes from many addresses |
+| Demo rate limits | Ingest → Agent | Per browser session 10 requests; per connection per day 25 model calls; all visitors per day 500. Each report generation or memo orchestration call counts; deterministic lookups and similarity-floor refusals do not. Counted in the server process; a visitor is a salted hash of their address. Local runs and a session opened with `?owner=<FOLIO_OWNER_KEY>` are exempt | The public demo spends the maintainer's prepaid credit; a multi-call memo must not bypass the shared budget | Traffic outgrows one process, or abuse comes from many addresses |
 | Index storage | Ingest | A tarball on the repository's `index` release; `corpus/index.json` (committed) names it and its SHA-256; the app downloads and verifies it at startup. Not a Hugging Face dataset: `gh` is already authenticated and assets on a public repo need no credentials | Committed, every rebuild added ~10 MB to git history, and Funds adds 20–30 filings | Assets accumulate; prune those no commit names |
 | Citation guard | Accurate | Every figure in a cited claim must be printed on the cited page; a computed figure must say "(computed from [page N])"; a citation is moved to the one page that prints all of a claim's figures when the cited page does not; anything after "Not in the filing." is stripped | "Shown to the model" was the only check, and a right figure cited to the wrong page passed it | — |
 | UI / deploy | Public | Streamlit on Streamlit Community Cloud, deployed from the GitHub repo; the checksum-pinned release index is downloaded at startup and loaded read-only | Free; a public repo gives a public app; rebuilding on start would cost minutes on a platform that sleeps every 12h | The index outgrows what belongs in git, or the 2-core / 2.7 GB ceiling hurts the demo |

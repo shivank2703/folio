@@ -1,0 +1,221 @@
+{
+ "label": "agent-general-memo",
+ "samples": 3,
+ "when": "2026-10-25T07:24:18.434298+00:00",
+ "questions": [
+  {
+   "id": "company-memo",
+   "samples": [
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nHCC's standalone total assets as at March 31, 2025 were ₹8,743.37 crore [page 114](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=114).\n\nHCC's FY25 report identifies enterprise-level and project-level risks, including operational, financial, contractual, order book, and project cost and time overrun risks, which the Risk Management Committee reviews regularly [page 52](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=52). Its financial risk disclosures cover interest rate risk on floating-rate debt of ₹251.18 crore on a consolidated basis [page 250](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=250), and foreign currency risk, tested against a 5% exchange-rate change [page 173](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=173). It also discloses equity price risk: a 10% movement in listed equity and mutual fund holdings of ₹49.56 crore would affect profit or loss by about ₹4.36 crore on a consolidated basis [page 252](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=252). Credit risk arises mainly from trade receivables, of which 84.37% were from government promoted agencies at March 31, 2025 [page 252](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=252). Liquidity risk, the risk of not meeting obligations on time, is managed through rolling cash-flow forecasts [page 175](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=175).",
+     "refused": false,
+     "api_calls": 4,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "What is the principal business of Hindustan Construction Company in FY25?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "What is the principal business of HCC in FY25?"
+       }
+      },
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "What were the standalone total assets of Hindustan Construction Company at the end of FY25?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "HCC's standalone total assets as at March 31, 2025 were ₹8,743.37 crore [page 114].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "What were the standalone total assets of HCC at the end of FY25?"
+       }
+      },
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "What risks does Hindustan Construction Company disclose in its FY25 annual report?"
+       },
+       "result": {
+        "id": "E2",
+        "text": "HCC's FY25 report identifies enterprise-level and project-level risks, including operational, financial, contractual, order book, and project cost and time overrun risks, which the Risk Management Committee reviews regularly [page 52]. Its financial risk disclosures cover interest rate risk on floating-rate debt of ₹251.18 crore on a consolidated basis [page 250], and foreign currency risk, tested against a 5% exchange-rate change [page 173]. It also discloses equity price risk: a 10% movement in listed equity and mutual fund holdings of ₹49.56 crore would affect profit or loss by about ₹4.36 crore on a consolidated basis [page 252]. Credit risk arises mainly from trade receivables, of which 84.37% were from government promoted agencies at March 31, 2025 [page 252]. Liquidity risk, the risk of not meeting obligations on time, is managed through rolling cash-flow forecasts [page 175].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "What risks does HCC disclose in its FY25 annual report?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": false,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that HCC's standalone total assets as at March 31, 2025 were ₹8,743.37 crore. This figure is directly printed on page 114 in the Standalone Balance Sheet, appearing in chunk 3 as 'TOTAL ASSETS | 8,743.37 | 8,138.03'. Since this is a figure explicitly stated on the cited page and not a computed figure, the answer is faithful."
+      },
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [
+        {
+         "figure": "₹4.36 crore",
+         "labelled": false,
+         "arithmetic_right": true
+        }
+       ],
+       "faithful": true,
+       "reason": "All factual claims are supported by the cited pages. The answer correctly identifies: (1) enterprise-level and project-level risks including operational, financial, contractual, order book, and project cost/time overrun risks reviewed by Risk Management Committee (page 52); (2) interest rate risk on floating-rate debt of ₹251.18 crore on consolidated basis (page 250); (3) foreign currency risk tested against 5% exchange-rate change (page 173); (4) equity price risk with 10% movement in listed equity and mutual fund holdings of ₹49.56 crore affecting profit/loss by ₹4.36 crore on consolidated basis (page 252); (5) credit risk from trade receivables with 84.37% from government promoted agencies at March 31, 2025 (page 252); (6) liquidity risk managed through rolling cash-flow forecasts (page 175). The computed figure ₹4.36 crore is stated in page 252 as an impact amount, not as a computation the answer performed, so it is not actually computed by the answer but rather cited directly from the page. However, reviewing more carefully, the answer states this figure 'would affect profit or loss by about ₹4.36 crore' which is presented as a direct statement from the source material (page 252 states 'impact of approximately ₹4.36 crore on statement of profit and loss'), so this is not a computed figure but a cited figure. Upon reconsideration, there are no computed figures in this answer—all numbers are directly stated in the cited pages."
+      }
+     ],
+     "passed": false
+    },
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nHCC is principally engaged in the business of providing engineering and construction services [page 199](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=199). The same note describes the consolidated Group as engaged in this business as well [page 199](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=199).\n\nHCC's standalone total assets at March 31, 2025 were ₹8,743.37 crore [page 114](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=114). The same balance sheet shows total equity and liabilities of ₹8,743.37 crore for that date [page 114](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=114).\n\nHCC's FY25 report describes a risk management framework that sorts risks into Enterprise Level and Project Level risks, with subcategories including operational, financial, contractual, order book, and project cost and time overrun [page 34](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=34). Its market risk disclosures cover interest rates, where the Group's floating-rate debt was ₹251.18 crore as at March 31, 2025 [page 250](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=250). They also cover foreign currency risk, with a 5% exchange-rate sensitivity [page 173](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=173), and equity price risk, where a 10% movement in listed securities would affect other comprehensive income by about ₹0.56 crore and profit or loss by about ₹4.36 crore [page 252](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=252). Credit risk is concentrated in trade receivables, of which 84.37% (₹2,639.02 crore) were from government-promoted agencies as at March 31, 2025 [page 252](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=252). Liquidity risk is managed by the treasury department through rolling cash-flow forecasts [page 175](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=175).",
+     "refused": false,
+     "api_calls": 5,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "What is the principal business of Hindustan Construction Company in the FY25 annual report?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "HCC is principally engaged in the business of providing engineering and construction services [page 199]. The same note describes the consolidated Group as engaged in this business as well [page 199].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "What is the principal business of HCC in the FY25 annual report?"
+       }
+      },
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "What were the standalone total assets of Hindustan Construction Company at the end of FY25?"
+       },
+       "result": {
+        "id": "E2",
+        "text": "HCC's standalone total assets at March 31, 2025 were ₹8,743.37 crore [page 114]. The same balance sheet shows total equity and liabilities of ₹8,743.37 crore for that date [page 114].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "What were the standalone total assets of HCC at the end of FY25?"
+       }
+      },
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "What risks does Hindustan Construction Company disclose in its FY25 annual report?"
+       },
+       "result": {
+        "id": "E3",
+        "text": "HCC's FY25 report describes a risk management framework that sorts risks into Enterprise Level and Project Level risks, with subcategories including operational, financial, contractual, order book, and project cost and time overrun [page 34]. Its market risk disclosures cover interest rates, where the Group's floating-rate debt was ₹251.18 crore as at March 31, 2025 [page 250]. They also cover foreign currency risk, with a 5% exchange-rate sensitivity [page 173], and equity price risk, where a 10% movement in listed securities would affect other comprehensive income by about ₹0.56 crore and profit or loss by about ₹4.36 crore [page 252]. Credit risk is concentrated in trade receivables, of which 84.37% (₹2,639.02 crore) were from government-promoted agencies as at March 31, 2025 [page 252]. Liquidity risk is managed by the treasury department through rolling cash-flow forecasts [page 175].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "What risks does HCC disclose in its FY25 annual report?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer makes two factual claims: (1) HCC is principally engaged in the business of providing engineering and construction services, and (2) the consolidated Group is engaged in this business as well. Both claims are directly supported by page 199. The first sentence of Note 1 states 'The Company having CIN L45200MH1926PLC001228, is principally engaged in the business of providing engineering and construction services.' The same note then states 'The Group is principally engaged in the business of providing engineering and construction services.' Both statements are explicitly present in the cited text with no computed figures involved."
+      },
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "Both figures stated in the answer are directly printed on page 114. The standalone total assets at March 31, 2025 of ₹8,743.37 crore appears in chunk 3 under 'TOTAL ASSETS'. The total equity and liabilities of ₹8,743.37 crore for the same date also appears in chunk 5 under 'TOTAL EQUITY AND LIABILITIES'. These are not computed figures but rather figures explicitly stated in the balance sheet. No arithmetic or calculations are performed by the answer; it simply reports what the cited page shows."
+      },
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "All factual claims in the answer are directly supported by the cited pages. The risk management framework description (Enterprise Level and Project Level risks with subcategories) is found on page 34. The floating-rate debt figure of ₹251.18 crore is on page 250. The 5% foreign exchange sensitivity is mentioned on page 173. The equity price risk impacts (₹0.56 crore on OCI and ₹4.36 crore on P&L for 10% movement) are on page 252. The credit risk concentration figure (84.37% or ₹2,639.02 crore from government-promoted agencies) is on page 252. The liquidity risk management through rolling cash-flow forecasts is on page 175. No computed figures are presented in the answer—all numbers cited are directly stated in the source pages."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nHCC is principally engaged in the business of providing engineering and construction services [page 199](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=199). The same note states that the Group, comprising the company and its subsidiaries, associates and joint arrangements, is principally engaged in that business as well [page 199](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=199).\n\nThe standalone total assets at March 31, 2025 were ₹8,743.37 crore [page 114](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=114).\n\nThe FY25 report discloses market risk, covering interest rate risk on floating-rate debt of ₹251.18 crore (consolidated) [page 250](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=250), foreign currency risk with a 5% sensitivity (standalone) [page 173](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=173), and equity price risk on listed and unlisted securities [page 252](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=252). It also discloses credit risk, as trade receivables are largely unsecured, with 84.37% due from government-promoted agencies (consolidated) [page 252](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=252), and liquidity risk, managed through rolling cash-flow forecasts (standalone) [page 175](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=175). Its risk framework classifies risks as operational, financial, contractual, order book, and project cost and time overrun risks [page 34](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=34).",
+     "refused": false,
+     "api_calls": 5,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "What is the principal business of Hindustan Construction Company as described in the FY25 annual report?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "HCC is principally engaged in the business of providing engineering and construction services [page 199]. The same note states that the Group, comprising the company and its subsidiaries, associates and joint arrangements, is principally engaged in that business as well [page 199].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "What is the principal business of HCC as described in the FY25 annual report?"
+       }
+      },
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "What were the standalone total assets at the end of FY25?"
+       },
+       "result": {
+        "id": "E2",
+        "text": "The standalone total assets at March 31, 2025 were ₹8,743.37 crore [page 114].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "What were the standalone total assets at the end of FY25?"
+       }
+      },
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "What risks are disclosed in the FY25 annual report?"
+       },
+       "result": {
+        "id": "E3",
+        "text": "The FY25 report discloses market risk, covering interest rate risk on floating-rate debt of ₹251.18 crore (consolidated) [page 250], foreign currency risk with a 5% sensitivity (standalone) [page 173], and equity price risk on listed and unlisted securities [page 252]. It also discloses credit risk, as trade receivables are largely unsecured, with 84.37% due from government-promoted agencies (consolidated) [page 252], and liquidity risk, managed through rolling cash-flow forecasts (standalone) [page 175]. Its risk framework classifies risks as operational, financial, contractual, order book, and project cost and time overrun risks [page 34].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "What risks are disclosed in the FY25 annual report?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer makes two factual claims: (1) HCC is principally engaged in the business of providing engineering and construction services, and (2) The Group is principally engaged in that business as well. Both claims are directly supported by the cited page 199. The first sentence of Note 1 states 'The Company...is principally engaged in the business of providing engineering and construction services.' The same note later states 'The Group is principally engaged in the business of providing engineering and construction services.' No computed figures are present in the answer, only direct citations of facts from the source material."
+      },
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that standalone total assets at March 31, 2025 were ₹8,743.37 crore. This figure is directly printed on page 114, chunk 3, which shows 'TOTAL ASSETS | 8,743.37 | 8,138.03' for the March 31, 2025 column. Since this is a figure explicitly stated in the cited pages and not a computed figure, the answer is faithful."
+      },
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "All factual claims in the answer are directly supported by the cited pages. The interest rate risk on floating-rate debt of ₹251.18 crore (consolidated) is found on page 250. The foreign currency risk with 5% sensitivity (standalone) is mentioned on page 173. Equity price risk on listed and unlisted securities is discussed on page 252. Credit risk regarding trade receivables being largely unsecured with 84.37% from government-promoted agencies (consolidated) is stated on page 252. Liquidity risk managed through rolling cash-flow forecasts (standalone) is mentioned on page 175. The risk framework classifying risks as operational, financial, contractual, order book, and project cost and time overrun risks is found on page 34. No computed figures are present in the answer—all numbers cited are directly stated in the source pages."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  }
+ ]
+}

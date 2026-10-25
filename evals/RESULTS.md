@@ -580,3 +580,56 @@ The threshold still cannot separate answerable questions (weakest 0.702) from
 negatives (strongest 0.757). Ten oversized whole rows retain full keyword/context
 text but exceed the embedding model's input limit. Quality exclusions reduce
 coverage; no claim of exhaustive validation follows from these small eval sets.
+
+
+## Agent · 25 October 2026 — local candidate
+
+The pre-change baseline used ordinary company Q&A. The after run used the new
+agent path on the same 24 questions, three samples each, with the existing
+Haiku 4.5 correctness and faithfulness judges unchanged. Each company evidence
+bundle is judged against its own filing context before page numbers can collide.
+The underlying retrieval, packing, generator and ordinary Q&A guards are unchanged.
+
+| Measure | Fresh ordinary-Q&A baseline | Final company-agent path |
+|---|---|---|
+| Answerable passed | 54/54 | 53/54 |
+| Correct | 54/54 | 54/54 |
+| Faithful | 54/54 | 53/54 |
+| Strict refusals | 18/18 | 18/18 |
+| All samples passed | 72/72 | 71/72 |
+
+Files: `agent-baseline.json` and `agent-company-release.json`. The retained
+HCC retained-earnings failure is a judge disagreement: it calls a comparison
+of two printed deficit balances an unlabelled computation, although the answer
+states no computed difference. The score is not manually overridden.
+
+The first company-agent run scored 50/72; preserving precise question wording
+and fixing sentence splitting/citation placement improved an intermediate run
+to 68/72 and the final run to 71/72. Those files remain available. The agent
+withholds numeric/citation warnings rather than showing them in a memo; this is
+stricter than ordinary Companies mode. These runs measure an added orchestration
+path, not a claimed improvement to retrieval.
+
+The final 12-case agent routing suite scored **36/36**: a fund memo, independent
+source dates, wrong plan/month/day, unavailable total TER, unknown instruments,
+per-fund top-ten coverage, mixed fund/report routing, scope, units and refusal.
+Its complete intermediate scores were 27/36, 32/36 and 34/36. The initial file
+has only 10/12 cases (22/30 completed samples): it stopped on an invalid Navneet
+fixture code; it is not a complete result. JSON wrappers, over-selecting
+holdings and generated legal-name queries account for early failures.
+
+A separate five-question wording check scored **10/15** before the final
+sentence-placement adjustment. The explicit March-date BEL variant failed 0/3,
+retaining the known wording limitation. No threshold was relaxed.
+
+The default company-memo check scored **2/3**. Every sample retained the correct
+cited assets figure. For the failed sample the judge listed ₹4.36 crore as an
+unlabelled computed figure, while its explanation said the amount is printed on
+page 252 and no calculation occurred. The list overrides its summary boolean,
+as in the existing evaluator, and the failure is retained. Completeness of
+all sections is not established: a refused subquestion can leave a partial memo.
+
+Local tests: **34 passed**. Existing deterministic fund checks: **24/24**.
+Compile/whitespace checks and local browser smoke tests passed. The local UI
+walkthrough and write-up are in `docs/`; deployment, owner-session verification,
+profile pinning and tagging are not claimed here. See `notes/agent-step.md`.

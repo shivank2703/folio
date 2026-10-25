@@ -4,14 +4,15 @@ Three layers, each stopping a different kind of over-use:
 
 - per browser session, 10 questions (ui/app.py): keeps a casual visit short;
   a refresh resets it, so it is a courtesy, not a control;
-- per visitor per day, 25 answered questions: a refresh does not reset it;
-- all visitors together per day, 500 answered questions: the spend ceiling.
-  On Claude Haiku 5.5 a question costs $0.0012 on average and $0.0020 at
-  most (measured 11 Oct 2026), so the ceiling is about $1 a day and $20 of
-  credit outlasts a month of abuse rather than an afternoon of it.
+- per visitor per day, 25 model calls: a refresh does not reset it;
+- all visitors together per day, 500 model calls: the spend ceiling.
+  A one-report question cost $0.0012 on average (measured 11 Oct 2026).
+  Memo calls can carry more context; these limits count calls, not currency.
+  The Console spending limit remains the monetary backstop.
 
-Only questions that reach the model count against the daily limits. A
-question refused at the similarity floor costs nothing and stays free.
+Only calls that reach the model count against the daily limits, including
+memo orchestration and nested report generation. A question refused at the
+similarity floor costs nothing and stays free.
 
 Not for the maintainer: running locally (a localhost URL) is never limited, and
 on the deployed app a session opened with ?owner=<FOLIO_OWNER_KEY> is exempt.
@@ -38,7 +39,7 @@ GLOBAL_DAILY = 500
 
 
 class DailyLimiter:
-    """Counts answered questions per visitor and in total, for the current UTC day."""
+    """Counts model calls per visitor and in total, for the current UTC day."""
 
     def __init__(self, per_visitor: int = PER_VISITOR_DAILY, total: int = GLOBAL_DAILY, clock=time.time):
         self.per_visitor, self.total, self.clock = per_visitor, total, clock
@@ -58,7 +59,7 @@ class DailyLimiter:
             self._day, self._counts = day, {}
 
     def take(self, visitor: str) -> str | None:
-        """Spend one answered question for this visitor; return why not, if over a limit.
+        """Spend one model call for this visitor; return why not, if over a limit.
 
         Check and count happen under one lock, so two sessions arriving
         together cannot both take the last question of the day.

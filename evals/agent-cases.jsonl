@@ -1,0 +1,12 @@
+{"id":"fund-memo","fund":"hdfc-defence","question":"Prepare a factual memo on the Direct-plan expense ratio, benchmark, exit load and three largest domestic equity holdings in the disclosed snapshot.","contains":["0.82%","Base expense ratio","NIFTY India Defence Index","14.87%","2026-09-30","HDFCDFNFND row 9"]}
+{"id":"motilal-dates","fund":"motilal-nifty500","question":"What are the Direct-plan expense ratio and largest domestic equity holding in the disclosed snapshots?","contains":["0.23%","0.13%","2026-08-31","5.66%","2026-09-30","YO18 row 13"]}
+{"id":"wrong-plan","fund":"hdfc-defence","question":"What is the Regular-plan expense ratio?","refusal":true}
+{"id":"wrong-month","fund":"motilal-nifty500","question":"What is the September 2026 expense ratio?","refusal":true}
+{"id":"wrong-day","fund":"hdfc-defence","question":"What was the benchmark on 29 September 2026?","refusal":true}
+{"id":"unavailable-total","fund":"hdfc-defence","question":"What is the total TER?","refusal":true}
+{"id":"outside-top-ten","fund":"kotak-manufacture","question":"What were Bharat Electronics standalone total assets at the end of FY26?","refusal":true}
+{"id":"unknown-holding","fund":"motilal-nifty500","question":"What is the portfolio weight of Example Unknown Company?","refusal":true}
+{"id":"fund-report","fund":"hdfc-defence","question":"State BEL's portfolio weight and BEL standalone total assets at the end of FY26.","contains":["14.87%","HDFCDFNFND row 9","44,09,039","lakh","page=98"]}
+{"id":"consolidated-scope","company":"BEL","question":"What were BEL consolidated total assets at the end of FY26?","expected_answer":"Consolidated total assets of ₹44,53,752 lakh as at March 31, 2026.","expected_pages":[145]}
+{"id":"unit-trap","company":"NAVNEET","question":"What were Navneet Education standalone total assets at the end of FY25?","expected_answer":"₹2,28,299 lakh, standalone, as at March 31, 2025.","expected_pages":[190]}
+{"id":"missing-fact","company":"HCC","question":"How many electric vehicle charging stations did HCC operate in FY25?","refusal":true}

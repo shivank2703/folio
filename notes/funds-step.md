@@ -309,3 +309,16 @@ pin `shivank2703/folio` through the signed-in GitHub profile. The available
 browser was signed out and GitHub reported zero pinned repositories. Neither
 a key value nor a secret file was read for verification. Until these gates are
 verified, v1.3 remains untagged. The LinkedIn draft above is not published.
+
+
+### Status clarification · 25 October 2026
+
+The prior chat “Set Funds deployment secrets” includes the user's “done,
+proceed” confirmation, and its handoff explicitly records GITHUB_TOKEN and
+FOLIO_OWNER_KEY as configured in Streamlit. Secret configuration is complete;
+do not ask the user to repeat it or treat a missing verification record as
+unfinished setup. The later Funds chat left the live owner-panel/exemption
+check unrecorded. A fresh read-only GitHub query on 25 October returned no
+pinned repositories, and the remote has no v1.3 tag. These are distinct status
+items, not evidence that secrets were never configured. No secret value was
+read in resolving this clarification.

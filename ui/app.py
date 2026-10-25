@@ -31,7 +31,7 @@ from gen.guardrails import CITATION, cited_pages, has_enough_context
 from retrieve.embed import load_model
 from retrieve.search import DEFAULT_K, EXPANSION_SEEDS, open_index, page_context, search
 from retrieve.store import ensure_index
-from ui import add_company, funds
+from ui import add_company, funds, memo
 from ui.limits import DailyLimiter, is_owner, visitor_address
 
 DB_PATH = Path("data/lancedb")
@@ -195,7 +195,13 @@ def main() -> None:
     if owner:
         add_company.render(model, on_index_changed=reopen_index)
 
-    mode = st.radio("Research", ["Companies", "Funds"], horizontal=True)
+    mode = st.radio("Research", ["Companies", "Funds", "Memo"], horizontal=True)
+    if mode == 'Memo':
+        memo.render(load_filings(), table, model, client, client_error, owner=owner,
+                    limiter=daily_limiter(),
+                    address=visitor_address(st.context.ip_address, st.context.headers),
+                    max_questions=MAX_QUESTIONS)
+        st.stop()
     selected_filing = funds.render(load_filings()) if mode == "Funds" else None
     if mode == "Funds" and selected_filing is None:
         st.stop()
@@ -263,7 +269,7 @@ def main() -> None:
         over = daily_limiter().take(daily_limiter().visitor(visitor_address(st.context.ip_address, st.context.headers)))
         if over:
             st.info(
-                "Folio has answered as many questions as it can today"
+                "Folio has reached its daily model-call allowance"
                 + (" for this connection" if over == "visitor" else " across all visitors")
                 + ". It runs on a personal API key with a daily budget, which resets at midnight UTC. "
                 "The extracts retrieval found are below, and the code is free to run with your own key: "

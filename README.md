@@ -19,6 +19,12 @@ Choose **Funds** for costs, benchmark, exit load, holdings and report drill-down
 or **Companies** for annual-report Q&A. Coverage is per fund: a company outside
 one fund’s top ten remains **Not indexed** there, even if another fund includes it.
 
+The **Memo** mode assembles up to 450 words of cited evidence for a
+company or public fund snapshot. One plain Anthropic tool loop asks the existing
+readers for facts, then selects evidence IDs; Python retains their original text
+and source links. The interface includes an evidence trace and Markdown download.
+Agent release checks are tracked in [notes/agent-step.md](notes/agent-step.md).
+
 ## Why
 
 Aggregate financial data is a solved problem. Checking a number is not. A
@@ -60,6 +66,13 @@ flowchart TB
         V --> UI[answer + sources panel]
         FS[verified fund factsheet fields<br/>and original spreadsheet rows] --> LOOKUP[deterministic cited lookups]
         LOOKUP --> UI
+        M[Memo request] --> LOOP[bounded Anthropic tool loop]
+        LOOP --> HY
+        LOOP --> LOOKUP
+        V --> E[evidence IDs + filing identity]
+        LOOKUP --> E
+        E --> SELECT[select evidence IDs<br/>preserve cited text and links]
+        SELECT --> MEMO[memo + evidence trace + download]
     end
 ```
 
@@ -150,6 +163,23 @@ Rebuilding everything from source, after downloading the PDFs named in
 Retrieval alone, with no key and no UI: `.venv/bin/python -m retrieve.smoke`.
 The answer-quality eval (spends API credit, about $0.50 a run):
 `.venv/bin/python -m evals.score --label mine`.
+
+Create a memo from the command line (also spends API credit):
+
+```bash
+.venv/bin/python -m agent.run --company HCC 'Prepare a factual memo on the business and standalone financial position in FY25.'
+.venv/bin/python -m agent.run --fund hdfc-defence 'State the Direct-plan expense ratio, benchmark and three largest domestic equity holdings.'
+.venv/bin/python -m evals.agent --label my-agent-check
+```
+
+The loop allows six turns, eight tool calls and twelve API calls per memo.
+Every call counts toward the public daily allowance, including nested report
+answers. The ten-request session cap is shared with annual-report Q&A. Repeated
+tool requests reuse evidence; downloading a memo does not regenerate it.
+Memos may omit unavailable evidence. A source link and numeric checks do not
+prove every prose claim; the evaluation separately judges source faithfulness.
+See the [implementation write-up](docs/agent-writeup.md) and
+[local UI walkthrough](docs/agent-demo.mp4).
 
 ## Refresh a public fund snapshot
 
@@ -278,6 +308,14 @@ are now more often correct and faithful than 4.5's (evals/RESULTS.md).
 | v1.2 live answer time | ~3.3 s on average for a cited answer (9.7 s worst, Haiku 5.5 thinks first), ~0.1 s for a refusal at the floor |
 | v1.2 cost per answered question | $0.0012 on average on Haiku 5.5 (was ~$0.008 on Haiku 4.5) |
 
+Agent candidate, measured locally on 25 October: the same company set scored
+71/72 overall (53/54 answerable and 18/18 strict refusals), against a fresh
+72/72 ordinary-Q&A baseline. The 12-case routing suite passed 36/36, and the
+general company-memo check passed 2/3. Both final failures are retained judge
+disagreements about computed figures; these results are not manually corrected.
+All 34 local tests and 24 deterministic fund regression cases passed.
+See [Agent results](evals/RESULTS.md#agent--25-october-2026--local-candidate).
+
 ## Limitations
 
 Stated plainly, because overclaiming is the failure this project is built
@@ -304,8 +342,9 @@ against:
   scores use collection-wide word statistics, so a third report moved one
   page's rank even though queries are filtered to one company. The wider
   expansion absorbs that today; more documents may not be so forgiving.
-- **One fiscal year, one filing per question.** Multi-year ingest and
-  comparing companies in a single answer are not built.
+- **One fiscal year per company, one filing per report-tool call.** A fund
+  memo may gather separate cited answers from its top-ten companies. Multi-year
+  ingest and aggregate company comparisons are not built.
 - **Scope follows explicit financial headings.** Every chunk carries standalone,
   consolidated, mixed, or unstated. Repeated note headings count; the pipeline
   does not infer a missing heading from a nearby section. A requested scope
@@ -339,8 +378,8 @@ against:
   the page prints it). It was kept frozen across the step so that every run is
   graded the same way; disagreements are listed in evals/RESULTS.md.
 - **The demo is rate-limited, for visitors only.** Ten questions per browser
-  session, 25 answered questions per connection per day, 500 across everyone
-  per day (about $1 on Haiku 5.5), resetting at midnight UTC. Questions refused at the
+  session, 25 model calls per connection per day, 500 across everyone
+  per day, resetting at midnight UTC. Memos consume multiple calls. Questions refused at the
   similarity floor are free and never count. Counts live in the server
   process, so a restart resets them, and an address can be spoofed: this is
   fair use, not security, and the monthly spend limit on the API key is the
@@ -370,8 +409,9 @@ One step per Saturday ([SPEC.md §4](SPEC.md)):
 - **Funds** (17–19 Oct, v1.3 candidate): three public fund snapshots, full
   holdings tables, source-row citations, top-ten annual-report drill-down,
   explicit statement scope and improved page-continuation packing.
-- **Agent** (24 Oct): one plain Anthropic tool-use loop over company and fund
-  tools, producing a one-page memo with every sentence cited.
+- **Agent** (25 Oct, deployment candidate): one bounded Anthropic tool-use loop over
+  company and fund readers; a memo of up to 450 words, every sentence cited,
+  evidence trace and Markdown download. Release evidence is in the Agent notes.
 
 Cut: RAGAS in CI, LangGraph, Langfuse. Later, maybe: trend charts, multi-year
 ingest, daily exchange-disclosure flags.

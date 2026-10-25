@@ -1,0 +1,1417 @@
+{
+ "label": "agent-routing-release",
+ "samples": 3,
+ "when": "2026-10-25T07:13:42.090316+00:00",
+ "questions": [
+  {
+   "id": "fund-memo",
+   "samples": [
+    {
+     "text": "**HDFC Defence Fund**\n\nDirect-plan expense ratio: 0.82%; Base expense ratio including statutory levies on expenses part of BER; excludes brokerage, transaction costs and execution-related statutory levies; as of 2026-09-30 [factsheet page 29](https://files.hdfcfund.com/s3fs-public/2026-10/HDFC%20MF%20Factsheet%20-%20September%202026.pdf?VersionId=xjdQxQp4UEchOirw4TsCE9jEGenOREzw#page=29).\n\nBenchmark: NIFTY India Defence Index TRI (Total Returns Index); as of 2026-09-30 [factsheet page 29](https://files.hdfcfund.com/s3fs-public/2026-10/HDFC%20MF%20Factsheet%20-%20September%202026.pdf?VersionId=xjdQxQp4UEchOirw4TsCE9jEGenOREzw#page=29).\n\nExit load: 1% for redemption or switch-out within 1 year of allotment; no exit load after 1 year; See the factsheet for the full terms; as of 2026-09-30 [factsheet page 29](https://files.hdfcfund.com/s3fs-public/2026-10/HDFC%20MF%20Factsheet%20-%20September%202026.pdf?VersionId=xjdQxQp4UEchOirw4TsCE9jEGenOREzw#page=29).\n\nBharat Electronics Ltd.: 14.87% of net assets as of 2026-09-30 [HDFCDFNFND row 9](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).\n\nBharat Forge Ltd.: 12.91% of net assets as of 2026-09-30 [HDFCDFNFND row 10](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).\n\nHindustan Aeronautics Limited: 12.61% of net assets as of 2026-09-30 [HDFCDFNFND row 11](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+     "refused": false,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "expense_ratio"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Direct-plan expense ratio: 0.82%; Base expense ratio including statutory levies on expenses part of BER; excludes brokerage, transaction costs and execution-related statutory levies; as of 2026-09-30 [factsheet page 29](https://files.hdfcfund.com/s3fs-public/2026-10/HDFC%20MF%20Factsheet%20-%20September%202026.pdf?VersionId=xjdQxQp4UEchOirw4TsCE9jEGenOREzw#page=29).",
+        "source": "HDFC Defence Fund"
+       }
+      },
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "benchmark"
+       },
+       "result": {
+        "id": "E2",
+        "text": "Benchmark: NIFTY India Defence Index TRI (Total Returns Index); as of 2026-09-30 [factsheet page 29](https://files.hdfcfund.com/s3fs-public/2026-10/HDFC%20MF%20Factsheet%20-%20September%202026.pdf?VersionId=xjdQxQp4UEchOirw4TsCE9jEGenOREzw#page=29).",
+        "source": "HDFC Defence Fund"
+       }
+      },
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "exit_load"
+       },
+       "result": {
+        "id": "E3",
+        "text": "Exit load: 1% for redemption or switch-out within 1 year of allotment; no exit load after 1 year; See the factsheet for the full terms; as of 2026-09-30 [factsheet page 29](https://files.hdfcfund.com/s3fs-public/2026-10/HDFC%20MF%20Factsheet%20-%20September%202026.pdf?VersionId=xjdQxQp4UEchOirw4TsCE9jEGenOREzw#page=29).",
+        "source": "HDFC Defence Fund"
+       }
+      },
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "top_holdings",
+        "count": 3
+       },
+       "result": {
+        "evidence": [
+         {
+          "id": "E4",
+          "text": "Bharat Electronics Ltd.: 14.87% of net assets as of 2026-09-30 [HDFCDFNFND row 9](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E5",
+          "text": "Bharat Forge Ltd.: 12.91% of net assets as of 2026-09-30 [HDFCDFNFND row 10](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E6",
+          "text": "Hindustan Aeronautics Limited: 12.61% of net assets as of 2026-09-30 [HDFCDFNFND row 11](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         }
+        ]
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [],
+     "passed": true
+    },
+    {
+     "text": "**HDFC Defence Fund**\n\nDirect-plan expense ratio: 0.82%; Base expense ratio including statutory levies on expenses part of BER; excludes brokerage, transaction costs and execution-related statutory levies; as of 2026-09-30 [factsheet page 29](https://files.hdfcfund.com/s3fs-public/2026-10/HDFC%20MF%20Factsheet%20-%20September%202026.pdf?VersionId=xjdQxQp4UEchOirw4TsCE9jEGenOREzw#page=29).\n\nBenchmark: NIFTY India Defence Index TRI (Total Returns Index); as of 2026-09-30 [factsheet page 29](https://files.hdfcfund.com/s3fs-public/2026-10/HDFC%20MF%20Factsheet%20-%20September%202026.pdf?VersionId=xjdQxQp4UEchOirw4TsCE9jEGenOREzw#page=29).\n\nExit load: 1% for redemption or switch-out within 1 year of allotment; no exit load after 1 year; See the factsheet for the full terms; as of 2026-09-30 [factsheet page 29](https://files.hdfcfund.com/s3fs-public/2026-10/HDFC%20MF%20Factsheet%20-%20September%202026.pdf?VersionId=xjdQxQp4UEchOirw4TsCE9jEGenOREzw#page=29).\n\nBharat Electronics Ltd.: 14.87% of net assets as of 2026-09-30 [HDFCDFNFND row 9](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).\n\nBharat Forge Ltd.: 12.91% of net assets as of 2026-09-30 [HDFCDFNFND row 10](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).\n\nHindustan Aeronautics Limited: 12.61% of net assets as of 2026-09-30 [HDFCDFNFND row 11](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+     "refused": false,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "expense_ratio"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Direct-plan expense ratio: 0.82%; Base expense ratio including statutory levies on expenses part of BER; excludes brokerage, transaction costs and execution-related statutory levies; as of 2026-09-30 [factsheet page 29](https://files.hdfcfund.com/s3fs-public/2026-10/HDFC%20MF%20Factsheet%20-%20September%202026.pdf?VersionId=xjdQxQp4UEchOirw4TsCE9jEGenOREzw#page=29).",
+        "source": "HDFC Defence Fund"
+       }
+      },
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "benchmark"
+       },
+       "result": {
+        "id": "E2",
+        "text": "Benchmark: NIFTY India Defence Index TRI (Total Returns Index); as of 2026-09-30 [factsheet page 29](https://files.hdfcfund.com/s3fs-public/2026-10/HDFC%20MF%20Factsheet%20-%20September%202026.pdf?VersionId=xjdQxQp4UEchOirw4TsCE9jEGenOREzw#page=29).",
+        "source": "HDFC Defence Fund"
+       }
+      },
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "exit_load"
+       },
+       "result": {
+        "id": "E3",
+        "text": "Exit load: 1% for redemption or switch-out within 1 year of allotment; no exit load after 1 year; See the factsheet for the full terms; as of 2026-09-30 [factsheet page 29](https://files.hdfcfund.com/s3fs-public/2026-10/HDFC%20MF%20Factsheet%20-%20September%202026.pdf?VersionId=xjdQxQp4UEchOirw4TsCE9jEGenOREzw#page=29).",
+        "source": "HDFC Defence Fund"
+       }
+      },
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "top_holdings",
+        "count": 3
+       },
+       "result": {
+        "evidence": [
+         {
+          "id": "E4",
+          "text": "Bharat Electronics Ltd.: 14.87% of net assets as of 2026-09-30 [HDFCDFNFND row 9](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E5",
+          "text": "Bharat Forge Ltd.: 12.91% of net assets as of 2026-09-30 [HDFCDFNFND row 10](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E6",
+          "text": "Hindustan Aeronautics Limited: 12.61% of net assets as of 2026-09-30 [HDFCDFNFND row 11](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         }
+        ]
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [],
+     "passed": true
+    },
+    {
+     "text": "**HDFC Defence Fund**\n\nDirect-plan expense ratio: 0.82%; Base expense ratio including statutory levies on expenses part of BER; excludes brokerage, transaction costs and execution-related statutory levies; as of 2026-09-30 [factsheet page 29](https://files.hdfcfund.com/s3fs-public/2026-10/HDFC%20MF%20Factsheet%20-%20September%202026.pdf?VersionId=xjdQxQp4UEchOirw4TsCE9jEGenOREzw#page=29).\n\nBenchmark: NIFTY India Defence Index TRI (Total Returns Index); as of 2026-09-30 [factsheet page 29](https://files.hdfcfund.com/s3fs-public/2026-10/HDFC%20MF%20Factsheet%20-%20September%202026.pdf?VersionId=xjdQxQp4UEchOirw4TsCE9jEGenOREzw#page=29).\n\nExit load: 1% for redemption or switch-out within 1 year of allotment; no exit load after 1 year; See the factsheet for the full terms; as of 2026-09-30 [factsheet page 29](https://files.hdfcfund.com/s3fs-public/2026-10/HDFC%20MF%20Factsheet%20-%20September%202026.pdf?VersionId=xjdQxQp4UEchOirw4TsCE9jEGenOREzw#page=29).\n\nBharat Electronics Ltd.: 14.87% of net assets as of 2026-09-30 [HDFCDFNFND row 9](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).\n\nBharat Forge Ltd.: 12.91% of net assets as of 2026-09-30 [HDFCDFNFND row 10](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).\n\nHindustan Aeronautics Limited: 12.61% of net assets as of 2026-09-30 [HDFCDFNFND row 11](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+     "refused": false,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "expense_ratio"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Direct-plan expense ratio: 0.82%; Base expense ratio including statutory levies on expenses part of BER; excludes brokerage, transaction costs and execution-related statutory levies; as of 2026-09-30 [factsheet page 29](https://files.hdfcfund.com/s3fs-public/2026-10/HDFC%20MF%20Factsheet%20-%20September%202026.pdf?VersionId=xjdQxQp4UEchOirw4TsCE9jEGenOREzw#page=29).",
+        "source": "HDFC Defence Fund"
+       }
+      },
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "benchmark"
+       },
+       "result": {
+        "id": "E2",
+        "text": "Benchmark: NIFTY India Defence Index TRI (Total Returns Index); as of 2026-09-30 [factsheet page 29](https://files.hdfcfund.com/s3fs-public/2026-10/HDFC%20MF%20Factsheet%20-%20September%202026.pdf?VersionId=xjdQxQp4UEchOirw4TsCE9jEGenOREzw#page=29).",
+        "source": "HDFC Defence Fund"
+       }
+      },
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "exit_load"
+       },
+       "result": {
+        "id": "E3",
+        "text": "Exit load: 1% for redemption or switch-out within 1 year of allotment; no exit load after 1 year; See the factsheet for the full terms; as of 2026-09-30 [factsheet page 29](https://files.hdfcfund.com/s3fs-public/2026-10/HDFC%20MF%20Factsheet%20-%20September%202026.pdf?VersionId=xjdQxQp4UEchOirw4TsCE9jEGenOREzw#page=29).",
+        "source": "HDFC Defence Fund"
+       }
+      },
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "top_holdings",
+        "count": 3
+       },
+       "result": {
+        "evidence": [
+         {
+          "id": "E4",
+          "text": "Bharat Electronics Ltd.: 14.87% of net assets as of 2026-09-30 [HDFCDFNFND row 9](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E5",
+          "text": "Bharat Forge Ltd.: 12.91% of net assets as of 2026-09-30 [HDFCDFNFND row 10](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E6",
+          "text": "Hindustan Aeronautics Limited: 12.61% of net assets as of 2026-09-30 [HDFCDFNFND row 11](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         }
+        ]
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "motilal-dates",
+   "samples": [
+    {
+     "text": "**Motilal Oswal Nifty 500 Index Fund**\n\nDirect-plan expense ratio: 0.23%; Total TER; The same table separately discloses a Direct base expense ratio of 0.13%; as of 2026-08-31 [factsheet page 5](https://www.motilaloswalmf.com/content/dam/motilal-mf/downloads/mf/factsheet/2026/sep/Factsheet%20August%202026%20Passive.pdf#page=5).\n\nHDFC Bank Limited: 5.66% of net assets as of 2026-09-30 [YO18 row 13](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+     "refused": false,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "expense_ratio"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Direct-plan expense ratio: 0.23%; Total TER; The same table separately discloses a Direct base expense ratio of 0.13%; as of 2026-08-31 [factsheet page 5](https://www.motilaloswalmf.com/content/dam/motilal-mf/downloads/mf/factsheet/2026/sep/Factsheet%20August%202026%20Passive.pdf#page=5).",
+        "source": "Motilal Oswal Nifty 500 Index Fund"
+       }
+      },
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "top_holdings",
+        "count": 1
+       },
+       "result": {
+        "evidence": [
+         {
+          "id": "E2",
+          "text": "HDFC Bank Limited: 5.66% of net assets as of 2026-09-30 [YO18 row 13](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         }
+        ]
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [],
+     "passed": true
+    },
+    {
+     "text": "**Motilal Oswal Nifty 500 Index Fund**\n\nDirect-plan expense ratio: 0.23%; Total TER; The same table separately discloses a Direct base expense ratio of 0.13%; as of 2026-08-31 [factsheet page 5](https://www.motilaloswalmf.com/content/dam/motilal-mf/downloads/mf/factsheet/2026/sep/Factsheet%20August%202026%20Passive.pdf#page=5).\n\nHDFC Bank Limited: 5.66% of net assets as of 2026-09-30 [YO18 row 13](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+     "refused": false,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "expense_ratio"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Direct-plan expense ratio: 0.23%; Total TER; The same table separately discloses a Direct base expense ratio of 0.13%; as of 2026-08-31 [factsheet page 5](https://www.motilaloswalmf.com/content/dam/motilal-mf/downloads/mf/factsheet/2026/sep/Factsheet%20August%202026%20Passive.pdf#page=5).",
+        "source": "Motilal Oswal Nifty 500 Index Fund"
+       }
+      },
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "top_holdings",
+        "count": 1
+       },
+       "result": {
+        "evidence": [
+         {
+          "id": "E2",
+          "text": "HDFC Bank Limited: 5.66% of net assets as of 2026-09-30 [YO18 row 13](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         }
+        ]
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [],
+     "passed": true
+    },
+    {
+     "text": "**Motilal Oswal Nifty 500 Index Fund**\n\nDirect-plan expense ratio: 0.23%; Total TER; The same table separately discloses a Direct base expense ratio of 0.13%; as of 2026-08-31 [factsheet page 5](https://www.motilaloswalmf.com/content/dam/motilal-mf/downloads/mf/factsheet/2026/sep/Factsheet%20August%202026%20Passive.pdf#page=5).\n\nHDFC Bank Limited: 5.66% of net assets as of 2026-09-30 [YO18 row 13](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+     "refused": false,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "expense_ratio"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Direct-plan expense ratio: 0.23%; Total TER; The same table separately discloses a Direct base expense ratio of 0.13%; as of 2026-08-31 [factsheet page 5](https://www.motilaloswalmf.com/content/dam/motilal-mf/downloads/mf/factsheet/2026/sep/Factsheet%20August%202026%20Passive.pdf#page=5).",
+        "source": "Motilal Oswal Nifty 500 Index Fund"
+       }
+      },
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "top_holdings",
+        "count": 1
+       },
+       "result": {
+        "evidence": [
+         {
+          "id": "E2",
+          "text": "HDFC Bank Limited: 5.66% of net assets as of 2026-09-30 [YO18 row 13](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         }
+        ]
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "wrong-plan",
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "expense_ratio"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing."
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "expense_ratio"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing."
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "expense_ratio"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing."
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "wrong-month",
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "expense_ratio"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing."
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "expense_ratio"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing."
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "expense_ratio"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing."
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "wrong-day",
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "benchmark"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing."
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "benchmark"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing."
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "benchmark"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing."
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "unavailable-total",
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "expense_ratio"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing."
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "expense_ratio"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing."
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "expense_ratio"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing."
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "outside-top-ten",
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 1,
+     "trace": [],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 1,
+     "trace": [],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 1,
+     "trace": [],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "unknown-holding",
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "top_holdings",
+        "count": 10
+       },
+       "result": {
+        "evidence": [
+         {
+          "id": "E1",
+          "text": "HDFC Bank Limited: 5.66% of net assets as of 2026-09-30 [YO18 row 13](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E2",
+          "text": "ICICI Bank Limited: 4.94% of net assets as of 2026-09-30 [YO18 row 14](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E3",
+          "text": "Reliance Industries Limited: 4.14% of net assets as of 2026-09-30 [YO18 row 15](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E4",
+          "text": "Bharti Airtel Limited: 2.78% of net assets as of 2026-09-30 [YO18 row 16](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E5",
+          "text": "Larsen & Toubro Limited: 2.29% of net assets as of 2026-09-30 [YO18 row 17](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E6",
+          "text": "State Bank of India: 2.07% of net assets as of 2026-09-30 [YO18 row 18](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E7",
+          "text": "Axis Bank Limited: 1.84% of net assets as of 2026-09-30 [YO18 row 19](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E8",
+          "text": "Infosys Limited: 1.83% of net assets as of 2026-09-30 [YO18 row 20](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E9",
+          "text": "Kotak Mahindra Bank Ltd: 1.60% of net assets as of 2026-09-30 [YO18 row 21](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E10",
+          "text": "Mahindra & Mahindra Limited: 1.37% of net assets as of 2026-09-30 [YO18 row 22](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         }
+        ]
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "top_holdings",
+        "count": 10
+       },
+       "result": {
+        "evidence": [
+         {
+          "id": "E1",
+          "text": "HDFC Bank Limited: 5.66% of net assets as of 2026-09-30 [YO18 row 13](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E2",
+          "text": "ICICI Bank Limited: 4.94% of net assets as of 2026-09-30 [YO18 row 14](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E3",
+          "text": "Reliance Industries Limited: 4.14% of net assets as of 2026-09-30 [YO18 row 15](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E4",
+          "text": "Bharti Airtel Limited: 2.78% of net assets as of 2026-09-30 [YO18 row 16](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E5",
+          "text": "Larsen & Toubro Limited: 2.29% of net assets as of 2026-09-30 [YO18 row 17](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E6",
+          "text": "State Bank of India: 2.07% of net assets as of 2026-09-30 [YO18 row 18](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E7",
+          "text": "Axis Bank Limited: 1.84% of net assets as of 2026-09-30 [YO18 row 19](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E8",
+          "text": "Infosys Limited: 1.83% of net assets as of 2026-09-30 [YO18 row 20](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E9",
+          "text": "Kotak Mahindra Bank Ltd: 1.60% of net assets as of 2026-09-30 [YO18 row 21](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E10",
+          "text": "Mahindra & Mahindra Limited: 1.37% of net assets as of 2026-09-30 [YO18 row 22](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         }
+        ]
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "top_holdings",
+        "count": 10
+       },
+       "result": {
+        "evidence": [
+         {
+          "id": "E1",
+          "text": "HDFC Bank Limited: 5.66% of net assets as of 2026-09-30 [YO18 row 13](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E2",
+          "text": "ICICI Bank Limited: 4.94% of net assets as of 2026-09-30 [YO18 row 14](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E3",
+          "text": "Reliance Industries Limited: 4.14% of net assets as of 2026-09-30 [YO18 row 15](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E4",
+          "text": "Bharti Airtel Limited: 2.78% of net assets as of 2026-09-30 [YO18 row 16](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E5",
+          "text": "Larsen & Toubro Limited: 2.29% of net assets as of 2026-09-30 [YO18 row 17](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E6",
+          "text": "State Bank of India: 2.07% of net assets as of 2026-09-30 [YO18 row 18](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E7",
+          "text": "Axis Bank Limited: 1.84% of net assets as of 2026-09-30 [YO18 row 19](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E8",
+          "text": "Infosys Limited: 1.83% of net assets as of 2026-09-30 [YO18 row 20](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E9",
+          "text": "Kotak Mahindra Bank Ltd: 1.60% of net assets as of 2026-09-30 [YO18 row 21](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         },
+         {
+          "id": "E10",
+          "text": "Mahindra & Mahindra Limited: 1.37% of net assets as of 2026-09-30 [YO18 row 22](https://www.motilaloswalmf.com/content/dam/motilal-mf/sheets/fund-csvs/Month_End_Portfolio_September_2026/YO18.xlsx).",
+          "source": "Motilal Oswal Nifty 500 Index Fund"
+         }
+        ]
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "fund-report",
+   "samples": [
+    {
+     "text": "**HDFC Defence Fund**\n\nBharat Electronics Ltd.: 14.87% of net assets as of 2026-09-30 [HDFCDFNFND row 9](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).\n\n**Bharat Electronics Ltd. annual report, FY26**\n\nBEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakh, as printed in the standalone balance sheet [page 98](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=98). The balance sheet is stated in ₹ lakhs [page 98](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=98).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "top_holdings",
+        "count": 10
+       },
+       "result": {
+        "evidence": [
+         {
+          "id": "E1",
+          "text": "Bharat Electronics Ltd.: 14.87% of net assets as of 2026-09-30 [HDFCDFNFND row 9](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E2",
+          "text": "Bharat Forge Ltd.: 12.91% of net assets as of 2026-09-30 [HDFCDFNFND row 10](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E3",
+          "text": "Hindustan Aeronautics Limited: 12.61% of net assets as of 2026-09-30 [HDFCDFNFND row 11](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E4",
+          "text": "Solar Industries India Ltd.: 10.28% of net assets as of 2026-09-30 [HDFCDFNFND row 12](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E5",
+          "text": "Astra Microwave Products Ltd.: 6.44% of net assets as of 2026-09-30 [HDFCDFNFND row 13](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E6",
+          "text": "BEML Limited: 5.11% of net assets as of 2026-09-30 [HDFCDFNFND row 14](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E7",
+          "text": "MTAR Technologies Limited: 5.09% of net assets as of 2026-09-30 [HDFCDFNFND row 15](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E8",
+          "text": "Eicher Motors Ltd.: 4.67% of net assets as of 2026-09-30 [HDFCDFNFND row 16](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E9",
+          "text": "Bosch Limited: 4.10% of net assets as of 2026-09-30 [HDFCDFNFND row 17](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E10",
+          "text": "Bharat Dynamics Limited: 3.19% of net assets as of 2026-09-30 [HDFCDFNFND row 18](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         }
+        ]
+       }
+      },
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "BEL",
+        "question": "What were Bharat Electronics Ltd.'s standalone total assets at the end of FY26?"
+       },
+       "result": {
+        "id": "E11",
+        "text": "BEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakh, as printed in the standalone balance sheet [page 98]. The balance sheet is stated in ₹ lakhs [page 98].",
+        "source": "Bharat Electronics Ltd. annual report, FY26",
+        "query": "What were BEL standalone total assets at the end of FY26?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Bharat Electronics Ltd. annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that BEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakh. This figure appears directly in the cited page 98, specifically in chunk 2 (\"TOTAL EQUITY AND LIABILITIES | | | 44,09,039 | 40,41,808\") and chunk 7 (\"TOTAL ASSETS | | | 44,09,039 | 40,41,808\"). The answer also correctly notes that the balance sheet is stated in ₹ lakhs, which is confirmed in the header of the balance sheet on page 98. No computed figures are present in the answer - all figures are directly cited from the source material. Therefore, the answer is faithful to the cited pages."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**HDFC Defence Fund**\n\nBharat Electronics Ltd.: 14.87% of net assets as of 2026-09-30 [HDFCDFNFND row 9](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).\n\n**Bharat Electronics Ltd. annual report, FY26**\n\nBEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakhs, per the standalone balance sheet [page 98](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=98).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "top_holdings",
+        "count": 10
+       },
+       "result": {
+        "evidence": [
+         {
+          "id": "E1",
+          "text": "Bharat Electronics Ltd.: 14.87% of net assets as of 2026-09-30 [HDFCDFNFND row 9](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E2",
+          "text": "Bharat Forge Ltd.: 12.91% of net assets as of 2026-09-30 [HDFCDFNFND row 10](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E3",
+          "text": "Hindustan Aeronautics Limited: 12.61% of net assets as of 2026-09-30 [HDFCDFNFND row 11](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E4",
+          "text": "Solar Industries India Ltd.: 10.28% of net assets as of 2026-09-30 [HDFCDFNFND row 12](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E5",
+          "text": "Astra Microwave Products Ltd.: 6.44% of net assets as of 2026-09-30 [HDFCDFNFND row 13](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E6",
+          "text": "BEML Limited: 5.11% of net assets as of 2026-09-30 [HDFCDFNFND row 14](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E7",
+          "text": "MTAR Technologies Limited: 5.09% of net assets as of 2026-09-30 [HDFCDFNFND row 15](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E8",
+          "text": "Eicher Motors Ltd.: 4.67% of net assets as of 2026-09-30 [HDFCDFNFND row 16](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E9",
+          "text": "Bosch Limited: 4.10% of net assets as of 2026-09-30 [HDFCDFNFND row 17](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E10",
+          "text": "Bharat Dynamics Limited: 3.19% of net assets as of 2026-09-30 [HDFCDFNFND row 18](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         }
+        ]
+       }
+      },
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "BEL",
+        "question": "What were BEL's standalone total assets at the end of FY26?"
+       },
+       "result": {
+        "id": "E11",
+        "text": "BEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakhs, per the standalone balance sheet [page 98].",
+        "source": "Bharat Electronics Ltd. annual report, FY26",
+        "query": "What were BEL's standalone total assets at the end of FY26?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Bharat Electronics Ltd. annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that BEL's standalone total assets at 31 March 2026 were ₹44,09,039 lakhs. This figure appears directly in page 98 chunk 7, which shows the Standalone Balance Sheet with 'TOTAL ASSETS' listed as 44,09,039 for 'As at 31 March 2026'. The figure is not computed but directly stated on the cited page, so there are no computed figures to evaluate. The answer is faithful as it accurately reflects what is printed on the cited page."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**HDFC Defence Fund**\n\nBharat Electronics Ltd.: 14.87% of net assets as of 2026-09-30 [HDFCDFNFND row 9](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).\n\n**Bharat Electronics Ltd. annual report, FY26**\n\nBEL's standalone total assets as at 31 March 2026 were ₹44,09,039 lakhs, per the standalone balance sheet, which is stated in ₹ lakhs [page 98](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=98). The same balance sheet shows total assets of ₹40,41,808 lakhs as at 31 March 2025 [page 98](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=98).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "fund_disclosure",
+       "input": {
+        "field": "top_holdings",
+        "count": 10
+       },
+       "result": {
+        "evidence": [
+         {
+          "id": "E1",
+          "text": "Bharat Electronics Ltd.: 14.87% of net assets as of 2026-09-30 [HDFCDFNFND row 9](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E2",
+          "text": "Bharat Forge Ltd.: 12.91% of net assets as of 2026-09-30 [HDFCDFNFND row 10](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E3",
+          "text": "Hindustan Aeronautics Limited: 12.61% of net assets as of 2026-09-30 [HDFCDFNFND row 11](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E4",
+          "text": "Solar Industries India Ltd.: 10.28% of net assets as of 2026-09-30 [HDFCDFNFND row 12](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E5",
+          "text": "Astra Microwave Products Ltd.: 6.44% of net assets as of 2026-09-30 [HDFCDFNFND row 13](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E6",
+          "text": "BEML Limited: 5.11% of net assets as of 2026-09-30 [HDFCDFNFND row 14](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E7",
+          "text": "MTAR Technologies Limited: 5.09% of net assets as of 2026-09-30 [HDFCDFNFND row 15](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E8",
+          "text": "Eicher Motors Ltd.: 4.67% of net assets as of 2026-09-30 [HDFCDFNFND row 16](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E9",
+          "text": "Bosch Limited: 4.10% of net assets as of 2026-09-30 [HDFCDFNFND row 17](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         },
+         {
+          "id": "E10",
+          "text": "Bharat Dynamics Limited: 3.19% of net assets as of 2026-09-30 [HDFCDFNFND row 18](https://files.hdfcfund.com/s3fs-public/2026-10/Monthly%20HDFC%20Defence%20Fund%20-%2030%20September%202026_0.xlsx?VersionId=YVxw5qcqyCa0puVN.yNi.8oZdOQU.HPA).",
+          "source": "HDFC Defence Fund"
+         }
+        ]
+       }
+      },
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "BEL",
+        "question": "What were Bharat Electronics Ltd.'s standalone total assets as of the end of FY26 (March 31, 2026)?"
+       },
+       "result": {
+        "id": "E11",
+        "text": "BEL's standalone total assets as at 31 March 2026 were ₹44,09,039 lakhs, per the standalone balance sheet, which is stated in ₹ lakhs [page 98]. The same balance sheet shows total assets of ₹40,41,808 lakhs as at 31 March 2025 [page 98].",
+        "source": "Bharat Electronics Ltd. annual report, FY26",
+        "query": "What were BEL standalone total assets as of the end of FY26 (March 31, 2026)?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Bharat Electronics Ltd. annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer cites two specific figures from the standalone balance sheet on page 98: total assets of ₹44,09,039 lakhs as at 31 March 2026 and ₹40,41,808 lakhs as at 31 March 2025. Both figures are directly stated in the cited page (page 98, chunk 2 and chunk 7 show 'TOTAL ASSETS' and 'TOTAL EQUITY AND LIABILITIES' with these exact values). The answer contains no computed figures - it only reports figures that appear directly in the source material. All factual claims are supported by the cited text."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "consolidated-scope",
+   "samples": [
+    {
+     "text": "**Bharat Electronics Ltd. annual report, FY26**\n\nBEL's consolidated total assets at 31 March 2026 were ₹ 44,53,752 lakhs [page 145](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=145).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "BEL",
+        "question": "What were BEL consolidated total assets at the end of FY26?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "BEL's consolidated total assets at 31 March 2026 were ₹ 44,53,752 lakhs [page 145].",
+        "source": "Bharat Electronics Ltd. annual report, FY26",
+        "query": "What were BEL consolidated total assets at the end of FY26?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the same figure (₹44,53,752 lakhs), same unit (lakhs), same period (March 31, 2026), and same scope (consolidated) as the reference answer. The only minor difference is the formatting of the number presentation, which does not affect the correctness of the answer."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Bharat Electronics Ltd. annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that BEL's consolidated total assets at 31 March 2026 were ₹ 44,53,752 lakhs. This figure appears directly in page 145 chunk 6, in the row labeled 'TOTAL ASSETS' with the value 44,53,752 for 'As at 31 March 2026'. No computation is involved - the figure is explicitly stated on the cited page. Therefore, the answer is faithful."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Bharat Electronics Ltd. annual report, FY26**\n\nBEL's consolidated total assets at 31 March 2026 were ₹44,53,752 lakhs, as printed in the consolidated balance sheet [page 145](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=145). The comparative figure at 31 March 2025 was ₹40,83,186 lakhs [page 145](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=145).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "BEL",
+        "question": "What were BEL consolidated total assets at the end of FY26?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "BEL's consolidated total assets at 31 March 2026 were ₹44,53,752 lakhs, as printed in the consolidated balance sheet [page 145]. The comparative figure at 31 March 2025 was ₹40,83,186 lakhs [page 145].",
+        "source": "Bharat Electronics Ltd. annual report, FY26",
+        "query": "What were BEL consolidated total assets at the end of FY26?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the correct consolidated total assets figure of ₹44,53,752 lakhs as at March 31, 2026, matching the reference answer exactly in both amount and unit (lakhs). The inclusion of the comparative figure for FY25 is additional detail that does not contradict the answer to the question asked."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Bharat Electronics Ltd. annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "Both figures cited in the answer are directly printed in the consolidated balance sheet on page 145. The total assets at 31 March 2026 (₹44,53,752 lakhs) and 31 March 2025 (₹40,83,186 lakhs) are explicitly shown in the 'TOTAL ASSETS' row in chunk 6. No computed figures are present in the answer - both numbers are stated as printed figures from the balance sheet."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Bharat Electronics Ltd. annual report, FY26**\n\nBEL's consolidated total assets at 31 March 2026 were ₹44,53,752 lakhs [page 145](https://bel-india.in/wp-content/uploads/2026/08/Integrated-Annual-Report-2025-26.pdf#page=145).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "BEL",
+        "question": "What were BEL consolidated total assets at the end of FY26?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "BEL's consolidated total assets at 31 March 2026 were ₹44,53,752 lakhs [page 145].",
+        "source": "Bharat Electronics Ltd. annual report, FY26",
+        "query": "What were BEL consolidated total assets at the end of FY26?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the same figure (₹44,53,752 lakhs), same unit (lakhs), same period (March 31, 2026), and same scope (consolidated) as the reference answer. The answer is accurate."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Bharat Electronics Ltd. annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that BEL's consolidated total assets at 31 March 2026 were ₹44,53,752 lakhs. This figure appears directly in page 145 chunk 6, in the row labeled 'TOTAL ASSETS' with the value 44,53,752 for 'As at 31 March 2026'. No computation is required, and the figure is explicitly stated on the cited page."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "unit-trap",
+   "samples": [
+    {
+     "text": "**Navneet Education annual report, FY25**\n\nNavneet Education's standalone total assets at 31 March 2025 were ₹2,28,299 lakhs [page 190](https://navneet.com/annual-report-24-25.pdf#page=190).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "NAVNEET",
+        "question": "What were Navneet Education standalone total assets at the end of FY25?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Navneet Education's standalone total assets at 31 March 2025 were ₹2,28,299 lakhs [page 190].",
+        "source": "Navneet Education annual report, FY25",
+        "query": "What were Navneet Education standalone total assets at the end of FY25?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the same figure (₹2,28,299 lakhs), the same scope (standalone), and the same period (31 March 2025 / end of FY25) as the reference answer. The unit (lakhs) and amount match exactly."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Navneet Education annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Navneet Education's standalone total assets at 31 March 2025 were ₹2,28,299 lakhs. This figure is directly printed on page 190, chunk 3, in the Standalone Balance Sheet where it explicitly shows 'TOTAL ASSETS | 2,28,299 | 1,74,089' for the period as at 31st March, 2025. No computation is required, and the figure is directly supported by the cited page."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Navneet Education annual report, FY25**\n\nNavneet Education's standalone total assets at 31 March 2025 were ₹2,28,299 lakhs [page 190](https://navneet.com/annual-report-24-25.pdf#page=190).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "NAVNEET",
+        "question": "What were Navneet Education standalone total assets at the end of FY25?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Navneet Education's standalone total assets at 31 March 2025 were ₹2,28,299 lakhs [page 190].",
+        "source": "Navneet Education annual report, FY25",
+        "query": "What were Navneet Education standalone total assets at the end of FY25?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the same figure (₹2,28,299 lakhs), the same scope (standalone), and the same period (31 March 2025 / end of FY25) as the reference answer. The unit (lakhs) and amount match exactly."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Navneet Education annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Navneet Education's standalone total assets at 31 March 2025 were ₹2,28,299 lakhs. This figure is directly printed on page 190, chunk 3, in the Standalone Balance Sheet where it explicitly shows 'TOTAL ASSETS | 2,28,299 | 1,74,089' for the period as at 31st March, 2025. No computation is required, and the figure is directly supported by the cited page."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Navneet Education annual report, FY25**\n\nNavneet Education's standalone total assets at 31 March 2025 were ₹2,28,299 lakhs [page 190](https://navneet.com/annual-report-24-25.pdf#page=190).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "NAVNEET",
+        "question": "What were Navneet Education standalone total assets at the end of FY25?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Navneet Education's standalone total assets at 31 March 2025 were ₹2,28,299 lakhs [page 190].",
+        "source": "Navneet Education annual report, FY25",
+        "query": "What were Navneet Education standalone total assets at the end of FY25?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the same figure (₹2,28,299 lakhs), the same scope (standalone), and the same period (31 March 2025 / end of FY25) as the reference answer. The unit (lakhs) and amount match exactly."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Navneet Education annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Navneet Education's standalone total assets at 31 March 2025 were ₹2,28,299 lakhs. This figure is directly printed on page 190, chunk 3, in the Standalone Balance Sheet where it explicitly shows 'TOTAL ASSETS | 2,28,299 | 1,74,089' for the period as at 31st March, 2025. No computation is required, and the figure is directly supported by the cited page."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "missing-fact",
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "How many electric vehicle charging stations did HCC operate in FY25?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "How many electric vehicle charging stations did HCC operate in FY25?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "How many electric vehicle charging stations did HCC operate in FY25?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "How many electric vehicle charging stations did HCC operate in FY25?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "How many electric vehicle charging stations did HCC operate in FY25?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "How many electric vehicle charging stations did HCC operate in FY25?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    }
+   ]
+  }
+ ]
+}

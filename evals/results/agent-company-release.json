@@ -1,0 +1,2563 @@
+{
+ "label": "agent-company-release",
+ "samples": 3,
+ "when": "2026-10-25T07:13:42.556147+00:00",
+ "questions": [
+  {
+   "id": "hcc-fy25-001",
+   "samples": [
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nStandalone total assets were ₹8,743.37 crore as at March 31, 2025, compared with ₹8,138.03 crore as at March 31, 2024 [page 114](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=114). The increase was ₹605.34 crore, or about 7.4% (computed from [page 114](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=114)).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "How did HCC's standalone total assets change from FY24 to FY25?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Standalone total assets were ₹8,743.37 crore as at March 31, 2025, compared with ₹8,138.03 crore as at March 31, 2024 [page 114]. The increase was ₹605.34 crore, or about 7.4% (computed from [page 114]).",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "How did HCC's standalone total assets change from FY24 to FY25?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the same standalone total assets figures for both FY25 (₹8,743.37 crore) and FY24 (₹8,138.03 crore) as the reference answer, with the correct unit (crore), correct periods, and correct scope (standalone). The system answer additionally calculates the change amount (₹605.34 crore) and percentage increase (7.4%), which are accurate and represent extra true detail that enhances the answer without contradicting the reference."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [
+        {
+         "figure": "₹605.34 crore",
+         "labelled": true,
+         "arithmetic_right": true
+        },
+        {
+         "figure": "7.4%",
+         "labelled": true,
+         "arithmetic_right": true
+        }
+       ],
+       "faithful": true,
+       "reason": "The answer cites page 114 for the total assets figures of ₹8,743.37 crore (March 31, 2025) and ₹8,138.03 crore (March 31, 2024), which are confirmed in page 114 chunk 3. The computed increase of ₹605.34 crore is correctly calculated (8,743.37 - 8,138.03 = 605.34) and is explicitly labelled as computed. The percentage increase of 7.4% is also correctly calculated (605.34 / 8,138.03 = 0.0743 or approximately 7.4%) and is explicitly labelled as computed. Both computed figures have their inputs on the cited page and the arithmetic is correct."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nStandalone total assets were ₹8,743.37 crore as at March 31, 2025, up from ₹8,138.03 crore as at March 31, 2024 [page 114](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=114). Standalone total assets rose by ₹605.34 crore, or about 7.4% (computed from [page 114](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=114)).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "How did HCC's standalone total assets change from FY24 to FY25?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Standalone total assets were ₹8,743.37 crore as at March 31, 2025, up from ₹8,138.03 crore as at March 31, 2024 [page 114]. Standalone total assets rose by ₹605.34 crore, or about 7.4% (computed from [page 114]).",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "How did HCC's standalone total assets change from FY24 to FY25?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the same figures as the reference answer for both FY25 (₹8,743.37 crore) and FY24 (₹8,138.03 crore) on a standalone basis. The additional detail about the change amount (₹605.34 crore) and percentage increase (7.4%) is accurate and does not contradict the reference answer. All key requirements are met: correct figures, correct units (crore), correct periods (FY24 and FY25), and correct scope (standalone)."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [
+        {
+         "figure": "₹605.34 crore",
+         "labelled": true,
+         "arithmetic_right": true
+        },
+        {
+         "figure": "7.4%",
+         "labelled": true,
+         "arithmetic_right": true
+        }
+       ],
+       "faithful": true,
+       "reason": "The answer cites page 114 for the total assets figures of ₹8,743.37 crore (March 31, 2025) and ₹8,138.03 crore (March 31, 2024), which are confirmed in page 114 chunk 3. The computed difference of ₹605.34 crore is correctly calculated (8,743.37 - 8,138.03 = 605.34) and is explicitly labelled as 'computed from [page 114]'. The percentage increase of 7.4% is also correctly calculated (605.34 / 8,138.03 × 100 = 7.43%, rounded to 7.4%) and is explicitly labelled as computed. All inputs for the computed figures are present on the cited page, the arithmetic is correct, and both computed figures are properly labelled."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nStandalone total assets were ₹8,743.37 crore as at March 31, 2025, up from ₹8,138.03 crore as at March 31, 2024 [page 114](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=114). The increase is ₹605.34 crore, or about 7.4% (computed from [page 114](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=114)).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "How did HCC's standalone total assets change from FY24 to FY25?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Standalone total assets were ₹8,743.37 crore as at March 31, 2025, up from ₹8,138.03 crore as at March 31, 2024 [page 114]. The increase is ₹605.34 crore, or about 7.4% (computed from [page 114]).",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "How did HCC's standalone total assets change from FY24 to FY25?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the same standalone total assets figures for both FY25 (₹8,743.37 crore) and FY24 (₹8,138.03 crore) as the reference answer, with the correct unit (crore), correct periods, and correct scope (standalone). The additional detail about the increase amount (₹605.34 crore) and percentage change (7.4%) is accurate and does not contradict the reference answer. Page citations are ignored per instructions."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [
+        {
+         "figure": "₹605.34 crore",
+         "labelled": true,
+         "arithmetic_right": true
+        },
+        {
+         "figure": "7.4%",
+         "labelled": true,
+         "arithmetic_right": true
+        }
+       ],
+       "faithful": true,
+       "reason": "The answer cites page 114 for the total assets figures of ₹8,743.37 crore (March 31, 2025) and ₹8,138.03 crore (March 31, 2024), which are confirmed in page 114 chunk 3. Both computed figures are explicitly labelled as 'computed from [page 114]'. The arithmetic is correct: ₹8,743.37 - ₹8,138.03 = ₹605.34 crore, and ₹605.34 / ₹8,138.03 = 7.43% (approximately 7.4%). All factual claims are supported by the cited page."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "hcc-fy25-002",
+   "samples": [
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nHCC's consolidated total income for the year ended March 31, 2025 was ₹5,726.57 crore [page 195](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=195).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "What was HCC's consolidated total income for FY25?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "HCC's consolidated total income for the year ended March 31, 2025 was ₹5,726.57 crore [page 195].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "What was HCC's consolidated total income for FY25?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the exact same consolidated total income figure of ₹5,726.57 crore for FY25 (year ended March 31, 2025) as the reference answer. The unit (crore), period (FY25), and scope (consolidated) all match correctly. The system answer does not include the FY24 comparison figure, but this is acceptable since the question only asked for FY25 data."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that HCC's consolidated total income for the year ended March 31, 2025 was ₹5,726.57 crore. This figure is directly printed on page 195 in the Consolidated Statement of Profit and Loss, where 'Total income' for the year ended March 31, 2025 is shown as 5,726.57 crore. No computation is involved, and the figure is explicitly stated in the cited page. The answer is faithful."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nHCC's consolidated total income for FY25 was ₹5,726.57 crore, down from ₹7,139.75 crore in FY24 [page 195](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=195).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "What was HCC's consolidated total income for FY25?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "HCC's consolidated total income for FY25 was ₹5,726.57 crore, down from ₹7,139.75 crore in FY24 [page 195].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "What was HCC's consolidated total income for FY25?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the correct consolidated total income figure of ₹5,726.57 crore for FY25, matching the reference answer exactly. The unit (crore), period (FY25), and scope (consolidated) are all correct. The inclusion of the FY24 comparison figure (₹7,139.75 crore) is additional true detail that does not contradict the reference answer."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that HCC's consolidated total income for FY25 was ₹5,726.57 crore and for FY24 was ₹7,139.75 crore. Both figures are directly stated in page 195, chunk 0, in the Consolidated Statement of Profit and Loss under the 'Total income' row. No computed figures are present in the answer - both numbers are explicitly printed on the cited page. The answer is therefore faithful to the cited text."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nHCC's consolidated total income for the year ended March 31, 2025 was ₹5,726.57 crore (amount in ₹ crore, per the page header) [page 195](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=195).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "What was HCC's consolidated total income for FY25?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "HCC's consolidated total income for the year ended March 31, 2025 was ₹5,726.57 crore (amount in ₹ crore, per the page header) [page 195].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "What was HCC's consolidated total income for FY25?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the correct consolidated total income figure of ₹5,726.57 crore for FY25, matching the reference answer exactly. The unit (crore), period (FY25/year ended March 31, 2025), and scope (consolidated) are all correct."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that HCC's consolidated total income for the year ended March 31, 2025 was ₹5,726.57 crore. This figure is directly printed on page 195 chunk 0 in the Consolidated Statement of Profit and Loss, where 'Total income' for the year ended March 31, 2025 is shown as 5,726.57. The answer also correctly notes that the amount is in ₹ crore as stated in the page header. No computed figures are present in the answer, and all factual claims are directly supported by the cited page."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "hcc-fy25-003",
+   "samples": [
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nHCC's standalone undisputed trade receivables considered good that were outstanding for more than 3 years as at March 31, 2025 were ₹294.38 crore [page 138](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=138).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "How much of HCC's standalone undisputed trade receivables considered good were outstanding for more than 3 years as at March 31, 2025?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "HCC's standalone undisputed trade receivables considered good that were outstanding for more than 3 years as at March 31, 2025 were ₹294.38 crore [page 138].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "How much of HCC's standalone undisputed trade receivables considered good were outstanding for more than 3 years as at March 31, 2025?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the exact figure of ₹294.38 crore for standalone undisputed trade receivables considered good outstanding for more than 3 years as at March 31, 2025, which matches the reference answer. The unit (crore), period (March 31, 2025), and scope (standalone) are all correct."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that HCC's standalone undisputed trade receivables considered good that were outstanding for more than 3 years as at March 31, 2025 were ₹294.38 crore. This figure is directly found in page 138, chunk 0, in the trade receivables ageing schedule table under row (i) 'Undisputed trade receivables - considered good' in the 'More than 3 years' column, which shows exactly ₹294.38 crore. No computation is involved, and the figure is explicitly stated on the cited page."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nAs at March 31, 2025, HCC's standalone undisputed trade receivables considered good outstanding for more than 3 years were ₹294.38 crore [page 138](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=138).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "How much of HCC's standalone undisputed trade receivables considered good were outstanding for more than 3 years as at March 31, 2025?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "As at March 31, 2025, HCC's standalone undisputed trade receivables considered good outstanding for more than 3 years were ₹294.38 crore [page 138].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "How much of HCC's standalone undisputed trade receivables considered good were outstanding for more than 3 years as at March 31, 2025?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the exact figure of ₹294.38 crore for standalone undisputed trade receivables considered good outstanding for more than 3 years as at March 31, 2025, which matches the reference answer. The unit (crore), period (March 31, 2025), and scope (standalone) are all correct."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that HCC's standalone undisputed trade receivables considered good outstanding for more than 3 years as at March 31, 2025 were ₹294.38 crore. This figure is directly found in page 138, chunk 0, in the trade receivables ageing schedule table under row (i) 'Undisputed trade receivables - considered good' in the 'More than 3 years' column, which shows exactly ₹294.38 crore. No computation is involved, and the figure is explicitly stated on the cited page."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nStandalone undisputed trade receivables considered good that were outstanding for more than 3 years as at March 31, 2025 were ₹294.38 crore [page 138](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=138).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "How much of HCC's standalone undisputed trade receivables considered good were outstanding for more than 3 years as at March 31, 2025?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Standalone undisputed trade receivables considered good that were outstanding for more than 3 years as at March 31, 2025 were ₹294.38 crore [page 138].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "How much of HCC's standalone undisputed trade receivables considered good were outstanding for more than 3 years as at March 31, 2025?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the exact figure of ₹294.38 crore for standalone undisputed trade receivables considered good outstanding for more than 3 years as at March 31, 2025, which matches the reference answer. The unit (crore), period (March 31, 2025), and scope (standalone) are all correct."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that standalone undisputed trade receivables considered good outstanding for more than 3 years as at March 31, 2025 were ₹294.38 crore. This figure is directly found in page 138, chunk 0, in the ageing schedule table for row (i) 'Undisputed trade receivables - considered good' under the 'More than 3 years' column, which shows exactly 294.38. No computation is involved - this is a direct citation from the table. The answer is faithful to the cited page."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "hcc-fy25-004",
+   "samples": [
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nHCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity [page 15](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=15).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "What share of India's hydropower capacity has HCC built?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "HCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity [page 15].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "What share of India's hydropower capacity has HCC built?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the same figure (25%) and scope (India's hydropower capacity) as the reference answer. The additional context about HCC's contributions to infrastructure development is extra true detail that does not contradict the reference answer. The page citation should be ignored per instructions."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that 'HCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity.' This exact figure and claim appears verbatim in page 15 chunk 0: 'HCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity, more than 60% of its nuclear power generation capacity, 4,036 lane km of roads and expressways, 395 bridges, and 360 km of intricate tunnelling.' The cited page directly supports the answer with no computed figures involved."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nHCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity [page 15](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=15).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "What share of India's hydropower capacity has HCC built?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "HCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity [page 15].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "What share of India's hydropower capacity has HCC built?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the same figure (25%) and scope (India's hydropower capacity) as the reference answer. The additional context about HCC's contributions to infrastructure development is extra true detail that does not contradict the reference answer. The page citation should be ignored per instructions."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that 'HCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity.' This exact figure and claim appears verbatim in page 15 chunk 0: 'HCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity, more than 60% of its nuclear power generation capacity, 4,036 lane km of roads and expressways, 395 bridges, and 360 km of intricate tunnelling.' The cited page directly supports the answer with no computed figures involved."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nHCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity [page 15](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=15).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "What share of India's hydropower capacity has HCC built?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "HCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity [page 15].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "What share of India's hydropower capacity has HCC built?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the same figure (25%) and scope (India's hydropower capacity) as the reference answer. The additional context about HCC's contributions to infrastructure development is extra true detail that does not contradict the reference answer. The page citation should be ignored per instructions."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that 'HCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity.' This exact figure and claim appears verbatim in page 15 chunk 0: 'HCC's contributions to India's infrastructure development include 25% of the country's hydropower capacity, more than 60% of its nuclear power generation capacity, 4,036 lane km of roads and expressways, 395 bridges, and 360 km of intricate tunnelling.' The cited page directly supports the answer with no computed figures involved."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "hcc-fy25-005",
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "How many EV charging stations did HCC build in FY25?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "How many EV charging stations did HCC build in FY25?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "How many EV charging stations did HCC build in FY25?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "How many EV charging stations did HCC build in FY25?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "How many EV charging stations did HCC build in FY25?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "How many EV charging stations did HCC build in FY25?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "chambal-fy25-001",
+   "samples": [
+    {
+     "text": "**Chambal Fertilisers and Chemicals annual report, FY25**\n\nChambal Fertilisers' standalone total assets as at March 31, 2025 were ₹11,146.51 crore (Rs. in Crore) [page 98](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=98). The same balance sheet shows ₹11,293.49 crore as at March 31, 2024 [page 98](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=98).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "CHAMBAL",
+        "question": "What were Chambal Fertilisers and Chemicals' standalone total assets as at March 31, 2025?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Chambal Fertilisers' standalone total assets as at March 31, 2025 were ₹11,146.51 crore (Rs. in Crore) [page 98]. The same balance sheet shows ₹11,293.49 crore as at March 31, 2024 [page 98].",
+        "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+        "query": "What were Chambal Fertilisers' standalone total assets as at March 31, 2025?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the exact same figure as the reference answer: Rs. 11,146.51 crore for standalone total assets as at March 31, 2025, with the correct unit (crore). It also includes the comparative figure for March 31, 2024 (Rs. 11,293.49 crore) which matches the reference answer. The scope is standalone as required, and the period is correct."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "Both figures cited in the answer are directly stated in the balance sheet on page 98. The total assets as at March 31, 2025 of ₹11,146.51 crore and as at March 31, 2024 of ₹11,293.49 crore are explicitly shown in the 'Total Assets' row of the standalone balance sheet. No computed figures are present in the answer."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Chambal Fertilisers and Chemicals annual report, FY25**\n\nChambal Fertilisers' standalone total assets as at March 31, 2025 were Rs. 11,146.51 crore [page 98](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=98).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "CHAMBAL",
+        "question": "What were Chambal Fertilisers' standalone total assets as at March 31, 2025?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Chambal Fertilisers' standalone total assets as at March 31, 2025 were Rs. 11,146.51 crore [page 98].",
+        "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+        "query": "What were Chambal Fertilisers' standalone total assets as at March 31, 2025?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the exact figure of Rs. 11,146.51 crore for standalone total assets as at March 31, 2025, which matches the reference answer. The unit (crore), period (March 31, 2025), and scope (standalone) are all correct. The page citation is ignored as per instructions."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Chambal Fertilisers' standalone total assets as at March 31, 2025 were Rs. 11,146.51 crore. This figure is directly printed on page 98 in the Standalone Balance Sheet, appearing in multiple chunks (chunks 3 and 6) as 'Total Assets | 11,146.51'. No computation is required, and the figure is explicitly stated in the cited page. The answer is faithful."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Chambal Fertilisers and Chemicals annual report, FY25**\n\nChambal Fertilisers and Chemicals' standalone total assets as at March 31, 2025 were ₹11,146.51 crore (Rs. in Crore, per the balance sheet header) [page 98](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=98).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "CHAMBAL",
+        "question": "What were Chambal Fertilisers and Chemicals' standalone total assets as at March 31, 2025?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Chambal Fertilisers and Chemicals' standalone total assets as at March 31, 2025 were ₹11,146.51 crore (Rs. in Crore, per the balance sheet header) [page 98].",
+        "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+        "query": "What were Chambal Fertilisers' standalone total assets as at March 31, 2025?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the correct figure of Rs. 11,146.51 crore for standalone total assets as at March 31, 2025, matching the reference answer exactly. The unit (crore) is correct, the period is correct (March 31, 2025), and the scope is correct (standalone). The system answer also correctly identifies the source as the balance sheet."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Chambal Fertilisers and Chemicals' standalone total assets as at March 31, 2025 were ₹11,146.51 crore. This figure appears directly on page 98 in the balance sheet, stated as 'Total Assets | 11,146.51' for March 31, 2025. The answer also correctly notes the unit as 'Rs. in Crore' per the balance sheet header. No computed figures are present in the answer - it simply cites a figure that appears directly in the cited page. All factual claims are supported by the cited text."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "chambal-fy25-002",
+   "samples": [
+    {
+     "text": "**Chambal Fertilisers and Chemicals annual report, FY25**\n\nChambal's Weak Nitric Acid (WNA) plant, being set up at Gadepan as part of the TAN project, has a manufacturing capacity of 2,10,000 MTPA [page 5](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=5).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "CHAMBAL",
+        "question": "What is the manufacturing capacity of Chambal's Weak Nitric Acid plant?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Chambal's Weak Nitric Acid (WNA) plant, being set up at Gadepan as part of the TAN project, has a manufacturing capacity of 2,10,000 MTPA [page 5].",
+        "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+        "query": "What is the manufacturing capacity of Chambal's Weak Nitric Acid plant?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the same figure (2,10,000 MTPA) as the reference answer for Chambal's Weak Nitric Acid plant manufacturing capacity. The unit (MTPA) matches, and the answer includes additional context about the location (Gadepan) and project (TAN project), which constitutes extra true detail that does not contradict the reference answer."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The cited page 5 chunk 3 explicitly states: 'Your Company is setting up a TAN plant at its existing plant site at Gadepan, District Kota (Rajasthan), for manufacture of 2,40,000 MTPA of TAN, including a Weak Nitric Acid (WNA) plant with manufacturing capacity of 2,10,000 MTPA.' This directly supports all factual claims in the answer: (1) Chambal's WNA plant is being set up at Gadepan, (2) it is part of the TAN project, and (3) it has a manufacturing capacity of 2,10,000 MTPA. No computed figures are present in the answer."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Chambal Fertilisers and Chemicals annual report, FY25**\n\nThe Weak Nitric Acid (WNA) plant, being set up at Gadepan as part of the TAN project, has a manufacturing capacity of 2,10,000 MTPA [page 5](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=5). The filing gives this as part of a TAN plant under construction, with commercial production expected in January 2026 [page 5](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=5).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "CHAMBAL",
+        "question": "What is the manufacturing capacity of Chambal's Weak Nitric Acid plant?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "The Weak Nitric Acid (WNA) plant, being set up at Gadepan as part of the TAN project, has a manufacturing capacity of 2,10,000 MTPA [page 5]. The filing gives this as part of a TAN plant under construction, with commercial production expected in January 2026 [page 5].",
+        "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+        "query": "What is the manufacturing capacity of Chambal's Weak Nitric Acid plant?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the same manufacturing capacity figure as the reference answer: 2,10,000 MTPA. The unit (MTPA - Metric Tonnes Per Annum) matches, and the figure is accurate. The additional context about the location (Gadepan), project name (TAN project), and expected commercial production date are extra details that don't contradict the reference answer and provide helpful context."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that the WNA plant has a manufacturing capacity of 2,10,000 MTPA and that commercial production is expected in January 2026. Page 5 chunk 3 confirms: 'a Weak Nitric Acid (WNA) plant with manufacturing capacity of 2,10,000 MTPA' and page 5 chunk 4 states 'The plant is expected to commence commercial production in January, 2026.' All factual claims in the answer are directly supported by the cited page text. There are no computed figures in the answer."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Chambal Fertilisers and Chemicals annual report, FY25**\n\nChambal's Weak Nitric Acid (WNA) plant, part of the TAN plant under construction at Gadepan, has a manufacturing capacity of 2,10,000 MTPA [page 5](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=5). The same passage gives the TAN plant's capacity as 2,40,000 MTPA [page 5](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=5).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "CHAMBAL",
+        "question": "What is the manufacturing capacity of Chambal's Weak Nitric Acid plant in FY25?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Chambal's Weak Nitric Acid (WNA) plant, part of the TAN plant under construction at Gadepan, has a manufacturing capacity of 2,10,000 MTPA [page 5]. The same passage gives the TAN plant's capacity as 2,40,000 MTPA [page 5].",
+        "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+        "query": "What is the manufacturing capacity of Chambal's Weak Nitric Acid plant?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the correct manufacturing capacity of 2,10,000 MTPA for Chambal's Weak Nitric Acid plant, matching the reference answer exactly in both figure and unit. The additional context about the TAN plant and location is extra detail that does not contradict the core answer."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The cited page 5 explicitly states: 'Your Company is setting up a TAN plant at its existing plant site at Gadepan, District Kota (Rajasthan), for manufacture of 2,40,000 MTPA of TAN, including a Weak Nitric Acid (WNA) plant with manufacturing capacity of 2,10,000 MTPA.' Both figures cited in the answer (2,10,000 MTPA for WNA plant and 2,40,000 MTPA for TAN plant) are directly stated in the cited text. No computed figures are present in the answer - all numbers are explicitly printed on the cited page."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "navneet-fy25-001",
+   "samples": [
+    {
+     "text": "**Navneet Education annual report, FY25**\n\nNavneet Education's standalone total assets as at 31st March, 2025 were ₹2,28,299 lakhs [page 190](https://navneet.com/annual-report-24-25.pdf#page=190).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "NAVNEET",
+        "question": "What were Navneet Education's standalone total assets as at 31st March, 2025?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Navneet Education's standalone total assets as at 31st March, 2025 were ₹2,28,299 lakhs [page 190].",
+        "source": "Navneet Education annual report, FY25",
+        "query": "What were Navneet Education's standalone total assets as at 31st March, 2025?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the exact figure of Rs. 2,28,299 lakhs for standalone total assets as at 31st March, 2025, which matches the reference answer. The unit (lakhs) is correct, the period is correct (31st March, 2025), and the scope is correct (standalone). The page citation is ignored as per instructions."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Navneet Education annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Navneet Education's standalone total assets as at 31st March, 2025 were ₹2,28,299 lakhs. This figure is directly printed on page 190, chunk 3, in the Standalone Balance Sheet where it explicitly shows 'TOTAL ASSETS | 2,28,299 | 1,74,089' for the period ending 31st March, 2025. No computation is required, and the figure is directly supported by the cited page."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Navneet Education annual report, FY25**\n\nNavneet Education's standalone total assets as at 31st March, 2025 were ₹2,28,299 lakhs [page 190](https://navneet.com/annual-report-24-25.pdf#page=190).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "NAVNEET",
+        "question": "What were Navneet Education's standalone total assets as at 31st March, 2025?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Navneet Education's standalone total assets as at 31st March, 2025 were ₹2,28,299 lakhs [page 190].",
+        "source": "Navneet Education annual report, FY25",
+        "query": "What were Navneet Education's standalone total assets as at 31st March, 2025?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the exact figure of Rs. 2,28,299 lakhs for standalone total assets as at 31st March, 2025, which matches the reference answer. The unit (lakhs) is correct, the period is correct (31st March, 2025), and the scope is correct (standalone). The page citation is ignored as per instructions."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Navneet Education annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Navneet Education's standalone total assets as at 31st March, 2025 were ₹2,28,299 lakhs. This figure is directly printed on page 190, chunk 3, in the Standalone Balance Sheet where it explicitly shows 'TOTAL ASSETS | 2,28,299 | 1,74,089' for the period ending 31st March, 2025. No computation is required, and the figure is directly supported by the cited page."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Navneet Education annual report, FY25**\n\nNavneet Education's standalone total assets as at 31st March, 2025 were ₹2,28,299 lakhs [page 190](https://navneet.com/annual-report-24-25.pdf#page=190). The standalone total equity and liabilities figure is the same, which matches the balance sheet total [page 190](https://navneet.com/annual-report-24-25.pdf#page=190).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "NAVNEET",
+        "question": "What were Navneet Education's standalone total assets as at 31st March, 2025?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Navneet Education's standalone total assets as at 31st March, 2025 were ₹2,28,299 lakhs [page 190]. The standalone total equity and liabilities figure is the same, which matches the balance sheet total [page 190].",
+        "source": "Navneet Education annual report, FY25",
+        "query": "What were Navneet Education's standalone total assets as at 31st March, 2025?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the correct figure of Rs. 2,28,299 lakhs for standalone total assets as at 31st March, 2025, matching the reference answer exactly. The unit (lakhs) is correct, the period is correct (31st March, 2025), and the scope is correct (standalone). The additional detail about equity and liabilities matching is accurate and does not contradict the reference answer."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Navneet Education annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Navneet Education's standalone total assets as at 31st March, 2025 were ₹2,28,299 lakhs, which is directly supported by page 190 chunk 3 showing 'TOTAL ASSETS | 2,28,299 | 1,74,089'. The answer also states that the standalone total equity and liabilities figure is the same (₹2,28,299 lakhs), which is confirmed by page 190 chunk 5 showing 'TOTAL EQUITY AND LIABILITIES | 2,28,299 | 1,74,089'. Both figures are explicitly printed on the cited page, so there are no computed figures. The statement that these figures match the balance sheet total is accurate as both the assets side and the equity and liabilities side equal ₹2,28,299 lakhs, which is the fundamental balance sheet equation."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "navneet-fy25-002",
+   "samples": [
+    {
+     "text": "**Navneet Education annual report, FY25**\n\nNavneet's filing states it has over 5,800 titles (\"5,800+ Number of Titles\") [page 7](https://navneet.com/annual-report-24-25.pdf#page=7).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "NAVNEET",
+        "question": "How many titles does Navneet publish?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Navneet's filing states it has over 5,800 titles (\"5,800+ Number of Titles\") [page 7].",
+        "source": "Navneet Education annual report, FY25",
+        "query": "How many titles does Navneet publish?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer states 'over 5,800 titles' which matches the reference answer of 'More than 5,800 titles'. Both convey the same information with the same figure and scope."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Navneet Education annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Navneet's filing shows it has 'over 5,800 titles' and cites this as '5,800+ Number of Titles' from page 7. The cited page 7 chunk 1 explicitly contains the text '5,800+ Number of Titles', which directly supports the claim made in the answer. No computed figures are present in the answer - it is simply reporting a figure that appears verbatim on the cited page."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Navneet Education annual report, FY25**\n\nNavneet's filing states it has 5,800+ titles [page 7](https://navneet.com/annual-report-24-25.pdf#page=7).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "NAVNEET",
+        "question": "How many titles does Navneet publish?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Navneet's filing states it has 5,800+ titles [page 7].",
+        "source": "Navneet Education annual report, FY25",
+        "query": "How many titles does Navneet publish?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer states 'Navneet's filing states it has 5,800+ titles' which matches the reference answer of 'More than 5,800 titles.' Both convey the same information that Navneet publishes over 5,800 titles. The page citation is ignored as instructed."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Navneet Education annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Navneet has '5,800+ titles' and this figure appears directly on page 7 chunk 1, which lists '5,800+ Number of Titles' as one of the key numbers. No computation is involved - the figure is stated exactly as presented in the cited page. All factual claims are supported by the cited text."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Navneet Education annual report, FY25**\n\nNavneet publishes more than 5,800 titles, according to the \"Numbers that Define us\" section [page 7](https://navneet.com/annual-report-24-25.pdf#page=7).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "NAVNEET",
+        "question": "How many titles does Navneet publish?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Navneet publishes more than 5,800 titles, according to the \"Numbers that Define us\" section [page 7].",
+        "source": "Navneet Education annual report, FY25",
+        "query": "How many titles does Navneet publish?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the same figure as the reference answer: more than 5,800 titles. The answer matches the reference in both the quantity and the qualifier ('more than'), and includes the source citation which does not affect correctness."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Navneet Education annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Navneet publishes more than 5,800 titles according to the 'Numbers that Define us' section on page 7. The cited page 7 chunk 1 explicitly shows '5,800+ Number of Titles' in the 'Numbers that Define us' section. This directly supports the claim made in the answer. No computed figures are present in the answer - it simply cites a figure that appears verbatim on the cited page."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "chambal-fy25-003",
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "CHAMBAL",
+        "question": "How many drones did Chambal deploy for nano-fertiliser spraying in FY25?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "How many drones did Chambal deploy for nano-fertiliser spraying in FY25?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "CHAMBAL",
+        "question": "How many drones did Chambal deploy for nano-fertiliser spraying in FY25?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "How many drones did Chambal deploy for nano-fertiliser spraying in FY25?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "CHAMBAL",
+        "question": "How many drones did Chambal Fertilisers and Chemicals deploy for nano-fertiliser spraying in FY25?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "How many drones did Chambal deploy for nano-fertiliser spraying in FY25?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "navneet-fy25-003",
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "NAVNEET",
+        "question": "How much did Navneet spend on television advertising in FY25?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "How much did Navneet spend on television advertising in FY25?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "NAVNEET",
+        "question": "How much did Navneet spend on television advertising in FY25?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "How much did Navneet spend on television advertising in FY25?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "NAVNEET",
+        "question": "How much did Navneet spend on television advertising in FY25?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "How much did Navneet spend on television advertising in FY25?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "hcc-fy25-006",
+   "samples": [
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nStandalone retained earnings were a deficit of ₹1,965.62 crore as at March 31, 2025, down from a deficit of ₹2,049.31 crore a year earlier [page 146](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=146). The standalone Statement of Changes in Equity shows the same closing balance [page 118](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=118).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "What was HCC's standalone retained earnings balance as at March 31, 2025?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Standalone retained earnings were a deficit of ₹1,965.62 crore as at March 31, 2025, down from a deficit of ₹2,049.31 crore a year earlier [page 146]. The standalone Statement of Changes in Equity shows the same closing balance [page 118].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "What was HCC's standalone retained earnings balance as at March 31, 2025?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the exact same figure as the reference answer: a deficit of ₹1,965.62 crore as at March 31, 2025, with the correct unit (crore), correct period (March 31, 2025), and correct scope (standalone). The answer also includes the prior year comparison figure of ₹2,049.31 crore deficit, which matches the reference. The negative sign is properly maintained. The additional detail about the Statement of Changes in Equity is extra true information that does not contradict the reference answer."
+     },
+     "correct": true,
+     "faithful": false,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [
+        {
+         "figure": "change in retained earnings deficit from ₹2,049.31 crore to ₹1,965.62 crore",
+         "labelled": false,
+         "arithmetic_right": true
+        }
+       ],
+       "faithful": false,
+       "reason": "The answer states that retained earnings were 'down from a deficit of ₹2,049.31 crore a year earlier', implying an improvement (reduction in deficit). However, this is a computed figure (the difference between two values) that is not explicitly labelled as computed or calculated. The answer presents this as a simple statement of fact without indicating it is a derived calculation. According to the faithfulness criteria, computed figures must be labelled to maintain faithfulness. While the arithmetic is correct (the deficit decreased from ₹2,049.31 crore to ₹1,965.62 crore, representing an improvement of ₹83.69 crore), the lack of explicit labelling of this computed comparison makes the answer unfaithful."
+      }
+     ],
+     "passed": false
+    },
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nHCC's standalone retained earnings as at March 31, 2025 were a deficit of ₹(1,965.62) crore [page 146](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=146). The statement of changes in equity shows the same closing balance [page 118](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=118).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "What was HCC's standalone retained earnings balance as at March 31, 2025?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "HCC's standalone retained earnings as at March 31, 2025 were a deficit of ₹(1,965.62) crore [page 146]. The statement of changes in equity shows the same closing balance [page 118].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "What was HCC's standalone retained earnings balance as at March 31, 2025?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the same figure as the reference answer: a deficit of ₹1,965.62 crore as at March 31, 2025, in standalone format. The unit (crore), period (March 31, 2025), and scope (standalone) all match the reference answer. The negative figure is correctly represented as a deficit."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that HCC's standalone retained earnings as at March 31, 2025 were a deficit of ₹(1,965.62) crore. Page 146 chunk 0 explicitly shows 'Retained earnings' as '(1,965.62)' for 'As at March 31, 2025'. Page 118 chunk 4 also shows the same figure in the Standalone Statement of Changes in Equity, with retained earnings closing at '(1,965.62)' as at March 31, 2025. Both cited pages directly support both claims in the answer. No computed figures are present in the answer - all figures are directly stated on the cited pages."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nHCC's standalone retained earnings balance as at March 31, 2025 was ₹(1,965.62) crore, shown in brackets, which indicates a negative balance [page 146](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=146). The standalone Statement of Changes in Equity shows the same closing figure of (1,965.62) [page 118](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=118).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "What was HCC's standalone retained earnings balance as at March 31, 2025?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "HCC's standalone retained earnings balance as at March 31, 2025 was ₹(1,965.62) crore, shown in brackets, which indicates a negative balance [page 146]. The standalone Statement of Changes in Equity shows the same closing figure of (1,965.62) [page 118].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "What was HCC's standalone retained earnings balance as at March 31, 2025?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer correctly identifies HCC's standalone retained earnings balance as at March 31, 2025 as ₹(1,965.62) crore, which matches the reference answer. The system correctly notes that the brackets indicate a deficit/negative balance. The figure, unit (crore), period (March 31, 2025), and scope (standalone) all match the reference answer. The system provides additional supporting detail about where the figure appears in the financial statements, which is acceptable extra information."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that HCC's standalone retained earnings balance as at March 31, 2025 was ₹(1,965.62) crore. This figure is directly supported by both cited pages: page 146 shows 'Retained earnings' of (1,965.62) in the Note 16 other equity table, and page 118 shows the same figure of (1,965.62) in the Standalone Statement of Changes in Equity as at March 31, 2025. The answer correctly identifies the negative balance indicated by brackets and cites both pages appropriately. No computed figures are present in the answer - all figures cited are directly stated in the source documents."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "hcc-fy25-007",
+   "samples": [
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nHCC's total consolidated current borrowings as at March 31, 2025 were ₹634.35 crore [page 194](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=194). The note 20 breakdown gives the same total as \"Total current borrowings (A +B)\" [page 230](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=230).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "What were HCC's total consolidated current borrowings as at March 31, 2025?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "HCC's total consolidated current borrowings as at March 31, 2025 were ₹634.35 crore [page 194]. The note 20 breakdown gives the same total as \"Total current borrowings (A +B)\" [page 230].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "What were HCC's total consolidated current borrowings as at March 31, 2025?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the exact figure of ₹634.35 crore for HCC's total consolidated current borrowings as at March 31, 2025, which matches the reference answer. The unit (crore), period (March 31, 2025), and scope (consolidated) are all correct. The system answer includes additional supporting detail about the note reference, which is acceptable extra information."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that HCC's total consolidated current borrowings as at March 31, 2025 were ₹634.35 crore. This figure is directly supported by page 194, chunk 5, which shows 'Borrowings | 20 | 634.35' under Current liabilities. The answer also states that note 20 breakdown gives the same total as 'Total current borrowings (A +B)', which is confirmed by page 230, chunk 1, which explicitly shows 'Total current borrowings (A +B) | 634.35 | 436.95'. Both cited figures match the answer exactly, and no computed figures are presented in the answer."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nHCC's total consolidated current borrowings as at March 31, 2025 were ₹634.35 crore [page 194](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=194) . The note 20 breakdown gives the same total, \"Total current borrowings (A +B) 634.35.\" [page 230](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=230)",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "What were HCC's total consolidated current borrowings as at March 31, 2025?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "HCC's total consolidated current borrowings as at March 31, 2025 were ₹634.35 crore [page 194] . The note 20 breakdown gives the same total, \"Total current borrowings (A +B) 634.35.\" [page 230]",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "What were HCC's total consolidated current borrowings as at March 31, 2025?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the exact figure of ₹634.35 crore for HCC's total consolidated current borrowings as at March 31, 2025, which matches the reference answer. The unit (crore), period (March 31, 2025), and scope (consolidated) are all correct. The system answer also provides supporting documentation references and verification from note 20, which adds credibility without contradicting the reference answer."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that HCC's total consolidated current borrowings as at March 31, 2025 were ₹634.35 crore. This figure is directly supported by page 194, which shows in the Consolidated Balance Sheet under Current liabilities, Financial liabilities, Borrowings (Note 20): 634.35 crore. The answer also cites page 230, which shows in Note 20 the line 'Total current borrowings (A +B) 634.35' for March 31, 2025. Both cited pages explicitly state this figure, so no computation is involved. The answer is faithful as it accurately reflects what appears in the cited pages."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nHCC's total consolidated current borrowings as at March 31, 2025 were ₹634.35 crore [page 194](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=194). The note 20 breakdown gives the same total of ₹634.35 crore [page 230](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=230).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "What were HCC's total consolidated current borrowings as at March 31, 2025?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "HCC's total consolidated current borrowings as at March 31, 2025 were ₹634.35 crore [page 194]. The note 20 breakdown gives the same total of ₹634.35 crore [page 230].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "What were HCC's total consolidated current borrowings as at March 31, 2025?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the exact figure of ₹634.35 crore for HCC's total consolidated current borrowings as at March 31, 2025, which matches the reference answer. The unit (crore), period (March 31, 2025), and scope (consolidated) are all correct. The system answer also provides additional supporting detail by referencing the note breakdown, which is acceptable as extra true detail."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that HCC's total consolidated current borrowings as at March 31, 2025 were ₹634.35 crore. Page 194, chunk 5 shows in the Consolidated Balance Sheet under 'Current liabilities' and 'Financial liabilities' that 'Borrowings' (Note 20) equals 634.35 crore as at March 31, 2025. Page 230, chunk 1 shows Note 20 with the line 'Total current borrowings (A +B)' equaling 634.35 crore as at March 31, 2025. Both figures match exactly and are directly stated in the cited pages, so no computation is involved. The answer is faithful as both claims are directly supported by the cited text."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "hcc-fy25-008",
+   "samples": [
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nDisputed trade receivables considered good that were outstanding for more than 3 years as at March 31, 2025 were ₹772.28 crore on a consolidated basis [page 220](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=220).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "How much of HCC's consolidated disputed trade receivables considered good were outstanding for more than 3 years as at March 31, 2025?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Disputed trade receivables considered good that were outstanding for more than 3 years as at March 31, 2025 were ₹772.28 crore on a consolidated basis [page 220].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "How much of HCC's consolidated disputed trade receivables considered good were outstanding for more than 3 years as at March 31, 2025?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the exact figure of ₹772.28 crore for disputed trade receivables considered good outstanding for more than 3 years as at March 31, 2025 on a consolidated basis, which matches the reference answer. The unit (crore), period (March 31, 2025), and scope (consolidated) are all correct."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that disputed trade receivables considered good outstanding for more than 3 years as at March 31, 2025 were ₹772.28 crore on a consolidated basis. This figure is directly found in page 220, chunk 1, in row (iv) 'Disputed trade receivables - considered good' under the 'More than 3 years' column, which shows exactly ₹772.28 crore. No computation is involved - this is a direct citation from the cited page. The answer is faithful."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nOf HCC's consolidated disputed trade receivables considered good, ₹772.28 crore were outstanding for more than 3 years as at March 31, 2025 [page 220](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=220).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "How much of HCC's consolidated disputed trade receivables considered good were outstanding for more than 3 years as at March 31, 2025?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Of HCC's consolidated disputed trade receivables considered good, ₹772.28 crore were outstanding for more than 3 years as at March 31, 2025 [page 220].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "How much of HCC's consolidated disputed trade receivables considered good were outstanding for more than 3 years as at March 31, 2025?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the exact figure of ₹772.28 crore for disputed trade receivables considered good that were outstanding for more than 3 years as at March 31, 2025 on a consolidated basis, which matches the reference answer. The unit (crore), period (March 31, 2025), and scope (consolidated) are all correct."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that HCC's consolidated disputed trade receivables considered good had ₹772.28 crore outstanding for more than 3 years as at March 31, 2025. This figure is directly found in page 220, chunk 1, in row (iv) 'Disputed trade receivables - considered good' under the 'More than 3 years' column, which shows exactly ₹772.28 crore. No computation is involved, and the figure is explicitly stated in the cited page."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nDisputed trade receivables considered good, outstanding for more than 3 years as at March 31, 2025, were ₹772.28 crore on a consolidated basis [page 220](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=220). The filing states the amounts in ₹ crore unless otherwise stated [page 220](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=220).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "How much of HCC's consolidated disputed trade receivables considered good were outstanding for more than 3 years as at March 31, 2025?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Disputed trade receivables considered good, outstanding for more than 3 years as at March 31, 2025, were ₹772.28 crore on a consolidated basis [page 220]. The filing states the amounts in ₹ crore unless otherwise stated [page 220].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "How much of HCC's consolidated disputed trade receivables considered good were outstanding for more than 3 years as at March 31, 2025?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the exact figure of ₹772.28 crore for disputed trade receivables considered good outstanding for more than 3 years as at March 31, 2025 on a consolidated basis, which matches the reference answer. The unit (crore), period (March 31, 2025), and scope (consolidated) are all correct. The system answer also correctly identifies this as part of the ₹1,651.17 crore total of disputed trade receivables considered good, which aligns with the reference answer's context."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that disputed trade receivables considered good, outstanding for more than 3 years as at March 31, 2025, were ₹772.28 crore on a consolidated basis. This figure is directly found in page 220 chunk 1, row (iv) 'Disputed trade receivables - considered good', in the 'More than 3 years' column, which shows exactly ₹772.28 crore. The answer also correctly notes that the filing states amounts in ₹ crore unless otherwise stated, which is confirmed in the header of page 220. No computed figures are present in the answer - all stated figures are directly cited from the pages provided."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "hcc-fy25-009",
+   "samples": [
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nHCC had excavated a cumulative 5,991 meters of the Vishnugad Pipalkoti Head Race Tunnel, of which 5,604 meters were completed using a Tunnel Boring Machine [page 12](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=12). The same figures appear in the Projects Update [page 23](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=23).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "How much of the Vishnugad Pipalkoti head race tunnel had HCC excavated?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "HCC had excavated a cumulative 5,991 meters of the Vishnugad Pipalkoti Head Race Tunnel, of which 5,604 meters were completed using a Tunnel Boring Machine [page 12]. The same figures appear in the Projects Update [page 23].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "How much of the Vishnugad Pipalkoti head race tunnel had HCC excavated?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the exact same figures as the reference answer: 5,991 m cumulative excavation, with 5,604 m excavated using a TBM (specifically the 9.86 m Double Shield TBM as mentioned in the reference). The system answer correctly identifies both the total cumulative length and the portion completed with the TBM, matching the reference answer precisely. The page citations are ignored as instructed."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that HCC excavated 5,991 meters of the Vishnugad Pipalkoti Head Race Tunnel, with 5,604 meters completed using a Tunnel Boring Machine. Page 12 chunk 0 confirms: 'The Head Race Tunnel (HRT) of Vishnugad Pipalkoti Hydropower Project (VPHEP) has achieved a cumulative excavation of 5,991 m, including 5,604 m completed using a 9.86 m diameter Double Shield Tunnel Boring Machine.' Page 23 chunk 3 repeats these exact figures: 'the Head Race Tunnel (HRT) has reached a cumulative excavation of 5,991 meters, with 5,604 meters completed using a Tunnel Boring Machine (TBM).' All factual claims in the answer are directly supported by the cited pages with no computed figures involved."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nHCC had excavated a cumulative 5,991 meters of the Vishnugad Pipalkoti Head Race Tunnel, of which 5,604 meters were completed using a Tunnel Boring Machine [page 12](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=12)[page 23](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=23).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "How much of the Vishnugad Pipalkoti head race tunnel had HCC excavated?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "HCC had excavated a cumulative 5,991 meters of the Vishnugad Pipalkoti Head Race Tunnel, of which 5,604 meters were completed using a Tunnel Boring Machine [page 12][page 23].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "How much of the Vishnugad Pipalkoti head race tunnel had HCC excavated?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the same figures as the reference answer: 5,991 m cumulative excavation with 5,604 m completed using a TBM. While the system answer doesn't specify the TBM model (9.86 m Double Shield TBM), it provides the core figures requested with the correct units and scope. The additional detail about the TBM model in the reference answer is not contradicted, just not mentioned. The figures match exactly."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "All factual claims in the answer are directly supported by the cited pages. Page 12 states that the Head Race Tunnel 'has achieved a cumulative excavation of 5,991 m' and '5,604 m completed using a 9.86 m diameter Double Shield Tunnel Boring Machine.' Page 23 confirms these same figures: 'the Head Race Tunnel (HRT) has reached a cumulative excavation of 5,991 meters, with 5,604 meters completed using a Tunnel Boring Machine (TBM).' No computed figures are present in the answer - all numbers are directly cited from the source pages."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Hindustan Construction Company annual report, FY25**\n\nThe Head Race Tunnel of the Vishnugad Pipalkoti Hydropower Project had reached a cumulative excavation of 5,991 meters, of which 5,604 meters were completed using a Tunnel Boring Machine [page 12](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=12). The same figure is repeated in the project update [page 23](https://hccindia.com/uploads/reports/0_14711100_1755498593_HCC_Annual_Report_2025.pdf#page=23).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "How much of the Vishnugad Pipalkoti head race tunnel had HCC excavated?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "The Head Race Tunnel of the Vishnugad Pipalkoti Hydropower Project had reached a cumulative excavation of 5,991 meters, of which 5,604 meters were completed using a Tunnel Boring Machine [page 12]. The same figure is repeated in the project update [page 23].",
+        "source": "Hindustan Construction Company annual report, FY25",
+        "query": "How much of the Vishnugad Pipalkoti head race tunnel had HCC excavated?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the exact same figures as the reference answer: a cumulative 5,991 m total excavation, of which 5,604 m was excavated with the TBM (Double Shield TBM as specified in the reference). The answer matches the reference in both the total amount and the breakdown, with the same units (meters). The additional context about page citations and project updates does not affect the correctness of the core figures provided."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Hindustan Construction Company annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "All factual claims in the answer are directly supported by the cited pages. Page 12 states that the Head Race Tunnel has achieved a cumulative excavation of 5,991 m, with 5,604 m completed using a Tunnel Boring Machine. Page 23 repeats these exact figures in the Vishnugad Pipalkoti HEP section, confirming the same information. No computed figures are present in the answer - all numbers cited are directly stated in the source pages."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "hcc-fy25-010",
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "How many patents did HCC file in FY25?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "How many patents did HCC file in FY25?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "How many patents did HCC file in FY25?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "How many patents did HCC file in FY25?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "HCC",
+        "question": "How many patents did HCC file in FY25?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "How many patents did HCC file in FY25?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "chambal-fy25-004",
+   "samples": [
+    {
+     "text": "**Chambal Fertilisers and Chemicals annual report, FY25**\n\nStandalone total assets were Rs. 11,146.51 crore as at March 31, 2025 and Rs. 11,293.49 crore as at March 31, 2024 [page 98](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=98). The decrease was Rs. 146.98 crore (computed from [page 98](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=98)).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "CHAMBAL",
+        "question": "By how much did Chambal Fertilisers' standalone total assets change between March 31, 2024 and March 31, 2025?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Standalone total assets were Rs. 11,146.51 crore as at March 31, 2025 and Rs. 11,293.49 crore as at March 31, 2024 [page 98]. The decrease was Rs. 146.98 crore (computed from [page 98]).",
+        "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+        "query": "By how much did Chambal Fertilisers' standalone total assets change between March 31, 2024 and March 31, 2025?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the same figures as the reference answer: standalone total assets of ₹11,146.51 crore as at March 31, 2025 and ₹11,293.49 crore as at March 31, 2024, with a decrease of ₹146.98 crore. The unit (crore), period (March 31, 2024 and March 31, 2025), and scope (standalone) all match the reference answer. The answer correctly identifies the change as a decrease/fall in assets."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+       "computed_figures": [
+        {
+         "figure": "Rs. 146.98 crore",
+         "labelled": true,
+         "arithmetic_right": true
+        }
+       ],
+       "faithful": true,
+       "reason": "The answer states standalone total assets were Rs. 11,146.51 crore as at March 31, 2025 and Rs. 11,293.49 crore as at March 31, 2024, both of which are directly found in page 98 chunk 3. The decrease of Rs. 146.98 crore is computed from these two figures (11,293.49 - 11,146.51 = 146.98) and is explicitly labelled as 'computed from [page 98]'. The arithmetic is correct. All factual claims are supported by the cited page."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Chambal Fertilisers and Chemicals annual report, FY25**\n\nStandalone total assets were Rs. 11,146.51 crore as at March 31, 2025, and Rs. 11,293.49 crore as at March 31, 2024 [page 98](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=98). The change is a decrease of Rs. 146.98 crore (computed from [page 98](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=98)).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "CHAMBAL",
+        "question": "By how much did Chambal Fertilisers' standalone total assets change between March 31, 2024 and March 31, 2025?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Standalone total assets were Rs. 11,146.51 crore as at March 31, 2025, and Rs. 11,293.49 crore as at March 31, 2024 [page 98]. The change is a decrease of Rs. 146.98 crore (computed from [page 98]).",
+        "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+        "query": "By how much did Chambal Fertilisers' standalone total assets change between March 31, 2024 and March 31, 2025?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the same figures as the reference answer: standalone total assets of ₹11,146.51 crore as at March 31, 2025 and ₹11,293.49 crore as at March 31, 2024, with a computed decrease of ₹146.98 crore. The unit (crore), period (March 31, 2024 and March 31, 2025), and scope (standalone) all match the reference answer. The negative change is correctly represented."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+       "computed_figures": [
+        {
+         "figure": "decrease of Rs. 146.98 crore",
+         "labelled": true,
+         "arithmetic_right": true
+        }
+       ],
+       "faithful": true,
+       "reason": "The answer states standalone total assets of Rs. 11,146.51 crore as at March 31, 2025 and Rs. 11,293.49 crore as at March 31, 2024, both of which are directly found in page 98 chunk 3. The computed decrease of Rs. 146.98 crore is properly labelled as 'computed from [page 98]' and the arithmetic is correct: 11,293.49 - 11,146.51 = 146.98. All factual claims are supported by the cited page."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Chambal Fertilisers and Chemicals annual report, FY25**\n\nStandalone total assets were Rs. 11,293.49 crore as at March 31, 2024 and Rs. 11,146.51 crore as at March 31, 2025 [page 98](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=98). The change is a decrease of Rs. 146.98 crore (computed from [page 98](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=98)).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "CHAMBAL",
+        "question": "By how much did Chambal Fertilisers' standalone total assets change between March 31, 2024 and March 31, 2025?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Standalone total assets were Rs. 11,293.49 crore as at March 31, 2024 and Rs. 11,146.51 crore as at March 31, 2025 [page 98]. The change is a decrease of Rs. 146.98 crore (computed from [page 98]).",
+        "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+        "query": "By how much did Chambal Fertilisers' standalone total assets change between March 31, 2024 and March 31, 2025?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the same figures as the reference answer: standalone total assets of ₹11,293.49 crore as at March 31, 2024 and ₹11,146.51 crore as at March 31, 2025, with a decrease of ₹146.98 crore. The unit (crore), period (March 31, 2024 to March 31, 2025), and scope (standalone) all match the reference answer. The calculation is correct and the answer directly addresses the question asked."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+       "computed_figures": [
+        {
+         "figure": "decrease of Rs. 146.98 crore",
+         "labelled": true,
+         "arithmetic_right": true
+        }
+       ],
+       "faithful": true,
+       "reason": "The answer states standalone total assets were Rs. 11,293.49 crore as at March 31, 2024 and Rs. 11,146.51 crore as at March 31, 2025, both of which are directly found in page 98 (Total Assets row). The computed decrease of Rs. 146.98 crore is properly labelled as 'computed from [page 98]' and the arithmetic is correct: 11,293.49 - 11,146.51 = 146.98. All factual claims are supported by the cited page."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "chambal-fy25-005",
+   "samples": [
+    {
+     "text": "**Chambal Fertilisers and Chemicals annual report, FY25**\n\nChambal Fertilisers' standalone profit for the year ended March 31, 2025 was Rs. 1,656.79 crore [page 102](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=102). The Board recommended a final dividend of Rs. 5 per equity share for FY2024-25 [page 29](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=29).\n\nChambal Fertilisers' standalone profit for the year ended March 31, 2025 was Rs. 1,656.79 crore [page 102](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=102). The Board recommended a final dividend of Rs. 5 per equity share of Rs. 10 each for FY2024-25 [page 29](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=29).",
+     "refused": false,
+     "api_calls": 4,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "CHAMBAL",
+        "question": "What was Chambal Fertilisers and Chemicals' standalone profit for FY25?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Chambal Fertilisers' standalone profit for the year ended March 31, 2025 was Rs. 1,656.79 crore [page 102]. The Board recommended a final dividend of Rs. 5 per equity share for FY2024-25 [page 29].",
+        "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+        "query": "What was Chambal Fertilisers' standalone profit for FY25, and what final dividend per share did the Board recommend for FY25?"
+       }
+      },
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "CHAMBAL",
+        "question": "What final dividend per share did the Board of Chambal Fertilisers and Chemicals recommend for FY25?"
+       },
+       "result": {
+        "id": "E2",
+        "text": "Chambal Fertilisers' standalone profit for the year ended March 31, 2025 was Rs. 1,656.79 crore [page 102]. The Board recommended a final dividend of Rs. 5 per equity share of Rs. 10 each for FY2024-25 [page 29].",
+        "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+        "query": "What was Chambal Fertilisers' standalone profit for FY25, and what final dividend per share did the Board recommend for FY25?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides both required figures correctly: (1) Standalone profit of ₹1,656.79 crore for FY25, matching the reference answer exactly, and (2) Final dividend of ₹5 per equity share of ₹10 each for FY25, which matches the reference answer. The page citations differ from the reference but this is explicitly to be ignored per instructions. Both key figures are correct with proper units and scope (standalone)."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "Both factual claims in the answer are directly supported by the cited pages. Page 102, chunk 3 explicitly states 'Profit for the Year | - | - | - | - | - | - | - | - | - | 1,656.79 | - | 1,656.79' for the year ended March 31, 2025, confirming the standalone profit of Rs. 1,656.79 crore. Page 29, chunk 4 explicitly states 'The Board of Directors have recommended final dividend of Rs. 5 (i.e. @ 50%) per equity share of Rs. 10 each of the Company for the Financial Year 2024-25', confirming the final dividend recommendation. No computed figures are present in the answer."
+      },
+      {
+       "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "Both factual claims in the answer are directly supported by the cited pages. Page 102 explicitly states 'Profit for the Year' of 1,656.79 crore in the Standalone Statement of Changes in Equity for the year ended March 31, 2025. Page 29 explicitly states 'The Board of Directors have recommended final dividend of Rs. 5 (i.e. @ 50%) per equity share of Rs. 10 each of the Company for the Financial Year 2024-25.' No computed figures are present in the answer."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Chambal Fertilisers and Chemicals annual report, FY25**\n\nChambal Fertilisers' standalone profit for the year ended March 31, 2025 was Rs. 1,656.79 crore [page 102](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=102). The Board recommended a final dividend of Rs. 5 per equity share for FY25 [page 29](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=29).\n\nChambal Fertilisers' standalone profit for FY25 was Rs. 1,656.79 crore (Profit for the Year, Standalone Statement of Changes in Equity) [page 102](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=102). The Board recommended a final dividend of Rs. 5 per equity share for FY2024-25, subject to shareholder approval at the AGM [page 29](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=29).",
+     "refused": false,
+     "api_calls": 4,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "CHAMBAL",
+        "question": "What was Chambal Fertilisers and Chemicals' standalone profit for FY25?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Chambal Fertilisers' standalone profit for the year ended March 31, 2025 was Rs. 1,656.79 crore [page 102]. The Board recommended a final dividend of Rs. 5 per equity share for FY25 [page 29].",
+        "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+        "query": "What was Chambal Fertilisers' standalone profit for FY25, and what final dividend per share did the Board recommend for FY25?"
+       }
+      },
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "CHAMBAL",
+        "question": "What final dividend per share did the Board recommend for FY25?"
+       },
+       "result": {
+        "id": "E2",
+        "text": "Chambal Fertilisers' standalone profit for FY25 was Rs. 1,656.79 crore (Profit for the Year, Standalone Statement of Changes in Equity) [page 102]. The Board recommended a final dividend of Rs. 5 per equity share for FY2024-25, subject to shareholder approval at the AGM [page 29].",
+        "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+        "query": "What was Chambal Fertilisers' standalone profit for FY25, and what final dividend per share did the Board recommend for FY25?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides both required figures correctly: (1) Standalone profit for FY25 of ₹1,656.79 crore, matching the reference answer exactly, and (2) Final dividend of ₹5 per equity share, also matching the reference answer. The unit (crore for profit, rupees per share for dividend), period (FY25), and scope (standalone) are all correct. The page citations differ from the reference but this is explicitly to be ignored per instructions. The additional context about shareholder approval is extra true detail which is acceptable."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "Both factual claims in the answer are directly supported by the cited pages. Page 102, chunk 3 explicitly states 'Profit for the Year | - | - | - | - | - | - | - | - | - | 1,656.79 | - | 1,656.79' for the year ended March 31, 2025, confirming the standalone profit of Rs. 1,656.79 crore. Page 29, chunk 4 explicitly states 'The Board of Directors have recommended final dividend of Rs. 5 (i.e. @ 50%) per equity share of Rs. 10 each of the Company for the Financial Year 2024-25', confirming the final dividend recommendation of Rs. 5 per equity share for FY25. No computed figures are present in the answer."
+      },
+      {
+       "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "Both factual claims in the answer are directly supported by the cited pages. Page 102 explicitly states 'Profit for the Year' of 1,656.79 crore in the Standalone Statement of Changes in Equity for FY25. Page 29 clearly states 'The Board of Directors have recommended final dividend of Rs. 5 (i.e. @ 50%) per equity share of Rs. 10 each of the Company for the Financial Year 2024-25, which, if declared by the shareholders at the ensuing Annual General Meeting, shall be paid within 30 (thirty) days from the date of declaration of dividend.' No computed figures are present in the answer."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Chambal Fertilisers and Chemicals annual report, FY25**\n\nChambal Fertilisers' standalone profit for FY25 was Rs. 1,656.79 crore [page 102](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=102). The Board recommended a final dividend of Rs. 5 per equity share (50%) for FY25 [page 29](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=29).\n\nChambal Fertilisers and Chemicals' standalone profit for the year ended March 31, 2025 was Rs. 1,656.79 crore [page 102](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=102). The Board recommended a final dividend of Rs. 5 per equity share of Rs. 10 each for FY2024-25 [page 29](https://www.chambalfertilisers.com/pdf/Annual-Report-for-the-Financial-Year-2024-2025.pdf#page=29).",
+     "refused": false,
+     "api_calls": 4,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "CHAMBAL",
+        "question": "What was Chambal Fertilisers and Chemicals' standalone profit for FY25?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Chambal Fertilisers' standalone profit for FY25 was Rs. 1,656.79 crore [page 102]. The Board recommended a final dividend of Rs. 5 per equity share (50%) for FY25 [page 29].",
+        "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+        "query": "What was Chambal Fertilisers' standalone profit for FY25, and what final dividend per share did the Board recommend for FY25?"
+       }
+      },
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "CHAMBAL",
+        "question": "What final dividend per share did the Board of Chambal Fertilisers and Chemicals recommend for FY25?"
+       },
+       "result": {
+        "id": "E2",
+        "text": "Chambal Fertilisers and Chemicals' standalone profit for the year ended March 31, 2025 was Rs. 1,656.79 crore [page 102]. The Board recommended a final dividend of Rs. 5 per equity share of Rs. 10 each for FY2024-25 [page 29].",
+        "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+        "query": "What was Chambal Fertilisers' standalone profit for FY25, and what final dividend per share did the Board recommend for FY25?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides both required figures correctly: (1) Standalone profit for FY25 of ₹1,656.79 crore, matching the reference answer exactly, and (2) Final dividend of ₹5 per equity share, also matching the reference. The system answer includes the additional detail that this represents a 50% dividend and specifies the face value of ₹10 per share, which aligns with the reference answer. Page citations differ but are to be ignored per instructions. Both key figures are correct with proper units and scope (standalone)."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "Both factual claims in the answer are directly supported by the cited pages. Page 102, chunk 3 explicitly states 'Profit for the Year | - | - | - | - | - | - | - | - | - | 1,656.79 | - | 1,656.79' for FY25 (year ended March 31, 2025). Page 29, chunk 4 explicitly states 'The Board of Directors have recommended final dividend of Rs. 5 (i.e. @ 50%) per equity share of Rs. 10 each of the Company for the Financial Year 2024-25'. No computed figures are present in the answer."
+      },
+      {
+       "source": "Chambal Fertilisers and Chemicals annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "Both factual claims in the answer are directly supported by the cited pages. Page 102, chunk 3 explicitly states 'Profit for the Year | - | - | - | - | - | - | - | - | - | 1,656.79 | - | 1,656.79' for the year ended March 31, 2025, confirming the standalone profit of Rs. 1,656.79 crore. Page 29, chunk 4 explicitly states 'The Board of Directors have recommended final dividend of Rs. 5 (i.e. @ 50%) per equity share of Rs. 10 each of the Company for the Financial Year 2024-25', confirming the dividend recommendation. No computed figures are present in the answer."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "navneet-fy25-004",
+   "samples": [
+    {
+     "text": "**Navneet Education annual report, FY25**\n\nNavneet Education's standalone profit for the year after tax in FY25 was ₹80,073 lakhs (₹ in Lakhs, per the standalone statement of profit and loss) [page 191](https://navneet.com/annual-report-24-25.pdf#page=191). The standalone segment note also reports profit after taxation of 80,073 [page 256](https://navneet.com/annual-report-24-25.pdf#page=256).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "NAVNEET",
+        "question": "What was Navneet Education's standalone profit after tax for FY25?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Navneet Education's standalone profit for the year after tax in FY25 was ₹80,073 lakhs (₹ in Lakhs, per the standalone statement of profit and loss) [page 191]. The standalone segment note also reports profit after taxation of 80,073 [page 256].",
+        "source": "Navneet Education annual report, FY25",
+        "query": "What was Navneet Education's standalone profit after tax for FY25?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides ₹80,073 lakhs as the standalone profit after tax for FY25, which matches the reference answer exactly. Both figures are equivalent (₹80,073 lakhs = ₹801 crore), the unit is specified correctly as lakhs, the period is FY25, and the scope is standalone as required. The answer cites the correct source (standalone statement of profit and loss, page 191) and provides additional supporting detail from the segment note, which adds value without contradicting the reference answer."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Navneet Education annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Navneet Education's standalone profit for the year after tax in FY25 was ₹80,073 lakhs. This figure is directly supported by page 191, which shows in the Standalone Statement of Profit & Loss that 'Profit for the year (VII - VIII)' for the year ended 31st March, 2025 is 80,073 (₹ in Lakhs). The answer also correctly notes that the standalone segment note on page 256 reports the same profit after taxation of 80,073. Both citations directly print this figure, so there are no computed figures. All factual claims are supported by the cited pages."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Navneet Education annual report, FY25**\n\nNavneet Education's standalone profit for the year after tax for FY25 was ₹80,073 lakhs (₹ in Lakhs, as stated on the statement) [page 191](https://navneet.com/annual-report-24-25.pdf#page=191).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "NAVNEET",
+        "question": "What was Navneet Education's standalone profit after tax for FY25?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Navneet Education's standalone profit for the year after tax for FY25 was ₹80,073 lakhs (₹ in Lakhs, as stated on the statement) [page 191].",
+        "source": "Navneet Education annual report, FY25",
+        "query": "What was Navneet Education's standalone profit after tax for FY25?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides ₹80,073 lakhs as the standalone profit after tax for FY25, which matches the reference answer exactly. Both figures are identical (₹80,073 lakhs = ₹801 crore), the unit is specified as lakhs, the period is FY25, and the scope is standalone as required. The answer is accurate."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Navneet Education annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Navneet Education's standalone profit for the year after tax for FY25 was ₹80,073 lakhs. This figure appears directly in page 191, chunk 3, in the Standalone Statement of Profit & Loss under 'IX | Profit for the year (VII - VIII)' for the year ended 31st March, 2025, showing exactly ₹80,073 lakhs. The answer correctly cites this as being from page 191 and accurately reflects the stated currency unit (₹ in Lakhs). No computed figures are present in the answer - it is simply reporting a figure that appears directly on the cited page."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Navneet Education annual report, FY25**\n\nNavneet Education's standalone profit for the year ended 31 March 2025 was ₹80,073 lakhs [page 191](https://navneet.com/annual-report-24-25.pdf#page=191). The same figure is also shown as profit after taxation in the standalone segment note [page 256](https://navneet.com/annual-report-24-25.pdf#page=256).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "NAVNEET",
+        "question": "What was Navneet Education's standalone profit after tax for FY25?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Navneet Education's standalone profit for the year ended 31 March 2025 was ₹80,073 lakhs [page 191]. The same figure is also shown as profit after taxation in the standalone segment note [page 256].",
+        "source": "Navneet Education annual report, FY25",
+        "query": "What was Navneet Education's standalone profit after tax for FY25?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides ₹80,073 lakhs as the standalone profit after tax for FY25, which matches the reference answer exactly. Both cite the same figure from page 191 (the standalone statement of profit and loss). The system answer correctly identifies this as the profit for the year ended 31 March 2025 in standalone format. The unit (lakhs) is correct and consistent with the reference answer's conversion of ₹801 crore to ₹80,073 lakhs."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Navneet Education annual report, FY25",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Navneet Education's standalone profit for the year ended 31 March 2025 was ₹80,073 lakhs. Page 191, chunk 3 shows 'Profit for the year (VII - VIII)' as 80,073 for the year ended 31st March, 2025 in the Standalone Statement of Profit & Loss. Page 256, chunk 3 also confirms this figure as 'Profit after taxation' of 80,073 in the segment note. Both cited pages explicitly show this figure, so no computation is involved. The answer's claims are directly supported by the cited pages' text."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "navneet-fy25-005",
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "NAVNEET",
+        "question": "How many franchise stores did Navneet open in FY25?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "How many franchise stores did Navneet open in FY25?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "NAVNEET",
+        "question": "How many franchise stores did Navneet open in FY25?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "How many franchise stores did Navneet open in FY25?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 2,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "NAVNEET",
+        "question": "How many franchise stores did Navneet open in FY25?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "How many franchise stores did Navneet open in FY25?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "unihealth-fy26-001",
+   "samples": [
+    {
+     "text": "**Unihealth Hospitals annual report, FY26**\n\nUnihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs [page 98](https://www.unihealthfinancials.com/_files/ugd/93e6b9_1d94f97033a14cd2ac3d6c9f25db0118.pdf#page=98). The consolidated balance sheet states its figures in ₹ lakhs, and the same total equals total equity and liabilities [page 98](https://www.unihealthfinancials.com/_files/ugd/93e6b9_1d94f97033a14cd2ac3d6c9f25db0118.pdf#page=98).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "UNIHEALTH",
+        "question": "What were Unihealth's consolidated total assets as at March 31, 2026?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs [page 98]. The consolidated balance sheet states its figures in ₹ lakhs, and the same total equals total equity and liabilities [page 98].",
+        "source": "Unihealth Hospitals annual report, FY26",
+        "query": "What were Unihealth's consolidated total assets as at March 31, 2026?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the exact figure of ₹25,416.02 lakhs as at March 31, 2026, which matches the reference answer. The unit (lakhs) is correct, the period (March 31, 2026) is correct, and the scope (consolidated) is correct. The system answer also provides additional accurate detail about the balance sheet structure, which does not contradict the reference answer."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Unihealth Hospitals annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs. This figure appears directly on page 98 chunk 9 in the Consolidated Balance Sheet showing 'Total Assets | | 25,416.02'. The answer also states that the consolidated balance sheet figures are in ₹ lakhs, which is confirmed by the header '(₹ in Lakhs)' appearing throughout page 98. The answer further states that total equity and liabilities equals ₹25,416.02 lakhs, which is confirmed by page 98 chunk 3 showing 'Total Equity and Liabilities | | 25,416.02'. All factual claims in the answer are directly supported by the cited page text, and no computed figures are presented."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Unihealth Hospitals annual report, FY26**\n\nUnihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs [page 98](https://www.unihealthfinancials.com/_files/ugd/93e6b9_1d94f97033a14cd2ac3d6c9f25db0118.pdf#page=98).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "UNIHEALTH",
+        "question": "What were Unihealth's consolidated total assets as at March 31, 2026?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs [page 98].",
+        "source": "Unihealth Hospitals annual report, FY26",
+        "query": "What were Unihealth's consolidated total assets as at March 31, 2026?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the exact figure of ₹25,416.02 lakhs as at March 31, 2026, which matches the reference answer. The unit (lakhs), period (March 31, 2026), and scope (consolidated) are all correct. The page citation is ignored per instructions."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Unihealth Hospitals annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs. This figure appears directly on page 98, chunk 9, in the Consolidated Balance Sheet where 'Total Assets' for 'As at March 31, 2026' is listed as 25,416.02 (in Lakhs). The figure is not computed but is explicitly stated in the cited page, so no computation is involved. The answer is faithful to the cited text."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Unihealth Hospitals annual report, FY26**\n\nUnihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs [page 98](https://www.unihealthfinancials.com/_files/ugd/93e6b9_1d94f97033a14cd2ac3d6c9f25db0118.pdf#page=98).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "UNIHEALTH",
+        "question": "What were Unihealth's consolidated total assets as at March 31, 2026?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs [page 98].",
+        "source": "Unihealth Hospitals annual report, FY26",
+        "query": "What were Unihealth's consolidated total assets as at March 31, 2026?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the exact figure of ₹25,416.02 lakhs as at March 31, 2026, which matches the reference answer. The unit (lakhs), period (March 31, 2026), and scope (consolidated) are all correct. The page citation is ignored per instructions."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Unihealth Hospitals annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Unihealth's consolidated total assets as at March 31, 2026 were ₹25,416.02 lakhs. This figure appears directly on page 98, chunk 9, in the Consolidated Balance Sheet where 'Total Assets' for 'As at March 31, 2026' is listed as 25,416.02 (in Lakhs). The figure is not computed but is explicitly stated in the cited page, so no computation is involved. The answer is faithful to the cited text."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "unihealth-fy26-002",
+   "samples": [
+    {
+     "text": "**Unihealth Hospitals annual report, FY26**\n\nUnihealth's Uganda network reached 150 beds in FY26 following the Entebbe acquisition [page 6](https://www.unihealthfinancials.com/_files/ugd/93e6b9_1d94f97033a14cd2ac3d6c9f25db0118.pdf#page=6). The Chairman's letter gives the same figure [page 9](https://www.unihealthfinancials.com/_files/ugd/93e6b9_1d94f97033a14cd2ac3d6c9f25db0118.pdf#page=9).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "UNIHEALTH",
+        "question": "What bed capacity did Unihealth's Uganda hospital network reach in FY26?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Unihealth's Uganda network reached 150 beds in FY26 following the Entebbe acquisition [page 6]. The Chairman's letter gives the same figure [page 9].",
+        "source": "Unihealth Hospitals annual report, FY26",
+        "query": "What bed capacity did Unihealth's Uganda hospital network reach in FY26?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer correctly states that Unihealth's Uganda hospital network reached 150 beds in FY26, which matches the reference answer. The system answer also correctly identifies this was following the acquisition of the 30-bed UMC Hospital in Entebbe, consistent with the reference. The figure, unit, period, and scope all align with the reference answer."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Unihealth Hospitals annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Unihealth's Uganda network reached 150 beds in FY26 following the Entebbe acquisition. Page 6 chunk 1 explicitly states: 'Uganda network capacity reached 150 beds in FY26 following the Entebbe acquisition.' Page 9 chunk 1-2 confirms this same figure: 'And in Uganda, we acquired and commissioned UMC Hospital, Entebbe, taking our Uganda network capacity to 150 beds.' Both cited pages contain the exact figure of 150 beds, so there are no computed figures. All factual claims in the answer are directly supported by the cited text."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Unihealth Hospitals annual report, FY26**\n\nUganda's network capacity reached 150 beds in FY26 following the Entebbe acquisition [page 6](https://www.unihealthfinancials.com/_files/ugd/93e6b9_1d94f97033a14cd2ac3d6c9f25db0118.pdf#page=6). The Chairman's letter gives the same figure [page 9](https://www.unihealthfinancials.com/_files/ugd/93e6b9_1d94f97033a14cd2ac3d6c9f25db0118.pdf#page=9).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "UNIHEALTH",
+        "question": "What bed capacity did Unihealth's Uganda hospital network reach in FY26?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Uganda's network capacity reached 150 beds in FY26 following the Entebbe acquisition [page 6]. The Chairman's letter gives the same figure [page 9].",
+        "source": "Unihealth Hospitals annual report, FY26",
+        "query": "What bed capacity did Unihealth's Uganda hospital network reach in FY26?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer correctly states that Uganda's network capacity reached 150 beds in FY26 following the Entebbe acquisition, which matches the reference answer's figure of 150 beds after the 30-bed UMC Hospital in Entebbe was acquired and commissioned. The core facts align: same bed capacity (150), same period (FY26), same event (Entebbe acquisition), and same scope. Page citations are ignored per instructions."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Unihealth Hospitals annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Uganda's network capacity reached 150 beds in FY26 following the Entebbe acquisition. Page 6 explicitly states: 'Uganda network capacity reached 150 beds in FY26 following the Entebbe acquisition.' Page 9 confirms this in the Chairman's letter: 'And in Uganda, we acquired and commissioned UMC Hospital, Entebbe, taking our Uganda network capacity to 150 beds.' Both cited pages directly support the factual claims made in the answer. No computed figures are present in the answer—the 150 beds figure is stated directly on the cited pages, not calculated from other numbers."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Unihealth Hospitals annual report, FY26**\n\nUnihealth's Uganda network capacity reached 150 beds in FY26, following the Entebbe acquisition [page 6](https://www.unihealthfinancials.com/_files/ugd/93e6b9_1d94f97033a14cd2ac3d6c9f25db0118.pdf#page=6). The Founder & Managing Director's letter gives the same figure [page 9](https://www.unihealthfinancials.com/_files/ugd/93e6b9_1d94f97033a14cd2ac3d6c9f25db0118.pdf#page=9).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "UNIHEALTH",
+        "question": "What bed capacity did Unihealth's Uganda hospital network reach in FY26?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Unihealth's Uganda network capacity reached 150 beds in FY26, following the Entebbe acquisition [page 6]. The Founder & Managing Director's letter gives the same figure [page 9].",
+        "source": "Unihealth Hospitals annual report, FY26",
+        "query": "What bed capacity did Unihealth's Uganda hospital network reach in FY26?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer correctly states that Unihealth's Uganda hospital network reached 150 beds in FY26, which matches the reference answer. The system answer also correctly identifies this was following the Entebbe acquisition, consistent with the reference mentioning the 30-bed UMC Hospital in Entebbe was acquired and commissioned. The figures, unit, period, and scope all align with the reference answer."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Unihealth Hospitals annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Unihealth's Uganda network capacity reached 150 beds in FY26 following the Entebbe acquisition. Page 6 chunk 1 explicitly states: 'Uganda network capacity reached 150 beds in FY26 following the Entebbe acquisition.' Page 9 chunk 1-2 also confirms this, stating: 'And in Uganda, we acquired and commissioned UMC Hospital, Entebbe, taking our Uganda network capacity to 150 beds.' Both cited pages directly support the factual claims made in the answer. No computed figures are present in the answer—all numbers cited are directly stated in the source material."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "unihealth-fy26-003",
+   "samples": [
+    {
+     "text": "**Unihealth Hospitals annual report, FY26**\n\nUnihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026 was ₹11,526.88 lakhs [page 118](https://www.unihealthfinancials.com/_files/ugd/93e6b9_1d94f97033a14cd2ac3d6c9f25db0118.pdf#page=118). The figure is shown in lakhs, as stated in the table's unit label [page 118](https://www.unihealthfinancials.com/_files/ugd/93e6b9_1d94f97033a14cd2ac3d6c9f25db0118.pdf#page=118).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "UNIHEALTH",
+        "question": "What was Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026 was ₹11,526.88 lakhs [page 118]. The figure is shown in lakhs, as stated in the table's unit label [page 118].",
+        "source": "Unihealth Hospitals annual report, FY26",
+        "query": "What was Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides ₹11,526.88 lakhs for Uganda's consolidated segment revenue for the year ended March 31, 2026, which matches exactly with the reference answer's figure for FY26. The unit (lakhs) is also correct. While the system answer does not include the prior year comparison (FY25: ₹8,697.39 lakhs) or the segment result figure, the question only asked for the consolidated segment revenue for the year ended March 31, 2026, which has been correctly answered."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Unihealth Hospitals annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026 was ₹11,526.88 lakhs. This figure appears directly in page 118, chunk 5, in the Segment Revenue table under the Uganda row for March 31, 2026. The answer also correctly notes that the figure is shown in lakhs, as confirmed by the table's unit label '(in ₹ Lakhs)' shown in chunk 5. No computed figures are present in the answer - it only cites a figure that appears directly on the cited page. Therefore, the answer is faithful to the cited pages."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Unihealth Hospitals annual report, FY26**\n\nUnihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026 was ₹11,526.88 lakhs [page 118](https://www.unihealthfinancials.com/_files/ugd/93e6b9_1d94f97033a14cd2ac3d6c9f25db0118.pdf#page=118).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "UNIHEALTH",
+        "question": "What was Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026 was ₹11,526.88 lakhs [page 118].",
+        "source": "Unihealth Hospitals annual report, FY26",
+        "query": "What was Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the exact figure of ₹11,526.88 lakhs for Uganda's consolidated segment revenue for the year ended March 31, 2026, which matches the reference answer. The unit (lakhs), period (year ended March 31, 2026), and scope (consolidated segment revenue) are all correct."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Unihealth Hospitals annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026 was ₹11,526.88 lakhs. This figure appears directly in page 118, chunk 5, in the Segment Revenue table under the Uganda row for March 31, 2026. No computation is involved - the figure is explicitly stated on the cited page. Therefore, the answer is faithful."
+      }
+     ],
+     "passed": true
+    },
+    {
+     "text": "**Unihealth Hospitals annual report, FY26**\n\nUnihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026 was ₹11,526.88 lakhs [page 118](https://www.unihealthfinancials.com/_files/ugd/93e6b9_1d94f97033a14cd2ac3d6c9f25db0118.pdf#page=118). This is the segment revenue figure before the inter-segment revenue elimination shown separately on the same page [page 118](https://www.unihealthfinancials.com/_files/ugd/93e6b9_1d94f97033a14cd2ac3d6c9f25db0118.pdf#page=118).",
+     "refused": false,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "UNIHEALTH",
+        "question": "What was Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026?"
+       },
+       "result": {
+        "id": "E1",
+        "text": "Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026 was ₹11,526.88 lakhs [page 118]. This is the segment revenue figure before the inter-segment revenue elimination shown separately on the same page [page 118].",
+        "source": "Unihealth Hospitals annual report, FY26",
+        "query": "What was Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026?"
+       }
+      }
+     ],
+     "reason": "",
+     "correct_judge": {
+      "correct": true,
+      "reason": "The system answer provides the correct consolidated segment revenue from Uganda for the year ended March 31, 2026 as ₹11,526.88 lakhs, which matches the reference answer exactly. The unit (lakhs), period (year ended March 31, 2026), and scope (consolidated segment revenue) are all correct. The additional explanation about inter-segment revenue elimination is extra detail that does not contradict the reference answer."
+     },
+     "correct": true,
+     "faithful": true,
+     "faithfulness_judge": [
+      {
+       "source": "Unihealth Hospitals annual report, FY26",
+       "computed_figures": [],
+       "faithful": true,
+       "reason": "The answer states that Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026 was ₹11,526.88 lakhs. This figure appears directly in page 118, chunk 5, in the Segment Revenue table under Uganda for March 31, 2026. The answer also correctly notes that this is the segment revenue figure before inter-segment revenue elimination, which is shown separately in page 118, chunk 6, where inter-segment revenue of ₹881.23 lakhs is deducted from total segment revenue. All factual claims are directly supported by the cited pages with no computed figures requiring calculation or labeling."
+      }
+     ],
+     "passed": true
+    }
+   ]
+  },
+  {
+   "id": "unihealth-fy26-004",
+   "samples": [
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "UNIHEALTH",
+        "question": "How many ambulances does Unihealth operate across its hospitals?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "How many ambulances does Unihealth operate across its hospitals?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "UNIHEALTH",
+        "question": "How many ambulances does Unihealth operate across its hospitals?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "How many ambulances does Unihealth operate across its hospitals?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    },
+    {
+     "text": "Not in the filing.",
+     "refused": true,
+     "api_calls": 3,
+     "trace": [
+      {
+       "tool": "company_question",
+       "input": {
+        "company": "UNIHEALTH",
+        "question": "How many ambulances does Unihealth operate across its hospitals?"
+       },
+       "result": {
+        "refused": true,
+        "text": "Not in the filing.",
+        "query": "How many ambulances does Unihealth operate across its hospitals?"
+       }
+      }
+     ],
+     "reason": "Missing, repeated or unknown evidence",
+     "passed": true
+    }
+   ]
+  }
+ ]
+}
