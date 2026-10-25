@@ -154,3 +154,30 @@ changed during this push preparation. Git main matched origin/main before the
 commit. Secrets configuration is complete and is not a prerequisite to repeat.
 The separate profile-pinning/owner-verification records do not block this push.
 Live deployment checks will be recorded after the commit reaches Streamlit.
+
+
+### Live deployment verified · 25 October 2026
+
+Implementation commit `c03265c` was pushed to main after the fresh checks above.
+GitHub's main ref matched the local SHA. Streamlit was sleeping; waking it
+loaded the new Memo mode in visitor mode, without the maintainer panel.
+
+Three real live questions passed:
+
+1. Company memo: “What were HCC standalone total assets at the end of FY25?”
+   returned ₹8,743.37 crore, with the prior-year ₹8,138.03 crore comparison,
+   both linked to viewer page 114; three model calls, 4.8 seconds. Clicking
+   Download retained the result and the same call count.
+2. Default Kotak fund memo: expense ratio with the full BER definition,
+   benchmark and exit load linked to factsheet page 20; the three largest
+   equities linked to KMI rows 5–7, retaining the September disclosure date;
+   two model calls, 4.5 seconds.
+3. “What is the Regular-plan expense ratio?” returned exactly
+   “Not in the filing.”; two model calls, 2.4 seconds.
+
+Local proof captures are in ignored data/agent-live-company.png,
+data/agent-live-fund.png and data/agent-live-refusal.png. Fresh credential-format
+scan covered 125 working files and 323 reachable history blobs with no findings.
+AGPL-3.0 is present; no prohibited dependency, source document or private
+portfolio file was staged. AGENTS.md and .agents/ remain untracked and untouched.
+The requested test-and-push work is complete. No version tag was created.

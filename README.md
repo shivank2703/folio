@@ -409,7 +409,7 @@ One step per Saturday ([SPEC.md §4](SPEC.md)):
 - **Funds** (17–19 Oct, v1.3 candidate): three public fund snapshots, full
   holdings tables, source-row citations, top-ten annual-report drill-down,
   explicit statement scope and improved page-continuation packing.
-- **Agent** (25 Oct, deployment candidate): one bounded Anthropic tool-use loop over
+- **Agent** (25 Oct, deployed): one bounded Anthropic tool-use loop over
   company and fund readers; a memo of up to 450 words, every sentence cited,
   evidence trace and Markdown download. Release evidence is in the Agent notes.
 
