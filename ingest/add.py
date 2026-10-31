@@ -34,9 +34,12 @@ from pathlib import Path
 import fitz
 import yaml
 
+import pyarrow as pa
+
 from ingest.build import ingest_filing
 from ingest.fetch import Refused, download, fiscal_year_of, fiscal_years_in, get, pdf_links
 from retrieve.embed import embed_texts, load_model, replace_filing, to_arrow
+from retrieve.store import POINTER, ensure_index
 
 URLS = Path("corpus/urls.yaml")
 MANIFEST = Path("corpus/corpus.json")
@@ -122,6 +125,25 @@ def fy_number(label: str | None) -> int:
     return int(label[2:]) if label else -1
 
 
+def prepare_index(db: Path = DB, pointer: Path = POINTER) -> str:
+    """Make sure the index being added to is the published one (or a local build), not nothing.
+
+    replace_filing swaps one company's rows into whatever table it finds, and
+    creates a table when it finds none. On a fresh clone data/lancedb does not
+    exist, so without this the "incremental" add built a one-company index, and
+    publishing that would have replaced every other filing in the deployed app.
+    The published index is fetched and checksum-verified first (retrieve/store.py);
+    a locally built index is kept, and ingest.publish checks its coverage.
+    """
+    return ensure_index(db, pointer)
+
+
+def index_filing(rows: pa.Table, company: str, db: Path = DB, pointer: Path = POINTER) -> None:
+    """Swap one company's embedded rows into the full index, fetching that index first if needed."""
+    prepare_index(db, pointer)
+    replace_filing(rows, company, db)
+
+
 def add_company(company: str, config: dict, manifest: list[dict], seen: dict, model, verify: bool,
                 force: bool = False) -> str:
     """Bring one company up to date. Returns what happened, in a few words."""
@@ -174,7 +196,7 @@ def add_company(company: str, config: dict, manifest: list[dict], seen: dict, mo
     started = time.perf_counter()
     chunk_path = ingest_filing(entry, CORPUS, DATA)
     chunks = [json.loads(line) for line in chunk_path.read_text(encoding="utf-8").splitlines()]
-    replace_filing(to_arrow(chunks, embed_texts(model, [c["text"] for c in chunks])), company, DB)
+    index_filing(to_arrow(chunks, embed_texts(model, [c["text"] for c in chunks])), company, DB)
     print(f"    indexed {len(chunks)} chunks in {time.perf_counter() - started:.0f}s")
 
     if existing:
@@ -241,6 +263,9 @@ def add_one(code: str, model, force: bool = False) -> str:
     config = yaml.safe_load(URLS.read_text(encoding="utf-8"))
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     seen = json.loads(SEEN.read_text(encoding="utf-8")) if SEEN.exists() else {}
+    # Before minutes of downloading and embedding, so a failed index fetch
+    # costs nothing and nothing is ever added to an empty table.
+    print(f"    index: {prepare_index()}")
     try:
         result = add_company(code, config[code], manifest, seen, model, False, force)
     except Refused as error:
@@ -270,6 +295,8 @@ def main() -> None:
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     seen = json.loads(SEEN.read_text(encoding="utf-8")) if SEEN.exists() else {}
     model = None if args.verify else load_model()
+    if not args.verify:
+        print(f"index: {prepare_index()}")
     results = {}
     for company in companies:
         try:

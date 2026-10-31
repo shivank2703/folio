@@ -39,7 +39,7 @@ def mark_local(db_path: Path) -> None:
     (db_path / MARKER).write_text("local\n", encoding="utf-8")
 
 
-def ensure_index(db_path: Path) -> str:
+def ensure_index(db_path: Path, pointer_path: Path = POINTER) -> str:
     """Make sure db_path holds the index corpus/index.json names; return where it came from.
 
     A locally built index is always kept: a developer adding a company must
@@ -50,7 +50,7 @@ def ensure_index(db_path: Path) -> str:
     have = source_of(db_path)
     if have == "local":
         return "local build"
-    pointer = json.loads(POINTER.read_text(encoding="utf-8"))
+    pointer = json.loads(pointer_path.read_text(encoding="utf-8"))
     if have == pointer["sha256"] and (db_path / "chunks.lance").exists():
         return f"cached {pointer['asset']}"
 
@@ -62,7 +62,7 @@ def ensure_index(db_path: Path) -> str:
         digest = hashlib.sha256(archive.read_bytes()).hexdigest()
         if digest != pointer["sha256"]:
             raise RuntimeError(f"index download {pointer['url']} has SHA-256 {digest}, "
-                               f"not the {pointer['sha256']} that {POINTER} names")
+                               f"not the {pointer['sha256']} that {pointer_path} names")
         unpacked = Path(tmp) / "unpacked"
         with tarfile.open(archive) as tar:
             tar.extractall(unpacked, filter="data")

@@ -1,0 +1,29 @@
+# Offline checks on every push and pull request: the same `python -m tests`
+# a maintainer runs locally. No secrets are used: nothing here calls the
+# Anthropic API, downloads the index or the embedding model, or writes to
+# the repository. Model-judged evals (evals.score) stay a local step because
+# they spend API credit.
+name: tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      # 3.13, as everywhere else: requirements.txt is a Linux/3.13 lock.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - run: python -m pip install -r requirements.txt
+      - run: python -m compileall -q agent evals funds gen ingest retrieve tests ui streamlit_app.py
+      - run: python -m tests

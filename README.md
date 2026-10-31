@@ -161,6 +161,9 @@ refusal path — only for generating prose answers. To add a key, copy
 Rebuilding everything from source, after downloading the PDFs named in
 `corpus/SOURCES.md` into `corpus/`: `.venv/bin/python -m ingest.build`.
 Retrieval alone, with no key and no UI: `.venv/bin/python -m retrieve.smoke`.
+Every offline check (unit tests and the deterministic fund checks; no key, no
+index, no model; GitHub Actions runs the same on each push):
+`.venv/bin/python -m tests`.
 The answer-quality eval (spends API credit, about $0.50 a run):
 `.venv/bin/python -m evals.score --label mine`.
 
@@ -190,7 +193,7 @@ reviewed company mappings, then run:
 
 ```bash
 .venv/bin/python -m funds.build
-.venv/bin/python -m unittest discover -s tests
+.venv/bin/python -m tests                        # every offline check; CI runs the same
 .venv/bin/python -m evals.funds --output evals/results/my-fund-checks.json
 .venv/bin/python -m evals.score --label my-fund-reports --questions evals/funds-reports.jsonl
 ```
@@ -231,6 +234,13 @@ pages, and takes the latest. It refuses a report whose pages are more than 20%
 images with no text (there is no OCR path), records the URL and SHA-256 in
 `corpus.json` and `SOURCES.md`, and replaces only that company's rows in the
 index. Run it again and nothing changes.
+
+On a fresh clone there is no local index, so `ingest.add` first downloads and
+checksum-verifies the published one and adds to that; it never starts an
+empty table. `ingest.publish` does the same, uploads nothing when the local
+index is exactly the published one, and refuses an index whose filings differ
+from `corpus/corpus.json`'s: publishing a partial index would drop companies
+from the deployed app while the manifest still lists them.
 
 Where reports can come from, checked with plain, self-identifying requests
 that respect robots.txt and wait between calls:
