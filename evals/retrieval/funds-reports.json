@@ -1,18 +1,12 @@
 {
-"recorded": "2026-11-01 11:12",
+"recorded": "2026-11-01 11:18",
 "model": "BAAI/bge-small-en-v1.5",
 "index": "654edb14fd97d07ee4c0de6b84f09b074f148afff201ffe7df5438faedf6bfa3",
-"code": "1208b446e92f8b09",
+"code": "041d37f2d5f1a275",
 "questions": {
 "BEL\tWhat were BEL standalone total assets at the end of FY26?": {
 "id": "bel-standalone",
 "hits": [
-{
-"page": 106,
-"chunk": 0,
-"score": 0.685534,
-"sibling": false
-},
 {
 "page": 113,
 "chunk": 0,
@@ -20,15 +14,21 @@
 "sibling": false
 },
 {
-"page": 98,
-"chunk": 7,
-"score": 0.665398,
+"page": 106,
+"chunk": 0,
+"score": 0.685534,
 "sibling": false
 },
 {
 "page": 115,
 "chunk": 0,
 "score": 0.643727,
+"sibling": false
+},
+{
+"page": 98,
+"chunk": 7,
+"score": 0.665398,
 "sibling": false
 },
 {
@@ -44,67 +44,19 @@
 "sibling": false
 },
 {
-"page": 101,
-"chunk": 12,
-"score": 0.664796,
+"page": 90,
+"chunk": 3,
+"score": 0.643023,
 "sibling": false
 },
 {
-"page": 111,
-"chunk": 7,
-"score": 0.635555,
+"page": 130,
+"chunk": 0,
+"score": 0.634162,
 "sibling": false
 }
 ],
 "context": [
-{
-"page": 106,
-"chunk": 0,
-"score": 0.685534,
-"sibling": false
-},
-{
-"page": 106,
-"chunk": 1,
-"score": null,
-"sibling": true
-},
-{
-"page": 106,
-"chunk": 2,
-"score": null,
-"sibling": true
-},
-{
-"page": 106,
-"chunk": 3,
-"score": null,
-"sibling": true
-},
-{
-"page": 106,
-"chunk": 4,
-"score": null,
-"sibling": true
-},
-{
-"page": 106,
-"chunk": 5,
-"score": null,
-"sibling": true
-},
-{
-"page": 106,
-"chunk": 6,
-"score": null,
-"sibling": true
-},
-{
-"page": 106,
-"chunk": 7,
-"score": null,
-"sibling": true
-},
 {
 "page": 113,
 "chunk": 0,
@@ -154,26 +106,98 @@
 "sibling": true
 },
 {
-"page": 98,
+"page": 106,
 "chunk": 0,
-"score": null,
-"sibling": true
+"score": 0.685534,
+"sibling": false
 },
 {
-"page": 98,
+"page": 106,
 "chunk": 1,
 "score": null,
 "sibling": true
 },
 {
-"page": 98,
+"page": 106,
 "chunk": 2,
 "score": null,
 "sibling": true
 },
 {
-"page": 98,
+"page": 106,
 "chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 106,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 106,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 106,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 106,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 115,
+"chunk": 0,
+"score": 0.643727,
+"sibling": false
+},
+{
+"page": 115,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 115,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 115,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 115,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 115,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 115,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 115,
+"chunk": 7,
 "score": null,
 "sibling": true
 },
@@ -208,40 +232,16 @@
 "sibling": true
 },
 {
-"page": 115,
-"chunk": 0,
-"score": 0.643727,
-"sibling": false
-},
-{
-"page": 115,
-"chunk": 1,
-"score": null,
-"sibling": true
-},
-{
-"page": 115,
-"chunk": 2,
-"score": null,
-"sibling": true
-},
-{
-"page": 115,
-"chunk": 3,
-"score": null,
-"sibling": true
-},
-{
-"page": 115,
-"chunk": 5,
-"score": null,
-"sibling": true
-},
-{
 "page": 132,
 "chunk": 6,
 "score": 0.670784,
 "sibling": false
+},
+{
+"page": 132,
+"chunk": 9,
+"score": null,
+"sibling": true
 },
 {
 "page": 104,
@@ -250,15 +250,15 @@
 "sibling": false
 },
 {
-"page": 101,
-"chunk": 12,
-"score": 0.664796,
+"page": 90,
+"chunk": 3,
+"score": 0.643023,
 "sibling": false
 },
 {
-"page": 111,
-"chunk": 7,
-"score": 0.635555,
+"page": 130,
+"chunk": 0,
+"score": 0.634162,
 "sibling": false
 }
 ],
@@ -283,15 +283,15 @@
 "sibling": false
 },
 {
-"page": 160,
-"chunk": 7,
-"score": 0.689721,
-"sibling": false
-},
-{
 "page": 181,
 "chunk": 4,
 "score": 0.648971,
+"sibling": false
+},
+{
+"page": 160,
+"chunk": 7,
+"score": 0.689721,
 "sibling": false
 },
 {
@@ -301,21 +301,21 @@
 "sibling": false
 },
 {
-"page": 145,
-"chunk": 6,
-"score": 0.650534,
-"sibling": false
-},
-{
-"page": 182,
-"chunk": 10,
-"score": 0.664758,
-"sibling": false
-},
-{
 "page": 141,
 "chunk": 8,
 "score": 0.664227,
+"sibling": false
+},
+{
+"page": 185,
+"chunk": 4,
+"score": 0.712125,
+"sibling": false
+},
+{
+"page": 171,
+"chunk": 3,
+"score": 0.66185,
 "sibling": false
 }
 ],
@@ -507,44 +507,38 @@
 "sibling": true
 },
 {
-"page": 145,
-"chunk": 5,
-"score": null,
-"sibling": true
-},
-{
-"page": 145,
-"chunk": 6,
-"score": 0.650534,
-"sibling": false
-},
-{
-"page": 145,
+"page": 141,
 "chunk": 7,
 "score": null,
 "sibling": true
-},
-{
-"page": 182,
-"chunk": 6,
-"score": null,
-"sibling": true
-},
-{
-"page": 182,
-"chunk": 10,
-"score": 0.664758,
-"sibling": false
 },
 {
 "page": 141,
 "chunk": 8,
 "score": 0.664227,
 "sibling": false
+},
+{
+"page": 141,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 185,
+"chunk": 4,
+"score": 0.712125,
+"sibling": false
+},
+{
+"page": 171,
+"chunk": 3,
+"score": 0.66185,
+"sibling": false
 }
 ],
 "gate": {
-"fused_best": 0.689721,
+"fused_best": 0.712125,
 "vector_best": 0.735375
 }
 },
@@ -570,15 +564,21 @@
 "sibling": false
 },
 {
-"page": 363,
+"page": 294,
 "chunk": 0,
-"score": 0.717289,
+"score": 0.68039,
 "sibling": false
 },
 {
-"page": 384,
-"chunk": 7,
-"score": 0.708228,
+"page": 295,
+"chunk": 0,
+"score": 0.672961,
+"sibling": false
+},
+{
+"page": 363,
+"chunk": 0,
+"score": 0.717289,
 "sibling": false
 },
 {
@@ -588,15 +588,9 @@
 "sibling": false
 },
 {
-"page": 417,
-"chunk": 0,
-"score": 0.72191,
-"sibling": false
-},
-{
-"page": 415,
-"chunk": 5,
-"score": 0.647014,
+"page": 509,
+"chunk": 3,
+"score": 0.707869,
 "sibling": false
 }
 ],
@@ -638,6 +632,114 @@
 "sibling": true
 },
 {
+"page": 294,
+"chunk": 0,
+"score": 0.68039,
+"sibling": false
+},
+{
+"page": 294,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 294,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 294,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 294,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 294,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 294,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 294,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 294,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 294,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 294,
+"chunk": 10,
+"score": null,
+"sibling": true
+},
+{
+"page": 294,
+"chunk": 11,
+"score": null,
+"sibling": true
+},
+{
+"page": 294,
+"chunk": 12,
+"score": null,
+"sibling": true
+},
+{
+"page": 295,
+"chunk": 0,
+"score": 0.672961,
+"sibling": false
+},
+{
+"page": 295,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 295,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 295,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 295,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
 "page": 363,
 "chunk": 0,
 "score": 0.717289,
@@ -652,96 +754,6 @@
 {
 "page": 363,
 "chunk": 2,
-"score": null,
-"sibling": true
-},
-{
-"page": 384,
-"chunk": 0,
-"score": null,
-"sibling": true
-},
-{
-"page": 384,
-"chunk": 1,
-"score": null,
-"sibling": true
-},
-{
-"page": 384,
-"chunk": 2,
-"score": null,
-"sibling": true
-},
-{
-"page": 384,
-"chunk": 3,
-"score": null,
-"sibling": true
-},
-{
-"page": 384,
-"chunk": 4,
-"score": null,
-"sibling": true
-},
-{
-"page": 384,
-"chunk": 5,
-"score": null,
-"sibling": true
-},
-{
-"page": 384,
-"chunk": 6,
-"score": null,
-"sibling": true
-},
-{
-"page": 384,
-"chunk": 7,
-"score": 0.708228,
-"sibling": false
-},
-{
-"page": 384,
-"chunk": 8,
-"score": null,
-"sibling": true
-},
-{
-"page": 384,
-"chunk": 9,
-"score": null,
-"sibling": true
-},
-{
-"page": 384,
-"chunk": 10,
-"score": null,
-"sibling": true
-},
-{
-"page": 384,
-"chunk": 11,
-"score": null,
-"sibling": true
-},
-{
-"page": 384,
-"chunk": 12,
-"score": null,
-"sibling": true
-},
-{
-"page": 384,
-"chunk": 13,
-"score": null,
-"sibling": true
-},
-{
-"page": 384,
-"chunk": 14,
 "score": null,
 "sibling": true
 },
@@ -782,33 +794,15 @@
 "sibling": true
 },
 {
-"page": 417,
-"chunk": 0,
-"score": 0.72191,
-"sibling": false
-},
-{
-"page": 417,
-"chunk": 1,
-"score": null,
-"sibling": true
-},
-{
-"page": 417,
+"page": 509,
 "chunk": 2,
 "score": null,
 "sibling": true
 },
 {
-"page": 417,
+"page": 509,
 "chunk": 3,
-"score": null,
-"sibling": true
-},
-{
-"page": 415,
-"chunk": 5,
-"score": 0.647014,
+"score": 0.707869,
 "sibling": false
 }
 ],
@@ -840,20 +834,14 @@
 },
 {
 "page": 141,
-"chunk": 1,
-"score": 0.705647,
-"sibling": false
-},
-{
-"page": 141,
 "chunk": 0,
 "score": 0.697062,
 "sibling": false
 },
 {
-"page": 146,
+"page": 156,
 "chunk": 0,
-"score": 0.714609,
+"score": 0.637135,
 "sibling": false
 },
 {
@@ -866,6 +854,12 @@
 "page": 129,
 "chunk": 0,
 "score": 0.766198,
+"sibling": false
+},
+{
+"page": 146,
+"chunk": 0,
+"score": 0.714609,
 "sibling": false
 }
 ],
@@ -933,8 +927,8 @@
 {
 "page": 141,
 "chunk": 1,
-"score": 0.705647,
-"sibling": false
+"score": null,
+"sibling": true
 },
 {
 "page": 141,
@@ -943,14 +937,38 @@
 "sibling": true
 },
 {
-"page": 146,
+"page": 156,
 "chunk": 0,
-"score": 0.714609,
+"score": 0.637135,
 "sibling": false
 },
 {
-"page": 146,
+"page": 156,
 "chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 156,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 156,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 156,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 156,
+"chunk": 5,
 "score": null,
 "sibling": true
 },
@@ -981,6 +999,18 @@
 {
 "page": 142,
 "chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 146,
+"chunk": 0,
+"score": 0.714609,
+"sibling": false
+},
+{
+"page": 146,
+"chunk": 1,
 "score": null,
 "sibling": true
 }
