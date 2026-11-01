@@ -79,6 +79,13 @@ def main() -> None:
         stage("load embedding model", 0.0, f"SKIPPED: {type(error).__name__}")
 
     filings = json.loads(Path("corpus/corpus.json").read_text(encoding="utf-8"))
+    try:
+        from retrieve.spelling import vocabulary
+    except ImportError:  # code from before misspelling correction existed
+        vocabulary = None
+    if vocabulary is not None:
+        timed(f"spelling vocabularies ({len(filings)} filings)",
+              lambda: [vocabulary(table, f["company"]) for f in filings], "the per-filing cache questions fill")
     if model is not None:
         first = filings[0]
         timed("first question (cold caches)", lambda: page_context(table, search(
@@ -89,15 +96,15 @@ def main() -> None:
                 hits = search(table, model, f"What was {f['name']}'s revenue in {f['fiscal_year']}?",
                               max(DEFAULT_K, EXPANSION_SEEDS), f["company"])
                 page_context(table, hits)
-        timed(f"one question per filing ({len(filings)})", every_filing, "fills every per-filing vocabulary cache")
-    else:
-        from retrieve.spelling import vocabulary
-        timed(f"spelling vocabularies ({len(filings)} filings)",
-              lambda: [vocabulary(table, f["company"]) for f in filings], "the per-filing cache questions fill")
+        timed(f"one question per filing ({len(filings)})", every_filing)
+        timed(f"the same {len(filings)} questions again", every_filing, "growth here would be per question, not per filing")
 
     def data_files():
         from funds.data import load_funds
-        from overviews.build import load
+        try:
+            from overviews.build import load
+        except ImportError:  # before overviews existed
+            load = dict
         return load_funds(), load()
     timed("fund snapshots + overviews", data_files)
 

@@ -52,12 +52,19 @@ jobs:
           python -m evals.retrieval --questions notes/eval-candidates.jsonl --out evals/retrieval/eval-candidates.json
           python -m evals.retrieval --questions evals/funds-reports.jsonl --out evals/retrieval/funds-reports.json
       - name: Measure startup time and memory
-        run: python -m evals.footprint --out evals/results/footprint.json
+        run: |
+          python -m evals.footprint --out evals/results/footprint.json
+          # The same measurement on the last commit before the Nov 2026 work,
+          # so a change in memory is attributable.
+          git worktree add --detach ../before 543ff0a
+          cp -r data/models ../before/data/ 2>/dev/null || true
+          cp evals/footprint.py ../before/evals/footprint.py
+          (cd ../before && python -m evals.footprint --out "$GITHUB_WORKSPACE/evals/results/footprint-543ff0a.json")
       - name: Commit the recordings
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add evals/retrieval/ evals/results/footprint.json
+          git add evals/retrieval/ evals/results/footprint.json evals/results/footprint-543ff0a.json
           if git diff --cached --quiet; then
             echo "nothing changed"
             exit 0
