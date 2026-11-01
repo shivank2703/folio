@@ -21,7 +21,9 @@ from pathlib import Path
 from evals.retrieval import key
 
 QUESTIONS = Path("notes/eval-candidates.jsonl")
-CURRENT_FLOOR = 0.67
+# The floor before Nov 2026 (fused_best) and since (vector_best).
+PREVIOUS_FLOOR = 0.67
+CURRENT_FLOOR = 0.59
 
 # Below the weakest fit answerable score, so a test question a little weaker
 # than any fit question is not refused on noise. 0.03 is about half the gap
@@ -31,7 +33,7 @@ MARGIN = 0.03
 STATISTICS = {
     "fused_best": "best cosine among the ranked hits (today's gate)",
     "vector_best": "best cosine anywhere in the filing (vector-only top hit)",
-    "corrected": "best of fused_best and fused_best after misspelling correction",
+    "corrected": "best of fused_best and fused_best after misspelling correction (older recordings)",
 }
 
 
@@ -67,7 +69,8 @@ def report(table: list[dict]) -> str:
     fitted = {}
     for name in STATISTICS:
         weakest = min(statistic(r["gate"], name) for r in table if r["split"] == "fit" and r["answerable"])
-        candidates = [("current", CURRENT_FLOOR)] if name == "fused_best" else []
+        candidates = ([("0.67 floor", PREVIOUS_FLOOR)] if name == "fused_best" else
+                      [("shipped", CURRENT_FLOOR)] if name == "vector_best" else [])
         candidates.append(("fitted", round(weakest - MARGIN, 3)))
         for how, floor in candidates:
             c = evaluate(table, name, floor)

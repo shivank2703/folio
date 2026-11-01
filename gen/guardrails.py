@@ -33,21 +33,27 @@ import re
 # refusal by equality instead of by guessing at phrasing.
 REFUSAL = "Not in the filing."
 
-# Calibrated twice, both times on the smoke set rather than on an eval.
-# With one filing and five questions the weakest answerable question scored
-# 0.732 against the not-in-the-filing question's 0.644, and the floor sat at
-# their midpoint, 0.69. With three filings and nine questions the weakest
-# answerable is 0.702 — a narrative page, not a statement — so the midpoint
-# moved to 0.673 and the floor follows it down.
+# Calibrated three times. On the smoke set: 0.69 with one filing, 0.67 with
+# three, each the midpoint between the weakest answerable question and the
+# strongest negative. On the 20- and 24-question evals it no longer separated
+# (0.702 weakest answerable vs 0.757 strongest negative), so it became a
+# pre-filter: refusing plausible negatives rests on the prompt contract and
+# strip_after_refusal. A cross-encoder gate was tried and lost answers on
+# held-out questions (evals/RESULTS.md).
 #
-# The direction is the thing to watch: more documents compress the gap, which
-# is the failure mode this number has. On the 20-question eval it no longer
-# separates (0.702 weakest answerable vs 0.697 strongest negative), so it is a
-# pre-filter only: it stops grossly unrelated questions before a paid call and
-# has refused no answerable question in any eval run. Refusal itself rests on
-# the prompt contract and strip_after_refusal. A cross-encoder gate was tried
-# as its replacement and lost answers on held-out questions (evals/RESULTS.md).
-MIN_SIMILARITY = 0.67
+# Nov 2026: natural questions showed what a pre-filter at 0.67 costs. Four of
+# sixteen live questions ("Summarise HCC's performance in FY25", "How big is
+# L&T's order book?", "totla assets navneet", "What are the key risks
+# Unihealth faces?") were refused here although the filing answers them. On
+# the 51-question eval the statistic changed as well as the number: the best
+# cosine anywhere in the filing (search() puts it on every hit as "gate"),
+# not among the ranked hits, because the broad-question query rewrites move
+# which chunks rank while the filing still resembles the question. 0.59 is the
+# fit half's weakest answerable question (L&T, 0.619) less a 0.03 margin; on
+# the test half it refuses no answerable question and still stops both
+# off-topic ones. Negatives span 0.64-0.76, overlapping answerable questions
+# completely: this floor stops only questions nothing in the filing resembles.
+MIN_SIMILARITY = 0.59
 
 CITATION = re.compile(r"\[page (\d+)\]")
 
@@ -84,8 +90,12 @@ ADVICE = re.compile(
 
 
 def best_similarity(hits: list[dict]) -> float:
-    """The closest any retrieved chunk came to the question."""
-    return max((hit["score"] for hit in hits), default=0.0)
+    """The closest anything in the filing came to the question: the floor's statistic.
+
+    search() records the filing-wide best on each hit as "gate"; a hit list
+    built without it (an older recording, a test) falls back to its own scores.
+    """
+    return max((hit.get("gate", hit["score"]) for hit in hits), default=0.0)
 
 
 def has_enough_context(hits: list[dict]) -> bool:

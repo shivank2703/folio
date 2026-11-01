@@ -90,3 +90,14 @@ class ReplayTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class GateTests(unittest.TestCase):
+    def test_floor_reads_the_filing_wide_gate(self):
+        from gen.guardrails import MIN_SIMILARITY, has_enough_context
+
+        # A ranked list of weak chunks still passes when the filing holds a close one.
+        self.assertTrue(has_enough_context([{"score": 0.50, "gate": MIN_SIMILARITY}]))
+        self.assertFalse(has_enough_context([{"score": 0.50, "gate": MIN_SIMILARITY - 0.01}]))
+        # Without a recorded gate (older recordings) the hits' own scores decide.
+        self.assertTrue(has_enough_context([{"score": MIN_SIMILARITY}]))

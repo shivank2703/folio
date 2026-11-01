@@ -18,9 +18,11 @@ Each record also carries candidate gate scores, the numbers a refusal floor
 could be set on, so alternatives can be compared on one run (evals/RESULTS.md):
 
 - fused_best: the best cosine among the ranked hits: today's gate;
-- vector_best: the best cosine in the filing, from a deeper vector-only search;
-- corrected_best: fused_best after correcting misspelled words against the
-  filing's own vocabulary (retrieve/spelling.py), when anything was corrected.
+- vector_best: the best cosine anywhere in the filing (search()'s "gate"),
+  which the floor has used since Nov 2026.
+
+Recordings before that change also carried corrected_best, fused_best after
+misspelling correction; search() now corrects every question itself.
 """
 
 from __future__ import annotations
@@ -31,9 +33,8 @@ import json
 import time
 from pathlib import Path
 
-from retrieve.embed import MODEL_NAME, embed_texts
-from retrieve.search import (DEFAULT_K, EXPANSION_SEEDS, QUERY_INSTRUCTION, TEXT_FIELDS, expand_fiscal_years,
-                             page_context, scoped, search)
+from retrieve.embed import MODEL_NAME
+from retrieve.search import DEFAULT_K, EXPANSION_SEEDS, TEXT_FIELDS, page_context, search
 from retrieve.store import POINTER, source_of
 
 # Files whose change can change what search() and page_context() return. A
@@ -63,25 +64,18 @@ def key(company: str, question: str) -> str:
 
 
 def ident(row: dict) -> dict:
-    return {"page": int(row["page"]), "chunk": int(row["chunk"]),
-            "score": None if row.get("score") is None else round(float(row["score"]), 6),
-            "sibling": bool(row.get("sibling", False))}
+    out = {"page": int(row["page"]), "chunk": int(row["chunk"]),
+           "score": None if row.get("score") is None else round(float(row["score"]), 6),
+           "sibling": bool(row.get("sibling", False))}
+    if row.get("gate") is not None:
+        out["gate"] = round(float(row["gate"]), 6)
+    return out
 
 
-def gate_scores(table, model, question: str, company: str, hits: list[dict]) -> dict:
-    """Candidate refusal-gate numbers for one question (see the module docstring)."""
-    from retrieve.spelling import correct
-
-    gate_vector = embed_texts(model, [QUERY_INSTRUCTION + expand_fiscal_years(question)])[0]
-    deeper = scoped(table.search(gate_vector).distance_type("cosine"), company).limit(1).select(["_distance"]).to_list()
-    scores = {"fused_best": max((h["score"] for h in hits), default=0.0),
-              "vector_best": 1 - deeper[0]["_distance"] if deeper else 0.0}
-    corrected = correct(question, table, company)
-    if corrected != question:
-        again = search(table, model, corrected, max(DEFAULT_K, EXPANSION_SEEDS), company)
-        scores["corrected"] = corrected
-        scores["corrected_best"] = max((h["score"] for h in again), default=0.0)
-    return {k: round(v, 6) if isinstance(v, float) else v for k, v in scores.items()}
+def gate_scores(hits: list[dict]) -> dict:
+    """The two candidate floor statistics for one question (see the module docstring)."""
+    return {"fused_best": round(max((h["score"] for h in hits), default=0.0), 6),
+            "vector_best": round(max((h.get("gate", h["score"]) for h in hits), default=0.0), 6)}
 
 
 def record(questions: list[dict], table, model) -> dict:
@@ -93,7 +87,7 @@ def record(questions: list[dict], table, model) -> dict:
         context = page_context(table, hits)
         out["questions"][key(q["company"], q["question"])] = {
             "id": q.get("id"), "hits": [ident(h) for h in hits], "context": [ident(c) for c in context],
-            "gate": gate_scores(table, model, q["question"], q["company"], hits)}
+            "gate": gate_scores(hits)}
     return out
 
 
@@ -120,7 +114,8 @@ def replay(dump: dict, table, company: str, question: str) -> tuple[list[dict], 
 
     def rebuild(recorded: dict) -> dict:
         row = by_id[(recorded["page"], recorded["chunk"])]
-        return {**row, "score": recorded["score"], "sibling": recorded["sibling"]}
+        extra = {"gate": recorded["gate"]} if "gate" in recorded else {}
+        return {**row, "score": recorded["score"], "sibling": recorded["sibling"], **extra}
 
     return [rebuild(r) for r in entry["hits"]], [rebuild(r) for r in entry["context"]]
 

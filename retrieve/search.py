@@ -251,10 +251,17 @@ def search(
     if hybrid:
         rankings.append(keyword_hits(table, keyword_query(question, company), company, requested_scope))
 
+    # The refusal floor's statistic: how close the nearest chunk anywhere in
+    # the filing comes to the question, whatever the fused ranking kept
+    # (gen/guardrails.py). One more vector query, unscoped by statement.
+    nearest = scoped(table.search(gate_vector).distance_type("cosine"), company).limit(1).select(["_distance"]).to_list()
+    gate = 1 - nearest[0]["_distance"] if nearest else 0.0
+
     results = []
     for hit in fuse(rankings)[:k]:
         stored = np.asarray(hit.pop("vector"), dtype=np.float32)
-        results.append({**hit, "score": float(stored @ gate_vector)})
+        score = float(stored @ gate_vector)
+        results.append({**hit, "score": score, "gate": max(gate, score)})
     return results
 
 
