@@ -1,10 +1,12 @@
 # Index companies and publish the search index from GitHub's runners.
 #
-# Run from the Actions tab (or the API) on a branch:
-#   companies: empty      -> probe only: upload a tiny release asset, fetch it
-#                            back anonymously, delete it
-#   companies: "AAA BBB"  -> python -m ingest.add AAA BBB, python -m ingest.publish,
-#                            then commit the four record files to that branch
+# Two ways to start a batch:
+#   - on a branch, change corpus/index-request.yaml and push it;
+#   - from the Actions tab (workflow_dispatch), once this file is on main.
+# companies empty -> probe only: upload a tiny release asset, fetch it back
+#                    anonymously, delete it
+# companies given -> python -m ingest.add ..., python -m ingest.publish, then
+#                    commit the four record files to that branch
 #
 # Why here and not on a laptop or a cloud sandbox: a runner has open network
 # access (company sites, Hugging Face for the embedding model) and the
@@ -15,6 +17,9 @@
 name: index
 
 on:
+  push:
+    branches-ignore: [main]
+    paths: [corpus/index-request.yaml]
   workflow_dispatch:
     inputs:
       companies:
@@ -42,8 +47,8 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       FOLIO_REPO: ${{ github.repository }}
-      COMPANIES: ${{ inputs.companies }}
-      FORCE: ${{ inputs.force && '--force' || '' }}
+      INPUT_COMPANIES: ${{ inputs.companies }}
+      INPUT_FORCE: ${{ inputs.force }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -56,22 +61,38 @@ jobs:
         with:
           path: data/models
           key: fastembed-bge-small-en-v1.5
-      - name: Check the codes
+      - name: Read the batch
+        id: batch
+        # A push reads the committed request file; a dispatch reads its form.
+        # Either way the codes are checked before any shell sees them.
         run: |
-          if [[ ! "$COMPANIES" =~ ^[A-Z0-9\ ]*$ ]]; then
-            echo "companies must be capital letters, digits and spaces" >&2
-            exit 1
-          fi
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import os, re, yaml
+          if os.environ["GITHUB_EVENT_NAME"] == "push":
+              request = yaml.safe_load(open("corpus/index-request.yaml")) or {}
+              codes, force = request.get("companies") or [], bool(request.get("force"))
+          else:
+              codes, force = os.environ["INPUT_COMPANIES"].split(), os.environ["INPUT_FORCE"] == "true"
+          codes = [str(c).upper() for c in codes]
+          bad = [c for c in codes if not re.fullmatch(r"[A-Z0-9]{2,20}", c)]
+          if bad:
+              raise SystemExit(f"not company codes: {bad}")
+          print("companies=" + " ".join(codes))
+          print("force=" + ("--force" if force else ""))
+          PY
       - name: Probe a release upload
         run: python -m ingest.publish --probe
       - name: Add companies
-        if: inputs.companies != ''
+        if: steps.batch.outputs.companies != ''
         run: python -m ingest.add $COMPANIES $FORCE
+        env:
+          COMPANIES: ${{ steps.batch.outputs.companies }}
+          FORCE: ${{ steps.batch.outputs.force }}
       - name: Publish the index
-        if: inputs.companies != ''
+        if: steps.batch.outputs.companies != ''
         run: python -m ingest.publish
       - name: Commit the record files
-        if: inputs.companies != ''
+        if: steps.batch.outputs.companies != ''
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

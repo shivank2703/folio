@@ -1,0 +1,7 @@
+# The next batch for the index workflow (.github/workflows/index.yml).
+# Changing this file and pushing it to a branch runs one batch there:
+# ingest.add for these codes (each must be in corpus/urls.yaml), then
+# ingest.publish, then a commit of the record files to the same branch.
+# An empty list only probes that a release asset can be uploaded.
+companies: []
+force: false
