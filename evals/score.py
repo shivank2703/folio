@@ -36,6 +36,7 @@ import anthropic
 from gen.answer import build_client, filing_label, guarded_answer
 from gen.guardrails import REFUSAL, cited_pages
 from retrieve.embed import load_model
+from evals.retrieval import key as retrieval_key, load as load_retrieval, replay
 from retrieve.search import DEFAULT_K, EXPANSION_SEEDS, open_index, page_context, search
 
 QUESTIONS = Path("notes/eval-candidates.jsonl")
@@ -186,19 +187,30 @@ def grade(q: dict, verdict: dict, client: anthropic.Anthropic) -> dict:
 
 
 def run(label: str, samples: int, only: set[str] | None, rerank_gate: tuple[str, float] | None = None,
-        questions_path: Path = QUESTIONS) -> dict:
+        questions_path: Path = QUESTIONS, retrieval: Path | None = None) -> dict:
     questions = [json.loads(line) for line in questions_path.open(encoding="utf-8")]
     if only:
         questions = [q for q in questions if q["id"] in only]
-    table, model, client = open_index(Path("data/lancedb")), load_model(), build_client()
+    table, client = open_index(Path("data/lancedb")), build_client()
+    # A recorded retrieval (evals/retrieval.py) stands in for search and page
+    # packing, the two steps that need the embedding model; everything after
+    # them runs exactly as without it.
+    dump = load_retrieval(retrieval) if retrieval else None
+    model = None if dump else load_model()
     reranker = None
     if rerank_gate:
         # Experiment only: the app does not rerank (evals/RESULTS.md says why).
         from retrieve.rerank import CANDIDATES, load_reranker, rerank
         reranker = load_reranker(rerank_gate[0])
     out = {"label": label, "samples": samples, "when": time.strftime("%Y-%m-%d %H:%M"), "questions": []}
+    if dump:
+        out["retrieval"] = {"file": str(retrieval), "recorded": dump["recorded"], "code": dump["code"]}
     for q in questions:
-        hits = search(table, model, q["question"], max(DEFAULT_K, EXPANSION_SEEDS), q["company"])
+        if dump:
+            hits, context = replay(dump, table, q["company"], q["question"])
+        else:
+            hits = search(table, model, q["question"], max(DEFAULT_K, EXPANSION_SEEDS), q["company"])
+            context = page_context(table, hits)
         if reranker is not None:
             ranked = rerank(reranker, q["question"], search(table, model, q["question"], CANDIDATES, q["company"]))
             hits = ranked[: max(DEFAULT_K, EXPANSION_SEEDS)]
@@ -210,11 +222,12 @@ def run(label: str, samples: int, only: set[str] | None, rerank_gate: tuple[str,
                                          "answerable": bool(q["expected_pages"]), "samples": rows})
                 print(f"{q['id']:<18} {q['type']:<14} {sum(r['passed'] for r in rows)}/{samples}  gate refused")
                 continue
-        context = page_context(table, hits)
         label = filing_label(q["company"])
         rows = [grade(q, guarded_answer(q["question"], hits, client, context, label), client) for _ in range(samples)]
-        out["questions"].append({**{k: q[k] for k in ("id", "type", "company", "split")},
-                                 "answerable": bool(q["expected_pages"]), "samples": rows})
+        out["questions"].append({**{k: q[k] for k in ("id", "type", "company", "split")}, "style": q.get("style"),
+                                 "answerable": bool(q["expected_pages"]), "samples": rows,
+                                 "gate": dump["questions"][retrieval_key(q["company"], q["question"])]["gate"]
+                                 if dump else {"fused_best": max((h["score"] for h in hits), default=0.0)}})
         passed = sum(r["passed"] for r in rows)
         print(f"{q['id']:<18} {q['type']:<14} {passed}/{samples}  {rows[0]['text'][:90]!r}")
     return out
@@ -270,6 +283,8 @@ def main() -> None:
     parser.add_argument("--samples", type=int, default=3, help="answers generated per question")
     parser.add_argument("--only", nargs="*", help="question ids to run, for debugging")
     parser.add_argument("--questions", type=Path, default=QUESTIONS, help="verified question JSONL")
+    parser.add_argument("--retrieval", type=Path,
+                        help="replay a recorded retrieval (python -m evals.retrieval) instead of searching")
     parser.add_argument("--rerank-gate", nargs=2, metavar=("MODEL", "THRESHOLD"),
                         help="experiment: rerank candidates and gate on the best score (python -m evals.fit_gate)")
     args = parser.parse_args()
@@ -278,8 +293,11 @@ def main() -> None:
     destination = RESULTS / f"{args.label}.json"
     if destination.exists():
         parser.error("that result already exists; choose a new label to preserve the comparison")
+    if args.rerank_gate and args.retrieval:
+        parser.error("--rerank-gate searches again, so it cannot replay a recorded retrieval")
     gate = (args.rerank_gate[0], float(args.rerank_gate[1])) if args.rerank_gate else None
-    result = run(args.label, args.samples, set(args.only) if args.only else None, gate, args.questions)
+    result = run(args.label, args.samples, set(args.only) if args.only else None, gate, args.questions,
+                 args.retrieval)
     RESULTS.mkdir(parents=True, exist_ok=True)
     with destination.open("x", encoding="utf-8") as output:
         json.dump(result, output, ensure_ascii=False, indent=1)

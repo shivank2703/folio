@@ -1,0 +1,64 @@
+# Record retrieval for the eval questions on a runner that has the embedding model.
+#
+# evals/retrieval.py explains the split: search and page packing are the only
+# steps of the answer path that need the model, and they are deterministic for
+# one index, one model and one question. This job runs them for every eval
+# question and commits the chunk identities and scores (no text) under
+# evals/retrieval/, so the model-judged eval can then run anywhere the index
+# is: python -m evals.score --label NAME --retrieval evals/retrieval/eval-candidates.json
+#
+# It runs when retrieval code, the questions or the published index change on
+# a branch. No secrets beyond the repository token; no API calls.
+name: retrieval
+
+on:
+  push:
+    branches-ignore: [main]
+    paths:
+      - retrieve/**
+      - evals/retrieval.py
+      - notes/eval-candidates.jsonl
+      - evals/funds-reports.jsonl
+      - corpus/index.json
+      - .github/workflows/retrieval.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: retrieval-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - run: python -m pip install -r requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: data/models
+          key: fastembed-bge-small-en-v1.5
+      - name: Record retrieval
+        run: |
+          python -m evals.retrieval --questions notes/eval-candidates.jsonl --out evals/retrieval/eval-candidates.json
+          python -m evals.retrieval --questions evals/funds-reports.jsonl --out evals/retrieval/funds-reports.json
+      - name: Commit the recordings
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add evals/retrieval/
+          if git diff --cached --quiet; then
+            echo "nothing changed"
+            exit 0
+          fi
+          git commit -m "Record retrieval for ${GITHUB_SHA::7}"
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
