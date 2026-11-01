@@ -56,17 +56,14 @@ jobs:
       - name: Measure startup time and memory
         run: |
           python -m evals.footprint --out evals/results/footprint.json
-          # The same measurement on the last commit before the Nov 2026 work,
-          # so a change in memory is attributable.
-          git worktree add --detach ../before 543ff0a
-          cp -r data/models ../before/data/ 2>/dev/null || true
-          cp evals/footprint.py ../before/evals/footprint.py
-          (cd ../before && python -m evals.footprint --out "$GITHUB_WORKSPACE/evals/results/footprint-543ff0a.json")
+          # Ten passes: does memory level off? With glibc's default arenas and with two.
+          python -m evals.footprint --passes 10 --out evals/results/footprint-soak.json
+          MALLOC_ARENA_MAX=2 python -m evals.footprint --passes 10 --out evals/results/footprint-soak-arena2.json
       - name: Commit the recordings
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add evals/retrieval/ evals/results/footprint.json evals/results/footprint-543ff0a.json
+          git add evals/retrieval/ evals/results/footprint*.json
           if git diff --cached --quiet; then
             echo "nothing changed"
             exit 0

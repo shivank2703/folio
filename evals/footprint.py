@@ -52,6 +52,7 @@ def timed(name: str, fn, note: str = ""):
 def main() -> None:
     parser = argparse.ArgumentParser(description="Time and memory of the app's startup and first questions.")
     parser.add_argument("--out", type=Path)
+    parser.add_argument("--passes", type=int, default=3, help="passes over one question per filing")
     args = parser.parse_args()
 
     def imports():
@@ -97,8 +98,9 @@ def main() -> None:
                               max(DEFAULT_K, EXPANSION_SEEDS), f["company"])
                 page_context(table, hits)
         timed(f"one question per filing ({len(filings)})", every_filing)
-        timed(f"the same {len(filings)} questions again", every_filing, "growth here would be per question, not per filing")
-        timed(f"and a third time", every_filing, "levelling off here means caches, not a leak")
+        for n in range(2, args.passes + 1):
+            timed(f"pass {n} over the same {len(filings)} questions", every_filing,
+                  "levelling off means bounded caches; steady growth means a leak")
 
     def data_files():
         from funds.data import load_funds
@@ -109,7 +111,9 @@ def main() -> None:
         return load_funds(), load()
     timed("fund snapshots + overviews", data_files)
 
+    import os
     result = {"measured": time.strftime("%Y-%m-%d %H:%M"), "index": pointer["asset"],
+              "malloc_arena_max": os.environ.get("MALLOC_ARENA_MAX"),
               "total_seconds": round(time.perf_counter() - STARTED, 2),
               "peak_mb": max(s["peak_mb"] for s in STAGES), "stages": STAGES,
               "model_loaded": model is not None}
