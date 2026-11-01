@@ -101,6 +101,36 @@ LINE_ITEM = re.compile(r"\b(revenues?|income|turnover|sales|profits?|loss|ebitda
                        r"borrowings|debt|cash flows?|expenses?|eps|earnings|receivables|inventor(?:y|ies)|order book)\b", re.I)
 
 
+# Readers' names for line items, and the labels statements print for them.
+# "Reliance's net profit" never met "Profit for the year" in the keyword
+# ranking, which found subsidiaries' summaries instead. Plain string work,
+# like the fiscal-year expansion: these are the labels by Schedule III.
+STATEMENT_LABELS = [
+    (re.compile(r"\b(net profit|pat|net income|earnings)\b", re.I), "profit for the year profit after tax"),
+    (re.compile(r"\b(revenues?|sales|turnover|top line)\b", re.I), "revenue from operations"),
+    (re.compile(r"\bnet worth\b", re.I), "total equity"),
+    (re.compile(r"\bdebt\b", re.I), "borrowings"),
+]
+
+# The statement a line item lives in, by the title it prints: added to the
+# consolidated-only ranking's words so the statement itself outranks the
+# subsidiaries' one-line summaries that repeat the same labels (L&T's,
+# Infosys's and Tata Steel's consolidated statements reached the top two
+# only with it).
+STATEMENT_TITLES = [
+    (re.compile(r"\b(revenues?|income|sales|turnover|profits?|loss|ebitda|expenses?|eps|earnings)\b", re.I),
+     "statement of profit and loss"),
+    (re.compile(r"\b(assets|liabilities|equity|net worth|borrowings|debt|receivables|inventor(?:y|ies))\b", re.I),
+     "balance sheet"),
+]
+
+# Seeds reserved for the consolidated-only ranking on an unscoped line-item
+# question. Fusion alone rarely admits them: a chunk ranked by one list
+# cannot outscore one both lists found, and Infosys's unscoped revenue
+# question packed eight accounting-policy chunks and no statement.
+CONSOLIDATED_SEEDS = 2
+
+
 def company_pattern(company: str) -> str:
     """The company code as a reader might type it: "LT" also matches "L&T" and "L-T"."""
     return r"\b" + r"[\s&.-]*".join(re.escape(c) for c in company) + r"\b"
@@ -127,6 +157,7 @@ def keyword_query(question: str, company: str | None) -> str:
     text = FISCAL_YEAR.sub(" ", without_company(question, company)).lower()
     words = [word for word in re.findall(r"\b\w+\b", text) if word not in QUESTION_WORDS]
     words += [extra for pattern, extra in SECTION_WORDS if pattern.search(question) for extra in extra.split()]
+    words += [label for pattern, labels in STATEMENT_LABELS if pattern.search(question) for label in labels.split()]
     return " ".join(words) or question
 
 
@@ -222,6 +253,20 @@ def fuse(rankings: list[list[dict]]) -> list[dict]:
     return sorted(fused.values(), key=lambda hit: -hit["rrf"])
 
 
+def reserve(ranked: list[dict], wanted: list[dict], k: int) -> list[dict]:
+    """The fused ranking with `wanted` guaranteed a place in its first k, at the bottom of them.
+
+    The reserved hits keep their own fused score; what they displace are the
+    weakest of the top k, which move just below the cut rather than vanish.
+    """
+    ids = lambda h: (h["company"], h["fiscal_year"], h["page"], h["chunk"])
+    want = {ids(h) for h in wanted}
+    reserved = [h for h in ranked if ids(h) in want]
+    others = [h for h in ranked if ids(h) not in want]
+    keep = k - len(reserved)
+    return others[:keep] + reserved + others[keep:]
+
+
 def search(
     table: lancedb.table.Table,
     model: TextEmbedding,
@@ -265,8 +310,11 @@ def search(
         # profit" was answered standalone-only because no consolidated page
         # ranked. A third ranking over consolidated chunks alone lets them
         # compete without displacing what the question's own words found.
-        if requested_scope is None and LINE_ITEM.search(question):
-            rankings.append(keyword_hits(table, keywords, company, "consolidated", strict=True))
+        titles = " ".join(title for pattern, title in STATEMENT_TITLES if pattern.search(question))
+        consolidated = (keyword_hits(table, f"{keywords} {titles}".strip(), company, "consolidated", strict=True)
+                        if requested_scope is None and LINE_ITEM.search(question) else [])
+        if consolidated:
+            rankings.append(consolidated)
 
     # The refusal floor's statistic: how close the nearest chunk anywhere in
     # the filing comes to the question, whatever the fused ranking kept
@@ -274,8 +322,11 @@ def search(
     nearest = scoped(table.search(gate_vector).distance_type("cosine"), company).limit(1).select(["_distance"]).to_list()
     gate = 1 - nearest[0]["_distance"] if nearest else 0.0
 
+    ranked = fuse(rankings)
+    if hybrid and consolidated:
+        ranked = reserve(ranked, consolidated[:CONSOLIDATED_SEEDS], k)
     results = []
-    for hit in fuse(rankings)[:k]:
+    for hit in ranked[:k]:
         stored = np.asarray(hit.pop("vector"), dtype=np.float32)
         score = float(stored @ gate_vector)
         results.append({**hit, "score": score, "gate": max(gate, score)})

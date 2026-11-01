@@ -55,6 +55,8 @@ def declarations(text: str) -> list[str]:
         for cell in line.split(" | "):
             for candidate in (cell, *PARENTHESISED.findall(cell)):
                 repaired = RUPEE_GLYPH.sub("₹ ", normalize_glyphs(candidate.strip()))
+                # L&T's text layer doubles the sign around its glyph ("₹I₹ crore").
+                repaired = re.sub(r"₹\s*[CHIJKv]?\s*₹", "₹", repaired).replace("( ₹", "(₹")
                 if repaired and is_declaration(repaired) and repaired not in found:
                     found.append(repaired)
     return found

@@ -17,5 +17,5 @@ runs:
     samples: 3
   # Step 4 after: page units on every extract, consolidated first.
   - label: accuracy-after
-    ref: d241a62
+    ref: STEP4
     samples: 3
