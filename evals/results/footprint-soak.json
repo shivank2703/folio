@@ -1,0 +1,129 @@
+{
+ "measured": "2026-11-01 11:53",
+ "index": "folio-index-654edb14fd97.tar.gz",
+ "malloc_arena_max": null,
+ "total_seconds": 49.41,
+ "peak_mb": 1842.7,
+ "stages": [
+  {
+   "stage": "imports (streamlit + app modules)",
+   "seconds": 1.94,
+   "rss_mb": 331.9,
+   "peak_mb": 331.7,
+   "note": ""
+  },
+  {
+   "stage": "index fetch + verify + unpack (fresh)",
+   "seconds": 1.1,
+   "rss_mb": 335.4,
+   "peak_mb": 423.3,
+   "note": "93 MB tarball, 56112 chunks"
+  },
+  {
+   "stage": "open index",
+   "seconds": 0.0,
+   "rss_mb": 360.4,
+   "peak_mb": 423.3,
+   "note": "120 MB on disk"
+  },
+  {
+   "stage": "load embedding model",
+   "seconds": 0.18,
+   "rss_mb": 559.9,
+   "peak_mb": 559.7,
+   "note": ""
+  },
+  {
+   "stage": "spelling vocabularies (32 filings)",
+   "seconds": 1.45,
+   "rss_mb": 631.9,
+   "peak_mb": 631.6,
+   "note": "the per-filing cache questions fill"
+  },
+  {
+   "stage": "first question (cold caches)",
+   "seconds": 0.16,
+   "rss_mb": 813.3,
+   "peak_mb": 813.0,
+   "note": ""
+  },
+  {
+   "stage": "one question per filing (32)",
+   "seconds": 4.53,
+   "rss_mb": 1462.6,
+   "peak_mb": 1462.3,
+   "note": ""
+  },
+  {
+   "stage": "pass 2 over the same 32 questions",
+   "seconds": 4.42,
+   "rss_mb": 1632.0,
+   "peak_mb": 1631.7,
+   "note": "levelling off means bounded caches; steady growth means a leak"
+  },
+  {
+   "stage": "pass 3 over the same 32 questions",
+   "seconds": 4.41,
+   "rss_mb": 1665.6,
+   "peak_mb": 1701.2,
+   "note": "levelling off means bounded caches; steady growth means a leak"
+  },
+  {
+   "stage": "pass 4 over the same 32 questions",
+   "seconds": 4.41,
+   "rss_mb": 1729.0,
+   "peak_mb": 1728.8,
+   "note": "levelling off means bounded caches; steady growth means a leak"
+  },
+  {
+   "stage": "pass 5 over the same 32 questions",
+   "seconds": 4.51,
+   "rss_mb": 1705.1,
+   "peak_mb": 1755.1,
+   "note": "levelling off means bounded caches; steady growth means a leak"
+  },
+  {
+   "stage": "pass 6 over the same 32 questions",
+   "seconds": 4.42,
+   "rss_mb": 1757.6,
+   "peak_mb": 1757.4,
+   "note": "levelling off means bounded caches; steady growth means a leak"
+  },
+  {
+   "stage": "pass 7 over the same 32 questions",
+   "seconds": 4.46,
+   "rss_mb": 1783.9,
+   "peak_mb": 1791.6,
+   "note": "levelling off means bounded caches; steady growth means a leak"
+  },
+  {
+   "stage": "pass 8 over the same 32 questions",
+   "seconds": 4.52,
+   "rss_mb": 1820.0,
+   "peak_mb": 1822.0,
+   "note": "levelling off means bounded caches; steady growth means a leak"
+  },
+  {
+   "stage": "pass 9 over the same 32 questions",
+   "seconds": 4.44,
+   "rss_mb": 1808.8,
+   "peak_mb": 1841.7,
+   "note": "levelling off means bounded caches; steady growth means a leak"
+  },
+  {
+   "stage": "pass 10 over the same 32 questions",
+   "seconds": 4.43,
+   "rss_mb": 1842.8,
+   "peak_mb": 1842.7,
+   "note": "levelling off means bounded caches; steady growth means a leak"
+  },
+  {
+   "stage": "fund snapshots + overviews",
+   "seconds": 0.0,
+   "rss_mb": 1842.8,
+   "peak_mb": 1842.7,
+   "note": ""
+  }
+ ],
+ "model_loaded": true
+}
