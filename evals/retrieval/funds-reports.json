@@ -1,8 +1,8 @@
 {
-"recorded": "2026-11-01 11:18",
+"recorded": "2026-11-01 11:21",
 "model": "BAAI/bge-small-en-v1.5",
 "index": "654edb14fd97d07ee4c0de6b84f09b074f148afff201ffe7df5438faedf6bfa3",
-"code": "041d37f2d5f1a275",
+"code": "cbfd414e9fd6c63c",
 "questions": {
 "BEL\tWhat were BEL standalone total assets at the end of FY26?": {
 "id": "bel-standalone",
@@ -11,49 +11,57 @@
 "page": 113,
 "chunk": 0,
 "score": 0.658205,
-"sibling": false
+"sibling": false,
+"gate": 0.713174
 },
 {
 "page": 106,
 "chunk": 0,
 "score": 0.685534,
-"sibling": false
+"sibling": false,
+"gate": 0.713174
 },
 {
 "page": 115,
 "chunk": 0,
 "score": 0.643727,
-"sibling": false
+"sibling": false,
+"gate": 0.713174
 },
 {
 "page": 98,
 "chunk": 7,
 "score": 0.665398,
-"sibling": false
+"sibling": false,
+"gate": 0.713174
 },
 {
 "page": 132,
 "chunk": 6,
 "score": 0.670784,
-"sibling": false
+"sibling": false,
+"gate": 0.713174
 },
 {
 "page": 104,
 "chunk": 0,
 "score": 0.659337,
-"sibling": false
+"sibling": false,
+"gate": 0.713174
 },
 {
 "page": 90,
 "chunk": 3,
 "score": 0.643023,
-"sibling": false
+"sibling": false,
+"gate": 0.713174
 },
 {
 "page": 130,
 "chunk": 0,
 "score": 0.634162,
-"sibling": false
+"sibling": false,
+"gate": 0.713174
 }
 ],
 "context": [
@@ -61,7 +69,8 @@
 "page": 113,
 "chunk": 0,
 "score": 0.658205,
-"sibling": false
+"sibling": false,
+"gate": 0.713174
 },
 {
 "page": 113,
@@ -109,7 +118,8 @@
 "page": 106,
 "chunk": 0,
 "score": 0.685534,
-"sibling": false
+"sibling": false,
+"gate": 0.713174
 },
 {
 "page": 106,
@@ -157,7 +167,8 @@
 "page": 115,
 "chunk": 0,
 "score": 0.643727,
-"sibling": false
+"sibling": false,
+"gate": 0.713174
 },
 {
 "page": 115,
@@ -223,7 +234,8 @@
 "page": 98,
 "chunk": 7,
 "score": 0.665398,
-"sibling": false
+"sibling": false,
+"gate": 0.713174
 },
 {
 "page": 98,
@@ -235,7 +247,8 @@
 "page": 132,
 "chunk": 6,
 "score": 0.670784,
-"sibling": false
+"sibling": false,
+"gate": 0.713174
 },
 {
 "page": 132,
@@ -247,19 +260,22 @@
 "page": 104,
 "chunk": 0,
 "score": 0.659337,
-"sibling": false
+"sibling": false,
+"gate": 0.713174
 },
 {
 "page": 90,
 "chunk": 3,
 "score": 0.643023,
-"sibling": false
+"sibling": false,
+"gate": 0.713174
 },
 {
 "page": 130,
 "chunk": 0,
 "score": 0.634162,
-"sibling": false
+"sibling": false,
+"gate": 0.713174
 }
 ],
 "gate": {
@@ -274,49 +290,57 @@
 "page": 181,
 "chunk": 3,
 "score": 0.671274,
-"sibling": false
+"sibling": false,
+"gate": 0.735375
 },
 {
 "page": 180,
 "chunk": 7,
 "score": 0.682953,
-"sibling": false
+"sibling": false,
+"gate": 0.735375
 },
 {
 "page": 181,
 "chunk": 4,
 "score": 0.648971,
-"sibling": false
+"sibling": false,
+"gate": 0.735375
 },
 {
 "page": 160,
 "chunk": 7,
 "score": 0.689721,
-"sibling": false
+"sibling": false,
+"gate": 0.735375
 },
 {
 "page": 163,
 "chunk": 3,
 "score": 0.672055,
-"sibling": false
+"sibling": false,
+"gate": 0.735375
 },
 {
 "page": 141,
 "chunk": 8,
 "score": 0.664227,
-"sibling": false
+"sibling": false,
+"gate": 0.735375
 },
 {
 "page": 185,
 "chunk": 4,
 "score": 0.712125,
-"sibling": false
+"sibling": false,
+"gate": 0.735375
 },
 {
 "page": 171,
 "chunk": 3,
 "score": 0.66185,
-"sibling": false
+"sibling": false,
+"gate": 0.735375
 }
 ],
 "context": [
@@ -342,13 +366,15 @@
 "page": 181,
 "chunk": 3,
 "score": 0.671274,
-"sibling": false
+"sibling": false,
+"gate": 0.735375
 },
 {
 "page": 181,
 "chunk": 4,
 "score": 0.648971,
-"sibling": false
+"sibling": false,
+"gate": 0.735375
 },
 {
 "page": 181,
@@ -408,7 +434,8 @@
 "page": 180,
 "chunk": 7,
 "score": 0.682953,
-"sibling": false
+"sibling": false,
+"gate": 0.735375
 },
 {
 "page": 180,
@@ -462,7 +489,8 @@
 "page": 160,
 "chunk": 7,
 "score": 0.689721,
-"sibling": false
+"sibling": false,
+"gate": 0.735375
 },
 {
 "page": 163,
@@ -486,7 +514,8 @@
 "page": 163,
 "chunk": 3,
 "score": 0.672055,
-"sibling": false
+"sibling": false,
+"gate": 0.735375
 },
 {
 "page": 163,
@@ -516,7 +545,8 @@
 "page": 141,
 "chunk": 8,
 "score": 0.664227,
-"sibling": false
+"sibling": false,
+"gate": 0.735375
 },
 {
 "page": 141,
@@ -528,13 +558,15 @@
 "page": 185,
 "chunk": 4,
 "score": 0.712125,
-"sibling": false
+"sibling": false,
+"gate": 0.735375
 },
 {
 "page": 171,
 "chunk": 3,
 "score": 0.66185,
-"sibling": false
+"sibling": false,
+"gate": 0.735375
 }
 ],
 "gate": {
@@ -549,49 +581,57 @@
 "page": 353,
 "chunk": 2,
 "score": 0.739104,
-"sibling": false
+"sibling": false,
+"gate": 0.805031
 },
 {
 "page": 353,
 "chunk": 0,
 "score": 0.754615,
-"sibling": false
+"sibling": false,
+"gate": 0.805031
 },
 {
 "page": 353,
 "chunk": 1,
 "score": 0.733189,
-"sibling": false
+"sibling": false,
+"gate": 0.805031
 },
 {
 "page": 294,
 "chunk": 0,
 "score": 0.68039,
-"sibling": false
+"sibling": false,
+"gate": 0.805031
 },
 {
 "page": 295,
 "chunk": 0,
 "score": 0.672961,
-"sibling": false
+"sibling": false,
+"gate": 0.805031
 },
 {
 "page": 363,
 "chunk": 0,
 "score": 0.717289,
-"sibling": false
+"sibling": false,
+"gate": 0.805031
 },
 {
 "page": 393,
 "chunk": 0,
 "score": 0.73172,
-"sibling": false
+"sibling": false,
+"gate": 0.805031
 },
 {
 "page": 509,
 "chunk": 3,
 "score": 0.707869,
-"sibling": false
+"sibling": false,
+"gate": 0.805031
 }
 ],
 "context": [
@@ -599,19 +639,22 @@
 "page": 353,
 "chunk": 0,
 "score": 0.754615,
-"sibling": false
+"sibling": false,
+"gate": 0.805031
 },
 {
 "page": 353,
 "chunk": 1,
 "score": 0.733189,
-"sibling": false
+"sibling": false,
+"gate": 0.805031
 },
 {
 "page": 353,
 "chunk": 2,
 "score": 0.739104,
-"sibling": false
+"sibling": false,
+"gate": 0.805031
 },
 {
 "page": 353,
@@ -635,7 +678,8 @@
 "page": 294,
 "chunk": 0,
 "score": 0.68039,
-"sibling": false
+"sibling": false,
+"gate": 0.805031
 },
 {
 "page": 294,
@@ -713,7 +757,8 @@
 "page": 295,
 "chunk": 0,
 "score": 0.672961,
-"sibling": false
+"sibling": false,
+"gate": 0.805031
 },
 {
 "page": 295,
@@ -743,7 +788,8 @@
 "page": 363,
 "chunk": 0,
 "score": 0.717289,
-"sibling": false
+"sibling": false,
+"gate": 0.805031
 },
 {
 "page": 363,
@@ -761,7 +807,8 @@
 "page": 393,
 "chunk": 0,
 "score": 0.73172,
-"sibling": false
+"sibling": false,
+"gate": 0.805031
 },
 {
 "page": 393,
@@ -803,7 +850,8 @@
 "page": 509,
 "chunk": 3,
 "score": 0.707869,
-"sibling": false
+"sibling": false,
+"gate": 0.805031
 }
 ],
 "gate": {
@@ -818,49 +866,57 @@
 "page": 129,
 "chunk": 2,
 "score": 0.721446,
-"sibling": false
+"sibling": false,
+"gate": 0.822478
 },
 {
 "page": 129,
 "chunk": 1,
 "score": 0.740662,
-"sibling": false
+"sibling": false,
+"gate": 0.822478
 },
 {
 "page": 143,
 "chunk": 0,
 "score": 0.673587,
-"sibling": false
+"sibling": false,
+"gate": 0.822478
 },
 {
 "page": 141,
 "chunk": 0,
 "score": 0.697062,
-"sibling": false
+"sibling": false,
+"gate": 0.822478
 },
 {
 "page": 156,
 "chunk": 0,
 "score": 0.637135,
-"sibling": false
+"sibling": false,
+"gate": 0.822478
 },
 {
 "page": 142,
 "chunk": 0,
 "score": 0.702368,
-"sibling": false
+"sibling": false,
+"gate": 0.822478
 },
 {
 "page": 129,
 "chunk": 0,
 "score": 0.766198,
-"sibling": false
+"sibling": false,
+"gate": 0.822478
 },
 {
 "page": 146,
 "chunk": 0,
 "score": 0.714609,
-"sibling": false
+"sibling": false,
+"gate": 0.822478
 }
 ],
 "context": [
@@ -868,19 +924,22 @@
 "page": 129,
 "chunk": 0,
 "score": 0.766198,
-"sibling": false
+"sibling": false,
+"gate": 0.822478
 },
 {
 "page": 129,
 "chunk": 1,
 "score": 0.740662,
-"sibling": false
+"sibling": false,
+"gate": 0.822478
 },
 {
 "page": 129,
 "chunk": 2,
 "score": 0.721446,
-"sibling": false
+"sibling": false,
+"gate": 0.822478
 },
 {
 "page": 129,
@@ -898,7 +957,8 @@
 "page": 143,
 "chunk": 0,
 "score": 0.673587,
-"sibling": false
+"sibling": false,
+"gate": 0.822478
 },
 {
 "page": 143,
@@ -922,7 +982,8 @@
 "page": 141,
 "chunk": 0,
 "score": 0.697062,
-"sibling": false
+"sibling": false,
+"gate": 0.822478
 },
 {
 "page": 141,
@@ -940,7 +1001,8 @@
 "page": 156,
 "chunk": 0,
 "score": 0.637135,
-"sibling": false
+"sibling": false,
+"gate": 0.822478
 },
 {
 "page": 156,
@@ -976,7 +1038,8 @@
 "page": 142,
 "chunk": 0,
 "score": 0.702368,
-"sibling": false
+"sibling": false,
+"gate": 0.822478
 },
 {
 "page": 142,
@@ -1006,7 +1069,8 @@
 "page": 146,
 "chunk": 0,
 "score": 0.714609,
-"sibling": false
+"sibling": false,
+"gate": 0.822478
 },
 {
 "page": 146,

@@ -1,8 +1,8 @@
 {
-"recorded": "2026-11-01 11:17",
+"recorded": "2026-11-01 11:21",
 "model": "BAAI/bge-small-en-v1.5",
 "index": "654edb14fd97d07ee4c0de6b84f09b074f148afff201ffe7df5438faedf6bfa3",
-"code": "041d37f2d5f1a275",
+"code": "cbfd414e9fd6c63c",
 "questions": {
 "HCC\tHow did HCC's standalone total assets change from FY24 to FY25?": {
 "id": "hcc-fy25-001",
@@ -11,49 +11,57 @@
 "page": 116,
 "chunk": 2,
 "score": 0.701703,
-"sibling": false
+"sibling": false,
+"gate": 0.767543
 },
 {
 "page": 114,
 "chunk": 1,
 "score": 0.729786,
-"sibling": false
+"sibling": false,
+"gate": 0.767543
 },
 {
 "page": 114,
 "chunk": 2,
 "score": 0.707959,
-"sibling": false
+"sibling": false,
+"gate": 0.767543
 },
 {
 "page": 114,
 "chunk": 3,
 "score": 0.730436,
-"sibling": false
+"sibling": false,
+"gate": 0.767543
 },
 {
 "page": 118,
 "chunk": 0,
 "score": 0.7285,
-"sibling": false
+"sibling": false,
+"gate": 0.767543
 },
 {
 "page": 118,
 "chunk": 1,
 "score": 0.72422,
-"sibling": false
+"sibling": false,
+"gate": 0.767543
 },
 {
 "page": 196,
 "chunk": 2,
 "score": 0.680808,
-"sibling": false
+"sibling": false,
+"gate": 0.767543
 },
 {
 "page": 142,
 "chunk": 0,
 "score": 0.667654,
-"sibling": false
+"sibling": false,
+"gate": 0.767543
 }
 ],
 "context": [
@@ -73,7 +81,8 @@
 "page": 116,
 "chunk": 2,
 "score": 0.701703,
-"sibling": false
+"sibling": false,
+"gate": 0.767543
 },
 {
 "page": 116,
@@ -97,19 +106,22 @@
 "page": 114,
 "chunk": 1,
 "score": 0.729786,
-"sibling": false
+"sibling": false,
+"gate": 0.767543
 },
 {
 "page": 114,
 "chunk": 2,
 "score": 0.707959,
-"sibling": false
+"sibling": false,
+"gate": 0.767543
 },
 {
 "page": 114,
 "chunk": 3,
 "score": 0.730436,
-"sibling": false
+"sibling": false,
+"gate": 0.767543
 },
 {
 "page": 114,
@@ -139,13 +151,15 @@
 "page": 118,
 "chunk": 0,
 "score": 0.7285,
-"sibling": false
+"sibling": false,
+"gate": 0.767543
 },
 {
 "page": 118,
 "chunk": 1,
 "score": 0.72422,
-"sibling": false
+"sibling": false,
+"gate": 0.767543
 },
 {
 "page": 118,
@@ -193,7 +207,8 @@
 "page": 196,
 "chunk": 2,
 "score": 0.680808,
-"sibling": false
+"sibling": false,
+"gate": 0.767543
 },
 {
 "page": 196,
@@ -217,7 +232,8 @@
 "page": 142,
 "chunk": 0,
 "score": 0.667654,
-"sibling": false
+"sibling": false,
+"gate": 0.767543
 },
 {
 "page": 142,
@@ -256,49 +272,57 @@
 "page": 195,
 "chunk": 0,
 "score": 0.725762,
-"sibling": false
+"sibling": false,
+"gate": 0.750522
 },
 {
 "page": 195,
 "chunk": 5,
 "score": 0.729961,
-"sibling": false
+"sibling": false,
+"gate": 0.750522
 },
 {
 "page": 260,
 "chunk": 5,
 "score": 0.692265,
-"sibling": false
+"sibling": false,
+"gate": 0.750522
 },
 {
 "page": 259,
 "chunk": 8,
 "score": 0.749405,
-"sibling": false
+"sibling": false,
+"gate": 0.750522
 },
 {
 "page": 198,
 "chunk": 1,
 "score": 0.686915,
-"sibling": false
+"sibling": false,
+"gate": 0.750522
 },
 {
 "page": 195,
 "chunk": 6,
 "score": 0.694694,
-"sibling": false
+"sibling": false,
+"gate": 0.750522
 },
 {
 "page": 195,
 "chunk": 3,
 "score": 0.699847,
-"sibling": false
+"sibling": false,
+"gate": 0.750522
 },
 {
 "page": 215,
 "chunk": 2,
 "score": 0.671181,
-"sibling": false
+"sibling": false,
+"gate": 0.750522
 }
 ],
 "context": [
@@ -306,7 +330,8 @@
 "page": 195,
 "chunk": 0,
 "score": 0.725762,
-"sibling": false
+"sibling": false,
+"gate": 0.750522
 },
 {
 "page": 195,
@@ -324,7 +349,8 @@
 "page": 195,
 "chunk": 3,
 "score": 0.699847,
-"sibling": false
+"sibling": false,
+"gate": 0.750522
 },
 {
 "page": 195,
@@ -336,13 +362,15 @@
 "page": 195,
 "chunk": 5,
 "score": 0.729961,
-"sibling": false
+"sibling": false,
+"gate": 0.750522
 },
 {
 "page": 195,
 "chunk": 6,
 "score": 0.694694,
-"sibling": false
+"sibling": false,
+"gate": 0.750522
 },
 {
 "page": 195,
@@ -396,7 +424,8 @@
 "page": 260,
 "chunk": 5,
 "score": 0.692265,
-"sibling": false
+"sibling": false,
+"gate": 0.750522
 },
 {
 "page": 259,
@@ -450,7 +479,8 @@
 "page": 259,
 "chunk": 8,
 "score": 0.749405,
-"sibling": false
+"sibling": false,
+"gate": 0.750522
 },
 {
 "page": 198,
@@ -462,7 +492,8 @@
 "page": 198,
 "chunk": 1,
 "score": 0.686915,
-"sibling": false
+"sibling": false,
+"gate": 0.750522
 },
 {
 "page": 198,
@@ -510,7 +541,8 @@
 "page": 215,
 "chunk": 2,
 "score": 0.671181,
-"sibling": false
+"sibling": false,
+"gate": 0.750522
 }
 ],
 "gate": {
@@ -525,49 +557,57 @@
 "page": 138,
 "chunk": 3,
 "score": 0.75897,
-"sibling": false
+"sibling": false,
+"gate": 0.75897
 },
 {
 "page": 138,
 "chunk": 1,
 "score": 0.726557,
-"sibling": false
+"sibling": false,
+"gate": 0.75897
 },
 {
 "page": 138,
 "chunk": 0,
 "score": 0.71569,
-"sibling": false
+"sibling": false,
+"gate": 0.75897
 },
 {
 "page": 138,
 "chunk": 4,
 "score": 0.721237,
-"sibling": false
+"sibling": false,
+"gate": 0.75897
 },
 {
 "page": 137,
 "chunk": 2,
 "score": 0.698937,
-"sibling": false
+"sibling": false,
+"gate": 0.75897
 },
 {
 "page": 158,
 "chunk": 2,
 "score": 0.688206,
-"sibling": false
+"sibling": false,
+"gate": 0.75897
 },
 {
 "page": 152,
 "chunk": 4,
 "score": 0.672878,
-"sibling": false
+"sibling": false,
+"gate": 0.75897
 },
 {
 "page": 153,
 "chunk": 0,
 "score": 0.662779,
-"sibling": false
+"sibling": false,
+"gate": 0.75897
 }
 ],
 "context": [
@@ -575,13 +615,15 @@
 "page": 138,
 "chunk": 0,
 "score": 0.71569,
-"sibling": false
+"sibling": false,
+"gate": 0.75897
 },
 {
 "page": 138,
 "chunk": 1,
 "score": 0.726557,
-"sibling": false
+"sibling": false,
+"gate": 0.75897
 },
 {
 "page": 138,
@@ -593,13 +635,15 @@
 "page": 138,
 "chunk": 3,
 "score": 0.75897,
-"sibling": false
+"sibling": false,
+"gate": 0.75897
 },
 {
 "page": 138,
 "chunk": 4,
 "score": 0.721237,
-"sibling": false
+"sibling": false,
+"gate": 0.75897
 },
 {
 "page": 138,
@@ -629,7 +673,8 @@
 "page": 137,
 "chunk": 2,
 "score": 0.698937,
-"sibling": false
+"sibling": false,
+"gate": 0.75897
 },
 {
 "page": 137,
@@ -659,7 +704,8 @@
 "page": 158,
 "chunk": 2,
 "score": 0.688206,
-"sibling": false
+"sibling": false,
+"gate": 0.75897
 },
 {
 "page": 158,
@@ -713,7 +759,8 @@
 "page": 152,
 "chunk": 4,
 "score": 0.672878,
-"sibling": false
+"sibling": false,
+"gate": 0.75897
 },
 {
 "page": 152,
@@ -725,7 +772,8 @@
 "page": 153,
 "chunk": 0,
 "score": 0.662779,
-"sibling": false
+"sibling": false,
+"gate": 0.75897
 },
 {
 "page": 153,
@@ -770,49 +818,57 @@
 "page": 18,
 "chunk": 2,
 "score": 0.709336,
-"sibling": false
+"sibling": false,
+"gate": 0.797238
 },
 {
 "page": 18,
 "chunk": 3,
 "score": 0.689627,
-"sibling": false
+"sibling": false,
+"gate": 0.797238
 },
 {
 "page": 15,
 "chunk": 0,
 "score": 0.797238,
-"sibling": false
+"sibling": false,
+"gate": 0.797238
 },
 {
 "page": 18,
 "chunk": 1,
 "score": 0.703723,
-"sibling": false
+"sibling": false,
+"gate": 0.797238
 },
 {
 "page": 18,
 "chunk": 5,
 "score": 0.699034,
-"sibling": false
+"sibling": false,
+"gate": 0.797238
 },
 {
 "page": 22,
 "chunk": 3,
 "score": 0.706735,
-"sibling": false
+"sibling": false,
+"gate": 0.797238
 },
 {
 "page": 7,
 "chunk": 3,
 "score": 0.696753,
-"sibling": false
+"sibling": false,
+"gate": 0.797238
 },
 {
 "page": 7,
 "chunk": 4,
 "score": 0.725406,
-"sibling": false
+"sibling": false,
+"gate": 0.797238
 }
 ],
 "context": [
@@ -826,19 +882,22 @@
 "page": 18,
 "chunk": 1,
 "score": 0.703723,
-"sibling": false
+"sibling": false,
+"gate": 0.797238
 },
 {
 "page": 18,
 "chunk": 2,
 "score": 0.709336,
-"sibling": false
+"sibling": false,
+"gate": 0.797238
 },
 {
 "page": 18,
 "chunk": 3,
 "score": 0.689627,
-"sibling": false
+"sibling": false,
+"gate": 0.797238
 },
 {
 "page": 18,
@@ -850,13 +909,15 @@
 "page": 18,
 "chunk": 5,
 "score": 0.699034,
-"sibling": false
+"sibling": false,
+"gate": 0.797238
 },
 {
 "page": 15,
 "chunk": 0,
 "score": 0.797238,
-"sibling": false
+"sibling": false,
+"gate": 0.797238
 },
 {
 "page": 15,
@@ -922,7 +983,8 @@
 "page": 22,
 "chunk": 3,
 "score": 0.706735,
-"sibling": false
+"sibling": false,
+"gate": 0.797238
 },
 {
 "page": 22,
@@ -958,13 +1020,15 @@
 "page": 7,
 "chunk": 3,
 "score": 0.696753,
-"sibling": false
+"sibling": false,
+"gate": 0.797238
 },
 {
 "page": 7,
 "chunk": 4,
 "score": 0.725406,
-"sibling": false
+"sibling": false,
+"gate": 0.797238
 },
 {
 "page": 7,
@@ -985,49 +1049,57 @@
 "page": 23,
 "chunk": 1,
 "score": 0.644037,
-"sibling": false
+"sibling": false,
+"gate": 0.703852
 },
 {
 "page": 141,
 "chunk": 4,
 "score": 0.601344,
-"sibling": false
+"sibling": false,
+"gate": 0.703852
 },
 {
 "page": 231,
 "chunk": 4,
 "score": 0.591661,
-"sibling": false
+"sibling": false,
+"gate": 0.703852
 },
 {
 "page": 22,
 "chunk": 2,
 "score": 0.703852,
-"sibling": false
+"sibling": false,
+"gate": 0.703852
 },
 {
 "page": 9,
 "chunk": 0,
 "score": 0.632932,
-"sibling": false
+"sibling": false,
+"gate": 0.703852
 },
 {
 "page": 7,
 "chunk": 2,
 "score": 0.679275,
-"sibling": false
+"sibling": false,
+"gate": 0.703852
 },
 {
 "page": 4,
 "chunk": 1,
 "score": 0.502267,
-"sibling": false
+"sibling": false,
+"gate": 0.703852
 },
 {
 "page": 98,
 "chunk": 3,
 "score": 0.631085,
-"sibling": false
+"sibling": false,
+"gate": 0.703852
 }
 ],
 "context": [
@@ -1041,7 +1113,8 @@
 "page": 23,
 "chunk": 1,
 "score": 0.644037,
-"sibling": false
+"sibling": false,
+"gate": 0.703852
 },
 {
 "page": 23,
@@ -1095,7 +1168,8 @@
 "page": 141,
 "chunk": 4,
 "score": 0.601344,
-"sibling": false
+"sibling": false,
+"gate": 0.703852
 },
 {
 "page": 141,
@@ -1173,7 +1247,8 @@
 "page": 231,
 "chunk": 4,
 "score": 0.591661,
-"sibling": false
+"sibling": false,
+"gate": 0.703852
 },
 {
 "page": 231,
@@ -1191,7 +1266,8 @@
 "page": 22,
 "chunk": 2,
 "score": 0.703852,
-"sibling": false
+"sibling": false,
+"gate": 0.703852
 },
 {
 "page": 22,
@@ -1203,13 +1279,15 @@
 "page": 9,
 "chunk": 0,
 "score": 0.632932,
-"sibling": false
+"sibling": false,
+"gate": 0.703852
 },
 {
 "page": 7,
 "chunk": 2,
 "score": 0.679275,
-"sibling": false
+"sibling": false,
+"gate": 0.703852
 },
 {
 "page": 7,
@@ -1221,13 +1299,15 @@
 "page": 4,
 "chunk": 1,
 "score": 0.502267,
-"sibling": false
+"sibling": false,
+"gate": 0.703852
 },
 {
 "page": 98,
 "chunk": 3,
 "score": 0.631085,
-"sibling": false
+"sibling": false,
+"gate": 0.703852
 }
 ],
 "gate": {
@@ -1242,49 +1322,57 @@
 "page": 98,
 "chunk": 6,
 "score": 0.789667,
-"sibling": false
+"sibling": false,
+"gate": 0.79125
 },
 {
 "page": 98,
 "chunk": 7,
 "score": 0.79125,
-"sibling": false
+"sibling": false,
+"gate": 0.79125
 },
 {
 "page": 88,
 "chunk": 0,
 "score": 0.771204,
-"sibling": false
+"sibling": false,
+"gate": 0.79125
 },
 {
 "page": 102,
 "chunk": 0,
 "score": 0.774101,
-"sibling": false
+"sibling": false,
+"gate": 0.79125
 },
 {
 "page": 103,
 "chunk": 0,
 "score": 0.790279,
-"sibling": false
+"sibling": false,
+"gate": 0.79125
 },
 {
 "page": 98,
 "chunk": 3,
 "score": 0.71989,
-"sibling": false
+"sibling": false,
+"gate": 0.79125
 },
 {
 "page": 201,
 "chunk": 3,
 "score": 0.657895,
-"sibling": false
+"sibling": false,
+"gate": 0.79125
 },
 {
 "page": 120,
 "chunk": 5,
 "score": 0.677193,
-"sibling": false
+"sibling": false,
+"gate": 0.79125
 }
 ],
 "context": [
@@ -1310,7 +1398,8 @@
 "page": 98,
 "chunk": 3,
 "score": 0.71989,
-"sibling": false
+"sibling": false,
+"gate": 0.79125
 },
 {
 "page": 98,
@@ -1328,19 +1417,22 @@
 "page": 98,
 "chunk": 6,
 "score": 0.789667,
-"sibling": false
+"sibling": false,
+"gate": 0.79125
 },
 {
 "page": 98,
 "chunk": 7,
 "score": 0.79125,
-"sibling": false
+"sibling": false,
+"gate": 0.79125
 },
 {
 "page": 88,
 "chunk": 0,
 "score": 0.771204,
-"sibling": false
+"sibling": false,
+"gate": 0.79125
 },
 {
 "page": 88,
@@ -1382,7 +1474,8 @@
 "page": 102,
 "chunk": 0,
 "score": 0.774101,
-"sibling": false
+"sibling": false,
+"gate": 0.79125
 },
 {
 "page": 102,
@@ -1472,19 +1565,22 @@
 "page": 103,
 "chunk": 0,
 "score": 0.790279,
-"sibling": false
+"sibling": false,
+"gate": 0.79125
 },
 {
 "page": 201,
 "chunk": 3,
 "score": 0.657895,
-"sibling": false
+"sibling": false,
+"gate": 0.79125
 },
 {
 "page": 120,
 "chunk": 5,
 "score": 0.677193,
-"sibling": false
+"sibling": false,
+"gate": 0.79125
 }
 ],
 "gate": {
@@ -1499,49 +1595,57 @@
 "page": 5,
 "chunk": 3,
 "score": 0.701908,
-"sibling": false
+"sibling": false,
+"gate": 0.701908
 },
 {
 "page": 48,
 "chunk": 3,
 "score": 0.564989,
-"sibling": false
+"sibling": false,
+"gate": 0.701908
 },
 {
 "page": 13,
 "chunk": 0,
 "score": 0.657327,
-"sibling": false
+"sibling": false,
+"gate": 0.701908
 },
 {
 "page": 4,
 "chunk": 3,
 "score": 0.586879,
-"sibling": false
+"sibling": false,
+"gate": 0.701908
 },
 {
 "page": 175,
 "chunk": 1,
 "score": 0.554799,
-"sibling": false
+"sibling": false,
+"gate": 0.701908
 },
 {
 "page": 103,
 "chunk": 0,
 "score": 0.669091,
-"sibling": false
+"sibling": false,
+"gate": 0.701908
 },
 {
 "page": 81,
 "chunk": 1,
 "score": 0.575735,
-"sibling": false
+"sibling": false,
+"gate": 0.701908
 },
 {
 "page": 4,
 "chunk": 2,
 "score": 0.543266,
-"sibling": false
+"sibling": false,
+"gate": 0.701908
 }
 ],
 "context": [
@@ -1567,7 +1671,8 @@
 "page": 5,
 "chunk": 3,
 "score": 0.701908,
-"sibling": false
+"sibling": false,
+"gate": 0.701908
 },
 {
 "page": 5,
@@ -1621,7 +1726,8 @@
 "page": 48,
 "chunk": 3,
 "score": 0.564989,
-"sibling": false
+"sibling": false,
+"gate": 0.701908
 },
 {
 "page": 48,
@@ -1633,7 +1739,8 @@
 "page": 13,
 "chunk": 0,
 "score": 0.657327,
-"sibling": false
+"sibling": false,
+"gate": 0.701908
 },
 {
 "page": 13,
@@ -1699,13 +1806,15 @@
 "page": 4,
 "chunk": 2,
 "score": 0.543266,
-"sibling": false
+"sibling": false,
+"gate": 0.701908
 },
 {
 "page": 4,
 "chunk": 3,
 "score": 0.586879,
-"sibling": false
+"sibling": false,
+"gate": 0.701908
 },
 {
 "page": 4,
@@ -1729,7 +1838,8 @@
 "page": 175,
 "chunk": 1,
 "score": 0.554799,
-"sibling": false
+"sibling": false,
+"gate": 0.701908
 },
 {
 "page": 175,
@@ -1741,13 +1851,15 @@
 "page": 103,
 "chunk": 0,
 "score": 0.669091,
-"sibling": false
+"sibling": false,
+"gate": 0.701908
 },
 {
 "page": 81,
 "chunk": 1,
 "score": 0.575735,
-"sibling": false
+"sibling": false,
+"gate": 0.701908
 }
 ],
 "gate": {
@@ -1762,49 +1874,57 @@
 "page": 190,
 "chunk": 5,
 "score": 0.773763,
-"sibling": false
+"sibling": false,
+"gate": 0.774602
 },
 {
 "page": 191,
 "chunk": 4,
 "score": 0.755514,
-"sibling": false
+"sibling": false,
+"gate": 0.774602
 },
 {
 "page": 257,
 "chunk": 0,
 "score": 0.673441,
-"sibling": false
+"sibling": false,
+"gate": 0.774602
 },
 {
 "page": 227,
 "chunk": 1,
 "score": 0.641727,
-"sibling": false
+"sibling": false,
+"gate": 0.774602
 },
 {
 "page": 218,
 "chunk": 3,
 "score": 0.682014,
-"sibling": false
+"sibling": false,
+"gate": 0.774602
 },
 {
 "page": 190,
 "chunk": 1,
 "score": 0.694509,
-"sibling": false
+"sibling": false,
+"gate": 0.774602
 },
 {
 "page": 262,
 "chunk": 4,
 "score": 0.675959,
-"sibling": false
+"sibling": false,
+"gate": 0.774602
 },
 {
 "page": 190,
 "chunk": 0,
 "score": 0.731878,
-"sibling": false
+"sibling": false,
+"gate": 0.774602
 }
 ],
 "context": [
@@ -1812,13 +1932,15 @@
 "page": 190,
 "chunk": 0,
 "score": 0.731878,
-"sibling": false
+"sibling": false,
+"gate": 0.774602
 },
 {
 "page": 190,
 "chunk": 1,
 "score": 0.694509,
-"sibling": false
+"sibling": false,
+"gate": 0.774602
 },
 {
 "page": 190,
@@ -1842,7 +1964,8 @@
 "page": 190,
 "chunk": 5,
 "score": 0.773763,
-"sibling": false
+"sibling": false,
+"gate": 0.774602
 },
 {
 "page": 190,
@@ -1878,7 +2001,8 @@
 "page": 191,
 "chunk": 4,
 "score": 0.755514,
-"sibling": false
+"sibling": false,
+"gate": 0.774602
 },
 {
 "page": 191,
@@ -1896,7 +2020,8 @@
 "page": 257,
 "chunk": 0,
 "score": 0.673441,
-"sibling": false
+"sibling": false,
+"gate": 0.774602
 },
 {
 "page": 257,
@@ -1950,7 +2075,8 @@
 "page": 227,
 "chunk": 1,
 "score": 0.641727,
-"sibling": false
+"sibling": false,
+"gate": 0.774602
 },
 {
 "page": 227,
@@ -1980,7 +2106,8 @@
 "page": 218,
 "chunk": 3,
 "score": 0.682014,
-"sibling": false
+"sibling": false,
+"gate": 0.774602
 },
 {
 "page": 218,
@@ -2016,7 +2143,8 @@
 "page": 262,
 "chunk": 4,
 "score": 0.675959,
-"sibling": false
+"sibling": false,
+"gate": 0.774602
 }
 ],
 "gate": {
@@ -2031,49 +2159,57 @@
 "page": 19,
 "chunk": 0,
 "score": 0.588066,
-"sibling": false
+"sibling": false,
+"gate": 0.752535
 },
 {
 "page": 18,
 "chunk": 1,
 "score": 0.555794,
-"sibling": false
+"sibling": false,
+"gate": 0.752535
 },
 {
 "page": 7,
 "chunk": 0,
 "score": 0.694131,
-"sibling": false
+"sibling": false,
+"gate": 0.752535
 },
 {
 "page": 18,
 "chunk": 0,
 "score": 0.752536,
-"sibling": false
+"sibling": false,
+"gate": 0.752536
 },
 {
 "page": 97,
 "chunk": 4,
 "score": 0.551361,
-"sibling": false
+"sibling": false,
+"gate": 0.752535
 },
 {
 "page": 16,
 "chunk": 0,
 "score": 0.607445,
-"sibling": false
+"sibling": false,
+"gate": 0.752535
 },
 {
 "page": 185,
 "chunk": 1,
 "score": 0.530561,
-"sibling": false
+"sibling": false,
+"gate": 0.752535
 },
 {
 "page": 2,
 "chunk": 0,
 "score": 0.583203,
-"sibling": false
+"sibling": false,
+"gate": 0.752535
 }
 ],
 "context": [
@@ -2081,25 +2217,29 @@
 "page": 19,
 "chunk": 0,
 "score": 0.588066,
-"sibling": false
+"sibling": false,
+"gate": 0.752535
 },
 {
 "page": 18,
 "chunk": 0,
 "score": 0.752536,
-"sibling": false
+"sibling": false,
+"gate": 0.752536
 },
 {
 "page": 18,
 "chunk": 1,
 "score": 0.555794,
-"sibling": false
+"sibling": false,
+"gate": 0.752535
 },
 {
 "page": 7,
 "chunk": 0,
 "score": 0.694131,
-"sibling": false
+"sibling": false,
+"gate": 0.752535
 },
 {
 "page": 7,
@@ -2135,7 +2275,8 @@
 "page": 97,
 "chunk": 4,
 "score": 0.551361,
-"sibling": false
+"sibling": false,
+"gate": 0.752535
 },
 {
 "page": 97,
@@ -2153,7 +2294,8 @@
 "page": 16,
 "chunk": 0,
 "score": 0.607445,
-"sibling": false
+"sibling": false,
+"gate": 0.752535
 },
 {
 "page": 16,
@@ -2171,7 +2313,8 @@
 "page": 185,
 "chunk": 1,
 "score": 0.530561,
-"sibling": false
+"sibling": false,
+"gate": 0.752535
 },
 {
 "page": 185,
@@ -2207,7 +2350,8 @@
 "page": 2,
 "chunk": 0,
 "score": 0.583203,
-"sibling": false
+"sibling": false,
+"gate": 0.752535
 },
 {
 "page": 2,
@@ -2224,7 +2368,7 @@
 ],
 "gate": {
 "fused_best": 0.752536,
-"vector_best": 0.752535
+"vector_best": 0.752536
 }
 },
 "CHAMBAL\tHow many drones did Chambal deploy for nano-fertiliser spraying in FY25?": {
@@ -2234,49 +2378,57 @@
 "page": 4,
 "chunk": 5,
 "score": 0.620599,
-"sibling": false
+"sibling": false,
+"gate": 0.69459
 },
 {
 "page": 14,
 "chunk": 3,
 "score": 0.604435,
-"sibling": false
+"sibling": false,
+"gate": 0.69459
 },
 {
 "page": 103,
 "chunk": 0,
 "score": 0.69459,
-"sibling": false
+"sibling": false,
+"gate": 0.69459
 },
 {
 "page": 126,
 "chunk": 2,
 "score": 0.580512,
-"sibling": false
+"sibling": false,
+"gate": 0.69459
 },
 {
 "page": 14,
 "chunk": 4,
 "score": 0.571662,
-"sibling": false
+"sibling": false,
+"gate": 0.69459
 },
 {
 "page": 43,
 "chunk": 0,
 "score": 0.649065,
-"sibling": false
+"sibling": false,
+"gate": 0.69459
 },
 {
 "page": 13,
 "chunk": 0,
 "score": 0.659583,
-"sibling": false
+"sibling": false,
+"gate": 0.69459
 },
 {
 "page": 38,
 "chunk": 1,
 "score": 0.666199,
-"sibling": false
+"sibling": false,
+"gate": 0.69459
 }
 ],
 "context": [
@@ -2314,7 +2466,8 @@
 "page": 4,
 "chunk": 5,
 "score": 0.620599,
-"sibling": false
+"sibling": false,
+"gate": 0.69459
 },
 {
 "page": 14,
@@ -2338,13 +2491,15 @@
 "page": 14,
 "chunk": 3,
 "score": 0.604435,
-"sibling": false
+"sibling": false,
+"gate": 0.69459
 },
 {
 "page": 14,
 "chunk": 4,
 "score": 0.571662,
-"sibling": false
+"sibling": false,
+"gate": 0.69459
 },
 {
 "page": 14,
@@ -2368,7 +2523,8 @@
 "page": 103,
 "chunk": 0,
 "score": 0.69459,
-"sibling": false
+"sibling": false,
+"gate": 0.69459
 },
 {
 "page": 103,
@@ -2410,7 +2566,8 @@
 "page": 126,
 "chunk": 2,
 "score": 0.580512,
-"sibling": false
+"sibling": false,
+"gate": 0.69459
 },
 {
 "page": 126,
@@ -2446,7 +2603,8 @@
 "page": 43,
 "chunk": 0,
 "score": 0.649065,
-"sibling": false
+"sibling": false,
+"gate": 0.69459
 },
 {
 "page": 43,
@@ -2464,13 +2622,15 @@
 "page": 13,
 "chunk": 0,
 "score": 0.659583,
-"sibling": false
+"sibling": false,
+"gate": 0.69459
 },
 {
 "page": 38,
 "chunk": 1,
 "score": 0.666199,
-"sibling": false
+"sibling": false,
+"gate": 0.69459
 },
 {
 "page": 38,
@@ -2491,49 +2651,57 @@
 "page": 322,
 "chunk": 0,
 "score": 0.639551,
-"sibling": false
+"sibling": false,
+"gate": 0.695898
 },
 {
 "page": 232,
 "chunk": 2,
 "score": 0.616081,
-"sibling": false
+"sibling": false,
+"gate": 0.695898
 },
 {
 "page": 119,
 "chunk": 1,
 "score": 0.537118,
-"sibling": false
+"sibling": false,
+"gate": 0.695898
 },
 {
 "page": 268,
 "chunk": 0,
 "score": 0.641023,
-"sibling": false
+"sibling": false,
+"gate": 0.695898
 },
 {
 "page": 107,
 "chunk": 0,
 "score": 0.591508,
-"sibling": false
+"sibling": false,
+"gate": 0.695898
 },
 {
 "page": 257,
 "chunk": 7,
 "score": 0.607101,
-"sibling": false
+"sibling": false,
+"gate": 0.695898
 },
 {
 "page": 350,
 "chunk": 3,
 "score": 0.616068,
-"sibling": false
+"sibling": false,
+"gate": 0.695898
 },
 {
 "page": 350,
 "chunk": 0,
 "score": 0.633455,
-"sibling": false
+"sibling": false,
+"gate": 0.695898
 }
 ],
 "context": [
@@ -2541,7 +2709,8 @@
 "page": 322,
 "chunk": 0,
 "score": 0.639551,
-"sibling": false
+"sibling": false,
+"gate": 0.695898
 },
 {
 "page": 322,
@@ -2577,7 +2746,8 @@
 "page": 232,
 "chunk": 2,
 "score": 0.616081,
-"sibling": false
+"sibling": false,
+"gate": 0.695898
 },
 {
 "page": 119,
@@ -2589,7 +2759,8 @@
 "page": 119,
 "chunk": 1,
 "score": 0.537118,
-"sibling": false
+"sibling": false,
+"gate": 0.695898
 },
 {
 "page": 119,
@@ -2625,7 +2796,8 @@
 "page": 268,
 "chunk": 0,
 "score": 0.641023,
-"sibling": false
+"sibling": false,
+"gate": 0.695898
 },
 {
 "page": 268,
@@ -2655,7 +2827,8 @@
 "page": 107,
 "chunk": 0,
 "score": 0.591508,
-"sibling": false
+"sibling": false,
+"gate": 0.695898
 },
 {
 "page": 107,
@@ -2709,13 +2882,15 @@
 "page": 257,
 "chunk": 7,
 "score": 0.607101,
-"sibling": false
+"sibling": false,
+"gate": 0.695898
 },
 {
 "page": 350,
 "chunk": 0,
 "score": 0.633455,
-"sibling": false
+"sibling": false,
+"gate": 0.695898
 },
 {
 "page": 350,
@@ -2733,7 +2908,8 @@
 "page": 350,
 "chunk": 3,
 "score": 0.616068,
-"sibling": false
+"sibling": false,
+"gate": 0.695898
 },
 {
 "page": 350,
@@ -2760,49 +2936,57 @@
 "page": 118,
 "chunk": 1,
 "score": 0.70664,
-"sibling": false
+"sibling": false,
+"gate": 0.774278
 },
 {
 "page": 114,
 "chunk": 7,
 "score": 0.690129,
-"sibling": false
+"sibling": false,
+"gate": 0.774278
 },
 {
 "page": 114,
 "chunk": 5,
 "score": 0.70698,
-"sibling": false
+"sibling": false,
+"gate": 0.774278
 },
 {
 "page": 114,
 "chunk": 0,
 "score": 0.699562,
-"sibling": false
+"sibling": false,
+"gate": 0.774278
 },
 {
 "page": 114,
 "chunk": 3,
 "score": 0.715853,
-"sibling": false
+"sibling": false,
+"gate": 0.774278
 },
 {
 "page": 146,
 "chunk": 5,
 "score": 0.722495,
-"sibling": false
+"sibling": false,
+"gate": 0.774278
 },
 {
 "page": 114,
 "chunk": 6,
 "score": 0.707113,
-"sibling": false
+"sibling": false,
+"gate": 0.774278
 },
 {
 "page": 114,
 "chunk": 2,
 "score": 0.690612,
-"sibling": false
+"sibling": false,
+"gate": 0.774278
 }
 ],
 "context": [
@@ -2816,7 +3000,8 @@
 "page": 118,
 "chunk": 1,
 "score": 0.70664,
-"sibling": false
+"sibling": false,
+"gate": 0.774278
 },
 {
 "page": 118,
@@ -2852,7 +3037,8 @@
 "page": 114,
 "chunk": 0,
 "score": 0.699562,
-"sibling": false
+"sibling": false,
+"gate": 0.774278
 },
 {
 "page": 114,
@@ -2864,13 +3050,15 @@
 "page": 114,
 "chunk": 2,
 "score": 0.690612,
-"sibling": false
+"sibling": false,
+"gate": 0.774278
 },
 {
 "page": 114,
 "chunk": 3,
 "score": 0.715853,
-"sibling": false
+"sibling": false,
+"gate": 0.774278
 },
 {
 "page": 114,
@@ -2882,19 +3070,22 @@
 "page": 114,
 "chunk": 5,
 "score": 0.70698,
-"sibling": false
+"sibling": false,
+"gate": 0.774278
 },
 {
 "page": 114,
 "chunk": 6,
 "score": 0.707113,
-"sibling": false
+"sibling": false,
+"gate": 0.774278
 },
 {
 "page": 114,
 "chunk": 7,
 "score": 0.690129,
-"sibling": false
+"sibling": false,
+"gate": 0.774278
 },
 {
 "page": 146,
@@ -2930,7 +3121,8 @@
 "page": 146,
 "chunk": 5,
 "score": 0.722495,
-"sibling": false
+"sibling": false,
+"gate": 0.774278
 }
 ],
 "gate": {
@@ -2945,49 +3137,57 @@
 "page": 194,
 "chunk": 4,
 "score": 0.729509,
-"sibling": false
+"sibling": false,
+"gate": 0.766684
 },
 {
 "page": 194,
 "chunk": 5,
 "score": 0.735489,
-"sibling": false
+"sibling": false,
+"gate": 0.766684
 },
 {
 "page": 194,
 "chunk": 3,
 "score": 0.724501,
-"sibling": false
+"sibling": false,
+"gate": 0.766684
 },
 {
 "page": 194,
 "chunk": 1,
 "score": 0.724254,
-"sibling": false
+"sibling": false,
+"gate": 0.766684
 },
 {
 "page": 230,
 "chunk": 0,
 "score": 0.702097,
-"sibling": false
+"sibling": false,
+"gate": 0.766684
 },
 {
 "page": 194,
 "chunk": 6,
 "score": 0.725764,
-"sibling": false
+"sibling": false,
+"gate": 0.766684
 },
 {
 "page": 234,
 "chunk": 0,
 "score": 0.654401,
-"sibling": false
+"sibling": false,
+"gate": 0.766684
 },
 {
 "page": 197,
 "chunk": 0,
 "score": 0.730783,
-"sibling": false
+"sibling": false,
+"gate": 0.766684
 }
 ],
 "context": [
@@ -3001,7 +3201,8 @@
 "page": 194,
 "chunk": 1,
 "score": 0.724254,
-"sibling": false
+"sibling": false,
+"gate": 0.766684
 },
 {
 "page": 194,
@@ -3013,25 +3214,29 @@
 "page": 194,
 "chunk": 3,
 "score": 0.724501,
-"sibling": false
+"sibling": false,
+"gate": 0.766684
 },
 {
 "page": 194,
 "chunk": 4,
 "score": 0.729509,
-"sibling": false
+"sibling": false,
+"gate": 0.766684
 },
 {
 "page": 194,
 "chunk": 5,
 "score": 0.735489,
-"sibling": false
+"sibling": false,
+"gate": 0.766684
 },
 {
 "page": 194,
 "chunk": 6,
 "score": 0.725764,
-"sibling": false
+"sibling": false,
+"gate": 0.766684
 },
 {
 "page": 194,
@@ -3049,7 +3254,8 @@
 "page": 230,
 "chunk": 0,
 "score": 0.702097,
-"sibling": false
+"sibling": false,
+"gate": 0.766684
 },
 {
 "page": 230,
@@ -3085,7 +3291,8 @@
 "page": 234,
 "chunk": 0,
 "score": 0.654401,
-"sibling": false
+"sibling": false,
+"gate": 0.766684
 },
 {
 "page": 234,
@@ -3109,7 +3316,8 @@
 "page": 197,
 "chunk": 0,
 "score": 0.730783,
-"sibling": false
+"sibling": false,
+"gate": 0.766684
 },
 {
 "page": 197,
@@ -3148,49 +3356,57 @@
 "page": 220,
 "chunk": 1,
 "score": 0.740841,
-"sibling": false
+"sibling": false,
+"gate": 0.741047
 },
 {
 "page": 220,
 "chunk": 4,
 "score": 0.736481,
-"sibling": false
+"sibling": false,
+"gate": 0.741047
 },
 {
 "page": 220,
 "chunk": 3,
 "score": 0.727175,
-"sibling": false
+"sibling": false,
+"gate": 0.741047
 },
 {
 "page": 220,
 "chunk": 0,
 "score": 0.701822,
-"sibling": false
+"sibling": false,
+"gate": 0.741047
 },
 {
 "page": 236,
 "chunk": 3,
 "score": 0.696869,
-"sibling": false
+"sibling": false,
+"gate": 0.741047
 },
 {
 "page": 220,
 "chunk": 2,
 "score": 0.689971,
-"sibling": false
+"sibling": false,
+"gate": 0.741047
 },
 {
 "page": 219,
 "chunk": 2,
 "score": 0.687631,
-"sibling": false
+"sibling": false,
+"gate": 0.741047
 },
 {
 "page": 236,
 "chunk": 5,
 "score": 0.689267,
-"sibling": false
+"sibling": false,
+"gate": 0.741047
 }
 ],
 "context": [
@@ -3198,31 +3414,36 @@
 "page": 220,
 "chunk": 0,
 "score": 0.701822,
-"sibling": false
+"sibling": false,
+"gate": 0.741047
 },
 {
 "page": 220,
 "chunk": 1,
 "score": 0.740841,
-"sibling": false
+"sibling": false,
+"gate": 0.741047
 },
 {
 "page": 220,
 "chunk": 2,
 "score": 0.689971,
-"sibling": false
+"sibling": false,
+"gate": 0.741047
 },
 {
 "page": 220,
 "chunk": 3,
 "score": 0.727175,
-"sibling": false
+"sibling": false,
+"gate": 0.741047
 },
 {
 "page": 220,
 "chunk": 4,
 "score": 0.736481,
-"sibling": false
+"sibling": false,
+"gate": 0.741047
 },
 {
 "page": 220,
@@ -3252,7 +3473,8 @@
 "page": 236,
 "chunk": 3,
 "score": 0.696869,
-"sibling": false
+"sibling": false,
+"gate": 0.741047
 },
 {
 "page": 236,
@@ -3264,7 +3486,8 @@
 "page": 236,
 "chunk": 5,
 "score": 0.689267,
-"sibling": false
+"sibling": false,
+"gate": 0.741047
 },
 {
 "page": 236,
@@ -3288,7 +3511,8 @@
 "page": 219,
 "chunk": 2,
 "score": 0.687631,
-"sibling": false
+"sibling": false,
+"gate": 0.741047
 },
 {
 "page": 219,
@@ -3315,49 +3539,57 @@
 "page": 12,
 "chunk": 0,
 "score": 0.715015,
-"sibling": false
+"sibling": false,
+"gate": 0.715015
 },
 {
 "page": 23,
 "chunk": 3,
 "score": 0.692044,
-"sibling": false
+"sibling": false,
+"gate": 0.715015
 },
 {
 "page": 22,
 "chunk": 3,
 "score": 0.633708,
-"sibling": false
+"sibling": false,
+"gate": 0.715015
 },
 {
 "page": 92,
 "chunk": 2,
 "score": 0.58577,
-"sibling": false
+"sibling": false,
+"gate": 0.715015
 },
 {
 "page": 4,
 "chunk": 3,
 "score": 0.598114,
-"sibling": false
+"sibling": false,
+"gate": 0.715015
 },
 {
 "page": 4,
 "chunk": 4,
 "score": 0.612188,
-"sibling": false
+"sibling": false,
+"gate": 0.715015
 },
 {
 "page": 22,
 "chunk": 2,
 "score": 0.617176,
-"sibling": false
+"sibling": false,
+"gate": 0.715015
 },
 {
 "page": 5,
 "chunk": 1,
 "score": 0.571003,
-"sibling": false
+"sibling": false,
+"gate": 0.715015
 }
 ],
 "context": [
@@ -3365,7 +3597,8 @@
 "page": 12,
 "chunk": 0,
 "score": 0.715015,
-"sibling": false
+"sibling": false,
+"gate": 0.715015
 },
 {
 "page": 12,
@@ -3395,7 +3628,8 @@
 "page": 23,
 "chunk": 3,
 "score": 0.692044,
-"sibling": false
+"sibling": false,
+"gate": 0.715015
 },
 {
 "page": 23,
@@ -3425,13 +3659,15 @@
 "page": 22,
 "chunk": 2,
 "score": 0.617176,
-"sibling": false
+"sibling": false,
+"gate": 0.715015
 },
 {
 "page": 22,
 "chunk": 3,
 "score": 0.633708,
-"sibling": false
+"sibling": false,
+"gate": 0.715015
 },
 {
 "page": 22,
@@ -3461,7 +3697,8 @@
 "page": 92,
 "chunk": 2,
 "score": 0.58577,
-"sibling": false
+"sibling": false,
+"gate": 0.715015
 },
 {
 "page": 92,
@@ -3503,13 +3740,15 @@
 "page": 4,
 "chunk": 3,
 "score": 0.598114,
-"sibling": false
+"sibling": false,
+"gate": 0.715015
 },
 {
 "page": 4,
 "chunk": 4,
 "score": 0.612188,
-"sibling": false
+"sibling": false,
+"gate": 0.715015
 },
 {
 "page": 5,
@@ -3521,7 +3760,8 @@
 "page": 5,
 "chunk": 1,
 "score": 0.571003,
-"sibling": false
+"sibling": false,
+"gate": 0.715015
 },
 {
 "page": 5,
@@ -3560,49 +3800,57 @@
 "page": 94,
 "chunk": 1,
 "score": 0.623776,
-"sibling": false
+"sibling": false,
+"gate": 0.701684
 },
 {
 "page": 105,
 "chunk": 5,
 "score": 0.622135,
-"sibling": false
+"sibling": false,
+"gate": 0.701684
 },
 {
 "page": 78,
 "chunk": 2,
 "score": 0.580312,
-"sibling": false
+"sibling": false,
+"gate": 0.701684
 },
 {
 "page": 280,
 "chunk": 0,
 "score": 0.526408,
-"sibling": false
+"sibling": false,
+"gate": 0.701684
 },
 {
 "page": 36,
 "chunk": 0,
 "score": 0.634416,
-"sibling": false
+"sibling": false,
+"gate": 0.701684
 },
 {
 "page": 243,
 "chunk": 4,
 "score": 0.568567,
-"sibling": false
+"sibling": false,
+"gate": 0.701684
 },
 {
 "page": 260,
 "chunk": 4,
 "score": 0.628021,
-"sibling": false
+"sibling": false,
+"gate": 0.701684
 },
 {
 "page": 73,
 "chunk": 2,
 "score": 0.609,
-"sibling": false
+"sibling": false,
+"gate": 0.701684
 }
 ],
 "context": [
@@ -3616,7 +3864,8 @@
 "page": 94,
 "chunk": 1,
 "score": 0.623776,
-"sibling": false
+"sibling": false,
+"gate": 0.701684
 },
 {
 "page": 94,
@@ -3670,7 +3919,8 @@
 "page": 105,
 "chunk": 5,
 "score": 0.622135,
-"sibling": false
+"sibling": false,
+"gate": 0.701684
 },
 {
 "page": 105,
@@ -3700,7 +3950,8 @@
 "page": 78,
 "chunk": 2,
 "score": 0.580312,
-"sibling": false
+"sibling": false,
+"gate": 0.701684
 },
 {
 "page": 78,
@@ -3712,7 +3963,8 @@
 "page": 280,
 "chunk": 0,
 "score": 0.526408,
-"sibling": false
+"sibling": false,
+"gate": 0.701684
 },
 {
 "page": 280,
@@ -3748,7 +4000,8 @@
 "page": 36,
 "chunk": 0,
 "score": 0.634416,
-"sibling": false
+"sibling": false,
+"gate": 0.701684
 },
 {
 "page": 36,
@@ -3790,7 +4043,8 @@
 "page": 243,
 "chunk": 4,
 "score": 0.568567,
-"sibling": false
+"sibling": false,
+"gate": 0.701684
 },
 {
 "page": 243,
@@ -3802,13 +4056,15 @@
 "page": 260,
 "chunk": 4,
 "score": 0.628021,
-"sibling": false
+"sibling": false,
+"gate": 0.701684
 },
 {
 "page": 73,
 "chunk": 2,
 "score": 0.609,
-"sibling": false
+"sibling": false,
+"gate": 0.701684
 }
 ],
 "gate": {
@@ -3823,49 +4079,57 @@
 "page": 102,
 "chunk": 0,
 "score": 0.799618,
-"sibling": false
+"sibling": false,
+"gate": 0.799618
 },
 {
 "page": 98,
 "chunk": 6,
 "score": 0.775545,
-"sibling": false
+"sibling": false,
+"gate": 0.799618
 },
 {
 "page": 102,
 "chunk": 14,
 "score": 0.69727,
-"sibling": false
+"sibling": false,
+"gate": 0.799618
 },
 {
 "page": 88,
 "chunk": 0,
 "score": 0.75878,
-"sibling": false
+"sibling": false,
+"gate": 0.799618
 },
 {
 "page": 98,
 "chunk": 7,
 "score": 0.776563,
-"sibling": false
+"sibling": false,
+"gate": 0.799618
 },
 {
 "page": 17,
 "chunk": 2,
 "score": 0.611925,
-"sibling": false
+"sibling": false,
+"gate": 0.799618
 },
 {
 "page": 132,
 "chunk": 5,
 "score": 0.661019,
-"sibling": false
+"sibling": false,
+"gate": 0.799618
 },
 {
 "page": 120,
 "chunk": 5,
 "score": 0.683434,
-"sibling": false
+"sibling": false,
+"gate": 0.799618
 }
 ],
 "context": [
@@ -3873,7 +4137,8 @@
 "page": 102,
 "chunk": 0,
 "score": 0.799618,
-"sibling": false
+"sibling": false,
+"gate": 0.799618
 },
 {
 "page": 102,
@@ -3957,7 +4222,8 @@
 "page": 102,
 "chunk": 14,
 "score": 0.69727,
-"sibling": false
+"sibling": false,
+"gate": 0.799618
 },
 {
 "page": 102,
@@ -4005,19 +4271,22 @@
 "page": 98,
 "chunk": 6,
 "score": 0.775545,
-"sibling": false
+"sibling": false,
+"gate": 0.799618
 },
 {
 "page": 98,
 "chunk": 7,
 "score": 0.776563,
-"sibling": false
+"sibling": false,
+"gate": 0.799618
 },
 {
 "page": 88,
 "chunk": 0,
 "score": 0.75878,
-"sibling": false
+"sibling": false,
+"gate": 0.799618
 },
 {
 "page": 88,
@@ -4053,7 +4322,8 @@
 "page": 17,
 "chunk": 2,
 "score": 0.611925,
-"sibling": false
+"sibling": false,
+"gate": 0.799618
 },
 {
 "page": 17,
@@ -4065,13 +4335,15 @@
 "page": 132,
 "chunk": 5,
 "score": 0.661019,
-"sibling": false
+"sibling": false,
+"gate": 0.799618
 },
 {
 "page": 120,
 "chunk": 5,
 "score": 0.683434,
-"sibling": false
+"sibling": false,
+"gate": 0.799618
 }
 ],
 "gate": {
@@ -4086,49 +4358,57 @@
 "page": 29,
 "chunk": 4,
 "score": 0.762133,
-"sibling": false
+"sibling": false,
+"gate": 0.786382
 },
 {
 "page": 232,
 "chunk": 1,
 "score": 0.672574,
-"sibling": false
+"sibling": false,
+"gate": 0.786382
 },
 {
 "page": 103,
 "chunk": 0,
 "score": 0.781953,
-"sibling": false
+"sibling": false,
+"gate": 0.786382
 },
 {
 "page": 102,
 "chunk": 14,
 "score": 0.689766,
-"sibling": false
+"sibling": false,
+"gate": 0.786382
 },
 {
 "page": 161,
 "chunk": 0,
 "score": 0.671447,
-"sibling": false
+"sibling": false,
+"gate": 0.786382
 },
 {
 "page": 99,
 "chunk": 5,
 "score": 0.764227,
-"sibling": false
+"sibling": false,
+"gate": 0.786382
 },
 {
 "page": 17,
 "chunk": 2,
 "score": 0.633149,
-"sibling": false
+"sibling": false,
+"gate": 0.786382
 },
 {
 "page": 88,
 "chunk": 0,
 "score": 0.786382,
-"sibling": false
+"sibling": false,
+"gate": 0.786382
 }
 ],
 "context": [
@@ -4160,7 +4440,8 @@
 "page": 29,
 "chunk": 4,
 "score": 0.762133,
-"sibling": false
+"sibling": false,
+"gate": 0.786382
 },
 {
 "page": 29,
@@ -4178,7 +4459,8 @@
 "page": 232,
 "chunk": 1,
 "score": 0.672574,
-"sibling": false
+"sibling": false,
+"gate": 0.786382
 },
 {
 "page": 232,
@@ -4208,7 +4490,8 @@
 "page": 103,
 "chunk": 0,
 "score": 0.781953,
-"sibling": false
+"sibling": false,
+"gate": 0.786382
 },
 {
 "page": 103,
@@ -4298,7 +4581,8 @@
 "page": 102,
 "chunk": 14,
 "score": 0.689766,
-"sibling": false
+"sibling": false,
+"gate": 0.786382
 },
 {
 "page": 102,
@@ -4310,25 +4594,29 @@
 "page": 161,
 "chunk": 0,
 "score": 0.671447,
-"sibling": false
+"sibling": false,
+"gate": 0.786382
 },
 {
 "page": 99,
 "chunk": 5,
 "score": 0.764227,
-"sibling": false
+"sibling": false,
+"gate": 0.786382
 },
 {
 "page": 17,
 "chunk": 2,
 "score": 0.633149,
-"sibling": false
+"sibling": false,
+"gate": 0.786382
 },
 {
 "page": 88,
 "chunk": 0,
 "score": 0.786382,
-"sibling": false
+"sibling": false,
+"gate": 0.786382
 },
 {
 "page": 88,
@@ -4349,49 +4637,57 @@
 "page": 100,
 "chunk": 4,
 "score": 0.785217,
-"sibling": false
+"sibling": false,
+"gate": 0.791358
 },
 {
 "page": 192,
 "chunk": 0,
 "score": 0.716924,
-"sibling": false
+"sibling": false,
+"gate": 0.791358
 },
 {
 "page": 268,
 "chunk": 1,
 "score": 0.695229,
-"sibling": false
+"sibling": false,
+"gate": 0.791358
 },
 {
 "page": 100,
 "chunk": 3,
 "score": 0.777869,
-"sibling": false
+"sibling": false,
+"gate": 0.791358
 },
 {
 "page": 182,
 "chunk": 0,
 "score": 0.791358,
-"sibling": false
+"sibling": false,
+"gate": 0.791358
 },
 {
 "page": 191,
 "chunk": 3,
 "score": 0.687396,
-"sibling": false
+"sibling": false,
+"gate": 0.791358
 },
 {
 "page": 191,
 "chunk": 4,
 "score": 0.775984,
-"sibling": false
+"sibling": false,
+"gate": 0.791358
 },
 {
 "page": 256,
 "chunk": 3,
 "score": 0.660199,
-"sibling": false
+"sibling": false,
+"gate": 0.791358
 }
 ],
 "context": [
@@ -4417,13 +4713,15 @@
 "page": 100,
 "chunk": 3,
 "score": 0.777869,
-"sibling": false
+"sibling": false,
+"gate": 0.791358
 },
 {
 "page": 100,
 "chunk": 4,
 "score": 0.785217,
-"sibling": false
+"sibling": false,
+"gate": 0.791358
 },
 {
 "page": 100,
@@ -4453,7 +4751,8 @@
 "page": 192,
 "chunk": 0,
 "score": 0.716924,
-"sibling": false
+"sibling": false,
+"gate": 0.791358
 },
 {
 "page": 192,
@@ -4501,7 +4800,8 @@
 "page": 268,
 "chunk": 1,
 "score": 0.695229,
-"sibling": false
+"sibling": false,
+"gate": 0.791358
 },
 {
 "page": 268,
@@ -4525,7 +4825,8 @@
 "page": 182,
 "chunk": 0,
 "score": 0.791358,
-"sibling": false
+"sibling": false,
+"gate": 0.791358
 },
 {
 "page": 182,
@@ -4573,13 +4874,15 @@
 "page": 191,
 "chunk": 3,
 "score": 0.687396,
-"sibling": false
+"sibling": false,
+"gate": 0.791358
 },
 {
 "page": 191,
 "chunk": 4,
 "score": 0.775984,
-"sibling": false
+"sibling": false,
+"gate": 0.791358
 },
 {
 "page": 191,
@@ -4591,7 +4894,8 @@
 "page": 256,
 "chunk": 3,
 "score": 0.660199,
-"sibling": false
+"sibling": false,
+"gate": 0.791358
 }
 ],
 "gate": {
@@ -4606,49 +4910,57 @@
 "page": 217,
 "chunk": 0,
 "score": 0.612872,
-"sibling": false
+"sibling": false,
+"gate": 0.70923
 },
 {
 "page": 305,
 "chunk": 0,
 "score": 0.610936,
-"sibling": false
+"sibling": false,
+"gate": 0.70923
 },
 {
 "page": 338,
 "chunk": 0,
 "score": 0.561851,
-"sibling": false
+"sibling": false,
+"gate": 0.70923
 },
 {
 "page": 261,
 "chunk": 0,
 "score": 0.559533,
-"sibling": false
+"sibling": false,
+"gate": 0.70923
 },
 {
 "page": 320,
 "chunk": 3,
 "score": 0.561346,
-"sibling": false
+"sibling": false,
+"gate": 0.70923
 },
 {
 "page": 257,
 "chunk": 7,
 "score": 0.613865,
-"sibling": false
+"sibling": false,
+"gate": 0.70923
 },
 {
 "page": 231,
 "chunk": 2,
 "score": 0.521663,
-"sibling": false
+"sibling": false,
+"gate": 0.70923
 },
 {
 "page": 268,
 "chunk": 0,
 "score": 0.620112,
-"sibling": false
+"sibling": false,
+"gate": 0.70923
 }
 ],
 "context": [
@@ -4656,7 +4968,8 @@
 "page": 217,
 "chunk": 0,
 "score": 0.612872,
-"sibling": false
+"sibling": false,
+"gate": 0.70923
 },
 {
 "page": 217,
@@ -4686,7 +4999,8 @@
 "page": 305,
 "chunk": 0,
 "score": 0.610936,
-"sibling": false
+"sibling": false,
+"gate": 0.70923
 },
 {
 "page": 305,
@@ -4710,7 +5024,8 @@
 "page": 338,
 "chunk": 0,
 "score": 0.561851,
-"sibling": false
+"sibling": false,
+"gate": 0.70923
 },
 {
 "page": 338,
@@ -4740,7 +5055,8 @@
 "page": 261,
 "chunk": 0,
 "score": 0.559533,
-"sibling": false
+"sibling": false,
+"gate": 0.70923
 },
 {
 "page": 261,
@@ -4788,7 +5104,8 @@
 "page": 320,
 "chunk": 3,
 "score": 0.561346,
-"sibling": false
+"sibling": false,
+"gate": 0.70923
 },
 {
 "page": 257,
@@ -4836,7 +5153,8 @@
 "page": 257,
 "chunk": 7,
 "score": 0.613865,
-"sibling": false
+"sibling": false,
+"gate": 0.70923
 },
 {
 "page": 231,
@@ -4854,7 +5172,8 @@
 "page": 231,
 "chunk": 2,
 "score": 0.521663,
-"sibling": false
+"sibling": false,
+"gate": 0.70923
 },
 {
 "page": 231,
@@ -4866,7 +5185,8 @@
 "page": 268,
 "chunk": 0,
 "score": 0.620112,
-"sibling": false
+"sibling": false,
+"gate": 0.70923
 },
 {
 "page": 268,
@@ -4887,49 +5207,57 @@
 "page": 112,
 "chunk": 0,
 "score": 0.686934,
-"sibling": false
+"sibling": false,
+"gate": 0.800031
 },
 {
 "page": 126,
 "chunk": 6,
 "score": 0.71315,
-"sibling": false
+"sibling": false,
+"gate": 0.800031
 },
 {
 "page": 98,
 "chunk": 9,
 "score": 0.632243,
-"sibling": false
+"sibling": false,
+"gate": 0.800031
 },
 {
 "page": 98,
 "chunk": 7,
 "score": 0.639724,
-"sibling": false
+"sibling": false,
+"gate": 0.800031
 },
 {
 "page": 125,
 "chunk": 5,
 "score": 0.66237,
-"sibling": false
+"sibling": false,
+"gate": 0.800031
 },
 {
 "page": 116,
 "chunk": 4,
 "score": 0.644132,
-"sibling": false
+"sibling": false,
+"gate": 0.800031
 },
 {
 "page": 98,
 "chunk": 8,
 "score": 0.605051,
-"sibling": false
+"sibling": false,
+"gate": 0.800031
 },
 {
 "page": 126,
 "chunk": 4,
 "score": 0.683637,
-"sibling": false
+"sibling": false,
+"gate": 0.800031
 }
 ],
 "context": [
@@ -4937,7 +5265,8 @@
 "page": 112,
 "chunk": 0,
 "score": 0.686934,
-"sibling": false
+"sibling": false,
+"gate": 0.800031
 },
 {
 "page": 112,
@@ -5021,7 +5350,8 @@
 "page": 126,
 "chunk": 4,
 "score": 0.683637,
-"sibling": false
+"sibling": false,
+"gate": 0.800031
 },
 {
 "page": 126,
@@ -5033,7 +5363,8 @@
 "page": 126,
 "chunk": 6,
 "score": 0.71315,
-"sibling": false
+"sibling": false,
+"gate": 0.800031
 },
 {
 "page": 126,
@@ -5093,19 +5424,22 @@
 "page": 98,
 "chunk": 7,
 "score": 0.639724,
-"sibling": false
+"sibling": false,
+"gate": 0.800031
 },
 {
 "page": 98,
 "chunk": 8,
 "score": 0.605051,
-"sibling": false
+"sibling": false,
+"gate": 0.800031
 },
 {
 "page": 98,
 "chunk": 9,
 "score": 0.632243,
-"sibling": false
+"sibling": false,
+"gate": 0.800031
 },
 {
 "page": 98,
@@ -5123,7 +5457,8 @@
 "page": 125,
 "chunk": 5,
 "score": 0.66237,
-"sibling": false
+"sibling": false,
+"gate": 0.800031
 },
 {
 "page": 125,
@@ -5135,7 +5470,8 @@
 "page": 116,
 "chunk": 4,
 "score": 0.644132,
-"sibling": false
+"sibling": false,
+"gate": 0.800031
 },
 {
 "page": 116,
@@ -5156,49 +5492,57 @@
 "page": 6,
 "chunk": 1,
 "score": 0.804535,
-"sibling": false
+"sibling": false,
+"gate": 0.804535
 },
 {
 "page": 17,
 "chunk": 3,
 "score": 0.730173,
-"sibling": false
+"sibling": false,
+"gate": 0.804535
 },
 {
 "page": 4,
 "chunk": 2,
 "score": 0.794269,
-"sibling": false
+"sibling": false,
+"gate": 0.804535
 },
 {
 "page": 6,
 "chunk": 0,
 "score": 0.761277,
-"sibling": false
+"sibling": false,
+"gate": 0.804535
 },
 {
 "page": 9,
 "chunk": 2,
 "score": 0.696744,
-"sibling": false
+"sibling": false,
+"gate": 0.804535
 },
 {
 "page": 17,
 "chunk": 7,
 "score": 0.713269,
-"sibling": false
+"sibling": false,
+"gate": 0.804535
 },
 {
 "page": 10,
 "chunk": 1,
 "score": 0.714153,
-"sibling": false
+"sibling": false,
+"gate": 0.804535
 },
 {
 "page": 5,
 "chunk": 1,
 "score": 0.726098,
-"sibling": false
+"sibling": false,
+"gate": 0.804535
 }
 ],
 "context": [
@@ -5206,13 +5550,15 @@
 "page": 6,
 "chunk": 0,
 "score": 0.761277,
-"sibling": false
+"sibling": false,
+"gate": 0.804535
 },
 {
 "page": 6,
 "chunk": 1,
 "score": 0.804535,
-"sibling": false
+"sibling": false,
+"gate": 0.804535
 },
 {
 "page": 6,
@@ -5248,7 +5594,8 @@
 "page": 17,
 "chunk": 3,
 "score": 0.730173,
-"sibling": false
+"sibling": false,
+"gate": 0.804535
 },
 {
 "page": 17,
@@ -5272,7 +5619,8 @@
 "page": 17,
 "chunk": 7,
 "score": 0.713269,
-"sibling": false
+"sibling": false,
+"gate": 0.804535
 },
 {
 "page": 17,
@@ -5308,7 +5656,8 @@
 "page": 4,
 "chunk": 2,
 "score": 0.794269,
-"sibling": false
+"sibling": false,
+"gate": 0.804535
 },
 {
 "page": 4,
@@ -5338,7 +5687,8 @@
 "page": 9,
 "chunk": 2,
 "score": 0.696744,
-"sibling": false
+"sibling": false,
+"gate": 0.804535
 },
 {
 "page": 9,
@@ -5368,7 +5718,8 @@
 "page": 10,
 "chunk": 1,
 "score": 0.714153,
-"sibling": false
+"sibling": false,
+"gate": 0.804535
 },
 {
 "page": 10,
@@ -5398,7 +5749,8 @@
 "page": 5,
 "chunk": 1,
 "score": 0.726098,
-"sibling": false
+"sibling": false,
+"gate": 0.804535
 },
 {
 "page": 5,
@@ -5419,49 +5771,57 @@
 "page": 118,
 "chunk": 5,
 "score": 0.738113,
-"sibling": false
+"sibling": false,
+"gate": 0.761646
 },
 {
 "page": 118,
 "chunk": 6,
 "score": 0.675472,
-"sibling": false
+"sibling": false,
+"gate": 0.761646
 },
 {
 "page": 130,
 "chunk": 2,
 "score": 0.726212,
-"sibling": false
+"sibling": false,
+"gate": 0.761646
 },
 {
 "page": 118,
 "chunk": 8,
 "score": 0.658487,
-"sibling": false
+"sibling": false,
+"gate": 0.761646
 },
 {
 "page": 118,
 "chunk": 4,
 "score": 0.637365,
-"sibling": false
+"sibling": false,
+"gate": 0.761646
 },
 {
 "page": 118,
 "chunk": 7,
 "score": 0.625229,
-"sibling": false
+"sibling": false,
+"gate": 0.761646
 },
 {
 "page": 111,
 "chunk": 0,
 "score": 0.720691,
-"sibling": false
+"sibling": false,
+"gate": 0.761646
 },
 {
 "page": 119,
 "chunk": 7,
 "score": 0.678864,
-"sibling": false
+"sibling": false,
+"gate": 0.761646
 }
 ],
 "context": [
@@ -5493,31 +5853,36 @@
 "page": 118,
 "chunk": 4,
 "score": 0.637365,
-"sibling": false
+"sibling": false,
+"gate": 0.761646
 },
 {
 "page": 118,
 "chunk": 5,
 "score": 0.738113,
-"sibling": false
+"sibling": false,
+"gate": 0.761646
 },
 {
 "page": 118,
 "chunk": 6,
 "score": 0.675472,
-"sibling": false
+"sibling": false,
+"gate": 0.761646
 },
 {
 "page": 118,
 "chunk": 7,
 "score": 0.625229,
-"sibling": false
+"sibling": false,
+"gate": 0.761646
 },
 {
 "page": 118,
 "chunk": 8,
 "score": 0.658487,
-"sibling": false
+"sibling": false,
+"gate": 0.761646
 },
 {
 "page": 118,
@@ -5541,7 +5906,8 @@
 "page": 130,
 "chunk": 2,
 "score": 0.726212,
-"sibling": false
+"sibling": false,
+"gate": 0.761646
 },
 {
 "page": 130,
@@ -5589,7 +5955,8 @@
 "page": 111,
 "chunk": 0,
 "score": 0.720691,
-"sibling": false
+"sibling": false,
+"gate": 0.761646
 },
 {
 "page": 111,
@@ -5685,7 +6052,8 @@
 "page": 119,
 "chunk": 7,
 "score": 0.678864,
-"sibling": false
+"sibling": false,
+"gate": 0.761646
 }
 ],
 "gate": {
@@ -5700,49 +6068,57 @@
 "page": 4,
 "chunk": 0,
 "score": 0.756809,
-"sibling": false
+"sibling": false,
+"gate": 0.756809
 },
 {
 "page": 5,
 "chunk": 2,
 "score": 0.685003,
-"sibling": false
+"sibling": false,
+"gate": 0.756809
 },
 {
 "page": 7,
 "chunk": 0,
 "score": 0.706654,
-"sibling": false
+"sibling": false,
+"gate": 0.756809
 },
 {
 "page": 9,
 "chunk": 2,
 "score": 0.583549,
-"sibling": false
+"sibling": false,
+"gate": 0.756809
 },
 {
 "page": 17,
 "chunk": 3,
 "score": 0.601799,
-"sibling": false
+"sibling": false,
+"gate": 0.756809
 },
 {
 "page": 6,
 "chunk": 0,
 "score": 0.710125,
-"sibling": false
+"sibling": false,
+"gate": 0.756809
 },
 {
 "page": 101,
 "chunk": 0,
 "score": 0.74485,
-"sibling": false
+"sibling": false,
+"gate": 0.756809
 },
 {
 "page": 7,
 "chunk": 2,
 "score": 0.671207,
-"sibling": false
+"sibling": false,
+"gate": 0.756809
 }
 ],
 "context": [
@@ -5750,7 +6126,8 @@
 "page": 4,
 "chunk": 0,
 "score": 0.756809,
-"sibling": false
+"sibling": false,
+"gate": 0.756809
 },
 {
 "page": 4,
@@ -5792,13 +6169,15 @@
 "page": 5,
 "chunk": 2,
 "score": 0.685003,
-"sibling": false
+"sibling": false,
+"gate": 0.756809
 },
 {
 "page": 7,
 "chunk": 0,
 "score": 0.706654,
-"sibling": false
+"sibling": false,
+"gate": 0.756809
 },
 {
 "page": 7,
@@ -5810,7 +6189,8 @@
 "page": 7,
 "chunk": 2,
 "score": 0.671207,
-"sibling": false
+"sibling": false,
+"gate": 0.756809
 },
 {
 "page": 7,
@@ -5834,7 +6214,8 @@
 "page": 9,
 "chunk": 2,
 "score": 0.583549,
-"sibling": false
+"sibling": false,
+"gate": 0.756809
 },
 {
 "page": 9,
@@ -5876,7 +6257,8 @@
 "page": 17,
 "chunk": 3,
 "score": 0.601799,
-"sibling": false
+"sibling": false,
+"gate": 0.756809
 },
 {
 "page": 17,
@@ -5924,7 +6306,8 @@
 "page": 6,
 "chunk": 0,
 "score": 0.710125,
-"sibling": false
+"sibling": false,
+"gate": 0.756809
 },
 {
 "page": 6,
@@ -5948,7 +6331,8 @@
 "page": 101,
 "chunk": 0,
 "score": 0.74485,
-"sibling": false
+"sibling": false,
+"gate": 0.756809
 }
 ],
 "gate": {
@@ -5963,49 +6347,57 @@
 "page": 3,
 "chunk": 0,
 "score": 0.604598,
-"sibling": false
+"sibling": false,
+"gate": 0.741284
 },
 {
 "page": 288,
 "chunk": 0,
 "score": 0.592388,
-"sibling": false
+"sibling": false,
+"gate": 0.741284
 },
 {
 "page": 195,
 "chunk": 9,
 "score": 0.66659,
-"sibling": false
+"sibling": false,
+"gate": 0.741284
 },
 {
 "page": 64,
 "chunk": 2,
 "score": 0.567522,
-"sibling": false
+"sibling": false,
+"gate": 0.741284
 },
 {
 "page": 176,
 "chunk": 1,
 "score": 0.642615,
-"sibling": false
+"sibling": false,
+"gate": 0.741284
 },
 {
 "page": 7,
 "chunk": 1,
 "score": 0.688086,
-"sibling": false
+"sibling": false,
+"gate": 0.741284
 },
 {
 "page": 105,
 "chunk": 5,
 "score": 0.607223,
-"sibling": false
+"sibling": false,
+"gate": 0.741284
 },
 {
 "page": 46,
 "chunk": 0,
 "score": 0.54804,
-"sibling": false
+"sibling": false,
+"gate": 0.741284
 }
 ],
 "context": [
@@ -6013,7 +6405,8 @@
 "page": 3,
 "chunk": 0,
 "score": 0.604598,
-"sibling": false
+"sibling": false,
+"gate": 0.741284
 },
 {
 "page": 3,
@@ -6031,7 +6424,8 @@
 "page": 288,
 "chunk": 0,
 "score": 0.592388,
-"sibling": false
+"sibling": false,
+"gate": 0.741284
 },
 {
 "page": 288,
@@ -6127,7 +6521,8 @@
 "page": 195,
 "chunk": 9,
 "score": 0.66659,
-"sibling": false
+"sibling": false,
+"gate": 0.741284
 },
 {
 "page": 64,
@@ -6145,7 +6540,8 @@
 "page": 64,
 "chunk": 2,
 "score": 0.567522,
-"sibling": false
+"sibling": false,
+"gate": 0.741284
 },
 {
 "page": 64,
@@ -6163,7 +6559,8 @@
 "page": 176,
 "chunk": 1,
 "score": 0.642615,
-"sibling": false
+"sibling": false,
+"gate": 0.741284
 },
 {
 "page": 176,
@@ -6193,13 +6590,15 @@
 "page": 7,
 "chunk": 1,
 "score": 0.688086,
-"sibling": false
+"sibling": false,
+"gate": 0.741284
 },
 {
 "page": 105,
 "chunk": 5,
 "score": 0.607223,
-"sibling": false
+"sibling": false,
+"gate": 0.741284
 },
 {
 "page": 105,
@@ -6211,14 +6610,13 @@
 "page": 46,
 "chunk": 0,
 "score": 0.54804,
-"sibling": false
+"sibling": false,
+"gate": 0.741284
 }
 ],
 "gate": {
 "fused_best": 0.688086,
-"vector_best": 0.740143,
-"corrected": "summarised HCC's performance in FY25",
-"corrected_best": 0.688086
+"vector_best": 0.741284
 }
 },
 "UNIHEALTH\tWhat are the key risks Unihealth faces?": {
@@ -6228,49 +6626,57 @@
 "page": 21,
 "chunk": 1,
 "score": 0.583835,
-"sibling": false
+"sibling": false,
+"gate": 0.677615
 },
 {
 "page": 88,
 "chunk": 4,
 "score": 0.514789,
-"sibling": false
+"sibling": false,
+"gate": 0.677615
 },
 {
 "page": 88,
 "chunk": 5,
 "score": 0.501025,
-"sibling": false
+"sibling": false,
+"gate": 0.677615
 },
 {
 "page": 88,
 "chunk": 3,
 "score": 0.480094,
-"sibling": false
+"sibling": false,
+"gate": 0.677615
 },
 {
 "page": 123,
 "chunk": 4,
 "score": 0.506042,
-"sibling": false
+"sibling": false,
+"gate": 0.677615
 },
 {
 "page": 123,
 "chunk": 5,
 "score": 0.500618,
-"sibling": false
+"sibling": false,
+"gate": 0.677615
 },
 {
 "page": 56,
 "chunk": 6,
 "score": 0.474461,
-"sibling": false
+"sibling": false,
+"gate": 0.677615
 },
 {
 "page": 121,
 "chunk": 1,
 "score": 0.572342,
-"sibling": false
+"sibling": false,
+"gate": 0.677615
 }
 ],
 "context": [
@@ -6284,7 +6690,8 @@
 "page": 21,
 "chunk": 1,
 "score": 0.583835,
-"sibling": false
+"sibling": false,
+"gate": 0.677615
 },
 {
 "page": 21,
@@ -6356,19 +6763,22 @@
 "page": 88,
 "chunk": 3,
 "score": 0.480094,
-"sibling": false
+"sibling": false,
+"gate": 0.677615
 },
 {
 "page": 88,
 "chunk": 4,
 "score": 0.514789,
-"sibling": false
+"sibling": false,
+"gate": 0.677615
 },
 {
 "page": 88,
 "chunk": 5,
 "score": 0.501025,
-"sibling": false
+"sibling": false,
+"gate": 0.677615
 },
 {
 "page": 88,
@@ -6410,13 +6820,15 @@
 "page": 123,
 "chunk": 4,
 "score": 0.506042,
-"sibling": false
+"sibling": false,
+"gate": 0.677615
 },
 {
 "page": 123,
 "chunk": 5,
 "score": 0.500618,
-"sibling": false
+"sibling": false,
+"gate": 0.677615
 },
 {
 "page": 123,
@@ -6458,13 +6870,15 @@
 "page": 56,
 "chunk": 6,
 "score": 0.474461,
-"sibling": false
+"sibling": false,
+"gate": 0.677615
 },
 {
 "page": 121,
 "chunk": 1,
 "score": 0.572342,
-"sibling": false
+"sibling": false,
+"gate": 0.677615
 }
 ],
 "gate": {
@@ -6479,49 +6893,57 @@
 "page": 47,
 "chunk": 3,
 "score": 0.618834,
-"sibling": false
+"sibling": false,
+"gate": 0.618834
 },
 {
 "page": 42,
 "chunk": 0,
 "score": 0.616004,
-"sibling": false
+"sibling": false,
+"gate": 0.618834
 },
 {
 "page": 552,
 "chunk": 4,
 "score": 0.559243,
-"sibling": false
+"sibling": false,
+"gate": 0.618834
 },
 {
 "page": 339,
 "chunk": 0,
 "score": 0.539323,
-"sibling": false
+"sibling": false,
+"gate": 0.618834
 },
 {
 "page": 552,
 "chunk": 3,
 "score": 0.524032,
-"sibling": false
+"sibling": false,
+"gate": 0.618834
 },
 {
 "page": 83,
 "chunk": 1,
 "score": 0.515799,
-"sibling": false
+"sibling": false,
+"gate": 0.618834
 },
 {
 "page": 494,
 "chunk": 5,
 "score": 0.469743,
-"sibling": false
+"sibling": false,
+"gate": 0.618834
 },
 {
 "page": 687,
 "chunk": 2,
 "score": 0.51488,
-"sibling": false
+"sibling": false,
+"gate": 0.618834
 }
 ],
 "context": [
@@ -6547,7 +6969,8 @@
 "page": 47,
 "chunk": 3,
 "score": 0.618834,
-"sibling": false
+"sibling": false,
+"gate": 0.618834
 },
 {
 "page": 47,
@@ -6571,7 +6994,8 @@
 "page": 42,
 "chunk": 0,
 "score": 0.616004,
-"sibling": false
+"sibling": false,
+"gate": 0.618834
 },
 {
 "page": 42,
@@ -6625,13 +7049,15 @@
 "page": 552,
 "chunk": 3,
 "score": 0.524032,
-"sibling": false
+"sibling": false,
+"gate": 0.618834
 },
 {
 "page": 552,
 "chunk": 4,
 "score": 0.559243,
-"sibling": false
+"sibling": false,
+"gate": 0.618834
 },
 {
 "page": 552,
@@ -6649,7 +7075,8 @@
 "page": 339,
 "chunk": 0,
 "score": 0.539323,
-"sibling": false
+"sibling": false,
+"gate": 0.618834
 },
 {
 "page": 83,
@@ -6661,7 +7088,8 @@
 "page": 83,
 "chunk": 1,
 "score": 0.515799,
-"sibling": false
+"sibling": false,
+"gate": 0.618834
 },
 {
 "page": 83,
@@ -6709,7 +7137,8 @@
 "page": 494,
 "chunk": 5,
 "score": 0.469743,
-"sibling": false
+"sibling": false,
+"gate": 0.618834
 },
 {
 "page": 494,
@@ -6727,7 +7156,8 @@
 "page": 687,
 "chunk": 2,
 "score": 0.51488,
-"sibling": false
+"sibling": false,
+"gate": 0.618834
 },
 {
 "page": 687,
@@ -6754,49 +7184,57 @@
 "page": 351,
 "chunk": 0,
 "score": 0.678059,
-"sibling": false
+"sibling": false,
+"gate": 0.765287
 },
 {
 "page": 352,
 "chunk": 0,
 "score": 0.765287,
-"sibling": false
+"sibling": false,
+"gate": 0.765287
 },
 {
 "page": 276,
 "chunk": 1,
 "score": 0.686541,
-"sibling": false
+"sibling": false,
+"gate": 0.765287
 },
 {
 "page": 190,
 "chunk": 1,
 "score": 0.692765,
-"sibling": false
+"sibling": false,
+"gate": 0.765287
 },
 {
 "page": 257,
 "chunk": 2,
 "score": 0.685563,
-"sibling": false
+"sibling": false,
+"gate": 0.765287
 },
 {
 "page": 190,
 "chunk": 2,
 "score": 0.676971,
-"sibling": false
+"sibling": false,
+"gate": 0.765287
 },
 {
 "page": 190,
 "chunk": 3,
 "score": 0.713403,
-"sibling": false
+"sibling": false,
+"gate": 0.765287
 },
 {
 "page": 276,
 "chunk": 3,
 "score": 0.696768,
-"sibling": false
+"sibling": false,
+"gate": 0.765287
 }
 ],
 "context": [
@@ -6804,7 +7242,8 @@
 "page": 351,
 "chunk": 0,
 "score": 0.678059,
-"sibling": false
+"sibling": false,
+"gate": 0.765287
 },
 {
 "page": 351,
@@ -6834,7 +7273,8 @@
 "page": 352,
 "chunk": 0,
 "score": 0.765287,
-"sibling": false
+"sibling": false,
+"gate": 0.765287
 },
 {
 "page": 352,
@@ -6876,7 +7316,8 @@
 "page": 276,
 "chunk": 1,
 "score": 0.686541,
-"sibling": false
+"sibling": false,
+"gate": 0.765287
 },
 {
 "page": 276,
@@ -6888,7 +7329,8 @@
 "page": 276,
 "chunk": 3,
 "score": 0.696768,
-"sibling": false
+"sibling": false,
+"gate": 0.765287
 },
 {
 "page": 276,
@@ -6924,19 +7366,22 @@
 "page": 190,
 "chunk": 1,
 "score": 0.692765,
-"sibling": false
+"sibling": false,
+"gate": 0.765287
 },
 {
 "page": 190,
 "chunk": 2,
 "score": 0.676971,
-"sibling": false
+"sibling": false,
+"gate": 0.765287
 },
 {
 "page": 190,
 "chunk": 3,
 "score": 0.713403,
-"sibling": false
+"sibling": false,
+"gate": 0.765287
 },
 {
 "page": 190,
@@ -6972,7 +7417,8 @@
 "page": 257,
 "chunk": 2,
 "score": 0.685563,
-"sibling": false
+"sibling": false,
+"gate": 0.765287
 },
 {
 "page": 257,
@@ -7007,9 +7453,7 @@
 ],
 "gate": {
 "fused_best": 0.765287,
-"vector_best": 0.710674,
-"corrected": "total assets navneet",
-"corrected_best": 0.765287
+"vector_best": 0.765287
 }
 },
 "BHARTIARTL\thow many customers does airtel have": {
@@ -7019,49 +7463,57 @@
 "page": 83,
 "chunk": 2,
 "score": 0.770354,
-"sibling": false
+"sibling": false,
+"gate": 0.840867
 },
 {
 "page": 179,
 "chunk": 5,
 "score": 0.790448,
-"sibling": false
+"sibling": false,
+"gate": 0.840867
 },
 {
 "page": 96,
 "chunk": 3,
 "score": 0.759496,
-"sibling": false
+"sibling": false,
+"gate": 0.840867
 },
 {
 "page": 82,
 "chunk": 1,
 "score": 0.788289,
-"sibling": false
+"sibling": false,
+"gate": 0.840867
 },
 {
 "page": 179,
 "chunk": 0,
 "score": 0.840867,
-"sibling": false
+"sibling": false,
+"gate": 0.840867
 },
 {
 "page": 9,
 "chunk": 1,
 "score": 0.801083,
-"sibling": false
+"sibling": false,
+"gate": 0.840867
 },
 {
 "page": 179,
 "chunk": 1,
 "score": 0.754894,
-"sibling": false
+"sibling": false,
+"gate": 0.840867
 },
 {
 "page": 240,
 "chunk": 0,
 "score": 0.759761,
-"sibling": false
+"sibling": false,
+"gate": 0.840867
 }
 ],
 "context": [
@@ -7081,19 +7533,22 @@
 "page": 83,
 "chunk": 2,
 "score": 0.770354,
-"sibling": false
+"sibling": false,
+"gate": 0.840867
 },
 {
 "page": 179,
 "chunk": 0,
 "score": 0.840867,
-"sibling": false
+"sibling": false,
+"gate": 0.840867
 },
 {
 "page": 179,
 "chunk": 1,
 "score": 0.754894,
-"sibling": false
+"sibling": false,
+"gate": 0.840867
 },
 {
 "page": 179,
@@ -7117,7 +7572,8 @@
 "page": 179,
 "chunk": 5,
 "score": 0.790448,
-"sibling": false
+"sibling": false,
+"gate": 0.840867
 },
 {
 "page": 96,
@@ -7141,7 +7597,8 @@
 "page": 96,
 "chunk": 3,
 "score": 0.759496,
-"sibling": false
+"sibling": false,
+"gate": 0.840867
 },
 {
 "page": 96,
@@ -7171,7 +7628,8 @@
 "page": 82,
 "chunk": 1,
 "score": 0.788289,
-"sibling": false
+"sibling": false,
+"gate": 0.840867
 },
 {
 "page": 9,
@@ -7183,13 +7641,15 @@
 "page": 9,
 "chunk": 1,
 "score": 0.801083,
-"sibling": false
+"sibling": false,
+"gate": 0.840867
 },
 {
 "page": 240,
 "chunk": 0,
 "score": 0.759761,
-"sibling": false
+"sibling": false,
+"gate": 0.840867
 },
 {
 "page": 240,
@@ -7246,49 +7706,57 @@
 "page": 136,
 "chunk": 5,
 "score": 0.714973,
-"sibling": false
+"sibling": false,
+"gate": 0.744404
 },
 {
 "page": 151,
 "chunk": 4,
 "score": 0.725307,
-"sibling": false
+"sibling": false,
+"gate": 0.744404
 },
 {
 "page": 564,
 "chunk": 5,
 "score": 0.704493,
-"sibling": false
+"sibling": false,
+"gate": 0.744404
 },
 {
 "page": 4,
 "chunk": 0,
 "score": 0.700236,
-"sibling": false
+"sibling": false,
+"gate": 0.744404
 },
 {
 "page": 14,
 "chunk": 1,
 "score": 0.681479,
-"sibling": false
+"sibling": false,
+"gate": 0.744404
 },
 {
 "page": 149,
 "chunk": 0,
 "score": 0.70023,
-"sibling": false
+"sibling": false,
+"gate": 0.744404
 },
 {
 "page": 282,
 "chunk": 1,
 "score": 0.705343,
-"sibling": false
+"sibling": false,
+"gate": 0.744404
 },
 {
 "page": 42,
 "chunk": 0,
 "score": 0.700466,
-"sibling": false
+"sibling": false,
+"gate": 0.744404
 }
 ],
 "context": [
@@ -7326,7 +7794,8 @@
 "page": 136,
 "chunk": 5,
 "score": 0.714973,
-"sibling": false
+"sibling": false,
+"gate": 0.744404
 },
 {
 "page": 151,
@@ -7356,7 +7825,8 @@
 "page": 151,
 "chunk": 4,
 "score": 0.725307,
-"sibling": false
+"sibling": false,
+"gate": 0.744404
 },
 {
 "page": 564,
@@ -7392,7 +7862,8 @@
 "page": 564,
 "chunk": 5,
 "score": 0.704493,
-"sibling": false
+"sibling": false,
+"gate": 0.744404
 },
 {
 "page": 564,
@@ -7404,7 +7875,8 @@
 "page": 4,
 "chunk": 0,
 "score": 0.700236,
-"sibling": false
+"sibling": false,
+"gate": 0.744404
 },
 {
 "page": 14,
@@ -7416,7 +7888,8 @@
 "page": 14,
 "chunk": 1,
 "score": 0.681479,
-"sibling": false
+"sibling": false,
+"gate": 0.744404
 },
 {
 "page": 14,
@@ -7428,7 +7901,8 @@
 "page": 149,
 "chunk": 0,
 "score": 0.70023,
-"sibling": false
+"sibling": false,
+"gate": 0.744404
 },
 {
 "page": 149,
@@ -7482,7 +7956,8 @@
 "page": 282,
 "chunk": 1,
 "score": 0.705343,
-"sibling": false
+"sibling": false,
+"gate": 0.744404
 },
 {
 "page": 282,
@@ -7494,7 +7969,8 @@
 "page": 42,
 "chunk": 0,
 "score": 0.700466,
-"sibling": false
+"sibling": false,
+"gate": 0.744404
 }
 ],
 "gate": {
@@ -7509,49 +7985,57 @@
 "page": 147,
 "chunk": 2,
 "score": 0.776332,
-"sibling": false
+"sibling": false,
+"gate": 0.783393
 },
 {
 "page": 147,
 "chunk": 6,
 "score": 0.766731,
-"sibling": false
+"sibling": false,
+"gate": 0.783393
 },
 {
 "page": 146,
 "chunk": 5,
 "score": 0.745225,
-"sibling": false
+"sibling": false,
+"gate": 0.783393
 },
 {
 "page": 147,
 "chunk": 4,
 "score": 0.747677,
-"sibling": false
+"sibling": false,
+"gate": 0.783393
 },
 {
 "page": 146,
 "chunk": 6,
 "score": 0.742263,
-"sibling": false
+"sibling": false,
+"gate": 0.783393
 },
 {
 "page": 90,
 "chunk": 3,
 "score": 0.732774,
-"sibling": false
+"sibling": false,
+"gate": 0.783393
 },
 {
 "page": 147,
 "chunk": 5,
 "score": 0.763183,
-"sibling": false
+"sibling": false,
+"gate": 0.783393
 },
 {
 "page": 384,
 "chunk": 3,
 "score": 0.771884,
-"sibling": false
+"sibling": false,
+"gate": 0.783393
 }
 ],
 "context": [
@@ -7571,7 +8055,8 @@
 "page": 147,
 "chunk": 2,
 "score": 0.776332,
-"sibling": false
+"sibling": false,
+"gate": 0.783393
 },
 {
 "page": 147,
@@ -7583,19 +8068,22 @@
 "page": 147,
 "chunk": 4,
 "score": 0.747677,
-"sibling": false
+"sibling": false,
+"gate": 0.783393
 },
 {
 "page": 147,
 "chunk": 5,
 "score": 0.763183,
-"sibling": false
+"sibling": false,
+"gate": 0.783393
 },
 {
 "page": 147,
 "chunk": 6,
 "score": 0.766731,
-"sibling": false
+"sibling": false,
+"gate": 0.783393
 },
 {
 "page": 147,
@@ -7643,13 +8131,15 @@
 "page": 146,
 "chunk": 5,
 "score": 0.745225,
-"sibling": false
+"sibling": false,
+"gate": 0.783393
 },
 {
 "page": 146,
 "chunk": 6,
 "score": 0.742263,
-"sibling": false
+"sibling": false,
+"gate": 0.783393
 },
 {
 "page": 146,
@@ -7679,7 +8169,8 @@
 "page": 90,
 "chunk": 3,
 "score": 0.732774,
-"sibling": false
+"sibling": false,
+"gate": 0.783393
 },
 {
 "page": 90,
@@ -7739,7 +8230,8 @@
 "page": 384,
 "chunk": 3,
 "score": 0.771884,
-"sibling": false
+"sibling": false,
+"gate": 0.783393
 },
 {
 "page": 384,
@@ -7766,49 +8258,57 @@
 "page": 44,
 "chunk": 1,
 "score": 0.737584,
-"sibling": false
+"sibling": false,
+"gate": 0.792475
 },
 {
 "page": 120,
 "chunk": 0,
 "score": 0.64646,
-"sibling": false
+"sibling": false,
+"gate": 0.792475
 },
 {
 "page": 9,
 "chunk": 6,
 "score": 0.68061,
-"sibling": false
+"sibling": false,
+"gate": 0.792475
 },
 {
 "page": 44,
 "chunk": 0,
 "score": 0.703396,
-"sibling": false
+"sibling": false,
+"gate": 0.792475
 },
 {
 "page": 6,
 "chunk": 4,
 "score": 0.649772,
-"sibling": false
+"sibling": false,
+"gate": 0.792475
 },
 {
 "page": 44,
 "chunk": 3,
 "score": 0.646368,
-"sibling": false
+"sibling": false,
+"gate": 0.792475
 },
 {
 "page": 6,
 "chunk": 3,
 "score": 0.667789,
-"sibling": false
+"sibling": false,
+"gate": 0.792475
 },
 {
 "page": 138,
 "chunk": 3,
 "score": 0.631754,
-"sibling": false
+"sibling": false,
+"gate": 0.792475
 }
 ],
 "context": [
@@ -7816,13 +8316,15 @@
 "page": 44,
 "chunk": 0,
 "score": 0.703396,
-"sibling": false
+"sibling": false,
+"gate": 0.792475
 },
 {
 "page": 44,
 "chunk": 1,
 "score": 0.737584,
-"sibling": false
+"sibling": false,
+"gate": 0.792475
 },
 {
 "page": 44,
@@ -7834,13 +8336,15 @@
 "page": 44,
 "chunk": 3,
 "score": 0.646368,
-"sibling": false
+"sibling": false,
+"gate": 0.792475
 },
 {
 "page": 120,
 "chunk": 0,
 "score": 0.64646,
-"sibling": false
+"sibling": false,
+"gate": 0.792475
 },
 {
 "page": 120,
@@ -7906,7 +8410,8 @@
 "page": 9,
 "chunk": 6,
 "score": 0.68061,
-"sibling": false
+"sibling": false,
+"gate": 0.792475
 },
 {
 "page": 6,
@@ -7930,13 +8435,15 @@
 "page": 6,
 "chunk": 3,
 "score": 0.667789,
-"sibling": false
+"sibling": false,
+"gate": 0.792475
 },
 {
 "page": 6,
 "chunk": 4,
 "score": 0.649772,
-"sibling": false
+"sibling": false,
+"gate": 0.792475
 },
 {
 "page": 6,
@@ -7966,7 +8473,8 @@
 "page": 138,
 "chunk": 3,
 "score": 0.631754,
-"sibling": false
+"sibling": false,
+"gate": 0.792475
 }
 ],
 "gate": {
@@ -7981,49 +8489,57 @@
 "page": 4,
 "chunk": 3,
 "score": 0.680632,
-"sibling": false
+"sibling": false,
+"gate": 0.747252
 },
 {
 "page": 77,
 "chunk": 2,
 "score": 0.626902,
-"sibling": false
+"sibling": false,
+"gate": 0.747252
 },
 {
 "page": 16,
 "chunk": 0,
 "score": 0.631995,
-"sibling": false
+"sibling": false,
+"gate": 0.747252
 },
 {
 "page": 13,
 "chunk": 0,
 "score": 0.747252,
-"sibling": false
+"sibling": false,
+"gate": 0.747252
 },
 {
 "page": 46,
 "chunk": 2,
 "score": 0.563658,
-"sibling": false
+"sibling": false,
+"gate": 0.747252
 },
 {
 "page": 13,
 "chunk": 3,
 "score": 0.588506,
-"sibling": false
+"sibling": false,
+"gate": 0.747252
 },
 {
 "page": 103,
 "chunk": 0,
 "score": 0.734754,
-"sibling": false
+"sibling": false,
+"gate": 0.747252
 },
 {
 "page": 175,
 "chunk": 0,
 "score": 0.712569,
-"sibling": false
+"sibling": false,
+"gate": 0.747252
 }
 ],
 "context": [
@@ -8049,7 +8565,8 @@
 "page": 4,
 "chunk": 3,
 "score": 0.680632,
-"sibling": false
+"sibling": false,
+"gate": 0.747252
 },
 {
 "page": 4,
@@ -8079,7 +8596,8 @@
 "page": 77,
 "chunk": 2,
 "score": 0.626902,
-"sibling": false
+"sibling": false,
+"gate": 0.747252
 },
 {
 "page": 77,
@@ -8103,7 +8621,8 @@
 "page": 16,
 "chunk": 0,
 "score": 0.631995,
-"sibling": false
+"sibling": false,
+"gate": 0.747252
 },
 {
 "page": 16,
@@ -8145,7 +8664,8 @@
 "page": 13,
 "chunk": 0,
 "score": 0.747252,
-"sibling": false
+"sibling": false,
+"gate": 0.747252
 },
 {
 "page": 13,
@@ -8163,7 +8683,8 @@
 "page": 13,
 "chunk": 3,
 "score": 0.588506,
-"sibling": false
+"sibling": false,
+"gate": 0.747252
 },
 {
 "page": 13,
@@ -8205,13 +8726,15 @@
 "page": 46,
 "chunk": 2,
 "score": 0.563658,
-"sibling": false
+"sibling": false,
+"gate": 0.747252
 },
 {
 "page": 103,
 "chunk": 0,
 "score": 0.734754,
-"sibling": false
+"sibling": false,
+"gate": 0.747252
 },
 {
 "page": 103,
@@ -8223,14 +8746,13 @@
 "page": 175,
 "chunk": 0,
 "score": 0.712569,
-"sibling": false
+"sibling": false,
+"gate": 0.747252
 }
 ],
 "gate": {
 "fused_best": 0.747252,
-"vector_best": 0.727875,
-"corrected": "how many urea plants does chambal have",
-"corrected_best": 0.747252
+"vector_best": 0.747252
 }
 },
 "DIVISLAB\tdivis lab revenu fy26": {
@@ -8240,49 +8762,57 @@
 "page": 92,
 "chunk": 2,
 "score": 0.681494,
-"sibling": false
+"sibling": false,
+"gate": 0.75687
 },
 {
 "page": 123,
 "chunk": 6,
 "score": 0.679777,
-"sibling": false
+"sibling": false,
+"gate": 0.75687
 },
 {
 "page": 92,
 "chunk": 1,
 "score": 0.689352,
-"sibling": false
+"sibling": false,
+"gate": 0.75687
 },
 {
 "page": 122,
 "chunk": 4,
 "score": 0.649863,
-"sibling": false
+"sibling": false,
+"gate": 0.75687
 },
 {
 "page": 92,
 "chunk": 4,
 "score": 0.662228,
-"sibling": false
+"sibling": false,
+"gate": 0.75687
 },
 {
 "page": 49,
 "chunk": 1,
 "score": 0.648475,
-"sibling": false
+"sibling": false,
+"gate": 0.75687
 },
 {
 "page": 124,
 "chunk": 1,
 "score": 0.657983,
-"sibling": false
+"sibling": false,
+"gate": 0.75687
 },
 {
 "page": 33,
 "chunk": 4,
 "score": 0.633529,
-"sibling": false
+"sibling": false,
+"gate": 0.75687
 }
 ],
 "context": [
@@ -8296,13 +8826,15 @@
 "page": 92,
 "chunk": 1,
 "score": 0.689352,
-"sibling": false
+"sibling": false,
+"gate": 0.75687
 },
 {
 "page": 92,
 "chunk": 2,
 "score": 0.681494,
-"sibling": false
+"sibling": false,
+"gate": 0.75687
 },
 {
 "page": 92,
@@ -8314,7 +8846,8 @@
 "page": 92,
 "chunk": 4,
 "score": 0.662228,
-"sibling": false
+"sibling": false,
+"gate": 0.75687
 },
 {
 "page": 92,
@@ -8374,7 +8907,8 @@
 "page": 123,
 "chunk": 6,
 "score": 0.679777,
-"sibling": false
+"sibling": false,
+"gate": 0.75687
 },
 {
 "page": 123,
@@ -8410,7 +8944,8 @@
 "page": 122,
 "chunk": 4,
 "score": 0.649863,
-"sibling": false
+"sibling": false,
+"gate": 0.75687
 },
 {
 "page": 122,
@@ -8440,7 +8975,8 @@
 "page": 49,
 "chunk": 1,
 "score": 0.648475,
-"sibling": false
+"sibling": false,
+"gate": 0.75687
 },
 {
 "page": 49,
@@ -8476,7 +9012,8 @@
 "page": 124,
 "chunk": 1,
 "score": 0.657983,
-"sibling": false
+"sibling": false,
+"gate": 0.75687
 },
 {
 "page": 124,
@@ -8494,14 +9031,13 @@
 "page": 33,
 "chunk": 4,
 "score": 0.633529,
-"sibling": false
+"sibling": false,
+"gate": 0.75687
 }
 ],
 "gate": {
 "fused_best": 0.689352,
-"vector_best": 0.720339,
-"corrected": "divis lab revenue fy26",
-"corrected_best": 0.689352
+"vector_best": 0.75687
 }
 },
 "ICICIBANK\ticici bank total deposits": {
@@ -8511,49 +9047,57 @@
 "page": 172,
 "chunk": 10,
 "score": 0.64388,
-"sibling": false
+"sibling": false,
+"gate": 0.767418
 },
 {
 "page": 134,
 "chunk": 5,
 "score": 0.669668,
-"sibling": false
+"sibling": false,
+"gate": 0.767418
 },
 {
 "page": 209,
 "chunk": 0,
 "score": 0.686927,
-"sibling": false
+"sibling": false,
+"gate": 0.767418
 },
 {
 "page": 173,
 "chunk": 4,
 "score": 0.666041,
-"sibling": false
+"sibling": false,
+"gate": 0.767418
 },
 {
 "page": 278,
 "chunk": 2,
 "score": 0.706105,
-"sibling": false
+"sibling": false,
+"gate": 0.767418
 },
 {
 "page": 173,
 "chunk": 3,
 "score": 0.693553,
-"sibling": false
+"sibling": false,
+"gate": 0.767418
 },
 {
 "page": 151,
 "chunk": 1,
 "score": 0.704482,
-"sibling": false
+"sibling": false,
+"gate": 0.767418
 },
 {
 "page": 173,
 "chunk": 2,
 "score": 0.674038,
-"sibling": false
+"sibling": false,
+"gate": 0.767418
 }
 ],
 "context": [
@@ -8621,7 +9165,8 @@
 "page": 172,
 "chunk": 10,
 "score": 0.64388,
-"sibling": false
+"sibling": false,
+"gate": 0.767418
 },
 {
 "page": 172,
@@ -8663,13 +9208,15 @@
 "page": 134,
 "chunk": 5,
 "score": 0.669668,
-"sibling": false
+"sibling": false,
+"gate": 0.767418
 },
 {
 "page": 209,
 "chunk": 0,
 "score": 0.686927,
-"sibling": false
+"sibling": false,
+"gate": 0.767418
 },
 {
 "page": 209,
@@ -8705,19 +9252,22 @@
 "page": 173,
 "chunk": 2,
 "score": 0.674038,
-"sibling": false
+"sibling": false,
+"gate": 0.767418
 },
 {
 "page": 173,
 "chunk": 3,
 "score": 0.693553,
-"sibling": false
+"sibling": false,
+"gate": 0.767418
 },
 {
 "page": 173,
 "chunk": 4,
 "score": 0.666041,
-"sibling": false
+"sibling": false,
+"gate": 0.767418
 },
 {
 "page": 173,
@@ -8747,7 +9297,8 @@
 "page": 278,
 "chunk": 2,
 "score": 0.706105,
-"sibling": false
+"sibling": false,
+"gate": 0.767418
 },
 {
 "page": 151,
@@ -8759,7 +9310,8 @@
 "page": 151,
 "chunk": 1,
 "score": 0.704482,
-"sibling": false
+"sibling": false,
+"gate": 0.767418
 },
 {
 "page": 151,
@@ -8792,49 +9344,57 @@
 "page": 36,
 "chunk": 0,
 "score": 0.622052,
-"sibling": false
+"sibling": false,
+"gate": 0.741053
 },
 {
 "page": 146,
 "chunk": 0,
 "score": 0.660109,
-"sibling": false
+"sibling": false,
+"gate": 0.741053
 },
 {
 "page": 181,
 "chunk": 0,
 "score": 0.647954,
-"sibling": false
+"sibling": false,
+"gate": 0.741053
 },
 {
 "page": 54,
 "chunk": 1,
 "score": 0.497107,
-"sibling": false
+"sibling": false,
+"gate": 0.741053
 },
 {
 "page": 121,
 "chunk": 4,
 "score": 0.66039,
-"sibling": false
+"sibling": false,
+"gate": 0.741053
 },
 {
 "page": 9,
 "chunk": 0,
 "score": 0.648073,
-"sibling": false
+"sibling": false,
+"gate": 0.741053
 },
 {
 "page": 180,
 "chunk": 8,
 "score": 0.668654,
-"sibling": false
+"sibling": false,
+"gate": 0.741053
 },
 {
 "page": 2,
 "chunk": 4,
 "score": 0.560415,
-"sibling": false
+"sibling": false,
+"gate": 0.741053
 }
 ],
 "context": [
@@ -8842,7 +9402,8 @@
 "page": 36,
 "chunk": 0,
 "score": 0.622052,
-"sibling": false
+"sibling": false,
+"gate": 0.741053
 },
 {
 "page": 36,
@@ -8932,50 +9493,55 @@
 "page": 146,
 "chunk": 0,
 "score": 0.660109,
-"sibling": false
+"sibling": false,
+"gate": 0.741053
 },
 {
 "page": 181,
 "chunk": 0,
 "score": 0.647954,
-"sibling": false
+"sibling": false,
+"gate": 0.741053
 },
 {
 "page": 54,
 "chunk": 1,
 "score": 0.497107,
-"sibling": false
+"sibling": false,
+"gate": 0.741053
 },
 {
 "page": 121,
 "chunk": 4,
 "score": 0.66039,
-"sibling": false
+"sibling": false,
+"gate": 0.741053
 },
 {
 "page": 9,
 "chunk": 0,
 "score": 0.648073,
-"sibling": false
+"sibling": false,
+"gate": 0.741053
 },
 {
 "page": 180,
 "chunk": 8,
 "score": 0.668654,
-"sibling": false
+"sibling": false,
+"gate": 0.741053
 },
 {
 "page": 2,
 "chunk": 4,
 "score": 0.560415,
-"sibling": false
+"sibling": false,
+"gate": 0.741053
 }
 ],
 "gate": {
 "fused_best": 0.668654,
-"vector_best": 0.731118,
-"corrected": "summarised BEL's FY26 results",
-"corrected_best": 0.668654
+"vector_best": 0.741053
 }
 },
 "TATASTEEL\tWhat does Tata Steel do?": {
@@ -8985,49 +9551,57 @@
 "page": 76,
 "chunk": 1,
 "score": 0.463764,
-"sibling": false
+"sibling": false,
+"gate": 0.776907
 },
 {
 "page": 165,
 "chunk": 3,
 "score": 0.560613,
-"sibling": false
+"sibling": false,
+"gate": 0.776907
 },
 {
 "page": 318,
 "chunk": 5,
 "score": 0.531862,
-"sibling": false
+"sibling": false,
+"gate": 0.776907
 },
 {
 "page": 440,
 "chunk": 1,
 "score": 0.518713,
-"sibling": false
+"sibling": false,
+"gate": 0.776907
 },
 {
 "page": 130,
 "chunk": 0,
 "score": 0.407664,
-"sibling": false
+"sibling": false,
+"gate": 0.776907
 },
 {
 "page": 133,
 "chunk": 0,
 "score": 0.676816,
-"sibling": false
+"sibling": false,
+"gate": 0.776907
 },
 {
 "page": 152,
 "chunk": 3,
 "score": 0.438715,
-"sibling": false
+"sibling": false,
+"gate": 0.776907
 },
 {
 "page": 172,
 "chunk": 2,
 "score": 0.491923,
-"sibling": false
+"sibling": false,
+"gate": 0.776907
 }
 ],
 "context": [
@@ -9041,7 +9615,8 @@
 "page": 76,
 "chunk": 1,
 "score": 0.463764,
-"sibling": false
+"sibling": false,
+"gate": 0.776907
 },
 {
 "page": 76,
@@ -9083,7 +9658,8 @@
 "page": 165,
 "chunk": 3,
 "score": 0.560613,
-"sibling": false
+"sibling": false,
+"gate": 0.776907
 },
 {
 "page": 165,
@@ -9125,7 +9701,8 @@
 "page": 318,
 "chunk": 5,
 "score": 0.531862,
-"sibling": false
+"sibling": false,
+"gate": 0.776907
 },
 {
 "page": 440,
@@ -9137,7 +9714,8 @@
 "page": 440,
 "chunk": 1,
 "score": 0.518713,
-"sibling": false
+"sibling": false,
+"gate": 0.776907
 },
 {
 "page": 440,
@@ -9161,7 +9739,8 @@
 "page": 130,
 "chunk": 0,
 "score": 0.407664,
-"sibling": false
+"sibling": false,
+"gate": 0.776907
 },
 {
 "page": 130,
@@ -9179,7 +9758,8 @@
 "page": 133,
 "chunk": 0,
 "score": 0.676816,
-"sibling": false
+"sibling": false,
+"gate": 0.776907
 },
 {
 "page": 133,
@@ -9215,7 +9795,8 @@
 "page": 152,
 "chunk": 3,
 "score": 0.438715,
-"sibling": false
+"sibling": false,
+"gate": 0.776907
 },
 {
 "page": 152,
@@ -9233,7 +9814,8 @@
 "page": 172,
 "chunk": 2,
 "score": 0.491923,
-"sibling": false
+"sibling": false,
+"gate": 0.776907
 }
 ],
 "gate": {
@@ -9248,49 +9830,57 @@
 "page": 293,
 "chunk": 1,
 "score": 0.494311,
-"sibling": false
+"sibling": false,
+"gate": 0.669844
 },
 {
 "page": 90,
 "chunk": 4,
 "score": 0.466116,
-"sibling": false
+"sibling": false,
+"gate": 0.669844
 },
 {
 "page": 60,
 "chunk": 0,
 "score": 0.513789,
-"sibling": false
+"sibling": false,
+"gate": 0.669844
 },
 {
 "page": 260,
 "chunk": 0,
 "score": 0.525683,
-"sibling": false
+"sibling": false,
+"gate": 0.669844
 },
 {
 "page": 60,
 "chunk": 1,
 "score": 0.669844,
-"sibling": false
+"sibling": false,
+"gate": 0.669844
 },
 {
 "page": 61,
 "chunk": 2,
 "score": 0.626107,
-"sibling": false
+"sibling": false,
+"gate": 0.669844
 },
 {
 "page": 126,
 "chunk": 0,
 "score": 0.454985,
-"sibling": false
+"sibling": false,
+"gate": 0.669844
 },
 {
 "page": 61,
 "chunk": 3,
 "score": 0.619591,
-"sibling": false
+"sibling": false,
+"gate": 0.669844
 }
 ],
 "context": [
@@ -9304,7 +9894,8 @@
 "page": 293,
 "chunk": 1,
 "score": 0.494311,
-"sibling": false
+"sibling": false,
+"gate": 0.669844
 },
 {
 "page": 293,
@@ -9340,19 +9931,22 @@
 "page": 90,
 "chunk": 4,
 "score": 0.466116,
-"sibling": false
+"sibling": false,
+"gate": 0.669844
 },
 {
 "page": 60,
 "chunk": 0,
 "score": 0.513789,
-"sibling": false
+"sibling": false,
+"gate": 0.669844
 },
 {
 "page": 60,
 "chunk": 1,
 "score": 0.669844,
-"sibling": false
+"sibling": false,
+"gate": 0.669844
 },
 {
 "page": 60,
@@ -9370,7 +9964,8 @@
 "page": 260,
 "chunk": 0,
 "score": 0.525683,
-"sibling": false
+"sibling": false,
+"gate": 0.669844
 },
 {
 "page": 260,
@@ -9418,19 +10013,22 @@
 "page": 61,
 "chunk": 2,
 "score": 0.626107,
-"sibling": false
+"sibling": false,
+"gate": 0.669844
 },
 {
 "page": 61,
 "chunk": 3,
 "score": 0.619591,
-"sibling": false
+"sibling": false,
+"gate": 0.669844
 },
 {
 "page": 126,
 "chunk": 0,
 "score": 0.454985,
-"sibling": false
+"sibling": false,
+"gate": 0.669844
 },
 {
 "page": 126,
@@ -9469,49 +10067,57 @@
 "page": 738,
 "chunk": 2,
 "score": 0.542984,
-"sibling": false
+"sibling": false,
+"gate": 0.659209
 },
 {
 "page": 731,
 "chunk": 3,
 "score": 0.563228,
-"sibling": false
+"sibling": false,
+"gate": 0.659209
 },
 {
 "page": 396,
 "chunk": 1,
 "score": 0.597655,
-"sibling": false
+"sibling": false,
+"gate": 0.659209
 },
 {
 "page": 40,
 "chunk": 3,
 "score": 0.465558,
-"sibling": false
+"sibling": false,
+"gate": 0.659209
 },
 {
 "page": 535,
 "chunk": 2,
 "score": 0.609596,
-"sibling": false
+"sibling": false,
+"gate": 0.659209
 },
 {
 "page": 25,
 "chunk": 7,
 "score": 0.481225,
-"sibling": false
+"sibling": false,
+"gate": 0.659209
 },
 {
 "page": 459,
 "chunk": 0,
 "score": 0.565493,
-"sibling": false
+"sibling": false,
+"gate": 0.659209
 },
 {
 "page": 601,
 "chunk": 4,
 "score": 0.52664,
-"sibling": false
+"sibling": false,
+"gate": 0.659209
 }
 ],
 "context": [
@@ -9531,7 +10137,8 @@
 "page": 738,
 "chunk": 2,
 "score": 0.542984,
-"sibling": false
+"sibling": false,
+"gate": 0.659209
 },
 {
 "page": 738,
@@ -9573,7 +10180,8 @@
 "page": 731,
 "chunk": 3,
 "score": 0.563228,
-"sibling": false
+"sibling": false,
+"gate": 0.659209
 },
 {
 "page": 731,
@@ -9603,7 +10211,8 @@
 "page": 396,
 "chunk": 1,
 "score": 0.597655,
-"sibling": false
+"sibling": false,
+"gate": 0.659209
 },
 {
 "page": 396,
@@ -9645,7 +10254,8 @@
 "page": 40,
 "chunk": 3,
 "score": 0.465558,
-"sibling": false
+"sibling": false,
+"gate": 0.659209
 },
 {
 "page": 40,
@@ -9669,7 +10279,8 @@
 "page": 535,
 "chunk": 2,
 "score": 0.609596,
-"sibling": false
+"sibling": false,
+"gate": 0.659209
 },
 {
 "page": 535,
@@ -9705,19 +10316,22 @@
 "page": 25,
 "chunk": 7,
 "score": 0.481225,
-"sibling": false
+"sibling": false,
+"gate": 0.659209
 },
 {
 "page": 459,
 "chunk": 0,
 "score": 0.565493,
-"sibling": false
+"sibling": false,
+"gate": 0.659209
 },
 {
 "page": 601,
 "chunk": 4,
 "score": 0.52664,
-"sibling": false
+"sibling": false,
+"gate": 0.659209
 }
 ],
 "gate": {
@@ -9732,49 +10346,57 @@
 "page": 3,
 "chunk": 1,
 "score": 0.695727,
-"sibling": false
+"sibling": false,
+"gate": 0.713471
 },
 {
 "page": 226,
 "chunk": 2,
 "score": 0.702483,
-"sibling": false
+"sibling": false,
+"gate": 0.713471
 },
 {
 "page": 226,
 "chunk": 1,
 "score": 0.713471,
-"sibling": false
+"sibling": false,
+"gate": 0.713471
 },
 {
 "page": 226,
 "chunk": 0,
 "score": 0.709363,
-"sibling": false
+"sibling": false,
+"gate": 0.713471
 },
 {
 "page": 227,
 "chunk": 0,
 "score": 0.679311,
-"sibling": false
+"sibling": false,
+"gate": 0.713471
 },
 {
 "page": 18,
 "chunk": 4,
 "score": 0.664801,
-"sibling": false
+"sibling": false,
+"gate": 0.713471
 },
 {
 "page": 226,
 "chunk": 3,
 "score": 0.663761,
-"sibling": false
+"sibling": false,
+"gate": 0.713471
 },
 {
 "page": 18,
 "chunk": 3,
 "score": 0.675419,
-"sibling": false
+"sibling": false,
+"gate": 0.713471
 }
 ],
 "context": [
@@ -9788,7 +10410,8 @@
 "page": 3,
 "chunk": 1,
 "score": 0.695727,
-"sibling": false
+"sibling": false,
+"gate": 0.713471
 },
 {
 "page": 3,
@@ -9800,25 +10423,29 @@
 "page": 226,
 "chunk": 0,
 "score": 0.709363,
-"sibling": false
+"sibling": false,
+"gate": 0.713471
 },
 {
 "page": 226,
 "chunk": 1,
 "score": 0.713471,
-"sibling": false
+"sibling": false,
+"gate": 0.713471
 },
 {
 "page": 226,
 "chunk": 2,
 "score": 0.702483,
-"sibling": false
+"sibling": false,
+"gate": 0.713471
 },
 {
 "page": 226,
 "chunk": 3,
 "score": 0.663761,
-"sibling": false
+"sibling": false,
+"gate": 0.713471
 },
 {
 "page": 226,
@@ -9830,7 +10457,8 @@
 "page": 227,
 "chunk": 0,
 "score": 0.679311,
-"sibling": false
+"sibling": false,
+"gate": 0.713471
 },
 {
 "page": 227,
@@ -9866,13 +10494,15 @@
 "page": 18,
 "chunk": 3,
 "score": 0.675419,
-"sibling": false
+"sibling": false,
+"gate": 0.713471
 },
 {
 "page": 18,
 "chunk": 4,
 "score": 0.664801,
-"sibling": false
+"sibling": false,
+"gate": 0.713471
 },
 {
 "page": 18,
@@ -9893,49 +10523,57 @@
 "page": 332,
 "chunk": 4,
 "score": 0.697578,
-"sibling": false
+"sibling": false,
+"gate": 0.736468
 },
 {
 "page": 90,
 "chunk": 5,
 "score": 0.627042,
-"sibling": false
+"sibling": false,
+"gate": 0.736468
 },
 {
 "page": 232,
 "chunk": 0,
 "score": 0.612911,
-"sibling": false
+"sibling": false,
+"gate": 0.736468
 },
 {
 "page": 455,
 "chunk": 5,
 "score": 0.638577,
-"sibling": false
+"sibling": false,
+"gate": 0.736468
 },
 {
 "page": 210,
 "chunk": 5,
 "score": 0.557201,
-"sibling": false
+"sibling": false,
+"gate": 0.736468
 },
 {
 "page": 90,
 "chunk": 4,
 "score": 0.619917,
-"sibling": false
+"sibling": false,
+"gate": 0.736468
 },
 {
 "page": 76,
 "chunk": 1,
 "score": 0.579111,
-"sibling": false
+"sibling": false,
+"gate": 0.736468
 },
 {
 "page": 210,
 "chunk": 4,
 "score": 0.572901,
-"sibling": false
+"sibling": false,
+"gate": 0.736468
 }
 ],
 "context": [
@@ -9967,7 +10605,8 @@
 "page": 332,
 "chunk": 4,
 "score": 0.697578,
-"sibling": false
+"sibling": false,
+"gate": 0.736468
 },
 {
 "page": 332,
@@ -10009,13 +10648,15 @@
 "page": 90,
 "chunk": 4,
 "score": 0.619917,
-"sibling": false
+"sibling": false,
+"gate": 0.736468
 },
 {
 "page": 90,
 "chunk": 5,
 "score": 0.627042,
-"sibling": false
+"sibling": false,
+"gate": 0.736468
 },
 {
 "page": 90,
@@ -10027,7 +10668,8 @@
 "page": 232,
 "chunk": 0,
 "score": 0.612911,
-"sibling": false
+"sibling": false,
+"gate": 0.736468
 },
 {
 "page": 232,
@@ -10099,7 +10741,8 @@
 "page": 455,
 "chunk": 5,
 "score": 0.638577,
-"sibling": false
+"sibling": false,
+"gate": 0.736468
 },
 {
 "page": 210,
@@ -10129,13 +10772,15 @@
 "page": 210,
 "chunk": 4,
 "score": 0.572901,
-"sibling": false
+"sibling": false,
+"gate": 0.736468
 },
 {
 "page": 210,
 "chunk": 5,
 "score": 0.557201,
-"sibling": false
+"sibling": false,
+"gate": 0.736468
 },
 {
 "page": 76,
@@ -10147,7 +10792,8 @@
 "page": 76,
 "chunk": 1,
 "score": 0.579111,
-"sibling": false
+"sibling": false,
+"gate": 0.736468
 }
 ],
 "gate": {
@@ -10162,49 +10808,57 @@
 "page": 18,
 "chunk": 5,
 "score": 0.680651,
-"sibling": false
+"sibling": false,
+"gate": 0.7328
 },
 {
 "page": 36,
 "chunk": 0,
 "score": 0.729818,
-"sibling": false
+"sibling": false,
+"gate": 0.7328
 },
 {
 "page": 348,
 "chunk": 4,
 "score": 0.588414,
-"sibling": false
+"sibling": false,
+"gate": 0.7328
 },
 {
 "page": 557,
 "chunk": 1,
 "score": 0.608565,
-"sibling": false
+"sibling": false,
+"gate": 0.7328
 },
 {
 "page": 36,
 "chunk": 1,
 "score": 0.7328,
-"sibling": false
+"sibling": false,
+"gate": 0.7328
 },
 {
 "page": 622,
 "chunk": 1,
 "score": 0.58617,
-"sibling": false
+"sibling": false,
+"gate": 0.7328
 },
 {
 "page": 540,
 "chunk": 1,
 "score": 0.599545,
-"sibling": false
+"sibling": false,
+"gate": 0.7328
 },
 {
 "page": 37,
 "chunk": 0,
 "score": 0.602772,
-"sibling": false
+"sibling": false,
+"gate": 0.7328
 }
 ],
 "context": [
@@ -10242,19 +10896,22 @@
 "page": 18,
 "chunk": 5,
 "score": 0.680651,
-"sibling": false
+"sibling": false,
+"gate": 0.7328
 },
 {
 "page": 36,
 "chunk": 0,
 "score": 0.729818,
-"sibling": false
+"sibling": false,
+"gate": 0.7328
 },
 {
 "page": 36,
 "chunk": 1,
 "score": 0.7328,
-"sibling": false
+"sibling": false,
+"gate": 0.7328
 },
 {
 "page": 36,
@@ -10290,7 +10947,8 @@
 "page": 348,
 "chunk": 4,
 "score": 0.588414,
-"sibling": false
+"sibling": false,
+"gate": 0.7328
 },
 {
 "page": 557,
@@ -10302,7 +10960,8 @@
 "page": 557,
 "chunk": 1,
 "score": 0.608565,
-"sibling": false
+"sibling": false,
+"gate": 0.7328
 },
 {
 "page": 557,
@@ -10326,7 +10985,8 @@
 "page": 622,
 "chunk": 1,
 "score": 0.58617,
-"sibling": false
+"sibling": false,
+"gate": 0.7328
 },
 {
 "page": 622,
@@ -10350,7 +11010,8 @@
 "page": 540,
 "chunk": 1,
 "score": 0.599545,
-"sibling": false
+"sibling": false,
+"gate": 0.7328
 },
 {
 "page": 540,
@@ -10374,7 +11035,8 @@
 "page": 37,
 "chunk": 0,
 "score": 0.602772,
-"sibling": false
+"sibling": false,
+"gate": 0.7328
 },
 {
 "page": 37,
@@ -10401,49 +11063,57 @@
 "page": 39,
 "chunk": 2,
 "score": 0.605948,
-"sibling": false
+"sibling": false,
+"gate": 0.643324
 },
 {
 "page": 251,
 "chunk": 3,
 "score": 0.610391,
-"sibling": false
+"sibling": false,
+"gate": 0.643324
 },
 {
 "page": 40,
 "chunk": 0,
 "score": 0.589543,
-"sibling": false
+"sibling": false,
+"gate": 0.643324
 },
 {
 "page": 400,
 "chunk": 0,
 "score": 0.596232,
-"sibling": false
+"sibling": false,
+"gate": 0.643324
 },
 {
 "page": 289,
 "chunk": 3,
 "score": 0.577557,
-"sibling": false
+"sibling": false,
+"gate": 0.643324
 },
 {
 "page": 248,
 "chunk": 6,
 "score": 0.574843,
-"sibling": false
+"sibling": false,
+"gate": 0.643324
 },
 {
 "page": 39,
 "chunk": 3,
 "score": 0.550206,
-"sibling": false
+"sibling": false,
+"gate": 0.643324
 },
 {
 "page": 251,
 "chunk": 0,
 "score": 0.576485,
-"sibling": false
+"sibling": false,
+"gate": 0.643324
 }
 ],
 "context": [
@@ -10463,13 +11133,15 @@
 "page": 39,
 "chunk": 2,
 "score": 0.605948,
-"sibling": false
+"sibling": false,
+"gate": 0.643324
 },
 {
 "page": 39,
 "chunk": 3,
 "score": 0.550206,
-"sibling": false
+"sibling": false,
+"gate": 0.643324
 },
 {
 "page": 39,
@@ -10493,7 +11165,8 @@
 "page": 251,
 "chunk": 0,
 "score": 0.576485,
-"sibling": false
+"sibling": false,
+"gate": 0.643324
 },
 {
 "page": 251,
@@ -10511,7 +11184,8 @@
 "page": 251,
 "chunk": 3,
 "score": 0.610391,
-"sibling": false
+"sibling": false,
+"gate": 0.643324
 },
 {
 "page": 251,
@@ -10529,7 +11203,8 @@
 "page": 40,
 "chunk": 0,
 "score": 0.589543,
-"sibling": false
+"sibling": false,
+"gate": 0.643324
 },
 {
 "page": 40,
@@ -10577,7 +11252,8 @@
 "page": 400,
 "chunk": 0,
 "score": 0.596232,
-"sibling": false
+"sibling": false,
+"gate": 0.643324
 },
 {
 "page": 400,
@@ -10631,7 +11307,8 @@
 "page": 289,
 "chunk": 3,
 "score": 0.577557,
-"sibling": false
+"sibling": false,
+"gate": 0.643324
 },
 {
 "page": 289,
@@ -10655,7 +11332,8 @@
 "page": 248,
 "chunk": 6,
 "score": 0.574843,
-"sibling": false
+"sibling": false,
+"gate": 0.643324
 }
 ],
 "gate": {
@@ -10670,49 +11348,57 @@
 "page": 6,
 "chunk": 0,
 "score": 0.672923,
-"sibling": false
+"sibling": false,
+"gate": 0.731975
 },
 {
 "page": 332,
 "chunk": 1,
 "score": 0.679429,
-"sibling": false
+"sibling": false,
+"gate": 0.731975
 },
 {
 "page": 336,
 "chunk": 1,
 "score": 0.687967,
-"sibling": false
+"sibling": false,
+"gate": 0.731975
 },
 {
 "page": 337,
 "chunk": 1,
 "score": 0.700154,
-"sibling": false
+"sibling": false,
+"gate": 0.731975
 },
 {
 "page": 411,
 "chunk": 2,
 "score": 0.672414,
-"sibling": false
+"sibling": false,
+"gate": 0.731975
 },
 {
 "page": 335,
 "chunk": 2,
 "score": 0.672414,
-"sibling": false
+"sibling": false,
+"gate": 0.731975
 },
 {
 "page": 180,
 "chunk": 3,
 "score": 0.682774,
-"sibling": false
+"sibling": false,
+"gate": 0.731975
 },
 {
 "page": 108,
 "chunk": 2,
 "score": 0.674452,
-"sibling": false
+"sibling": false,
+"gate": 0.731975
 }
 ],
 "context": [
@@ -10720,7 +11406,8 @@
 "page": 6,
 "chunk": 0,
 "score": 0.672923,
-"sibling": false
+"sibling": false,
+"gate": 0.731975
 },
 {
 "page": 6,
@@ -10738,7 +11425,8 @@
 "page": 332,
 "chunk": 1,
 "score": 0.679429,
-"sibling": false
+"sibling": false,
+"gate": 0.731975
 },
 {
 "page": 332,
@@ -10762,7 +11450,8 @@
 "page": 336,
 "chunk": 1,
 "score": 0.687967,
-"sibling": false
+"sibling": false,
+"gate": 0.731975
 },
 {
 "page": 336,
@@ -10792,7 +11481,8 @@
 "page": 337,
 "chunk": 1,
 "score": 0.700154,
-"sibling": false
+"sibling": false,
+"gate": 0.731975
 },
 {
 "page": 337,
@@ -10828,7 +11518,8 @@
 "page": 411,
 "chunk": 2,
 "score": 0.672414,
-"sibling": false
+"sibling": false,
+"gate": 0.731975
 },
 {
 "page": 411,
@@ -10858,7 +11549,8 @@
 "page": 335,
 "chunk": 2,
 "score": 0.672414,
-"sibling": false
+"sibling": false,
+"gate": 0.731975
 },
 {
 "page": 335,
@@ -10894,7 +11586,8 @@
 "page": 180,
 "chunk": 3,
 "score": 0.682774,
-"sibling": false
+"sibling": false,
+"gate": 0.731975
 },
 {
 "page": 180,
@@ -10918,7 +11611,8 @@
 "page": 108,
 "chunk": 2,
 "score": 0.674452,
-"sibling": false
+"sibling": false,
+"gate": 0.731975
 },
 {
 "page": 108,
@@ -10939,49 +11633,57 @@
 "page": 77,
 "chunk": 0,
 "score": 0.652579,
-"sibling": false
+"sibling": false,
+"gate": 0.711615
 },
 {
 "page": 24,
 "chunk": 0,
 "score": 0.691473,
-"sibling": false
+"sibling": false,
+"gate": 0.711615
 },
 {
 "page": 13,
 "chunk": 0,
 "score": 0.542384,
-"sibling": false
+"sibling": false,
+"gate": 0.711615
 },
 {
 "page": 195,
 "chunk": 1,
 "score": 0.629461,
-"sibling": false
+"sibling": false,
+"gate": 0.711615
 },
 {
 "page": 7,
 "chunk": 0,
 "score": 0.660321,
-"sibling": false
+"sibling": false,
+"gate": 0.711615
 },
 {
 "page": 19,
 "chunk": 0,
 "score": 0.558269,
-"sibling": false
+"sibling": false,
+"gate": 0.711615
 },
 {
 "page": 31,
 "chunk": 1,
 "score": 0.584842,
-"sibling": false
+"sibling": false,
+"gate": 0.711615
 },
 {
 "page": 47,
 "chunk": 0,
 "score": 0.703812,
-"sibling": false
+"sibling": false,
+"gate": 0.711615
 }
 ],
 "context": [
@@ -10989,7 +11691,8 @@
 "page": 77,
 "chunk": 0,
 "score": 0.652579,
-"sibling": false
+"sibling": false,
+"gate": 0.711615
 },
 {
 "page": 77,
@@ -11007,13 +11710,15 @@
 "page": 24,
 "chunk": 0,
 "score": 0.691473,
-"sibling": false
+"sibling": false,
+"gate": 0.711615
 },
 {
 "page": 13,
 "chunk": 0,
 "score": 0.542384,
-"sibling": false
+"sibling": false,
+"gate": 0.711615
 },
 {
 "page": 13,
@@ -11031,7 +11736,8 @@
 "page": 195,
 "chunk": 1,
 "score": 0.629461,
-"sibling": false
+"sibling": false,
+"gate": 0.711615
 },
 {
 "page": 195,
@@ -11073,7 +11779,8 @@
 "page": 7,
 "chunk": 0,
 "score": 0.660321,
-"sibling": false
+"sibling": false,
+"gate": 0.711615
 },
 {
 "page": 7,
@@ -11085,7 +11792,8 @@
 "page": 19,
 "chunk": 0,
 "score": 0.558269,
-"sibling": false
+"sibling": false,
+"gate": 0.711615
 },
 {
 "page": 31,
@@ -11097,13 +11805,15 @@
 "page": 31,
 "chunk": 1,
 "score": 0.584842,
-"sibling": false
+"sibling": false,
+"gate": 0.711615
 },
 {
 "page": 47,
 "chunk": 0,
 "score": 0.703812,
-"sibling": false
+"sibling": false,
+"gate": 0.711615
 },
 {
 "page": 47,
@@ -11114,9 +11824,7 @@
 ],
 "gate": {
 "fused_best": 0.703812,
-"vector_best": 0.707992,
-"corrected": "how many schools in kenya use navneet app",
-"corrected_best": 0.703812
+"vector_best": 0.711615
 }
 },
 "CHAMBAL\tchambal drone sprayng numbers fy25": {
@@ -11126,49 +11834,57 @@
 "page": 65,
 "chunk": 4,
 "score": 0.615468,
-"sibling": false
+"sibling": false,
+"gate": 0.696153
 },
 {
 "page": 50,
 "chunk": 4,
 "score": 0.696153,
-"sibling": false
+"sibling": false,
+"gate": 0.696153
 },
 {
 "page": 86,
 "chunk": 3,
 "score": 0.636644,
-"sibling": false
+"sibling": false,
+"gate": 0.696153
 },
 {
 "page": 68,
 "chunk": 4,
 "score": 0.606824,
-"sibling": false
+"sibling": false,
+"gate": 0.696153
 },
 {
 "page": 74,
 "chunk": 4,
 "score": 0.576229,
-"sibling": false
+"sibling": false,
+"gate": 0.696153
 },
 {
 "page": 75,
 "chunk": 0,
 "score": 0.572312,
-"sibling": false
+"sibling": false,
+"gate": 0.696153
 },
 {
 "page": 78,
 "chunk": 3,
 "score": 0.634164,
-"sibling": false
+"sibling": false,
+"gate": 0.696153
 },
 {
 "page": 65,
 "chunk": 1,
 "score": 0.503377,
-"sibling": false
+"sibling": false,
+"gate": 0.696153
 }
 ],
 "context": [
@@ -11182,7 +11898,8 @@
 "page": 65,
 "chunk": 1,
 "score": 0.503377,
-"sibling": false
+"sibling": false,
+"gate": 0.696153
 },
 {
 "page": 65,
@@ -11200,7 +11917,8 @@
 "page": 65,
 "chunk": 4,
 "score": 0.615468,
-"sibling": false
+"sibling": false,
+"gate": 0.696153
 },
 {
 "page": 65,
@@ -11260,7 +11978,8 @@
 "page": 50,
 "chunk": 4,
 "score": 0.696153,
-"sibling": false
+"sibling": false,
+"gate": 0.696153
 },
 {
 "page": 50,
@@ -11296,7 +12015,8 @@
 "page": 86,
 "chunk": 3,
 "score": 0.636644,
-"sibling": false
+"sibling": false,
+"gate": 0.696153
 },
 {
 "page": 86,
@@ -11332,7 +12052,8 @@
 "page": 68,
 "chunk": 4,
 "score": 0.606824,
-"sibling": false
+"sibling": false,
+"gate": 0.696153
 },
 {
 "page": 74,
@@ -11356,7 +12077,8 @@
 "page": 74,
 "chunk": 4,
 "score": 0.576229,
-"sibling": false
+"sibling": false,
+"gate": 0.696153
 },
 {
 "page": 74,
@@ -11374,13 +12096,15 @@
 "page": 75,
 "chunk": 0,
 "score": 0.572312,
-"sibling": false
+"sibling": false,
+"gate": 0.696153
 },
 {
 "page": 78,
 "chunk": 3,
 "score": 0.634164,
-"sibling": false
+"sibling": false,
+"gate": 0.696153
 }
 ],
 "gate": {
@@ -11395,49 +12119,57 @@
 "page": 452,
 "chunk": 0,
 "score": 0.631969,
-"sibling": false
+"sibling": false,
+"gate": 0.672238
 },
 {
 "page": 336,
 "chunk": 4,
 "score": 0.666531,
-"sibling": false
+"sibling": false,
+"gate": 0.672238
 },
 {
 "page": 339,
 "chunk": 4,
 "score": 0.642017,
-"sibling": false
+"sibling": false,
+"gate": 0.672238
 },
 {
 "page": 269,
 "chunk": 0,
 "score": 0.63115,
-"sibling": false
+"sibling": false,
+"gate": 0.672238
 },
 {
 "page": 188,
 "chunk": 0,
 "score": 0.634385,
-"sibling": false
+"sibling": false,
+"gate": 0.672238
 },
 {
 "page": 377,
 "chunk": 4,
 "score": 0.629474,
-"sibling": false
+"sibling": false,
+"gate": 0.672238
 },
 {
 "page": 547,
 "chunk": 3,
 "score": 0.628032,
-"sibling": false
+"sibling": false,
+"gate": 0.672238
 },
 {
 "page": 152,
 "chunk": 1,
 "score": 0.628347,
-"sibling": false
+"sibling": false,
+"gate": 0.672238
 }
 ],
 "context": [
@@ -11445,7 +12177,8 @@
 "page": 452,
 "chunk": 0,
 "score": 0.631969,
-"sibling": false
+"sibling": false,
+"gate": 0.672238
 },
 {
 "page": 452,
@@ -11481,7 +12214,8 @@
 "page": 336,
 "chunk": 4,
 "score": 0.666531,
-"sibling": false
+"sibling": false,
+"gate": 0.672238
 },
 {
 "page": 339,
@@ -11511,13 +12245,15 @@
 "page": 339,
 "chunk": 4,
 "score": 0.642017,
-"sibling": false
+"sibling": false,
+"gate": 0.672238
 },
 {
 "page": 269,
 "chunk": 0,
 "score": 0.63115,
-"sibling": false
+"sibling": false,
+"gate": 0.672238
 },
 {
 "page": 269,
@@ -11541,7 +12277,8 @@
 "page": 188,
 "chunk": 0,
 "score": 0.634385,
-"sibling": false
+"sibling": false,
+"gate": 0.672238
 },
 {
 "page": 188,
@@ -11613,7 +12350,8 @@
 "page": 377,
 "chunk": 4,
 "score": 0.629474,
-"sibling": false
+"sibling": false,
+"gate": 0.672238
 },
 {
 "page": 547,
@@ -11631,7 +12369,8 @@
 "page": 547,
 "chunk": 3,
 "score": 0.628032,
-"sibling": false
+"sibling": false,
+"gate": 0.672238
 },
 {
 "page": 547,
@@ -11643,14 +12382,13 @@
 "page": 152,
 "chunk": 1,
 "score": 0.628347,
-"sibling": false
+"sibling": false,
+"gate": 0.672238
 }
 ],
 "gate": {
 "fused_best": 0.666531,
-"vector_best": 0.67073,
-"corrected": "summarised SBI's lunar mining business",
-"corrected_best": 0.666531
+"vector_best": 0.672238
 }
 },
 "EICHERMOT\tHow many helicopters did Eicher Motors sell in FY26?": {
@@ -11660,49 +12398,57 @@
 "page": 214,
 "chunk": 0,
 "score": 0.697812,
-"sibling": false
+"sibling": false,
+"gate": 0.727898
 },
 {
 "page": 10,
 "chunk": 0,
 "score": 0.667885,
-"sibling": false
+"sibling": false,
+"gate": 0.727898
 },
 {
 "page": 306,
 "chunk": 0,
 "score": 0.688401,
-"sibling": false
+"sibling": false,
+"gate": 0.727898
 },
 {
 "page": 95,
 "chunk": 0,
 "score": 0.684871,
-"sibling": false
+"sibling": false,
+"gate": 0.727898
 },
 {
 "page": 33,
 "chunk": 0,
 "score": 0.682931,
-"sibling": false
+"sibling": false,
+"gate": 0.727898
 },
 {
 "page": 414,
 "chunk": 0,
 "score": 0.673543,
-"sibling": false
+"sibling": false,
+"gate": 0.727898
 },
 {
 "page": 8,
 "chunk": 0,
 "score": 0.673205,
-"sibling": false
+"sibling": false,
+"gate": 0.727898
 },
 {
 "page": 38,
 "chunk": 0,
 "score": 0.661995,
-"sibling": false
+"sibling": false,
+"gate": 0.727898
 }
 ],
 "context": [
@@ -11710,7 +12456,8 @@
 "page": 214,
 "chunk": 0,
 "score": 0.697812,
-"sibling": false
+"sibling": false,
+"gate": 0.727898
 },
 {
 "page": 214,
@@ -11746,13 +12493,15 @@
 "page": 10,
 "chunk": 0,
 "score": 0.667885,
-"sibling": false
+"sibling": false,
+"gate": 0.727898
 },
 {
 "page": 306,
 "chunk": 0,
 "score": 0.688401,
-"sibling": false
+"sibling": false,
+"gate": 0.727898
 },
 {
 "page": 306,
@@ -11794,7 +12543,8 @@
 "page": 95,
 "chunk": 0,
 "score": 0.684871,
-"sibling": false
+"sibling": false,
+"gate": 0.727898
 },
 {
 "page": 95,
@@ -11860,7 +12610,8 @@
 "page": 33,
 "chunk": 0,
 "score": 0.682931,
-"sibling": false
+"sibling": false,
+"gate": 0.727898
 },
 {
 "page": 33,
@@ -11878,7 +12629,8 @@
 "page": 414,
 "chunk": 0,
 "score": 0.673543,
-"sibling": false
+"sibling": false,
+"gate": 0.727898
 },
 {
 "page": 414,
@@ -11902,7 +12654,8 @@
 "page": 8,
 "chunk": 0,
 "score": 0.673205,
-"sibling": false
+"sibling": false,
+"gate": 0.727898
 },
 {
 "page": 8,
@@ -11920,7 +12673,8 @@
 "page": 38,
 "chunk": 0,
 "score": 0.661995,
-"sibling": false
+"sibling": false,
+"gate": 0.727898
 }
 ],
 "gate": {
@@ -11935,49 +12689,57 @@
 "page": 111,
 "chunk": 5,
 "score": 0.631025,
-"sibling": false
+"sibling": false,
+"gate": 0.691785
 },
 {
 "page": 47,
 "chunk": 7,
 "score": 0.65155,
-"sibling": false
+"sibling": false,
+"gate": 0.691785
 },
 {
 "page": 144,
 "chunk": 8,
 "score": 0.591729,
-"sibling": false
+"sibling": false,
+"gate": 0.691785
 },
 {
 "page": 144,
 "chunk": 5,
 "score": 0.584228,
-"sibling": false
+"sibling": false,
+"gate": 0.691785
 },
 {
 "page": 98,
 "chunk": 0,
 "score": 0.594708,
-"sibling": false
+"sibling": false,
+"gate": 0.691785
 },
 {
 "page": 144,
 "chunk": 7,
 "score": 0.567278,
-"sibling": false
+"sibling": false,
+"gate": 0.691785
 },
 {
 "page": 129,
 "chunk": 7,
 "score": 0.622703,
-"sibling": false
+"sibling": false,
+"gate": 0.691785
 },
 {
 "page": 105,
 "chunk": 3,
 "score": 0.584756,
-"sibling": false
+"sibling": false,
+"gate": 0.691785
 }
 ],
 "context": [
@@ -12015,7 +12777,8 @@
 "page": 111,
 "chunk": 5,
 "score": 0.631025,
-"sibling": false
+"sibling": false,
+"gate": 0.691785
 },
 {
 "page": 111,
@@ -12099,7 +12862,8 @@
 "page": 47,
 "chunk": 7,
 "score": 0.65155,
-"sibling": false
+"sibling": false,
+"gate": 0.691785
 },
 {
 "page": 47,
@@ -12135,7 +12899,8 @@
 "page": 144,
 "chunk": 5,
 "score": 0.584228,
-"sibling": false
+"sibling": false,
+"gate": 0.691785
 },
 {
 "page": 144,
@@ -12147,13 +12912,15 @@
 "page": 144,
 "chunk": 7,
 "score": 0.567278,
-"sibling": false
+"sibling": false,
+"gate": 0.691785
 },
 {
 "page": 144,
 "chunk": 8,
 "score": 0.591729,
-"sibling": false
+"sibling": false,
+"gate": 0.691785
 },
 {
 "page": 144,
@@ -12165,19 +12932,22 @@
 "page": 98,
 "chunk": 0,
 "score": 0.594708,
-"sibling": false
+"sibling": false,
+"gate": 0.691785
 },
 {
 "page": 129,
 "chunk": 7,
 "score": 0.622703,
-"sibling": false
+"sibling": false,
+"gate": 0.691785
 },
 {
 "page": 105,
 "chunk": 3,
 "score": 0.584756,
-"sibling": false
+"sibling": false,
+"gate": 0.691785
 }
 ],
 "gate": {
@@ -12192,49 +12962,57 @@
 "page": 63,
 "chunk": 2,
 "score": 0.544922,
-"sibling": false
+"sibling": false,
+"gate": 0.572144
 },
 {
 "page": 31,
 "chunk": 2,
 "score": 0.525907,
-"sibling": false
+"sibling": false,
+"gate": 0.572144
 },
 {
 "page": 80,
 "chunk": 1,
 "score": 0.529784,
-"sibling": false
+"sibling": false,
+"gate": 0.572144
 },
 {
 "page": 63,
 "chunk": 1,
 "score": 0.52109,
-"sibling": false
+"sibling": false,
+"gate": 0.572144
 },
 {
 "page": 213,
 "chunk": 2,
 "score": 0.51233,
-"sibling": false
+"sibling": false,
+"gate": 0.572144
 },
 {
 "page": 282,
 "chunk": 0,
 "score": 0.572144,
-"sibling": false
+"sibling": false,
+"gate": 0.572144
 },
 {
 "page": 458,
 "chunk": 2,
 "score": 0.387311,
-"sibling": false
+"sibling": false,
+"gate": 0.572144
 },
 {
 "page": 93,
 "chunk": 2,
 "score": 0.569538,
-"sibling": false
+"sibling": false,
+"gate": 0.572144
 }
 ],
 "context": [
@@ -12248,13 +13026,15 @@
 "page": 63,
 "chunk": 1,
 "score": 0.52109,
-"sibling": false
+"sibling": false,
+"gate": 0.572144
 },
 {
 "page": 63,
 "chunk": 2,
 "score": 0.544922,
-"sibling": false
+"sibling": false,
+"gate": 0.572144
 },
 {
 "page": 63,
@@ -12320,7 +13100,8 @@
 "page": 31,
 "chunk": 2,
 "score": 0.525907,
-"sibling": false
+"sibling": false,
+"gate": 0.572144
 },
 {
 "page": 31,
@@ -12344,7 +13125,8 @@
 "page": 80,
 "chunk": 1,
 "score": 0.529784,
-"sibling": false
+"sibling": false,
+"gate": 0.572144
 },
 {
 "page": 80,
@@ -12380,7 +13162,8 @@
 "page": 213,
 "chunk": 2,
 "score": 0.51233,
-"sibling": false
+"sibling": false,
+"gate": 0.572144
 },
 {
 "page": 213,
@@ -12410,7 +13193,8 @@
 "page": 282,
 "chunk": 0,
 "score": 0.572144,
-"sibling": false
+"sibling": false,
+"gate": 0.572144
 },
 {
 "page": 282,
@@ -12440,13 +13224,15 @@
 "page": 458,
 "chunk": 2,
 "score": 0.387311,
-"sibling": false
+"sibling": false,
+"gate": 0.572144
 },
 {
 "page": 93,
 "chunk": 2,
 "score": 0.569538,
-"sibling": false
+"sibling": false,
+"gate": 0.572144
 }
 ],
 "gate": {
@@ -12461,49 +13247,57 @@
 "page": 154,
 "chunk": 4,
 "score": 0.530643,
-"sibling": false
+"sibling": false,
+"gate": 0.584007
 },
 {
 "page": 107,
 "chunk": 4,
 "score": 0.528412,
-"sibling": false
+"sibling": false,
+"gate": 0.584007
 },
 {
 "page": 42,
 "chunk": 4,
 "score": 0.542694,
-"sibling": false
+"sibling": false,
+"gate": 0.584007
 },
 {
 "page": 62,
 "chunk": 9,
 "score": 0.524566,
-"sibling": false
+"sibling": false,
+"gate": 0.584007
 },
 {
 "page": 101,
 "chunk": 4,
 "score": 0.584006,
-"sibling": false
+"sibling": false,
+"gate": 0.584007
 },
 {
 "page": 101,
 "chunk": 9,
 "score": 0.579748,
-"sibling": false
+"sibling": false,
+"gate": 0.584007
 },
 {
 "page": 154,
 "chunk": 8,
 "score": 0.566423,
-"sibling": false
+"sibling": false,
+"gate": 0.584007
 },
 {
 "page": 154,
 "chunk": 5,
 "score": 0.519446,
-"sibling": false
+"sibling": false,
+"gate": 0.584007
 }
 ],
 "context": [
@@ -12535,13 +13329,15 @@
 "page": 154,
 "chunk": 4,
 "score": 0.530643,
-"sibling": false
+"sibling": false,
+"gate": 0.584007
 },
 {
 "page": 154,
 "chunk": 5,
 "score": 0.519446,
-"sibling": false
+"sibling": false,
+"gate": 0.584007
 },
 {
 "page": 154,
@@ -12559,7 +13355,8 @@
 "page": 154,
 "chunk": 8,
 "score": 0.566423,
-"sibling": false
+"sibling": false,
+"gate": 0.584007
 },
 {
 "page": 154,
@@ -12685,7 +13482,8 @@
 "page": 107,
 "chunk": 4,
 "score": 0.528412,
-"sibling": false
+"sibling": false,
+"gate": 0.584007
 },
 {
 "page": 107,
@@ -12697,7 +13495,8 @@
 "page": 42,
 "chunk": 4,
 "score": 0.542694,
-"sibling": false
+"sibling": false,
+"gate": 0.584007
 },
 {
 "page": 42,
@@ -12709,19 +13508,22 @@
 "page": 62,
 "chunk": 9,
 "score": 0.524566,
-"sibling": false
+"sibling": false,
+"gate": 0.584007
 },
 {
 "page": 101,
 "chunk": 4,
 "score": 0.584006,
-"sibling": false
+"sibling": false,
+"gate": 0.584007
 },
 {
 "page": 101,
 "chunk": 9,
 "score": 0.579748,
-"sibling": false
+"sibling": false,
+"gate": 0.584007
 }
 ],
 "gate": {
