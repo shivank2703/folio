@@ -1,8 +1,8 @@
 {
-"recorded": "2026-11-01 11:21",
+"recorded": "2026-11-01 11:29",
 "model": "BAAI/bge-small-en-v1.5",
 "index": "654edb14fd97d07ee4c0de6b84f09b074f148afff201ffe7df5438faedf6bfa3",
-"code": "cbfd414e9fd6c63c",
+"code": "7238535e8033fd06",
 "questions": {
 "HCC\tHow did HCC's standalone total assets change from FY24 to FY25?": {
 "id": "hcc-fy25-001",
@@ -6890,6 +6890,20 @@
 "id": "lt-fy26-001",
 "hits": [
 {
+"page": 687,
+"chunk": 2,
+"score": 0.51488,
+"sibling": false,
+"gate": 0.618834
+},
+{
+"page": 611,
+"chunk": 6,
+"score": 0.441844,
+"sibling": false,
+"gate": 0.618834
+},
+{
 "page": 47,
 "chunk": 3,
 "score": 0.618834,
@@ -6925,29 +6939,102 @@
 "gate": 0.618834
 },
 {
-"page": 83,
-"chunk": 1,
-"score": 0.515799,
-"sibling": false,
-"gate": 0.618834
-},
-{
-"page": 494,
-"chunk": 5,
-"score": 0.469743,
-"sibling": false,
-"gate": 0.618834
-},
-{
 "page": 687,
-"chunk": 2,
-"score": 0.51488,
+"chunk": 3,
+"score": 0.51056,
 "sibling": false,
 "gate": 0.618834
 }
 ],
 "context": [
 {
+"page": 687,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 687,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 687,
+"chunk": 2,
+"score": 0.51488,
+"sibling": false,
+"gate": 0.618834
+},
+{
+"page": 687,
+"chunk": 3,
+"score": 0.51056,
+"sibling": false,
+"gate": 0.618834
+},
+{
+"page": 687,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 687,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 611,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 611,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 611,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 611,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 611,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 611,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 611,
+"chunk": 6,
+"score": 0.441844,
+"sibling": false,
+"gate": 0.618834
+},
+{
+"page": 611,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
 "page": 47,
 "chunk": 0,
 "score": null,
@@ -7029,12 +7116,6 @@
 },
 {
 "page": 552,
-"chunk": 0,
-"score": null,
-"sibling": true
-},
-{
-"page": 552,
 "chunk": 1,
 "score": null,
 "sibling": true
@@ -7077,99 +7158,6 @@
 "score": 0.539323,
 "sibling": false,
 "gate": 0.618834
-},
-{
-"page": 83,
-"chunk": 0,
-"score": null,
-"sibling": true
-},
-{
-"page": 83,
-"chunk": 1,
-"score": 0.515799,
-"sibling": false,
-"gate": 0.618834
-},
-{
-"page": 83,
-"chunk": 2,
-"score": null,
-"sibling": true
-},
-{
-"page": 83,
-"chunk": 3,
-"score": null,
-"sibling": true
-},
-{
-"page": 494,
-"chunk": 0,
-"score": null,
-"sibling": true
-},
-{
-"page": 494,
-"chunk": 1,
-"score": null,
-"sibling": true
-},
-{
-"page": 494,
-"chunk": 2,
-"score": null,
-"sibling": true
-},
-{
-"page": 494,
-"chunk": 3,
-"score": null,
-"sibling": true
-},
-{
-"page": 494,
-"chunk": 4,
-"score": null,
-"sibling": true
-},
-{
-"page": 494,
-"chunk": 5,
-"score": 0.469743,
-"sibling": false,
-"gate": 0.618834
-},
-{
-"page": 494,
-"chunk": 6,
-"score": null,
-"sibling": true
-},
-{
-"page": 687,
-"chunk": 1,
-"score": null,
-"sibling": true
-},
-{
-"page": 687,
-"chunk": 2,
-"score": 0.51488,
-"sibling": false,
-"gate": 0.618834
-},
-{
-"page": 687,
-"chunk": 3,
-"score": null,
-"sibling": true
-},
-{
-"page": 687,
-"chunk": 5,
-"score": null,
-"sibling": true
 }
 ],
 "gate": {
@@ -7202,30 +7190,16 @@
 "gate": 0.765287
 },
 {
-"page": 190,
-"chunk": 1,
-"score": 0.692765,
-"sibling": false,
-"gate": 0.765287
-},
-{
-"page": 257,
+"page": 276,
 "chunk": 2,
-"score": 0.685563,
+"score": 0.659935,
 "sibling": false,
 "gate": 0.765287
 },
 {
-"page": 190,
-"chunk": 2,
-"score": 0.676971,
-"sibling": false,
-"gate": 0.765287
-},
-{
-"page": 190,
-"chunk": 3,
-"score": 0.713403,
+"page": 307,
+"chunk": 0,
+"score": 0.669308,
 "sibling": false,
 "gate": 0.765287
 },
@@ -7233,6 +7207,20 @@
 "page": 276,
 "chunk": 3,
 "score": 0.696768,
+"sibling": false,
+"gate": 0.765287
+},
+{
+"page": 308,
+"chunk": 0,
+"score": 0.668824,
+"sibling": false,
+"gate": 0.765287
+},
+{
+"page": 276,
+"chunk": 5,
+"score": 0.634908,
 "sibling": false,
 "gate": 0.765287
 }
@@ -7322,8 +7310,9 @@
 {
 "page": 276,
 "chunk": 2,
-"score": null,
-"sibling": true
+"score": 0.659935,
+"sibling": false,
+"gate": 0.765287
 },
 {
 "page": 276,
@@ -7341,8 +7330,9 @@
 {
 "page": 276,
 "chunk": 5,
-"score": null,
-"sibling": true
+"score": 0.634908,
+"sibling": false,
+"gate": 0.765287
 },
 {
 "page": 276,
@@ -7357,96 +7347,46 @@
 "sibling": true
 },
 {
-"page": 190,
+"page": 307,
 "chunk": 0,
-"score": null,
-"sibling": true
-},
-{
-"page": 190,
-"chunk": 1,
-"score": 0.692765,
+"score": 0.669308,
 "sibling": false,
 "gate": 0.765287
 },
 {
-"page": 190,
-"chunk": 2,
-"score": 0.676971,
-"sibling": false,
-"gate": 0.765287
-},
-{
-"page": 190,
-"chunk": 3,
-"score": 0.713403,
-"sibling": false,
-"gate": 0.765287
-},
-{
-"page": 190,
-"chunk": 4,
-"score": null,
-"sibling": true
-},
-{
-"page": 190,
-"chunk": 5,
-"score": null,
-"sibling": true
-},
-{
-"page": 190,
-"chunk": 6,
-"score": null,
-"sibling": true
-},
-{
-"page": 257,
-"chunk": 0,
-"score": null,
-"sibling": true
-},
-{
-"page": 257,
+"page": 307,
 "chunk": 1,
 "score": null,
 "sibling": true
 },
 {
-"page": 257,
+"page": 307,
 "chunk": 2,
-"score": 0.685563,
-"sibling": false,
-"gate": 0.765287
+"score": null,
+"sibling": true
 },
 {
-"page": 257,
+"page": 307,
 "chunk": 3,
 "score": null,
 "sibling": true
 },
 {
-"page": 257,
-"chunk": 4,
+"page": 308,
+"chunk": 0,
+"score": 0.668824,
+"sibling": false,
+"gate": 0.765287
+},
+{
+"page": 308,
+"chunk": 1,
 "score": null,
 "sibling": true
 },
 {
-"page": 257,
-"chunk": 5,
-"score": null,
-"sibling": true
-},
-{
-"page": 257,
-"chunk": 6,
-"score": null,
-"sibling": true
-},
-{
-"page": 257,
-"chunk": 7,
+"page": 308,
+"chunk": 2,
 "score": null,
 "sibling": true
 }
@@ -7989,6 +7929,13 @@
 "gate": 0.783393
 },
 {
+"page": 7,
+"chunk": 0,
+"score": 0.63592,
+"sibling": false,
+"gate": 0.783393
+},
+{
 "page": 147,
 "chunk": 6,
 "score": 0.766731,
@@ -8027,13 +7974,6 @@
 "page": 147,
 "chunk": 5,
 "score": 0.763183,
-"sibling": false,
-"gate": 0.783393
-},
-{
-"page": 384,
-"chunk": 3,
-"score": 0.771884,
 "sibling": false,
 "gate": 0.783393
 }
@@ -8094,6 +8034,25 @@
 {
 "page": 147,
 "chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 7,
+"chunk": 0,
+"score": 0.63592,
+"sibling": false,
+"gate": 0.783393
+},
+{
+"page": 7,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 7,
+"chunk": 2,
 "score": null,
 "sibling": true
 },
@@ -8205,43 +8164,6 @@
 {
 "page": 90,
 "chunk": 9,
-"score": null,
-"sibling": true
-},
-{
-"page": 384,
-"chunk": 0,
-"score": null,
-"sibling": true
-},
-{
-"page": 384,
-"chunk": 1,
-"score": null,
-"sibling": true
-},
-{
-"page": 384,
-"chunk": 2,
-"score": null,
-"sibling": true
-},
-{
-"page": 384,
-"chunk": 3,
-"score": 0.771884,
-"sibling": false,
-"gate": 0.783393
-},
-{
-"page": 384,
-"chunk": 4,
-"score": null,
-"sibling": true
-},
-{
-"page": 384,
-"chunk": 5,
 "score": null,
 "sibling": true
 }
@@ -8759,23 +8681,9 @@
 "id": "divislab-fy26-001",
 "hits": [
 {
-"page": 92,
-"chunk": 2,
-"score": 0.681494,
-"sibling": false,
-"gate": 0.75687
-},
-{
 "page": 123,
 "chunk": 6,
 "score": 0.679777,
-"sibling": false,
-"gate": 0.75687
-},
-{
-"page": 92,
-"chunk": 1,
-"score": 0.689352,
 "sibling": false,
 "gate": 0.75687
 },
@@ -8787,20 +8695,6 @@
 "gate": 0.75687
 },
 {
-"page": 92,
-"chunk": 4,
-"score": 0.662228,
-"sibling": false,
-"gate": 0.75687
-},
-{
-"page": 49,
-"chunk": 1,
-"score": 0.648475,
-"sibling": false,
-"gate": 0.75687
-},
-{
 "page": 124,
 "chunk": 1,
 "score": 0.657983,
@@ -8808,66 +8702,43 @@
 "gate": 0.75687
 },
 {
-"page": 33,
-"chunk": 4,
-"score": 0.633529,
+"page": 122,
+"chunk": 5,
+"score": 0.623483,
+"sibling": false,
+"gate": 0.75687
+},
+{
+"page": 129,
+"chunk": 5,
+"score": 0.67132,
+"sibling": false,
+"gate": 0.75687
+},
+{
+"page": 92,
+"chunk": 2,
+"score": 0.681494,
+"sibling": false,
+"gate": 0.75687
+},
+{
+"page": 92,
+"chunk": 1,
+"score": 0.689352,
+"sibling": false,
+"gate": 0.75687
+},
+{
+"page": 123,
+"chunk": 5,
+"score": 0.592931,
 "sibling": false,
 "gate": 0.75687
 }
 ],
 "context": [
 {
-"page": 92,
-"chunk": 0,
-"score": null,
-"sibling": true
-},
-{
-"page": 92,
-"chunk": 1,
-"score": 0.689352,
-"sibling": false,
-"gate": 0.75687
-},
-{
-"page": 92,
-"chunk": 2,
-"score": 0.681494,
-"sibling": false,
-"gate": 0.75687
-},
-{
-"page": 92,
-"chunk": 3,
-"score": null,
-"sibling": true
-},
-{
-"page": 92,
-"chunk": 4,
-"score": 0.662228,
-"sibling": false,
-"gate": 0.75687
-},
-{
-"page": 92,
-"chunk": 5,
-"score": null,
-"sibling": true
-},
-{
-"page": 92,
-"chunk": 6,
-"score": null,
-"sibling": true
-},
-{
-"page": 92,
-"chunk": 7,
-"score": null,
-"sibling": true
-},
-{
 "page": 123,
 "chunk": 0,
 "score": null,
@@ -8900,8 +8771,9 @@
 {
 "page": 123,
 "chunk": 5,
-"score": null,
-"sibling": true
+"score": 0.592931,
+"sibling": false,
+"gate": 0.75687
 },
 {
 "page": 123,
@@ -8950,8 +8822,9 @@
 {
 "page": 122,
 "chunk": 5,
-"score": null,
-"sibling": true
+"score": 0.623483,
+"sibling": false,
+"gate": 0.75687
 },
 {
 "page": 122,
@@ -8962,43 +8835,6 @@
 {
 "page": 122,
 "chunk": 7,
-"score": null,
-"sibling": true
-},
-{
-"page": 49,
-"chunk": 0,
-"score": null,
-"sibling": true
-},
-{
-"page": 49,
-"chunk": 1,
-"score": 0.648475,
-"sibling": false,
-"gate": 0.75687
-},
-{
-"page": 49,
-"chunk": 2,
-"score": null,
-"sibling": true
-},
-{
-"page": 49,
-"chunk": 3,
-"score": null,
-"sibling": true
-},
-{
-"page": 49,
-"chunk": 4,
-"score": null,
-"sibling": true
-},
-{
-"page": 49,
-"chunk": 5,
 "score": null,
 "sibling": true
 },
@@ -9028,11 +8864,97 @@
 "sibling": true
 },
 {
-"page": 33,
+"page": 124,
 "chunk": 4,
-"score": 0.633529,
+"score": null,
+"sibling": true
+},
+{
+"page": 124,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 124,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 124,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 129,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 129,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 129,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 129,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 129,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 129,
+"chunk": 5,
+"score": 0.67132,
 "sibling": false,
 "gate": 0.75687
+},
+{
+"page": 129,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 129,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 92,
+"chunk": 1,
+"score": 0.689352,
+"sibling": false,
+"gate": 0.75687
+},
+{
+"page": 92,
+"chunk": 2,
+"score": 0.681494,
+"sibling": false,
+"gate": 0.75687
+},
+{
+"page": 92,
+"chunk": 3,
+"score": null,
+"sibling": true
 }
 ],
 "gate": {
@@ -13529,6 +13451,1704 @@
 "gate": {
 "fused_best": 0.584006,
 "vector_best": 0.584007
+}
+},
+"RELIANCE\tWhat was Reliance's net profit in FY26?": {
+"id": "reliance-fy26-001",
+"hits": [
+{
+"page": 103,
+"chunk": 0,
+"score": 0.722056,
+"sibling": false,
+"gate": 0.786097
+},
+{
+"page": 133,
+"chunk": 9,
+"score": 0.754649,
+"sibling": false,
+"gate": 0.786097
+},
+{
+"page": 96,
+"chunk": 10,
+"score": 0.674818,
+"sibling": false,
+"gate": 0.786097
+},
+{
+"page": 146,
+"chunk": 3,
+"score": 0.737482,
+"sibling": false,
+"gate": 0.786097
+},
+{
+"page": 5,
+"chunk": 15,
+"score": 0.684098,
+"sibling": false,
+"gate": 0.786097
+},
+{
+"page": 145,
+"chunk": 3,
+"score": 0.75101,
+"sibling": false,
+"gate": 0.786097
+},
+{
+"page": 146,
+"chunk": 2,
+"score": 0.734801,
+"sibling": false,
+"gate": 0.786097
+},
+{
+"page": 78,
+"chunk": 5,
+"score": 0.759806,
+"sibling": false,
+"gate": 0.786097
+}
+],
+"context": [
+{
+"page": 103,
+"chunk": 0,
+"score": 0.722056,
+"sibling": false,
+"gate": 0.786097
+},
+{
+"page": 103,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 103,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 103,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 103,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 103,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 103,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 103,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 103,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 103,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 103,
+"chunk": 10,
+"score": null,
+"sibling": true
+},
+{
+"page": 133,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 133,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 133,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 133,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 133,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 133,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 133,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 133,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 133,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 133,
+"chunk": 9,
+"score": 0.754649,
+"sibling": false,
+"gate": 0.786097
+},
+{
+"page": 96,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 96,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 96,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 96,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 96,
+"chunk": 10,
+"score": 0.674818,
+"sibling": false,
+"gate": 0.786097
+},
+{
+"page": 96,
+"chunk": 11,
+"score": null,
+"sibling": true
+},
+{
+"page": 96,
+"chunk": 12,
+"score": null,
+"sibling": true
+},
+{
+"page": 96,
+"chunk": 13,
+"score": null,
+"sibling": true
+},
+{
+"page": 146,
+"chunk": 2,
+"score": 0.734801,
+"sibling": false,
+"gate": 0.786097
+},
+{
+"page": 146,
+"chunk": 3,
+"score": 0.737482,
+"sibling": false,
+"gate": 0.786097
+},
+{
+"page": 5,
+"chunk": 15,
+"score": 0.684098,
+"sibling": false,
+"gate": 0.786097
+},
+{
+"page": 145,
+"chunk": 3,
+"score": 0.75101,
+"sibling": false,
+"gate": 0.786097
+},
+{
+"page": 78,
+"chunk": 5,
+"score": 0.759806,
+"sibling": false,
+"gate": 0.786097
+}
+],
+"gate": {
+"fused_best": 0.759806,
+"vector_best": 0.786097
+}
+},
+"INFY\tWhat was Infosys's revenue in FY26?": {
+"id": "infy-fy26-001",
+"hits": [
+{
+"page": 254,
+"chunk": 2,
+"score": 0.766115,
+"sibling": false,
+"gate": 0.780205
+},
+{
+"page": 254,
+"chunk": 3,
+"score": 0.748037,
+"sibling": false,
+"gate": 0.780205
+},
+{
+"page": 271,
+"chunk": 0,
+"score": 0.757397,
+"sibling": false,
+"gate": 0.780205
+},
+{
+"page": 270,
+"chunk": 0,
+"score": 0.734882,
+"sibling": false,
+"gate": 0.780205
+},
+{
+"page": 272,
+"chunk": 0,
+"score": 0.719404,
+"sibling": false,
+"gate": 0.780205
+},
+{
+"page": 262,
+"chunk": 4,
+"score": 0.705672,
+"sibling": false,
+"gate": 0.780205
+},
+{
+"page": 346,
+"chunk": 0,
+"score": 0.696986,
+"sibling": false,
+"gate": 0.780205
+},
+{
+"page": 270,
+"chunk": 3,
+"score": 0.696703,
+"sibling": false,
+"gate": 0.780205
+}
+],
+"context": [
+{
+"page": 254,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 254,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 254,
+"chunk": 2,
+"score": 0.766115,
+"sibling": false,
+"gate": 0.780205
+},
+{
+"page": 254,
+"chunk": 3,
+"score": 0.748037,
+"sibling": false,
+"gate": 0.780205
+},
+{
+"page": 254,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 254,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 254,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 254,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 271,
+"chunk": 0,
+"score": 0.757397,
+"sibling": false,
+"gate": 0.780205
+},
+{
+"page": 271,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 271,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 271,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 271,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 271,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 270,
+"chunk": 0,
+"score": 0.734882,
+"sibling": false,
+"gate": 0.780205
+},
+{
+"page": 270,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 270,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 270,
+"chunk": 3,
+"score": 0.696703,
+"sibling": false,
+"gate": 0.780205
+},
+{
+"page": 270,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 270,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 272,
+"chunk": 0,
+"score": 0.719404,
+"sibling": false,
+"gate": 0.780205
+},
+{
+"page": 272,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 272,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 272,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 272,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 272,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 262,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 262,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 262,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 262,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 262,
+"chunk": 4,
+"score": 0.705672,
+"sibling": false,
+"gate": 0.780205
+},
+{
+"page": 262,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 346,
+"chunk": 0,
+"score": 0.696986,
+"sibling": false,
+"gate": 0.780205
+},
+{
+"page": 346,
+"chunk": 1,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.766115,
+"vector_best": 0.780205
+}
+},
+"INFY\tWhat was Infosys's standalone revenue from operations in FY26?": {
+"id": "infy-fy26-003",
+"hits": [
+{
+"page": 254,
+"chunk": 2,
+"score": 0.767709,
+"sibling": false,
+"gate": 0.767709
+},
+{
+"page": 33,
+"chunk": 0,
+"score": 0.73603,
+"sibling": false,
+"gate": 0.767709
+},
+{
+"page": 254,
+"chunk": 3,
+"score": 0.74704,
+"sibling": false,
+"gate": 0.767709
+},
+{
+"page": 54,
+"chunk": 6,
+"score": 0.711597,
+"sibling": false,
+"gate": 0.767709
+},
+{
+"page": 54,
+"chunk": 5,
+"score": 0.716752,
+"sibling": false,
+"gate": 0.767709
+},
+{
+"page": 271,
+"chunk": 0,
+"score": 0.727822,
+"sibling": false,
+"gate": 0.767709
+},
+{
+"page": 195,
+"chunk": 0,
+"score": 0.764203,
+"sibling": false,
+"gate": 0.767709
+},
+{
+"page": 330,
+"chunk": 0,
+"score": 0.750671,
+"sibling": false,
+"gate": 0.767709
+}
+],
+"context": [
+{
+"page": 254,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 254,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 254,
+"chunk": 2,
+"score": 0.767709,
+"sibling": false,
+"gate": 0.767709
+},
+{
+"page": 254,
+"chunk": 3,
+"score": 0.74704,
+"sibling": false,
+"gate": 0.767709
+},
+{
+"page": 254,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 254,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 254,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 254,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 33,
+"chunk": 0,
+"score": 0.73603,
+"sibling": false,
+"gate": 0.767709
+},
+{
+"page": 33,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 33,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 33,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 33,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 33,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 33,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 33,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 33,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 54,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 54,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 54,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 54,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 54,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 54,
+"chunk": 5,
+"score": 0.716752,
+"sibling": false,
+"gate": 0.767709
+},
+{
+"page": 54,
+"chunk": 6,
+"score": 0.711597,
+"sibling": false,
+"gate": 0.767709
+},
+{
+"page": 54,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 271,
+"chunk": 0,
+"score": 0.727822,
+"sibling": false,
+"gate": 0.767709
+},
+{
+"page": 271,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 271,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 271,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 271,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 271,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 195,
+"chunk": 0,
+"score": 0.764203,
+"sibling": false,
+"gate": 0.767709
+},
+{
+"page": 195,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 330,
+"chunk": 0,
+"score": 0.750671,
+"sibling": false,
+"gate": 0.767709
+}
+],
+"gate": {
+"fused_best": 0.767709,
+"vector_best": 0.767709
+}
+},
+"TATASTEEL\tWhat was Tata Steel's revenue from operations in FY26?": {
+"id": "tatasteel-fy26-004",
+"hits": [
+{
+"page": 422,
+"chunk": 0,
+"score": 0.774422,
+"sibling": false,
+"gate": 0.784819
+},
+{
+"page": 494,
+"chunk": 3,
+"score": 0.729824,
+"sibling": false,
+"gate": 0.784819
+},
+{
+"page": 367,
+"chunk": 0,
+"score": 0.696205,
+"sibling": false,
+"gate": 0.784819
+},
+{
+"page": 494,
+"chunk": 0,
+"score": 0.714581,
+"sibling": false,
+"gate": 0.784819
+},
+{
+"page": 74,
+"chunk": 0,
+"score": 0.686617,
+"sibling": false,
+"gate": 0.784819
+},
+{
+"page": 426,
+"chunk": 0,
+"score": 0.731101,
+"sibling": false,
+"gate": 0.784819
+},
+{
+"page": 303,
+"chunk": 0,
+"score": 0.732289,
+"sibling": false,
+"gate": 0.784819
+},
+{
+"page": 523,
+"chunk": 3,
+"score": 0.717433,
+"sibling": false,
+"gate": 0.784819
+}
+],
+"context": [
+{
+"page": 422,
+"chunk": 0,
+"score": 0.774422,
+"sibling": false,
+"gate": 0.784819
+},
+{
+"page": 422,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 422,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 422,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 422,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 494,
+"chunk": 0,
+"score": 0.714581,
+"sibling": false,
+"gate": 0.784819
+},
+{
+"page": 494,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 494,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 494,
+"chunk": 3,
+"score": 0.729824,
+"sibling": false,
+"gate": 0.784819
+},
+{
+"page": 367,
+"chunk": 0,
+"score": 0.696205,
+"sibling": false,
+"gate": 0.784819
+},
+{
+"page": 367,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 367,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 367,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 367,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 74,
+"chunk": 0,
+"score": 0.686617,
+"sibling": false,
+"gate": 0.784819
+},
+{
+"page": 74,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 74,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 74,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 426,
+"chunk": 0,
+"score": 0.731101,
+"sibling": false,
+"gate": 0.784819
+},
+{
+"page": 426,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 426,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 426,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 426,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 303,
+"chunk": 0,
+"score": 0.732289,
+"sibling": false,
+"gate": 0.784819
+},
+{
+"page": 303,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 303,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 303,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 303,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 303,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 303,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 303,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 303,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 523,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 523,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 523,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 523,
+"chunk": 3,
+"score": 0.717433,
+"sibling": false,
+"gate": 0.784819
+}
+],
+"gate": {
+"fused_best": 0.774422,
+"vector_best": 0.784819
+}
+},
+"LT\tWhat was L&T's revenue in FY26?": {
+"id": "lt-fy26-003",
+"hits": [
+{
+"page": 685,
+"chunk": 2,
+"score": 0.639212,
+"sibling": false,
+"gate": 0.716538
+},
+{
+"page": 687,
+"chunk": 2,
+"score": 0.644232,
+"sibling": false,
+"gate": 0.716538
+},
+{
+"page": 626,
+"chunk": 4,
+"score": 0.540009,
+"sibling": false,
+"gate": 0.716538
+},
+{
+"page": 604,
+"chunk": 4,
+"score": 0.518218,
+"sibling": false,
+"gate": 0.716538
+},
+{
+"page": 685,
+"chunk": 0,
+"score": 0.607361,
+"sibling": false,
+"gate": 0.716538
+},
+{
+"page": 628,
+"chunk": 0,
+"score": 0.615451,
+"sibling": false,
+"gate": 0.716538
+},
+{
+"page": 604,
+"chunk": 6,
+"score": 0.514662,
+"sibling": false,
+"gate": 0.716538
+},
+{
+"page": 551,
+"chunk": 0,
+"score": 0.63448,
+"sibling": false,
+"gate": 0.716538
+}
+],
+"context": [
+{
+"page": 685,
+"chunk": 0,
+"score": 0.607361,
+"sibling": false,
+"gate": 0.716538
+},
+{
+"page": 685,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 685,
+"chunk": 2,
+"score": 0.639212,
+"sibling": false,
+"gate": 0.716538
+},
+{
+"page": 685,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 685,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 687,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 687,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 687,
+"chunk": 2,
+"score": 0.644232,
+"sibling": false,
+"gate": 0.716538
+},
+{
+"page": 687,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 687,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 687,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 626,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 626,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 626,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 626,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 626,
+"chunk": 4,
+"score": 0.540009,
+"sibling": false,
+"gate": 0.716538
+},
+{
+"page": 626,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 604,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 604,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 604,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 604,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 604,
+"chunk": 4,
+"score": 0.518218,
+"sibling": false,
+"gate": 0.716538
+},
+{
+"page": 604,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 604,
+"chunk": 6,
+"score": 0.514662,
+"sibling": false,
+"gate": 0.716538
+},
+{
+"page": 628,
+"chunk": 0,
+"score": 0.615451,
+"sibling": false,
+"gate": 0.716538
+},
+{
+"page": 628,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 628,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 628,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 628,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 628,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 551,
+"chunk": 0,
+"score": 0.63448,
+"sibling": false,
+"gate": 0.716538
+},
+{
+"page": 551,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 551,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 551,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 551,
+"chunk": 4,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.644232,
+"vector_best": 0.716538
+}
+},
+"SOLARINDS\tWhat was Solar Industries' consolidated raw materials inventory at March 31, 2026?": {
+"id": "solarinds-fy26-001",
+"hits": [
+{
+"page": 260,
+"chunk": 3,
+"score": 0.725621,
+"sibling": false,
+"gate": 0.730497
+},
+{
+"page": 243,
+"chunk": 0,
+"score": 0.697554,
+"sibling": false,
+"gate": 0.730497
+},
+{
+"page": 320,
+"chunk": 3,
+"score": 0.730497,
+"sibling": false,
+"gate": 0.730497
+},
+{
+"page": 302,
+"chunk": 1,
+"score": 0.682194,
+"sibling": false,
+"gate": 0.730497
+},
+{
+"page": 325,
+"chunk": 3,
+"score": 0.709608,
+"sibling": false,
+"gate": 0.730497
+},
+{
+"page": 290,
+"chunk": 1,
+"score": 0.679909,
+"sibling": false,
+"gate": 0.730497
+},
+{
+"page": 321,
+"chunk": 2,
+"score": 0.687597,
+"sibling": false,
+"gate": 0.730497
+},
+{
+"page": 119,
+"chunk": 0,
+"score": 0.662156,
+"sibling": false,
+"gate": 0.730497
+}
+],
+"context": [
+{
+"page": 260,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 260,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 260,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 260,
+"chunk": 3,
+"score": 0.725621,
+"sibling": false,
+"gate": 0.730497
+},
+{
+"page": 260,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 260,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 260,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 243,
+"chunk": 0,
+"score": 0.697554,
+"sibling": false,
+"gate": 0.730497
+},
+{
+"page": 243,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 243,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 243,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 243,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 243,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 243,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 320,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 320,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 320,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 320,
+"chunk": 3,
+"score": 0.730497,
+"sibling": false,
+"gate": 0.730497
+},
+{
+"page": 320,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 320,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 320,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 320,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 320,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 302,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 302,
+"chunk": 1,
+"score": 0.682194,
+"sibling": false,
+"gate": 0.730497
+},
+{
+"page": 302,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 302,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 325,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 325,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 325,
+"chunk": 3,
+"score": 0.709608,
+"sibling": false,
+"gate": 0.730497
+},
+{
+"page": 325,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 290,
+"chunk": 1,
+"score": 0.679909,
+"sibling": false,
+"gate": 0.730497
+},
+{
+"page": 290,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 321,
+"chunk": 2,
+"score": 0.687597,
+"sibling": false,
+"gate": 0.730497
+},
+{
+"page": 119,
+"chunk": 0,
+"score": 0.662156,
+"sibling": false,
+"gate": 0.730497
+}
+],
+"gate": {
+"fused_best": 0.730497,
+"vector_best": 0.730497
 }
 }
 }

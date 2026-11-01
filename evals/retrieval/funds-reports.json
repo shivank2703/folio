@@ -1,8 +1,8 @@
 {
-"recorded": "2026-11-01 11:21",
+"recorded": "2026-11-01 11:30",
 "model": "BAAI/bge-small-en-v1.5",
 "index": "654edb14fd97d07ee4c0de6b84f09b074f148afff201ffe7df5438faedf6bfa3",
-"code": "cbfd414e9fd6c63c",
+"code": "7238535e8033fd06",
 "questions": {
 "BEL\tWhat were BEL standalone total assets at the end of FY26?": {
 "id": "bel-standalone",
