@@ -1,127 +1,128 @@
 {
- "measured": "2026-11-01 11:54",
+ "measured": "2026-11-01 11:58",
  "index": "folio-index-654edb14fd97.tar.gz",
  "malloc_arena_max": "2",
- "total_seconds": 51.04,
- "peak_mb": 771.6,
+ "mallopt_arena_limit": false,
+ "total_seconds": 39.48,
+ "peak_mb": 759.0,
  "stages": [
   {
    "stage": "imports (streamlit + app modules)",
-   "seconds": 1.91,
-   "rss_mb": 331.6,
-   "peak_mb": 331.4,
+   "seconds": 1.42,
+   "rss_mb": 332.2,
+   "peak_mb": 332.2,
    "note": ""
   },
   {
    "stage": "index fetch + verify + unpack (fresh)",
-   "seconds": 1.09,
-   "rss_mb": 335.0,
-   "peak_mb": 423.0,
+   "seconds": 0.99,
+   "rss_mb": 335.6,
+   "peak_mb": 423.8,
    "note": "93 MB tarball, 56112 chunks"
   },
   {
    "stage": "open index",
    "seconds": 0.0,
-   "rss_mb": 359.8,
-   "peak_mb": 423.0,
+   "rss_mb": 360.6,
+   "peak_mb": 423.8,
    "note": "120 MB on disk"
   },
   {
    "stage": "load embedding model",
-   "seconds": 0.18,
-   "rss_mb": 559.5,
-   "peak_mb": 559.3,
+   "seconds": 0.15,
+   "rss_mb": 560.1,
+   "peak_mb": 560.0,
    "note": ""
   },
   {
    "stage": "spelling vocabularies (32 filings)",
-   "seconds": 1.4,
-   "rss_mb": 613.5,
-   "peak_mb": 613.2,
+   "seconds": 1.06,
+   "rss_mb": 617.0,
+   "peak_mb": 616.6,
    "note": "the per-filing cache questions fill"
   },
   {
    "stage": "first question (cold caches)",
-   "seconds": 0.17,
-   "rss_mb": 652.8,
-   "peak_mb": 712.1,
+   "seconds": 0.12,
+   "rss_mb": 639.8,
+   "peak_mb": 690.8,
    "note": ""
   },
   {
    "stage": "one question per filing (32)",
-   "seconds": 4.73,
-   "rss_mb": 713.4,
-   "peak_mb": 761.1,
+   "seconds": 3.31,
+   "rss_mb": 677.8,
+   "peak_mb": 759.0,
    "note": ""
   },
   {
    "stage": "pass 2 over the same 32 questions",
-   "seconds": 4.6,
-   "rss_mb": 723.9,
-   "peak_mb": 761.1,
+   "seconds": 3.44,
+   "rss_mb": 654.0,
+   "peak_mb": 759.0,
    "note": "levelling off means bounded caches; steady growth means a leak"
   },
   {
    "stage": "pass 3 over the same 32 questions",
-   "seconds": 4.69,
-   "rss_mb": 727.9,
-   "peak_mb": 771.6,
+   "seconds": 3.55,
+   "rss_mb": 657.4,
+   "peak_mb": 759.0,
    "note": "levelling off means bounded caches; steady growth means a leak"
   },
   {
    "stage": "pass 4 over the same 32 questions",
-   "seconds": 4.62,
-   "rss_mb": 723.9,
-   "peak_mb": 771.6,
+   "seconds": 3.52,
+   "rss_mb": 652.5,
+   "peak_mb": 759.0,
    "note": "levelling off means bounded caches; steady growth means a leak"
   },
   {
    "stage": "pass 5 over the same 32 questions",
-   "seconds": 4.62,
-   "rss_mb": 689.4,
-   "peak_mb": 771.6,
+   "seconds": 3.69,
+   "rss_mb": 659.5,
+   "peak_mb": 759.0,
    "note": "levelling off means bounded caches; steady growth means a leak"
   },
   {
    "stage": "pass 6 over the same 32 questions",
-   "seconds": 4.6,
-   "rss_mb": 723.9,
-   "peak_mb": 771.6,
+   "seconds": 3.64,
+   "rss_mb": 678.0,
+   "peak_mb": 759.0,
    "note": "levelling off means bounded caches; steady growth means a leak"
   },
   {
    "stage": "pass 7 over the same 32 questions",
-   "seconds": 4.63,
-   "rss_mb": 727.9,
-   "peak_mb": 771.6,
+   "seconds": 3.63,
+   "rss_mb": 682.2,
+   "peak_mb": 759.0,
    "note": "levelling off means bounded caches; steady growth means a leak"
   },
   {
    "stage": "pass 8 over the same 32 questions",
-   "seconds": 4.63,
-   "rss_mb": 712.0,
-   "peak_mb": 771.6,
+   "seconds": 3.65,
+   "rss_mb": 646.8,
+   "peak_mb": 759.0,
    "note": "levelling off means bounded caches; steady growth means a leak"
   },
   {
    "stage": "pass 9 over the same 32 questions",
-   "seconds": 4.52,
-   "rss_mb": 729.9,
-   "peak_mb": 771.6,
+   "seconds": 3.61,
+   "rss_mb": 633.9,
+   "peak_mb": 759.0,
    "note": "levelling off means bounded caches; steady growth means a leak"
   },
   {
    "stage": "pass 10 over the same 32 questions",
-   "seconds": 4.62,
-   "rss_mb": 730.8,
-   "peak_mb": 771.6,
+   "seconds": 3.66,
+   "rss_mb": 656.6,
+   "peak_mb": 759.0,
    "note": "levelling off means bounded caches; steady growth means a leak"
   },
   {
    "stage": "fund snapshots + overviews",
    "seconds": 0.0,
-   "rss_mb": 730.8,
-   "peak_mb": 771.6,
+   "rss_mb": 656.6,
+   "peak_mb": 759.0,
    "note": ""
   }
  ],

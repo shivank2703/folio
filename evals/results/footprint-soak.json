@@ -1,20 +1,21 @@
 {
- "measured": "2026-11-01 11:53",
+ "measured": "2026-11-01 11:56",
  "index": "folio-index-654edb14fd97.tar.gz",
  "malloc_arena_max": null,
- "total_seconds": 49.41,
- "peak_mb": 1842.7,
+ "mallopt_arena_limit": true,
+ "total_seconds": 34.81,
+ "peak_mb": 764.7,
  "stages": [
   {
    "stage": "imports (streamlit + app modules)",
-   "seconds": 1.94,
-   "rss_mb": 331.9,
+   "seconds": 1.42,
+   "rss_mb": 332.0,
    "peak_mb": 331.7,
    "note": ""
   },
   {
    "stage": "index fetch + verify + unpack (fresh)",
-   "seconds": 1.1,
+   "seconds": 0.87,
    "rss_mb": 335.4,
    "peak_mb": 423.3,
    "note": "93 MB tarball, 56112 chunks"
@@ -22,106 +23,106 @@
   {
    "stage": "open index",
    "seconds": 0.0,
-   "rss_mb": 360.4,
+   "rss_mb": 360.2,
    "peak_mb": 423.3,
    "note": "120 MB on disk"
   },
   {
    "stage": "load embedding model",
-   "seconds": 0.18,
-   "rss_mb": 559.9,
-   "peak_mb": 559.7,
+   "seconds": 0.14,
+   "rss_mb": 559.8,
+   "peak_mb": 559.6,
    "note": ""
   },
   {
    "stage": "spelling vocabularies (32 filings)",
-   "seconds": 1.45,
-   "rss_mb": 631.9,
-   "peak_mb": 631.6,
+   "seconds": 1.04,
+   "rss_mb": 613.2,
+   "peak_mb": 613.0,
    "note": "the per-filing cache questions fill"
   },
   {
    "stage": "first question (cold caches)",
-   "seconds": 0.16,
-   "rss_mb": 813.3,
-   "peak_mb": 813.0,
+   "seconds": 0.12,
+   "rss_mb": 641.1,
+   "peak_mb": 688.2,
    "note": ""
   },
   {
    "stage": "one question per filing (32)",
-   "seconds": 4.53,
-   "rss_mb": 1462.6,
-   "peak_mb": 1462.3,
+   "seconds": 3.21,
+   "rss_mb": 722.8,
+   "peak_mb": 762.2,
    "note": ""
   },
   {
    "stage": "pass 2 over the same 32 questions",
-   "seconds": 4.42,
-   "rss_mb": 1632.0,
-   "peak_mb": 1631.7,
+   "seconds": 3.1,
+   "rss_mb": 687.0,
+   "peak_mb": 762.2,
    "note": "levelling off means bounded caches; steady growth means a leak"
   },
   {
    "stage": "pass 3 over the same 32 questions",
-   "seconds": 4.41,
-   "rss_mb": 1665.6,
-   "peak_mb": 1701.2,
+   "seconds": 3.15,
+   "rss_mb": 723.6,
+   "peak_mb": 762.2,
    "note": "levelling off means bounded caches; steady growth means a leak"
   },
   {
    "stage": "pass 4 over the same 32 questions",
-   "seconds": 4.41,
-   "rss_mb": 1729.0,
-   "peak_mb": 1728.8,
+   "seconds": 3.2,
+   "rss_mb": 727.5,
+   "peak_mb": 763.2,
    "note": "levelling off means bounded caches; steady growth means a leak"
   },
   {
    "stage": "pass 5 over the same 32 questions",
-   "seconds": 4.51,
-   "rss_mb": 1705.1,
-   "peak_mb": 1755.1,
+   "seconds": 3.06,
+   "rss_mb": 728.9,
+   "peak_mb": 764.5,
    "note": "levelling off means bounded caches; steady growth means a leak"
   },
   {
    "stage": "pass 6 over the same 32 questions",
-   "seconds": 4.42,
-   "rss_mb": 1757.6,
-   "peak_mb": 1757.4,
+   "seconds": 3.02,
+   "rss_mb": 689.1,
+   "peak_mb": 764.5,
    "note": "levelling off means bounded caches; steady growth means a leak"
   },
   {
    "stage": "pass 7 over the same 32 questions",
-   "seconds": 4.46,
-   "rss_mb": 1783.9,
-   "peak_mb": 1791.6,
+   "seconds": 3.04,
+   "rss_mb": 725.0,
+   "peak_mb": 764.5,
    "note": "levelling off means bounded caches; steady growth means a leak"
   },
   {
    "stage": "pass 8 over the same 32 questions",
-   "seconds": 4.52,
-   "rss_mb": 1820.0,
-   "peak_mb": 1822.0,
+   "seconds": 3.21,
+   "rss_mb": 725.1,
+   "peak_mb": 764.5,
    "note": "levelling off means bounded caches; steady growth means a leak"
   },
   {
    "stage": "pass 9 over the same 32 questions",
-   "seconds": 4.44,
-   "rss_mb": 1808.8,
-   "peak_mb": 1841.7,
+   "seconds": 3.07,
+   "rss_mb": 725.1,
+   "peak_mb": 764.6,
    "note": "levelling off means bounded caches; steady growth means a leak"
   },
   {
    "stage": "pass 10 over the same 32 questions",
-   "seconds": 4.43,
-   "rss_mb": 1842.8,
-   "peak_mb": 1842.7,
+   "seconds": 3.12,
+   "rss_mb": 728.1,
+   "peak_mb": 764.7,
    "note": "levelling off means bounded caches; steady growth means a leak"
   },
   {
    "stage": "fund snapshots + overviews",
    "seconds": 0.0,
-   "rss_mb": 1842.8,
-   "peak_mb": 1842.7,
+   "rss_mb": 728.1,
+   "peak_mb": 764.7,
    "note": ""
   }
  ],
