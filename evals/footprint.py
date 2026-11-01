@@ -98,6 +98,7 @@ def main() -> None:
                 page_context(table, hits)
         timed(f"one question per filing ({len(filings)})", every_filing)
         timed(f"the same {len(filings)} questions again", every_filing, "growth here would be per question, not per filing")
+        timed(f"and a third time", every_filing, "levelling off here means caches, not a leak")
 
     def data_files():
         from funds.data import load_funds
