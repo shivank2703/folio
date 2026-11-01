@@ -633,3 +633,72 @@ Local tests: **34 passed**. Existing deterministic fund checks: **24/24**.
 Compile/whitespace checks and local browser smoke tests passed. The local UI
 walkthrough and write-up are in `docs/`; deployment, owner-session verification,
 profile pinning and tagging are not claimed here. See `notes/agent-step.md`.
+
+
+## Natural questions · 1 November 2026 — false refusals at the floor
+
+Four of sixteen live natural questions were refused at the 0.67 similarity
+floor although their filings answer them: "Summarise HCC's performance in
+FY25", "What are the key risks Unihealth faces?", "How big is L&T's order
+book?" and "totla assets navneet". The eval set grew from 24 to 51 questions:
+those four verbatim, nine more broad, summary, terse and misspelled questions
+across other filings, and 14 new negatives (near misses, misspelled, broad and
+off-topic), each split fit/test. 31 answerable, 20 negatives.
+
+**How this was measured, and what is missing.** The sandbox this sitting ran
+in cannot download the embedding model and has no Anthropic key
+(notes/next-step.md). Retrieval was therefore recorded on GitHub's runners
+(`evals/retrieval.py`, the `retrieval` workflow) and measured from those
+recordings with no model calls: floor decisions (`python -m evals.gate_report`)
+and answer availability (`python -m evals.availability`: is an expected page,
+and the recorded answer string, in the context the model reads). **The
+model-judged before/after has not run.** It is queued in
+`evals/eval-requests.yaml` (`natural-before` at 96b305d, `natural-after` at
+1d8e5b4) and runs on the `eval` workflow once the repository secret
+`ANTHROPIC_API_KEY` exists; its first attempt stopped at that check
+(run 41301501578). Until it runs, refusal strictness for the negatives that now
+reach the model is not measured.
+
+| Measure (no model calls) | Before: 0.67 floor (96b305d) | After: 0.59 filing-wide floor (1d8e5b4) |
+|---|---|---|
+| Answerable refused at the floor, fit | 2/16 | 0/16 |
+| Answerable refused at the floor, test | 3/15 | 0/15 |
+| Negatives stopped at the floor | 10/20 | 2/20 |
+| Expected page in context | 23/31 | 27/31 |
+| Recorded answer string in context | 21/31 | 26/31 |
+
+The floor was not the only cause. On the before recording 8 of the 13 new
+answerable questions never had their page in context: "Summarise BEL's FY26
+results" ranked a "Summarised Cash Flows" note first on the instruction word,
+"What does Tata Steel do?" became "What does do?" once the company name was
+deleted from the query, and risk questions found the financial-risk notes
+rather than the MD&A's threats. Retrieval changes (5272de0): misspellings
+corrected against the filing's own vocabulary with common English protected
+(the first, filing-only version turned "drones" into "does" and "patents"
+into "payments" and was not shipped); the vector query names the company "the
+company" instead of deleting it; instruction words leave the keyword query;
+summary, risk and business questions add the section words reports print. No
+original question lost its page.
+
+The floor then changed statistic as well as value (1d8e5b4): the best cosine
+anywhere in the filing instead of among the ranked hits, because the rewrites
+move which chunks rank (Unihealth's risk question fell to 0.584 on the old
+statistic, level with an off-topic question). 0.59 is the fit half's weakest
+answerable question, L&T at 0.619, less a 0.03 margin fixed before the test
+half was read. That binding case is a single question; the test half is the
+evidence it generalises (0/15 refused), and the margin on the other side is
+thin: the off-topic weather question sits at 0.584.
+
+Still failing, retrieval-level:
+
+- `sbin-fy26-001` "how many branches does sbi have": the ten-year table
+  (p10) and network page (p6) are not retrieved; "branches" is on hundreds of
+  pages.
+- `eichermot-fy26-001` "royal enfield sales fy26": subsidiary pages rank, not
+  p13's "sold more than 1.2 million". The full-text index does not stem, so
+  "sales" never meets "sold" (notes/next-step.md).
+- `divislab-fy26-001` and `icicibank-fy26-001` have their answer in context
+  from pages other than the expected ones; counted as misses above, likely
+  answerable.
+- Negatives overlap answerable questions completely (0.64–0.76 on the new
+  statistic); only off-topic input is stopped before the model.

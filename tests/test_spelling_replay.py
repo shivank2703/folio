@@ -88,9 +88,6 @@ class ReplayTests(unittest.TestCase):
             retrieval.replay(dump, open_index(tmp / "db"), "AAA", "a different question")
 
 
-if __name__ == "__main__":
-    unittest.main()
-
 
 class GateTests(unittest.TestCase):
     def test_floor_reads_the_filing_wide_gate(self):
@@ -101,3 +98,7 @@ class GateTests(unittest.TestCase):
         self.assertFalse(has_enough_context([{"score": 0.50, "gate": MIN_SIMILARITY - 0.01}]))
         # Without a recorded gate (older recordings) the hits' own scores decide.
         self.assertTrue(has_enough_context([{"score": MIN_SIMILARITY}]))
+
+
+if __name__ == "__main__":
+    unittest.main()
