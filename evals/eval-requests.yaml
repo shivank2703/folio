@@ -3,13 +3,19 @@
 # run whose evals/results/<label>.json exists is skipped. Needs the repository
 # secret ANTHROPIC_API_KEY. Results are committed back to the branch.
 runs:
-  # Step 3 "before": the 0.67 floor and the retrieval that preceded the
-  # broad-question changes, on the 51-question set (13 natural answerable
-  # questions and 14 new negatives added in a05b580).
+  # Step 3 before: the 0.67 floor and the retrieval before the broad-question
+  # changes, on the 51-question set (a05b580 added 13 natural answerable
+  # questions and 14 negatives).
   - label: natural-before
     ref: 96b305d
     samples: 3
-  # Step 3 "after": broad-question retrieval and the 0.59 filing-wide floor.
+  # Step 3 after, and step 4 before: broad-question retrieval and the 0.59
+  # filing-wide floor (code of 1d8e5b4), on all 57 questions including the six
+  # scope and unit questions of f4fa88b.
   - label: natural-after
-    ref: 1d8e5b4
+    ref: f4fa88b
+    samples: 3
+  # Step 4 after: page units on every extract, consolidated first.
+  - label: accuracy-after
+    ref: d241a62
     samples: 3
