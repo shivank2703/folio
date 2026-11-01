@@ -1,0 +1,88 @@
+# Index companies and publish the search index from GitHub's runners.
+#
+# Run from the Actions tab (or the API) on a branch:
+#   companies: empty      -> probe only: upload a tiny release asset, fetch it
+#                            back anonymously, delete it
+#   companies: "AAA BBB"  -> python -m ingest.add AAA BBB, python -m ingest.publish,
+#                            then commit the four record files to that branch
+#
+# Why here and not on a laptop or a cloud sandbox: a runner has open network
+# access (company sites, Hugging Face for the embedding model) and the
+# repository's own token, which can upload release assets. A sandbox whose
+# GitHub proxy accepts only JSON bodies cannot (notes/next-step.md). One run
+# is one batch: ingest.add fetches the published index first, and publish
+# refuses an index that does not cover corpus/corpus.json.
+name: index
+
+on:
+  workflow_dispatch:
+    inputs:
+      companies:
+        description: "Company codes from corpus/urls.yaml, space-separated; empty = upload probe only"
+        required: false
+        default: ""
+      force:
+        description: "Re-index even if up to date (after a pipeline change)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+# One index job at a time: two runs publishing at once would each start from
+# the same published index and the second would drop the first's companies.
+concurrency:
+  group: index
+  cancel-in-progress: false
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      FOLIO_REPO: ${{ github.repository }}
+      COMPANIES: ${{ inputs.companies }}
+      FORCE: ${{ inputs.force && '--force' || '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - run: python -m pip install -r requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: data/models
+          key: fastembed-bge-small-en-v1.5
+      - name: Check the codes
+        run: |
+          if [[ ! "$COMPANIES" =~ ^[A-Z0-9\ ]*$ ]]; then
+            echo "companies must be capital letters, digits and spaces" >&2
+            exit 1
+          fi
+      - name: Probe a release upload
+        run: python -m ingest.publish --probe
+      - name: Add companies
+        if: inputs.companies != ''
+        run: python -m ingest.add $COMPANIES $FORCE
+      - name: Publish the index
+        if: inputs.companies != ''
+        run: python -m ingest.publish
+      - name: Commit the record files
+        if: inputs.companies != ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add corpus/urls.yaml corpus/corpus.json corpus/SOURCES.md corpus/index.json
+          if git diff --cached --quiet; then
+            echo "nothing changed"
+            exit 0
+          fi
+          # The message names a count, never the companies (CLAUDE.md privacy rule).
+          added=$(python -c "import json,subprocess; old={e['company'] for e in json.loads(subprocess.run(['git','show','HEAD:corpus/corpus.json'],capture_output=True,text=True).stdout)}; new={e['company'] for e in json.load(open('corpus/corpus.json'))}; print(len(new-old))")
+          if [ "$added" -gt 0 ]; then msg="Add $added companies"; else msg="Re-index filings"; fi
+          git commit -m "$msg"
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"

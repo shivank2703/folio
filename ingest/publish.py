@@ -119,7 +119,42 @@ def publish_index(db_path: Path = DB, manifest_path: Path = MANIFEST, pointer_pa
     return pointer
 
 
+def probe_upload() -> str:
+    """Upload a tiny asset, fetch it back anonymously, delete it; raise if any step fails.
+
+    Indexing takes minutes per company and publishing is its last step, so the
+    one step that depends on where the job runs is tried first: a cloud
+    sandbox whose GitHub proxy accepts only JSON bodies refuses the upload
+    with 415 (notes/next-step.md), long after the work it would have shipped.
+    """
+    import os
+    import tempfile
+
+    release = github.ensure_release(RELEASE, "Search index", "Folio's LanceDB search index.")
+    with tempfile.TemporaryDirectory() as tmp:
+        probe = Path(tmp) / f"folio-upload-probe-{os.getpid()}.tar.gz"
+        probe.write_bytes(os.urandom(1024))
+        url = github.upload_asset(release, probe)
+        request = urllib.request.Request(url, headers={"User-Agent": "Folio publish check"})
+        with urllib.request.urlopen(request, timeout=60) as response:
+            fetched = response.read()
+        matches = fetched == probe.read_bytes()
+        asset = next(a for a in github.release_assets(RELEASE) if a["name"] == probe.name)
+        github.delete_asset(asset["id"])
+    if not matches:
+        raise RuntimeError(f"{url} served different bytes from those uploaded")
+    return f"upload, anonymous download and delete all work ({probe.name})"
+
+
 def main() -> None:
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Publish data/lancedb as the index the app downloads.")
+    parser.add_argument("--probe", action="store_true",
+                        help="only check that a release asset can be uploaded and downloaded from here")
+    if parser.parse_args().probe:
+        print(probe_upload())
+        return
     try:
         pointer = publish_index()
     except PublishRefused as refused:

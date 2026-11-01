@@ -82,6 +82,23 @@ def upload_asset(release: dict, path: Path) -> str:
     return asset["browser_download_url"]
 
 
+def release_assets(tag: str) -> list[dict]:
+    """Every asset on a release, each with its id, name, size and download URL."""
+    release = call("GET", f"/repos/{REPO}/releases/tags/{tag}")
+    assets, page = [], 1
+    while True:
+        batch = call("GET", f"/repos/{REPO}/releases/{release['id']}/assets?per_page=100&page={page}")
+        assets += batch
+        if len(batch) < 100:
+            return assets
+        page += 1
+
+
+def delete_asset(asset_id: int) -> None:
+    """Remove one release asset. Irreversible: callers decide which assets nothing names."""
+    call("DELETE", f"/repos/{REPO}/releases/assets/{asset_id}")
+
+
 def commit_files(files: dict[str, str], message: str, branch: str = "main") -> str:
     """Commit several text files to a branch in one commit; return the commit's SHA.
 
