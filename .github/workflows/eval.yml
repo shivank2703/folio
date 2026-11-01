@@ -1,0 +1,98 @@
+# Run model-judged evals on a runner and commit their results to the branch.
+#
+# evals/eval-requests.yaml lists runs as {label, ref, questions, samples}. Each
+# run checks out `ref` — the exact commit it measures, so a "before" can be
+# queued after the change it precedes — runs python -m evals.score there, and
+# commits evals/results/<label>.json and its summary to the branch head. A run
+# whose result file already exists is skipped, so the list is a queue and
+# re-running the workflow is safe.
+#
+# Spends API credit (about $0.50 per 51-question, 3-sample run) and needs the
+# repository secret ANTHROPIC_API_KEY. Without it the job stops at its first
+# step and says so; nothing else runs.
+name: eval
+
+on:
+  push:
+    branches-ignore: [main]
+    paths: [evals/eval-requests.yaml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: eval-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - name: Check the API key is configured
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::error::Add the repository secret ANTHROPIC_API_KEY (Settings > Secrets and variables > Actions), then re-run this workflow."
+            exit 1
+          fi
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - run: python -m pip install -r requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: data/models
+          key: fastembed-bge-small-en-v1.5
+      - name: Run the queued evals
+        run: |
+          python - <<'PY'
+          import json, os, re, shutil, subprocess, sys, yaml
+          from pathlib import Path
+          head = Path.cwd()
+          runs = (yaml.safe_load(open("evals/eval-requests.yaml")) or {}).get("runs") or []
+          for run in runs:
+              label = str(run["label"])
+              if not re.fullmatch(r"[a-z0-9][a-z0-9.-]{0,60}", label) or not re.fullmatch(r"[0-9a-f]{7,40}", str(run["ref"])):
+                  sys.exit(f"bad request {run}")
+              result = head / "evals/results" / f"{label}.json"
+              if result.exists():
+                  print(f"{label}: already measured"); continue
+              tree = head.parent / f"eval-{label}"
+              subprocess.run(["git", "worktree", "add", "--detach", str(tree), str(run["ref"])], check=True)
+              if (head / "data/models").exists():
+                  shutil.copytree(head / "data/models", tree / "data/models", dirs_exist_ok=True)
+              args = [sys.executable, "-m", "evals.score", "--label", label, "--samples", str(run.get("samples", 3))]
+              if run.get("questions"):
+                  args += ["--questions", str(run["questions"])]
+              print(f"{label}: evaluating {run['ref']}", flush=True)
+              # The checked-out commit's own code fetches its own pinned index.
+              setup = "from pathlib import Path; from retrieve.store import ensure_index; print(ensure_index(Path('data/lancedb')))"
+              subprocess.run([sys.executable, "-c", setup], cwd=tree, check=True)
+              out = subprocess.run(args, cwd=tree, capture_output=True, text=True)
+              print(out.stdout[-6000:]); print(out.stderr[-3000:], file=sys.stderr)
+              if out.returncode:
+                  sys.exit(f"{label} failed")
+              shutil.copyfile(tree / "evals/results" / f"{label}.json", result)
+              summary = out.stdout[out.stdout.rfind("### "):] if "### " in out.stdout else out.stdout[-4000:]
+              (head / "evals/results" / f"{label}.md").write_text(summary, encoding="utf-8")
+          PY
+      - name: Commit the results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add evals/results/
+          if git diff --cached --quiet; then
+            echo "nothing new"
+            exit 0
+          fi
+          git commit -m "Eval results from the queued runs"
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"

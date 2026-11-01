@@ -31,6 +31,7 @@ import numpy as np
 from fastembed import TextEmbedding
 
 from retrieve.embed import MODEL_NAME, TABLE_NAME, embed_texts, load_model
+from retrieve.spelling import correct
 
 # bge-small-en-v1.5 was trained with this instruction in front of queries and
 # nothing in front of passages. Chunks were embedded bare, so every question
@@ -72,20 +73,53 @@ EXPANSION_SEEDS = 8
 
 # Company, period and statement scope already constrain the search. Repeating
 # them in BM25 lets ubiquitous report headers outrank the requested row label.
-QUESTION_WORDS = set("what were was is are how did does do the a an at end of for to from in on its their s as and by with please give state report filing standalone consolidated financial year".split())
+# Instruction words ("summarise", "key", "tell me") go too: they are how a
+# reader asks, not what the page prints, and "Summarise BEL's FY26 results"
+# ranked a "Summarised Cash Flows" note first on the word alone.
+QUESTION_WORDS = set("what were was is are how did does do the a an at end of for to from in on its their s as and by with please give state report filing standalone consolidated financial year "
+                     "summarise summarize summarised summarized summary overview describe explain tell me about key main big much many have has can you "
+                     "faces face".split())
+
+# Broad questions name a section, not a row. These are the words annual
+# reports print in the headings that answer them (MD&A "Financial
+# performance", "Highlights", "Risks and concerns", "Threats", "Business
+# overview"); they are added to the keyword query only, so a question's own
+# words still decide the vector ranking.
+SECTION_WORDS = [
+    (re.compile(r"\b(summari[sz]ed?|summary|overview|performance|results|highlights|how did .{1,40} do)\b", re.I),
+     "financial performance highlights"),
+    (re.compile(r"\b(risks?|threats?|challenges|concerns)\b", re.I), "risks concerns threats"),
+    (re.compile(r"^\s*what (?:does|do|is) .{1,40}(?: do| does)?\s*\??\s*$|\bbusiness (?:model|overview)\b|\bwhat business\b", re.I),
+     "business overview products"),
+]
 
 
-def without_company(question: str, company: str | None) -> str:
+def company_pattern(company: str) -> str:
+    """The company code as a reader might type it: "LT" also matches "L&T" and "L-T"."""
+    return r"\b" + r"[\s&.-]*".join(re.escape(c) for c in company) + r"\b"
+
+
+def without_company(question: str, company: str | None, replacement: str = " ") -> str:
     """A selected filing supplies identity; avoid rewarding incidental short names."""
     if not company:
         return question
-    pattern = r"\b" + r"[\s-]*".join(re.escape(c) for c in company) + r"\b"
-    return re.sub(pattern, " ", question, flags=re.I)
+    return re.sub(company_pattern(company), replacement, question, flags=re.I)
+
+
+def as_subject(question: str, company: str | None) -> str:
+    """The question with the company named generically, for the vector query.
+
+    Deleting the name, as the keyword query does, left "What does Tata Steel
+    do?" as "What does do?", a vector that resembles nothing. "The company"
+    keeps the sentence's shape without rewarding pages that repeat the name.
+    """
+    return re.sub(r"\s+", " ", without_company(question, company, "the company")).strip()
 
 
 def keyword_query(question: str, company: str | None) -> str:
     text = FISCAL_YEAR.sub(" ", without_company(question, company)).lower()
     words = [word for word in re.findall(r"\b\w+\b", text) if word not in QUESTION_WORDS]
+    words += [extra for pattern, extra in SECTION_WORDS if pattern.search(question) for extra in extra.split()]
     return " ".join(words) or question
 
 
@@ -197,13 +231,17 @@ def search(
     does not answer at all. The expand and hybrid switches exist so a change
     here can be measured against the retrieval it replaces (rag-eval).
     """
-    neutral = without_company(question, company)
+    # Misspellings are corrected against the filing's own words first, for
+    # ranking and gate alike: "totla assets" matches no page and resembles
+    # none (retrieve/spelling.py).
+    question = correct(question, table, company)
+    neutral = as_subject(question, company)
     text_query = expand_fiscal_years(neutral) if expand else neutral
     if re.search(r"\btotal (?:assets|liabilities|equity)\b", neutral, re.I) and 'balance sheet' not in neutral.lower():
         text_query += " balance sheet"
-    # Keep the refusal floor on the original question representation it was
-    # calibrated against. Ranking rewrites otherwise depress ordinary prose
-    # questions (for example a publisher's title count) below that floor.
+    # Keep the refusal floor on the question's own representation, not the
+    # ranking rewrite: rewrites depress ordinary prose questions (a
+    # publisher's title count) below the floor it is calibrated against.
     gate_query = expand_fiscal_years(question) if expand else question
     vector, gate_vector = embed_texts(model, [QUERY_INSTRUCTION + text_query,
                                              QUERY_INSTRUCTION + gate_query])

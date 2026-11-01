@@ -1,0 +1,11 @@
+# Queue for the eval workflow (.github/workflows/eval.yml). Each run checks out
+# `ref`, the exact commit it measures, and runs python -m evals.score there; a
+# run whose evals/results/<label>.json exists is skipped. Needs the repository
+# secret ANTHROPIC_API_KEY. Results are committed back to the branch.
+runs:
+  # Step 3 "before": the 0.67 floor and the retrieval that preceded the
+  # broad-question changes, on the 51-question set (13 natural answerable
+  # questions and 14 new negatives added in a05b580).
+  - label: natural-before
+    ref: 96b305d
+    samples: 3
