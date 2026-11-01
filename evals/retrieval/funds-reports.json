@@ -1,8 +1,8 @@
 {
-"recorded": "2026-11-01 11:30",
+"recorded": "2026-11-01 11:33",
 "model": "BAAI/bge-small-en-v1.5",
 "index": "654edb14fd97d07ee4c0de6b84f09b074f148afff201ffe7df5438faedf6bfa3",
-"code": "7238535e8033fd06",
+"code": "1251fbaad3f3e360",
 "questions": {
 "BEL\tWhat were BEL standalone total assets at the end of FY26?": {
 "id": "bel-standalone",
@@ -10,67 +10,67 @@
 {
 "page": 113,
 "chunk": 0,
-"score": 0.658205,
+"score": 0.658238,
 "sibling": false,
-"gate": 0.713174
+"gate": 0.713166
 },
 {
 "page": 106,
 "chunk": 0,
-"score": 0.685534,
+"score": 0.685565,
 "sibling": false,
-"gate": 0.713174
+"gate": 0.713166
 },
 {
 "page": 115,
 "chunk": 0,
-"score": 0.643727,
+"score": 0.643771,
 "sibling": false,
-"gate": 0.713174
+"gate": 0.713166
 },
 {
 "page": 98,
 "chunk": 7,
-"score": 0.665398,
+"score": 0.665409,
 "sibling": false,
-"gate": 0.713174
+"gate": 0.713166
 },
 {
 "page": 132,
 "chunk": 6,
-"score": 0.670784,
+"score": 0.670794,
 "sibling": false,
-"gate": 0.713174
+"gate": 0.713166
 },
 {
 "page": 104,
 "chunk": 0,
-"score": 0.659337,
+"score": 0.659369,
 "sibling": false,
-"gate": 0.713174
+"gate": 0.713166
 },
 {
 "page": 90,
 "chunk": 3,
-"score": 0.643023,
+"score": 0.643054,
 "sibling": false,
-"gate": 0.713174
+"gate": 0.713166
 },
 {
 "page": 130,
 "chunk": 0,
-"score": 0.634162,
+"score": 0.634179,
 "sibling": false,
-"gate": 0.713174
+"gate": 0.713166
 }
 ],
 "context": [
 {
 "page": 113,
 "chunk": 0,
-"score": 0.658205,
+"score": 0.658238,
 "sibling": false,
-"gate": 0.713174
+"gate": 0.713166
 },
 {
 "page": 113,
@@ -117,9 +117,9 @@
 {
 "page": 106,
 "chunk": 0,
-"score": 0.685534,
+"score": 0.685565,
 "sibling": false,
-"gate": 0.713174
+"gate": 0.713166
 },
 {
 "page": 106,
@@ -166,9 +166,9 @@
 {
 "page": 115,
 "chunk": 0,
-"score": 0.643727,
+"score": 0.643771,
 "sibling": false,
-"gate": 0.713174
+"gate": 0.713166
 },
 {
 "page": 115,
@@ -233,9 +233,9 @@
 {
 "page": 98,
 "chunk": 7,
-"score": 0.665398,
+"score": 0.665409,
 "sibling": false,
-"gate": 0.713174
+"gate": 0.713166
 },
 {
 "page": 98,
@@ -246,9 +246,9 @@
 {
 "page": 132,
 "chunk": 6,
-"score": 0.670784,
+"score": 0.670794,
 "sibling": false,
-"gate": 0.713174
+"gate": 0.713166
 },
 {
 "page": 132,
@@ -259,28 +259,28 @@
 {
 "page": 104,
 "chunk": 0,
-"score": 0.659337,
+"score": 0.659369,
 "sibling": false,
-"gate": 0.713174
+"gate": 0.713166
 },
 {
 "page": 90,
 "chunk": 3,
-"score": 0.643023,
+"score": 0.643054,
 "sibling": false,
-"gate": 0.713174
+"gate": 0.713166
 },
 {
 "page": 130,
 "chunk": 0,
-"score": 0.634162,
+"score": 0.634179,
 "sibling": false,
-"gate": 0.713174
+"gate": 0.713166
 }
 ],
 "gate": {
-"fused_best": 0.685534,
-"vector_best": 0.713174
+"fused_best": 0.685565,
+"vector_best": 0.713166
 }
 },
 "BEL\tWhat were BEL consolidated total assets at the end of FY26?": {
@@ -289,58 +289,58 @@
 {
 "page": 181,
 "chunk": 3,
-"score": 0.671274,
+"score": 0.671298,
 "sibling": false,
-"gate": 0.735375
+"gate": 0.735364
 },
 {
 "page": 180,
 "chunk": 7,
-"score": 0.682953,
+"score": 0.682967,
 "sibling": false,
-"gate": 0.735375
+"gate": 0.735364
 },
 {
 "page": 181,
 "chunk": 4,
-"score": 0.648971,
+"score": 0.648978,
 "sibling": false,
-"gate": 0.735375
+"gate": 0.735364
 },
 {
 "page": 160,
 "chunk": 7,
-"score": 0.689721,
+"score": 0.689738,
 "sibling": false,
-"gate": 0.735375
+"gate": 0.735364
 },
 {
 "page": 163,
 "chunk": 3,
-"score": 0.672055,
+"score": 0.672064,
 "sibling": false,
-"gate": 0.735375
+"gate": 0.735364
 },
 {
 "page": 141,
 "chunk": 8,
-"score": 0.664227,
+"score": 0.664218,
 "sibling": false,
-"gate": 0.735375
+"gate": 0.735364
 },
 {
 "page": 185,
 "chunk": 4,
-"score": 0.712125,
+"score": 0.712133,
 "sibling": false,
-"gate": 0.735375
+"gate": 0.735364
 },
 {
 "page": 171,
 "chunk": 3,
 "score": 0.66185,
 "sibling": false,
-"gate": 0.735375
+"gate": 0.735364
 }
 ],
 "context": [
@@ -365,16 +365,16 @@
 {
 "page": 181,
 "chunk": 3,
-"score": 0.671274,
+"score": 0.671298,
 "sibling": false,
-"gate": 0.735375
+"gate": 0.735364
 },
 {
 "page": 181,
 "chunk": 4,
-"score": 0.648971,
+"score": 0.648978,
 "sibling": false,
-"gate": 0.735375
+"gate": 0.735364
 },
 {
 "page": 181,
@@ -433,9 +433,9 @@
 {
 "page": 180,
 "chunk": 7,
-"score": 0.682953,
+"score": 0.682967,
 "sibling": false,
-"gate": 0.735375
+"gate": 0.735364
 },
 {
 "page": 180,
@@ -488,9 +488,9 @@
 {
 "page": 160,
 "chunk": 7,
-"score": 0.689721,
+"score": 0.689738,
 "sibling": false,
-"gate": 0.735375
+"gate": 0.735364
 },
 {
 "page": 163,
@@ -513,9 +513,9 @@
 {
 "page": 163,
 "chunk": 3,
-"score": 0.672055,
+"score": 0.672064,
 "sibling": false,
-"gate": 0.735375
+"gate": 0.735364
 },
 {
 "page": 163,
@@ -544,9 +544,9 @@
 {
 "page": 141,
 "chunk": 8,
-"score": 0.664227,
+"score": 0.664218,
 "sibling": false,
-"gate": 0.735375
+"gate": 0.735364
 },
 {
 "page": 141,
@@ -557,21 +557,21 @@
 {
 "page": 185,
 "chunk": 4,
-"score": 0.712125,
+"score": 0.712133,
 "sibling": false,
-"gate": 0.735375
+"gate": 0.735364
 },
 {
 "page": 171,
 "chunk": 3,
 "score": 0.66185,
 "sibling": false,
-"gate": 0.735375
+"gate": 0.735364
 }
 ],
 "gate": {
-"fused_best": 0.712125,
-"vector_best": 0.735375
+"fused_best": 0.712133,
+"vector_best": 0.735364
 }
 },
 "HDFCBANK\tWhat were HDFC Bank standalone total assets at the end of FY26, in the unit printed on the balance sheet?": {
@@ -580,81 +580,81 @@
 {
 "page": 353,
 "chunk": 2,
-"score": 0.739104,
+"score": 0.739061,
 "sibling": false,
-"gate": 0.805031
+"gate": 0.805011
 },
 {
 "page": 353,
 "chunk": 0,
-"score": 0.754615,
+"score": 0.754567,
 "sibling": false,
-"gate": 0.805031
+"gate": 0.805011
 },
 {
 "page": 353,
 "chunk": 1,
-"score": 0.733189,
+"score": 0.733157,
 "sibling": false,
-"gate": 0.805031
+"gate": 0.805011
 },
 {
 "page": 294,
 "chunk": 0,
-"score": 0.68039,
+"score": 0.680365,
 "sibling": false,
-"gate": 0.805031
+"gate": 0.805011
 },
 {
 "page": 295,
 "chunk": 0,
-"score": 0.672961,
+"score": 0.672932,
 "sibling": false,
-"gate": 0.805031
+"gate": 0.805011
 },
 {
 "page": 363,
 "chunk": 0,
-"score": 0.717289,
+"score": 0.717211,
 "sibling": false,
-"gate": 0.805031
+"gate": 0.805011
 },
 {
 "page": 393,
 "chunk": 0,
-"score": 0.73172,
+"score": 0.731667,
 "sibling": false,
-"gate": 0.805031
+"gate": 0.805011
 },
 {
 "page": 509,
 "chunk": 3,
-"score": 0.707869,
+"score": 0.707833,
 "sibling": false,
-"gate": 0.805031
+"gate": 0.805011
 }
 ],
 "context": [
 {
 "page": 353,
 "chunk": 0,
-"score": 0.754615,
+"score": 0.754567,
 "sibling": false,
-"gate": 0.805031
+"gate": 0.805011
 },
 {
 "page": 353,
 "chunk": 1,
-"score": 0.733189,
+"score": 0.733157,
 "sibling": false,
-"gate": 0.805031
+"gate": 0.805011
 },
 {
 "page": 353,
 "chunk": 2,
-"score": 0.739104,
+"score": 0.739061,
 "sibling": false,
-"gate": 0.805031
+"gate": 0.805011
 },
 {
 "page": 353,
@@ -677,9 +677,9 @@
 {
 "page": 294,
 "chunk": 0,
-"score": 0.68039,
+"score": 0.680365,
 "sibling": false,
-"gate": 0.805031
+"gate": 0.805011
 },
 {
 "page": 294,
@@ -756,9 +756,9 @@
 {
 "page": 295,
 "chunk": 0,
-"score": 0.672961,
+"score": 0.672932,
 "sibling": false,
-"gate": 0.805031
+"gate": 0.805011
 },
 {
 "page": 295,
@@ -787,9 +787,9 @@
 {
 "page": 363,
 "chunk": 0,
-"score": 0.717289,
+"score": 0.717211,
 "sibling": false,
-"gate": 0.805031
+"gate": 0.805011
 },
 {
 "page": 363,
@@ -806,9 +806,9 @@
 {
 "page": 393,
 "chunk": 0,
-"score": 0.73172,
+"score": 0.731667,
 "sibling": false,
-"gate": 0.805031
+"gate": 0.805011
 },
 {
 "page": 393,
@@ -849,14 +849,14 @@
 {
 "page": 509,
 "chunk": 3,
-"score": 0.707869,
+"score": 0.707833,
 "sibling": false,
-"gate": 0.805031
+"gate": 0.805011
 }
 ],
 "gate": {
-"fused_best": 0.754615,
-"vector_best": 0.805031
+"fused_best": 0.754567,
+"vector_best": 0.805011
 }
 },
 "INDOMIM\tWhat were INDO-MIM standalone total assets at the end of FY26?": {
@@ -865,81 +865,81 @@
 {
 "page": 129,
 "chunk": 2,
-"score": 0.721446,
+"score": 0.721514,
 "sibling": false,
-"gate": 0.822478
+"gate": 0.822538
 },
 {
 "page": 129,
 "chunk": 1,
-"score": 0.740662,
+"score": 0.740725,
 "sibling": false,
-"gate": 0.822478
+"gate": 0.822538
 },
 {
 "page": 143,
 "chunk": 0,
-"score": 0.673587,
+"score": 0.673634,
 "sibling": false,
-"gate": 0.822478
+"gate": 0.822538
 },
 {
 "page": 141,
 "chunk": 0,
-"score": 0.697062,
+"score": 0.697093,
 "sibling": false,
-"gate": 0.822478
+"gate": 0.822538
 },
 {
 "page": 156,
 "chunk": 0,
-"score": 0.637135,
+"score": 0.637177,
 "sibling": false,
-"gate": 0.822478
+"gate": 0.822538
 },
 {
 "page": 142,
 "chunk": 0,
-"score": 0.702368,
+"score": 0.702423,
 "sibling": false,
-"gate": 0.822478
+"gate": 0.822538
 },
 {
 "page": 129,
 "chunk": 0,
-"score": 0.766198,
+"score": 0.766267,
 "sibling": false,
-"gate": 0.822478
+"gate": 0.822538
 },
 {
 "page": 146,
 "chunk": 0,
-"score": 0.714609,
+"score": 0.714655,
 "sibling": false,
-"gate": 0.822478
+"gate": 0.822538
 }
 ],
 "context": [
 {
 "page": 129,
 "chunk": 0,
-"score": 0.766198,
+"score": 0.766267,
 "sibling": false,
-"gate": 0.822478
+"gate": 0.822538
 },
 {
 "page": 129,
 "chunk": 1,
-"score": 0.740662,
+"score": 0.740725,
 "sibling": false,
-"gate": 0.822478
+"gate": 0.822538
 },
 {
 "page": 129,
 "chunk": 2,
-"score": 0.721446,
+"score": 0.721514,
 "sibling": false,
-"gate": 0.822478
+"gate": 0.822538
 },
 {
 "page": 129,
@@ -956,9 +956,9 @@
 {
 "page": 143,
 "chunk": 0,
-"score": 0.673587,
+"score": 0.673634,
 "sibling": false,
-"gate": 0.822478
+"gate": 0.822538
 },
 {
 "page": 143,
@@ -981,9 +981,9 @@
 {
 "page": 141,
 "chunk": 0,
-"score": 0.697062,
+"score": 0.697093,
 "sibling": false,
-"gate": 0.822478
+"gate": 0.822538
 },
 {
 "page": 141,
@@ -1000,9 +1000,9 @@
 {
 "page": 156,
 "chunk": 0,
-"score": 0.637135,
+"score": 0.637177,
 "sibling": false,
-"gate": 0.822478
+"gate": 0.822538
 },
 {
 "page": 156,
@@ -1037,9 +1037,9 @@
 {
 "page": 142,
 "chunk": 0,
-"score": 0.702368,
+"score": 0.702423,
 "sibling": false,
-"gate": 0.822478
+"gate": 0.822538
 },
 {
 "page": 142,
@@ -1068,9 +1068,9 @@
 {
 "page": 146,
 "chunk": 0,
-"score": 0.714609,
+"score": 0.714655,
 "sibling": false,
-"gate": 0.822478
+"gate": 0.822538
 },
 {
 "page": 146,
@@ -1080,8 +1080,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.766198,
-"vector_best": 0.822478
+"fused_best": 0.766267,
+"vector_best": 0.822538
 }
 }
 }
