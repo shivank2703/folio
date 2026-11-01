@@ -1,0 +1,994 @@
+{
+"recorded": "2026-11-01 11:12",
+"model": "BAAI/bge-small-en-v1.5",
+"index": "654edb14fd97d07ee4c0de6b84f09b074f148afff201ffe7df5438faedf6bfa3",
+"code": "1208b446e92f8b09",
+"questions": {
+"BEL\tWhat were BEL standalone total assets at the end of FY26?": {
+"id": "bel-standalone",
+"hits": [
+{
+"page": 106,
+"chunk": 0,
+"score": 0.685534,
+"sibling": false
+},
+{
+"page": 113,
+"chunk": 0,
+"score": 0.658205,
+"sibling": false
+},
+{
+"page": 98,
+"chunk": 7,
+"score": 0.665398,
+"sibling": false
+},
+{
+"page": 115,
+"chunk": 0,
+"score": 0.643727,
+"sibling": false
+},
+{
+"page": 132,
+"chunk": 6,
+"score": 0.670784,
+"sibling": false
+},
+{
+"page": 104,
+"chunk": 0,
+"score": 0.659337,
+"sibling": false
+},
+{
+"page": 101,
+"chunk": 12,
+"score": 0.664796,
+"sibling": false
+},
+{
+"page": 111,
+"chunk": 7,
+"score": 0.635555,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 106,
+"chunk": 0,
+"score": 0.685534,
+"sibling": false
+},
+{
+"page": 106,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 106,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 106,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 106,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 106,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 106,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 106,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 113,
+"chunk": 0,
+"score": 0.658205,
+"sibling": false
+},
+{
+"page": 113,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 113,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 113,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 113,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 113,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 113,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 113,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 7,
+"score": 0.665398,
+"sibling": false
+},
+{
+"page": 98,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 115,
+"chunk": 0,
+"score": 0.643727,
+"sibling": false
+},
+{
+"page": 115,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 115,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 115,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 115,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 132,
+"chunk": 6,
+"score": 0.670784,
+"sibling": false
+},
+{
+"page": 104,
+"chunk": 0,
+"score": 0.659337,
+"sibling": false
+},
+{
+"page": 101,
+"chunk": 12,
+"score": 0.664796,
+"sibling": false
+},
+{
+"page": 111,
+"chunk": 7,
+"score": 0.635555,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.685534,
+"vector_best": 0.713174
+}
+},
+"BEL\tWhat were BEL consolidated total assets at the end of FY26?": {
+"id": "bel-consolidated",
+"hits": [
+{
+"page": 181,
+"chunk": 3,
+"score": 0.671274,
+"sibling": false
+},
+{
+"page": 180,
+"chunk": 7,
+"score": 0.682953,
+"sibling": false
+},
+{
+"page": 160,
+"chunk": 7,
+"score": 0.689721,
+"sibling": false
+},
+{
+"page": 181,
+"chunk": 4,
+"score": 0.648971,
+"sibling": false
+},
+{
+"page": 163,
+"chunk": 3,
+"score": 0.672055,
+"sibling": false
+},
+{
+"page": 145,
+"chunk": 6,
+"score": 0.650534,
+"sibling": false
+},
+{
+"page": 182,
+"chunk": 10,
+"score": 0.664758,
+"sibling": false
+},
+{
+"page": 141,
+"chunk": 8,
+"score": 0.664227,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 181,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 181,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 181,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 181,
+"chunk": 3,
+"score": 0.671274,
+"sibling": false
+},
+{
+"page": 181,
+"chunk": 4,
+"score": 0.648971,
+"sibling": false
+},
+{
+"page": 181,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 181,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 180,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 180,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 180,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 180,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 180,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 180,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 180,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 180,
+"chunk": 7,
+"score": 0.682953,
+"sibling": false
+},
+{
+"page": 180,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 160,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 160,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 160,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 160,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 160,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 160,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 160,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 160,
+"chunk": 7,
+"score": 0.689721,
+"sibling": false
+},
+{
+"page": 163,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 163,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 163,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 163,
+"chunk": 3,
+"score": 0.672055,
+"sibling": false
+},
+{
+"page": 163,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 163,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 163,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 145,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 145,
+"chunk": 6,
+"score": 0.650534,
+"sibling": false
+},
+{
+"page": 145,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 182,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 182,
+"chunk": 10,
+"score": 0.664758,
+"sibling": false
+},
+{
+"page": 141,
+"chunk": 8,
+"score": 0.664227,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.689721,
+"vector_best": 0.735375
+}
+},
+"HDFCBANK\tWhat were HDFC Bank standalone total assets at the end of FY26, in the unit printed on the balance sheet?": {
+"id": "hdfcbank-units",
+"hits": [
+{
+"page": 353,
+"chunk": 2,
+"score": 0.739104,
+"sibling": false
+},
+{
+"page": 353,
+"chunk": 0,
+"score": 0.754615,
+"sibling": false
+},
+{
+"page": 353,
+"chunk": 1,
+"score": 0.733189,
+"sibling": false
+},
+{
+"page": 363,
+"chunk": 0,
+"score": 0.717289,
+"sibling": false
+},
+{
+"page": 384,
+"chunk": 7,
+"score": 0.708228,
+"sibling": false
+},
+{
+"page": 393,
+"chunk": 0,
+"score": 0.73172,
+"sibling": false
+},
+{
+"page": 417,
+"chunk": 0,
+"score": 0.72191,
+"sibling": false
+},
+{
+"page": 415,
+"chunk": 5,
+"score": 0.647014,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 353,
+"chunk": 0,
+"score": 0.754615,
+"sibling": false
+},
+{
+"page": 353,
+"chunk": 1,
+"score": 0.733189,
+"sibling": false
+},
+{
+"page": 353,
+"chunk": 2,
+"score": 0.739104,
+"sibling": false
+},
+{
+"page": 353,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 353,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 353,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 363,
+"chunk": 0,
+"score": 0.717289,
+"sibling": false
+},
+{
+"page": 363,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 363,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 384,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 384,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 384,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 384,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 384,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 384,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 384,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 384,
+"chunk": 7,
+"score": 0.708228,
+"sibling": false
+},
+{
+"page": 384,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 384,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 384,
+"chunk": 10,
+"score": null,
+"sibling": true
+},
+{
+"page": 384,
+"chunk": 11,
+"score": null,
+"sibling": true
+},
+{
+"page": 384,
+"chunk": 12,
+"score": null,
+"sibling": true
+},
+{
+"page": 384,
+"chunk": 13,
+"score": null,
+"sibling": true
+},
+{
+"page": 384,
+"chunk": 14,
+"score": null,
+"sibling": true
+},
+{
+"page": 393,
+"chunk": 0,
+"score": 0.73172,
+"sibling": false
+},
+{
+"page": 393,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 393,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 393,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 393,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 393,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 417,
+"chunk": 0,
+"score": 0.72191,
+"sibling": false
+},
+{
+"page": 417,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 417,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 417,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 415,
+"chunk": 5,
+"score": 0.647014,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.754615,
+"vector_best": 0.805031
+}
+},
+"INDOMIM\tWhat were INDO-MIM standalone total assets at the end of FY26?": {
+"id": "indomim-drill",
+"hits": [
+{
+"page": 129,
+"chunk": 2,
+"score": 0.721446,
+"sibling": false
+},
+{
+"page": 129,
+"chunk": 1,
+"score": 0.740662,
+"sibling": false
+},
+{
+"page": 143,
+"chunk": 0,
+"score": 0.673587,
+"sibling": false
+},
+{
+"page": 141,
+"chunk": 1,
+"score": 0.705647,
+"sibling": false
+},
+{
+"page": 141,
+"chunk": 0,
+"score": 0.697062,
+"sibling": false
+},
+{
+"page": 146,
+"chunk": 0,
+"score": 0.714609,
+"sibling": false
+},
+{
+"page": 142,
+"chunk": 0,
+"score": 0.702368,
+"sibling": false
+},
+{
+"page": 129,
+"chunk": 0,
+"score": 0.766198,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 129,
+"chunk": 0,
+"score": 0.766198,
+"sibling": false
+},
+{
+"page": 129,
+"chunk": 1,
+"score": 0.740662,
+"sibling": false
+},
+{
+"page": 129,
+"chunk": 2,
+"score": 0.721446,
+"sibling": false
+},
+{
+"page": 129,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 129,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 143,
+"chunk": 0,
+"score": 0.673587,
+"sibling": false
+},
+{
+"page": 143,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 143,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 143,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 141,
+"chunk": 0,
+"score": 0.697062,
+"sibling": false
+},
+{
+"page": 141,
+"chunk": 1,
+"score": 0.705647,
+"sibling": false
+},
+{
+"page": 141,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 146,
+"chunk": 0,
+"score": 0.714609,
+"sibling": false
+},
+{
+"page": 146,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 142,
+"chunk": 0,
+"score": 0.702368,
+"sibling": false
+},
+{
+"page": 142,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 142,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 142,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 142,
+"chunk": 4,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.766198,
+"vector_best": 0.822478
+}
+}
+}
+}

@@ -1,0 +1,12823 @@
+{
+"recorded": "2026-11-01 11:12",
+"model": "BAAI/bge-small-en-v1.5",
+"index": "654edb14fd97d07ee4c0de6b84f09b074f148afff201ffe7df5438faedf6bfa3",
+"code": "1208b446e92f8b09",
+"questions": {
+"HCC\tHow did HCC's standalone total assets change from FY24 to FY25?": {
+"id": "hcc-fy25-001",
+"hits": [
+{
+"page": 114,
+"chunk": 1,
+"score": 0.729786,
+"sibling": false
+},
+{
+"page": 116,
+"chunk": 2,
+"score": 0.701703,
+"sibling": false
+},
+{
+"page": 114,
+"chunk": 2,
+"score": 0.707959,
+"sibling": false
+},
+{
+"page": 114,
+"chunk": 3,
+"score": 0.730436,
+"sibling": false
+},
+{
+"page": 118,
+"chunk": 0,
+"score": 0.7285,
+"sibling": false
+},
+{
+"page": 118,
+"chunk": 1,
+"score": 0.72422,
+"sibling": false
+},
+{
+"page": 140,
+"chunk": 1,
+"score": 0.689171,
+"sibling": false
+},
+{
+"page": 142,
+"chunk": 0,
+"score": 0.667654,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 114,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 114,
+"chunk": 1,
+"score": 0.729786,
+"sibling": false
+},
+{
+"page": 114,
+"chunk": 2,
+"score": 0.707959,
+"sibling": false
+},
+{
+"page": 114,
+"chunk": 3,
+"score": 0.730436,
+"sibling": false
+},
+{
+"page": 114,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 114,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 114,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 114,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 116,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 116,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 116,
+"chunk": 2,
+"score": 0.701703,
+"sibling": false
+},
+{
+"page": 116,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 116,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 118,
+"chunk": 0,
+"score": 0.7285,
+"sibling": false
+},
+{
+"page": 118,
+"chunk": 1,
+"score": 0.72422,
+"sibling": false
+},
+{
+"page": 118,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 118,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 118,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 118,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 118,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 140,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 140,
+"chunk": 1,
+"score": 0.689171,
+"sibling": false
+},
+{
+"page": 140,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 140,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 140,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 142,
+"chunk": 0,
+"score": 0.667654,
+"sibling": false
+},
+{
+"page": 142,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 142,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 142,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 142,
+"chunk": 4,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.730436,
+"vector_best": 0.767543
+}
+},
+"HCC\tWhat was HCC's consolidated total income for FY25?": {
+"id": "hcc-fy25-002",
+"hits": [
+{
+"page": 195,
+"chunk": 0,
+"score": 0.725762,
+"sibling": false
+},
+{
+"page": 195,
+"chunk": 5,
+"score": 0.729961,
+"sibling": false
+},
+{
+"page": 259,
+"chunk": 8,
+"score": 0.749405,
+"sibling": false
+},
+{
+"page": 260,
+"chunk": 5,
+"score": 0.692265,
+"sibling": false
+},
+{
+"page": 198,
+"chunk": 1,
+"score": 0.686915,
+"sibling": false
+},
+{
+"page": 215,
+"chunk": 2,
+"score": 0.671181,
+"sibling": false
+},
+{
+"page": 259,
+"chunk": 5,
+"score": 0.665483,
+"sibling": false
+},
+{
+"page": 195,
+"chunk": 6,
+"score": 0.694694,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 195,
+"chunk": 0,
+"score": 0.725762,
+"sibling": false
+},
+{
+"page": 195,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 195,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 195,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 195,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 195,
+"chunk": 5,
+"score": 0.729961,
+"sibling": false
+},
+{
+"page": 195,
+"chunk": 6,
+"score": 0.694694,
+"sibling": false
+},
+{
+"page": 195,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 195,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 195,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 259,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 259,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 259,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 259,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 259,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 259,
+"chunk": 5,
+"score": 0.665483,
+"sibling": false
+},
+{
+"page": 259,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 259,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 259,
+"chunk": 8,
+"score": 0.749405,
+"sibling": false
+},
+{
+"page": 260,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 260,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 260,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 260,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 260,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 260,
+"chunk": 5,
+"score": 0.692265,
+"sibling": false
+},
+{
+"page": 198,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 198,
+"chunk": 1,
+"score": 0.686915,
+"sibling": false
+},
+{
+"page": 198,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 198,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 198,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 198,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 198,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 198,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 215,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 215,
+"chunk": 2,
+"score": 0.671181,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.749405,
+"vector_best": 0.750522
+}
+},
+"HCC\tHow much of HCC's standalone undisputed trade receivables considered good were outstanding for more than 3 years as at March 31, 2025?": {
+"id": "hcc-fy25-003",
+"hits": [
+{
+"page": 138,
+"chunk": 3,
+"score": 0.75897,
+"sibling": false
+},
+{
+"page": 138,
+"chunk": 0,
+"score": 0.71569,
+"sibling": false
+},
+{
+"page": 138,
+"chunk": 1,
+"score": 0.726557,
+"sibling": false
+},
+{
+"page": 138,
+"chunk": 4,
+"score": 0.721237,
+"sibling": false
+},
+{
+"page": 137,
+"chunk": 2,
+"score": 0.698937,
+"sibling": false
+},
+{
+"page": 158,
+"chunk": 2,
+"score": 0.688206,
+"sibling": false
+},
+{
+"page": 152,
+"chunk": 4,
+"score": 0.672878,
+"sibling": false
+},
+{
+"page": 138,
+"chunk": 2,
+"score": 0.668803,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 138,
+"chunk": 0,
+"score": 0.71569,
+"sibling": false
+},
+{
+"page": 138,
+"chunk": 1,
+"score": 0.726557,
+"sibling": false
+},
+{
+"page": 138,
+"chunk": 2,
+"score": 0.668803,
+"sibling": false
+},
+{
+"page": 138,
+"chunk": 3,
+"score": 0.75897,
+"sibling": false
+},
+{
+"page": 138,
+"chunk": 4,
+"score": 0.721237,
+"sibling": false
+},
+{
+"page": 138,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 138,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 137,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 137,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 137,
+"chunk": 2,
+"score": 0.698937,
+"sibling": false
+},
+{
+"page": 137,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 137,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 158,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 158,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 158,
+"chunk": 2,
+"score": 0.688206,
+"sibling": false
+},
+{
+"page": 158,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 158,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 158,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 158,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 152,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 152,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 152,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 152,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 152,
+"chunk": 4,
+"score": 0.672878,
+"sibling": false
+},
+{
+"page": 152,
+"chunk": 5,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.75897,
+"vector_best": 0.75897
+}
+},
+"HCC\tWhat share of India's hydropower capacity has HCC built?": {
+"id": "hcc-fy25-004",
+"hits": [
+{
+"page": 18,
+"chunk": 2,
+"score": 0.709336,
+"sibling": false
+},
+{
+"page": 18,
+"chunk": 3,
+"score": 0.689627,
+"sibling": false
+},
+{
+"page": 18,
+"chunk": 1,
+"score": 0.703723,
+"sibling": false
+},
+{
+"page": 18,
+"chunk": 5,
+"score": 0.699034,
+"sibling": false
+},
+{
+"page": 15,
+"chunk": 0,
+"score": 0.797238,
+"sibling": false
+},
+{
+"page": 18,
+"chunk": 4,
+"score": 0.657151,
+"sibling": false
+},
+{
+"page": 7,
+"chunk": 4,
+"score": 0.725406,
+"sibling": false
+},
+{
+"page": 22,
+"chunk": 3,
+"score": 0.706735,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 18,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 18,
+"chunk": 1,
+"score": 0.703723,
+"sibling": false
+},
+{
+"page": 18,
+"chunk": 2,
+"score": 0.709336,
+"sibling": false
+},
+{
+"page": 18,
+"chunk": 3,
+"score": 0.689627,
+"sibling": false
+},
+{
+"page": 18,
+"chunk": 4,
+"score": 0.657151,
+"sibling": false
+},
+{
+"page": 18,
+"chunk": 5,
+"score": 0.699034,
+"sibling": false
+},
+{
+"page": 15,
+"chunk": 0,
+"score": 0.797238,
+"sibling": false
+},
+{
+"page": 15,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 15,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 15,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 15,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 15,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 15,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 15,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 7,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 7,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 7,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 7,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 7,
+"chunk": 4,
+"score": 0.725406,
+"sibling": false
+},
+{
+"page": 7,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 22,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 22,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 22,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 22,
+"chunk": 3,
+"score": 0.706735,
+"sibling": false
+},
+{
+"page": 22,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 22,
+"chunk": 5,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.797238,
+"vector_best": 0.797238
+}
+},
+"HCC\tHow many EV charging stations did HCC build in FY25?": {
+"id": "hcc-fy25-005",
+"hits": [
+{
+"page": 23,
+"chunk": 1,
+"score": 0.644037,
+"sibling": false
+},
+{
+"page": 141,
+"chunk": 4,
+"score": 0.601344,
+"sibling": false
+},
+{
+"page": 231,
+"chunk": 4,
+"score": 0.591661,
+"sibling": false
+},
+{
+"page": 22,
+"chunk": 2,
+"score": 0.703852,
+"sibling": false
+},
+{
+"page": 9,
+"chunk": 0,
+"score": 0.632932,
+"sibling": false
+},
+{
+"page": 18,
+"chunk": 2,
+"score": 0.606289,
+"sibling": false
+},
+{
+"page": 4,
+"chunk": 1,
+"score": 0.502267,
+"sibling": false
+},
+{
+"page": 19,
+"chunk": 2,
+"score": 0.62218,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 23,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 23,
+"chunk": 1,
+"score": 0.644037,
+"sibling": false
+},
+{
+"page": 23,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 23,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 23,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 23,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 141,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 141,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 141,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 141,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 141,
+"chunk": 4,
+"score": 0.601344,
+"sibling": false
+},
+{
+"page": 141,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 141,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 141,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 141,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 141,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 141,
+"chunk": 10,
+"score": null,
+"sibling": true
+},
+{
+"page": 141,
+"chunk": 11,
+"score": null,
+"sibling": true
+},
+{
+"page": 141,
+"chunk": 12,
+"score": null,
+"sibling": true
+},
+{
+"page": 231,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 231,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 231,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 231,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 231,
+"chunk": 4,
+"score": 0.591661,
+"sibling": false
+},
+{
+"page": 231,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 22,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 22,
+"chunk": 2,
+"score": 0.703852,
+"sibling": false
+},
+{
+"page": 22,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 9,
+"chunk": 0,
+"score": 0.632932,
+"sibling": false
+},
+{
+"page": 18,
+"chunk": 2,
+"score": 0.606289,
+"sibling": false
+},
+{
+"page": 4,
+"chunk": 1,
+"score": 0.502267,
+"sibling": false
+},
+{
+"page": 4,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 19,
+"chunk": 2,
+"score": 0.62218,
+"sibling": false
+},
+{
+"page": 19,
+"chunk": 6,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.703852,
+"vector_best": 0.703852
+}
+},
+"CHAMBAL\tWhat were Chambal Fertilisers' standalone total assets as at March 31, 2025?": {
+"id": "chambal-fy25-001",
+"hits": [
+{
+"page": 98,
+"chunk": 6,
+"score": 0.789667,
+"sibling": false
+},
+{
+"page": 98,
+"chunk": 7,
+"score": 0.79125,
+"sibling": false
+},
+{
+"page": 88,
+"chunk": 0,
+"score": 0.771204,
+"sibling": false
+},
+{
+"page": 102,
+"chunk": 0,
+"score": 0.774101,
+"sibling": false
+},
+{
+"page": 98,
+"chunk": 3,
+"score": 0.71989,
+"sibling": false
+},
+{
+"page": 101,
+"chunk": 3,
+"score": 0.745722,
+"sibling": false
+},
+{
+"page": 103,
+"chunk": 0,
+"score": 0.790279,
+"sibling": false
+},
+{
+"page": 98,
+"chunk": 1,
+"score": 0.72039,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 98,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 1,
+"score": 0.72039,
+"sibling": false
+},
+{
+"page": 98,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 3,
+"score": 0.71989,
+"sibling": false
+},
+{
+"page": 98,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 6,
+"score": 0.789667,
+"sibling": false
+},
+{
+"page": 98,
+"chunk": 7,
+"score": 0.79125,
+"sibling": false
+},
+{
+"page": 88,
+"chunk": 0,
+"score": 0.771204,
+"sibling": false
+},
+{
+"page": 88,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 88,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 88,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 88,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 88,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 88,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 0,
+"score": 0.774101,
+"sibling": false
+},
+{
+"page": 102,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 10,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 11,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 12,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 13,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 14,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 15,
+"score": null,
+"sibling": true
+},
+{
+"page": 101,
+"chunk": 3,
+"score": 0.745722,
+"sibling": false
+},
+{
+"page": 103,
+"chunk": 0,
+"score": 0.790279,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.79125,
+"vector_best": 0.79125
+}
+},
+"CHAMBAL\tWhat is the manufacturing capacity of Chambal's Weak Nitric Acid plant?": {
+"id": "chambal-fy25-002",
+"hits": [
+{
+"page": 5,
+"chunk": 3,
+"score": 0.701908,
+"sibling": false
+},
+{
+"page": 13,
+"chunk": 0,
+"score": 0.657327,
+"sibling": false
+},
+{
+"page": 4,
+"chunk": 3,
+"score": 0.586879,
+"sibling": false
+},
+{
+"page": 48,
+"chunk": 3,
+"score": 0.564989,
+"sibling": false
+},
+{
+"page": 81,
+"chunk": 1,
+"score": 0.575735,
+"sibling": false
+},
+{
+"page": 13,
+"chunk": 7,
+"score": 0.54896,
+"sibling": false
+},
+{
+"page": 175,
+"chunk": 1,
+"score": 0.554799,
+"sibling": false
+},
+{
+"page": 228,
+"chunk": 1,
+"score": 0.558352,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 5,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 5,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 5,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 5,
+"chunk": 3,
+"score": 0.701908,
+"sibling": false
+},
+{
+"page": 5,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 5,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 5,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 5,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 5,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 13,
+"chunk": 0,
+"score": 0.657327,
+"sibling": false
+},
+{
+"page": 13,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 13,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 13,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 13,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 13,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 13,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 13,
+"chunk": 7,
+"score": 0.54896,
+"sibling": false
+},
+{
+"page": 13,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 3,
+"score": 0.586879,
+"sibling": false
+},
+{
+"page": 4,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 48,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 48,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 48,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 48,
+"chunk": 3,
+"score": 0.564989,
+"sibling": false
+},
+{
+"page": 48,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 81,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 81,
+"chunk": 1,
+"score": 0.575735,
+"sibling": false
+},
+{
+"page": 175,
+"chunk": 1,
+"score": 0.554799,
+"sibling": false
+},
+{
+"page": 175,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 228,
+"chunk": 1,
+"score": 0.558352,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.701908,
+"vector_best": 0.701908
+}
+},
+"NAVNEET\tWhat were Navneet Education's standalone total assets as at 31st March, 2025?": {
+"id": "navneet-fy25-001",
+"hits": [
+{
+"page": 190,
+"chunk": 5,
+"score": 0.773763,
+"sibling": false
+},
+{
+"page": 257,
+"chunk": 0,
+"score": 0.673441,
+"sibling": false
+},
+{
+"page": 191,
+"chunk": 4,
+"score": 0.755514,
+"sibling": false
+},
+{
+"page": 218,
+"chunk": 3,
+"score": 0.682014,
+"sibling": false
+},
+{
+"page": 190,
+"chunk": 1,
+"score": 0.694509,
+"sibling": false
+},
+{
+"page": 227,
+"chunk": 1,
+"score": 0.641727,
+"sibling": false
+},
+{
+"page": 262,
+"chunk": 4,
+"score": 0.675959,
+"sibling": false
+},
+{
+"page": 190,
+"chunk": 0,
+"score": 0.731878,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 190,
+"chunk": 0,
+"score": 0.731878,
+"sibling": false
+},
+{
+"page": 190,
+"chunk": 1,
+"score": 0.694509,
+"sibling": false
+},
+{
+"page": 190,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 190,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 190,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 190,
+"chunk": 5,
+"score": 0.773763,
+"sibling": false
+},
+{
+"page": 190,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 0,
+"score": 0.673441,
+"sibling": false
+},
+{
+"page": 257,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 191,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 191,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 191,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 191,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 191,
+"chunk": 4,
+"score": 0.755514,
+"sibling": false
+},
+{
+"page": 191,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 191,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 218,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 218,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 218,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 218,
+"chunk": 3,
+"score": 0.682014,
+"sibling": false
+},
+{
+"page": 218,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 218,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 227,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 227,
+"chunk": 1,
+"score": 0.641727,
+"sibling": false
+},
+{
+"page": 227,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 262,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 262,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 262,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 262,
+"chunk": 4,
+"score": 0.675959,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.773763,
+"vector_best": 0.774602
+}
+},
+"NAVNEET\tHow many titles does Navneet publish?": {
+"id": "navneet-fy25-002",
+"hits": [
+{
+"page": 19,
+"chunk": 0,
+"score": 0.588066,
+"sibling": false
+},
+{
+"page": 18,
+"chunk": 1,
+"score": 0.555794,
+"sibling": false
+},
+{
+"page": 18,
+"chunk": 0,
+"score": 0.752536,
+"sibling": false
+},
+{
+"page": 97,
+"chunk": 4,
+"score": 0.551361,
+"sibling": false
+},
+{
+"page": 7,
+"chunk": 0,
+"score": 0.694131,
+"sibling": false
+},
+{
+"page": 16,
+"chunk": 0,
+"score": 0.607445,
+"sibling": false
+},
+{
+"page": 349,
+"chunk": 0,
+"score": 0.534812,
+"sibling": false
+},
+{
+"page": 77,
+"chunk": 0,
+"score": 0.646314,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 19,
+"chunk": 0,
+"score": 0.588066,
+"sibling": false
+},
+{
+"page": 18,
+"chunk": 0,
+"score": 0.752536,
+"sibling": false
+},
+{
+"page": 18,
+"chunk": 1,
+"score": 0.555794,
+"sibling": false
+},
+{
+"page": 97,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 97,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 97,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 97,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 97,
+"chunk": 4,
+"score": 0.551361,
+"sibling": false
+},
+{
+"page": 97,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 97,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 7,
+"chunk": 0,
+"score": 0.694131,
+"sibling": false
+},
+{
+"page": 7,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 16,
+"chunk": 0,
+"score": 0.607445,
+"sibling": false
+},
+{
+"page": 16,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 349,
+"chunk": 0,
+"score": 0.534812,
+"sibling": false
+},
+{
+"page": 349,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 349,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 349,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 349,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 349,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 349,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 77,
+"chunk": 0,
+"score": 0.646314,
+"sibling": false
+},
+{
+"page": 77,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 77,
+"chunk": 2,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.752536,
+"vector_best": 0.752535
+}
+},
+"CHAMBAL\tHow many drones did Chambal deploy for nano-fertiliser spraying in FY25?": {
+"id": "chambal-fy25-003",
+"hits": [
+{
+"page": 14,
+"chunk": 3,
+"score": 0.604435,
+"sibling": false
+},
+{
+"page": 4,
+"chunk": 5,
+"score": 0.620599,
+"sibling": false
+},
+{
+"page": 13,
+"chunk": 8,
+"score": 0.589764,
+"sibling": false
+},
+{
+"page": 126,
+"chunk": 2,
+"score": 0.580512,
+"sibling": false
+},
+{
+"page": 14,
+"chunk": 4,
+"score": 0.571662,
+"sibling": false
+},
+{
+"page": 38,
+"chunk": 1,
+"score": 0.666199,
+"sibling": false
+},
+{
+"page": 14,
+"chunk": 7,
+"score": 0.577417,
+"sibling": false
+},
+{
+"page": 13,
+"chunk": 0,
+"score": 0.659583,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 14,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 14,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 14,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 14,
+"chunk": 3,
+"score": 0.604435,
+"sibling": false
+},
+{
+"page": 14,
+"chunk": 4,
+"score": 0.571662,
+"sibling": false
+},
+{
+"page": 14,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 14,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 14,
+"chunk": 7,
+"score": 0.577417,
+"sibling": false
+},
+{
+"page": 4,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 5,
+"score": 0.620599,
+"sibling": false
+},
+{
+"page": 13,
+"chunk": 0,
+"score": 0.659583,
+"sibling": false
+},
+{
+"page": 13,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 13,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 13,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 13,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 13,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 13,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 13,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 13,
+"chunk": 8,
+"score": 0.589764,
+"sibling": false
+},
+{
+"page": 126,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 126,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 126,
+"chunk": 2,
+"score": 0.580512,
+"sibling": false
+},
+{
+"page": 126,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 126,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 126,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 126,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 126,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 38,
+"chunk": 1,
+"score": 0.666199,
+"sibling": false
+},
+{
+"page": 38,
+"chunk": 4,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.666199,
+"vector_best": 0.69459
+}
+},
+"NAVNEET\tHow much did Navneet spend on television advertising in FY25?": {
+"id": "navneet-fy25-003",
+"hits": [
+{
+"page": 322,
+"chunk": 0,
+"score": 0.639551,
+"sibling": false
+},
+{
+"page": 232,
+"chunk": 2,
+"score": 0.616081,
+"sibling": false
+},
+{
+"page": 119,
+"chunk": 1,
+"score": 0.537118,
+"sibling": false
+},
+{
+"page": 231,
+"chunk": 0,
+"score": 0.629523,
+"sibling": false
+},
+{
+"page": 107,
+"chunk": 0,
+"score": 0.591508,
+"sibling": false
+},
+{
+"page": 350,
+"chunk": 0,
+"score": 0.633455,
+"sibling": false
+},
+{
+"page": 268,
+"chunk": 0,
+"score": 0.641023,
+"sibling": false
+},
+{
+"page": 350,
+"chunk": 3,
+"score": 0.616068,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 322,
+"chunk": 0,
+"score": 0.639551,
+"sibling": false
+},
+{
+"page": 322,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 322,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 322,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 232,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 232,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 232,
+"chunk": 2,
+"score": 0.616081,
+"sibling": false
+},
+{
+"page": 119,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 119,
+"chunk": 1,
+"score": 0.537118,
+"sibling": false
+},
+{
+"page": 119,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 119,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 119,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 119,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 119,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 231,
+"chunk": 0,
+"score": 0.629523,
+"sibling": false
+},
+{
+"page": 231,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 231,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 231,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 107,
+"chunk": 0,
+"score": 0.591508,
+"sibling": false
+},
+{
+"page": 107,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 350,
+"chunk": 0,
+"score": 0.633455,
+"sibling": false
+},
+{
+"page": 350,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 350,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 350,
+"chunk": 3,
+"score": 0.616068,
+"sibling": false
+},
+{
+"page": 350,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 350,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 350,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 268,
+"chunk": 0,
+"score": 0.641023,
+"sibling": false
+},
+{
+"page": 268,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 268,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 268,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 268,
+"chunk": 4,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.641023,
+"vector_best": 0.695898
+}
+},
+"HCC\tWhat was HCC's standalone retained earnings balance as at March 31, 2025?": {
+"id": "hcc-fy25-006",
+"hits": [
+{
+"page": 118,
+"chunk": 1,
+"score": 0.70664,
+"sibling": false
+},
+{
+"page": 114,
+"chunk": 7,
+"score": 0.690129,
+"sibling": false
+},
+{
+"page": 114,
+"chunk": 3,
+"score": 0.715853,
+"sibling": false
+},
+{
+"page": 146,
+"chunk": 5,
+"score": 0.722495,
+"sibling": false
+},
+{
+"page": 114,
+"chunk": 0,
+"score": 0.699562,
+"sibling": false
+},
+{
+"page": 114,
+"chunk": 2,
+"score": 0.690612,
+"sibling": false
+},
+{
+"page": 114,
+"chunk": 6,
+"score": 0.707113,
+"sibling": false
+},
+{
+"page": 114,
+"chunk": 5,
+"score": 0.70698,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 118,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 118,
+"chunk": 1,
+"score": 0.70664,
+"sibling": false
+},
+{
+"page": 118,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 118,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 118,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 118,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 118,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 114,
+"chunk": 0,
+"score": 0.699562,
+"sibling": false
+},
+{
+"page": 114,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 114,
+"chunk": 2,
+"score": 0.690612,
+"sibling": false
+},
+{
+"page": 114,
+"chunk": 3,
+"score": 0.715853,
+"sibling": false
+},
+{
+"page": 114,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 114,
+"chunk": 5,
+"score": 0.70698,
+"sibling": false
+},
+{
+"page": 114,
+"chunk": 6,
+"score": 0.707113,
+"sibling": false
+},
+{
+"page": 114,
+"chunk": 7,
+"score": 0.690129,
+"sibling": false
+},
+{
+"page": 146,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 146,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 146,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 146,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 146,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 146,
+"chunk": 5,
+"score": 0.722495,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.722495,
+"vector_best": 0.774278
+}
+},
+"HCC\tWhat were HCC's total consolidated current borrowings as at March 31, 2025?": {
+"id": "hcc-fy25-007",
+"hits": [
+{
+"page": 194,
+"chunk": 5,
+"score": 0.735489,
+"sibling": false
+},
+{
+"page": 194,
+"chunk": 4,
+"score": 0.729509,
+"sibling": false
+},
+{
+"page": 194,
+"chunk": 3,
+"score": 0.724501,
+"sibling": false
+},
+{
+"page": 230,
+"chunk": 0,
+"score": 0.702097,
+"sibling": false
+},
+{
+"page": 194,
+"chunk": 1,
+"score": 0.724254,
+"sibling": false
+},
+{
+"page": 194,
+"chunk": 6,
+"score": 0.725764,
+"sibling": false
+},
+{
+"page": 229,
+"chunk": 4,
+"score": 0.67786,
+"sibling": false
+},
+{
+"page": 197,
+"chunk": 0,
+"score": 0.730783,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 194,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 194,
+"chunk": 1,
+"score": 0.724254,
+"sibling": false
+},
+{
+"page": 194,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 194,
+"chunk": 3,
+"score": 0.724501,
+"sibling": false
+},
+{
+"page": 194,
+"chunk": 4,
+"score": 0.729509,
+"sibling": false
+},
+{
+"page": 194,
+"chunk": 5,
+"score": 0.735489,
+"sibling": false
+},
+{
+"page": 194,
+"chunk": 6,
+"score": 0.725764,
+"sibling": false
+},
+{
+"page": 194,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 194,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 230,
+"chunk": 0,
+"score": 0.702097,
+"sibling": false
+},
+{
+"page": 230,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 230,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 230,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 230,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 230,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 229,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 229,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 229,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 229,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 229,
+"chunk": 4,
+"score": 0.67786,
+"sibling": false
+},
+{
+"page": 229,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 197,
+"chunk": 0,
+"score": 0.730783,
+"sibling": false
+},
+{
+"page": 197,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 197,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 197,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 197,
+"chunk": 4,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.735489,
+"vector_best": 0.766684
+}
+},
+"HCC\tHow much of HCC's consolidated disputed trade receivables considered good were outstanding for more than 3 years as at March 31, 2025?": {
+"id": "hcc-fy25-008",
+"hits": [
+{
+"page": 220,
+"chunk": 1,
+"score": 0.740841,
+"sibling": false
+},
+{
+"page": 220,
+"chunk": 4,
+"score": 0.736481,
+"sibling": false
+},
+{
+"page": 220,
+"chunk": 3,
+"score": 0.727175,
+"sibling": false
+},
+{
+"page": 220,
+"chunk": 0,
+"score": 0.701822,
+"sibling": false
+},
+{
+"page": 236,
+"chunk": 3,
+"score": 0.696869,
+"sibling": false
+},
+{
+"page": 220,
+"chunk": 2,
+"score": 0.689971,
+"sibling": false
+},
+{
+"page": 219,
+"chunk": 2,
+"score": 0.687631,
+"sibling": false
+},
+{
+"page": 236,
+"chunk": 5,
+"score": 0.689267,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 220,
+"chunk": 0,
+"score": 0.701822,
+"sibling": false
+},
+{
+"page": 220,
+"chunk": 1,
+"score": 0.740841,
+"sibling": false
+},
+{
+"page": 220,
+"chunk": 2,
+"score": 0.689971,
+"sibling": false
+},
+{
+"page": 220,
+"chunk": 3,
+"score": 0.727175,
+"sibling": false
+},
+{
+"page": 220,
+"chunk": 4,
+"score": 0.736481,
+"sibling": false
+},
+{
+"page": 220,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 236,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 236,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 236,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 236,
+"chunk": 3,
+"score": 0.696869,
+"sibling": false
+},
+{
+"page": 236,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 236,
+"chunk": 5,
+"score": 0.689267,
+"sibling": false
+},
+{
+"page": 236,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 219,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 219,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 219,
+"chunk": 2,
+"score": 0.687631,
+"sibling": false
+},
+{
+"page": 219,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 219,
+"chunk": 4,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.740841,
+"vector_best": 0.741047
+}
+},
+"HCC\tHow much of the Vishnugad Pipalkoti head race tunnel had HCC excavated?": {
+"id": "hcc-fy25-009",
+"hits": [
+{
+"page": 12,
+"chunk": 0,
+"score": 0.715015,
+"sibling": false
+},
+{
+"page": 23,
+"chunk": 3,
+"score": 0.692044,
+"sibling": false
+},
+{
+"page": 22,
+"chunk": 3,
+"score": 0.633708,
+"sibling": false
+},
+{
+"page": 5,
+"chunk": 4,
+"score": 0.58258,
+"sibling": false
+},
+{
+"page": 92,
+"chunk": 2,
+"score": 0.58577,
+"sibling": false
+},
+{
+"page": 4,
+"chunk": 3,
+"score": 0.598114,
+"sibling": false
+},
+{
+"page": 5,
+"chunk": 1,
+"score": 0.571003,
+"sibling": false
+},
+{
+"page": 4,
+"chunk": 4,
+"score": 0.612188,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 12,
+"chunk": 0,
+"score": 0.715015,
+"sibling": false
+},
+{
+"page": 12,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 23,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 23,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 23,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 23,
+"chunk": 3,
+"score": 0.692044,
+"sibling": false
+},
+{
+"page": 23,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 23,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 22,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 22,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 22,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 22,
+"chunk": 3,
+"score": 0.633708,
+"sibling": false
+},
+{
+"page": 22,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 22,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 5,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 5,
+"chunk": 1,
+"score": 0.571003,
+"sibling": false
+},
+{
+"page": 5,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 5,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 5,
+"chunk": 4,
+"score": 0.58258,
+"sibling": false
+},
+{
+"page": 5,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 92,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 92,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 92,
+"chunk": 2,
+"score": 0.58577,
+"sibling": false
+},
+{
+"page": 92,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 92,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 92,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 3,
+"score": 0.598114,
+"sibling": false
+},
+{
+"page": 4,
+"chunk": 4,
+"score": 0.612188,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.715015,
+"vector_best": 0.715015
+}
+},
+"HCC\tHow many patents did HCC file in FY25?": {
+"id": "hcc-fy25-010",
+"hits": [
+{
+"page": 94,
+"chunk": 1,
+"score": 0.623776,
+"sibling": false
+},
+{
+"page": 105,
+"chunk": 5,
+"score": 0.622135,
+"sibling": false
+},
+{
+"page": 127,
+"chunk": 0,
+"score": 0.49978,
+"sibling": false
+},
+{
+"page": 260,
+"chunk": 4,
+"score": 0.628021,
+"sibling": false
+},
+{
+"page": 208,
+"chunk": 2,
+"score": 0.51147,
+"sibling": false
+},
+{
+"page": 142,
+"chunk": 1,
+"score": 0.607717,
+"sibling": false
+},
+{
+"page": 78,
+"chunk": 2,
+"score": 0.580312,
+"sibling": false
+},
+{
+"page": 225,
+"chunk": 4,
+"score": 0.629677,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 94,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 94,
+"chunk": 1,
+"score": 0.623776,
+"sibling": false
+},
+{
+"page": 94,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 94,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 94,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 105,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 105,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 105,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 105,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 105,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 105,
+"chunk": 5,
+"score": 0.622135,
+"sibling": false
+},
+{
+"page": 105,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 105,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 127,
+"chunk": 0,
+"score": 0.49978,
+"sibling": false
+},
+{
+"page": 127,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 127,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 127,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 127,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 127,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 260,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 260,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 260,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 260,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 260,
+"chunk": 4,
+"score": 0.628021,
+"sibling": false
+},
+{
+"page": 260,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 208,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 208,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 208,
+"chunk": 2,
+"score": 0.51147,
+"sibling": false
+},
+{
+"page": 208,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 208,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 208,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 142,
+"chunk": 1,
+"score": 0.607717,
+"sibling": false
+},
+{
+"page": 142,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 78,
+"chunk": 2,
+"score": 0.580312,
+"sibling": false
+},
+{
+"page": 225,
+"chunk": 4,
+"score": 0.629677,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.629677,
+"vector_best": 0.701684
+}
+},
+"CHAMBAL\tBy how much did Chambal Fertilisers' standalone total assets change between March 31, 2024 and March 31, 2025?": {
+"id": "chambal-fy25-004",
+"hits": [
+{
+"page": 102,
+"chunk": 0,
+"score": 0.799618,
+"sibling": false
+},
+{
+"page": 98,
+"chunk": 6,
+"score": 0.775545,
+"sibling": false
+},
+{
+"page": 88,
+"chunk": 0,
+"score": 0.75878,
+"sibling": false
+},
+{
+"page": 98,
+"chunk": 7,
+"score": 0.776563,
+"sibling": false
+},
+{
+"page": 102,
+"chunk": 14,
+"score": 0.69727,
+"sibling": false
+},
+{
+"page": 206,
+"chunk": 3,
+"score": 0.665533,
+"sibling": false
+},
+{
+"page": 132,
+"chunk": 5,
+"score": 0.661019,
+"sibling": false
+},
+{
+"page": 120,
+"chunk": 5,
+"score": 0.683434,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 102,
+"chunk": 0,
+"score": 0.799618,
+"sibling": false
+},
+{
+"page": 102,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 10,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 11,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 12,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 13,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 14,
+"score": 0.69727,
+"sibling": false
+},
+{
+"page": 102,
+"chunk": 15,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 6,
+"score": 0.775545,
+"sibling": false
+},
+{
+"page": 98,
+"chunk": 7,
+"score": 0.776563,
+"sibling": false
+},
+{
+"page": 88,
+"chunk": 0,
+"score": 0.75878,
+"sibling": false
+},
+{
+"page": 88,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 88,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 88,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 88,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 88,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 206,
+"chunk": 3,
+"score": 0.665533,
+"sibling": false
+},
+{
+"page": 132,
+"chunk": 5,
+"score": 0.661019,
+"sibling": false
+},
+{
+"page": 120,
+"chunk": 5,
+"score": 0.683434,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.799618,
+"vector_best": 0.799618
+}
+},
+"CHAMBAL\tWhat was Chambal Fertilisers' standalone profit for FY25, and what final dividend per share did the Board recommend for FY25?": {
+"id": "chambal-fy25-005",
+"hits": [
+{
+"page": 232,
+"chunk": 1,
+"score": 0.672574,
+"sibling": false
+},
+{
+"page": 29,
+"chunk": 4,
+"score": 0.762133,
+"sibling": false
+},
+{
+"page": 102,
+"chunk": 14,
+"score": 0.689766,
+"sibling": false
+},
+{
+"page": 103,
+"chunk": 0,
+"score": 0.781953,
+"sibling": false
+},
+{
+"page": 161,
+"chunk": 0,
+"score": 0.671447,
+"sibling": false
+},
+{
+"page": 99,
+"chunk": 5,
+"score": 0.764227,
+"sibling": false
+},
+{
+"page": 17,
+"chunk": 2,
+"score": 0.633149,
+"sibling": false
+},
+{
+"page": 88,
+"chunk": 0,
+"score": 0.786382,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 232,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 232,
+"chunk": 1,
+"score": 0.672574,
+"sibling": false
+},
+{
+"page": 232,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 232,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 232,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 232,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 29,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 29,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 29,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 29,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 29,
+"chunk": 4,
+"score": 0.762133,
+"sibling": false
+},
+{
+"page": 29,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 10,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 11,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 12,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 13,
+"score": null,
+"sibling": true
+},
+{
+"page": 102,
+"chunk": 14,
+"score": 0.689766,
+"sibling": false
+},
+{
+"page": 102,
+"chunk": 15,
+"score": null,
+"sibling": true
+},
+{
+"page": 103,
+"chunk": 0,
+"score": 0.781953,
+"sibling": false
+},
+{
+"page": 103,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 161,
+"chunk": 0,
+"score": 0.671447,
+"sibling": false
+},
+{
+"page": 99,
+"chunk": 5,
+"score": 0.764227,
+"sibling": false
+},
+{
+"page": 17,
+"chunk": 2,
+"score": 0.633149,
+"sibling": false
+},
+{
+"page": 88,
+"chunk": 0,
+"score": 0.786382,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.786382,
+"vector_best": 0.786382
+}
+},
+"NAVNEET\tWhat was Navneet Education's standalone profit after tax for FY25?": {
+"id": "navneet-fy25-004",
+"hits": [
+{
+"page": 192,
+"chunk": 0,
+"score": 0.716924,
+"sibling": false
+},
+{
+"page": 268,
+"chunk": 1,
+"score": 0.695229,
+"sibling": false
+},
+{
+"page": 100,
+"chunk": 4,
+"score": 0.785217,
+"sibling": false
+},
+{
+"page": 191,
+"chunk": 3,
+"score": 0.687396,
+"sibling": false
+},
+{
+"page": 256,
+"chunk": 3,
+"score": 0.660199,
+"sibling": false
+},
+{
+"page": 100,
+"chunk": 3,
+"score": 0.777869,
+"sibling": false
+},
+{
+"page": 191,
+"chunk": 2,
+"score": 0.66939,
+"sibling": false
+},
+{
+"page": 182,
+"chunk": 0,
+"score": 0.791358,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 192,
+"chunk": 0,
+"score": 0.716924,
+"sibling": false
+},
+{
+"page": 192,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 192,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 192,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 192,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 192,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 192,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 268,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 268,
+"chunk": 1,
+"score": 0.695229,
+"sibling": false
+},
+{
+"page": 268,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 268,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 268,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 100,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 100,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 100,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 100,
+"chunk": 3,
+"score": 0.777869,
+"sibling": false
+},
+{
+"page": 100,
+"chunk": 4,
+"score": 0.785217,
+"sibling": false
+},
+{
+"page": 100,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 100,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 100,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 100,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 191,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 191,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 191,
+"chunk": 2,
+"score": 0.66939,
+"sibling": false
+},
+{
+"page": 191,
+"chunk": 3,
+"score": 0.687396,
+"sibling": false
+},
+{
+"page": 191,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 191,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 191,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 256,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 256,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 256,
+"chunk": 3,
+"score": 0.660199,
+"sibling": false
+},
+{
+"page": 256,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 182,
+"chunk": 0,
+"score": 0.791358,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.791358,
+"vector_best": 0.791358
+}
+},
+"NAVNEET\tHow many franchise stores did Navneet open in FY25?": {
+"id": "navneet-fy25-005",
+"hits": [
+{
+"page": 217,
+"chunk": 0,
+"score": 0.612872,
+"sibling": false
+},
+{
+"page": 305,
+"chunk": 0,
+"score": 0.610936,
+"sibling": false
+},
+{
+"page": 261,
+"chunk": 0,
+"score": 0.559533,
+"sibling": false
+},
+{
+"page": 338,
+"chunk": 0,
+"score": 0.561851,
+"sibling": false
+},
+{
+"page": 320,
+"chunk": 3,
+"score": 0.561346,
+"sibling": false
+},
+{
+"page": 257,
+"chunk": 7,
+"score": 0.613865,
+"sibling": false
+},
+{
+"page": 140,
+"chunk": 1,
+"score": 0.540875,
+"sibling": false
+},
+{
+"page": 268,
+"chunk": 0,
+"score": 0.620112,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 217,
+"chunk": 0,
+"score": 0.612872,
+"sibling": false
+},
+{
+"page": 217,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 217,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 217,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 217,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 305,
+"chunk": 0,
+"score": 0.610936,
+"sibling": false
+},
+{
+"page": 305,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 305,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 305,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 261,
+"chunk": 0,
+"score": 0.559533,
+"sibling": false
+},
+{
+"page": 261,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 261,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 261,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 261,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 338,
+"chunk": 0,
+"score": 0.561851,
+"sibling": false
+},
+{
+"page": 338,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 338,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 338,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 338,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 320,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 320,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 320,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 320,
+"chunk": 3,
+"score": 0.561346,
+"sibling": false
+},
+{
+"page": 257,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 7,
+"score": 0.613865,
+"sibling": false
+},
+{
+"page": 140,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 140,
+"chunk": 1,
+"score": 0.540875,
+"sibling": false
+},
+{
+"page": 268,
+"chunk": 0,
+"score": 0.620112,
+"sibling": false
+},
+{
+"page": 268,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 268,
+"chunk": 4,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.620112,
+"vector_best": 0.70923
+}
+},
+"UNIHEALTH\tWhat were Unihealth's consolidated total assets as at March 31, 2026?": {
+"id": "unihealth-fy26-001",
+"hits": [
+{
+"page": 126,
+"chunk": 6,
+"score": 0.71315,
+"sibling": false
+},
+{
+"page": 112,
+"chunk": 0,
+"score": 0.686934,
+"sibling": false
+},
+{
+"page": 98,
+"chunk": 9,
+"score": 0.632243,
+"sibling": false
+},
+{
+"page": 98,
+"chunk": 7,
+"score": 0.639724,
+"sibling": false
+},
+{
+"page": 98,
+"chunk": 8,
+"score": 0.605051,
+"sibling": false
+},
+{
+"page": 125,
+"chunk": 5,
+"score": 0.66237,
+"sibling": false
+},
+{
+"page": 127,
+"chunk": 4,
+"score": 0.640642,
+"sibling": false
+},
+{
+"page": 127,
+"chunk": 3,
+"score": 0.661502,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 126,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 126,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 126,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 126,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 126,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 126,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 126,
+"chunk": 6,
+"score": 0.71315,
+"sibling": false
+},
+{
+"page": 126,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 126,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 112,
+"chunk": 0,
+"score": 0.686934,
+"sibling": false
+},
+{
+"page": 112,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 112,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 112,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 112,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 112,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 112,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 112,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 112,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 112,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 7,
+"score": 0.639724,
+"sibling": false
+},
+{
+"page": 98,
+"chunk": 8,
+"score": 0.605051,
+"sibling": false
+},
+{
+"page": 98,
+"chunk": 9,
+"score": 0.632243,
+"sibling": false
+},
+{
+"page": 98,
+"chunk": 10,
+"score": null,
+"sibling": true
+},
+{
+"page": 125,
+"chunk": 5,
+"score": 0.66237,
+"sibling": false
+},
+{
+"page": 125,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 127,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 127,
+"chunk": 3,
+"score": 0.661502,
+"sibling": false
+},
+{
+"page": 127,
+"chunk": 4,
+"score": 0.640642,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.71315,
+"vector_best": 0.800031
+}
+},
+"UNIHEALTH\tWhat bed capacity did Unihealth's Uganda hospital network reach in FY26?": {
+"id": "unihealth-fy26-002",
+"hits": [
+{
+"page": 6,
+"chunk": 1,
+"score": 0.804535,
+"sibling": false
+},
+{
+"page": 17,
+"chunk": 3,
+"score": 0.730173,
+"sibling": false
+},
+{
+"page": 9,
+"chunk": 2,
+"score": 0.696744,
+"sibling": false
+},
+{
+"page": 6,
+"chunk": 0,
+"score": 0.761277,
+"sibling": false
+},
+{
+"page": 10,
+"chunk": 1,
+"score": 0.714153,
+"sibling": false
+},
+{
+"page": 4,
+"chunk": 2,
+"score": 0.794269,
+"sibling": false
+},
+{
+"page": 17,
+"chunk": 7,
+"score": 0.713269,
+"sibling": false
+},
+{
+"page": 5,
+"chunk": 1,
+"score": 0.726098,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 6,
+"chunk": 0,
+"score": 0.761277,
+"sibling": false
+},
+{
+"page": 6,
+"chunk": 1,
+"score": 0.804535,
+"sibling": false
+},
+{
+"page": 6,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 6,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 17,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 17,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 17,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 17,
+"chunk": 3,
+"score": 0.730173,
+"sibling": false
+},
+{
+"page": 17,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 17,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 17,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 17,
+"chunk": 7,
+"score": 0.713269,
+"sibling": false
+},
+{
+"page": 17,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 17,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 17,
+"chunk": 10,
+"score": null,
+"sibling": true
+},
+{
+"page": 9,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 9,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 9,
+"chunk": 2,
+"score": 0.696744,
+"sibling": false
+},
+{
+"page": 9,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 9,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 9,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 10,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 10,
+"chunk": 1,
+"score": 0.714153,
+"sibling": false
+},
+{
+"page": 10,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 10,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 10,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 2,
+"score": 0.794269,
+"sibling": false
+},
+{
+"page": 4,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 5,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 5,
+"chunk": 1,
+"score": 0.726098,
+"sibling": false
+},
+{
+"page": 5,
+"chunk": 2,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.804535,
+"vector_best": 0.804535
+}
+},
+"UNIHEALTH\tWhat was Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026?": {
+"id": "unihealth-fy26-003",
+"hits": [
+{
+"page": 118,
+"chunk": 5,
+"score": 0.738113,
+"sibling": false
+},
+{
+"page": 118,
+"chunk": 6,
+"score": 0.675472,
+"sibling": false
+},
+{
+"page": 118,
+"chunk": 8,
+"score": 0.658487,
+"sibling": false
+},
+{
+"page": 130,
+"chunk": 2,
+"score": 0.726212,
+"sibling": false
+},
+{
+"page": 118,
+"chunk": 7,
+"score": 0.625229,
+"sibling": false
+},
+{
+"page": 118,
+"chunk": 4,
+"score": 0.637365,
+"sibling": false
+},
+{
+"page": 119,
+"chunk": 7,
+"score": 0.678864,
+"sibling": false
+},
+{
+"page": 111,
+"chunk": 0,
+"score": 0.720691,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 118,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 118,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 118,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 118,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 118,
+"chunk": 4,
+"score": 0.637365,
+"sibling": false
+},
+{
+"page": 118,
+"chunk": 5,
+"score": 0.738113,
+"sibling": false
+},
+{
+"page": 118,
+"chunk": 6,
+"score": 0.675472,
+"sibling": false
+},
+{
+"page": 118,
+"chunk": 7,
+"score": 0.625229,
+"sibling": false
+},
+{
+"page": 118,
+"chunk": 8,
+"score": 0.658487,
+"sibling": false
+},
+{
+"page": 118,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 130,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 130,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 130,
+"chunk": 2,
+"score": 0.726212,
+"sibling": false
+},
+{
+"page": 130,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 130,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 130,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 130,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 130,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 130,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 130,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 119,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 119,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 119,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 119,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 119,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 119,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 119,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 119,
+"chunk": 7,
+"score": 0.678864,
+"sibling": false
+},
+{
+"page": 111,
+"chunk": 0,
+"score": 0.720691,
+"sibling": false
+},
+{
+"page": 111,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 111,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 111,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 111,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 111,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 111,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 111,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 111,
+"chunk": 8,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.738113,
+"vector_best": 0.761646
+}
+},
+"UNIHEALTH\tHow many ambulances does Unihealth operate across its hospitals?": {
+"id": "unihealth-fy26-004",
+"hits": [
+{
+"page": 5,
+"chunk": 2,
+"score": 0.685003,
+"sibling": false
+},
+{
+"page": 7,
+"chunk": 0,
+"score": 0.706654,
+"sibling": false
+},
+{
+"page": 17,
+"chunk": 3,
+"score": 0.601799,
+"sibling": false
+},
+{
+"page": 6,
+"chunk": 0,
+"score": 0.710125,
+"sibling": false
+},
+{
+"page": 9,
+"chunk": 2,
+"score": 0.583549,
+"sibling": false
+},
+{
+"page": 12,
+"chunk": 1,
+"score": 0.500123,
+"sibling": false
+},
+{
+"page": 4,
+"chunk": 0,
+"score": 0.756809,
+"sibling": false
+},
+{
+"page": 12,
+"chunk": 2,
+"score": 0.524083,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 5,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 5,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 5,
+"chunk": 2,
+"score": 0.685003,
+"sibling": false
+},
+{
+"page": 7,
+"chunk": 0,
+"score": 0.706654,
+"sibling": false
+},
+{
+"page": 7,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 7,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 7,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 17,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 17,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 17,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 17,
+"chunk": 3,
+"score": 0.601799,
+"sibling": false
+},
+{
+"page": 17,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 17,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 17,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 17,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 17,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 17,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 17,
+"chunk": 10,
+"score": null,
+"sibling": true
+},
+{
+"page": 6,
+"chunk": 0,
+"score": 0.710125,
+"sibling": false
+},
+{
+"page": 6,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 6,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 6,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 9,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 9,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 9,
+"chunk": 2,
+"score": 0.583549,
+"sibling": false
+},
+{
+"page": 9,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 9,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 9,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 12,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 12,
+"chunk": 1,
+"score": 0.500123,
+"sibling": false
+},
+{
+"page": 12,
+"chunk": 2,
+"score": 0.524083,
+"sibling": false
+},
+{
+"page": 12,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 0,
+"score": 0.756809,
+"sibling": false
+},
+{
+"page": 4,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 4,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.756809,
+"vector_best": 0.756809
+}
+},
+"HCC\tSummarise HCC's performance in FY25": {
+"id": "hcc-fy25-011",
+"hits": [
+{
+"page": 259,
+"chunk": 3,
+"score": 0.619645,
+"sibling": false
+},
+{
+"page": 259,
+"chunk": 6,
+"score": 0.570675,
+"sibling": false
+},
+{
+"page": 237,
+"chunk": 3,
+"score": 0.618066,
+"sibling": false
+},
+{
+"page": 197,
+"chunk": 4,
+"score": 0.643421,
+"sibling": false
+},
+{
+"page": 257,
+"chunk": 3,
+"score": 0.532843,
+"sibling": false
+},
+{
+"page": 195,
+"chunk": 9,
+"score": 0.660234,
+"sibling": false
+},
+{
+"page": 259,
+"chunk": 0,
+"score": 0.489595,
+"sibling": false
+},
+{
+"page": 15,
+"chunk": 3,
+"score": 0.591016,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 259,
+"chunk": 0,
+"score": 0.489595,
+"sibling": false
+},
+{
+"page": 259,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 259,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 259,
+"chunk": 3,
+"score": 0.619645,
+"sibling": false
+},
+{
+"page": 259,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 259,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 259,
+"chunk": 6,
+"score": 0.570675,
+"sibling": false
+},
+{
+"page": 259,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 259,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 237,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 237,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 237,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 237,
+"chunk": 3,
+"score": 0.618066,
+"sibling": false
+},
+{
+"page": 237,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 197,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 197,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 197,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 197,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 197,
+"chunk": 4,
+"score": 0.643421,
+"sibling": false
+},
+{
+"page": 257,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 3,
+"score": 0.532843,
+"sibling": false
+},
+{
+"page": 257,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 195,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 195,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 195,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 195,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 195,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 195,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 195,
+"chunk": 9,
+"score": 0.660234,
+"sibling": false
+},
+{
+"page": 15,
+"chunk": 3,
+"score": 0.591016,
+"sibling": false
+},
+{
+"page": 15,
+"chunk": 7,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.660234,
+"vector_best": 0.740143,
+"corrected": "summarised HCC's performance in FY25",
+"corrected_best": 0.66659
+}
+},
+"UNIHEALTH\tWhat are the key risks Unihealth faces?": {
+"id": "unihealth-fy26-005",
+"hits": [
+{
+"page": 88,
+"chunk": 4,
+"score": 0.514789,
+"sibling": false
+},
+{
+"page": 123,
+"chunk": 5,
+"score": 0.500618,
+"sibling": false
+},
+{
+"page": 123,
+"chunk": 4,
+"score": 0.506042,
+"sibling": false
+},
+{
+"page": 15,
+"chunk": 4,
+"score": 0.62315,
+"sibling": false
+},
+{
+"page": 88,
+"chunk": 5,
+"score": 0.501025,
+"sibling": false
+},
+{
+"page": 88,
+"chunk": 3,
+"score": 0.480094,
+"sibling": false
+},
+{
+"page": 58,
+"chunk": 1,
+"score": 0.52502,
+"sibling": false
+},
+{
+"page": 121,
+"chunk": 1,
+"score": 0.572342,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 88,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 88,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 88,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 88,
+"chunk": 3,
+"score": 0.480094,
+"sibling": false
+},
+{
+"page": 88,
+"chunk": 4,
+"score": 0.514789,
+"sibling": false
+},
+{
+"page": 88,
+"chunk": 5,
+"score": 0.501025,
+"sibling": false
+},
+{
+"page": 88,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 88,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 123,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 123,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 123,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 123,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 123,
+"chunk": 4,
+"score": 0.506042,
+"sibling": false
+},
+{
+"page": 123,
+"chunk": 5,
+"score": 0.500618,
+"sibling": false
+},
+{
+"page": 123,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 123,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 123,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 123,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 123,
+"chunk": 10,
+"score": null,
+"sibling": true
+},
+{
+"page": 123,
+"chunk": 11,
+"score": null,
+"sibling": true
+},
+{
+"page": 123,
+"chunk": 12,
+"score": null,
+"sibling": true
+},
+{
+"page": 123,
+"chunk": 13,
+"score": null,
+"sibling": true
+},
+{
+"page": 123,
+"chunk": 14,
+"score": null,
+"sibling": true
+},
+{
+"page": 123,
+"chunk": 15,
+"score": null,
+"sibling": true
+},
+{
+"page": 123,
+"chunk": 16,
+"score": null,
+"sibling": true
+},
+{
+"page": 15,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 15,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 15,
+"chunk": 4,
+"score": 0.62315,
+"sibling": false
+},
+{
+"page": 15,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 15,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 58,
+"chunk": 1,
+"score": 0.52502,
+"sibling": false
+},
+{
+"page": 58,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 121,
+"chunk": 1,
+"score": 0.572342,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.62315,
+"vector_best": 0.677615
+}
+},
+"LT\tHow big is L&T's order book?": {
+"id": "lt-fy26-001",
+"hits": [
+{
+"page": 42,
+"chunk": 0,
+"score": 0.616004,
+"sibling": false
+},
+{
+"page": 42,
+"chunk": 1,
+"score": 0.593264,
+"sibling": false
+},
+{
+"page": 570,
+"chunk": 2,
+"score": 0.578096,
+"sibling": false
+},
+{
+"page": 566,
+"chunk": 2,
+"score": 0.597639,
+"sibling": false
+},
+{
+"page": 525,
+"chunk": 2,
+"score": 0.593271,
+"sibling": false
+},
+{
+"page": 570,
+"chunk": 1,
+"score": 0.585847,
+"sibling": false
+},
+{
+"page": 703,
+"chunk": 3,
+"score": 0.570326,
+"sibling": false
+},
+{
+"page": 47,
+"chunk": 3,
+"score": 0.618834,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 42,
+"chunk": 0,
+"score": 0.616004,
+"sibling": false
+},
+{
+"page": 42,
+"chunk": 1,
+"score": 0.593264,
+"sibling": false
+},
+{
+"page": 42,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 42,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 42,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 42,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 570,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 570,
+"chunk": 1,
+"score": 0.585847,
+"sibling": false
+},
+{
+"page": 570,
+"chunk": 2,
+"score": 0.578096,
+"sibling": false
+},
+{
+"page": 570,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 570,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 566,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 566,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 566,
+"chunk": 2,
+"score": 0.597639,
+"sibling": false
+},
+{
+"page": 566,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 566,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 525,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 525,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 525,
+"chunk": 2,
+"score": 0.593271,
+"sibling": false
+},
+{
+"page": 525,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 525,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 525,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 525,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 525,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 525,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 703,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 703,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 703,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 703,
+"chunk": 3,
+"score": 0.570326,
+"sibling": false
+},
+{
+"page": 47,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 47,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 47,
+"chunk": 3,
+"score": 0.618834,
+"sibling": false
+},
+{
+"page": 47,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 47,
+"chunk": 5,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.618834,
+"vector_best": 0.618834
+}
+},
+"NAVNEET\ttotla assets navneet": {
+"id": "navneet-fy25-006",
+"hits": [
+{
+"page": 185,
+"chunk": 1,
+"score": 0.64281,
+"sibling": false
+},
+{
+"page": 198,
+"chunk": 3,
+"score": 0.615251,
+"sibling": false
+},
+{
+"page": 196,
+"chunk": 5,
+"score": 0.59479,
+"sibling": false
+},
+{
+"page": 335,
+"chunk": 1,
+"score": 0.612316,
+"sibling": false
+},
+{
+"page": 257,
+"chunk": 2,
+"score": 0.617831,
+"sibling": false
+},
+{
+"page": 190,
+"chunk": 0,
+"score": 0.637494,
+"sibling": false
+},
+{
+"page": 205,
+"chunk": 1,
+"score": 0.594456,
+"sibling": false
+},
+{
+"page": 304,
+"chunk": 1,
+"score": 0.612307,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 185,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 185,
+"chunk": 1,
+"score": 0.64281,
+"sibling": false
+},
+{
+"page": 185,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 185,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 185,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 185,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 185,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 198,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 198,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 198,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 198,
+"chunk": 3,
+"score": 0.615251,
+"sibling": false
+},
+{
+"page": 198,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 198,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 198,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 196,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 196,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 196,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 196,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 196,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 196,
+"chunk": 5,
+"score": 0.59479,
+"sibling": false
+},
+{
+"page": 196,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 196,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 335,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 335,
+"chunk": 1,
+"score": 0.612316,
+"sibling": false
+},
+{
+"page": 335,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 335,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 2,
+"score": 0.617831,
+"sibling": false
+},
+{
+"page": 257,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 257,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 190,
+"chunk": 0,
+"score": 0.637494,
+"sibling": false
+},
+{
+"page": 205,
+"chunk": 1,
+"score": 0.594456,
+"sibling": false
+},
+{
+"page": 304,
+"chunk": 1,
+"score": 0.612307,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.64281,
+"vector_best": 0.710674,
+"corrected": "total assets navneet",
+"corrected_best": 0.765287
+}
+},
+"BHARTIARTL\thow many customers does airtel have": {
+"id": "bhartiartl-fy26-001",
+"hits": [
+{
+"page": 83,
+"chunk": 2,
+"score": 0.770354,
+"sibling": false
+},
+{
+"page": 179,
+"chunk": 5,
+"score": 0.790448,
+"sibling": false
+},
+{
+"page": 82,
+"chunk": 1,
+"score": 0.788289,
+"sibling": false
+},
+{
+"page": 96,
+"chunk": 3,
+"score": 0.759496,
+"sibling": false
+},
+{
+"page": 179,
+"chunk": 0,
+"score": 0.840867,
+"sibling": false
+},
+{
+"page": 179,
+"chunk": 1,
+"score": 0.754894,
+"sibling": false
+},
+{
+"page": 240,
+"chunk": 0,
+"score": 0.759761,
+"sibling": false
+},
+{
+"page": 21,
+"chunk": 6,
+"score": 0.763749,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 83,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 83,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 83,
+"chunk": 2,
+"score": 0.770354,
+"sibling": false
+},
+{
+"page": 179,
+"chunk": 0,
+"score": 0.840867,
+"sibling": false
+},
+{
+"page": 179,
+"chunk": 1,
+"score": 0.754894,
+"sibling": false
+},
+{
+"page": 179,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 179,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 179,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 179,
+"chunk": 5,
+"score": 0.790448,
+"sibling": false
+},
+{
+"page": 82,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 82,
+"chunk": 1,
+"score": 0.788289,
+"sibling": false
+},
+{
+"page": 96,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 96,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 96,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 96,
+"chunk": 3,
+"score": 0.759496,
+"sibling": false
+},
+{
+"page": 96,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 96,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 96,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 240,
+"chunk": 0,
+"score": 0.759761,
+"sibling": false
+},
+{
+"page": 240,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 240,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 240,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 240,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 240,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 240,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 240,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 21,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 21,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 21,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 21,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 21,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 21,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 21,
+"chunk": 6,
+"score": 0.763749,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.840867,
+"vector_best": 0.840867
+}
+},
+"SBIN\thow many branches does sbi have": {
+"id": "sbin-fy26-001",
+"hits": [
+{
+"page": 136,
+"chunk": 5,
+"score": 0.714973,
+"sibling": false
+},
+{
+"page": 151,
+"chunk": 4,
+"score": 0.725307,
+"sibling": false
+},
+{
+"page": 564,
+"chunk": 5,
+"score": 0.704493,
+"sibling": false
+},
+{
+"page": 4,
+"chunk": 0,
+"score": 0.700236,
+"sibling": false
+},
+{
+"page": 14,
+"chunk": 1,
+"score": 0.681479,
+"sibling": false
+},
+{
+"page": 510,
+"chunk": 4,
+"score": 0.673775,
+"sibling": false
+},
+{
+"page": 149,
+"chunk": 0,
+"score": 0.70023,
+"sibling": false
+},
+{
+"page": 564,
+"chunk": 4,
+"score": 0.672807,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 136,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 136,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 136,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 136,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 136,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 136,
+"chunk": 5,
+"score": 0.714973,
+"sibling": false
+},
+{
+"page": 151,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 151,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 151,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 151,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 151,
+"chunk": 4,
+"score": 0.725307,
+"sibling": false
+},
+{
+"page": 564,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 564,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 564,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 564,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 564,
+"chunk": 4,
+"score": 0.672807,
+"sibling": false
+},
+{
+"page": 564,
+"chunk": 5,
+"score": 0.704493,
+"sibling": false
+},
+{
+"page": 564,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 0,
+"score": 0.700236,
+"sibling": false
+},
+{
+"page": 14,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 14,
+"chunk": 1,
+"score": 0.681479,
+"sibling": false
+},
+{
+"page": 14,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 510,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 510,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 510,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 510,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 510,
+"chunk": 4,
+"score": 0.673775,
+"sibling": false
+},
+{
+"page": 510,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 510,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 149,
+"chunk": 0,
+"score": 0.70023,
+"sibling": false
+},
+{
+"page": 149,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 149,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 149,
+"chunk": 7,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.725307,
+"vector_best": 0.744404
+}
+},
+"EICHERMOT\troyal enfield sales fy26": {
+"id": "eichermot-fy26-001",
+"hits": [
+{
+"page": 147,
+"chunk": 2,
+"score": 0.776332,
+"sibling": false
+},
+{
+"page": 147,
+"chunk": 6,
+"score": 0.766731,
+"sibling": false
+},
+{
+"page": 146,
+"chunk": 5,
+"score": 0.745225,
+"sibling": false
+},
+{
+"page": 147,
+"chunk": 4,
+"score": 0.747677,
+"sibling": false
+},
+{
+"page": 146,
+"chunk": 6,
+"score": 0.742263,
+"sibling": false
+},
+{
+"page": 90,
+"chunk": 3,
+"score": 0.732774,
+"sibling": false
+},
+{
+"page": 147,
+"chunk": 5,
+"score": 0.763183,
+"sibling": false
+},
+{
+"page": 384,
+"chunk": 3,
+"score": 0.771884,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 147,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 147,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 147,
+"chunk": 2,
+"score": 0.776332,
+"sibling": false
+},
+{
+"page": 147,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 147,
+"chunk": 4,
+"score": 0.747677,
+"sibling": false
+},
+{
+"page": 147,
+"chunk": 5,
+"score": 0.763183,
+"sibling": false
+},
+{
+"page": 147,
+"chunk": 6,
+"score": 0.766731,
+"sibling": false
+},
+{
+"page": 147,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 147,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 146,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 146,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 146,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 146,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 146,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 146,
+"chunk": 5,
+"score": 0.745225,
+"sibling": false
+},
+{
+"page": 146,
+"chunk": 6,
+"score": 0.742263,
+"sibling": false
+},
+{
+"page": 146,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 90,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 90,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 90,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 90,
+"chunk": 3,
+"score": 0.732774,
+"sibling": false
+},
+{
+"page": 90,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 90,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 90,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 90,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 90,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 90,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 384,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 384,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 384,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 384,
+"chunk": 3,
+"score": 0.771884,
+"sibling": false
+},
+{
+"page": 384,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 384,
+"chunk": 5,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.776332,
+"vector_best": 0.783393
+}
+},
+"SUNPHARMA\tsun pharma r&d spend": {
+"id": "sunpharma-fy26-001",
+"hits": [
+{
+"page": 44,
+"chunk": 1,
+"score": 0.737584,
+"sibling": false
+},
+{
+"page": 44,
+"chunk": 0,
+"score": 0.703396,
+"sibling": false
+},
+{
+"page": 120,
+"chunk": 0,
+"score": 0.64646,
+"sibling": false
+},
+{
+"page": 9,
+"chunk": 6,
+"score": 0.68061,
+"sibling": false
+},
+{
+"page": 6,
+"chunk": 4,
+"score": 0.649772,
+"sibling": false
+},
+{
+"page": 44,
+"chunk": 3,
+"score": 0.646368,
+"sibling": false
+},
+{
+"page": 6,
+"chunk": 3,
+"score": 0.667789,
+"sibling": false
+},
+{
+"page": 22,
+"chunk": 2,
+"score": 0.700857,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 44,
+"chunk": 0,
+"score": 0.703396,
+"sibling": false
+},
+{
+"page": 44,
+"chunk": 1,
+"score": 0.737584,
+"sibling": false
+},
+{
+"page": 44,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 44,
+"chunk": 3,
+"score": 0.646368,
+"sibling": false
+},
+{
+"page": 120,
+"chunk": 0,
+"score": 0.64646,
+"sibling": false
+},
+{
+"page": 120,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 120,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 120,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 120,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 9,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 9,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 9,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 9,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 9,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 9,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 9,
+"chunk": 6,
+"score": 0.68061,
+"sibling": false
+},
+{
+"page": 6,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 6,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 6,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 6,
+"chunk": 3,
+"score": 0.667789,
+"sibling": false
+},
+{
+"page": 6,
+"chunk": 4,
+"score": 0.649772,
+"sibling": false
+},
+{
+"page": 6,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 22,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 22,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 22,
+"chunk": 2,
+"score": 0.700857,
+"sibling": false
+},
+{
+"page": 22,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 22,
+"chunk": 4,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.737584,
+"vector_best": 0.792475
+}
+},
+"CHAMBAL\thow many urea plnts does chambal have": {
+"id": "chambal-fy25-006",
+"hits": [
+{
+"page": 13,
+"chunk": 2,
+"score": 0.617557,
+"sibling": false
+},
+{
+"page": 13,
+"chunk": 3,
+"score": 0.577694,
+"sibling": false
+},
+{
+"page": 13,
+"chunk": 1,
+"score": 0.611813,
+"sibling": false
+},
+{
+"page": 175,
+"chunk": 1,
+"score": 0.576594,
+"sibling": false
+},
+{
+"page": 4,
+"chunk": 3,
+"score": 0.643981,
+"sibling": false
+},
+{
+"page": 77,
+"chunk": 2,
+"score": 0.607627,
+"sibling": false
+},
+{
+"page": 83,
+"chunk": 4,
+"score": 0.584193,
+"sibling": false
+},
+{
+"page": 175,
+"chunk": 0,
+"score": 0.703401,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 13,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 13,
+"chunk": 1,
+"score": 0.611813,
+"sibling": false
+},
+{
+"page": 13,
+"chunk": 2,
+"score": 0.617557,
+"sibling": false
+},
+{
+"page": 13,
+"chunk": 3,
+"score": 0.577694,
+"sibling": false
+},
+{
+"page": 13,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 13,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 13,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 13,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 13,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 175,
+"chunk": 0,
+"score": 0.703401,
+"sibling": false
+},
+{
+"page": 175,
+"chunk": 1,
+"score": 0.576594,
+"sibling": false
+},
+{
+"page": 175,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 175,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 175,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 175,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 3,
+"score": 0.643981,
+"sibling": false
+},
+{
+"page": 4,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 4,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 77,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 77,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 77,
+"chunk": 2,
+"score": 0.607627,
+"sibling": false
+},
+{
+"page": 77,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 77,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 77,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 83,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 83,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 83,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 83,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 83,
+"chunk": 4,
+"score": 0.584193,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.703401,
+"vector_best": 0.727875,
+"corrected": "how many urea plants does chambal have",
+"corrected_best": 0.734754
+}
+},
+"DIVISLAB\tdivis lab revenu fy26": {
+"id": "divislab-fy26-001",
+"hits": [
+{
+"page": 92,
+"chunk": 1,
+"score": 0.618194,
+"sibling": false
+},
+{
+"page": 34,
+"chunk": 1,
+"score": 0.64357,
+"sibling": false
+},
+{
+"page": 92,
+"chunk": 2,
+"score": 0.607915,
+"sibling": false
+},
+{
+"page": 65,
+"chunk": 6,
+"score": 0.606909,
+"sibling": false
+},
+{
+"page": 123,
+"chunk": 6,
+"score": 0.611772,
+"sibling": false
+},
+{
+"page": 28,
+"chunk": 7,
+"score": 0.638934,
+"sibling": false
+},
+{
+"page": 14,
+"chunk": 3,
+"score": 0.538321,
+"sibling": false
+},
+{
+"page": 58,
+"chunk": 7,
+"score": 0.606628,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 92,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 92,
+"chunk": 1,
+"score": 0.618194,
+"sibling": false
+},
+{
+"page": 92,
+"chunk": 2,
+"score": 0.607915,
+"sibling": false
+},
+{
+"page": 92,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 92,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 92,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 92,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 92,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 34,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 34,
+"chunk": 1,
+"score": 0.64357,
+"sibling": false
+},
+{
+"page": 34,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 34,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 34,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 34,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 34,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 34,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 34,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 34,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 34,
+"chunk": 10,
+"score": null,
+"sibling": true
+},
+{
+"page": 34,
+"chunk": 11,
+"score": null,
+"sibling": true
+},
+{
+"page": 65,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 65,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 65,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 65,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 65,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 65,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 65,
+"chunk": 6,
+"score": 0.606909,
+"sibling": false
+},
+{
+"page": 65,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 65,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 123,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 123,
+"chunk": 6,
+"score": 0.611772,
+"sibling": false
+},
+{
+"page": 123,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 28,
+"chunk": 7,
+"score": 0.638934,
+"sibling": false
+},
+{
+"page": 14,
+"chunk": 3,
+"score": 0.538321,
+"sibling": false
+},
+{
+"page": 58,
+"chunk": 7,
+"score": 0.606628,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.64357,
+"vector_best": 0.720339,
+"corrected": "divis lab revenue fy26",
+"corrected_best": 0.689352
+}
+},
+"ICICIBANK\ticici bank total deposits": {
+"id": "icicibank-fy26-001",
+"hits": [
+{
+"page": 209,
+"chunk": 0,
+"score": 0.686927,
+"sibling": false
+},
+{
+"page": 173,
+"chunk": 4,
+"score": 0.666041,
+"sibling": false
+},
+{
+"page": 172,
+"chunk": 10,
+"score": 0.64388,
+"sibling": false
+},
+{
+"page": 134,
+"chunk": 5,
+"score": 0.669668,
+"sibling": false
+},
+{
+"page": 151,
+"chunk": 1,
+"score": 0.704482,
+"sibling": false
+},
+{
+"page": 173,
+"chunk": 3,
+"score": 0.693553,
+"sibling": false
+},
+{
+"page": 278,
+"chunk": 2,
+"score": 0.706105,
+"sibling": false
+},
+{
+"page": 278,
+"chunk": 1,
+"score": 0.699766,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 209,
+"chunk": 0,
+"score": 0.686927,
+"sibling": false
+},
+{
+"page": 209,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 209,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 209,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 173,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 173,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 173,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 173,
+"chunk": 3,
+"score": 0.693553,
+"sibling": false
+},
+{
+"page": 173,
+"chunk": 4,
+"score": 0.666041,
+"sibling": false
+},
+{
+"page": 173,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 173,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 172,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 172,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 172,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 172,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 172,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 172,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 172,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 172,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 172,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 172,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 172,
+"chunk": 10,
+"score": 0.64388,
+"sibling": false
+},
+{
+"page": 172,
+"chunk": 11,
+"score": null,
+"sibling": true
+},
+{
+"page": 134,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 134,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 134,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 134,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 134,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 134,
+"chunk": 5,
+"score": 0.669668,
+"sibling": false
+},
+{
+"page": 151,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 151,
+"chunk": 1,
+"score": 0.704482,
+"sibling": false
+},
+{
+"page": 151,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 151,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 151,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 278,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 278,
+"chunk": 1,
+"score": 0.699766,
+"sibling": false
+},
+{
+"page": 278,
+"chunk": 2,
+"score": 0.706105,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.706105,
+"vector_best": 0.767418
+}
+},
+"BEL\tSummarise BEL's FY26 results": {
+"id": "bel-fy26-001",
+"hits": [
+{
+"page": 180,
+"chunk": 6,
+"score": 0.633061,
+"sibling": false
+},
+{
+"page": 180,
+"chunk": 4,
+"score": 0.687062,
+"sibling": false
+},
+{
+"page": 180,
+"chunk": 8,
+"score": 0.646938,
+"sibling": false
+},
+{
+"page": 180,
+"chunk": 5,
+"score": 0.663053,
+"sibling": false
+},
+{
+"page": 181,
+"chunk": 0,
+"score": 0.625768,
+"sibling": false
+},
+{
+"page": 181,
+"chunk": 4,
+"score": 0.599113,
+"sibling": false
+},
+{
+"page": 181,
+"chunk": 5,
+"score": 0.609781,
+"sibling": false
+},
+{
+"page": 180,
+"chunk": 7,
+"score": 0.607622,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 180,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 180,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 180,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 180,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 180,
+"chunk": 4,
+"score": 0.687062,
+"sibling": false
+},
+{
+"page": 180,
+"chunk": 5,
+"score": 0.663053,
+"sibling": false
+},
+{
+"page": 180,
+"chunk": 6,
+"score": 0.633061,
+"sibling": false
+},
+{
+"page": 180,
+"chunk": 7,
+"score": 0.607622,
+"sibling": false
+},
+{
+"page": 180,
+"chunk": 8,
+"score": 0.646938,
+"sibling": false
+},
+{
+"page": 181,
+"chunk": 0,
+"score": 0.625768,
+"sibling": false
+},
+{
+"page": 181,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 181,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 181,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 181,
+"chunk": 4,
+"score": 0.599113,
+"sibling": false
+},
+{
+"page": 181,
+"chunk": 5,
+"score": 0.609781,
+"sibling": false
+},
+{
+"page": 181,
+"chunk": 6,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.687062,
+"vector_best": 0.731118,
+"corrected": "summarised BEL's FY26 results",
+"corrected_best": 0.7078
+}
+},
+"TATASTEEL\tWhat does Tata Steel do?": {
+"id": "tatasteel-fy26-001",
+"hits": [
+{
+"page": 432,
+"chunk": 2,
+"score": 0.495474,
+"sibling": false
+},
+{
+"page": 128,
+"chunk": 3,
+"score": 0.677617,
+"sibling": false
+},
+{
+"page": 439,
+"chunk": 0,
+"score": 0.482911,
+"sibling": false
+},
+{
+"page": 133,
+"chunk": 0,
+"score": 0.676816,
+"sibling": false
+},
+{
+"page": 311,
+"chunk": 0,
+"score": 0.508084,
+"sibling": false
+},
+{
+"page": 75,
+"chunk": 2,
+"score": 0.684227,
+"sibling": false
+},
+{
+"page": 432,
+"chunk": 1,
+"score": 0.485538,
+"sibling": false
+},
+{
+"page": 21,
+"chunk": 0,
+"score": 0.701298,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 432,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 432,
+"chunk": 1,
+"score": 0.485538,
+"sibling": false
+},
+{
+"page": 432,
+"chunk": 2,
+"score": 0.495474,
+"sibling": false
+},
+{
+"page": 432,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 432,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 128,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 128,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 128,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 128,
+"chunk": 3,
+"score": 0.677617,
+"sibling": false
+},
+{
+"page": 128,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 439,
+"chunk": 0,
+"score": 0.482911,
+"sibling": false
+},
+{
+"page": 439,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 439,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 439,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 439,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 439,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 133,
+"chunk": 0,
+"score": 0.676816,
+"sibling": false
+},
+{
+"page": 133,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 133,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 311,
+"chunk": 0,
+"score": 0.508084,
+"sibling": false
+},
+{
+"page": 311,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 311,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 311,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 311,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 75,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 75,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 75,
+"chunk": 2,
+"score": 0.684227,
+"sibling": false
+},
+{
+"page": 75,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 21,
+"chunk": 0,
+"score": 0.701298,
+"sibling": false
+},
+{
+"page": 21,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 21,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 21,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 21,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 21,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 21,
+"chunk": 11,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.701298,
+"vector_best": 0.776907
+}
+},
+"HCC\tHow many hotels does HCC operate?": {
+"id": "hcc-fy25-012",
+"hits": [
+{
+"page": 60,
+"chunk": 1,
+"score": 0.669844,
+"sibling": false
+},
+{
+"page": 260,
+"chunk": 0,
+"score": 0.525683,
+"sibling": false
+},
+{
+"page": 90,
+"chunk": 4,
+"score": 0.466116,
+"sibling": false
+},
+{
+"page": 60,
+"chunk": 0,
+"score": 0.513789,
+"sibling": false
+},
+{
+"page": 158,
+"chunk": 3,
+"score": 0.467814,
+"sibling": false
+},
+{
+"page": 255,
+"chunk": 5,
+"score": 0.583801,
+"sibling": false
+},
+{
+"page": 158,
+"chunk": 6,
+"score": 0.429654,
+"sibling": false
+},
+{
+"page": 83,
+"chunk": 2,
+"score": 0.61335,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 60,
+"chunk": 0,
+"score": 0.513789,
+"sibling": false
+},
+{
+"page": 60,
+"chunk": 1,
+"score": 0.669844,
+"sibling": false
+},
+{
+"page": 60,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 60,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 260,
+"chunk": 0,
+"score": 0.525683,
+"sibling": false
+},
+{
+"page": 260,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 260,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 260,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 260,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 260,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 90,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 90,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 90,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 90,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 90,
+"chunk": 4,
+"score": 0.466116,
+"sibling": false
+},
+{
+"page": 158,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 158,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 158,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 158,
+"chunk": 3,
+"score": 0.467814,
+"sibling": false
+},
+{
+"page": 158,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 158,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 158,
+"chunk": 6,
+"score": 0.429654,
+"sibling": false
+},
+{
+"page": 255,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 255,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 255,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 255,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 255,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 255,
+"chunk": 5,
+"score": 0.583801,
+"sibling": false
+},
+{
+"page": 83,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 83,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 83,
+"chunk": 2,
+"score": 0.61335,
+"sibling": false
+},
+{
+"page": 83,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 83,
+"chunk": 4,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.669844,
+"vector_best": 0.669844
+}
+},
+"LT\tHow many Formula 1 races did L&T sponsor in FY26?": {
+"id": "lt-fy26-002",
+"hits": [
+{
+"page": 601,
+"chunk": 2,
+"score": 0.619209,
+"sibling": false
+},
+{
+"page": 570,
+"chunk": 2,
+"score": 0.601745,
+"sibling": false
+},
+{
+"page": 562,
+"chunk": 3,
+"score": 0.603805,
+"sibling": false
+},
+{
+"page": 600,
+"chunk": 5,
+"score": 0.60019,
+"sibling": false
+},
+{
+"page": 566,
+"chunk": 2,
+"score": 0.617098,
+"sibling": false
+},
+{
+"page": 600,
+"chunk": 4,
+"score": 0.60451,
+"sibling": false
+},
+{
+"page": 740,
+"chunk": 4,
+"score": 0.609297,
+"sibling": false
+},
+{
+"page": 569,
+"chunk": 3,
+"score": 0.617022,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 601,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 601,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 601,
+"chunk": 2,
+"score": 0.619209,
+"sibling": false
+},
+{
+"page": 601,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 601,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 601,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 570,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 570,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 570,
+"chunk": 2,
+"score": 0.601745,
+"sibling": false
+},
+{
+"page": 570,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 570,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 562,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 562,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 562,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 562,
+"chunk": 3,
+"score": 0.603805,
+"sibling": false
+},
+{
+"page": 562,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 600,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 600,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 600,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 600,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 600,
+"chunk": 4,
+"score": 0.60451,
+"sibling": false
+},
+{
+"page": 600,
+"chunk": 5,
+"score": 0.60019,
+"sibling": false
+},
+{
+"page": 566,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 566,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 566,
+"chunk": 2,
+"score": 0.617098,
+"sibling": false
+},
+{
+"page": 566,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 566,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 740,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 740,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 740,
+"chunk": 4,
+"score": 0.609297,
+"sibling": false
+},
+{
+"page": 740,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 740,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 569,
+"chunk": 3,
+"score": 0.617022,
+"sibling": false
+},
+{
+"page": 569,
+"chunk": 4,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.619209,
+"vector_best": 0.659209
+}
+},
+"INFY\tWhat is Infosys's share of the global smartphone market?": {
+"id": "infy-fy26-002",
+"hits": [
+{
+"page": 3,
+"chunk": 1,
+"score": 0.695727,
+"sibling": false
+},
+{
+"page": 226,
+"chunk": 2,
+"score": 0.702483,
+"sibling": false
+},
+{
+"page": 226,
+"chunk": 1,
+"score": 0.713471,
+"sibling": false
+},
+{
+"page": 226,
+"chunk": 0,
+"score": 0.709363,
+"sibling": false
+},
+{
+"page": 227,
+"chunk": 0,
+"score": 0.679311,
+"sibling": false
+},
+{
+"page": 18,
+"chunk": 4,
+"score": 0.664801,
+"sibling": false
+},
+{
+"page": 226,
+"chunk": 3,
+"score": 0.663761,
+"sibling": false
+},
+{
+"page": 18,
+"chunk": 3,
+"score": 0.675419,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 3,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 3,
+"chunk": 1,
+"score": 0.695727,
+"sibling": false
+},
+{
+"page": 3,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 226,
+"chunk": 0,
+"score": 0.709363,
+"sibling": false
+},
+{
+"page": 226,
+"chunk": 1,
+"score": 0.713471,
+"sibling": false
+},
+{
+"page": 226,
+"chunk": 2,
+"score": 0.702483,
+"sibling": false
+},
+{
+"page": 226,
+"chunk": 3,
+"score": 0.663761,
+"sibling": false
+},
+{
+"page": 226,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 227,
+"chunk": 0,
+"score": 0.679311,
+"sibling": false
+},
+{
+"page": 227,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 227,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 18,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 18,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 18,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 18,
+"chunk": 3,
+"score": 0.675419,
+"sibling": false
+},
+{
+"page": 18,
+"chunk": 4,
+"score": 0.664801,
+"sibling": false
+},
+{
+"page": 18,
+"chunk": 5,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.713471,
+"vector_best": 0.713471
+}
+},
+"TATASTEEL\tHow many passenger cars did Tata Steel sell in FY26?": {
+"id": "tatasteel-fy26-002",
+"hits": [
+{
+"page": 332,
+"chunk": 4,
+"score": 0.697578,
+"sibling": false
+},
+{
+"page": 118,
+"chunk": 3,
+"score": 0.614209,
+"sibling": false
+},
+{
+"page": 90,
+"chunk": 5,
+"score": 0.627042,
+"sibling": false
+},
+{
+"page": 232,
+"chunk": 0,
+"score": 0.612911,
+"sibling": false
+},
+{
+"page": 455,
+"chunk": 5,
+"score": 0.638577,
+"sibling": false
+},
+{
+"page": 210,
+"chunk": 5,
+"score": 0.557201,
+"sibling": false
+},
+{
+"page": 90,
+"chunk": 4,
+"score": 0.619917,
+"sibling": false
+},
+{
+"page": 123,
+"chunk": 4,
+"score": 0.476135,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 332,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 332,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 332,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 332,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 332,
+"chunk": 4,
+"score": 0.697578,
+"sibling": false
+},
+{
+"page": 332,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 332,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 118,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 118,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 118,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 118,
+"chunk": 3,
+"score": 0.614209,
+"sibling": false
+},
+{
+"page": 90,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 90,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 90,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 90,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 90,
+"chunk": 4,
+"score": 0.619917,
+"sibling": false
+},
+{
+"page": 90,
+"chunk": 5,
+"score": 0.627042,
+"sibling": false
+},
+{
+"page": 90,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 232,
+"chunk": 0,
+"score": 0.612911,
+"sibling": false
+},
+{
+"page": 232,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 232,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 232,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 232,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 232,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 232,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 455,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 455,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 455,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 455,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 455,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 455,
+"chunk": 5,
+"score": 0.638577,
+"sibling": false
+},
+{
+"page": 210,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 210,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 210,
+"chunk": 5,
+"score": 0.557201,
+"sibling": false
+},
+{
+"page": 123,
+"chunk": 4,
+"score": 0.476135,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.697578,
+"vector_best": 0.736468
+}
+},
+"HDFCBANK\tHow many branches does HDFC Bank have in Brazil?": {
+"id": "hdfcbank-fy26-001",
+"hits": [
+{
+"page": 348,
+"chunk": 4,
+"score": 0.588414,
+"sibling": false
+},
+{
+"page": 18,
+"chunk": 5,
+"score": 0.680651,
+"sibling": false
+},
+{
+"page": 465,
+"chunk": 6,
+"score": 0.53179,
+"sibling": false
+},
+{
+"page": 622,
+"chunk": 1,
+"score": 0.58617,
+"sibling": false
+},
+{
+"page": 36,
+"chunk": 0,
+"score": 0.729818,
+"sibling": false
+},
+{
+"page": 540,
+"chunk": 1,
+"score": 0.599545,
+"sibling": false
+},
+{
+"page": 557,
+"chunk": 1,
+"score": 0.608565,
+"sibling": false
+},
+{
+"page": 587,
+"chunk": 0,
+"score": 0.52373,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 348,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 348,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 348,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 348,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 348,
+"chunk": 4,
+"score": 0.588414,
+"sibling": false
+},
+{
+"page": 18,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 18,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 18,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 18,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 18,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 18,
+"chunk": 5,
+"score": 0.680651,
+"sibling": false
+},
+{
+"page": 465,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 465,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 465,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 465,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 465,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 465,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 465,
+"chunk": 6,
+"score": 0.53179,
+"sibling": false
+},
+{
+"page": 622,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 622,
+"chunk": 1,
+"score": 0.58617,
+"sibling": false
+},
+{
+"page": 622,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 622,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 36,
+"chunk": 0,
+"score": 0.729818,
+"sibling": false
+},
+{
+"page": 36,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 36,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 540,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 540,
+"chunk": 1,
+"score": 0.599545,
+"sibling": false
+},
+{
+"page": 540,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 540,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 540,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 557,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 557,
+"chunk": 1,
+"score": 0.608565,
+"sibling": false
+},
+{
+"page": 557,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 587,
+"chunk": 0,
+"score": 0.52373,
+"sibling": false
+},
+{
+"page": 587,
+"chunk": 2,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.729818,
+"vector_best": 0.7328
+}
+},
+"HAL\tHow many cruise ships did HAL deliver in FY26?": {
+"id": "hal-fy26-001",
+"hits": [
+{
+"page": 39,
+"chunk": 2,
+"score": 0.605948,
+"sibling": false
+},
+{
+"page": 251,
+"chunk": 3,
+"score": 0.610391,
+"sibling": false
+},
+{
+"page": 40,
+"chunk": 0,
+"score": 0.589543,
+"sibling": false
+},
+{
+"page": 251,
+"chunk": 0,
+"score": 0.576485,
+"sibling": false
+},
+{
+"page": 45,
+"chunk": 0,
+"score": 0.594005,
+"sibling": false
+},
+{
+"page": 47,
+"chunk": 1,
+"score": 0.391097,
+"sibling": false
+},
+{
+"page": 373,
+"chunk": 0,
+"score": 0.602383,
+"sibling": false
+},
+{
+"page": 368,
+"chunk": 3,
+"score": 0.567149,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 39,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 39,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 39,
+"chunk": 2,
+"score": 0.605948,
+"sibling": false
+},
+{
+"page": 39,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 39,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 39,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 39,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 251,
+"chunk": 0,
+"score": 0.576485,
+"sibling": false
+},
+{
+"page": 251,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 251,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 251,
+"chunk": 3,
+"score": 0.610391,
+"sibling": false
+},
+{
+"page": 251,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 251,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 40,
+"chunk": 0,
+"score": 0.589543,
+"sibling": false
+},
+{
+"page": 40,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 40,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 40,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 40,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 40,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 40,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 40,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 45,
+"chunk": 0,
+"score": 0.594005,
+"sibling": false
+},
+{
+"page": 45,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 45,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 45,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 45,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 45,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 45,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 47,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 47,
+"chunk": 1,
+"score": 0.391097,
+"sibling": false
+},
+{
+"page": 47,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 47,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 47,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 373,
+"chunk": 0,
+"score": 0.602383,
+"sibling": false
+},
+{
+"page": 368,
+"chunk": 3,
+"score": 0.567149,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.610391,
+"vector_best": 0.643324
+}
+},
+"BOSCHLTD\tHow many coffee outlets does Bosch run in India?": {
+"id": "boschltd-fy26-001",
+"hits": [
+{
+"page": 6,
+"chunk": 0,
+"score": 0.672923,
+"sibling": false
+},
+{
+"page": 332,
+"chunk": 1,
+"score": 0.679429,
+"sibling": false
+},
+{
+"page": 336,
+"chunk": 1,
+"score": 0.687967,
+"sibling": false
+},
+{
+"page": 337,
+"chunk": 1,
+"score": 0.700154,
+"sibling": false
+},
+{
+"page": 411,
+"chunk": 2,
+"score": 0.672414,
+"sibling": false
+},
+{
+"page": 335,
+"chunk": 2,
+"score": 0.672414,
+"sibling": false
+},
+{
+"page": 180,
+"chunk": 3,
+"score": 0.682774,
+"sibling": false
+},
+{
+"page": 108,
+"chunk": 2,
+"score": 0.674452,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 6,
+"chunk": 0,
+"score": 0.672923,
+"sibling": false
+},
+{
+"page": 6,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 332,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 332,
+"chunk": 1,
+"score": 0.679429,
+"sibling": false
+},
+{
+"page": 332,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 332,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 336,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 336,
+"chunk": 1,
+"score": 0.687967,
+"sibling": false
+},
+{
+"page": 336,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 336,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 336,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 337,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 337,
+"chunk": 1,
+"score": 0.700154,
+"sibling": false
+},
+{
+"page": 337,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 337,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 337,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 411,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 411,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 411,
+"chunk": 2,
+"score": 0.672414,
+"sibling": false
+},
+{
+"page": 411,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 411,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 335,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 335,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 335,
+"chunk": 2,
+"score": 0.672414,
+"sibling": false
+},
+{
+"page": 335,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 335,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 180,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 180,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 180,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 180,
+"chunk": 3,
+"score": 0.682774,
+"sibling": false
+},
+{
+"page": 180,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 180,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 108,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 108,
+"chunk": 2,
+"score": 0.674452,
+"sibling": false
+},
+{
+"page": 108,
+"chunk": 7,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.700154,
+"vector_best": 0.731975
+}
+},
+"NAVNEET\thow many schools in kenya use navneets app": {
+"id": "navneet-fy25-007",
+"hits": [
+{
+"page": 24,
+"chunk": 0,
+"score": 0.693066,
+"sibling": false
+},
+{
+"page": 47,
+"chunk": 0,
+"score": 0.695134,
+"sibling": false
+},
+{
+"page": 7,
+"chunk": 0,
+"score": 0.658338,
+"sibling": false
+},
+{
+"page": 140,
+"chunk": 1,
+"score": 0.646241,
+"sibling": false
+},
+{
+"page": 77,
+"chunk": 0,
+"score": 0.648824,
+"sibling": false
+},
+{
+"page": 170,
+"chunk": 4,
+"score": 0.625044,
+"sibling": false
+},
+{
+"page": 100,
+"chunk": 3,
+"score": 0.65158,
+"sibling": false
+},
+{
+"page": 195,
+"chunk": 1,
+"score": 0.630871,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 24,
+"chunk": 0,
+"score": 0.693066,
+"sibling": false
+},
+{
+"page": 47,
+"chunk": 0,
+"score": 0.695134,
+"sibling": false
+},
+{
+"page": 47,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 7,
+"chunk": 0,
+"score": 0.658338,
+"sibling": false
+},
+{
+"page": 7,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 140,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 140,
+"chunk": 1,
+"score": 0.646241,
+"sibling": false
+},
+{
+"page": 77,
+"chunk": 0,
+"score": 0.648824,
+"sibling": false
+},
+{
+"page": 77,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 77,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 170,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 170,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 170,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 170,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 170,
+"chunk": 4,
+"score": 0.625044,
+"sibling": false
+},
+{
+"page": 100,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 100,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 100,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 100,
+"chunk": 3,
+"score": 0.65158,
+"sibling": false
+},
+{
+"page": 100,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 100,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 100,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 100,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 100,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 195,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 195,
+"chunk": 1,
+"score": 0.630871,
+"sibling": false
+},
+{
+"page": 195,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 195,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 195,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 195,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 195,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 195,
+"chunk": 7,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.695134,
+"vector_best": 0.707992,
+"corrected": "how many schools in kenya use navneet app",
+"corrected_best": 0.703812
+}
+},
+"CHAMBAL\tchambal drone sprayng numbers fy25": {
+"id": "chambal-fy25-007",
+"hits": [
+{
+"page": 65,
+"chunk": 4,
+"score": 0.615468,
+"sibling": false
+},
+{
+"page": 50,
+"chunk": 4,
+"score": 0.696153,
+"sibling": false
+},
+{
+"page": 86,
+"chunk": 3,
+"score": 0.636644,
+"sibling": false
+},
+{
+"page": 74,
+"chunk": 3,
+"score": 0.572009,
+"sibling": false
+},
+{
+"page": 68,
+"chunk": 4,
+"score": 0.606824,
+"sibling": false
+},
+{
+"page": 75,
+"chunk": 0,
+"score": 0.572312,
+"sibling": false
+},
+{
+"page": 78,
+"chunk": 3,
+"score": 0.634164,
+"sibling": false
+},
+{
+"page": 65,
+"chunk": 1,
+"score": 0.503377,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 65,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 65,
+"chunk": 1,
+"score": 0.503377,
+"sibling": false
+},
+{
+"page": 65,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 65,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 65,
+"chunk": 4,
+"score": 0.615468,
+"sibling": false
+},
+{
+"page": 65,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 65,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 65,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 65,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 65,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 50,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 50,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 50,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 50,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 50,
+"chunk": 4,
+"score": 0.696153,
+"sibling": false
+},
+{
+"page": 50,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 50,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 86,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 86,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 86,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 86,
+"chunk": 3,
+"score": 0.636644,
+"sibling": false
+},
+{
+"page": 86,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 74,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 74,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 74,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 74,
+"chunk": 3,
+"score": 0.572009,
+"sibling": false
+},
+{
+"page": 74,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 74,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 74,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 74,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 68,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 68,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 68,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 68,
+"chunk": 4,
+"score": 0.606824,
+"sibling": false
+},
+{
+"page": 75,
+"chunk": 0,
+"score": 0.572312,
+"sibling": false
+},
+{
+"page": 78,
+"chunk": 3,
+"score": 0.634164,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.696153,
+"vector_best": 0.696153
+}
+},
+"SBIN\tSummarise SBI's lunar mining business": {
+"id": "sbin-fy26-002",
+"hits": [
+{
+"page": 522,
+"chunk": 0,
+"score": 0.662207,
+"sibling": false
+},
+{
+"page": 336,
+"chunk": 4,
+"score": 0.658946,
+"sibling": false
+},
+{
+"page": 152,
+"chunk": 1,
+"score": 0.621935,
+"sibling": false
+},
+{
+"page": 339,
+"chunk": 4,
+"score": 0.633929,
+"sibling": false
+},
+{
+"page": 269,
+"chunk": 0,
+"score": 0.622382,
+"sibling": false
+},
+{
+"page": 522,
+"chunk": 1,
+"score": 0.62781,
+"sibling": false
+},
+{
+"page": 455,
+"chunk": 2,
+"score": 0.620948,
+"sibling": false
+},
+{
+"page": 2,
+"chunk": 0,
+"score": 0.670731,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 522,
+"chunk": 0,
+"score": 0.662207,
+"sibling": false
+},
+{
+"page": 522,
+"chunk": 1,
+"score": 0.62781,
+"sibling": false
+},
+{
+"page": 522,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 522,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 522,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 522,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 522,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 522,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 522,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 336,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 336,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 336,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 336,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 336,
+"chunk": 4,
+"score": 0.658946,
+"sibling": false
+},
+{
+"page": 152,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 152,
+"chunk": 1,
+"score": 0.621935,
+"sibling": false
+},
+{
+"page": 152,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 152,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 152,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 339,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 339,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 339,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 339,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 339,
+"chunk": 4,
+"score": 0.633929,
+"sibling": false
+},
+{
+"page": 269,
+"chunk": 0,
+"score": 0.622382,
+"sibling": false
+},
+{
+"page": 269,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 269,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 269,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 455,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 455,
+"chunk": 2,
+"score": 0.620948,
+"sibling": false
+},
+{
+"page": 455,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 2,
+"chunk": 0,
+"score": 0.670731,
+"sibling": false
+},
+{
+"page": 2,
+"chunk": 1,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.670731,
+"vector_best": 0.67073,
+"corrected": "summarised SBI's lunar mining business",
+"corrected_best": 0.666531
+}
+},
+"EICHERMOT\tHow many helicopters did Eicher Motors sell in FY26?": {
+"id": "eichermot-fy26-002",
+"hits": [
+{
+"page": 214,
+"chunk": 0,
+"score": 0.697812,
+"sibling": false
+},
+{
+"page": 10,
+"chunk": 0,
+"score": 0.667885,
+"sibling": false
+},
+{
+"page": 306,
+"chunk": 0,
+"score": 0.688401,
+"sibling": false
+},
+{
+"page": 95,
+"chunk": 0,
+"score": 0.684871,
+"sibling": false
+},
+{
+"page": 33,
+"chunk": 0,
+"score": 0.682931,
+"sibling": false
+},
+{
+"page": 414,
+"chunk": 0,
+"score": 0.673543,
+"sibling": false
+},
+{
+"page": 8,
+"chunk": 0,
+"score": 0.673205,
+"sibling": false
+},
+{
+"page": 38,
+"chunk": 0,
+"score": 0.661995,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 214,
+"chunk": 0,
+"score": 0.697812,
+"sibling": false
+},
+{
+"page": 214,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 214,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 214,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 214,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 214,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 10,
+"chunk": 0,
+"score": 0.667885,
+"sibling": false
+},
+{
+"page": 306,
+"chunk": 0,
+"score": 0.688401,
+"sibling": false
+},
+{
+"page": 306,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 306,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 306,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 306,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 306,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 306,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 95,
+"chunk": 0,
+"score": 0.684871,
+"sibling": false
+},
+{
+"page": 95,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 95,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 95,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 95,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 95,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 95,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 95,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 95,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 95,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 95,
+"chunk": 10,
+"score": null,
+"sibling": true
+},
+{
+"page": 33,
+"chunk": 0,
+"score": 0.682931,
+"sibling": false
+},
+{
+"page": 33,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 33,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 414,
+"chunk": 0,
+"score": 0.673543,
+"sibling": false
+},
+{
+"page": 414,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 414,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 414,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 8,
+"chunk": 0,
+"score": 0.673205,
+"sibling": false
+},
+{
+"page": 8,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 8,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 38,
+"chunk": 0,
+"score": 0.661995,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.697812,
+"vector_best": 0.727898
+}
+},
+"DIVISLAB\tHow many franchise outlets does Divi's operate?": {
+"id": "divislab-fy26-002",
+"hits": [
+{
+"page": 111,
+"chunk": 5,
+"score": 0.631025,
+"sibling": false
+},
+{
+"page": 47,
+"chunk": 7,
+"score": 0.65155,
+"sibling": false
+},
+{
+"page": 144,
+"chunk": 8,
+"score": 0.591729,
+"sibling": false
+},
+{
+"page": 47,
+"chunk": 2,
+"score": 0.576539,
+"sibling": false
+},
+{
+"page": 144,
+"chunk": 5,
+"score": 0.584228,
+"sibling": false
+},
+{
+"page": 98,
+"chunk": 0,
+"score": 0.594708,
+"sibling": false
+},
+{
+"page": 144,
+"chunk": 7,
+"score": 0.567278,
+"sibling": false
+},
+{
+"page": 129,
+"chunk": 7,
+"score": 0.622703,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 111,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 111,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 111,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 111,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 111,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 111,
+"chunk": 5,
+"score": 0.631025,
+"sibling": false
+},
+{
+"page": 111,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 111,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 111,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 111,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 111,
+"chunk": 10,
+"score": null,
+"sibling": true
+},
+{
+"page": 111,
+"chunk": 11,
+"score": null,
+"sibling": true
+},
+{
+"page": 47,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 47,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 47,
+"chunk": 2,
+"score": 0.576539,
+"sibling": false
+},
+{
+"page": 47,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 47,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 47,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 47,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 47,
+"chunk": 7,
+"score": 0.65155,
+"sibling": false
+},
+{
+"page": 47,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 47,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 47,
+"chunk": 10,
+"score": null,
+"sibling": true
+},
+{
+"page": 144,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 144,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 144,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 144,
+"chunk": 5,
+"score": 0.584228,
+"sibling": false
+},
+{
+"page": 144,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 144,
+"chunk": 7,
+"score": 0.567278,
+"sibling": false
+},
+{
+"page": 144,
+"chunk": 8,
+"score": 0.591729,
+"sibling": false
+},
+{
+"page": 144,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 98,
+"chunk": 0,
+"score": 0.594708,
+"sibling": false
+},
+{
+"page": 129,
+"chunk": 7,
+"score": 0.622703,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.65155,
+"vector_best": 0.691785
+}
+},
+"TATASTEEL\tWrite a poem about steel": {
+"id": "tatasteel-fy26-003",
+"hits": [
+{
+"page": 80,
+"chunk": 4,
+"score": 0.546183,
+"sibling": false
+},
+{
+"page": 22,
+"chunk": 1,
+"score": 0.523569,
+"sibling": false
+},
+{
+"page": 3,
+"chunk": 1,
+"score": 0.517057,
+"sibling": false
+},
+{
+"page": 31,
+"chunk": 2,
+"score": 0.525907,
+"sibling": false
+},
+{
+"page": 80,
+"chunk": 1,
+"score": 0.529784,
+"sibling": false
+},
+{
+"page": 282,
+"chunk": 0,
+"score": 0.572144,
+"sibling": false
+},
+{
+"page": 12,
+"chunk": 1,
+"score": 0.490145,
+"sibling": false
+},
+{
+"page": 93,
+"chunk": 2,
+"score": 0.569538,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 80,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 80,
+"chunk": 1,
+"score": 0.529784,
+"sibling": false
+},
+{
+"page": 80,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 80,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 80,
+"chunk": 4,
+"score": 0.546183,
+"sibling": false
+},
+{
+"page": 22,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 22,
+"chunk": 1,
+"score": 0.523569,
+"sibling": false
+},
+{
+"page": 3,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 3,
+"chunk": 1,
+"score": 0.517057,
+"sibling": false
+},
+{
+"page": 3,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 3,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 31,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 31,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 31,
+"chunk": 2,
+"score": 0.525907,
+"sibling": false
+},
+{
+"page": 31,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 31,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 282,
+"chunk": 0,
+"score": 0.572144,
+"sibling": false
+},
+{
+"page": 282,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 282,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 282,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 282,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
+"page": 282,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 282,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 282,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 282,
+"chunk": 8,
+"score": null,
+"sibling": true
+},
+{
+"page": 282,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 282,
+"chunk": 10,
+"score": null,
+"sibling": true
+},
+{
+"page": 282,
+"chunk": 11,
+"score": null,
+"sibling": true
+},
+{
+"page": 282,
+"chunk": 12,
+"score": null,
+"sibling": true
+},
+{
+"page": 282,
+"chunk": 13,
+"score": null,
+"sibling": true
+},
+{
+"page": 12,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 12,
+"chunk": 1,
+"score": 0.490145,
+"sibling": false
+},
+{
+"page": 12,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 12,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 93,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 93,
+"chunk": 2,
+"score": 0.569538,
+"sibling": false
+},
+{
+"page": 93,
+"chunk": 4,
+"score": null,
+"sibling": true
+}
+],
+"gate": {
+"fused_best": 0.572144,
+"vector_best": 0.572144
+}
+},
+"BEL\tWhat will the weather be in Mumbai tomorrow?": {
+"id": "bel-fy26-002",
+"hits": [
+{
+"page": 154,
+"chunk": 4,
+"score": 0.530643,
+"sibling": false
+},
+{
+"page": 107,
+"chunk": 4,
+"score": 0.528412,
+"sibling": false
+},
+{
+"page": 42,
+"chunk": 4,
+"score": 0.542694,
+"sibling": false
+},
+{
+"page": 62,
+"chunk": 9,
+"score": 0.524566,
+"sibling": false
+},
+{
+"page": 101,
+"chunk": 4,
+"score": 0.584006,
+"sibling": false
+},
+{
+"page": 101,
+"chunk": 9,
+"score": 0.579748,
+"sibling": false
+},
+{
+"page": 154,
+"chunk": 8,
+"score": 0.566423,
+"sibling": false
+},
+{
+"page": 154,
+"chunk": 5,
+"score": 0.519446,
+"sibling": false
+}
+],
+"context": [
+{
+"page": 154,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 4,
+"score": 0.530643,
+"sibling": false
+},
+{
+"page": 154,
+"chunk": 5,
+"score": 0.519446,
+"sibling": false
+},
+{
+"page": 154,
+"chunk": 6,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 7,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 8,
+"score": 0.566423,
+"sibling": false
+},
+{
+"page": 154,
+"chunk": 9,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 10,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 11,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 12,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 13,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 14,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 15,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 16,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 17,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 18,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 19,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 20,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 21,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 22,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 23,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 24,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 25,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 26,
+"score": null,
+"sibling": true
+},
+{
+"page": 154,
+"chunk": 27,
+"score": null,
+"sibling": true
+},
+{
+"page": 107,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 107,
+"chunk": 4,
+"score": 0.528412,
+"sibling": false
+},
+{
+"page": 107,
+"chunk": 5,
+"score": null,
+"sibling": true
+},
+{
+"page": 42,
+"chunk": 4,
+"score": 0.542694,
+"sibling": false
+},
+{
+"page": 42,
+"chunk": 13,
+"score": null,
+"sibling": true
+},
+{
+"page": 62,
+"chunk": 9,
+"score": 0.524566,
+"sibling": false
+},
+{
+"page": 101,
+"chunk": 4,
+"score": 0.584006,
+"sibling": false
+},
+{
+"page": 101,
+"chunk": 9,
+"score": 0.579748,
+"sibling": false
+}
+],
+"gate": {
+"fused_best": 0.584006,
+"vector_best": 0.584007
+}
+}
+}
+}
