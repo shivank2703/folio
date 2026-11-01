@@ -30,7 +30,7 @@ from gen.guardrails import CITATION, cited_pages, has_enough_context
 from retrieve.embed import load_model
 from retrieve.search import DEFAULT_K, EXPANSION_SEEDS, open_index, page_context, search
 from retrieve.store import ensure_index
-from ui import add_company, company, funds, memo
+from ui import add_company, company, funds, memo, portfolio
 from ui.company import link_citations, page_link
 from ui.limits import DailyLimiter, is_owner, visitor_address
 
@@ -165,6 +165,11 @@ def render_sources(context: list[dict], cited: set[int], url: str) -> None:
             st.text(chunk["text"])
 
 
+def research_modes(owner: bool) -> list[str]:
+    """The page's modes; the maintainer's own holdings are never offered to a visitor."""
+    return ["Companies", "Funds", "Memo"] + (["My portfolio"] if owner else [])
+
+
 def main() -> None:
     st.set_page_config(page_title="Folio", page_icon="📄", layout="centered")
     st.title("Folio")
@@ -185,7 +190,14 @@ def main() -> None:
     if owner:
         add_company.render(model, on_index_changed=reopen_index)
 
-    mode = st.radio("Research", ["Companies", "Funds", "Memo"], horizontal=True, label_visibility="collapsed")
+    mode = st.radio("Research", research_modes(owner), horizontal=True, label_visibility="collapsed")
+    if mode == "My portfolio":
+        # research_modes() offers this only to the owner; checked again here
+        # so no later edit to the options can show holdings to a visitor.
+        if owner:
+            from funds.data import load_funds
+            portfolio.render(load_filings(), load_funds(), load_overviews())
+        st.stop()
     if mode == 'Memo':
         memo.render(load_filings(), table, model, client, client_error, owner=owner,
                     limiter=daily_limiter(),

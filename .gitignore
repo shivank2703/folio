@@ -4,6 +4,8 @@
 .streamlit/secrets.toml
 # v4: real watchlists never committed; only watchlist.sample.yaml ships (SPEC.md §7)
 watchlist.yaml
+# the owner's holdings for the My portfolio view, read locally when no secret is set (ui/portfolio.py)
+portfolio.txt
 
 # --- Source filings: not committed; corpus/SOURCES.md lists where to get them (SPEC.md §7) ---
 corpus/*.pdf

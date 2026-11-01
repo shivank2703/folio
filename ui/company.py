@@ -90,12 +90,13 @@ def header(filing: dict) -> None:
                "Page numbers are the PDF's own.")
 
 
-def render_overview(filing: dict, overview: dict | None) -> None:
+def render_overview(filing: dict, overview: dict | None,
+                    empty: str = "No overview has been built for this filing yet. Ask a question below; every "
+                                 "answer is cited to its page.") -> None:
     """The stored overview, every sentence linked to its page; or an honest note that there is none."""
     with st.expander("Overview", expanded=True):
         if not overview or overview.get("filing_sha256") != filing["sha256"]:
-            st.caption("No overview has been built for this filing yet. Ask a question below; every answer "
-                       "is cited to its page.")
+            st.caption(empty)
             return
         shown = 0
         for section in overview["sections"].values():
