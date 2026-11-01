@@ -21,7 +21,6 @@ import os
 import sys
 import time
 from pathlib import Path
-from urllib.parse import quote
 
 import anthropic
 import streamlit as st
@@ -31,12 +30,11 @@ from gen.guardrails import CITATION, cited_pages, has_enough_context
 from retrieve.embed import load_model
 from retrieve.search import DEFAULT_K, EXPANSION_SEEDS, open_index, page_context, search
 from retrieve.store import ensure_index
-from ui import add_company, funds, memo
+from ui import add_company, company, funds, memo
+from ui.company import link_citations, page_link
 from ui.limits import DailyLimiter, is_owner, visitor_address
 
 DB_PATH = Path("data/lancedb")
-
-EXAMPLE = "How did HCC's standalone total assets change from FY24 to FY25?"
 
 # The public demo spends the maintainer's key. Ten questions is enough to try
 # an answer, a refusal and a scope trap; it is a courtesy limit, not a wall,
@@ -98,6 +96,13 @@ def load_filings() -> list[dict]:
 
 
 @st.cache_resource(show_spinner=False)
+def load_overviews() -> dict:
+    """Every filing's stored overview (corpus/overviews.json), built offline: no API call per view."""
+    from overviews.build import load
+    return load()
+
+
+@st.cache_resource(show_spinner=False)
 def load_client():
     """Build the API client once, or report why it could not be built.
 
@@ -109,21 +114,6 @@ def load_client():
         return build_client(), ""
     except RuntimeError as error:
         return None, str(error)
-
-
-def page_link(url: str, page: int) -> str:
-    """The filing's own PDF, opened at one page.
-
-    Browser PDF viewers honour #page=N, and all three issuers serve their
-    reports inline rather than as downloads (checked 2026-10-04), so a
-    citation lands the reader on the page it names.
-    """
-    return f"{quote(url, safe=':/?&=%')}#page={page}"
-
-
-def link_citations(text: str, url: str) -> str:
-    """Turn every [page N] in an answer into a link to that page of the filing."""
-    return CITATION.sub(lambda m: f"[page {m.group(1)}]({page_link(url, int(m.group(1)))})", text)
 
 
 @st.cache_resource(show_spinner=False)
@@ -195,45 +185,34 @@ def main() -> None:
     if owner:
         add_company.render(model, on_index_changed=reopen_index)
 
-    mode = st.radio("Research", ["Companies", "Funds", "Memo"], horizontal=True)
+    mode = st.radio("Research", ["Companies", "Funds", "Memo"], horizontal=True, label_visibility="collapsed")
     if mode == 'Memo':
         memo.render(load_filings(), table, model, client, client_error, owner=owner,
                     limiter=daily_limiter(),
                     address=visitor_address(st.context.ip_address, st.context.headers),
                     max_questions=MAX_QUESTIONS)
         st.stop()
-    selected_filing = funds.render(load_filings()) if mode == "Funds" else None
-    if mode == "Funds" and selected_filing is None:
-        st.stop()
-
-    # A form so Enter submits: the question box is the whole interface, and
-    # reaching for the mouse to ask is friction the demo does not need.
-    with st.form("ask"):
+    if mode == "Funds":
+        filing = funds.render(load_filings())
+        if filing is None:
+            st.stop()
+        st.markdown(f"**{filing['name']} · {filing['fiscal_year']} annual report**")
+        question = company.ask(filing, f"What were standalone total assets at the end of {filing['fiscal_year']}?")
+    else:
         # One filing at a time. Page numbers repeat across annual reports, so a
-        # question asked of "the filings" would return three balance sheets,
+        # question asked of "the filings" would return several balance sheets,
         # each citation right for a company nobody asked about.
-        # The options are the labels themselves, not the records behind them:
-        # Streamlit filters the dropdown on each option's own text, so passing
-        # records made typing a company's name match nothing.
-        filings = {f"{f['name']} — {f['fiscal_year']}": f for f in load_filings()}
-        if selected_filing:
-            filing = selected_filing
-            st.markdown(f"**{filing['name']} · {filing['fiscal_year']} annual report**")
-        else:
-            filing = filings[st.selectbox("Filing", list(filings))]
-        example = (f"What were standalone total assets at the end of {filing['fiscal_year']}?"
-                   if selected_filing else EXAMPLE)
-        question = st.text_input("Question", placeholder=example)
-        submitted = st.form_submit_button("Ask", type="primary")
-    if not submitted or not question.strip():
+        filing = company.choose(load_filings())
+        if filing is None:
+            st.stop()
+        # The index ships text derived from these filings, so the page names
+        # the issuer and links the exact document (SPEC.md §7), the same URL
+        # corpus/SOURCES.md verifies by checksum.
+        company.header(filing)
+        company.render_overview(filing, load_overviews().get(filing["company"]))
+        question = company.ask(filing)
+    if not question:
         st.stop()
-    # The index ships text derived from these filings, so every result names
-    # the issuer and links the exact document it came from (SPEC.md §7), the
-    # same URL corpus/SOURCES.md verifies by checksum. It is drawn after submit
-    # because widgets inside a form do not rerun the page: drawn above, it
-    # kept linking the previous filing after the dropdown changed.
-    st.caption(f"Source: [{filing['name']} annual report, {filing['fiscal_year']}]({quote(filing['source_url'], safe=':/?&=%')}), "
-               "published by the company. Page numbers are the PDF's own.")
 
     # Counted on submit, refusals included: a question is a question to the
     # reader, and counting only model calls would make the limit unpredictable.
