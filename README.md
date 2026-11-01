@@ -15,8 +15,12 @@ Oswal Nifty 500 Index Fund. Their complete September 2026 portfolios contain
 588 instrument rows; the top ten domestic equities from each form a union of
 28 companies. These FY26 reports join the four existing filings.
 
-Choose **Funds** for costs, benchmark, exit load, holdings and report drill-down,
-or **Companies** for annual-report Q&A. Coverage is per fund: a company outside
+Choose **Companies** to search the indexed filings by name, NSE symbol or code
+("Infosys", "INFY", "L&T", "bank"), read the filing's stored overview (what it
+does, revenue, profit, total assets and top risks, every sentence linked to its
+page and built offline, so reading it costs no API call), and ask a question or
+tap an example. Choose **Funds** for costs, benchmark, exit load, holdings and
+report drill-down. Coverage is per fund: a company outside
 one fund’s top ten remains **Not indexed** there, even if another fund includes it.
 
 The **Memo** mode assembles up to 450 words of cited evidence for a
@@ -78,6 +82,9 @@ flowchart TB
 
 ## How a question becomes a cited answer
 
+0. **Correct misspellings** against the filing's own vocabulary: "totla
+   assets" becomes "total assets". A word that is ordinary English is never
+   changed, so "drones" cannot become "does".
 1. **Pick the filing.** Page numbers repeat across reports — many have a
    page 114 — so every query is filtered to one company. Comparing companies is
    a later feature, not something search should do by accident.
@@ -87,6 +94,10 @@ flowchart TB
 3. **Search twice and fuse.** A vector ranking finds wording; a full-text
    ranking finds labels like `TOTAL ASSETS`. Reciprocal rank fusion merges the
    two orderings without pretending their scores are comparable.
+   Broad questions ("Summarise…", "What are the key risks…", "What does … do?")
+   add the words reports print in the sections that answer them, and a line
+   item asked with no scope ("Reliance's net profit") also searches the
+   consolidated statements, which the answer then gives first and names.
 4. **Widen each hit page.** The figure asked about often sits a chunk or two
    from the wording that matched, and a sibling chunk is the same citable page,
    so pages near the top of the ranking are filled in to a token budget.
@@ -100,19 +111,22 @@ flowchart TB
 Chunks carry their own context: a chunk from the middle of a balance sheet
 inherits that page's statement title, unit declaration and period header, so it
 still knows it is the *standalone* balance sheet, reported in *₹ crore*, *as at
-March 31, 2025*.
+March 31, 2025*. Where the chunker missed a unit (fused into a running header,
+a ₹ printed as "H", "(₹ Cr)"), every extract's label still carries the units
+its page declares, found at question time.
 
 ## Guardrails
 
-No single check keeps a citation honest, so there are six.
+No single check keeps a citation honest, so there are seven.
 
 | Check | When | What it stops |
 |---|---|---|
-| Similarity floor (0.67) | before the model is called | a question nothing in the filing resembles, caught before a paid call. A pre-filter only — see Limitations |
+| Similarity floor (0.59, best match anywhere in the filing) | before the model is called | a question nothing in the filing resembles, caught before a paid call. A pre-filter only — see Limitations |
 | Refusal contract in the prompt | during the call | a hedged half-answer built from plausible but unhelpful extracts |
 | Strict refusal | after the call | "Not in the filing." followed by anything: the rest is cut, so a refusal is always one sentence |
 | Citation validation | after the call | a page the model was never shown; an answer whose citations were all invented, or which carried none, is withheld entirely |
 | Figure grounding | after the call | a figure that is not printed on the page it cites. If exactly one page the model was shown prints all of a claim's figures, the citation is moved there and the reader is told; otherwise the figure is flagged. A computed figure must say "(computed from [page N])" |
+| Unit check | after the call | an amount stated without the unit its cited page declares ("1,48,819" for ₹1,48,819 crore): flagged to the reader beside the answer |
 | Advice scrub | after the call | investment advice, which this project never produces |
 
 Every `[page N]` in an answer links to the issuer's PDF opened at that page.
@@ -255,7 +269,53 @@ that respect robots.txt and wait between calls:
 Folio does not imitate a browser to get past a site that refuses scripts; a
 blocked company's report URL goes in `urls.yaml` by hand.
 
+## Maintainer workflows
+
+Three GitHub Actions workflows do the work that needs the embedding model, the
+API key or release uploads, so it runs the same from any machine:
+
+| Workflow | Starts when | Does |
+|---|---|---|
+| `index` | `corpus/index-request.yaml` changes on a branch (or from the Actions tab on main) | upload probe, then `ingest.add` for the listed codes, `ingest.publish`, and a commit of the record files ("Add N companies") |
+| `retrieval` | retrieval code or eval questions change on a branch | records which chunks each eval question retrieves (`evals/retrieval/`) and the app's startup time and memory (`evals/results/footprint.json`) |
+| `eval` | `evals/eval-requests.yaml` or `overviews/` changes | runs each queued eval at its own commit and builds missing overviews; needs the `ANTHROPIC_API_KEY` repository secret |
+
+A recorded retrieval replays without the model:
+`python -m evals.score --label NAME --retrieval evals/retrieval/eval-candidates.json`,
+`python -m evals.gate_report …` and `python -m evals.availability …` (no API calls).
+
+**My portfolio (owner only).** Put `FOLIO_PORTFOLIO` in the app's secrets (or,
+locally, a gitignored `portfolio.txt`): one NSE symbol or indexed fund name per
+line, optionally `, weight`. An owner session gets a **My portfolio** mode
+showing each stock's overview and the indexed funds that disclose it, and each
+fund's cited costs and overlap. Nothing is stored or sent; no model is called.
+
+**Old index assets.** `python -m ingest.prune` lists release assets no commit
+names; `--delete` removes them.
+
 ## Measured
+
+**Memory and cold start** (1 November 2026, GitHub runner, `python -m
+evals.footprint`): about 2.6 s from imports to the first answerable question
+(plus server start and, on a fresh container, the 67 MB model download).
+Resident memory holds at about **0.7 GB** (peak 765 MB) over 320 questions
+across all 32 filings, a quarter of Community Cloud's 2.7 GB. Before
+`ui/memory.py` limited glibc's malloc arenas at startup it crept past 1.8 GB
+and kept climbing; the index itself is 120 MB on disk
+([details](evals/RESULTS.md#memory-and-cold-start--1-november-2026)).
+
+**1 November 2026: natural questions, units and scope.** The eval grew to 57
+questions (37 answerable, 20 not in the filing), adding the live questions the
+0.67 floor refused ("Summarise HCC's performance in FY25", "totla assets
+navneet", …), broad and misspelled ones, scope and unit traps. Measured on
+recorded retrieval with no model calls: answerable questions refused at the
+floor fell from 5/31 to 0/31 (fit and test halves), the expected page reached
+the context for 27/31 instead of 23/31, and unscoped line items found their
+consolidated figure 3/4 times (Reliance's statement page still does not
+rank). **The model-judged before/after has not run yet**: it is queued at the
+exact commits in `evals/eval-requests.yaml` and runs once the repository has
+the `ANTHROPIC_API_KEY` Actions secret. Details and failures:
+[evals/RESULTS.md](evals/RESULTS.md#natural-questions--1-november-2026--false-refusals-at-the-floor).
 
 Answer quality on 24 questions — 18 answerable (lookups, tables from the pages
 extraction handles worst, a two-column page, a two-page spread, a computed
@@ -332,18 +392,14 @@ Stated plainly, because overclaiming is the failure this project is built
 against:
 
 - **The similarity floor does not separate answerable questions from
-  unanswerable ones**, measured: the weakest answerable question scores
-  0.702 and the strongest not-in-filing one 0.757 in the final Funds smoke
-  check. It stays as a cheap pre-filter for gross mismatches; refusal rests
-  on the prompt contract plus the strict-refusal cut, which refused all 18
-  not-in-filing samples in the final evaluation. A cross-encoder gate was
-  tried and lost answers on held-out questions.
-  A live BEL query phrased “at March 31, 2026” scored 0.663 and was refused
-  despite retrieving the balance sheet; the equivalent “at the end of FY26”
-  query passed and returned the cited total. Wording can cause false refusals.
-- **Six not-in-filing questions are too few to fit a refusal threshold.**
-  That is part of why the reranker's threshold did not hold; the eval needs
-  more negatives before the next attempt.
+  unanswerable ones**, measured: on the 57-question eval, not-in-the-filing
+  questions score 0.64–0.76 against the filing, inside the answerable range.
+  Since November the floor (0.59, the best match anywhere in the filing) is
+  set to refuse no answerable question and stops only off-topic input;
+  refusing plausible negatives rests on the prompt contract plus the
+  strict-refusal cut. With 20 negatives that contract now carries more of
+  the load, and its model-judged measurement is still queued (Measured).
+  The off-topic margin is thin: a weather question scored 0.584.
 - **The expansion width was tuned on the same nine questions.** Eight seed
   chunks and a 6,000-token budget is the smallest setting that put every
   answer in front of the model on this set; it is a fitted number, not a
@@ -402,6 +458,10 @@ against:
   pages, but a spread pairing two different documents (an auditor's annexure
   beside a balance sheet) gets no statement title, and a scanned report is
   refused outright (no OCR).
+- **Overviews and two evals wait on an API key in CI.** The company page
+  shows "No overview has been built" until the `eval` workflow builds
+  `corpus/overviews.json`; it needs the `ANTHROPIC_API_KEY` repository
+  secret, as do the queued before/after evals.
 - **Not advice.** The system reports what a filing says. It produces no
   recommendations and strips advice language if a model drifts into it.
 
@@ -422,6 +482,12 @@ One step per Saturday ([SPEC.md §4](SPEC.md)):
 - **Agent** (25 Oct, deployed): one bounded Anthropic tool-use loop over
   company and fund readers; a memo of up to 450 words, every sentence cited,
   evidence trace and Markdown download. Release evidence is in the Agent notes.
+
+- **After Agent** (1 Nov 2026, branch): fresh-clone-safe `ingest.add` and
+  `ingest.publish`, CI, publishing from GitHub Actions, broad-question
+  retrieval and a refitted floor, page units on every extract, consolidated
+  first, offline cited overviews, a searchable company page, an owner-only
+  holdings view, `ingest.prune`. Model-judged results pending (Measured).
 
 Cut: RAGAS in CI, LangGraph, Langfuse. Later, maybe: trend charts, multi-year
 ingest, daily exchange-disclosure flags.

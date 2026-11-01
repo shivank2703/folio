@@ -4,7 +4,7 @@
 
 *Renamed from Praman on 03 Oct 2026; the history before that date uses the old name.*
 
-**Status:** spec finalized 14 Jul 2026 · roadmap reset 03 Oct 2026 (§4) · single maintainer
+**Status:** spec finalized 14 Jul 2026 · roadmap reset 03 Oct 2026 (§4) · post-Agent work 01 Nov 2026 · single maintainer
 **License:** AGPL-3.0 (see §7)
 
 ---
@@ -161,6 +161,32 @@ company questions retain their original wording. Generated subquestions use
 the catalog's company code in place of its legal name; dates and statement
 scope are preserved. Release status is recorded in `notes/agent-step.md`.
 
+### After Agent · Sun 01 Nov 2026
+
+Requested work after the five steps, recorded in `notes/next-step.md` and
+`evals/RESULTS.md`:
+
+1. A fresh clone adds to and publishes the published index, never a partial
+   one (`ingest.add`/`ingest.publish` fetch it first; publish refuses an
+   index that does not cover `corpus.json`). `python -m tests` and GitHub
+   Actions CI run every offline check.
+2. Publishing runs on GitHub's runners (`index` workflow), because the cloud
+   sandbox's GitHub proxy refuses binary uploads; it probes an upload first.
+3. False refusals: 51-question eval (natural broad, summary and misspelled
+   questions; 20 negatives). Retrieval for broad questions; the floor moved to
+   the filing-wide best cosine at 0.59.
+4. Units from the page on every extract; consolidated first when a question
+   names no scope.
+5. Offline cited company overviews (`overviews/build.py`, `corpus/overviews.json`).
+6. Company page: search, overview, example questions, phone width.
+7. Owner-only holdings view (`FOLIO_PORTFOLIO`).
+8. `ingest.prune` for unnamed index assets; startup time and memory measured.
+
+The model-judged evals and the overview build need the repository secret
+`ANTHROPIC_API_KEY` and run in the `eval` workflow; retrieval is recorded in
+the `retrieval` workflow and replayed where the embedding model is
+unavailable (§5).
+
 ### Cut
 
 RAGAS in CI, LangGraph, Langfuse, further work on the text-geometry table
@@ -198,6 +224,13 @@ exchange-disclosure flags for a watchlist).
 | Context packing | Funds | Reserve eight ranked seeds, then complete stronger pages before weaker continuations, within 6,000 tokens | HCC SOCIE continuation was previously omitted by distance-first expansion | Before/after retrieval evaluation reveals another coverage loss |
 | Prose quality | Funds | Conservative repeated prose-cell detection and visually reviewed exclusions, recorded per viewer page | Avoid embedding visibly interleaved columns; may omit legitimate narrative tables | A separately evaluated open-source layout reader |
 | Orchestration | Agent | One plain Anthropic tool-use loop over company and fund tools (LangGraph cut) | Every layer stays visible; the loop is a few dozen lines | — |
+| Refusal floor | Nov 2026 | Best cosine anywhere in the filing (`gate` on every hit) ≥ **0.59**, replacing best among ranked hits ≥ 0.67. Fitted on the fit half's weakest answerable question less 0.03; 0/15 test answerable refused; still stops off-topic input | At 0.67 it refused 4 of 16 live natural questions and 5/31 answerable eval questions while 13/20 negatives passed it anyway; query rewrites move ranked-hit scores but not the filing-wide best | Negatives and answerable questions overlap completely (0.64–0.76): refusing plausible negatives stays with the prompt contract |
+| Broad questions | Nov 2026 | Misspellings corrected against the filing's own words (common English, judged by cl100k, never touched); the vector query names the company "the company"; instruction words leave the keyword query; summary, risk and business questions add section words | 8 of 13 natural questions never had their page in context | Before/after on the eval for any change |
+| Units at query time | Nov 2026 | `retrieve/units.py` finds unit declarations anywhere on a page (fused lines, ₹ glyphs H/I/J, "(₹ Cr)", long qualifiers) and every extract's label carries them; a guard flags an amount stated without its page's unit | 2,344 of 10,730 figure-bearing chunks carried no unit word; chunk-level inheritance needs a re-index of every filing | A re-index for another reason: fix the chunker's unit detection then |
+| Unscoped line items | Nov 2026 | Consolidated first, said so; retrieval adds a consolidated-only ranking with statement titles and Schedule III labels and reserves two seeds for it | The old "answer only what was asked" rule dropped the other scope; consolidated pages rarely reached the context | — |
+| Company overviews | Nov 2026 | Five fixed questions per filing through the guarded answer path, built offline; a section is kept only if unflagged, and only sentences with their own citation; stored in `corpus/overviews.json` with filing, index and prompt fingerprints | A page view must cost no API call; every claim keeps its page link | — |
+| Memory | Nov 2026 | `mallopt(M_ARENA_MAX, 2)` first thing in `streamlit_app.py` (`ui/memory.py`) | 320 questions over all filings: flat ~0.7 GB with it, 1.46 → 1.76 GB and climbing without (glibc arena fragmentation, not the 120 MB index); the host cannot set MALLOC_ARENA_MAX before Python starts | Memory near 2 GB in footprint runs |
+| Where model work runs | Nov 2026 | `retrieval` workflow records chunk identities and scores (no text); `eval` workflow runs queued evals at their own commits and builds overviews; `index` workflow adds companies and publishes | The cloud sandbox cannot reach the embedding model or upload release assets; replay keeps the eval on the app's own answer path | The sandbox's network policy changes |
 
 **Explicitly excluded:** PyMuPDF-Layout (`pymupdf_layout`, the GNN/ONNX layout model) — proprietary component with its own license; excluded unless its terms are reviewed and found compatible with public distribution. pymupdf4llm 1.27+ requires it, so pymupdf4llm stays on 0.3.4, where it is an optional extra that is not installed. LangChain, LlamaIndex, LangGraph. OCR engines (see §3.5).
 
@@ -213,4 +246,4 @@ exchange-disclosure flags for a watchlist).
 - **Repo license: AGPL-3.0.** PyMuPDF and pymupdf4llm are AGPL-dual-licensed and this app is network-served, so AGPL is the clean, compliant choice.
 - **Clean-room policy.** The author works professionally in an adjacent domain. This project shares only public open-source libraries with that work — no code, configurations, heuristics, prompts, or models originate from any employer. Built entirely from public documentation, on personal time and hardware.
 - **Data policy.** Annual reports are public statutory documents. Fund portfolio disclosures and factsheets are public documents published by each fund house. Source PDFs are not committed; `corpus/SOURCES.md` lists where to obtain them — the code ships, not the data. **Exception:** the search index, holding chunks of text derived from public statutory filings, is published (a release asset since the Ingest step; committed before) so the demo loads an index instead of rebuilding one on a host that sleeps every 12 hours. The demo attributes each filing to the issuing company and links to the source document (`corpus/SOURCES.md`); the PDF itself stays out of git. A second exception is `corpus/funds.json`: normalized **public scheme disclosures**, with exact source hashes, dates and page/row citations. Original fund PDFs and spreadsheets stay ignored; no personal holdings are included.
-- **Privacy.** Real watchlists and holdings are never committed (`watchlist.yaml` stays gitignored). API keys live in `.env` and `.streamlit/secrets.toml`, both gitignored; the deployed key lives only in the host's secrets settings, with a monthly spend limit, a per-session question cap and daily per-visitor and total caps. Visitors are counted by a salted hash of their address, held in memory only.
+- **Privacy.** Real watchlists and holdings are never committed (`watchlist.yaml` and `portfolio.txt` stay gitignored). The owner-only holdings view reads `FOLIO_PORTFOLIO` from the host's secrets, stores and logs nothing, and calls no model; commit messages for companies added on its account say only "Add N companies". API keys live in `.env` and `.streamlit/secrets.toml`, both gitignored; the deployed key lives only in the host's secrets settings, with a monthly spend limit, a per-session question cap and daily per-visitor and total caps. Visitors are counted by a salted hash of their address, held in memory only.

@@ -753,3 +753,36 @@ Still failing: Reliance's consolidated statement of profit and loss (p101)
 does not rank, even with the label and title words; its context has other
 consolidated pages and the standalone figure. The model-judged run
 `accuracy-after` is queued at 2f5f4f4 (code of eeb5c96).
+
+
+## Memory and cold start · 1 November 2026
+
+`python -m evals.footprint` replays the app's startup in one process and
+then asks one question of each of the 32 filings (retrieval only, no API),
+recording wall time and resident memory per stage. Measured on a GitHub
+runner (`evals/results/footprint*.json`); Streamlit Community Cloud allows
+about 2.7 GB.
+
+| Stage (runner) | Time | Resident memory |
+|---|---|---|
+| imports (Streamlit + the app's modules) | 1.4 s | 332 MB |
+| index fetch, SHA-256 check, unpack (fresh container) | 0.9 s | 336 MB (peak 424 MB while hashing) |
+| open index (93 MB tarball, 120 MB on disk, 56,112 chunks) | 0.0 s | 360 MB |
+| load embedding model (cached; a fresh container also downloads 67 MB) | 0.1 s | 560 MB |
+| spelling vocabularies, all 32 filings | 1.0 s | 613 MB |
+| first question, cold caches | 0.1 s | 641 MB |
+
+| 10 passes × 32 questions | Resident memory after each pass | Peak |
+|---|---|---|
+| glibc default malloc arenas (the app until now) | 1,463 → 1,763 MB, still climbing | 1,775 MB |
+| `MALLOC_ARENA_MAX=2` | 634–682 MB, flat | 759 MB |
+| `mallopt(M_ARENA_MAX, 2)` at startup (shipped, `ui/memory.py`) | 687–729 MB, flat | 765 MB |
+
+The index is not too big: it is 120 MB on disk and opening it costs 25 MB.
+What grew was allocator fragmentation across the threads LanceDB, Arrow and
+ONNX Runtime allocate from; the code before this sitting (543ff0a) grew the
+same way (520 MB → 1,499 MB over three passes, `footprint-543ff0a.json`).
+This sitting's retrieval adds about 150 MB at peak under default arenas
+(the spelling vocabularies, 73 MB, and the unit lookups' imports) and about
+50 ms of retrieval per question. With the arena limit the app holds about
+0.7 GB, a quarter of the limit, with room for several times the corpus.

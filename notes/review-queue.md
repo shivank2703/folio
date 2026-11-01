@@ -104,3 +104,23 @@ evaluation with blind judges and deterministic coverage checks.
 3. Why can a correct source page still produce a refusal? Contrast the original
    precise question, a generated subquestion, the similarity floor, and the
    sentence-level citation filter. What does the blind judge add?
+
+## After Agent · 1 November 2026 — review after build
+
+1. On a fresh clone, what did `replace_filing` do when `data/lancedb` did not
+   exist, and which two changes stop that index from ever being published?
+   Why does publish refuse *extra* filings too, not only missing ones?
+2. The floor moved from 0.67 to 0.59 *and* changed statistic. Why would
+   lowering 0.67 alone have left "What are the key risks Unihealth faces?"
+   at risk, and why does the filing-wide best not move when the query
+   rewrites do?
+3. Why was the first misspelling corrector unsafe for *negatives* in
+   particular, and what does the cl100k single-token test protect?
+4. Infosys's statement page carries "(In ₹ crore, …)". Why did its later
+   chunks still reach the model without a unit, and why is the fix at query
+   time rather than in the chunker for now?
+5. What would go wrong if the consolidated-only ranking were fused without
+   the two reserved seeds? Use Infosys's unscoped revenue question.
+6. The eval for step 3's "before" runs at 96b305d in a worktree. Why must it
+   run there rather than on the branch head, and what does the retrieval
+   recording's code fingerprint protect against?
