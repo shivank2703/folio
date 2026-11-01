@@ -7,15 +7,20 @@
 # whose result file already exists is skipped, so the list is a queue and
 # re-running the workflow is safe.
 #
-# Spends API credit (about $0.50 per 51-question, 3-sample run) and needs the
-# repository secret ANTHROPIC_API_KEY. Without it the job stops at its first
-# step and says so; nothing else runs.
+# Then it builds every company overview that is missing or stale
+# (python -m overviews.build, five guarded answers per filing) at the branch
+# head and commits corpus/overviews.json.
+#
+# Spends API credit (about $0.50 per 57-question, 3-sample eval run; about
+# $0.25 for all 160 overview answers) and needs the repository secret
+# ANTHROPIC_API_KEY. Without it the job stops at its first step and says so;
+# nothing else runs.
 name: eval
 
 on:
   push:
     branches-ignore: [main]
-    paths: [evals/eval-requests.yaml]
+    paths: [evals/eval-requests.yaml, overviews/**]
   workflow_dispatch:
 
 permissions:
@@ -84,15 +89,17 @@ jobs:
               summary = out.stdout[out.stdout.rfind("### "):] if "### " in out.stdout else out.stdout[-4000:]
               (head / "evals/results" / f"{label}.md").write_text(summary, encoding="utf-8")
           PY
+      - name: Build missing or stale overviews
+        run: python -m overviews.build
       - name: Commit the results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add evals/results/
+          git add evals/results/ corpus/overviews.json 2>/dev/null || git add evals/results/
           if git diff --cached --quiet; then
             echo "nothing new"
             exit 0
           fi
-          git commit -m "Eval results from the queued runs"
+          git commit -m "Eval results and overviews from the queued runs"
           git pull --rebase origin "$GITHUB_REF_NAME"
           git push origin "HEAD:$GITHUB_REF_NAME"
