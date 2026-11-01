@@ -15,7 +15,8 @@ runs:
   - label: natural-after
     ref: f4fa88b
     samples: 3
-  # Step 4 after: page units on every extract, consolidated first.
+  # Step 4 after: page units on every extract, consolidated first (code of
+  # eeb5c96; this commit only corrects the Divi's reference).
   - label: accuracy-after
-    ref: eeb5c96
+    ref: 2f5f4f4
     samples: 3

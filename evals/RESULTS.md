@@ -702,3 +702,54 @@ Still failing, retrieval-level:
   answerable.
 - Negatives overlap answerable questions completely (0.64–0.76 on the new
   statistic); only off-topic input is stopped before the model.
+
+
+## Units and scope · 1 November 2026
+
+Two live failures: Infosys's revenue was answered "1,48,819" with no unit,
+and "Reliance's net profit" with the standalone figure only. Six questions
+added (f4fa88b): four unscoped line items whose filings print both scopes
+(Reliance profit, Infosys and Tata Steel and L&T revenue), where a correct
+answer gives the consolidated figure and says so, and two unit traps
+(Infosys standalone revenue; Solar Industries' raw-materials inventory).
+
+**Units.** The cause was upstream of the model. 2,344 of the index's 10,730
+figure-bearing chunks carry no unit word: chunk.py inherits only a line it
+recognises as a unit declaration, and many declarations are fused into a
+running header (Solar: "for the year ended March 31, 2026 | (All amounts in
+H Crores, unless otherwise stated)"), use a font glyph for ₹ ("H", "I", "J"),
+abbreviate "(₹ Cr)" (HDFC Bank), or exceed eight words (Infosys's statement
+header). `retrieve/units.py` finds declarations anywhere on a page at query
+time and every extract's label carries them; 1,931 chunks are left with
+neither, mostly counts (vehicles, shares, emissions). No re-index. The
+prompt requires a unit on every amount, and a guard flags an amount stated
+without one when its cited page declares a unit (counted in the eval's
+"Unit missing" column, shown to the reader, not failed).
+
+**Scope.** The prompt told the model to drop "other sections' versions of
+the same figure", so with both scopes in context it gave whichever came
+first. It now states the consolidated figure and says so. Retrieval for an
+unscoped line item adds a ranking over consolidated chunks alone, with the
+statement's title and Schedule III labels for a few reader terms ("net
+profit" → "profit for the year", "revenue" → "revenue from operations"), and
+reserves two of the eight seeds for its best hits.
+
+| Measure (no model calls) | Step 3 code (f4fa88b recording ce5e796, 51 q) | Step 4 code (eeb5c96 recording 05912b3, 57 q) |
+|---|---|---|
+| Unscoped scope questions with the consolidated figure in context | — | 3/4 (Reliance missing) |
+| Unit traps with the page's unit on the answer chunk | — | 2/2 |
+| Expected page in context, all answerable | 27/31 | 33/37 |
+| Recorded answer string in context, all answerable | 26/31 | 29/37 |
+
+Two of the original 31 lost their recorded answer string, both by design:
+"totla assets navneet" now has the consolidated ₹2,35,387 lakhs in context
+instead of the standalone ₹2,28,299 lakhs (its reference accepts either),
+and Divi's revenue now has the consolidated statement (₹10,560 crore). That
+case exposed a wrong reference: it gave ₹10,894 crore, which is standalone
+total income; corrected in 2f5f4f4, so runs at 96b305d and f4fa88b judge it
+against the first reference.
+
+Still failing: Reliance's consolidated statement of profit and loss (p101)
+does not rank, even with the label and title words; its context has other
+consolidated pages and the standalone figure. The model-judged run
+`accuracy-after` is queued at 2f5f4f4 (code of eeb5c96).
