@@ -1,0 +1,72 @@
+{
+ "measured": "2026-11-01 11:50",
+ "index": "folio-index-654edb14fd97.tar.gz",
+ "total_seconds": 16.77,
+ "peak_mb": 1499.2,
+ "stages": [
+  {
+   "stage": "imports (streamlit + app modules)",
+   "seconds": 2.61,
+   "rss_mb": 292.8,
+   "peak_mb": 292.6,
+   "note": ""
+  },
+  {
+   "stage": "index fetch + verify + unpack (fresh)",
+   "seconds": 1.1,
+   "rss_mb": 295.5,
+   "peak_mb": 383.5,
+   "note": "93 MB tarball, 56112 chunks"
+  },
+  {
+   "stage": "open index",
+   "seconds": 0.0,
+   "rss_mb": 320.7,
+   "peak_mb": 383.9,
+   "note": "120 MB on disk"
+  },
+  {
+   "stage": "load embedding model",
+   "seconds": 0.23,
+   "rss_mb": 520.2,
+   "peak_mb": 519.9,
+   "note": ""
+  },
+  {
+   "stage": "first question (cold caches)",
+   "seconds": 0.16,
+   "rss_mb": 695.3,
+   "peak_mb": 695.0,
+   "note": ""
+  },
+  {
+   "stage": "one question per filing (32)",
+   "seconds": 3.93,
+   "rss_mb": 1269.2,
+   "peak_mb": 1268.9,
+   "note": ""
+  },
+  {
+   "stage": "the same 32 questions again",
+   "seconds": 3.82,
+   "rss_mb": 1399.4,
+   "peak_mb": 1399.2,
+   "note": "growth here would be per question, not per filing"
+  },
+  {
+   "stage": "and a third time",
+   "seconds": 3.83,
+   "rss_mb": 1499.2,
+   "peak_mb": 1499.2,
+   "note": "levelling off here means caches, not a leak"
+  },
+  {
+   "stage": "fund snapshots + overviews",
+   "seconds": 0.0,
+   "rss_mb": 1499.2,
+   "peak_mb": 1499.2,
+   "note": ""
+  }
+ ],
+ "model_loaded": true
+}

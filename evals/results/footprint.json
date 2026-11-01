@@ -1,56 +1,77 @@
 {
- "measured": "2026-11-01 11:46",
+ "measured": "2026-11-01 11:50",
  "index": "folio-index-654edb14fd97.tar.gz",
- "total_seconds": 9.57,
- "peak_mb": 1501.5,
+ "total_seconds": 22.63,
+ "peak_mb": 1648.3,
  "stages": [
   {
    "stage": "imports (streamlit + app modules)",
-   "seconds": 2.0,
-   "rss_mb": 332.4,
+   "seconds": 2.63,
+   "rss_mb": 332.5,
    "peak_mb": 332.3,
    "note": ""
   },
   {
    "stage": "index fetch + verify + unpack (fresh)",
-   "seconds": 1.06,
+   "seconds": 1.18,
    "rss_mb": 335.3,
-   "peak_mb": 423.5,
+   "peak_mb": 423.4,
    "note": "93 MB tarball, 56112 chunks"
   },
   {
    "stage": "open index",
    "seconds": 0.0,
-   "rss_mb": 360.4,
-   "peak_mb": 423.5,
+   "rss_mb": 360.3,
+   "peak_mb": 423.4,
    "note": "120 MB on disk"
   },
   {
    "stage": "load embedding model",
-   "seconds": 0.18,
+   "seconds": 0.23,
    "rss_mb": 559.9,
-   "peak_mb": 559.6,
+   "peak_mb": 559.5,
    "note": ""
   },
   {
+   "stage": "spelling vocabularies (32 filings)",
+   "seconds": 1.87,
+   "rss_mb": 632.9,
+   "peak_mb": 632.3,
+   "note": "the per-filing cache questions fill"
+  },
+  {
    "stage": "first question (cold caches)",
-   "seconds": 0.23,
-   "rss_mb": 817.6,
-   "peak_mb": 817.1,
+   "seconds": 0.22,
+   "rss_mb": 833.5,
+   "peak_mb": 833.1,
    "note": ""
   },
   {
    "stage": "one question per filing (32)",
-   "seconds": 6.07,
-   "rss_mb": 1501.9,
-   "peak_mb": 1501.5,
-   "note": "fills every per-filing vocabulary cache"
+   "seconds": 5.61,
+   "rss_mb": 1416.1,
+   "peak_mb": 1415.7,
+   "note": ""
+  },
+  {
+   "stage": "the same 32 questions again",
+   "seconds": 5.41,
+   "rss_mb": 1582.1,
+   "peak_mb": 1581.8,
+   "note": "growth here would be per question, not per filing"
+  },
+  {
+   "stage": "and a third time",
+   "seconds": 5.44,
+   "rss_mb": 1648.7,
+   "peak_mb": 1648.3,
+   "note": "levelling off here means caches, not a leak"
   },
   {
    "stage": "fund snapshots + overviews",
-   "seconds": 0.0,
-   "rss_mb": 1501.9,
-   "peak_mb": 1501.5,
+   "seconds": 0.01,
+   "rss_mb": 1648.7,
+   "peak_mb": 1648.3,
    "note": ""
   }
  ],

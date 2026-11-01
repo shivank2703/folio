@@ -1,5 +1,5 @@
 {
-"recorded": "2026-11-01 11:45",
+"recorded": "2026-11-01 11:49",
 "model": "BAAI/bge-small-en-v1.5",
 "index": "654edb14fd97d07ee4c0de6b84f09b074f148afff201ffe7df5438faedf6bfa3",
 "code": "1251fbaad3f3e360",
@@ -10,58 +10,58 @@
 {
 "page": 116,
 "chunk": 2,
-"score": 0.701703,
+"score": 0.701629,
 "sibling": false,
-"gate": 0.767543
+"gate": 0.767516
 },
 {
 "page": 114,
 "chunk": 1,
-"score": 0.729786,
+"score": 0.729717,
 "sibling": false,
-"gate": 0.767543
+"gate": 0.767516
 },
 {
 "page": 114,
 "chunk": 2,
-"score": 0.707959,
+"score": 0.707878,
 "sibling": false,
-"gate": 0.767543
+"gate": 0.767516
 },
 {
 "page": 114,
 "chunk": 3,
-"score": 0.730436,
+"score": 0.730367,
 "sibling": false,
-"gate": 0.767543
+"gate": 0.767516
 },
 {
 "page": 118,
 "chunk": 0,
-"score": 0.7285,
+"score": 0.728448,
 "sibling": false,
-"gate": 0.767543
+"gate": 0.767516
 },
 {
 "page": 118,
 "chunk": 1,
-"score": 0.72422,
+"score": 0.724157,
 "sibling": false,
-"gate": 0.767543
+"gate": 0.767516
 },
 {
 "page": 196,
 "chunk": 2,
-"score": 0.680808,
+"score": 0.680736,
 "sibling": false,
-"gate": 0.767543
+"gate": 0.767516
 },
 {
 "page": 142,
 "chunk": 0,
-"score": 0.667654,
+"score": 0.667588,
 "sibling": false,
-"gate": 0.767543
+"gate": 0.767516
 }
 ],
 "context": [
@@ -80,9 +80,9 @@
 {
 "page": 116,
 "chunk": 2,
-"score": 0.701703,
+"score": 0.701629,
 "sibling": false,
-"gate": 0.767543
+"gate": 0.767516
 },
 {
 "page": 116,
@@ -105,23 +105,23 @@
 {
 "page": 114,
 "chunk": 1,
-"score": 0.729786,
+"score": 0.729717,
 "sibling": false,
-"gate": 0.767543
+"gate": 0.767516
 },
 {
 "page": 114,
 "chunk": 2,
-"score": 0.707959,
+"score": 0.707878,
 "sibling": false,
-"gate": 0.767543
+"gate": 0.767516
 },
 {
 "page": 114,
 "chunk": 3,
-"score": 0.730436,
+"score": 0.730367,
 "sibling": false,
-"gate": 0.767543
+"gate": 0.767516
 },
 {
 "page": 114,
@@ -150,16 +150,16 @@
 {
 "page": 118,
 "chunk": 0,
-"score": 0.7285,
+"score": 0.728448,
 "sibling": false,
-"gate": 0.767543
+"gate": 0.767516
 },
 {
 "page": 118,
 "chunk": 1,
-"score": 0.72422,
+"score": 0.724157,
 "sibling": false,
-"gate": 0.767543
+"gate": 0.767516
 },
 {
 "page": 118,
@@ -206,9 +206,9 @@
 {
 "page": 196,
 "chunk": 2,
-"score": 0.680808,
+"score": 0.680736,
 "sibling": false,
-"gate": 0.767543
+"gate": 0.767516
 },
 {
 "page": 196,
@@ -231,9 +231,9 @@
 {
 "page": 142,
 "chunk": 0,
-"score": 0.667654,
+"score": 0.667588,
 "sibling": false,
-"gate": 0.767543
+"gate": 0.767516
 },
 {
 "page": 142,
@@ -261,8 +261,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.730436,
-"vector_best": 0.767543
+"fused_best": 0.730367,
+"vector_best": 0.767516
 }
 },
 "HCC\tWhat was HCC's consolidated total income for FY25?": {
@@ -271,67 +271,67 @@
 {
 "page": 195,
 "chunk": 0,
-"score": 0.725762,
+"score": 0.725869,
 "sibling": false,
-"gate": 0.750522
+"gate": 0.750602
 },
 {
 "page": 195,
 "chunk": 5,
-"score": 0.729961,
+"score": 0.73005,
 "sibling": false,
-"gate": 0.750522
+"gate": 0.750602
 },
 {
 "page": 260,
 "chunk": 5,
-"score": 0.692265,
+"score": 0.69236,
 "sibling": false,
-"gate": 0.750522
+"gate": 0.750602
 },
 {
 "page": 259,
 "chunk": 8,
-"score": 0.749405,
+"score": 0.749476,
 "sibling": false,
-"gate": 0.750522
+"gate": 0.750602
 },
 {
 "page": 198,
 "chunk": 1,
-"score": 0.686915,
+"score": 0.687024,
 "sibling": false,
-"gate": 0.750522
+"gate": 0.750602
 },
 {
 "page": 195,
 "chunk": 6,
-"score": 0.694694,
+"score": 0.694779,
 "sibling": false,
-"gate": 0.750522
+"gate": 0.750602
 },
 {
 "page": 195,
 "chunk": 3,
-"score": 0.699847,
+"score": 0.699937,
 "sibling": false,
-"gate": 0.750522
+"gate": 0.750602
 },
 {
 "page": 215,
 "chunk": 2,
-"score": 0.671181,
+"score": 0.671287,
 "sibling": false,
-"gate": 0.750522
+"gate": 0.750602
 }
 ],
 "context": [
 {
 "page": 195,
 "chunk": 0,
-"score": 0.725762,
+"score": 0.725869,
 "sibling": false,
-"gate": 0.750522
+"gate": 0.750602
 },
 {
 "page": 195,
@@ -348,9 +348,9 @@
 {
 "page": 195,
 "chunk": 3,
-"score": 0.699847,
+"score": 0.699937,
 "sibling": false,
-"gate": 0.750522
+"gate": 0.750602
 },
 {
 "page": 195,
@@ -361,16 +361,16 @@
 {
 "page": 195,
 "chunk": 5,
-"score": 0.729961,
+"score": 0.73005,
 "sibling": false,
-"gate": 0.750522
+"gate": 0.750602
 },
 {
 "page": 195,
 "chunk": 6,
-"score": 0.694694,
+"score": 0.694779,
 "sibling": false,
-"gate": 0.750522
+"gate": 0.750602
 },
 {
 "page": 195,
@@ -423,9 +423,9 @@
 {
 "page": 260,
 "chunk": 5,
-"score": 0.692265,
+"score": 0.69236,
 "sibling": false,
-"gate": 0.750522
+"gate": 0.750602
 },
 {
 "page": 259,
@@ -478,9 +478,9 @@
 {
 "page": 259,
 "chunk": 8,
-"score": 0.749405,
+"score": 0.749476,
 "sibling": false,
-"gate": 0.750522
+"gate": 0.750602
 },
 {
 "page": 198,
@@ -491,9 +491,9 @@
 {
 "page": 198,
 "chunk": 1,
-"score": 0.686915,
+"score": 0.687024,
 "sibling": false,
-"gate": 0.750522
+"gate": 0.750602
 },
 {
 "page": 198,
@@ -540,14 +540,14 @@
 {
 "page": 215,
 "chunk": 2,
-"score": 0.671181,
+"score": 0.671287,
 "sibling": false,
-"gate": 0.750522
+"gate": 0.750602
 }
 ],
 "gate": {
-"fused_best": 0.749405,
-"vector_best": 0.750522
+"fused_best": 0.749476,
+"vector_best": 0.750602
 }
 },
 "HCC\tHow much of HCC's standalone undisputed trade receivables considered good were outstanding for more than 3 years as at March 31, 2025?": {
@@ -556,74 +556,74 @@
 {
 "page": 138,
 "chunk": 3,
-"score": 0.75897,
+"score": 0.758999,
 "sibling": false,
-"gate": 0.75897
+"gate": 0.758999
 },
 {
 "page": 138,
 "chunk": 1,
-"score": 0.726557,
+"score": 0.726566,
 "sibling": false,
-"gate": 0.75897
+"gate": 0.758999
 },
 {
 "page": 138,
 "chunk": 0,
-"score": 0.71569,
+"score": 0.7157,
 "sibling": false,
-"gate": 0.75897
+"gate": 0.758999
 },
 {
 "page": 138,
 "chunk": 4,
-"score": 0.721237,
+"score": 0.721244,
 "sibling": false,
-"gate": 0.75897
+"gate": 0.758999
 },
 {
 "page": 137,
 "chunk": 2,
-"score": 0.698937,
+"score": 0.698933,
 "sibling": false,
-"gate": 0.75897
+"gate": 0.758999
 },
 {
 "page": 158,
 "chunk": 2,
-"score": 0.688206,
+"score": 0.688219,
 "sibling": false,
-"gate": 0.75897
+"gate": 0.758999
 },
 {
 "page": 152,
 "chunk": 4,
-"score": 0.672878,
+"score": 0.672894,
 "sibling": false,
-"gate": 0.75897
+"gate": 0.758999
 },
 {
 "page": 153,
 "chunk": 0,
-"score": 0.662779,
+"score": 0.662801,
 "sibling": false,
-"gate": 0.75897
+"gate": 0.758999
 }
 ],
 "context": [
 {
 "page": 138,
 "chunk": 0,
-"score": 0.71569,
+"score": 0.7157,
 "sibling": false,
-"gate": 0.75897
+"gate": 0.758999
 },
 {
 "page": 138,
 "chunk": 1,
-"score": 0.726557,
+"score": 0.726566,
 "sibling": false,
-"gate": 0.75897
+"gate": 0.758999
 },
 {
 "page": 138,
@@ -634,16 +634,16 @@
 {
 "page": 138,
 "chunk": 3,
-"score": 0.75897,
+"score": 0.758999,
 "sibling": false,
-"gate": 0.75897
+"gate": 0.758999
 },
 {
 "page": 138,
 "chunk": 4,
-"score": 0.721237,
+"score": 0.721244,
 "sibling": false,
-"gate": 0.75897
+"gate": 0.758999
 },
 {
 "page": 138,
@@ -672,9 +672,9 @@
 {
 "page": 137,
 "chunk": 2,
-"score": 0.698937,
+"score": 0.698933,
 "sibling": false,
-"gate": 0.75897
+"gate": 0.758999
 },
 {
 "page": 137,
@@ -703,9 +703,9 @@
 {
 "page": 158,
 "chunk": 2,
-"score": 0.688206,
+"score": 0.688219,
 "sibling": false,
-"gate": 0.75897
+"gate": 0.758999
 },
 {
 "page": 158,
@@ -758,9 +758,9 @@
 {
 "page": 152,
 "chunk": 4,
-"score": 0.672878,
+"score": 0.672894,
 "sibling": false,
-"gate": 0.75897
+"gate": 0.758999
 },
 {
 "page": 152,
@@ -771,9 +771,9 @@
 {
 "page": 153,
 "chunk": 0,
-"score": 0.662779,
+"score": 0.662801,
 "sibling": false,
-"gate": 0.75897
+"gate": 0.758999
 },
 {
 "page": 153,
@@ -807,8 +807,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.75897,
-"vector_best": 0.75897
+"fused_best": 0.758999,
+"vector_best": 0.758999
 }
 },
 "HCC\tWhat share of India's hydropower capacity has HCC built?": {
@@ -817,58 +817,58 @@
 {
 "page": 18,
 "chunk": 2,
-"score": 0.709336,
+"score": 0.709431,
 "sibling": false,
-"gate": 0.797238
+"gate": 0.79724
 },
 {
 "page": 18,
 "chunk": 3,
-"score": 0.689627,
+"score": 0.689697,
 "sibling": false,
-"gate": 0.797238
+"gate": 0.79724
 },
 {
 "page": 15,
 "chunk": 0,
-"score": 0.797238,
+"score": 0.79724,
 "sibling": false,
-"gate": 0.797238
+"gate": 0.79724
 },
 {
 "page": 18,
 "chunk": 1,
-"score": 0.703723,
+"score": 0.703819,
 "sibling": false,
-"gate": 0.797238
+"gate": 0.79724
 },
 {
 "page": 18,
 "chunk": 5,
-"score": 0.699034,
+"score": 0.699088,
 "sibling": false,
-"gate": 0.797238
+"gate": 0.79724
 },
 {
 "page": 22,
 "chunk": 3,
-"score": 0.706735,
+"score": 0.706851,
 "sibling": false,
-"gate": 0.797238
+"gate": 0.79724
 },
 {
 "page": 7,
 "chunk": 3,
-"score": 0.696753,
+"score": 0.696817,
 "sibling": false,
-"gate": 0.797238
+"gate": 0.79724
 },
 {
 "page": 7,
 "chunk": 4,
-"score": 0.725406,
+"score": 0.725461,
 "sibling": false,
-"gate": 0.797238
+"gate": 0.79724
 }
 ],
 "context": [
@@ -881,23 +881,23 @@
 {
 "page": 18,
 "chunk": 1,
-"score": 0.703723,
+"score": 0.703819,
 "sibling": false,
-"gate": 0.797238
+"gate": 0.79724
 },
 {
 "page": 18,
 "chunk": 2,
-"score": 0.709336,
+"score": 0.709431,
 "sibling": false,
-"gate": 0.797238
+"gate": 0.79724
 },
 {
 "page": 18,
 "chunk": 3,
-"score": 0.689627,
+"score": 0.689697,
 "sibling": false,
-"gate": 0.797238
+"gate": 0.79724
 },
 {
 "page": 18,
@@ -908,16 +908,16 @@
 {
 "page": 18,
 "chunk": 5,
-"score": 0.699034,
+"score": 0.699088,
 "sibling": false,
-"gate": 0.797238
+"gate": 0.79724
 },
 {
 "page": 15,
 "chunk": 0,
-"score": 0.797238,
+"score": 0.79724,
 "sibling": false,
-"gate": 0.797238
+"gate": 0.79724
 },
 {
 "page": 15,
@@ -982,9 +982,9 @@
 {
 "page": 22,
 "chunk": 3,
-"score": 0.706735,
+"score": 0.706851,
 "sibling": false,
-"gate": 0.797238
+"gate": 0.79724
 },
 {
 "page": 22,
@@ -1019,16 +1019,16 @@
 {
 "page": 7,
 "chunk": 3,
-"score": 0.696753,
+"score": 0.696817,
 "sibling": false,
-"gate": 0.797238
+"gate": 0.79724
 },
 {
 "page": 7,
 "chunk": 4,
-"score": 0.725406,
+"score": 0.725461,
 "sibling": false,
-"gate": 0.797238
+"gate": 0.79724
 },
 {
 "page": 7,
@@ -1038,8 +1038,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.797238,
-"vector_best": 0.797238
+"fused_best": 0.79724,
+"vector_best": 0.79724
 }
 },
 "HCC\tHow many EV charging stations did HCC build in FY25?": {
@@ -1048,58 +1048,58 @@
 {
 "page": 23,
 "chunk": 1,
-"score": 0.644037,
+"score": 0.644072,
 "sibling": false,
-"gate": 0.703852
+"gate": 0.703872
 },
 {
 "page": 141,
 "chunk": 4,
-"score": 0.601344,
+"score": 0.601336,
 "sibling": false,
-"gate": 0.703852
+"gate": 0.703872
 },
 {
 "page": 231,
 "chunk": 4,
-"score": 0.591661,
+"score": 0.59166,
 "sibling": false,
-"gate": 0.703852
+"gate": 0.703872
 },
 {
 "page": 22,
 "chunk": 2,
-"score": 0.703852,
+"score": 0.703872,
 "sibling": false,
-"gate": 0.703852
+"gate": 0.703872
 },
 {
 "page": 9,
 "chunk": 0,
-"score": 0.632932,
+"score": 0.632999,
 "sibling": false,
-"gate": 0.703852
+"gate": 0.703872
 },
 {
 "page": 7,
 "chunk": 2,
-"score": 0.679275,
+"score": 0.679312,
 "sibling": false,
-"gate": 0.703852
+"gate": 0.703872
 },
 {
 "page": 4,
 "chunk": 1,
-"score": 0.502267,
+"score": 0.502307,
 "sibling": false,
-"gate": 0.703852
+"gate": 0.703872
 },
 {
 "page": 98,
 "chunk": 3,
-"score": 0.631085,
+"score": 0.631112,
 "sibling": false,
-"gate": 0.703852
+"gate": 0.703872
 }
 ],
 "context": [
@@ -1112,9 +1112,9 @@
 {
 "page": 23,
 "chunk": 1,
-"score": 0.644037,
+"score": 0.644072,
 "sibling": false,
-"gate": 0.703852
+"gate": 0.703872
 },
 {
 "page": 23,
@@ -1167,9 +1167,9 @@
 {
 "page": 141,
 "chunk": 4,
-"score": 0.601344,
+"score": 0.601336,
 "sibling": false,
-"gate": 0.703852
+"gate": 0.703872
 },
 {
 "page": 141,
@@ -1246,9 +1246,9 @@
 {
 "page": 231,
 "chunk": 4,
-"score": 0.591661,
+"score": 0.59166,
 "sibling": false,
-"gate": 0.703852
+"gate": 0.703872
 },
 {
 "page": 231,
@@ -1265,9 +1265,9 @@
 {
 "page": 22,
 "chunk": 2,
-"score": 0.703852,
+"score": 0.703872,
 "sibling": false,
-"gate": 0.703852
+"gate": 0.703872
 },
 {
 "page": 22,
@@ -1278,16 +1278,16 @@
 {
 "page": 9,
 "chunk": 0,
-"score": 0.632932,
+"score": 0.632999,
 "sibling": false,
-"gate": 0.703852
+"gate": 0.703872
 },
 {
 "page": 7,
 "chunk": 2,
-"score": 0.679275,
+"score": 0.679312,
 "sibling": false,
-"gate": 0.703852
+"gate": 0.703872
 },
 {
 "page": 7,
@@ -1298,21 +1298,21 @@
 {
 "page": 4,
 "chunk": 1,
-"score": 0.502267,
+"score": 0.502307,
 "sibling": false,
-"gate": 0.703852
+"gate": 0.703872
 },
 {
 "page": 98,
 "chunk": 3,
-"score": 0.631085,
+"score": 0.631112,
 "sibling": false,
-"gate": 0.703852
+"gate": 0.703872
 }
 ],
 "gate": {
-"fused_best": 0.703852,
-"vector_best": 0.703852
+"fused_best": 0.703872,
+"vector_best": 0.703872
 }
 },
 "CHAMBAL\tWhat were Chambal Fertilisers' standalone total assets as at March 31, 2025?": {
@@ -1321,7 +1321,7 @@
 {
 "page": 98,
 "chunk": 6,
-"score": 0.789667,
+"score": 0.789674,
 "sibling": false,
 "gate": 0.79125
 },
@@ -1335,42 +1335,42 @@
 {
 "page": 88,
 "chunk": 0,
-"score": 0.771204,
+"score": 0.77119,
 "sibling": false,
 "gate": 0.79125
 },
 {
 "page": 102,
 "chunk": 0,
-"score": 0.774101,
+"score": 0.774119,
 "sibling": false,
 "gate": 0.79125
 },
 {
 "page": 103,
 "chunk": 0,
-"score": 0.790279,
+"score": 0.790259,
 "sibling": false,
 "gate": 0.79125
 },
 {
 "page": 98,
 "chunk": 3,
-"score": 0.71989,
+"score": 0.71991,
 "sibling": false,
 "gate": 0.79125
 },
 {
 "page": 201,
 "chunk": 3,
-"score": 0.657895,
+"score": 0.657891,
 "sibling": false,
 "gate": 0.79125
 },
 {
 "page": 120,
 "chunk": 5,
-"score": 0.677193,
+"score": 0.677185,
 "sibling": false,
 "gate": 0.79125
 }
@@ -1397,7 +1397,7 @@
 {
 "page": 98,
 "chunk": 3,
-"score": 0.71989,
+"score": 0.71991,
 "sibling": false,
 "gate": 0.79125
 },
@@ -1416,7 +1416,7 @@
 {
 "page": 98,
 "chunk": 6,
-"score": 0.789667,
+"score": 0.789674,
 "sibling": false,
 "gate": 0.79125
 },
@@ -1430,7 +1430,7 @@
 {
 "page": 88,
 "chunk": 0,
-"score": 0.771204,
+"score": 0.77119,
 "sibling": false,
 "gate": 0.79125
 },
@@ -1473,7 +1473,7 @@
 {
 "page": 102,
 "chunk": 0,
-"score": 0.774101,
+"score": 0.774119,
 "sibling": false,
 "gate": 0.79125
 },
@@ -1564,21 +1564,21 @@
 {
 "page": 103,
 "chunk": 0,
-"score": 0.790279,
+"score": 0.790259,
 "sibling": false,
 "gate": 0.79125
 },
 {
 "page": 201,
 "chunk": 3,
-"score": 0.657895,
+"score": 0.657891,
 "sibling": false,
 "gate": 0.79125
 },
 {
 "page": 120,
 "chunk": 5,
-"score": 0.677193,
+"score": 0.677185,
 "sibling": false,
 "gate": 0.79125
 }
@@ -1594,58 +1594,58 @@
 {
 "page": 5,
 "chunk": 3,
-"score": 0.701908,
+"score": 0.7019,
 "sibling": false,
-"gate": 0.701908
+"gate": 0.7019
 },
 {
 "page": 48,
 "chunk": 3,
-"score": 0.564989,
+"score": 0.565004,
 "sibling": false,
-"gate": 0.701908
+"gate": 0.7019
 },
 {
 "page": 13,
 "chunk": 0,
-"score": 0.657327,
+"score": 0.657311,
 "sibling": false,
-"gate": 0.701908
+"gate": 0.7019
 },
 {
 "page": 4,
 "chunk": 3,
-"score": 0.586879,
+"score": 0.586893,
 "sibling": false,
-"gate": 0.701908
+"gate": 0.7019
 },
 {
 "page": 175,
 "chunk": 1,
-"score": 0.554799,
+"score": 0.554824,
 "sibling": false,
-"gate": 0.701908
+"gate": 0.7019
 },
 {
 "page": 103,
 "chunk": 0,
-"score": 0.669091,
+"score": 0.669086,
 "sibling": false,
-"gate": 0.701908
+"gate": 0.7019
 },
 {
 "page": 81,
 "chunk": 1,
-"score": 0.575735,
+"score": 0.575728,
 "sibling": false,
-"gate": 0.701908
+"gate": 0.7019
 },
 {
 "page": 4,
 "chunk": 2,
-"score": 0.543266,
+"score": 0.543276,
 "sibling": false,
-"gate": 0.701908
+"gate": 0.7019
 }
 ],
 "context": [
@@ -1670,9 +1670,9 @@
 {
 "page": 5,
 "chunk": 3,
-"score": 0.701908,
+"score": 0.7019,
 "sibling": false,
-"gate": 0.701908
+"gate": 0.7019
 },
 {
 "page": 5,
@@ -1725,9 +1725,9 @@
 {
 "page": 48,
 "chunk": 3,
-"score": 0.564989,
+"score": 0.565004,
 "sibling": false,
-"gate": 0.701908
+"gate": 0.7019
 },
 {
 "page": 48,
@@ -1738,9 +1738,9 @@
 {
 "page": 13,
 "chunk": 0,
-"score": 0.657327,
+"score": 0.657311,
 "sibling": false,
-"gate": 0.701908
+"gate": 0.7019
 },
 {
 "page": 13,
@@ -1805,16 +1805,16 @@
 {
 "page": 4,
 "chunk": 2,
-"score": 0.543266,
+"score": 0.543276,
 "sibling": false,
-"gate": 0.701908
+"gate": 0.7019
 },
 {
 "page": 4,
 "chunk": 3,
-"score": 0.586879,
+"score": 0.586893,
 "sibling": false,
-"gate": 0.701908
+"gate": 0.7019
 },
 {
 "page": 4,
@@ -1837,9 +1837,9 @@
 {
 "page": 175,
 "chunk": 1,
-"score": 0.554799,
+"score": 0.554824,
 "sibling": false,
-"gate": 0.701908
+"gate": 0.7019
 },
 {
 "page": 175,
@@ -1850,21 +1850,21 @@
 {
 "page": 103,
 "chunk": 0,
-"score": 0.669091,
+"score": 0.669086,
 "sibling": false,
-"gate": 0.701908
+"gate": 0.7019
 },
 {
 "page": 81,
 "chunk": 1,
-"score": 0.575735,
+"score": 0.575728,
 "sibling": false,
-"gate": 0.701908
+"gate": 0.7019
 }
 ],
 "gate": {
-"fused_best": 0.701908,
-"vector_best": 0.701908
+"fused_best": 0.7019,
+"vector_best": 0.7019
 }
 },
 "NAVNEET\tWhat were Navneet Education's standalone total assets as at 31st March, 2025?": {
@@ -1873,74 +1873,74 @@
 {
 "page": 190,
 "chunk": 5,
-"score": 0.773763,
+"score": 0.773757,
 "sibling": false,
-"gate": 0.774602
+"gate": 0.774608
 },
 {
 "page": 191,
 "chunk": 4,
-"score": 0.755514,
+"score": 0.755488,
 "sibling": false,
-"gate": 0.774602
+"gate": 0.774608
 },
 {
 "page": 257,
 "chunk": 0,
-"score": 0.673441,
+"score": 0.673434,
 "sibling": false,
-"gate": 0.774602
+"gate": 0.774608
 },
 {
 "page": 227,
 "chunk": 1,
-"score": 0.641727,
+"score": 0.641719,
 "sibling": false,
-"gate": 0.774602
+"gate": 0.774608
 },
 {
 "page": 218,
 "chunk": 3,
 "score": 0.682014,
 "sibling": false,
-"gate": 0.774602
+"gate": 0.774608
 },
 {
 "page": 190,
 "chunk": 1,
-"score": 0.694509,
+"score": 0.694531,
 "sibling": false,
-"gate": 0.774602
+"gate": 0.774608
 },
 {
 "page": 262,
 "chunk": 4,
-"score": 0.675959,
+"score": 0.675956,
 "sibling": false,
-"gate": 0.774602
+"gate": 0.774608
 },
 {
 "page": 190,
 "chunk": 0,
-"score": 0.731878,
+"score": 0.731889,
 "sibling": false,
-"gate": 0.774602
+"gate": 0.774608
 }
 ],
 "context": [
 {
 "page": 190,
 "chunk": 0,
-"score": 0.731878,
+"score": 0.731889,
 "sibling": false,
-"gate": 0.774602
+"gate": 0.774608
 },
 {
 "page": 190,
 "chunk": 1,
-"score": 0.694509,
+"score": 0.694531,
 "sibling": false,
-"gate": 0.774602
+"gate": 0.774608
 },
 {
 "page": 190,
@@ -1963,9 +1963,9 @@
 {
 "page": 190,
 "chunk": 5,
-"score": 0.773763,
+"score": 0.773757,
 "sibling": false,
-"gate": 0.774602
+"gate": 0.774608
 },
 {
 "page": 190,
@@ -2000,9 +2000,9 @@
 {
 "page": 191,
 "chunk": 4,
-"score": 0.755514,
+"score": 0.755488,
 "sibling": false,
-"gate": 0.774602
+"gate": 0.774608
 },
 {
 "page": 191,
@@ -2019,9 +2019,9 @@
 {
 "page": 257,
 "chunk": 0,
-"score": 0.673441,
+"score": 0.673434,
 "sibling": false,
-"gate": 0.774602
+"gate": 0.774608
 },
 {
 "page": 257,
@@ -2074,9 +2074,9 @@
 {
 "page": 227,
 "chunk": 1,
-"score": 0.641727,
+"score": 0.641719,
 "sibling": false,
-"gate": 0.774602
+"gate": 0.774608
 },
 {
 "page": 227,
@@ -2107,7 +2107,7 @@
 "chunk": 3,
 "score": 0.682014,
 "sibling": false,
-"gate": 0.774602
+"gate": 0.774608
 },
 {
 "page": 218,
@@ -2142,14 +2142,14 @@
 {
 "page": 262,
 "chunk": 4,
-"score": 0.675959,
+"score": 0.675956,
 "sibling": false,
-"gate": 0.774602
+"gate": 0.774608
 }
 ],
 "gate": {
-"fused_best": 0.773763,
-"vector_best": 0.774602
+"fused_best": 0.773757,
+"vector_best": 0.774608
 }
 },
 "NAVNEET\tHow many titles does Navneet publish?": {
@@ -2158,88 +2158,88 @@
 {
 "page": 19,
 "chunk": 0,
-"score": 0.588066,
+"score": 0.588002,
 "sibling": false,
-"gate": 0.752535
+"gate": 0.752491
 },
 {
 "page": 18,
 "chunk": 1,
-"score": 0.555794,
+"score": 0.555737,
 "sibling": false,
-"gate": 0.752535
+"gate": 0.752491
 },
 {
 "page": 7,
 "chunk": 0,
-"score": 0.694131,
+"score": 0.694105,
 "sibling": false,
-"gate": 0.752535
+"gate": 0.752491
 },
 {
 "page": 18,
 "chunk": 0,
-"score": 0.752536,
+"score": 0.752491,
 "sibling": false,
-"gate": 0.752536
+"gate": 0.752491
 },
 {
 "page": 97,
 "chunk": 4,
-"score": 0.551361,
+"score": 0.551306,
 "sibling": false,
-"gate": 0.752535
+"gate": 0.752491
 },
 {
 "page": 16,
 "chunk": 0,
-"score": 0.607445,
+"score": 0.607401,
 "sibling": false,
-"gate": 0.752535
+"gate": 0.752491
 },
 {
 "page": 185,
 "chunk": 1,
-"score": 0.530561,
+"score": 0.530537,
 "sibling": false,
-"gate": 0.752535
+"gate": 0.752491
 },
 {
 "page": 2,
 "chunk": 0,
-"score": 0.583203,
+"score": 0.583151,
 "sibling": false,
-"gate": 0.752535
+"gate": 0.752491
 }
 ],
 "context": [
 {
 "page": 19,
 "chunk": 0,
-"score": 0.588066,
+"score": 0.588002,
 "sibling": false,
-"gate": 0.752535
+"gate": 0.752491
 },
 {
 "page": 18,
 "chunk": 0,
-"score": 0.752536,
+"score": 0.752491,
 "sibling": false,
-"gate": 0.752536
+"gate": 0.752491
 },
 {
 "page": 18,
 "chunk": 1,
-"score": 0.555794,
+"score": 0.555737,
 "sibling": false,
-"gate": 0.752535
+"gate": 0.752491
 },
 {
 "page": 7,
 "chunk": 0,
-"score": 0.694131,
+"score": 0.694105,
 "sibling": false,
-"gate": 0.752535
+"gate": 0.752491
 },
 {
 "page": 7,
@@ -2274,9 +2274,9 @@
 {
 "page": 97,
 "chunk": 4,
-"score": 0.551361,
+"score": 0.551306,
 "sibling": false,
-"gate": 0.752535
+"gate": 0.752491
 },
 {
 "page": 97,
@@ -2293,9 +2293,9 @@
 {
 "page": 16,
 "chunk": 0,
-"score": 0.607445,
+"score": 0.607401,
 "sibling": false,
-"gate": 0.752535
+"gate": 0.752491
 },
 {
 "page": 16,
@@ -2312,9 +2312,9 @@
 {
 "page": 185,
 "chunk": 1,
-"score": 0.530561,
+"score": 0.530537,
 "sibling": false,
-"gate": 0.752535
+"gate": 0.752491
 },
 {
 "page": 185,
@@ -2349,9 +2349,9 @@
 {
 "page": 2,
 "chunk": 0,
-"score": 0.583203,
+"score": 0.583151,
 "sibling": false,
-"gate": 0.752535
+"gate": 0.752491
 },
 {
 "page": 2,
@@ -2367,8 +2367,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.752536,
-"vector_best": 0.752536
+"fused_best": 0.752491,
+"vector_best": 0.752491
 }
 },
 "CHAMBAL\tHow many drones did Chambal deploy for nano-fertiliser spraying in FY25?": {
@@ -2377,58 +2377,58 @@
 {
 "page": 4,
 "chunk": 5,
-"score": 0.620599,
+"score": 0.620602,
 "sibling": false,
-"gate": 0.69459
+"gate": 0.694633
 },
 {
 "page": 14,
 "chunk": 3,
-"score": 0.604435,
+"score": 0.604468,
 "sibling": false,
-"gate": 0.69459
+"gate": 0.694633
 },
 {
 "page": 103,
 "chunk": 0,
-"score": 0.69459,
+"score": 0.694633,
 "sibling": false,
-"gate": 0.69459
+"gate": 0.694633
 },
 {
 "page": 126,
 "chunk": 2,
-"score": 0.580512,
+"score": 0.580538,
 "sibling": false,
-"gate": 0.69459
+"gate": 0.694633
 },
 {
 "page": 14,
 "chunk": 4,
-"score": 0.571662,
+"score": 0.571689,
 "sibling": false,
-"gate": 0.69459
+"gate": 0.694633
 },
 {
 "page": 43,
 "chunk": 0,
-"score": 0.649065,
+"score": 0.649104,
 "sibling": false,
-"gate": 0.69459
+"gate": 0.694633
 },
 {
 "page": 13,
 "chunk": 0,
-"score": 0.659583,
+"score": 0.659613,
 "sibling": false,
-"gate": 0.69459
+"gate": 0.694633
 },
 {
 "page": 38,
 "chunk": 1,
-"score": 0.666199,
+"score": 0.666238,
 "sibling": false,
-"gate": 0.69459
+"gate": 0.694633
 }
 ],
 "context": [
@@ -2465,9 +2465,9 @@
 {
 "page": 4,
 "chunk": 5,
-"score": 0.620599,
+"score": 0.620602,
 "sibling": false,
-"gate": 0.69459
+"gate": 0.694633
 },
 {
 "page": 14,
@@ -2490,16 +2490,16 @@
 {
 "page": 14,
 "chunk": 3,
-"score": 0.604435,
+"score": 0.604468,
 "sibling": false,
-"gate": 0.69459
+"gate": 0.694633
 },
 {
 "page": 14,
 "chunk": 4,
-"score": 0.571662,
+"score": 0.571689,
 "sibling": false,
-"gate": 0.69459
+"gate": 0.694633
 },
 {
 "page": 14,
@@ -2522,9 +2522,9 @@
 {
 "page": 103,
 "chunk": 0,
-"score": 0.69459,
+"score": 0.694633,
 "sibling": false,
-"gate": 0.69459
+"gate": 0.694633
 },
 {
 "page": 103,
@@ -2565,9 +2565,9 @@
 {
 "page": 126,
 "chunk": 2,
-"score": 0.580512,
+"score": 0.580538,
 "sibling": false,
-"gate": 0.69459
+"gate": 0.694633
 },
 {
 "page": 126,
@@ -2602,9 +2602,9 @@
 {
 "page": 43,
 "chunk": 0,
-"score": 0.649065,
+"score": 0.649104,
 "sibling": false,
-"gate": 0.69459
+"gate": 0.694633
 },
 {
 "page": 43,
@@ -2621,16 +2621,16 @@
 {
 "page": 13,
 "chunk": 0,
-"score": 0.659583,
+"score": 0.659613,
 "sibling": false,
-"gate": 0.69459
+"gate": 0.694633
 },
 {
 "page": 38,
 "chunk": 1,
-"score": 0.666199,
+"score": 0.666238,
 "sibling": false,
-"gate": 0.69459
+"gate": 0.694633
 },
 {
 "page": 38,
@@ -2640,8 +2640,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.69459,
-"vector_best": 0.69459
+"fused_best": 0.694633,
+"vector_best": 0.694633
 }
 },
 "NAVNEET\tHow much did Navneet spend on television advertising in FY25?": {
@@ -2650,67 +2650,67 @@
 {
 "page": 322,
 "chunk": 0,
-"score": 0.639551,
+"score": 0.639537,
 "sibling": false,
-"gate": 0.695898
+"gate": 0.69589
 },
 {
 "page": 232,
 "chunk": 2,
-"score": 0.616081,
+"score": 0.616062,
 "sibling": false,
-"gate": 0.695898
+"gate": 0.69589
 },
 {
 "page": 119,
 "chunk": 1,
-"score": 0.537118,
+"score": 0.537099,
 "sibling": false,
-"gate": 0.695898
+"gate": 0.69589
 },
 {
 "page": 268,
 "chunk": 0,
-"score": 0.641023,
+"score": 0.641029,
 "sibling": false,
-"gate": 0.695898
+"gate": 0.69589
 },
 {
 "page": 107,
 "chunk": 0,
-"score": 0.591508,
+"score": 0.591522,
 "sibling": false,
-"gate": 0.695898
+"gate": 0.69589
 },
 {
 "page": 257,
 "chunk": 7,
-"score": 0.607101,
+"score": 0.607059,
 "sibling": false,
-"gate": 0.695898
+"gate": 0.69589
 },
 {
 "page": 350,
 "chunk": 3,
-"score": 0.616068,
+"score": 0.616036,
 "sibling": false,
-"gate": 0.695898
+"gate": 0.69589
 },
 {
 "page": 350,
 "chunk": 0,
-"score": 0.633455,
+"score": 0.633433,
 "sibling": false,
-"gate": 0.695898
+"gate": 0.69589
 }
 ],
 "context": [
 {
 "page": 322,
 "chunk": 0,
-"score": 0.639551,
+"score": 0.639537,
 "sibling": false,
-"gate": 0.695898
+"gate": 0.69589
 },
 {
 "page": 322,
@@ -2745,9 +2745,9 @@
 {
 "page": 232,
 "chunk": 2,
-"score": 0.616081,
+"score": 0.616062,
 "sibling": false,
-"gate": 0.695898
+"gate": 0.69589
 },
 {
 "page": 119,
@@ -2758,9 +2758,9 @@
 {
 "page": 119,
 "chunk": 1,
-"score": 0.537118,
+"score": 0.537099,
 "sibling": false,
-"gate": 0.695898
+"gate": 0.69589
 },
 {
 "page": 119,
@@ -2795,9 +2795,9 @@
 {
 "page": 268,
 "chunk": 0,
-"score": 0.641023,
+"score": 0.641029,
 "sibling": false,
-"gate": 0.695898
+"gate": 0.69589
 },
 {
 "page": 268,
@@ -2826,9 +2826,9 @@
 {
 "page": 107,
 "chunk": 0,
-"score": 0.591508,
+"score": 0.591522,
 "sibling": false,
-"gate": 0.695898
+"gate": 0.69589
 },
 {
 "page": 107,
@@ -2881,16 +2881,16 @@
 {
 "page": 257,
 "chunk": 7,
-"score": 0.607101,
+"score": 0.607059,
 "sibling": false,
-"gate": 0.695898
+"gate": 0.69589
 },
 {
 "page": 350,
 "chunk": 0,
-"score": 0.633455,
+"score": 0.633433,
 "sibling": false,
-"gate": 0.695898
+"gate": 0.69589
 },
 {
 "page": 350,
@@ -2907,9 +2907,9 @@
 {
 "page": 350,
 "chunk": 3,
-"score": 0.616068,
+"score": 0.616036,
 "sibling": false,
-"gate": 0.695898
+"gate": 0.69589
 },
 {
 "page": 350,
@@ -2925,8 +2925,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.641023,
-"vector_best": 0.695898
+"fused_best": 0.641029,
+"vector_best": 0.69589
 }
 },
 "HCC\tWhat was HCC's standalone retained earnings balance as at March 31, 2025?": {
@@ -2935,58 +2935,58 @@
 {
 "page": 118,
 "chunk": 1,
-"score": 0.70664,
+"score": 0.706685,
 "sibling": false,
-"gate": 0.774278
+"gate": 0.774314
 },
 {
 "page": 115,
 "chunk": 3,
-"score": 0.700667,
+"score": 0.700683,
 "sibling": false,
-"gate": 0.774278
+"gate": 0.774314
 },
 {
 "page": 146,
 "chunk": 5,
-"score": 0.722495,
+"score": 0.722533,
 "sibling": false,
-"gate": 0.774278
+"gate": 0.774314
 },
 {
 "page": 115,
 "chunk": 1,
-"score": 0.687618,
+"score": 0.687649,
 "sibling": false,
-"gate": 0.774278
+"gate": 0.774314
 },
 {
 "page": 101,
 "chunk": 4,
-"score": 0.685995,
+"score": 0.685999,
 "sibling": false,
-"gate": 0.774278
+"gate": 0.774314
 },
 {
 "page": 116,
 "chunk": 0,
-"score": 0.706282,
+"score": 0.706313,
 "sibling": false,
-"gate": 0.774278
+"gate": 0.774314
 },
 {
 "page": 115,
 "chunk": 2,
-"score": 0.682865,
+"score": 0.68288,
 "sibling": false,
-"gate": 0.774278
+"gate": 0.774314
 },
 {
 "page": 114,
 "chunk": 1,
-"score": 0.692212,
+"score": 0.692242,
 "sibling": false,
-"gate": 0.774278
+"gate": 0.774314
 }
 ],
 "context": [
@@ -2999,9 +2999,9 @@
 {
 "page": 118,
 "chunk": 1,
-"score": 0.70664,
+"score": 0.706685,
 "sibling": false,
-"gate": 0.774278
+"gate": 0.774314
 },
 {
 "page": 118,
@@ -3042,23 +3042,23 @@
 {
 "page": 115,
 "chunk": 1,
-"score": 0.687618,
+"score": 0.687649,
 "sibling": false,
-"gate": 0.774278
+"gate": 0.774314
 },
 {
 "page": 115,
 "chunk": 2,
-"score": 0.682865,
+"score": 0.68288,
 "sibling": false,
-"gate": 0.774278
+"gate": 0.774314
 },
 {
 "page": 115,
 "chunk": 3,
-"score": 0.700667,
+"score": 0.700683,
 "sibling": false,
-"gate": 0.774278
+"gate": 0.774314
 },
 {
 "page": 115,
@@ -3105,9 +3105,9 @@
 {
 "page": 146,
 "chunk": 5,
-"score": 0.722495,
+"score": 0.722533,
 "sibling": false,
-"gate": 0.774278
+"gate": 0.774314
 },
 {
 "page": 101,
@@ -3136,9 +3136,9 @@
 {
 "page": 101,
 "chunk": 4,
-"score": 0.685995,
+"score": 0.685999,
 "sibling": false,
-"gate": 0.774278
+"gate": 0.774314
 },
 {
 "page": 101,
@@ -3161,9 +3161,9 @@
 {
 "page": 116,
 "chunk": 0,
-"score": 0.706282,
+"score": 0.706313,
 "sibling": false,
-"gate": 0.774278
+"gate": 0.774314
 },
 {
 "page": 116,
@@ -3192,14 +3192,14 @@
 {
 "page": 114,
 "chunk": 1,
-"score": 0.692212,
+"score": 0.692242,
 "sibling": false,
-"gate": 0.774278
+"gate": 0.774314
 }
 ],
 "gate": {
-"fused_best": 0.722495,
-"vector_best": 0.774278
+"fused_best": 0.722533,
+"vector_best": 0.774314
 }
 },
 "HCC\tWhat were HCC's total consolidated current borrowings as at March 31, 2025?": {
@@ -3208,58 +3208,58 @@
 {
 "page": 194,
 "chunk": 4,
-"score": 0.729509,
+"score": 0.729583,
 "sibling": false,
-"gate": 0.766684
+"gate": 0.766767
 },
 {
 "page": 194,
 "chunk": 5,
-"score": 0.735489,
+"score": 0.735576,
 "sibling": false,
-"gate": 0.766684
+"gate": 0.766767
 },
 {
 "page": 194,
 "chunk": 3,
-"score": 0.724501,
+"score": 0.724583,
 "sibling": false,
-"gate": 0.766684
+"gate": 0.766767
 },
 {
 "page": 194,
 "chunk": 1,
-"score": 0.724254,
+"score": 0.724329,
 "sibling": false,
-"gate": 0.766684
+"gate": 0.766767
 },
 {
 "page": 230,
 "chunk": 0,
-"score": 0.702097,
+"score": 0.702147,
 "sibling": false,
-"gate": 0.766684
+"gate": 0.766767
 },
 {
 "page": 194,
 "chunk": 6,
-"score": 0.725764,
+"score": 0.725833,
 "sibling": false,
-"gate": 0.766684
+"gate": 0.766767
 },
 {
 "page": 234,
 "chunk": 0,
-"score": 0.654401,
+"score": 0.654482,
 "sibling": false,
-"gate": 0.766684
+"gate": 0.766767
 },
 {
 "page": 197,
 "chunk": 0,
-"score": 0.730783,
+"score": 0.730838,
 "sibling": false,
-"gate": 0.766684
+"gate": 0.766767
 }
 ],
 "context": [
@@ -3272,9 +3272,9 @@
 {
 "page": 194,
 "chunk": 1,
-"score": 0.724254,
+"score": 0.724329,
 "sibling": false,
-"gate": 0.766684
+"gate": 0.766767
 },
 {
 "page": 194,
@@ -3285,30 +3285,30 @@
 {
 "page": 194,
 "chunk": 3,
-"score": 0.724501,
+"score": 0.724583,
 "sibling": false,
-"gate": 0.766684
+"gate": 0.766767
 },
 {
 "page": 194,
 "chunk": 4,
-"score": 0.729509,
+"score": 0.729583,
 "sibling": false,
-"gate": 0.766684
+"gate": 0.766767
 },
 {
 "page": 194,
 "chunk": 5,
-"score": 0.735489,
+"score": 0.735576,
 "sibling": false,
-"gate": 0.766684
+"gate": 0.766767
 },
 {
 "page": 194,
 "chunk": 6,
-"score": 0.725764,
+"score": 0.725833,
 "sibling": false,
-"gate": 0.766684
+"gate": 0.766767
 },
 {
 "page": 194,
@@ -3325,9 +3325,9 @@
 {
 "page": 230,
 "chunk": 0,
-"score": 0.702097,
+"score": 0.702147,
 "sibling": false,
-"gate": 0.766684
+"gate": 0.766767
 },
 {
 "page": 230,
@@ -3362,9 +3362,9 @@
 {
 "page": 234,
 "chunk": 0,
-"score": 0.654401,
+"score": 0.654482,
 "sibling": false,
-"gate": 0.766684
+"gate": 0.766767
 },
 {
 "page": 234,
@@ -3387,9 +3387,9 @@
 {
 "page": 197,
 "chunk": 0,
-"score": 0.730783,
+"score": 0.730838,
 "sibling": false,
-"gate": 0.766684
+"gate": 0.766767
 },
 {
 "page": 197,
@@ -3417,8 +3417,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.735489,
-"vector_best": 0.766684
+"fused_best": 0.735576,
+"vector_best": 0.766767
 }
 },
 "HCC\tHow much of HCC's consolidated disputed trade receivables considered good were outstanding for more than 3 years as at March 31, 2025?": {
@@ -3427,95 +3427,95 @@
 {
 "page": 220,
 "chunk": 1,
-"score": 0.740841,
+"score": 0.740845,
 "sibling": false,
-"gate": 0.741047
+"gate": 0.741051
 },
 {
 "page": 220,
 "chunk": 4,
-"score": 0.736481,
+"score": 0.736483,
 "sibling": false,
-"gate": 0.741047
+"gate": 0.741051
 },
 {
 "page": 220,
 "chunk": 3,
-"score": 0.727175,
+"score": 0.72718,
 "sibling": false,
-"gate": 0.741047
+"gate": 0.741051
 },
 {
 "page": 220,
 "chunk": 0,
-"score": 0.701822,
+"score": 0.70182,
 "sibling": false,
-"gate": 0.741047
+"gate": 0.741051
 },
 {
 "page": 236,
 "chunk": 3,
 "score": 0.696869,
 "sibling": false,
-"gate": 0.741047
+"gate": 0.741051
 },
 {
 "page": 220,
 "chunk": 2,
-"score": 0.689971,
+"score": 0.689983,
 "sibling": false,
-"gate": 0.741047
+"gate": 0.741051
 },
 {
 "page": 219,
 "chunk": 2,
-"score": 0.687631,
+"score": 0.687644,
 "sibling": false,
-"gate": 0.741047
+"gate": 0.741051
 },
 {
 "page": 236,
 "chunk": 5,
-"score": 0.689267,
+"score": 0.689263,
 "sibling": false,
-"gate": 0.741047
+"gate": 0.741051
 }
 ],
 "context": [
 {
 "page": 220,
 "chunk": 0,
-"score": 0.701822,
+"score": 0.70182,
 "sibling": false,
-"gate": 0.741047
+"gate": 0.741051
 },
 {
 "page": 220,
 "chunk": 1,
-"score": 0.740841,
+"score": 0.740845,
 "sibling": false,
-"gate": 0.741047
+"gate": 0.741051
 },
 {
 "page": 220,
 "chunk": 2,
-"score": 0.689971,
+"score": 0.689983,
 "sibling": false,
-"gate": 0.741047
+"gate": 0.741051
 },
 {
 "page": 220,
 "chunk": 3,
-"score": 0.727175,
+"score": 0.72718,
 "sibling": false,
-"gate": 0.741047
+"gate": 0.741051
 },
 {
 "page": 220,
 "chunk": 4,
-"score": 0.736481,
+"score": 0.736483,
 "sibling": false,
-"gate": 0.741047
+"gate": 0.741051
 },
 {
 "page": 220,
@@ -3546,7 +3546,7 @@
 "chunk": 3,
 "score": 0.696869,
 "sibling": false,
-"gate": 0.741047
+"gate": 0.741051
 },
 {
 "page": 236,
@@ -3557,9 +3557,9 @@
 {
 "page": 236,
 "chunk": 5,
-"score": 0.689267,
+"score": 0.689263,
 "sibling": false,
-"gate": 0.741047
+"gate": 0.741051
 },
 {
 "page": 236,
@@ -3582,9 +3582,9 @@
 {
 "page": 219,
 "chunk": 2,
-"score": 0.687631,
+"score": 0.687644,
 "sibling": false,
-"gate": 0.741047
+"gate": 0.741051
 },
 {
 "page": 219,
@@ -3600,8 +3600,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.740841,
-"vector_best": 0.741047
+"fused_best": 0.740845,
+"vector_best": 0.741051
 }
 },
 "HCC\tHow much of the Vishnugad Pipalkoti head race tunnel had HCC excavated?": {
@@ -3610,67 +3610,67 @@
 {
 "page": 12,
 "chunk": 0,
-"score": 0.715015,
+"score": 0.715041,
 "sibling": false,
-"gate": 0.715015
+"gate": 0.715041
 },
 {
 "page": 23,
 "chunk": 3,
-"score": 0.692044,
+"score": 0.692069,
 "sibling": false,
-"gate": 0.715015
+"gate": 0.715041
 },
 {
 "page": 22,
 "chunk": 3,
-"score": 0.633708,
+"score": 0.633711,
 "sibling": false,
-"gate": 0.715015
+"gate": 0.715041
 },
 {
 "page": 92,
 "chunk": 2,
-"score": 0.58577,
+"score": 0.585781,
 "sibling": false,
-"gate": 0.715015
+"gate": 0.715041
 },
 {
 "page": 4,
 "chunk": 3,
-"score": 0.598114,
+"score": 0.598092,
 "sibling": false,
-"gate": 0.715015
+"gate": 0.715041
 },
 {
 "page": 4,
 "chunk": 4,
-"score": 0.612188,
+"score": 0.612204,
 "sibling": false,
-"gate": 0.715015
+"gate": 0.715041
 },
 {
 "page": 22,
 "chunk": 2,
 "score": 0.617176,
 "sibling": false,
-"gate": 0.715015
+"gate": 0.715041
 },
 {
 "page": 5,
 "chunk": 1,
-"score": 0.571003,
+"score": 0.571017,
 "sibling": false,
-"gate": 0.715015
+"gate": 0.715041
 }
 ],
 "context": [
 {
 "page": 12,
 "chunk": 0,
-"score": 0.715015,
+"score": 0.715041,
 "sibling": false,
-"gate": 0.715015
+"gate": 0.715041
 },
 {
 "page": 12,
@@ -3699,9 +3699,9 @@
 {
 "page": 23,
 "chunk": 3,
-"score": 0.692044,
+"score": 0.692069,
 "sibling": false,
-"gate": 0.715015
+"gate": 0.715041
 },
 {
 "page": 23,
@@ -3732,14 +3732,14 @@
 "chunk": 2,
 "score": 0.617176,
 "sibling": false,
-"gate": 0.715015
+"gate": 0.715041
 },
 {
 "page": 22,
 "chunk": 3,
-"score": 0.633708,
+"score": 0.633711,
 "sibling": false,
-"gate": 0.715015
+"gate": 0.715041
 },
 {
 "page": 22,
@@ -3768,9 +3768,9 @@
 {
 "page": 92,
 "chunk": 2,
-"score": 0.58577,
+"score": 0.585781,
 "sibling": false,
-"gate": 0.715015
+"gate": 0.715041
 },
 {
 "page": 92,
@@ -3811,16 +3811,16 @@
 {
 "page": 4,
 "chunk": 3,
-"score": 0.598114,
+"score": 0.598092,
 "sibling": false,
-"gate": 0.715015
+"gate": 0.715041
 },
 {
 "page": 4,
 "chunk": 4,
-"score": 0.612188,
+"score": 0.612204,
 "sibling": false,
-"gate": 0.715015
+"gate": 0.715041
 },
 {
 "page": 5,
@@ -3831,9 +3831,9 @@
 {
 "page": 5,
 "chunk": 1,
-"score": 0.571003,
+"score": 0.571017,
 "sibling": false,
-"gate": 0.715015
+"gate": 0.715041
 },
 {
 "page": 5,
@@ -3861,8 +3861,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.715015,
-"vector_best": 0.715015
+"fused_best": 0.715041,
+"vector_best": 0.715041
 }
 },
 "HCC\tHow many patents did HCC file in FY25?": {
@@ -3871,58 +3871,58 @@
 {
 "page": 94,
 "chunk": 1,
-"score": 0.623776,
+"score": 0.623714,
 "sibling": false,
-"gate": 0.701684
+"gate": 0.701652
 },
 {
 "page": 105,
 "chunk": 5,
-"score": 0.622135,
+"score": 0.622073,
 "sibling": false,
-"gate": 0.701684
+"gate": 0.701652
 },
 {
 "page": 78,
 "chunk": 2,
-"score": 0.580312,
+"score": 0.580268,
 "sibling": false,
-"gate": 0.701684
+"gate": 0.701652
 },
 {
 "page": 280,
 "chunk": 0,
-"score": 0.526408,
+"score": 0.526358,
 "sibling": false,
-"gate": 0.701684
+"gate": 0.701652
 },
 {
 "page": 36,
 "chunk": 0,
-"score": 0.634416,
+"score": 0.634382,
 "sibling": false,
-"gate": 0.701684
+"gate": 0.701652
 },
 {
 "page": 243,
 "chunk": 4,
-"score": 0.568567,
+"score": 0.56852,
 "sibling": false,
-"gate": 0.701684
+"gate": 0.701652
 },
 {
 "page": 260,
 "chunk": 4,
-"score": 0.628021,
+"score": 0.627977,
 "sibling": false,
-"gate": 0.701684
+"gate": 0.701652
 },
 {
 "page": 73,
 "chunk": 2,
-"score": 0.609,
+"score": 0.608981,
 "sibling": false,
-"gate": 0.701684
+"gate": 0.701652
 }
 ],
 "context": [
@@ -3935,9 +3935,9 @@
 {
 "page": 94,
 "chunk": 1,
-"score": 0.623776,
+"score": 0.623714,
 "sibling": false,
-"gate": 0.701684
+"gate": 0.701652
 },
 {
 "page": 94,
@@ -3990,9 +3990,9 @@
 {
 "page": 105,
 "chunk": 5,
-"score": 0.622135,
+"score": 0.622073,
 "sibling": false,
-"gate": 0.701684
+"gate": 0.701652
 },
 {
 "page": 105,
@@ -4021,9 +4021,9 @@
 {
 "page": 78,
 "chunk": 2,
-"score": 0.580312,
+"score": 0.580268,
 "sibling": false,
-"gate": 0.701684
+"gate": 0.701652
 },
 {
 "page": 78,
@@ -4034,9 +4034,9 @@
 {
 "page": 280,
 "chunk": 0,
-"score": 0.526408,
+"score": 0.526358,
 "sibling": false,
-"gate": 0.701684
+"gate": 0.701652
 },
 {
 "page": 280,
@@ -4071,9 +4071,9 @@
 {
 "page": 36,
 "chunk": 0,
-"score": 0.634416,
+"score": 0.634382,
 "sibling": false,
-"gate": 0.701684
+"gate": 0.701652
 },
 {
 "page": 36,
@@ -4114,9 +4114,9 @@
 {
 "page": 243,
 "chunk": 4,
-"score": 0.568567,
+"score": 0.56852,
 "sibling": false,
-"gate": 0.701684
+"gate": 0.701652
 },
 {
 "page": 243,
@@ -4127,21 +4127,21 @@
 {
 "page": 260,
 "chunk": 4,
-"score": 0.628021,
+"score": 0.627977,
 "sibling": false,
-"gate": 0.701684
+"gate": 0.701652
 },
 {
 "page": 73,
 "chunk": 2,
-"score": 0.609,
+"score": 0.608981,
 "sibling": false,
-"gate": 0.701684
+"gate": 0.701652
 }
 ],
 "gate": {
-"fused_best": 0.634416,
-"vector_best": 0.701684
+"fused_best": 0.634382,
+"vector_best": 0.701652
 }
 },
 "CHAMBAL\tBy how much did Chambal Fertilisers' standalone total assets change between March 31, 2024 and March 31, 2025?": {
@@ -4150,67 +4150,67 @@
 {
 "page": 102,
 "chunk": 0,
-"score": 0.799618,
+"score": 0.799586,
 "sibling": false,
-"gate": 0.799618
+"gate": 0.799586
 },
 {
 "page": 98,
 "chunk": 6,
-"score": 0.775545,
+"score": 0.775534,
 "sibling": false,
-"gate": 0.799618
+"gate": 0.799586
 },
 {
 "page": 102,
 "chunk": 14,
-"score": 0.69727,
+"score": 0.697294,
 "sibling": false,
-"gate": 0.799618
+"gate": 0.799586
 },
 {
 "page": 88,
 "chunk": 0,
-"score": 0.75878,
+"score": 0.758763,
 "sibling": false,
-"gate": 0.799618
+"gate": 0.799586
 },
 {
 "page": 98,
 "chunk": 7,
-"score": 0.776563,
+"score": 0.776528,
 "sibling": false,
-"gate": 0.799618
+"gate": 0.799586
 },
 {
 "page": 17,
 "chunk": 2,
-"score": 0.611925,
+"score": 0.611897,
 "sibling": false,
-"gate": 0.799618
+"gate": 0.799586
 },
 {
 "page": 132,
 "chunk": 5,
-"score": 0.661019,
+"score": 0.660986,
 "sibling": false,
-"gate": 0.799618
+"gate": 0.799586
 },
 {
 "page": 120,
 "chunk": 5,
-"score": 0.683434,
+"score": 0.683414,
 "sibling": false,
-"gate": 0.799618
+"gate": 0.799586
 }
 ],
 "context": [
 {
 "page": 102,
 "chunk": 0,
-"score": 0.799618,
+"score": 0.799586,
 "sibling": false,
-"gate": 0.799618
+"gate": 0.799586
 },
 {
 "page": 102,
@@ -4293,9 +4293,9 @@
 {
 "page": 102,
 "chunk": 14,
-"score": 0.69727,
+"score": 0.697294,
 "sibling": false,
-"gate": 0.799618
+"gate": 0.799586
 },
 {
 "page": 102,
@@ -4342,23 +4342,23 @@
 {
 "page": 98,
 "chunk": 6,
-"score": 0.775545,
+"score": 0.775534,
 "sibling": false,
-"gate": 0.799618
+"gate": 0.799586
 },
 {
 "page": 98,
 "chunk": 7,
-"score": 0.776563,
+"score": 0.776528,
 "sibling": false,
-"gate": 0.799618
+"gate": 0.799586
 },
 {
 "page": 88,
 "chunk": 0,
-"score": 0.75878,
+"score": 0.758763,
 "sibling": false,
-"gate": 0.799618
+"gate": 0.799586
 },
 {
 "page": 88,
@@ -4393,9 +4393,9 @@
 {
 "page": 17,
 "chunk": 2,
-"score": 0.611925,
+"score": 0.611897,
 "sibling": false,
-"gate": 0.799618
+"gate": 0.799586
 },
 {
 "page": 17,
@@ -4406,21 +4406,21 @@
 {
 "page": 132,
 "chunk": 5,
-"score": 0.661019,
+"score": 0.660986,
 "sibling": false,
-"gate": 0.799618
+"gate": 0.799586
 },
 {
 "page": 120,
 "chunk": 5,
-"score": 0.683434,
+"score": 0.683414,
 "sibling": false,
-"gate": 0.799618
+"gate": 0.799586
 }
 ],
 "gate": {
-"fused_best": 0.799618,
-"vector_best": 0.799618
+"fused_best": 0.799586,
+"vector_best": 0.799586
 }
 },
 "CHAMBAL\tWhat was Chambal Fertilisers' standalone profit for FY25, and what final dividend per share did the Board recommend for FY25?": {
@@ -4429,58 +4429,58 @@
 {
 "page": 29,
 "chunk": 4,
-"score": 0.762133,
+"score": 0.762169,
 "sibling": false,
-"gate": 0.786382
+"gate": 0.786398
 },
 {
 "page": 232,
 "chunk": 1,
-"score": 0.672574,
+"score": 0.67262,
 "sibling": false,
-"gate": 0.786382
+"gate": 0.786398
 },
 {
 "page": 103,
 "chunk": 0,
-"score": 0.781953,
+"score": 0.781963,
 "sibling": false,
-"gate": 0.786382
+"gate": 0.786398
 },
 {
 "page": 102,
 "chunk": 14,
-"score": 0.689766,
+"score": 0.689783,
 "sibling": false,
-"gate": 0.786382
+"gate": 0.786398
 },
 {
 "page": 161,
 "chunk": 0,
-"score": 0.671447,
+"score": 0.67153,
 "sibling": false,
-"gate": 0.786382
+"gate": 0.786398
 },
 {
 "page": 99,
 "chunk": 5,
-"score": 0.764227,
+"score": 0.764226,
 "sibling": false,
-"gate": 0.786382
+"gate": 0.786398
 },
 {
 "page": 17,
 "chunk": 2,
-"score": 0.633149,
+"score": 0.633237,
 "sibling": false,
-"gate": 0.786382
+"gate": 0.786398
 },
 {
 "page": 88,
 "chunk": 0,
-"score": 0.786382,
+"score": 0.786398,
 "sibling": false,
-"gate": 0.786382
+"gate": 0.786398
 }
 ],
 "context": [
@@ -4511,9 +4511,9 @@
 {
 "page": 29,
 "chunk": 4,
-"score": 0.762133,
+"score": 0.762169,
 "sibling": false,
-"gate": 0.786382
+"gate": 0.786398
 },
 {
 "page": 29,
@@ -4530,9 +4530,9 @@
 {
 "page": 232,
 "chunk": 1,
-"score": 0.672574,
+"score": 0.67262,
 "sibling": false,
-"gate": 0.786382
+"gate": 0.786398
 },
 {
 "page": 232,
@@ -4561,9 +4561,9 @@
 {
 "page": 103,
 "chunk": 0,
-"score": 0.781953,
+"score": 0.781963,
 "sibling": false,
-"gate": 0.786382
+"gate": 0.786398
 },
 {
 "page": 103,
@@ -4652,9 +4652,9 @@
 {
 "page": 102,
 "chunk": 14,
-"score": 0.689766,
+"score": 0.689783,
 "sibling": false,
-"gate": 0.786382
+"gate": 0.786398
 },
 {
 "page": 102,
@@ -4665,30 +4665,30 @@
 {
 "page": 161,
 "chunk": 0,
-"score": 0.671447,
+"score": 0.67153,
 "sibling": false,
-"gate": 0.786382
+"gate": 0.786398
 },
 {
 "page": 99,
 "chunk": 5,
-"score": 0.764227,
+"score": 0.764226,
 "sibling": false,
-"gate": 0.786382
+"gate": 0.786398
 },
 {
 "page": 17,
 "chunk": 2,
-"score": 0.633149,
+"score": 0.633237,
 "sibling": false,
-"gate": 0.786382
+"gate": 0.786398
 },
 {
 "page": 88,
 "chunk": 0,
-"score": 0.786382,
+"score": 0.786398,
 "sibling": false,
-"gate": 0.786382
+"gate": 0.786398
 },
 {
 "page": 88,
@@ -4698,8 +4698,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.786382,
-"vector_best": 0.786382
+"fused_best": 0.786398,
+"vector_best": 0.786398
 }
 },
 "NAVNEET\tWhat was Navneet Education's standalone profit after tax for FY25?": {
@@ -4708,58 +4708,58 @@
 {
 "page": 100,
 "chunk": 4,
-"score": 0.785217,
+"score": 0.785228,
 "sibling": false,
-"gate": 0.791358
+"gate": 0.791378
 },
 {
 "page": 192,
 "chunk": 0,
-"score": 0.716924,
+"score": 0.716919,
 "sibling": false,
-"gate": 0.791358
+"gate": 0.791378
 },
 {
 "page": 268,
 "chunk": 1,
-"score": 0.695229,
+"score": 0.695265,
 "sibling": false,
-"gate": 0.791358
+"gate": 0.791378
 },
 {
 "page": 100,
 "chunk": 3,
-"score": 0.777869,
+"score": 0.777854,
 "sibling": false,
-"gate": 0.791358
+"gate": 0.791378
 },
 {
 "page": 182,
 "chunk": 0,
-"score": 0.791358,
+"score": 0.791378,
 "sibling": false,
-"gate": 0.791358
+"gate": 0.791378
 },
 {
 "page": 191,
 "chunk": 3,
-"score": 0.687396,
+"score": 0.687395,
 "sibling": false,
-"gate": 0.791358
+"gate": 0.791378
 },
 {
 "page": 191,
 "chunk": 4,
-"score": 0.775984,
+"score": 0.775981,
 "sibling": false,
-"gate": 0.791358
+"gate": 0.791378
 },
 {
 "page": 256,
 "chunk": 3,
-"score": 0.660199,
+"score": 0.66022,
 "sibling": false,
-"gate": 0.791358
+"gate": 0.791378
 }
 ],
 "context": [
@@ -4784,16 +4784,16 @@
 {
 "page": 100,
 "chunk": 3,
-"score": 0.777869,
+"score": 0.777854,
 "sibling": false,
-"gate": 0.791358
+"gate": 0.791378
 },
 {
 "page": 100,
 "chunk": 4,
-"score": 0.785217,
+"score": 0.785228,
 "sibling": false,
-"gate": 0.791358
+"gate": 0.791378
 },
 {
 "page": 100,
@@ -4822,9 +4822,9 @@
 {
 "page": 192,
 "chunk": 0,
-"score": 0.716924,
+"score": 0.716919,
 "sibling": false,
-"gate": 0.791358
+"gate": 0.791378
 },
 {
 "page": 192,
@@ -4871,9 +4871,9 @@
 {
 "page": 268,
 "chunk": 1,
-"score": 0.695229,
+"score": 0.695265,
 "sibling": false,
-"gate": 0.791358
+"gate": 0.791378
 },
 {
 "page": 268,
@@ -4896,9 +4896,9 @@
 {
 "page": 182,
 "chunk": 0,
-"score": 0.791358,
+"score": 0.791378,
 "sibling": false,
-"gate": 0.791358
+"gate": 0.791378
 },
 {
 "page": 182,
@@ -4945,16 +4945,16 @@
 {
 "page": 191,
 "chunk": 3,
-"score": 0.687396,
+"score": 0.687395,
 "sibling": false,
-"gate": 0.791358
+"gate": 0.791378
 },
 {
 "page": 191,
 "chunk": 4,
-"score": 0.775984,
+"score": 0.775981,
 "sibling": false,
-"gate": 0.791358
+"gate": 0.791378
 },
 {
 "page": 191,
@@ -4965,14 +4965,14 @@
 {
 "page": 256,
 "chunk": 3,
-"score": 0.660199,
+"score": 0.66022,
 "sibling": false,
-"gate": 0.791358
+"gate": 0.791378
 }
 ],
 "gate": {
-"fused_best": 0.791358,
-"vector_best": 0.791358
+"fused_best": 0.791378,
+"vector_best": 0.791378
 }
 },
 "NAVNEET\tHow many franchise stores did Navneet open in FY25?": {
@@ -4981,67 +4981,67 @@
 {
 "page": 217,
 "chunk": 0,
-"score": 0.612872,
+"score": 0.61288,
 "sibling": false,
-"gate": 0.70923
+"gate": 0.709241
 },
 {
 "page": 305,
 "chunk": 0,
-"score": 0.610936,
+"score": 0.610942,
 "sibling": false,
-"gate": 0.70923
+"gate": 0.709241
 },
 {
 "page": 338,
 "chunk": 0,
-"score": 0.561851,
+"score": 0.561815,
 "sibling": false,
-"gate": 0.70923
+"gate": 0.709241
 },
 {
 "page": 261,
 "chunk": 0,
-"score": 0.559533,
+"score": 0.559525,
 "sibling": false,
-"gate": 0.70923
+"gate": 0.709241
 },
 {
 "page": 320,
 "chunk": 3,
-"score": 0.561346,
+"score": 0.561337,
 "sibling": false,
-"gate": 0.70923
+"gate": 0.709241
 },
 {
 "page": 257,
 "chunk": 7,
-"score": 0.613865,
+"score": 0.613859,
 "sibling": false,
-"gate": 0.70923
+"gate": 0.709241
 },
 {
 "page": 231,
 "chunk": 2,
-"score": 0.521663,
+"score": 0.521645,
 "sibling": false,
-"gate": 0.70923
+"gate": 0.709241
 },
 {
 "page": 268,
 "chunk": 0,
-"score": 0.620112,
+"score": 0.620108,
 "sibling": false,
-"gate": 0.70923
+"gate": 0.709241
 }
 ],
 "context": [
 {
 "page": 217,
 "chunk": 0,
-"score": 0.612872,
+"score": 0.61288,
 "sibling": false,
-"gate": 0.70923
+"gate": 0.709241
 },
 {
 "page": 217,
@@ -5070,9 +5070,9 @@
 {
 "page": 305,
 "chunk": 0,
-"score": 0.610936,
+"score": 0.610942,
 "sibling": false,
-"gate": 0.70923
+"gate": 0.709241
 },
 {
 "page": 305,
@@ -5095,9 +5095,9 @@
 {
 "page": 338,
 "chunk": 0,
-"score": 0.561851,
+"score": 0.561815,
 "sibling": false,
-"gate": 0.70923
+"gate": 0.709241
 },
 {
 "page": 338,
@@ -5126,9 +5126,9 @@
 {
 "page": 261,
 "chunk": 0,
-"score": 0.559533,
+"score": 0.559525,
 "sibling": false,
-"gate": 0.70923
+"gate": 0.709241
 },
 {
 "page": 261,
@@ -5175,9 +5175,9 @@
 {
 "page": 320,
 "chunk": 3,
-"score": 0.561346,
+"score": 0.561337,
 "sibling": false,
-"gate": 0.70923
+"gate": 0.709241
 },
 {
 "page": 257,
@@ -5224,9 +5224,9 @@
 {
 "page": 257,
 "chunk": 7,
-"score": 0.613865,
+"score": 0.613859,
 "sibling": false,
-"gate": 0.70923
+"gate": 0.709241
 },
 {
 "page": 231,
@@ -5243,9 +5243,9 @@
 {
 "page": 231,
 "chunk": 2,
-"score": 0.521663,
+"score": 0.521645,
 "sibling": false,
-"gate": 0.70923
+"gate": 0.709241
 },
 {
 "page": 231,
@@ -5256,9 +5256,9 @@
 {
 "page": 268,
 "chunk": 0,
-"score": 0.620112,
+"score": 0.620108,
 "sibling": false,
-"gate": 0.70923
+"gate": 0.709241
 },
 {
 "page": 268,
@@ -5268,8 +5268,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.620112,
-"vector_best": 0.70923
+"fused_best": 0.620108,
+"vector_best": 0.709241
 }
 },
 "UNIHEALTH\tWhat were Unihealth's consolidated total assets as at March 31, 2026?": {
@@ -5278,67 +5278,67 @@
 {
 "page": 112,
 "chunk": 0,
-"score": 0.686934,
+"score": 0.687007,
 "sibling": false,
-"gate": 0.800031
+"gate": 0.800076
 },
 {
 "page": 126,
 "chunk": 6,
-"score": 0.71315,
+"score": 0.713188,
 "sibling": false,
-"gate": 0.800031
-},
-{
-"page": 98,
-"chunk": 9,
-"score": 0.632243,
-"sibling": false,
-"gate": 0.800031
+"gate": 0.800076
 },
 {
 "page": 98,
 "chunk": 7,
-"score": 0.639724,
+"score": 0.639793,
 "sibling": false,
-"gate": 0.800031
+"gate": 0.800076
+},
+{
+"page": 98,
+"chunk": 9,
+"score": 0.632313,
+"sibling": false,
+"gate": 0.800076
 },
 {
 "page": 125,
 "chunk": 5,
-"score": 0.66237,
+"score": 0.662433,
 "sibling": false,
-"gate": 0.800031
+"gate": 0.800076
 },
 {
 "page": 116,
 "chunk": 4,
-"score": 0.644132,
+"score": 0.644178,
 "sibling": false,
-"gate": 0.800031
+"gate": 0.800076
 },
 {
 "page": 98,
 "chunk": 8,
-"score": 0.605051,
+"score": 0.605137,
 "sibling": false,
-"gate": 0.800031
+"gate": 0.800076
 },
 {
 "page": 126,
 "chunk": 4,
-"score": 0.683637,
+"score": 0.683684,
 "sibling": false,
-"gate": 0.800031
+"gate": 0.800076
 }
 ],
 "context": [
 {
 "page": 112,
 "chunk": 0,
-"score": 0.686934,
+"score": 0.687007,
 "sibling": false,
-"gate": 0.800031
+"gate": 0.800076
 },
 {
 "page": 112,
@@ -5421,9 +5421,9 @@
 {
 "page": 126,
 "chunk": 4,
-"score": 0.683637,
+"score": 0.683684,
 "sibling": false,
-"gate": 0.800031
+"gate": 0.800076
 },
 {
 "page": 126,
@@ -5434,9 +5434,9 @@
 {
 "page": 126,
 "chunk": 6,
-"score": 0.71315,
+"score": 0.713188,
 "sibling": false,
-"gate": 0.800031
+"gate": 0.800076
 },
 {
 "page": 126,
@@ -5495,23 +5495,23 @@
 {
 "page": 98,
 "chunk": 7,
-"score": 0.639724,
+"score": 0.639793,
 "sibling": false,
-"gate": 0.800031
+"gate": 0.800076
 },
 {
 "page": 98,
 "chunk": 8,
-"score": 0.605051,
+"score": 0.605137,
 "sibling": false,
-"gate": 0.800031
+"gate": 0.800076
 },
 {
 "page": 98,
 "chunk": 9,
-"score": 0.632243,
+"score": 0.632313,
 "sibling": false,
-"gate": 0.800031
+"gate": 0.800076
 },
 {
 "page": 98,
@@ -5528,9 +5528,9 @@
 {
 "page": 125,
 "chunk": 5,
-"score": 0.66237,
+"score": 0.662433,
 "sibling": false,
-"gate": 0.800031
+"gate": 0.800076
 },
 {
 "page": 125,
@@ -5541,9 +5541,9 @@
 {
 "page": 116,
 "chunk": 4,
-"score": 0.644132,
+"score": 0.644178,
 "sibling": false,
-"gate": 0.800031
+"gate": 0.800076
 },
 {
 "page": 116,
@@ -5553,8 +5553,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.71315,
-"vector_best": 0.800031
+"fused_best": 0.713188,
+"vector_best": 0.800076
 }
 },
 "UNIHEALTH\tWhat bed capacity did Unihealth's Uganda hospital network reach in FY26?": {
@@ -5563,74 +5563,74 @@
 {
 "page": 6,
 "chunk": 1,
-"score": 0.804535,
+"score": 0.804478,
 "sibling": false,
-"gate": 0.804535
+"gate": 0.804478
 },
 {
 "page": 17,
 "chunk": 3,
-"score": 0.730173,
+"score": 0.73018,
 "sibling": false,
-"gate": 0.804535
+"gate": 0.804478
 },
 {
 "page": 4,
 "chunk": 2,
-"score": 0.794269,
+"score": 0.794208,
 "sibling": false,
-"gate": 0.804535
+"gate": 0.804478
 },
 {
 "page": 6,
 "chunk": 0,
-"score": 0.761277,
+"score": 0.761249,
 "sibling": false,
-"gate": 0.804535
+"gate": 0.804478
 },
 {
 "page": 9,
 "chunk": 2,
-"score": 0.696744,
+"score": 0.696687,
 "sibling": false,
-"gate": 0.804535
+"gate": 0.804478
 },
 {
 "page": 17,
 "chunk": 7,
-"score": 0.713269,
+"score": 0.713226,
 "sibling": false,
-"gate": 0.804535
+"gate": 0.804478
 },
 {
 "page": 10,
 "chunk": 1,
-"score": 0.714153,
+"score": 0.714084,
 "sibling": false,
-"gate": 0.804535
+"gate": 0.804478
 },
 {
 "page": 5,
 "chunk": 1,
-"score": 0.726098,
+"score": 0.726039,
 "sibling": false,
-"gate": 0.804535
+"gate": 0.804478
 }
 ],
 "context": [
 {
 "page": 6,
 "chunk": 0,
-"score": 0.761277,
+"score": 0.761249,
 "sibling": false,
-"gate": 0.804535
+"gate": 0.804478
 },
 {
 "page": 6,
 "chunk": 1,
-"score": 0.804535,
+"score": 0.804478,
 "sibling": false,
-"gate": 0.804535
+"gate": 0.804478
 },
 {
 "page": 6,
@@ -5665,9 +5665,9 @@
 {
 "page": 17,
 "chunk": 3,
-"score": 0.730173,
+"score": 0.73018,
 "sibling": false,
-"gate": 0.804535
+"gate": 0.804478
 },
 {
 "page": 17,
@@ -5690,9 +5690,9 @@
 {
 "page": 17,
 "chunk": 7,
-"score": 0.713269,
+"score": 0.713226,
 "sibling": false,
-"gate": 0.804535
+"gate": 0.804478
 },
 {
 "page": 17,
@@ -5727,9 +5727,9 @@
 {
 "page": 4,
 "chunk": 2,
-"score": 0.794269,
+"score": 0.794208,
 "sibling": false,
-"gate": 0.804535
+"gate": 0.804478
 },
 {
 "page": 4,
@@ -5758,9 +5758,9 @@
 {
 "page": 9,
 "chunk": 2,
-"score": 0.696744,
+"score": 0.696687,
 "sibling": false,
-"gate": 0.804535
+"gate": 0.804478
 },
 {
 "page": 9,
@@ -5789,9 +5789,9 @@
 {
 "page": 10,
 "chunk": 1,
-"score": 0.714153,
+"score": 0.714084,
 "sibling": false,
-"gate": 0.804535
+"gate": 0.804478
 },
 {
 "page": 10,
@@ -5820,9 +5820,9 @@
 {
 "page": 5,
 "chunk": 1,
-"score": 0.726098,
+"score": 0.726039,
 "sibling": false,
-"gate": 0.804535
+"gate": 0.804478
 },
 {
 "page": 5,
@@ -5832,8 +5832,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.804535,
-"vector_best": 0.804535
+"fused_best": 0.804478,
+"vector_best": 0.804478
 }
 },
 "UNIHEALTH\tWhat was Unihealth's consolidated segment revenue from Uganda for the year ended March 31, 2026?": {
@@ -5842,58 +5842,58 @@
 {
 "page": 118,
 "chunk": 6,
-"score": 0.675472,
+"score": 0.675415,
 "sibling": false,
-"gate": 0.761646
+"gate": 0.761563
 },
 {
 "page": 118,
 "chunk": 5,
-"score": 0.738113,
+"score": 0.738027,
 "sibling": false,
-"gate": 0.761646
+"gate": 0.761563
 },
 {
 "page": 118,
 "chunk": 8,
-"score": 0.658487,
+"score": 0.658395,
 "sibling": false,
-"gate": 0.761646
+"gate": 0.761563
 },
 {
 "page": 118,
 "chunk": 4,
-"score": 0.637365,
+"score": 0.637302,
 "sibling": false,
-"gate": 0.761646
+"gate": 0.761563
 },
 {
 "page": 130,
 "chunk": 2,
-"score": 0.726212,
+"score": 0.726135,
 "sibling": false,
-"gate": 0.761646
+"gate": 0.761563
 },
 {
 "page": 118,
 "chunk": 7,
-"score": 0.625229,
+"score": 0.625113,
 "sibling": false,
-"gate": 0.761646
+"gate": 0.761563
 },
 {
 "page": 20,
 "chunk": 1,
-"score": 0.64854,
+"score": 0.648413,
 "sibling": false,
-"gate": 0.761646
+"gate": 0.761563
 },
 {
 "page": 99,
 "chunk": 0,
-"score": 0.591532,
+"score": 0.591455,
 "sibling": false,
-"gate": 0.761646
+"gate": 0.761563
 }
 ],
 "context": [
@@ -5924,37 +5924,37 @@
 {
 "page": 118,
 "chunk": 4,
-"score": 0.637365,
+"score": 0.637302,
 "sibling": false,
-"gate": 0.761646
+"gate": 0.761563
 },
 {
 "page": 118,
 "chunk": 5,
-"score": 0.738113,
+"score": 0.738027,
 "sibling": false,
-"gate": 0.761646
+"gate": 0.761563
 },
 {
 "page": 118,
 "chunk": 6,
-"score": 0.675472,
+"score": 0.675415,
 "sibling": false,
-"gate": 0.761646
+"gate": 0.761563
 },
 {
 "page": 118,
 "chunk": 7,
-"score": 0.625229,
+"score": 0.625113,
 "sibling": false,
-"gate": 0.761646
+"gate": 0.761563
 },
 {
 "page": 118,
 "chunk": 8,
-"score": 0.658487,
+"score": 0.658395,
 "sibling": false,
-"gate": 0.761646
+"gate": 0.761563
 },
 {
 "page": 118,
@@ -5977,9 +5977,9 @@
 {
 "page": 130,
 "chunk": 2,
-"score": 0.726212,
+"score": 0.726135,
 "sibling": false,
-"gate": 0.761646
+"gate": 0.761563
 },
 {
 "page": 130,
@@ -6032,9 +6032,9 @@
 {
 "page": 20,
 "chunk": 1,
-"score": 0.64854,
+"score": 0.648413,
 "sibling": false,
-"gate": 0.761646
+"gate": 0.761563
 },
 {
 "page": 20,
@@ -6093,9 +6093,9 @@
 {
 "page": 99,
 "chunk": 0,
-"score": 0.591532,
+"score": 0.591455,
 "sibling": false,
-"gate": 0.761646
+"gate": 0.761563
 },
 {
 "page": 99,
@@ -6105,8 +6105,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.738113,
-"vector_best": 0.761646
+"fused_best": 0.738027,
+"vector_best": 0.761563
 }
 },
 "UNIHEALTH\tHow many ambulances does Unihealth operate across its hospitals?": {
@@ -6115,67 +6115,67 @@
 {
 "page": 4,
 "chunk": 0,
-"score": 0.756809,
+"score": 0.756796,
 "sibling": false,
-"gate": 0.756809
+"gate": 0.756796
 },
 {
 "page": 5,
 "chunk": 2,
-"score": 0.685003,
+"score": 0.68496,
 "sibling": false,
-"gate": 0.756809
+"gate": 0.756796
 },
 {
 "page": 7,
 "chunk": 0,
-"score": 0.706654,
+"score": 0.706633,
 "sibling": false,
-"gate": 0.756809
+"gate": 0.756796
 },
 {
 "page": 9,
 "chunk": 2,
-"score": 0.583549,
+"score": 0.583507,
 "sibling": false,
-"gate": 0.756809
+"gate": 0.756796
 },
 {
 "page": 17,
 "chunk": 3,
-"score": 0.601799,
+"score": 0.60173,
 "sibling": false,
-"gate": 0.756809
+"gate": 0.756796
 },
 {
 "page": 6,
 "chunk": 0,
-"score": 0.710125,
+"score": 0.710083,
 "sibling": false,
-"gate": 0.756809
+"gate": 0.756796
 },
 {
 "page": 101,
 "chunk": 0,
-"score": 0.74485,
+"score": 0.744836,
 "sibling": false,
-"gate": 0.756809
+"gate": 0.756796
 },
 {
 "page": 7,
 "chunk": 2,
-"score": 0.671207,
+"score": 0.671184,
 "sibling": false,
-"gate": 0.756809
+"gate": 0.756796
 }
 ],
 "context": [
 {
 "page": 4,
 "chunk": 0,
-"score": 0.756809,
+"score": 0.756796,
 "sibling": false,
-"gate": 0.756809
+"gate": 0.756796
 },
 {
 "page": 4,
@@ -6216,16 +6216,16 @@
 {
 "page": 5,
 "chunk": 2,
-"score": 0.685003,
+"score": 0.68496,
 "sibling": false,
-"gate": 0.756809
+"gate": 0.756796
 },
 {
 "page": 7,
 "chunk": 0,
-"score": 0.706654,
+"score": 0.706633,
 "sibling": false,
-"gate": 0.756809
+"gate": 0.756796
 },
 {
 "page": 7,
@@ -6236,9 +6236,9 @@
 {
 "page": 7,
 "chunk": 2,
-"score": 0.671207,
+"score": 0.671184,
 "sibling": false,
-"gate": 0.756809
+"gate": 0.756796
 },
 {
 "page": 7,
@@ -6261,9 +6261,9 @@
 {
 "page": 9,
 "chunk": 2,
-"score": 0.583549,
+"score": 0.583507,
 "sibling": false,
-"gate": 0.756809
+"gate": 0.756796
 },
 {
 "page": 9,
@@ -6304,9 +6304,9 @@
 {
 "page": 17,
 "chunk": 3,
-"score": 0.601799,
+"score": 0.60173,
 "sibling": false,
-"gate": 0.756809
+"gate": 0.756796
 },
 {
 "page": 17,
@@ -6353,9 +6353,9 @@
 {
 "page": 6,
 "chunk": 0,
-"score": 0.710125,
+"score": 0.710083,
 "sibling": false,
-"gate": 0.756809
+"gate": 0.756796
 },
 {
 "page": 6,
@@ -6378,14 +6378,14 @@
 {
 "page": 101,
 "chunk": 0,
-"score": 0.74485,
+"score": 0.744836,
 "sibling": false,
-"gate": 0.756809
+"gate": 0.756796
 }
 ],
 "gate": {
-"fused_best": 0.756809,
-"vector_best": 0.756809
+"fused_best": 0.756796,
+"vector_best": 0.756796
 }
 },
 "HCC\tSummarise HCC's performance in FY25": {
@@ -6394,67 +6394,67 @@
 {
 "page": 3,
 "chunk": 0,
-"score": 0.604598,
+"score": 0.604585,
 "sibling": false,
-"gate": 0.741284
+"gate": 0.741246
 },
 {
 "page": 288,
 "chunk": 0,
-"score": 0.592388,
+"score": 0.592368,
 "sibling": false,
-"gate": 0.741284
+"gate": 0.741246
 },
 {
 "page": 195,
 "chunk": 9,
-"score": 0.66659,
+"score": 0.666564,
 "sibling": false,
-"gate": 0.741284
+"gate": 0.741246
 },
 {
 "page": 64,
 "chunk": 2,
-"score": 0.567522,
+"score": 0.567499,
 "sibling": false,
-"gate": 0.741284
+"gate": 0.741246
 },
 {
 "page": 176,
 "chunk": 1,
-"score": 0.642615,
+"score": 0.642581,
 "sibling": false,
-"gate": 0.741284
+"gate": 0.741246
 },
 {
 "page": 7,
 "chunk": 1,
-"score": 0.688086,
+"score": 0.688084,
 "sibling": false,
-"gate": 0.741284
+"gate": 0.741246
 },
 {
 "page": 105,
 "chunk": 5,
-"score": 0.607223,
+"score": 0.607237,
 "sibling": false,
-"gate": 0.741284
+"gate": 0.741246
 },
 {
 "page": 46,
 "chunk": 0,
-"score": 0.54804,
+"score": 0.548041,
 "sibling": false,
-"gate": 0.741284
+"gate": 0.741246
 }
 ],
 "context": [
 {
 "page": 3,
 "chunk": 0,
-"score": 0.604598,
+"score": 0.604585,
 "sibling": false,
-"gate": 0.741284
+"gate": 0.741246
 },
 {
 "page": 3,
@@ -6471,9 +6471,9 @@
 {
 "page": 288,
 "chunk": 0,
-"score": 0.592388,
+"score": 0.592368,
 "sibling": false,
-"gate": 0.741284
+"gate": 0.741246
 },
 {
 "page": 288,
@@ -6568,9 +6568,9 @@
 {
 "page": 195,
 "chunk": 9,
-"score": 0.66659,
+"score": 0.666564,
 "sibling": false,
-"gate": 0.741284
+"gate": 0.741246
 },
 {
 "page": 64,
@@ -6587,9 +6587,9 @@
 {
 "page": 64,
 "chunk": 2,
-"score": 0.567522,
+"score": 0.567499,
 "sibling": false,
-"gate": 0.741284
+"gate": 0.741246
 },
 {
 "page": 64,
@@ -6606,9 +6606,9 @@
 {
 "page": 176,
 "chunk": 1,
-"score": 0.642615,
+"score": 0.642581,
 "sibling": false,
-"gate": 0.741284
+"gate": 0.741246
 },
 {
 "page": 176,
@@ -6637,16 +6637,16 @@
 {
 "page": 7,
 "chunk": 1,
-"score": 0.688086,
+"score": 0.688084,
 "sibling": false,
-"gate": 0.741284
+"gate": 0.741246
 },
 {
 "page": 105,
 "chunk": 5,
-"score": 0.607223,
+"score": 0.607237,
 "sibling": false,
-"gate": 0.741284
+"gate": 0.741246
 },
 {
 "page": 105,
@@ -6657,14 +6657,14 @@
 {
 "page": 46,
 "chunk": 0,
-"score": 0.54804,
+"score": 0.548041,
 "sibling": false,
-"gate": 0.741284
+"gate": 0.741246
 }
 ],
 "gate": {
-"fused_best": 0.688086,
-"vector_best": 0.741284
+"fused_best": 0.688084,
+"vector_best": 0.741246
 }
 },
 "UNIHEALTH\tWhat are the key risks Unihealth faces?": {
@@ -6673,58 +6673,58 @@
 {
 "page": 21,
 "chunk": 1,
-"score": 0.583835,
+"score": 0.583872,
 "sibling": false,
-"gate": 0.677615
+"gate": 0.677691
 },
 {
 "page": 88,
 "chunk": 4,
-"score": 0.514789,
+"score": 0.514831,
 "sibling": false,
-"gate": 0.677615
+"gate": 0.677691
 },
 {
 "page": 88,
 "chunk": 5,
-"score": 0.501025,
+"score": 0.50105,
 "sibling": false,
-"gate": 0.677615
+"gate": 0.677691
 },
 {
 "page": 88,
 "chunk": 3,
-"score": 0.480094,
+"score": 0.48016,
 "sibling": false,
-"gate": 0.677615
+"gate": 0.677691
 },
 {
 "page": 123,
 "chunk": 4,
-"score": 0.506042,
+"score": 0.506066,
 "sibling": false,
-"gate": 0.677615
+"gate": 0.677691
 },
 {
 "page": 123,
 "chunk": 5,
-"score": 0.500618,
+"score": 0.500641,
 "sibling": false,
-"gate": 0.677615
+"gate": 0.677691
 },
 {
 "page": 56,
 "chunk": 6,
-"score": 0.474461,
+"score": 0.474527,
 "sibling": false,
-"gate": 0.677615
+"gate": 0.677691
 },
 {
 "page": 121,
 "chunk": 1,
-"score": 0.572342,
+"score": 0.572401,
 "sibling": false,
-"gate": 0.677615
+"gate": 0.677691
 }
 ],
 "context": [
@@ -6737,9 +6737,9 @@
 {
 "page": 21,
 "chunk": 1,
-"score": 0.583835,
+"score": 0.583872,
 "sibling": false,
-"gate": 0.677615
+"gate": 0.677691
 },
 {
 "page": 21,
@@ -6810,23 +6810,23 @@
 {
 "page": 88,
 "chunk": 3,
-"score": 0.480094,
+"score": 0.48016,
 "sibling": false,
-"gate": 0.677615
+"gate": 0.677691
 },
 {
 "page": 88,
 "chunk": 4,
-"score": 0.514789,
+"score": 0.514831,
 "sibling": false,
-"gate": 0.677615
+"gate": 0.677691
 },
 {
 "page": 88,
 "chunk": 5,
-"score": 0.501025,
+"score": 0.50105,
 "sibling": false,
-"gate": 0.677615
+"gate": 0.677691
 },
 {
 "page": 88,
@@ -6867,16 +6867,16 @@
 {
 "page": 123,
 "chunk": 4,
-"score": 0.506042,
+"score": 0.506066,
 "sibling": false,
-"gate": 0.677615
+"gate": 0.677691
 },
 {
 "page": 123,
 "chunk": 5,
-"score": 0.500618,
+"score": 0.500641,
 "sibling": false,
-"gate": 0.677615
+"gate": 0.677691
 },
 {
 "page": 123,
@@ -6917,21 +6917,21 @@
 {
 "page": 56,
 "chunk": 6,
-"score": 0.474461,
+"score": 0.474527,
 "sibling": false,
-"gate": 0.677615
+"gate": 0.677691
 },
 {
 "page": 121,
 "chunk": 1,
-"score": 0.572342,
+"score": 0.572401,
 "sibling": false,
-"gate": 0.677615
+"gate": 0.677691
 }
 ],
 "gate": {
-"fused_best": 0.583835,
-"vector_best": 0.677615
+"fused_best": 0.583872,
+"vector_best": 0.677691
 }
 },
 "LT\tHow big is L&T's order book?": {
@@ -6940,58 +6940,58 @@
 {
 "page": 611,
 "chunk": 6,
-"score": 0.441844,
+"score": 0.441858,
 "sibling": false,
-"gate": 0.618834
+"gate": 0.618859
 },
 {
 "page": 47,
 "chunk": 3,
-"score": 0.618834,
+"score": 0.618859,
 "sibling": false,
-"gate": 0.618834
+"gate": 0.618859
 },
 {
 "page": 42,
 "chunk": 0,
-"score": 0.616004,
+"score": 0.615995,
 "sibling": false,
-"gate": 0.618834
+"gate": 0.618859
 },
 {
 "page": 552,
 "chunk": 4,
-"score": 0.559243,
+"score": 0.559238,
 "sibling": false,
-"gate": 0.618834
+"gate": 0.618859
 },
 {
 "page": 339,
 "chunk": 0,
-"score": 0.539323,
+"score": 0.539296,
 "sibling": false,
-"gate": 0.618834
+"gate": 0.618859
 },
 {
 "page": 552,
 "chunk": 3,
-"score": 0.524032,
+"score": 0.524034,
 "sibling": false,
-"gate": 0.618834
+"gate": 0.618859
 },
 {
 "page": 687,
 "chunk": 2,
 "score": 0.51488,
 "sibling": false,
-"gate": 0.618834
+"gate": 0.618859
 },
 {
 "page": 687,
 "chunk": 3,
-"score": 0.51056,
+"score": 0.510552,
 "sibling": false,
-"gate": 0.618834
+"gate": 0.618859
 }
 ],
 "context": [
@@ -7034,9 +7034,9 @@
 {
 "page": 611,
 "chunk": 6,
-"score": 0.441844,
+"score": 0.441858,
 "sibling": false,
-"gate": 0.618834
+"gate": 0.618859
 },
 {
 "page": 611,
@@ -7065,9 +7065,9 @@
 {
 "page": 47,
 "chunk": 3,
-"score": 0.618834,
+"score": 0.618859,
 "sibling": false,
-"gate": 0.618834
+"gate": 0.618859
 },
 {
 "page": 47,
@@ -7090,9 +7090,9 @@
 {
 "page": 42,
 "chunk": 0,
-"score": 0.616004,
+"score": 0.615995,
 "sibling": false,
-"gate": 0.618834
+"gate": 0.618859
 },
 {
 "page": 42,
@@ -7145,16 +7145,16 @@
 {
 "page": 552,
 "chunk": 3,
-"score": 0.524032,
+"score": 0.524034,
 "sibling": false,
-"gate": 0.618834
+"gate": 0.618859
 },
 {
 "page": 552,
 "chunk": 4,
-"score": 0.559243,
+"score": 0.559238,
 "sibling": false,
-"gate": 0.618834
+"gate": 0.618859
 },
 {
 "page": 552,
@@ -7171,9 +7171,9 @@
 {
 "page": 339,
 "chunk": 0,
-"score": 0.539323,
+"score": 0.539296,
 "sibling": false,
-"gate": 0.618834
+"gate": 0.618859
 },
 {
 "page": 687,
@@ -7192,14 +7192,14 @@
 "chunk": 2,
 "score": 0.51488,
 "sibling": false,
-"gate": 0.618834
+"gate": 0.618859
 },
 {
 "page": 687,
 "chunk": 3,
-"score": 0.51056,
+"score": 0.510552,
 "sibling": false,
-"gate": 0.618834
+"gate": 0.618859
 },
 {
 "page": 687,
@@ -7209,8 +7209,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.618834,
-"vector_best": 0.618834
+"fused_best": 0.618859,
+"vector_best": 0.618859
 }
 },
 "NAVNEET\ttotla assets navneet": {
@@ -7219,7 +7219,7 @@
 {
 "page": 351,
 "chunk": 0,
-"score": 0.678059,
+"score": 0.67806,
 "sibling": false,
 "gate": 0.765287
 },
@@ -7277,7 +7277,7 @@
 {
 "page": 351,
 "chunk": 0,
-"score": 0.678059,
+"score": 0.67806,
 "sibling": false,
 "gate": 0.765287
 },
@@ -7450,58 +7450,58 @@
 {
 "page": 83,
 "chunk": 2,
-"score": 0.770354,
+"score": 0.770394,
 "sibling": false,
-"gate": 0.840867
+"gate": 0.840863
 },
 {
 "page": 179,
 "chunk": 5,
-"score": 0.790448,
+"score": 0.790471,
 "sibling": false,
-"gate": 0.840867
+"gate": 0.840863
 },
 {
 "page": 96,
 "chunk": 3,
-"score": 0.759496,
+"score": 0.759507,
 "sibling": false,
-"gate": 0.840867
+"gate": 0.840863
 },
 {
 "page": 82,
 "chunk": 1,
-"score": 0.788289,
+"score": 0.78827,
 "sibling": false,
-"gate": 0.840867
+"gate": 0.840863
 },
 {
 "page": 179,
 "chunk": 0,
-"score": 0.840867,
+"score": 0.840863,
 "sibling": false,
-"gate": 0.840867
+"gate": 0.840863
 },
 {
 "page": 9,
 "chunk": 1,
-"score": 0.801083,
+"score": 0.801095,
 "sibling": false,
-"gate": 0.840867
+"gate": 0.840863
 },
 {
 "page": 179,
 "chunk": 1,
-"score": 0.754894,
+"score": 0.754919,
 "sibling": false,
-"gate": 0.840867
+"gate": 0.840863
 },
 {
 "page": 240,
 "chunk": 0,
-"score": 0.759761,
+"score": 0.759781,
 "sibling": false,
-"gate": 0.840867
+"gate": 0.840863
 }
 ],
 "context": [
@@ -7520,23 +7520,23 @@
 {
 "page": 83,
 "chunk": 2,
-"score": 0.770354,
+"score": 0.770394,
 "sibling": false,
-"gate": 0.840867
+"gate": 0.840863
 },
 {
 "page": 179,
 "chunk": 0,
-"score": 0.840867,
+"score": 0.840863,
 "sibling": false,
-"gate": 0.840867
+"gate": 0.840863
 },
 {
 "page": 179,
 "chunk": 1,
-"score": 0.754894,
+"score": 0.754919,
 "sibling": false,
-"gate": 0.840867
+"gate": 0.840863
 },
 {
 "page": 179,
@@ -7559,9 +7559,9 @@
 {
 "page": 179,
 "chunk": 5,
-"score": 0.790448,
+"score": 0.790471,
 "sibling": false,
-"gate": 0.840867
+"gate": 0.840863
 },
 {
 "page": 96,
@@ -7584,9 +7584,9 @@
 {
 "page": 96,
 "chunk": 3,
-"score": 0.759496,
+"score": 0.759507,
 "sibling": false,
-"gate": 0.840867
+"gate": 0.840863
 },
 {
 "page": 96,
@@ -7615,9 +7615,9 @@
 {
 "page": 82,
 "chunk": 1,
-"score": 0.788289,
+"score": 0.78827,
 "sibling": false,
-"gate": 0.840867
+"gate": 0.840863
 },
 {
 "page": 9,
@@ -7628,16 +7628,16 @@
 {
 "page": 9,
 "chunk": 1,
-"score": 0.801083,
+"score": 0.801095,
 "sibling": false,
-"gate": 0.840867
+"gate": 0.840863
 },
 {
 "page": 240,
 "chunk": 0,
-"score": 0.759761,
+"score": 0.759781,
 "sibling": false,
-"gate": 0.840867
+"gate": 0.840863
 },
 {
 "page": 240,
@@ -7683,8 +7683,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.840867,
-"vector_best": 0.840867
+"fused_best": 0.840863,
+"vector_best": 0.840863
 }
 },
 "SBIN\thow many branches does sbi have": {
@@ -7693,58 +7693,58 @@
 {
 "page": 136,
 "chunk": 5,
-"score": 0.714973,
+"score": 0.714984,
 "sibling": false,
-"gate": 0.744404
+"gate": 0.744443
 },
 {
 "page": 151,
 "chunk": 4,
-"score": 0.725307,
+"score": 0.725323,
 "sibling": false,
-"gate": 0.744404
+"gate": 0.744443
 },
 {
 "page": 564,
 "chunk": 5,
-"score": 0.704493,
+"score": 0.704501,
 "sibling": false,
-"gate": 0.744404
+"gate": 0.744443
 },
 {
 "page": 4,
 "chunk": 0,
-"score": 0.700236,
+"score": 0.700243,
 "sibling": false,
-"gate": 0.744404
-},
-{
-"page": 14,
-"chunk": 1,
-"score": 0.681479,
-"sibling": false,
-"gate": 0.744404
+"gate": 0.744443
 },
 {
 "page": 149,
 "chunk": 0,
-"score": 0.70023,
+"score": 0.700252,
 "sibling": false,
-"gate": 0.744404
+"gate": 0.744443
+},
+{
+"page": 14,
+"chunk": 1,
+"score": 0.68149,
+"sibling": false,
+"gate": 0.744443
 },
 {
 "page": 282,
 "chunk": 1,
-"score": 0.705343,
+"score": 0.705359,
 "sibling": false,
-"gate": 0.744404
+"gate": 0.744443
 },
 {
 "page": 42,
 "chunk": 0,
-"score": 0.700466,
+"score": 0.700484,
 "sibling": false,
-"gate": 0.744404
+"gate": 0.744443
 }
 ],
 "context": [
@@ -7781,9 +7781,9 @@
 {
 "page": 136,
 "chunk": 5,
-"score": 0.714973,
+"score": 0.714984,
 "sibling": false,
-"gate": 0.744404
+"gate": 0.744443
 },
 {
 "page": 151,
@@ -7812,9 +7812,9 @@
 {
 "page": 151,
 "chunk": 4,
-"score": 0.725307,
+"score": 0.725323,
 "sibling": false,
-"gate": 0.744404
+"gate": 0.744443
 },
 {
 "page": 564,
@@ -7849,9 +7849,9 @@
 {
 "page": 564,
 "chunk": 5,
-"score": 0.704493,
+"score": 0.704501,
 "sibling": false,
-"gate": 0.744404
+"gate": 0.744443
 },
 {
 "page": 564,
@@ -7862,35 +7862,16 @@
 {
 "page": 4,
 "chunk": 0,
-"score": 0.700236,
+"score": 0.700243,
 "sibling": false,
-"gate": 0.744404
-},
-{
-"page": 14,
-"chunk": 0,
-"score": null,
-"sibling": true
-},
-{
-"page": 14,
-"chunk": 1,
-"score": 0.681479,
-"sibling": false,
-"gate": 0.744404
-},
-{
-"page": 14,
-"chunk": 2,
-"score": null,
-"sibling": true
+"gate": 0.744443
 },
 {
 "page": 149,
 "chunk": 0,
-"score": 0.70023,
+"score": 0.700252,
 "sibling": false,
-"gate": 0.744404
+"gate": 0.744443
 },
 {
 "page": 149,
@@ -7935,6 +7916,25 @@
 "sibling": true
 },
 {
+"page": 14,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 14,
+"chunk": 1,
+"score": 0.68149,
+"sibling": false,
+"gate": 0.744443
+},
+{
+"page": 14,
+"chunk": 2,
+"score": null,
+"sibling": true
+},
+{
 "page": 282,
 "chunk": 0,
 "score": null,
@@ -7943,9 +7943,9 @@
 {
 "page": 282,
 "chunk": 1,
-"score": 0.705343,
+"score": 0.705359,
 "sibling": false,
-"gate": 0.744404
+"gate": 0.744443
 },
 {
 "page": 282,
@@ -7956,14 +7956,14 @@
 {
 "page": 42,
 "chunk": 0,
-"score": 0.700466,
+"score": 0.700484,
 "sibling": false,
-"gate": 0.744404
+"gate": 0.744443
 }
 ],
 "gate": {
-"fused_best": 0.725307,
-"vector_best": 0.744404
+"fused_best": 0.725323,
+"vector_best": 0.744443
 }
 },
 "EICHERMOT\troyal enfield sales fy26": {
@@ -7972,58 +7972,58 @@
 {
 "page": 147,
 "chunk": 6,
-"score": 0.766731,
+"score": 0.76672,
 "sibling": false,
-"gate": 0.783393
+"gate": 0.783388
 },
 {
 "page": 147,
 "chunk": 2,
-"score": 0.776332,
+"score": 0.776311,
 "sibling": false,
-"gate": 0.783393
+"gate": 0.783388
 },
 {
 "page": 147,
 "chunk": 4,
-"score": 0.747677,
+"score": 0.747625,
 "sibling": false,
-"gate": 0.783393
+"gate": 0.783388
 },
 {
 "page": 146,
 "chunk": 5,
-"score": 0.745225,
+"score": 0.745184,
 "sibling": false,
-"gate": 0.783393
+"gate": 0.783388
 },
 {
 "page": 147,
 "chunk": 5,
-"score": 0.763183,
+"score": 0.76314,
 "sibling": false,
-"gate": 0.783393
+"gate": 0.783388
 },
 {
 "page": 146,
 "chunk": 6,
-"score": 0.742263,
+"score": 0.742255,
 "sibling": false,
-"gate": 0.783393
+"gate": 0.783388
 },
 {
 "page": 7,
 "chunk": 0,
-"score": 0.63592,
+"score": 0.63586,
 "sibling": false,
-"gate": 0.783393
+"gate": 0.783388
 },
 {
 "page": 302,
 "chunk": 0,
-"score": 0.614247,
+"score": 0.61422,
 "sibling": false,
-"gate": 0.783393
+"gate": 0.783388
 }
 ],
 "context": [
@@ -8042,9 +8042,9 @@
 {
 "page": 147,
 "chunk": 2,
-"score": 0.776332,
+"score": 0.776311,
 "sibling": false,
-"gate": 0.783393
+"gate": 0.783388
 },
 {
 "page": 147,
@@ -8055,23 +8055,23 @@
 {
 "page": 147,
 "chunk": 4,
-"score": 0.747677,
+"score": 0.747625,
 "sibling": false,
-"gate": 0.783393
+"gate": 0.783388
 },
 {
 "page": 147,
 "chunk": 5,
-"score": 0.763183,
+"score": 0.76314,
 "sibling": false,
-"gate": 0.783393
+"gate": 0.783388
 },
 {
 "page": 147,
 "chunk": 6,
-"score": 0.766731,
+"score": 0.76672,
 "sibling": false,
-"gate": 0.783393
+"gate": 0.783388
 },
 {
 "page": 147,
@@ -8118,16 +8118,16 @@
 {
 "page": 146,
 "chunk": 5,
-"score": 0.745225,
+"score": 0.745184,
 "sibling": false,
-"gate": 0.783393
+"gate": 0.783388
 },
 {
 "page": 146,
 "chunk": 6,
-"score": 0.742263,
+"score": 0.742255,
 "sibling": false,
-"gate": 0.783393
+"gate": 0.783388
 },
 {
 "page": 146,
@@ -8138,9 +8138,9 @@
 {
 "page": 7,
 "chunk": 0,
-"score": 0.63592,
+"score": 0.63586,
 "sibling": false,
-"gate": 0.783393
+"gate": 0.783388
 },
 {
 "page": 7,
@@ -8157,9 +8157,9 @@
 {
 "page": 302,
 "chunk": 0,
-"score": 0.614247,
+"score": 0.61422,
 "sibling": false,
-"gate": 0.783393
+"gate": 0.783388
 },
 {
 "page": 302,
@@ -8217,8 +8217,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.776332,
-"vector_best": 0.783393
+"fused_best": 0.776311,
+"vector_best": 0.783388
 }
 },
 "SUNPHARMA\tsun pharma r&d spend": {
@@ -8227,74 +8227,74 @@
 {
 "page": 44,
 "chunk": 1,
-"score": 0.737584,
+"score": 0.737627,
 "sibling": false,
-"gate": 0.792475
+"gate": 0.792464
 },
 {
 "page": 120,
 "chunk": 0,
-"score": 0.64646,
+"score": 0.646485,
 "sibling": false,
-"gate": 0.792475
+"gate": 0.792464
 },
 {
 "page": 9,
 "chunk": 6,
-"score": 0.68061,
+"score": 0.680592,
 "sibling": false,
-"gate": 0.792475
+"gate": 0.792464
 },
 {
 "page": 44,
 "chunk": 0,
-"score": 0.703396,
+"score": 0.703438,
 "sibling": false,
-"gate": 0.792475
+"gate": 0.792464
 },
 {
 "page": 6,
 "chunk": 4,
-"score": 0.649772,
+"score": 0.649765,
 "sibling": false,
-"gate": 0.792475
+"gate": 0.792464
 },
 {
 "page": 44,
 "chunk": 3,
-"score": 0.646368,
+"score": 0.646389,
 "sibling": false,
-"gate": 0.792475
+"gate": 0.792464
 },
 {
 "page": 6,
 "chunk": 3,
-"score": 0.667789,
+"score": 0.667795,
 "sibling": false,
-"gate": 0.792475
+"gate": 0.792464
 },
 {
 "page": 138,
 "chunk": 3,
-"score": 0.631754,
+"score": 0.631757,
 "sibling": false,
-"gate": 0.792475
+"gate": 0.792464
 }
 ],
 "context": [
 {
 "page": 44,
 "chunk": 0,
-"score": 0.703396,
+"score": 0.703438,
 "sibling": false,
-"gate": 0.792475
+"gate": 0.792464
 },
 {
 "page": 44,
 "chunk": 1,
-"score": 0.737584,
+"score": 0.737627,
 "sibling": false,
-"gate": 0.792475
+"gate": 0.792464
 },
 {
 "page": 44,
@@ -8305,16 +8305,16 @@
 {
 "page": 44,
 "chunk": 3,
-"score": 0.646368,
+"score": 0.646389,
 "sibling": false,
-"gate": 0.792475
+"gate": 0.792464
 },
 {
 "page": 120,
 "chunk": 0,
-"score": 0.64646,
+"score": 0.646485,
 "sibling": false,
-"gate": 0.792475
+"gate": 0.792464
 },
 {
 "page": 120,
@@ -8379,9 +8379,9 @@
 {
 "page": 9,
 "chunk": 6,
-"score": 0.68061,
+"score": 0.680592,
 "sibling": false,
-"gate": 0.792475
+"gate": 0.792464
 },
 {
 "page": 6,
@@ -8404,16 +8404,16 @@
 {
 "page": 6,
 "chunk": 3,
-"score": 0.667789,
+"score": 0.667795,
 "sibling": false,
-"gate": 0.792475
+"gate": 0.792464
 },
 {
 "page": 6,
 "chunk": 4,
-"score": 0.649772,
+"score": 0.649765,
 "sibling": false,
-"gate": 0.792475
+"gate": 0.792464
 },
 {
 "page": 6,
@@ -8442,14 +8442,14 @@
 {
 "page": 138,
 "chunk": 3,
-"score": 0.631754,
+"score": 0.631757,
 "sibling": false,
-"gate": 0.792475
+"gate": 0.792464
 }
 ],
 "gate": {
-"fused_best": 0.737584,
-"vector_best": 0.792475
+"fused_best": 0.737627,
+"vector_best": 0.792464
 }
 },
 "CHAMBAL\thow many urea plnts does chambal have": {
@@ -8458,58 +8458,58 @@
 {
 "page": 4,
 "chunk": 3,
-"score": 0.680632,
+"score": 0.68066,
 "sibling": false,
-"gate": 0.747252
+"gate": 0.74728
 },
 {
 "page": 77,
 "chunk": 2,
-"score": 0.626902,
+"score": 0.626924,
 "sibling": false,
-"gate": 0.747252
+"gate": 0.74728
 },
 {
 "page": 16,
 "chunk": 0,
-"score": 0.631995,
+"score": 0.632044,
 "sibling": false,
-"gate": 0.747252
+"gate": 0.74728
 },
 {
 "page": 13,
 "chunk": 0,
-"score": 0.747252,
+"score": 0.74728,
 "sibling": false,
-"gate": 0.747252
+"gate": 0.74728
 },
 {
 "page": 46,
 "chunk": 2,
-"score": 0.563658,
+"score": 0.563713,
 "sibling": false,
-"gate": 0.747252
+"gate": 0.74728
 },
 {
 "page": 13,
 "chunk": 3,
-"score": 0.588506,
+"score": 0.588548,
 "sibling": false,
-"gate": 0.747252
+"gate": 0.74728
 },
 {
 "page": 103,
 "chunk": 0,
-"score": 0.734754,
+"score": 0.734771,
 "sibling": false,
-"gate": 0.747252
+"gate": 0.74728
 },
 {
 "page": 175,
 "chunk": 0,
 "score": 0.712569,
 "sibling": false,
-"gate": 0.747252
+"gate": 0.74728
 }
 ],
 "context": [
@@ -8534,9 +8534,9 @@
 {
 "page": 4,
 "chunk": 3,
-"score": 0.680632,
+"score": 0.68066,
 "sibling": false,
-"gate": 0.747252
+"gate": 0.74728
 },
 {
 "page": 4,
@@ -8565,9 +8565,9 @@
 {
 "page": 77,
 "chunk": 2,
-"score": 0.626902,
+"score": 0.626924,
 "sibling": false,
-"gate": 0.747252
+"gate": 0.74728
 },
 {
 "page": 77,
@@ -8590,9 +8590,9 @@
 {
 "page": 16,
 "chunk": 0,
-"score": 0.631995,
+"score": 0.632044,
 "sibling": false,
-"gate": 0.747252
+"gate": 0.74728
 },
 {
 "page": 16,
@@ -8633,9 +8633,9 @@
 {
 "page": 13,
 "chunk": 0,
-"score": 0.747252,
+"score": 0.74728,
 "sibling": false,
-"gate": 0.747252
+"gate": 0.74728
 },
 {
 "page": 13,
@@ -8652,9 +8652,9 @@
 {
 "page": 13,
 "chunk": 3,
-"score": 0.588506,
+"score": 0.588548,
 "sibling": false,
-"gate": 0.747252
+"gate": 0.74728
 },
 {
 "page": 13,
@@ -8695,16 +8695,16 @@
 {
 "page": 46,
 "chunk": 2,
-"score": 0.563658,
+"score": 0.563713,
 "sibling": false,
-"gate": 0.747252
+"gate": 0.74728
 },
 {
 "page": 103,
 "chunk": 0,
-"score": 0.734754,
+"score": 0.734771,
 "sibling": false,
-"gate": 0.747252
+"gate": 0.74728
 },
 {
 "page": 103,
@@ -8717,12 +8717,12 @@
 "chunk": 0,
 "score": 0.712569,
 "sibling": false,
-"gate": 0.747252
+"gate": 0.74728
 }
 ],
 "gate": {
-"fused_best": 0.747252,
-"vector_best": 0.747252
+"fused_best": 0.74728,
+"vector_best": 0.74728
 }
 },
 "DIVISLAB\tdivis lab revenu fy26": {
@@ -8731,58 +8731,58 @@
 {
 "page": 123,
 "chunk": 6,
-"score": 0.679777,
+"score": 0.679771,
 "sibling": false,
-"gate": 0.75687
+"gate": 0.756846
 },
 {
 "page": 122,
 "chunk": 4,
-"score": 0.649863,
+"score": 0.649861,
 "sibling": false,
-"gate": 0.75687
+"gate": 0.756846
 },
 {
 "page": 129,
 "chunk": 5,
-"score": 0.67132,
+"score": 0.671264,
 "sibling": false,
-"gate": 0.75687
+"gate": 0.756846
 },
 {
 "page": 124,
 "chunk": 0,
-"score": 0.627305,
+"score": 0.627272,
 "sibling": false,
-"gate": 0.75687
+"gate": 0.756846
 },
 {
 "page": 124,
 "chunk": 1,
-"score": 0.657983,
+"score": 0.657966,
 "sibling": false,
-"gate": 0.75687
+"gate": 0.756846
 },
 {
 "page": 92,
 "chunk": 2,
-"score": 0.681494,
+"score": 0.681488,
 "sibling": false,
-"gate": 0.75687
+"gate": 0.756846
 },
 {
 "page": 136,
 "chunk": 9,
-"score": 0.594449,
+"score": 0.594441,
 "sibling": false,
-"gate": 0.75687
+"gate": 0.756846
 },
 {
 "page": 134,
 "chunk": 2,
-"score": 0.583092,
+"score": 0.583106,
 "sibling": false,
-"gate": 0.75687
+"gate": 0.756846
 }
 ],
 "context": [
@@ -8825,9 +8825,9 @@
 {
 "page": 123,
 "chunk": 6,
-"score": 0.679777,
+"score": 0.679771,
 "sibling": false,
-"gate": 0.75687
+"gate": 0.756846
 },
 {
 "page": 123,
@@ -8862,9 +8862,9 @@
 {
 "page": 122,
 "chunk": 4,
-"score": 0.649863,
+"score": 0.649861,
 "sibling": false,
-"gate": 0.75687
+"gate": 0.756846
 },
 {
 "page": 122,
@@ -8917,9 +8917,9 @@
 {
 "page": 129,
 "chunk": 5,
-"score": 0.67132,
+"score": 0.671264,
 "sibling": false,
-"gate": 0.75687
+"gate": 0.756846
 },
 {
 "page": 129,
@@ -8936,16 +8936,16 @@
 {
 "page": 124,
 "chunk": 0,
-"score": 0.627305,
+"score": 0.627272,
 "sibling": false,
-"gate": 0.75687
+"gate": 0.756846
 },
 {
 "page": 124,
 "chunk": 1,
-"score": 0.657983,
+"score": 0.657966,
 "sibling": false,
-"gate": 0.75687
+"gate": 0.756846
 },
 {
 "page": 124,
@@ -8980,28 +8980,28 @@
 {
 "page": 92,
 "chunk": 2,
-"score": 0.681494,
+"score": 0.681488,
 "sibling": false,
-"gate": 0.75687
+"gate": 0.756846
 },
 {
 "page": 136,
 "chunk": 9,
-"score": 0.594449,
+"score": 0.594441,
 "sibling": false,
-"gate": 0.75687
+"gate": 0.756846
 },
 {
 "page": 134,
 "chunk": 2,
-"score": 0.583092,
+"score": 0.583106,
 "sibling": false,
-"gate": 0.75687
+"gate": 0.756846
 }
 ],
 "gate": {
-"fused_best": 0.681494,
-"vector_best": 0.75687
+"fused_best": 0.681488,
+"vector_best": 0.756846
 }
 },
 "ICICIBANK\ticici bank total deposits": {
@@ -9307,67 +9307,67 @@
 {
 "page": 36,
 "chunk": 0,
-"score": 0.622052,
+"score": 0.621946,
 "sibling": false,
-"gate": 0.741053
+"gate": 0.740947
 },
 {
 "page": 146,
 "chunk": 0,
-"score": 0.660109,
+"score": 0.660039,
 "sibling": false,
-"gate": 0.741053
+"gate": 0.740947
 },
 {
 "page": 181,
 "chunk": 0,
-"score": 0.647954,
+"score": 0.647881,
 "sibling": false,
-"gate": 0.741053
+"gate": 0.740947
 },
 {
 "page": 54,
 "chunk": 1,
-"score": 0.497107,
+"score": 0.496991,
 "sibling": false,
-"gate": 0.741053
+"gate": 0.740947
 },
 {
 "page": 121,
 "chunk": 4,
-"score": 0.66039,
+"score": 0.660301,
 "sibling": false,
-"gate": 0.741053
+"gate": 0.740947
 },
 {
 "page": 9,
 "chunk": 0,
-"score": 0.648073,
+"score": 0.648022,
 "sibling": false,
-"gate": 0.741053
+"gate": 0.740947
 },
 {
 "page": 180,
 "chunk": 8,
-"score": 0.668654,
+"score": 0.668579,
 "sibling": false,
-"gate": 0.741053
+"gate": 0.740947
 },
 {
 "page": 2,
 "chunk": 4,
-"score": 0.560415,
+"score": 0.560372,
 "sibling": false,
-"gate": 0.741053
+"gate": 0.740947
 }
 ],
 "context": [
 {
 "page": 36,
 "chunk": 0,
-"score": 0.622052,
+"score": 0.621946,
 "sibling": false,
-"gate": 0.741053
+"gate": 0.740947
 },
 {
 "page": 36,
@@ -9456,56 +9456,56 @@
 {
 "page": 146,
 "chunk": 0,
-"score": 0.660109,
+"score": 0.660039,
 "sibling": false,
-"gate": 0.741053
+"gate": 0.740947
 },
 {
 "page": 181,
 "chunk": 0,
-"score": 0.647954,
+"score": 0.647881,
 "sibling": false,
-"gate": 0.741053
+"gate": 0.740947
 },
 {
 "page": 54,
 "chunk": 1,
-"score": 0.497107,
+"score": 0.496991,
 "sibling": false,
-"gate": 0.741053
+"gate": 0.740947
 },
 {
 "page": 121,
 "chunk": 4,
-"score": 0.66039,
+"score": 0.660301,
 "sibling": false,
-"gate": 0.741053
+"gate": 0.740947
 },
 {
 "page": 9,
 "chunk": 0,
-"score": 0.648073,
+"score": 0.648022,
 "sibling": false,
-"gate": 0.741053
+"gate": 0.740947
 },
 {
 "page": 180,
 "chunk": 8,
-"score": 0.668654,
+"score": 0.668579,
 "sibling": false,
-"gate": 0.741053
+"gate": 0.740947
 },
 {
 "page": 2,
 "chunk": 4,
-"score": 0.560415,
+"score": 0.560372,
 "sibling": false,
-"gate": 0.741053
+"gate": 0.740947
 }
 ],
 "gate": {
-"fused_best": 0.668654,
-"vector_best": 0.741053
+"fused_best": 0.668579,
+"vector_best": 0.740947
 }
 },
 "TATASTEEL\tWhat does Tata Steel do?": {
@@ -9793,58 +9793,58 @@
 {
 "page": 293,
 "chunk": 1,
-"score": 0.494311,
+"score": 0.494276,
 "sibling": false,
-"gate": 0.669844
+"gate": 0.669847
 },
 {
 "page": 90,
 "chunk": 4,
-"score": 0.466116,
+"score": 0.46613,
 "sibling": false,
-"gate": 0.669844
+"gate": 0.669847
 },
 {
 "page": 60,
 "chunk": 0,
-"score": 0.513789,
+"score": 0.513806,
 "sibling": false,
-"gate": 0.669844
+"gate": 0.669847
 },
 {
 "page": 260,
 "chunk": 0,
-"score": 0.525683,
+"score": 0.525689,
 "sibling": false,
-"gate": 0.669844
+"gate": 0.669847
 },
 {
 "page": 60,
 "chunk": 1,
-"score": 0.669844,
+"score": 0.669847,
 "sibling": false,
-"gate": 0.669844
+"gate": 0.669847
 },
 {
 "page": 61,
 "chunk": 2,
-"score": 0.626107,
+"score": 0.626106,
 "sibling": false,
-"gate": 0.669844
+"gate": 0.669847
 },
 {
 "page": 126,
 "chunk": 0,
-"score": 0.454985,
+"score": 0.454984,
 "sibling": false,
-"gate": 0.669844
+"gate": 0.669847
 },
 {
 "page": 61,
 "chunk": 3,
-"score": 0.619591,
+"score": 0.61959,
 "sibling": false,
-"gate": 0.669844
+"gate": 0.669847
 }
 ],
 "context": [
@@ -9857,9 +9857,9 @@
 {
 "page": 293,
 "chunk": 1,
-"score": 0.494311,
+"score": 0.494276,
 "sibling": false,
-"gate": 0.669844
+"gate": 0.669847
 },
 {
 "page": 293,
@@ -9894,23 +9894,23 @@
 {
 "page": 90,
 "chunk": 4,
-"score": 0.466116,
+"score": 0.46613,
 "sibling": false,
-"gate": 0.669844
+"gate": 0.669847
 },
 {
 "page": 60,
 "chunk": 0,
-"score": 0.513789,
+"score": 0.513806,
 "sibling": false,
-"gate": 0.669844
+"gate": 0.669847
 },
 {
 "page": 60,
 "chunk": 1,
-"score": 0.669844,
+"score": 0.669847,
 "sibling": false,
-"gate": 0.669844
+"gate": 0.669847
 },
 {
 "page": 60,
@@ -9927,9 +9927,9 @@
 {
 "page": 260,
 "chunk": 0,
-"score": 0.525683,
+"score": 0.525689,
 "sibling": false,
-"gate": 0.669844
+"gate": 0.669847
 },
 {
 "page": 260,
@@ -9976,23 +9976,23 @@
 {
 "page": 61,
 "chunk": 2,
-"score": 0.626107,
+"score": 0.626106,
 "sibling": false,
-"gate": 0.669844
+"gate": 0.669847
 },
 {
 "page": 61,
 "chunk": 3,
-"score": 0.619591,
+"score": 0.61959,
 "sibling": false,
-"gate": 0.669844
+"gate": 0.669847
 },
 {
 "page": 126,
 "chunk": 0,
-"score": 0.454985,
+"score": 0.454984,
 "sibling": false,
-"gate": 0.669844
+"gate": 0.669847
 },
 {
 "page": 126,
@@ -10020,8 +10020,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.669844,
-"vector_best": 0.669844
+"fused_best": 0.669847,
+"vector_best": 0.669847
 }
 },
 "LT\tHow many Formula 1 races did L&T sponsor in FY26?": {
@@ -10030,58 +10030,58 @@
 {
 "page": 738,
 "chunk": 2,
-"score": 0.542984,
+"score": 0.54299,
 "sibling": false,
-"gate": 0.659209
+"gate": 0.659191
 },
 {
 "page": 731,
 "chunk": 3,
-"score": 0.563228,
+"score": 0.563251,
 "sibling": false,
-"gate": 0.659209
+"gate": 0.659191
 },
 {
 "page": 396,
 "chunk": 1,
-"score": 0.597655,
+"score": 0.597666,
 "sibling": false,
-"gate": 0.659209
+"gate": 0.659191
 },
 {
 "page": 40,
 "chunk": 3,
-"score": 0.465558,
+"score": 0.46555,
 "sibling": false,
-"gate": 0.659209
+"gate": 0.659191
 },
 {
 "page": 535,
 "chunk": 2,
-"score": 0.609596,
+"score": 0.609599,
 "sibling": false,
-"gate": 0.659209
+"gate": 0.659191
 },
 {
 "page": 25,
 "chunk": 7,
-"score": 0.481225,
+"score": 0.481231,
 "sibling": false,
-"gate": 0.659209
+"gate": 0.659191
 },
 {
 "page": 459,
 "chunk": 0,
-"score": 0.565493,
+"score": 0.565506,
 "sibling": false,
-"gate": 0.659209
+"gate": 0.659191
 },
 {
 "page": 601,
 "chunk": 4,
-"score": 0.52664,
+"score": 0.526656,
 "sibling": false,
-"gate": 0.659209
+"gate": 0.659191
 }
 ],
 "context": [
@@ -10100,9 +10100,9 @@
 {
 "page": 738,
 "chunk": 2,
-"score": 0.542984,
+"score": 0.54299,
 "sibling": false,
-"gate": 0.659209
+"gate": 0.659191
 },
 {
 "page": 738,
@@ -10143,9 +10143,9 @@
 {
 "page": 731,
 "chunk": 3,
-"score": 0.563228,
+"score": 0.563251,
 "sibling": false,
-"gate": 0.659209
+"gate": 0.659191
 },
 {
 "page": 731,
@@ -10174,9 +10174,9 @@
 {
 "page": 396,
 "chunk": 1,
-"score": 0.597655,
+"score": 0.597666,
 "sibling": false,
-"gate": 0.659209
+"gate": 0.659191
 },
 {
 "page": 396,
@@ -10217,9 +10217,9 @@
 {
 "page": 40,
 "chunk": 3,
-"score": 0.465558,
+"score": 0.46555,
 "sibling": false,
-"gate": 0.659209
+"gate": 0.659191
 },
 {
 "page": 40,
@@ -10242,9 +10242,9 @@
 {
 "page": 535,
 "chunk": 2,
-"score": 0.609596,
+"score": 0.609599,
 "sibling": false,
-"gate": 0.659209
+"gate": 0.659191
 },
 {
 "page": 535,
@@ -10279,28 +10279,28 @@
 {
 "page": 25,
 "chunk": 7,
-"score": 0.481225,
+"score": 0.481231,
 "sibling": false,
-"gate": 0.659209
+"gate": 0.659191
 },
 {
 "page": 459,
 "chunk": 0,
-"score": 0.565493,
+"score": 0.565506,
 "sibling": false,
-"gate": 0.659209
+"gate": 0.659191
 },
 {
 "page": 601,
 "chunk": 4,
-"score": 0.52664,
+"score": 0.526656,
 "sibling": false,
-"gate": 0.659209
+"gate": 0.659191
 }
 ],
 "gate": {
-"fused_best": 0.609596,
-"vector_best": 0.659209
+"fused_best": 0.609599,
+"vector_best": 0.659191
 }
 },
 "INFY\tWhat is Infosys's share of the global smartphone market?": {
@@ -10309,58 +10309,58 @@
 {
 "page": 3,
 "chunk": 1,
-"score": 0.695727,
+"score": 0.69576,
 "sibling": false,
-"gate": 0.713471
+"gate": 0.713458
 },
 {
 "page": 226,
 "chunk": 2,
-"score": 0.702483,
+"score": 0.702454,
 "sibling": false,
-"gate": 0.713471
+"gate": 0.713458
 },
 {
 "page": 226,
 "chunk": 1,
-"score": 0.713471,
+"score": 0.713458,
 "sibling": false,
-"gate": 0.713471
+"gate": 0.713458
 },
 {
 "page": 226,
 "chunk": 0,
-"score": 0.709363,
+"score": 0.709347,
 "sibling": false,
-"gate": 0.713471
+"gate": 0.713458
 },
 {
 "page": 227,
 "chunk": 0,
-"score": 0.679311,
+"score": 0.679298,
 "sibling": false,
-"gate": 0.713471
+"gate": 0.713458
 },
 {
 "page": 18,
 "chunk": 4,
-"score": 0.664801,
+"score": 0.664793,
 "sibling": false,
-"gate": 0.713471
+"gate": 0.713458
 },
 {
 "page": 226,
 "chunk": 3,
-"score": 0.663761,
+"score": 0.663724,
 "sibling": false,
-"gate": 0.713471
+"gate": 0.713458
 },
 {
 "page": 18,
 "chunk": 3,
-"score": 0.675419,
+"score": 0.675418,
 "sibling": false,
-"gate": 0.713471
+"gate": 0.713458
 }
 ],
 "context": [
@@ -10373,9 +10373,9 @@
 {
 "page": 3,
 "chunk": 1,
-"score": 0.695727,
+"score": 0.69576,
 "sibling": false,
-"gate": 0.713471
+"gate": 0.713458
 },
 {
 "page": 3,
@@ -10386,30 +10386,30 @@
 {
 "page": 226,
 "chunk": 0,
-"score": 0.709363,
+"score": 0.709347,
 "sibling": false,
-"gate": 0.713471
+"gate": 0.713458
 },
 {
 "page": 226,
 "chunk": 1,
-"score": 0.713471,
+"score": 0.713458,
 "sibling": false,
-"gate": 0.713471
+"gate": 0.713458
 },
 {
 "page": 226,
 "chunk": 2,
-"score": 0.702483,
+"score": 0.702454,
 "sibling": false,
-"gate": 0.713471
+"gate": 0.713458
 },
 {
 "page": 226,
 "chunk": 3,
-"score": 0.663761,
+"score": 0.663724,
 "sibling": false,
-"gate": 0.713471
+"gate": 0.713458
 },
 {
 "page": 226,
@@ -10420,9 +10420,9 @@
 {
 "page": 227,
 "chunk": 0,
-"score": 0.679311,
+"score": 0.679298,
 "sibling": false,
-"gate": 0.713471
+"gate": 0.713458
 },
 {
 "page": 227,
@@ -10457,16 +10457,16 @@
 {
 "page": 18,
 "chunk": 3,
-"score": 0.675419,
+"score": 0.675418,
 "sibling": false,
-"gate": 0.713471
+"gate": 0.713458
 },
 {
 "page": 18,
 "chunk": 4,
-"score": 0.664801,
+"score": 0.664793,
 "sibling": false,
-"gate": 0.713471
+"gate": 0.713458
 },
 {
 "page": 18,
@@ -10476,8 +10476,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.713471,
-"vector_best": 0.713471
+"fused_best": 0.713458,
+"vector_best": 0.713458
 }
 },
 "TATASTEEL\tHow many passenger cars did Tata Steel sell in FY26?": {
@@ -10486,58 +10486,58 @@
 {
 "page": 332,
 "chunk": 4,
-"score": 0.697578,
+"score": 0.697585,
 "sibling": false,
-"gate": 0.736468
+"gate": 0.73649
 },
 {
 "page": 90,
 "chunk": 5,
-"score": 0.627042,
+"score": 0.627064,
 "sibling": false,
-"gate": 0.736468
+"gate": 0.73649
 },
 {
 "page": 232,
 "chunk": 0,
-"score": 0.612911,
+"score": 0.612923,
 "sibling": false,
-"gate": 0.736468
+"gate": 0.73649
 },
 {
 "page": 455,
 "chunk": 5,
-"score": 0.638577,
+"score": 0.638625,
 "sibling": false,
-"gate": 0.736468
+"gate": 0.73649
 },
 {
 "page": 210,
 "chunk": 5,
-"score": 0.557201,
+"score": 0.557203,
 "sibling": false,
-"gate": 0.736468
+"gate": 0.73649
 },
 {
 "page": 90,
 "chunk": 4,
-"score": 0.619917,
+"score": 0.61992,
 "sibling": false,
-"gate": 0.736468
+"gate": 0.73649
 },
 {
 "page": 76,
 "chunk": 1,
-"score": 0.579111,
+"score": 0.579152,
 "sibling": false,
-"gate": 0.736468
+"gate": 0.73649
 },
 {
 "page": 210,
 "chunk": 4,
-"score": 0.572901,
+"score": 0.572935,
 "sibling": false,
-"gate": 0.736468
+"gate": 0.73649
 }
 ],
 "context": [
@@ -10568,9 +10568,9 @@
 {
 "page": 332,
 "chunk": 4,
-"score": 0.697578,
+"score": 0.697585,
 "sibling": false,
-"gate": 0.736468
+"gate": 0.73649
 },
 {
 "page": 332,
@@ -10611,16 +10611,16 @@
 {
 "page": 90,
 "chunk": 4,
-"score": 0.619917,
+"score": 0.61992,
 "sibling": false,
-"gate": 0.736468
+"gate": 0.73649
 },
 {
 "page": 90,
 "chunk": 5,
-"score": 0.627042,
+"score": 0.627064,
 "sibling": false,
-"gate": 0.736468
+"gate": 0.73649
 },
 {
 "page": 90,
@@ -10631,9 +10631,9 @@
 {
 "page": 232,
 "chunk": 0,
-"score": 0.612911,
+"score": 0.612923,
 "sibling": false,
-"gate": 0.736468
+"gate": 0.73649
 },
 {
 "page": 232,
@@ -10704,9 +10704,9 @@
 {
 "page": 455,
 "chunk": 5,
-"score": 0.638577,
+"score": 0.638625,
 "sibling": false,
-"gate": 0.736468
+"gate": 0.73649
 },
 {
 "page": 210,
@@ -10735,16 +10735,16 @@
 {
 "page": 210,
 "chunk": 4,
-"score": 0.572901,
+"score": 0.572935,
 "sibling": false,
-"gate": 0.736468
+"gate": 0.73649
 },
 {
 "page": 210,
 "chunk": 5,
-"score": 0.557201,
+"score": 0.557203,
 "sibling": false,
-"gate": 0.736468
+"gate": 0.73649
 },
 {
 "page": 76,
@@ -10755,14 +10755,14 @@
 {
 "page": 76,
 "chunk": 1,
-"score": 0.579111,
+"score": 0.579152,
 "sibling": false,
-"gate": 0.736468
+"gate": 0.73649
 }
 ],
 "gate": {
-"fused_best": 0.697578,
-"vector_best": 0.736468
+"fused_best": 0.697585,
+"vector_best": 0.73649
 }
 },
 "HDFCBANK\tHow many branches does HDFC Bank have in Brazil?": {
@@ -10771,58 +10771,58 @@
 {
 "page": 18,
 "chunk": 5,
-"score": 0.680651,
+"score": 0.680693,
 "sibling": false,
-"gate": 0.7328
+"gate": 0.732858
 },
 {
 "page": 36,
 "chunk": 0,
-"score": 0.729818,
+"score": 0.729856,
 "sibling": false,
-"gate": 0.7328
+"gate": 0.732858
 },
 {
 "page": 348,
 "chunk": 4,
-"score": 0.588414,
+"score": 0.58845,
 "sibling": false,
-"gate": 0.7328
+"gate": 0.732858
 },
 {
 "page": 557,
 "chunk": 1,
-"score": 0.608565,
+"score": 0.60856,
 "sibling": false,
-"gate": 0.7328
+"gate": 0.732858
 },
 {
 "page": 36,
 "chunk": 1,
-"score": 0.7328,
+"score": 0.732858,
 "sibling": false,
-"gate": 0.7328
+"gate": 0.732858
 },
 {
 "page": 622,
 "chunk": 1,
-"score": 0.58617,
+"score": 0.586161,
 "sibling": false,
-"gate": 0.7328
+"gate": 0.732858
 },
 {
 "page": 540,
 "chunk": 1,
-"score": 0.599545,
+"score": 0.599602,
 "sibling": false,
-"gate": 0.7328
+"gate": 0.732858
 },
 {
 "page": 37,
 "chunk": 0,
-"score": 0.602772,
+"score": 0.602779,
 "sibling": false,
-"gate": 0.7328
+"gate": 0.732858
 }
 ],
 "context": [
@@ -10859,23 +10859,23 @@
 {
 "page": 18,
 "chunk": 5,
-"score": 0.680651,
+"score": 0.680693,
 "sibling": false,
-"gate": 0.7328
+"gate": 0.732858
 },
 {
 "page": 36,
 "chunk": 0,
-"score": 0.729818,
+"score": 0.729856,
 "sibling": false,
-"gate": 0.7328
+"gate": 0.732858
 },
 {
 "page": 36,
 "chunk": 1,
-"score": 0.7328,
+"score": 0.732858,
 "sibling": false,
-"gate": 0.7328
+"gate": 0.732858
 },
 {
 "page": 36,
@@ -10910,9 +10910,9 @@
 {
 "page": 348,
 "chunk": 4,
-"score": 0.588414,
+"score": 0.58845,
 "sibling": false,
-"gate": 0.7328
+"gate": 0.732858
 },
 {
 "page": 557,
@@ -10923,9 +10923,9 @@
 {
 "page": 557,
 "chunk": 1,
-"score": 0.608565,
+"score": 0.60856,
 "sibling": false,
-"gate": 0.7328
+"gate": 0.732858
 },
 {
 "page": 557,
@@ -10948,9 +10948,9 @@
 {
 "page": 622,
 "chunk": 1,
-"score": 0.58617,
+"score": 0.586161,
 "sibling": false,
-"gate": 0.7328
+"gate": 0.732858
 },
 {
 "page": 622,
@@ -10973,9 +10973,9 @@
 {
 "page": 540,
 "chunk": 1,
-"score": 0.599545,
+"score": 0.599602,
 "sibling": false,
-"gate": 0.7328
+"gate": 0.732858
 },
 {
 "page": 540,
@@ -10998,9 +10998,9 @@
 {
 "page": 37,
 "chunk": 0,
-"score": 0.602772,
+"score": 0.602779,
 "sibling": false,
-"gate": 0.7328
+"gate": 0.732858
 },
 {
 "page": 37,
@@ -11016,8 +11016,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.7328,
-"vector_best": 0.7328
+"fused_best": 0.732858,
+"vector_best": 0.732858
 }
 },
 "HAL\tHow many cruise ships did HAL deliver in FY26?": {
@@ -11026,58 +11026,58 @@
 {
 "page": 39,
 "chunk": 2,
-"score": 0.605948,
+"score": 0.605947,
 "sibling": false,
-"gate": 0.643324
+"gate": 0.643309
 },
 {
 "page": 251,
 "chunk": 3,
-"score": 0.610391,
+"score": 0.610379,
 "sibling": false,
-"gate": 0.643324
+"gate": 0.643309
 },
 {
 "page": 40,
 "chunk": 0,
-"score": 0.589543,
+"score": 0.589501,
 "sibling": false,
-"gate": 0.643324
+"gate": 0.643309
 },
 {
 "page": 400,
 "chunk": 0,
-"score": 0.596232,
+"score": 0.596194,
 "sibling": false,
-"gate": 0.643324
+"gate": 0.643309
 },
 {
 "page": 289,
 "chunk": 3,
-"score": 0.577557,
+"score": 0.577537,
 "sibling": false,
-"gate": 0.643324
+"gate": 0.643309
 },
 {
 "page": 248,
 "chunk": 6,
-"score": 0.574843,
+"score": 0.574806,
 "sibling": false,
-"gate": 0.643324
+"gate": 0.643309
 },
 {
 "page": 39,
 "chunk": 3,
-"score": 0.550206,
+"score": 0.55015,
 "sibling": false,
-"gate": 0.643324
+"gate": 0.643309
 },
 {
 "page": 251,
 "chunk": 0,
-"score": 0.576485,
+"score": 0.57641,
 "sibling": false,
-"gate": 0.643324
+"gate": 0.643309
 }
 ],
 "context": [
@@ -11096,16 +11096,16 @@
 {
 "page": 39,
 "chunk": 2,
-"score": 0.605948,
+"score": 0.605947,
 "sibling": false,
-"gate": 0.643324
+"gate": 0.643309
 },
 {
 "page": 39,
 "chunk": 3,
-"score": 0.550206,
+"score": 0.55015,
 "sibling": false,
-"gate": 0.643324
+"gate": 0.643309
 },
 {
 "page": 39,
@@ -11128,9 +11128,9 @@
 {
 "page": 251,
 "chunk": 0,
-"score": 0.576485,
+"score": 0.57641,
 "sibling": false,
-"gate": 0.643324
+"gate": 0.643309
 },
 {
 "page": 251,
@@ -11147,9 +11147,9 @@
 {
 "page": 251,
 "chunk": 3,
-"score": 0.610391,
+"score": 0.610379,
 "sibling": false,
-"gate": 0.643324
+"gate": 0.643309
 },
 {
 "page": 251,
@@ -11166,9 +11166,9 @@
 {
 "page": 40,
 "chunk": 0,
-"score": 0.589543,
+"score": 0.589501,
 "sibling": false,
-"gate": 0.643324
+"gate": 0.643309
 },
 {
 "page": 40,
@@ -11215,9 +11215,9 @@
 {
 "page": 400,
 "chunk": 0,
-"score": 0.596232,
+"score": 0.596194,
 "sibling": false,
-"gate": 0.643324
+"gate": 0.643309
 },
 {
 "page": 400,
@@ -11270,9 +11270,9 @@
 {
 "page": 289,
 "chunk": 3,
-"score": 0.577557,
+"score": 0.577537,
 "sibling": false,
-"gate": 0.643324
+"gate": 0.643309
 },
 {
 "page": 289,
@@ -11295,14 +11295,14 @@
 {
 "page": 248,
 "chunk": 6,
-"score": 0.574843,
+"score": 0.574806,
 "sibling": false,
-"gate": 0.643324
+"gate": 0.643309
 }
 ],
 "gate": {
-"fused_best": 0.610391,
-"vector_best": 0.643324
+"fused_best": 0.610379,
+"vector_best": 0.643309
 }
 },
 "BOSCHLTD\tHow many coffee outlets does Bosch run in India?": {
@@ -11311,67 +11311,67 @@
 {
 "page": 6,
 "chunk": 0,
-"score": 0.672923,
+"score": 0.672901,
 "sibling": false,
-"gate": 0.731975
+"gate": 0.731971
 },
 {
 "page": 332,
 "chunk": 1,
-"score": 0.679429,
+"score": 0.679425,
 "sibling": false,
-"gate": 0.731975
+"gate": 0.731971
 },
 {
 "page": 336,
 "chunk": 1,
-"score": 0.687967,
+"score": 0.687961,
 "sibling": false,
-"gate": 0.731975
+"gate": 0.731971
 },
 {
 "page": 337,
 "chunk": 1,
-"score": 0.700154,
+"score": 0.700173,
 "sibling": false,
-"gate": 0.731975
+"gate": 0.731971
 },
 {
 "page": 411,
 "chunk": 2,
-"score": 0.672414,
+"score": 0.672407,
 "sibling": false,
-"gate": 0.731975
+"gate": 0.731971
 },
 {
 "page": 335,
 "chunk": 2,
-"score": 0.672414,
+"score": 0.672407,
 "sibling": false,
-"gate": 0.731975
+"gate": 0.731971
 },
 {
 "page": 180,
 "chunk": 3,
-"score": 0.682774,
+"score": 0.682781,
 "sibling": false,
-"gate": 0.731975
+"gate": 0.731971
 },
 {
 "page": 108,
 "chunk": 2,
-"score": 0.674452,
+"score": 0.67444,
 "sibling": false,
-"gate": 0.731975
+"gate": 0.731971
 }
 ],
 "context": [
 {
 "page": 6,
 "chunk": 0,
-"score": 0.672923,
+"score": 0.672901,
 "sibling": false,
-"gate": 0.731975
+"gate": 0.731971
 },
 {
 "page": 6,
@@ -11388,9 +11388,9 @@
 {
 "page": 332,
 "chunk": 1,
-"score": 0.679429,
+"score": 0.679425,
 "sibling": false,
-"gate": 0.731975
+"gate": 0.731971
 },
 {
 "page": 332,
@@ -11413,9 +11413,9 @@
 {
 "page": 336,
 "chunk": 1,
-"score": 0.687967,
+"score": 0.687961,
 "sibling": false,
-"gate": 0.731975
+"gate": 0.731971
 },
 {
 "page": 336,
@@ -11444,9 +11444,9 @@
 {
 "page": 337,
 "chunk": 1,
-"score": 0.700154,
+"score": 0.700173,
 "sibling": false,
-"gate": 0.731975
+"gate": 0.731971
 },
 {
 "page": 337,
@@ -11481,9 +11481,9 @@
 {
 "page": 411,
 "chunk": 2,
-"score": 0.672414,
+"score": 0.672407,
 "sibling": false,
-"gate": 0.731975
+"gate": 0.731971
 },
 {
 "page": 411,
@@ -11512,9 +11512,9 @@
 {
 "page": 335,
 "chunk": 2,
-"score": 0.672414,
+"score": 0.672407,
 "sibling": false,
-"gate": 0.731975
+"gate": 0.731971
 },
 {
 "page": 335,
@@ -11549,9 +11549,9 @@
 {
 "page": 180,
 "chunk": 3,
-"score": 0.682774,
+"score": 0.682781,
 "sibling": false,
-"gate": 0.731975
+"gate": 0.731971
 },
 {
 "page": 180,
@@ -11574,9 +11574,9 @@
 {
 "page": 108,
 "chunk": 2,
-"score": 0.674452,
+"score": 0.67444,
 "sibling": false,
-"gate": 0.731975
+"gate": 0.731971
 },
 {
 "page": 108,
@@ -11586,8 +11586,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.700154,
-"vector_best": 0.731975
+"fused_best": 0.700173,
+"vector_best": 0.731971
 }
 },
 "NAVNEET\thow many schools in kenya use navneets app": {
@@ -11596,67 +11596,67 @@
 {
 "page": 77,
 "chunk": 0,
-"score": 0.652579,
+"score": 0.652655,
 "sibling": false,
-"gate": 0.711615
+"gate": 0.711623
 },
 {
 "page": 24,
 "chunk": 0,
-"score": 0.691473,
+"score": 0.691477,
 "sibling": false,
-"gate": 0.711615
+"gate": 0.711623
 },
 {
 "page": 13,
 "chunk": 0,
-"score": 0.542384,
+"score": 0.542411,
 "sibling": false,
-"gate": 0.711615
+"gate": 0.711623
 },
 {
 "page": 195,
 "chunk": 1,
-"score": 0.629461,
+"score": 0.629522,
 "sibling": false,
-"gate": 0.711615
+"gate": 0.711623
 },
 {
 "page": 7,
 "chunk": 0,
-"score": 0.660321,
+"score": 0.660362,
 "sibling": false,
-"gate": 0.711615
+"gate": 0.711623
 },
 {
 "page": 19,
 "chunk": 0,
-"score": 0.558269,
+"score": 0.558343,
 "sibling": false,
-"gate": 0.711615
+"gate": 0.711623
 },
 {
 "page": 31,
 "chunk": 1,
-"score": 0.584842,
+"score": 0.584843,
 "sibling": false,
-"gate": 0.711615
+"gate": 0.711623
 },
 {
 "page": 47,
 "chunk": 0,
-"score": 0.703812,
+"score": 0.703856,
 "sibling": false,
-"gate": 0.711615
+"gate": 0.711623
 }
 ],
 "context": [
 {
 "page": 77,
 "chunk": 0,
-"score": 0.652579,
+"score": 0.652655,
 "sibling": false,
-"gate": 0.711615
+"gate": 0.711623
 },
 {
 "page": 77,
@@ -11673,16 +11673,16 @@
 {
 "page": 24,
 "chunk": 0,
-"score": 0.691473,
+"score": 0.691477,
 "sibling": false,
-"gate": 0.711615
+"gate": 0.711623
 },
 {
 "page": 13,
 "chunk": 0,
-"score": 0.542384,
+"score": 0.542411,
 "sibling": false,
-"gate": 0.711615
+"gate": 0.711623
 },
 {
 "page": 13,
@@ -11699,9 +11699,9 @@
 {
 "page": 195,
 "chunk": 1,
-"score": 0.629461,
+"score": 0.629522,
 "sibling": false,
-"gate": 0.711615
+"gate": 0.711623
 },
 {
 "page": 195,
@@ -11742,9 +11742,9 @@
 {
 "page": 7,
 "chunk": 0,
-"score": 0.660321,
+"score": 0.660362,
 "sibling": false,
-"gate": 0.711615
+"gate": 0.711623
 },
 {
 "page": 7,
@@ -11755,9 +11755,9 @@
 {
 "page": 19,
 "chunk": 0,
-"score": 0.558269,
+"score": 0.558343,
 "sibling": false,
-"gate": 0.711615
+"gate": 0.711623
 },
 {
 "page": 31,
@@ -11768,16 +11768,16 @@
 {
 "page": 31,
 "chunk": 1,
-"score": 0.584842,
+"score": 0.584843,
 "sibling": false,
-"gate": 0.711615
+"gate": 0.711623
 },
 {
 "page": 47,
 "chunk": 0,
-"score": 0.703812,
+"score": 0.703856,
 "sibling": false,
-"gate": 0.711615
+"gate": 0.711623
 },
 {
 "page": 47,
@@ -11787,8 +11787,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.703812,
-"vector_best": 0.711615
+"fused_best": 0.703856,
+"vector_best": 0.711623
 }
 },
 "CHAMBAL\tchambal drone sprayng numbers fy25": {
@@ -11797,58 +11797,58 @@
 {
 "page": 65,
 "chunk": 4,
-"score": 0.615468,
+"score": 0.615494,
 "sibling": false,
-"gate": 0.696153
+"gate": 0.69616
 },
 {
 "page": 50,
 "chunk": 4,
-"score": 0.696153,
+"score": 0.69616,
 "sibling": false,
-"gate": 0.696153
+"gate": 0.69616
 },
 {
 "page": 86,
 "chunk": 3,
-"score": 0.636644,
+"score": 0.63663,
 "sibling": false,
-"gate": 0.696153
+"gate": 0.69616
 },
 {
 "page": 68,
 "chunk": 4,
-"score": 0.606824,
+"score": 0.606826,
 "sibling": false,
-"gate": 0.696153
+"gate": 0.69616
 },
 {
 "page": 74,
 "chunk": 4,
-"score": 0.576229,
+"score": 0.576267,
 "sibling": false,
-"gate": 0.696153
+"gate": 0.69616
 },
 {
 "page": 75,
 "chunk": 0,
-"score": 0.572312,
+"score": 0.572317,
 "sibling": false,
-"gate": 0.696153
+"gate": 0.69616
 },
 {
 "page": 78,
 "chunk": 3,
-"score": 0.634164,
+"score": 0.634143,
 "sibling": false,
-"gate": 0.696153
+"gate": 0.69616
 },
 {
 "page": 65,
 "chunk": 1,
-"score": 0.503377,
+"score": 0.503447,
 "sibling": false,
-"gate": 0.696153
+"gate": 0.69616
 }
 ],
 "context": [
@@ -11861,9 +11861,9 @@
 {
 "page": 65,
 "chunk": 1,
-"score": 0.503377,
+"score": 0.503447,
 "sibling": false,
-"gate": 0.696153
+"gate": 0.69616
 },
 {
 "page": 65,
@@ -11880,9 +11880,9 @@
 {
 "page": 65,
 "chunk": 4,
-"score": 0.615468,
+"score": 0.615494,
 "sibling": false,
-"gate": 0.696153
+"gate": 0.69616
 },
 {
 "page": 65,
@@ -11941,9 +11941,9 @@
 {
 "page": 50,
 "chunk": 4,
-"score": 0.696153,
+"score": 0.69616,
 "sibling": false,
-"gate": 0.696153
+"gate": 0.69616
 },
 {
 "page": 50,
@@ -11978,9 +11978,9 @@
 {
 "page": 86,
 "chunk": 3,
-"score": 0.636644,
+"score": 0.63663,
 "sibling": false,
-"gate": 0.696153
+"gate": 0.69616
 },
 {
 "page": 86,
@@ -12015,9 +12015,9 @@
 {
 "page": 68,
 "chunk": 4,
-"score": 0.606824,
+"score": 0.606826,
 "sibling": false,
-"gate": 0.696153
+"gate": 0.69616
 },
 {
 "page": 74,
@@ -12040,9 +12040,9 @@
 {
 "page": 74,
 "chunk": 4,
-"score": 0.576229,
+"score": 0.576267,
 "sibling": false,
-"gate": 0.696153
+"gate": 0.69616
 },
 {
 "page": 74,
@@ -12059,21 +12059,21 @@
 {
 "page": 75,
 "chunk": 0,
-"score": 0.572312,
+"score": 0.572317,
 "sibling": false,
-"gate": 0.696153
+"gate": 0.69616
 },
 {
 "page": 78,
 "chunk": 3,
-"score": 0.634164,
+"score": 0.634143,
 "sibling": false,
-"gate": 0.696153
+"gate": 0.69616
 }
 ],
 "gate": {
-"fused_best": 0.696153,
-"vector_best": 0.696153
+"fused_best": 0.69616,
+"vector_best": 0.69616
 }
 },
 "SBIN\tSummarise SBI's lunar mining business": {
@@ -12082,67 +12082,67 @@
 {
 "page": 452,
 "chunk": 0,
-"score": 0.631969,
+"score": 0.632045,
 "sibling": false,
-"gate": 0.672238
+"gate": 0.672261
 },
 {
 "page": 336,
 "chunk": 4,
-"score": 0.666531,
+"score": 0.666543,
 "sibling": false,
-"gate": 0.672238
+"gate": 0.672261
 },
 {
 "page": 339,
 "chunk": 4,
-"score": 0.642017,
+"score": 0.64204,
 "sibling": false,
-"gate": 0.672238
+"gate": 0.672261
 },
 {
 "page": 269,
 "chunk": 0,
-"score": 0.63115,
+"score": 0.631187,
 "sibling": false,
-"gate": 0.672238
+"gate": 0.672261
+},
+{
+"page": 455,
+"chunk": 2,
+"score": 0.625761,
+"sibling": false,
+"gate": 0.672261
 },
 {
 "page": 188,
 "chunk": 0,
 "score": 0.634385,
 "sibling": false,
-"gate": 0.672238
+"gate": 0.672261
 },
 {
 "page": 377,
 "chunk": 4,
-"score": 0.629474,
+"score": 0.629465,
 "sibling": false,
-"gate": 0.672238
+"gate": 0.672261
 },
 {
 "page": 547,
 "chunk": 3,
-"score": 0.628032,
+"score": 0.62804,
 "sibling": false,
-"gate": 0.672238
-},
-{
-"page": 152,
-"chunk": 1,
-"score": 0.628347,
-"sibling": false,
-"gate": 0.672238
+"gate": 0.672261
 }
 ],
 "context": [
 {
 "page": 452,
 "chunk": 0,
-"score": 0.631969,
+"score": 0.632045,
 "sibling": false,
-"gate": 0.672238
+"gate": 0.672261
 },
 {
 "page": 452,
@@ -12177,9 +12177,9 @@
 {
 "page": 336,
 "chunk": 4,
-"score": 0.666531,
+"score": 0.666543,
 "sibling": false,
-"gate": 0.672238
+"gate": 0.672261
 },
 {
 "page": 339,
@@ -12208,16 +12208,16 @@
 {
 "page": 339,
 "chunk": 4,
-"score": 0.642017,
+"score": 0.64204,
 "sibling": false,
-"gate": 0.672238
+"gate": 0.672261
 },
 {
 "page": 269,
 "chunk": 0,
-"score": 0.63115,
+"score": 0.631187,
 "sibling": false,
-"gate": 0.672238
+"gate": 0.672261
 },
 {
 "page": 269,
@@ -12238,11 +12238,42 @@
 "sibling": true
 },
 {
+"page": 455,
+"chunk": 0,
+"score": null,
+"sibling": true
+},
+{
+"page": 455,
+"chunk": 1,
+"score": null,
+"sibling": true
+},
+{
+"page": 455,
+"chunk": 2,
+"score": 0.625761,
+"sibling": false,
+"gate": 0.672261
+},
+{
+"page": 455,
+"chunk": 3,
+"score": null,
+"sibling": true
+},
+{
+"page": 455,
+"chunk": 4,
+"score": null,
+"sibling": true
+},
+{
 "page": 188,
 "chunk": 0,
 "score": 0.634385,
 "sibling": false,
-"gate": 0.672238
+"gate": 0.672261
 },
 {
 "page": 188,
@@ -12288,12 +12319,6 @@
 },
 {
 "page": 377,
-"chunk": 0,
-"score": null,
-"sibling": true
-},
-{
-"page": 377,
 "chunk": 1,
 "score": null,
 "sibling": true
@@ -12313,46 +12338,27 @@
 {
 "page": 377,
 "chunk": 4,
-"score": 0.629474,
+"score": 0.629465,
 "sibling": false,
-"gate": 0.672238
-},
-{
-"page": 547,
-"chunk": 1,
-"score": null,
-"sibling": true
-},
-{
-"page": 547,
-"chunk": 2,
-"score": null,
-"sibling": true
+"gate": 0.672261
 },
 {
 "page": 547,
 "chunk": 3,
-"score": 0.628032,
+"score": 0.62804,
 "sibling": false,
-"gate": 0.672238
+"gate": 0.672261
 },
 {
 "page": 547,
-"chunk": 4,
+"chunk": 6,
 "score": null,
 "sibling": true
-},
-{
-"page": 152,
-"chunk": 1,
-"score": 0.628347,
-"sibling": false,
-"gate": 0.672238
 }
 ],
 "gate": {
-"fused_best": 0.666531,
-"vector_best": 0.672238
+"fused_best": 0.666543,
+"vector_best": 0.672261
 }
 },
 "EICHERMOT\tHow many helicopters did Eicher Motors sell in FY26?": {
@@ -12361,67 +12367,67 @@
 {
 "page": 214,
 "chunk": 0,
-"score": 0.697812,
+"score": 0.69783,
 "sibling": false,
-"gate": 0.727898
+"gate": 0.727901
 },
 {
 "page": 10,
 "chunk": 0,
-"score": 0.667885,
+"score": 0.667918,
 "sibling": false,
-"gate": 0.727898
+"gate": 0.727901
 },
 {
 "page": 306,
 "chunk": 0,
-"score": 0.688401,
+"score": 0.688415,
 "sibling": false,
-"gate": 0.727898
+"gate": 0.727901
 },
 {
 "page": 95,
 "chunk": 0,
-"score": 0.684871,
+"score": 0.684841,
 "sibling": false,
-"gate": 0.727898
+"gate": 0.727901
 },
 {
 "page": 33,
 "chunk": 0,
-"score": 0.682931,
+"score": 0.682913,
 "sibling": false,
-"gate": 0.727898
+"gate": 0.727901
 },
 {
 "page": 414,
 "chunk": 0,
-"score": 0.673543,
+"score": 0.673557,
 "sibling": false,
-"gate": 0.727898
+"gate": 0.727901
 },
 {
 "page": 8,
 "chunk": 0,
-"score": 0.673205,
+"score": 0.6732,
 "sibling": false,
-"gate": 0.727898
+"gate": 0.727901
 },
 {
 "page": 38,
 "chunk": 0,
-"score": 0.661995,
+"score": 0.661978,
 "sibling": false,
-"gate": 0.727898
+"gate": 0.727901
 }
 ],
 "context": [
 {
 "page": 214,
 "chunk": 0,
-"score": 0.697812,
+"score": 0.69783,
 "sibling": false,
-"gate": 0.727898
+"gate": 0.727901
 },
 {
 "page": 214,
@@ -12456,16 +12462,16 @@
 {
 "page": 10,
 "chunk": 0,
-"score": 0.667885,
+"score": 0.667918,
 "sibling": false,
-"gate": 0.727898
+"gate": 0.727901
 },
 {
 "page": 306,
 "chunk": 0,
-"score": 0.688401,
+"score": 0.688415,
 "sibling": false,
-"gate": 0.727898
+"gate": 0.727901
 },
 {
 "page": 306,
@@ -12506,9 +12512,9 @@
 {
 "page": 95,
 "chunk": 0,
-"score": 0.684871,
+"score": 0.684841,
 "sibling": false,
-"gate": 0.727898
+"gate": 0.727901
 },
 {
 "page": 95,
@@ -12573,9 +12579,9 @@
 {
 "page": 33,
 "chunk": 0,
-"score": 0.682931,
+"score": 0.682913,
 "sibling": false,
-"gate": 0.727898
+"gate": 0.727901
 },
 {
 "page": 33,
@@ -12592,9 +12598,9 @@
 {
 "page": 414,
 "chunk": 0,
-"score": 0.673543,
+"score": 0.673557,
 "sibling": false,
-"gate": 0.727898
+"gate": 0.727901
 },
 {
 "page": 414,
@@ -12617,9 +12623,9 @@
 {
 "page": 8,
 "chunk": 0,
-"score": 0.673205,
+"score": 0.6732,
 "sibling": false,
-"gate": 0.727898
+"gate": 0.727901
 },
 {
 "page": 8,
@@ -12636,14 +12642,14 @@
 {
 "page": 38,
 "chunk": 0,
-"score": 0.661995,
+"score": 0.661978,
 "sibling": false,
-"gate": 0.727898
+"gate": 0.727901
 }
 ],
 "gate": {
-"fused_best": 0.697812,
-"vector_best": 0.727898
+"fused_best": 0.69783,
+"vector_best": 0.727901
 }
 },
 "DIVISLAB\tHow many franchise outlets does Divi's operate?": {
@@ -12652,58 +12658,58 @@
 {
 "page": 111,
 "chunk": 5,
-"score": 0.631025,
+"score": 0.630989,
 "sibling": false,
-"gate": 0.691785
+"gate": 0.691728
 },
 {
 "page": 47,
 "chunk": 7,
-"score": 0.65155,
+"score": 0.651493,
 "sibling": false,
-"gate": 0.691785
+"gate": 0.691728
 },
 {
 "page": 144,
 "chunk": 8,
-"score": 0.591729,
+"score": 0.59173,
 "sibling": false,
-"gate": 0.691785
+"gate": 0.691728
 },
 {
 "page": 144,
 "chunk": 5,
-"score": 0.584228,
+"score": 0.584184,
 "sibling": false,
-"gate": 0.691785
+"gate": 0.691728
 },
 {
 "page": 98,
 "chunk": 0,
-"score": 0.594708,
+"score": 0.594678,
 "sibling": false,
-"gate": 0.691785
+"gate": 0.691728
 },
 {
 "page": 144,
 "chunk": 7,
-"score": 0.567278,
+"score": 0.567249,
 "sibling": false,
-"gate": 0.691785
+"gate": 0.691728
 },
 {
 "page": 129,
 "chunk": 7,
-"score": 0.622703,
+"score": 0.622661,
 "sibling": false,
-"gate": 0.691785
+"gate": 0.691728
 },
 {
 "page": 105,
 "chunk": 3,
-"score": 0.584756,
+"score": 0.584708,
 "sibling": false,
-"gate": 0.691785
+"gate": 0.691728
 }
 ],
 "context": [
@@ -12740,9 +12746,9 @@
 {
 "page": 111,
 "chunk": 5,
-"score": 0.631025,
+"score": 0.630989,
 "sibling": false,
-"gate": 0.691785
+"gate": 0.691728
 },
 {
 "page": 111,
@@ -12825,9 +12831,9 @@
 {
 "page": 47,
 "chunk": 7,
-"score": 0.65155,
+"score": 0.651493,
 "sibling": false,
-"gate": 0.691785
+"gate": 0.691728
 },
 {
 "page": 47,
@@ -12862,9 +12868,9 @@
 {
 "page": 144,
 "chunk": 5,
-"score": 0.584228,
+"score": 0.584184,
 "sibling": false,
-"gate": 0.691785
+"gate": 0.691728
 },
 {
 "page": 144,
@@ -12875,16 +12881,16 @@
 {
 "page": 144,
 "chunk": 7,
-"score": 0.567278,
+"score": 0.567249,
 "sibling": false,
-"gate": 0.691785
+"gate": 0.691728
 },
 {
 "page": 144,
 "chunk": 8,
-"score": 0.591729,
+"score": 0.59173,
 "sibling": false,
-"gate": 0.691785
+"gate": 0.691728
 },
 {
 "page": 144,
@@ -12895,28 +12901,28 @@
 {
 "page": 98,
 "chunk": 0,
-"score": 0.594708,
+"score": 0.594678,
 "sibling": false,
-"gate": 0.691785
+"gate": 0.691728
 },
 {
 "page": 129,
 "chunk": 7,
-"score": 0.622703,
+"score": 0.622661,
 "sibling": false,
-"gate": 0.691785
+"gate": 0.691728
 },
 {
 "page": 105,
 "chunk": 3,
-"score": 0.584756,
+"score": 0.584708,
 "sibling": false,
-"gate": 0.691785
+"gate": 0.691728
 }
 ],
 "gate": {
-"fused_best": 0.65155,
-"vector_best": 0.691785
+"fused_best": 0.651493,
+"vector_best": 0.691728
 }
 },
 "TATASTEEL\tWrite a poem about steel": {
@@ -13210,58 +13216,58 @@
 {
 "page": 154,
 "chunk": 4,
-"score": 0.530643,
+"score": 0.530652,
 "sibling": false,
-"gate": 0.584007
+"gate": 0.583971
 },
 {
 "page": 107,
 "chunk": 4,
-"score": 0.528412,
+"score": 0.528425,
 "sibling": false,
-"gate": 0.584007
+"gate": 0.583971
 },
 {
 "page": 42,
 "chunk": 4,
-"score": 0.542694,
+"score": 0.542713,
 "sibling": false,
-"gate": 0.584007
+"gate": 0.583971
 },
 {
 "page": 62,
 "chunk": 9,
-"score": 0.524566,
+"score": 0.524567,
 "sibling": false,
-"gate": 0.584007
+"gate": 0.583971
 },
 {
 "page": 101,
 "chunk": 4,
-"score": 0.584006,
+"score": 0.583971,
 "sibling": false,
-"gate": 0.584007
+"gate": 0.583971
 },
 {
 "page": 101,
 "chunk": 9,
-"score": 0.579748,
+"score": 0.579714,
 "sibling": false,
-"gate": 0.584007
+"gate": 0.583971
 },
 {
 "page": 154,
 "chunk": 8,
 "score": 0.566423,
 "sibling": false,
-"gate": 0.584007
+"gate": 0.583971
 },
 {
 "page": 154,
 "chunk": 5,
-"score": 0.519446,
+"score": 0.519442,
 "sibling": false,
-"gate": 0.584007
+"gate": 0.583971
 }
 ],
 "context": [
@@ -13292,16 +13298,16 @@
 {
 "page": 154,
 "chunk": 4,
-"score": 0.530643,
+"score": 0.530652,
 "sibling": false,
-"gate": 0.584007
+"gate": 0.583971
 },
 {
 "page": 154,
 "chunk": 5,
-"score": 0.519446,
+"score": 0.519442,
 "sibling": false,
-"gate": 0.584007
+"gate": 0.583971
 },
 {
 "page": 154,
@@ -13320,7 +13326,7 @@
 "chunk": 8,
 "score": 0.566423,
 "sibling": false,
-"gate": 0.584007
+"gate": 0.583971
 },
 {
 "page": 154,
@@ -13445,9 +13451,9 @@
 {
 "page": 107,
 "chunk": 4,
-"score": 0.528412,
+"score": 0.528425,
 "sibling": false,
-"gate": 0.584007
+"gate": 0.583971
 },
 {
 "page": 107,
@@ -13458,9 +13464,9 @@
 {
 "page": 42,
 "chunk": 4,
-"score": 0.542694,
+"score": 0.542713,
 "sibling": false,
-"gate": 0.584007
+"gate": 0.583971
 },
 {
 "page": 42,
@@ -13471,28 +13477,28 @@
 {
 "page": 62,
 "chunk": 9,
-"score": 0.524566,
+"score": 0.524567,
 "sibling": false,
-"gate": 0.584007
+"gate": 0.583971
 },
 {
 "page": 101,
 "chunk": 4,
-"score": 0.584006,
+"score": 0.583971,
 "sibling": false,
-"gate": 0.584007
+"gate": 0.583971
 },
 {
 "page": 101,
 "chunk": 9,
-"score": 0.579748,
+"score": 0.579714,
 "sibling": false,
-"gate": 0.584007
+"gate": 0.583971
 }
 ],
 "gate": {
-"fused_best": 0.584006,
-"vector_best": 0.584007
+"fused_best": 0.583971,
+"vector_best": 0.583971
 }
 },
 "RELIANCE\tWhat was Reliance's net profit in FY26?": {
@@ -13501,67 +13507,67 @@
 {
 "page": 103,
 "chunk": 0,
-"score": 0.722056,
+"score": 0.722034,
 "sibling": false,
-"gate": 0.786097
+"gate": 0.786051
 },
 {
 "page": 133,
 "chunk": 9,
-"score": 0.754649,
+"score": 0.754658,
 "sibling": false,
-"gate": 0.786097
+"gate": 0.786051
 },
 {
 "page": 111,
 "chunk": 2,
-"score": 0.754854,
+"score": 0.754847,
 "sibling": false,
-"gate": 0.786097
+"gate": 0.786051
 },
 {
 "page": 5,
 "chunk": 31,
-"score": 0.674625,
+"score": 0.674603,
 "sibling": false,
-"gate": 0.786097
+"gate": 0.786051
 },
 {
 "page": 78,
 "chunk": 5,
-"score": 0.759806,
+"score": 0.759821,
 "sibling": false,
-"gate": 0.786097
+"gate": 0.786051
 },
 {
 "page": 130,
 "chunk": 1,
-"score": 0.674556,
+"score": 0.674585,
 "sibling": false,
-"gate": 0.786097
+"gate": 0.786051
 },
 {
 "page": 145,
 "chunk": 2,
-"score": 0.736905,
+"score": 0.736926,
 "sibling": false,
-"gate": 0.786097
+"gate": 0.786051
 },
 {
 "page": 129,
 "chunk": 8,
-"score": 0.683867,
+"score": 0.683896,
 "sibling": false,
-"gate": 0.786097
+"gate": 0.786051
 }
 ],
 "context": [
 {
 "page": 103,
 "chunk": 0,
-"score": 0.722056,
+"score": 0.722034,
 "sibling": false,
-"gate": 0.786097
+"gate": 0.786051
 },
 {
 "page": 103,
@@ -13680,9 +13686,9 @@
 {
 "page": 133,
 "chunk": 9,
-"score": 0.754649,
+"score": 0.754658,
 "sibling": false,
-"gate": 0.786097
+"gate": 0.786051
 },
 {
 "page": 111,
@@ -13699,9 +13705,9 @@
 {
 "page": 111,
 "chunk": 2,
-"score": 0.754854,
+"score": 0.754847,
 "sibling": false,
-"gate": 0.786097
+"gate": 0.786051
 },
 {
 "page": 111,
@@ -13748,42 +13754,42 @@
 {
 "page": 5,
 "chunk": 31,
-"score": 0.674625,
+"score": 0.674603,
 "sibling": false,
-"gate": 0.786097
+"gate": 0.786051
 },
 {
 "page": 78,
 "chunk": 5,
-"score": 0.759806,
+"score": 0.759821,
 "sibling": false,
-"gate": 0.786097
+"gate": 0.786051
 },
 {
 "page": 130,
 "chunk": 1,
-"score": 0.674556,
+"score": 0.674585,
 "sibling": false,
-"gate": 0.786097
+"gate": 0.786051
 },
 {
 "page": 145,
 "chunk": 2,
-"score": 0.736905,
+"score": 0.736926,
 "sibling": false,
-"gate": 0.786097
+"gate": 0.786051
 },
 {
 "page": 129,
 "chunk": 8,
-"score": 0.683867,
+"score": 0.683896,
 "sibling": false,
-"gate": 0.786097
+"gate": 0.786051
 }
 ],
 "gate": {
-"fused_best": 0.759806,
-"vector_best": 0.786097
+"fused_best": 0.759821,
+"vector_best": 0.786051
 }
 },
 "INFY\tWhat was Infosys's revenue in FY26?": {
@@ -13792,58 +13798,58 @@
 {
 "page": 254,
 "chunk": 2,
-"score": 0.766115,
+"score": 0.766153,
 "sibling": false,
-"gate": 0.780205
+"gate": 0.780185
 },
 {
 "page": 254,
 "chunk": 3,
-"score": 0.748037,
+"score": 0.748082,
 "sibling": false,
-"gate": 0.780205
+"gate": 0.780185
 },
 {
 "page": 33,
 "chunk": 0,
-"score": 0.730765,
+"score": 0.730756,
 "sibling": false,
-"gate": 0.780205
+"gate": 0.780185
 },
 {
 "page": 296,
 "chunk": 0,
-"score": 0.648726,
+"score": 0.648739,
 "sibling": false,
-"gate": 0.780205
+"gate": 0.780185
 },
 {
 "page": 262,
 "chunk": 4,
-"score": 0.705672,
+"score": 0.705691,
 "sibling": false,
-"gate": 0.780205
+"gate": 0.780185
 },
 {
 "page": 330,
 "chunk": 0,
-"score": 0.780205,
+"score": 0.780185,
 "sibling": false,
-"gate": 0.780205
+"gate": 0.780185
 },
 {
 "page": 333,
 "chunk": 6,
-"score": 0.689015,
+"score": 0.689058,
 "sibling": false,
-"gate": 0.780205
+"gate": 0.780185
 },
 {
 "page": 287,
 "chunk": 0,
-"score": 0.654704,
+"score": 0.654696,
 "sibling": false,
-"gate": 0.780205
+"gate": 0.780185
 }
 ],
 "context": [
@@ -13862,16 +13868,16 @@
 {
 "page": 254,
 "chunk": 2,
-"score": 0.766115,
+"score": 0.766153,
 "sibling": false,
-"gate": 0.780205
+"gate": 0.780185
 },
 {
 "page": 254,
 "chunk": 3,
-"score": 0.748037,
+"score": 0.748082,
 "sibling": false,
-"gate": 0.780205
+"gate": 0.780185
 },
 {
 "page": 254,
@@ -13900,9 +13906,9 @@
 {
 "page": 33,
 "chunk": 0,
-"score": 0.730765,
+"score": 0.730756,
 "sibling": false,
-"gate": 0.780205
+"gate": 0.780185
 },
 {
 "page": 33,
@@ -13955,9 +13961,9 @@
 {
 "page": 296,
 "chunk": 0,
-"score": 0.648726,
+"score": 0.648739,
 "sibling": false,
-"gate": 0.780205
+"gate": 0.780185
 },
 {
 "page": 296,
@@ -14028,9 +14034,9 @@
 {
 "page": 262,
 "chunk": 4,
-"score": 0.705672,
+"score": 0.705691,
 "sibling": false,
-"gate": 0.780205
+"gate": 0.780185
 },
 {
 "page": 262,
@@ -14041,28 +14047,28 @@
 {
 "page": 330,
 "chunk": 0,
-"score": 0.780205,
+"score": 0.780185,
 "sibling": false,
-"gate": 0.780205
+"gate": 0.780185
 },
 {
 "page": 333,
 "chunk": 6,
-"score": 0.689015,
+"score": 0.689058,
 "sibling": false,
-"gate": 0.780205
+"gate": 0.780185
 },
 {
 "page": 287,
 "chunk": 0,
-"score": 0.654704,
+"score": 0.654696,
 "sibling": false,
-"gate": 0.780205
+"gate": 0.780185
 }
 ],
 "gate": {
-"fused_best": 0.780205,
-"vector_best": 0.780205
+"fused_best": 0.780185,
+"vector_best": 0.780185
 }
 },
 "INFY\tWhat was Infosys's standalone revenue from operations in FY26?": {
@@ -14071,58 +14077,58 @@
 {
 "page": 254,
 "chunk": 2,
-"score": 0.767709,
+"score": 0.767702,
 "sibling": false,
-"gate": 0.767709
+"gate": 0.767702
 },
 {
 "page": 254,
 "chunk": 3,
-"score": 0.74704,
+"score": 0.74701,
 "sibling": false,
-"gate": 0.767709
+"gate": 0.767702
 },
 {
 "page": 33,
 "chunk": 0,
-"score": 0.73603,
+"score": 0.736,
 "sibling": false,
-"gate": 0.767709
+"gate": 0.767702
 },
 {
 "page": 54,
 "chunk": 6,
-"score": 0.711597,
+"score": 0.711572,
 "sibling": false,
-"gate": 0.767709
+"gate": 0.767702
 },
 {
 "page": 54,
 "chunk": 5,
-"score": 0.716752,
+"score": 0.716733,
 "sibling": false,
-"gate": 0.767709
+"gate": 0.767702
 },
 {
 "page": 195,
 "chunk": 0,
-"score": 0.764203,
+"score": 0.764184,
 "sibling": false,
-"gate": 0.767709
+"gate": 0.767702
 },
 {
 "page": 77,
 "chunk": 1,
-"score": 0.6089,
+"score": 0.608887,
 "sibling": false,
-"gate": 0.767709
+"gate": 0.767702
 },
 {
 "page": 330,
 "chunk": 0,
-"score": 0.750671,
+"score": 0.750652,
 "sibling": false,
-"gate": 0.767709
+"gate": 0.767702
 }
 ],
 "context": [
@@ -14141,16 +14147,16 @@
 {
 "page": 254,
 "chunk": 2,
-"score": 0.767709,
+"score": 0.767702,
 "sibling": false,
-"gate": 0.767709
+"gate": 0.767702
 },
 {
 "page": 254,
 "chunk": 3,
-"score": 0.74704,
+"score": 0.74701,
 "sibling": false,
-"gate": 0.767709
+"gate": 0.767702
 },
 {
 "page": 254,
@@ -14179,9 +14185,9 @@
 {
 "page": 33,
 "chunk": 0,
-"score": 0.73603,
+"score": 0.736,
 "sibling": false,
-"gate": 0.767709
+"gate": 0.767702
 },
 {
 "page": 33,
@@ -14264,16 +14270,16 @@
 {
 "page": 54,
 "chunk": 5,
-"score": 0.716752,
+"score": 0.716733,
 "sibling": false,
-"gate": 0.767709
+"gate": 0.767702
 },
 {
 "page": 54,
 "chunk": 6,
-"score": 0.711597,
+"score": 0.711572,
 "sibling": false,
-"gate": 0.767709
+"gate": 0.767702
 },
 {
 "page": 54,
@@ -14284,9 +14290,9 @@
 {
 "page": 195,
 "chunk": 0,
-"score": 0.764203,
+"score": 0.764184,
 "sibling": false,
-"gate": 0.767709
+"gate": 0.767702
 },
 {
 "page": 195,
@@ -14315,9 +14321,9 @@
 {
 "page": 77,
 "chunk": 1,
-"score": 0.6089,
+"score": 0.608887,
 "sibling": false,
-"gate": 0.767709
+"gate": 0.767702
 },
 {
 "page": 77,
@@ -14334,9 +14340,9 @@
 {
 "page": 330,
 "chunk": 0,
-"score": 0.750671,
+"score": 0.750652,
 "sibling": false,
-"gate": 0.767709
+"gate": 0.767702
 },
 {
 "page": 330,
@@ -14346,8 +14352,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.767709,
-"vector_best": 0.767709
+"fused_best": 0.767702,
+"vector_best": 0.767702
 }
 },
 "TATASTEEL\tWhat was Tata Steel's revenue from operations in FY26?": {
@@ -14356,67 +14362,67 @@
 {
 "page": 494,
 "chunk": 0,
-"score": 0.714581,
+"score": 0.714514,
 "sibling": false,
-"gate": 0.784819
+"gate": 0.784786
 },
 {
 "page": 494,
 "chunk": 3,
-"score": 0.729824,
+"score": 0.729753,
 "sibling": false,
-"gate": 0.784819
+"gate": 0.784786
 },
 {
 "page": 367,
 "chunk": 0,
-"score": 0.696205,
+"score": 0.69614,
 "sibling": false,
-"gate": 0.784819
+"gate": 0.784786
 },
 {
 "page": 426,
 "chunk": 0,
-"score": 0.731101,
+"score": 0.731017,
 "sibling": false,
-"gate": 0.784819
+"gate": 0.784786
 },
 {
 "page": 523,
 "chunk": 3,
-"score": 0.717433,
+"score": 0.717366,
 "sibling": false,
-"gate": 0.784819
+"gate": 0.784786
 },
 {
 "page": 303,
 "chunk": 0,
-"score": 0.732289,
+"score": 0.732238,
 "sibling": false,
-"gate": 0.784819
+"gate": 0.784786
 },
 {
 "page": 422,
 "chunk": 0,
-"score": 0.774422,
+"score": 0.774352,
 "sibling": false,
-"gate": 0.784819
+"gate": 0.784786
 },
 {
 "page": 435,
 "chunk": 1,
-"score": 0.543038,
+"score": 0.542988,
 "sibling": false,
-"gate": 0.784819
+"gate": 0.784786
 }
 ],
 "context": [
 {
 "page": 494,
 "chunk": 0,
-"score": 0.714581,
+"score": 0.714514,
 "sibling": false,
-"gate": 0.784819
+"gate": 0.784786
 },
 {
 "page": 494,
@@ -14433,16 +14439,16 @@
 {
 "page": 494,
 "chunk": 3,
-"score": 0.729824,
+"score": 0.729753,
 "sibling": false,
-"gate": 0.784819
+"gate": 0.784786
 },
 {
 "page": 367,
 "chunk": 0,
-"score": 0.696205,
+"score": 0.69614,
 "sibling": false,
-"gate": 0.784819
+"gate": 0.784786
 },
 {
 "page": 367,
@@ -14471,9 +14477,9 @@
 {
 "page": 426,
 "chunk": 0,
-"score": 0.731101,
+"score": 0.731017,
 "sibling": false,
-"gate": 0.784819
+"gate": 0.784786
 },
 {
 "page": 426,
@@ -14520,16 +14526,16 @@
 {
 "page": 523,
 "chunk": 3,
-"score": 0.717433,
+"score": 0.717366,
 "sibling": false,
-"gate": 0.784819
+"gate": 0.784786
 },
 {
 "page": 303,
 "chunk": 0,
-"score": 0.732289,
+"score": 0.732238,
 "sibling": false,
-"gate": 0.784819
+"gate": 0.784786
 },
 {
 "page": 303,
@@ -14582,9 +14588,9 @@
 {
 "page": 422,
 "chunk": 0,
-"score": 0.774422,
+"score": 0.774352,
 "sibling": false,
-"gate": 0.784819
+"gate": 0.784786
 },
 {
 "page": 422,
@@ -14619,9 +14625,9 @@
 {
 "page": 435,
 "chunk": 1,
-"score": 0.543038,
+"score": 0.542988,
 "sibling": false,
-"gate": 0.784819
+"gate": 0.784786
 },
 {
 "page": 435,
@@ -14637,8 +14643,8 @@
 }
 ],
 "gate": {
-"fused_best": 0.774422,
-"vector_best": 0.784819
+"fused_best": 0.774352,
+"vector_best": 0.784786
 }
 },
 "LT\tWhat was L&T's revenue in FY26?": {
@@ -14647,67 +14653,67 @@
 {
 "page": 25,
 "chunk": 11,
-"score": 0.618063,
+"score": 0.61803,
 "sibling": false,
-"gate": 0.716538
+"gate": 0.716454
 },
 {
 "page": 25,
 "chunk": 10,
-"score": 0.610734,
+"score": 0.610693,
 "sibling": false,
-"gate": 0.716538
+"gate": 0.716454
 },
 {
 "page": 25,
 "chunk": 0,
-"score": 0.587696,
+"score": 0.587643,
 "sibling": false,
-"gate": 0.716538
+"gate": 0.716454
 },
 {
 "page": 551,
 "chunk": 0,
-"score": 0.63448,
+"score": 0.634449,
 "sibling": false,
-"gate": 0.716538
+"gate": 0.716454
 },
 {
 "page": 628,
 "chunk": 2,
-"score": 0.555768,
+"score": 0.55572,
 "sibling": false,
-"gate": 0.716538
+"gate": 0.716454
 },
 {
 "page": 723,
 "chunk": 1,
-"score": 0.60641,
+"score": 0.606376,
 "sibling": false,
-"gate": 0.716538
+"gate": 0.716454
 },
 {
 "page": 618,
 "chunk": 0,
-"score": 0.632226,
+"score": 0.632211,
 "sibling": false,
-"gate": 0.716538
+"gate": 0.716454
 },
 {
 "page": 685,
 "chunk": 0,
-"score": 0.607361,
+"score": 0.607339,
 "sibling": false,
-"gate": 0.716538
+"gate": 0.716454
 }
 ],
 "context": [
 {
 "page": 25,
 "chunk": 0,
-"score": 0.587696,
+"score": 0.587643,
 "sibling": false,
-"gate": 0.716538
+"gate": 0.716454
 },
 {
 "page": 25,
@@ -14766,16 +14772,16 @@
 {
 "page": 25,
 "chunk": 10,
-"score": 0.610734,
+"score": 0.610693,
 "sibling": false,
-"gate": 0.716538
+"gate": 0.716454
 },
 {
 "page": 25,
 "chunk": 11,
-"score": 0.618063,
+"score": 0.61803,
 "sibling": false,
-"gate": 0.716538
+"gate": 0.716454
 },
 {
 "page": 25,
@@ -14792,9 +14798,9 @@
 {
 "page": 551,
 "chunk": 0,
-"score": 0.63448,
+"score": 0.634449,
 "sibling": false,
-"gate": 0.716538
+"gate": 0.716454
 },
 {
 "page": 551,
@@ -14841,9 +14847,9 @@
 {
 "page": 628,
 "chunk": 2,
-"score": 0.555768,
+"score": 0.55572,
 "sibling": false,
-"gate": 0.716538
+"gate": 0.716454
 },
 {
 "page": 628,
@@ -14872,9 +14878,9 @@
 {
 "page": 723,
 "chunk": 1,
-"score": 0.60641,
+"score": 0.606376,
 "sibling": false,
-"gate": 0.716538
+"gate": 0.716454
 },
 {
 "page": 723,
@@ -14897,9 +14903,9 @@
 {
 "page": 618,
 "chunk": 0,
-"score": 0.632226,
+"score": 0.632211,
 "sibling": false,
-"gate": 0.716538
+"gate": 0.716454
 },
 {
 "page": 618,
@@ -14922,14 +14928,14 @@
 {
 "page": 685,
 "chunk": 0,
-"score": 0.607361,
+"score": 0.607339,
 "sibling": false,
-"gate": 0.716538
+"gate": 0.716454
 }
 ],
 "gate": {
-"fused_best": 0.63448,
-"vector_best": 0.716538
+"fused_best": 0.634449,
+"vector_best": 0.716454
 }
 },
 "SOLARINDS\tWhat was Solar Industries' consolidated raw materials inventory at March 31, 2026?": {
@@ -14938,58 +14944,58 @@
 {
 "page": 260,
 "chunk": 3,
-"score": 0.725621,
+"score": 0.725572,
 "sibling": false,
-"gate": 0.730497
+"gate": 0.730443
 },
 {
 "page": 243,
 "chunk": 0,
-"score": 0.697554,
+"score": 0.697502,
 "sibling": false,
-"gate": 0.730497
+"gate": 0.730443
 },
 {
 "page": 320,
 "chunk": 3,
-"score": 0.730497,
+"score": 0.730443,
 "sibling": false,
-"gate": 0.730497
+"gate": 0.730443
 },
 {
 "page": 302,
 "chunk": 1,
-"score": 0.682194,
+"score": 0.682195,
 "sibling": false,
-"gate": 0.730497
+"gate": 0.730443
 },
 {
 "page": 325,
 "chunk": 3,
-"score": 0.709608,
+"score": 0.709553,
 "sibling": false,
-"gate": 0.730497
+"gate": 0.730443
 },
 {
 "page": 290,
 "chunk": 1,
-"score": 0.679909,
+"score": 0.679879,
 "sibling": false,
-"gate": 0.730497
+"gate": 0.730443
 },
 {
 "page": 321,
 "chunk": 2,
-"score": 0.687597,
+"score": 0.687541,
 "sibling": false,
-"gate": 0.730497
+"gate": 0.730443
 },
 {
 "page": 119,
 "chunk": 0,
-"score": 0.662156,
+"score": 0.6621,
 "sibling": false,
-"gate": 0.730497
+"gate": 0.730443
 }
 ],
 "context": [
@@ -15014,9 +15020,9 @@
 {
 "page": 260,
 "chunk": 3,
-"score": 0.725621,
+"score": 0.725572,
 "sibling": false,
-"gate": 0.730497
+"gate": 0.730443
 },
 {
 "page": 260,
@@ -15039,9 +15045,9 @@
 {
 "page": 243,
 "chunk": 0,
-"score": 0.697554,
+"score": 0.697502,
 "sibling": false,
-"gate": 0.730497
+"gate": 0.730443
 },
 {
 "page": 243,
@@ -15100,9 +15106,9 @@
 {
 "page": 320,
 "chunk": 3,
-"score": 0.730497,
+"score": 0.730443,
 "sibling": false,
-"gate": 0.730497
+"gate": 0.730443
 },
 {
 "page": 320,
@@ -15143,9 +15149,9 @@
 {
 "page": 302,
 "chunk": 1,
-"score": 0.682194,
+"score": 0.682195,
 "sibling": false,
-"gate": 0.730497
+"gate": 0.730443
 },
 {
 "page": 302,
@@ -15174,9 +15180,9 @@
 {
 "page": 325,
 "chunk": 3,
-"score": 0.709608,
+"score": 0.709553,
 "sibling": false,
-"gate": 0.730497
+"gate": 0.730443
 },
 {
 "page": 325,
@@ -15187,9 +15193,9 @@
 {
 "page": 290,
 "chunk": 1,
-"score": 0.679909,
+"score": 0.679879,
 "sibling": false,
-"gate": 0.730497
+"gate": 0.730443
 },
 {
 "page": 290,
@@ -15200,21 +15206,21 @@
 {
 "page": 321,
 "chunk": 2,
-"score": 0.687597,
+"score": 0.687541,
 "sibling": false,
-"gate": 0.730497
+"gate": 0.730443
 },
 {
 "page": 119,
 "chunk": 0,
-"score": 0.662156,
+"score": 0.6621,
 "sibling": false,
-"gate": 0.730497
+"gate": 0.730443
 }
 ],
 "gate": {
-"fused_best": 0.730497,
-"vector_best": 0.730497
+"fused_best": 0.730443,
+"vector_best": 0.730443
 }
 }
 }
