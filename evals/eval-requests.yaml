@@ -9,3 +9,7 @@ runs:
   - label: natural-before
     ref: 96b305d
     samples: 3
+  # Step 3 "after": broad-question retrieval and the 0.59 filing-wide floor.
+  - label: natural-after
+    ref: 1d8e5b4
+    samples: 3
