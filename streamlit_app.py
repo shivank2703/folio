@@ -7,6 +7,11 @@ the working directory. Living at the repo root makes every package importable
 under either launcher, and it is the filename Community Cloud fills in.
 """
 
-from ui.app import main
+# First, before any library starts threads: keeps memory flat (ui/memory.py).
+from ui.memory import limit_malloc_arenas
+
+limit_malloc_arenas()
+
+from ui.app import main  # noqa: E402
 
 main()

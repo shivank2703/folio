@@ -56,9 +56,11 @@ jobs:
       - name: Measure startup time and memory
         run: |
           python -m evals.footprint --out evals/results/footprint.json
-          # Ten passes: does memory level off? With glibc's default arenas and with two.
+          # Ten passes: does memory level off? As the app runs (mallopt arena
+          # limit), with glibc's default arenas, and with the variable set.
           python -m evals.footprint --passes 10 --out evals/results/footprint-soak.json
-          MALLOC_ARENA_MAX=2 python -m evals.footprint --passes 10 --out evals/results/footprint-soak-arena2.json
+          python -m evals.footprint --passes 10 --no-arena-limit --out evals/results/footprint-soak-default-arenas.json
+          MALLOC_ARENA_MAX=2 python -m evals.footprint --passes 10 --no-arena-limit --out evals/results/footprint-soak-arena2.json
       - name: Commit the recordings
         run: |
           git config user.name "github-actions[bot]"

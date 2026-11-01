@@ -53,7 +53,12 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Time and memory of the app's startup and first questions.")
     parser.add_argument("--out", type=Path)
     parser.add_argument("--passes", type=int, default=3, help="passes over one question per filing")
+    parser.add_argument("--no-arena-limit", action="store_true",
+                        help="skip the malloc arena limit streamlit_app.py sets, to measure without it")
     args = parser.parse_args()
+    # Mirror the app's entry point (streamlit_app.py) before anything starts threads.
+    from ui.memory import limit_malloc_arenas
+    arena_limit = False if args.no_arena_limit else limit_malloc_arenas()
 
     def imports():
         import streamlit  # noqa: F401
@@ -113,7 +118,7 @@ def main() -> None:
 
     import os
     result = {"measured": time.strftime("%Y-%m-%d %H:%M"), "index": pointer["asset"],
-              "malloc_arena_max": os.environ.get("MALLOC_ARENA_MAX"),
+              "malloc_arena_max": os.environ.get("MALLOC_ARENA_MAX"), "mallopt_arena_limit": arena_limit,
               "total_seconds": round(time.perf_counter() - STARTED, 2),
               "peak_mb": max(s["peak_mb"] for s in STAGES), "stages": STAGES,
               "model_loaded": model is not None}
