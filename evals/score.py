@@ -170,6 +170,7 @@ def grade(q: dict, verdict: dict, client: anthropic.Anthropic) -> dict:
     row = {"text": text, "raw": raw, "refused": verdict["refused"], "reason": verdict.get("reason", ""),
            "cited": sorted(set(cited_pages(text))), "invalid": verdict["invalid_citations"],
            "ungrounded": verdict.get("ungrounded", []), "recited": verdict.get("recited", []),
+           "unitless": verdict.get("unitless", []),
            "leaked_refusal": leaked}
     if not q["expected_pages"]:
         row.update(passed=bare_refusal and not leaked)
@@ -237,7 +238,7 @@ def summarise(result: dict) -> str:
     """A markdown table per question plus totals by question type and split."""
     n = result["samples"]
     lines = [f"### {result['label']} ({result['when']}, {n} samples per question)", "",
-             "| Question | Type | Split | Pass | Correct | Faithful | Leaked refusal | Ungrounded figure | Citation corrected |", "|---|---|---|---|---|---|---|---|---|"]
+             "| Question | Type | Split | Pass | Correct | Faithful | Leaked refusal | Ungrounded figure | Citation corrected | Unit missing |", "|---|---|---|---|---|---|---|---|---|---|"]
     by_type: dict[str, list[int]] = defaultdict(lambda: [0, 0])
     by_split: dict[str, list[int]] = defaultdict(lambda: [0, 0])
     totals = {"answerable": [0, 0], "negative": [0, 0], "correct": [0, 0], "faithful": [0, 0], "leaks": 0}
@@ -263,8 +264,11 @@ def summarise(result: dict) -> str:
         # A corrected citation still passes (the reader sees the right page),
         # but it is counted: it is the model getting the page wrong.
         recited = sum(bool(r.get("recited")) for r in rows)
+        # Counted, not failed: the correctness judge already fails a wrong or
+        # missing unit, and this flag can fire on a plain count.
+        unitless = sum(bool(r.get("unitless")) for r in rows)
         lines.append(f"| {q['id']} | {q['type']} | {q['split']} | {p}/{n} | {cf[0]} | {cf[1]} | {leaks or '–'} "
-                     f"| {ungrounded or '–'} | {recited or '–'} |")
+                     f"| {ungrounded or '–'} | {recited or '–'} | {unitless or '–'} |")
 
     def pct(pair: list[int]) -> str:
         return f"{pair[0]}/{pair[1]} ({100 * pair[0] / pair[1]:.0f}%)" if pair[1] else "–"

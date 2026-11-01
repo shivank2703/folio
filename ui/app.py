@@ -311,6 +311,10 @@ def main() -> None:
             # told that the page it cites does not print it.
             listed = "; ".join(f"{fig} (cited to page {', '.join(map(str, pages))})" for fig, pages in verdict["ungrounded"])
             st.warning(f"Not found on the cited page, so check these before relying on them: {listed}.")
+        if verdict.get("unitless"):
+            listed = "; ".join(f"{fig} (page {', '.join(map(str, pages))})" for fig, pages in verdict["unitless"])
+            st.warning(f"Stated without a unit, although the cited page declares one: {listed}. "
+                       "Open the page to read the unit before relying on these.")
         if verdict["scrubbed"]:
             st.info(f"Removed {len(verdict['scrubbed'])} sentence(s) that strayed into investment advice.")
 

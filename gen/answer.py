@@ -41,6 +41,7 @@ from gen.guardrails import (
     scrub_advice,
     strip_after_refusal,
     ungrounded_figures,
+    unitless_figures,
     validate_citations,
 )
 from retrieve.embed import load_model
@@ -80,10 +81,13 @@ written exactly as [page N]. Take N from the "extract from page N" label \
 above the extract. Never take a page number from the body of an extract (note \
 numbers, years and printed page numbers look the same), and never cite a page \
 that is not among the extracts.
-- State a figure's unit only when the extract states it, for example in a line \
-such as "(Amount in ₹ crore, unless otherwise stated)" or in a column header. \
-If an extract gives a figure with no unit on the page, give the figure and say \
-the page does not state its unit. Never assume crore, lakh or rupees.
+- Give every amount its unit (₹ crore, ₹ lakhs, ₹ million and so on). Take \
+it from the extract itself, in a line such as "(Amount in ₹ crore, unless \
+otherwise stated)" or a column header, or from "units on this page" in the \
+extract's label, which the same page declares. A unit the extract states \
+for a row or column overrides the page's. If neither gives one, give the \
+figure and say the page does not state its unit. Never assume crore, lakh or \
+rupees.
 - Use the statement-scope label in each extract header. It comes from the \
 source's financial headings. A mixed label means the page contains both \
 scopes: use the figure's own statement heading to distinguish them. \
@@ -107,8 +111,13 @@ later sentence. A citation alone never labels a computation.
 - If the extracts do not answer the question, reply with exactly: {REFUSAL} \
 Add nothing else: no explanation, no related figure, no partial answer. A \
 hedged half-answer is worse than that one sentence.
-- Answer only what was asked. Do not add other figures, other sections' \
-versions of the same figure, or background the question did not ask for.
+- If the question does not say standalone or consolidated and the extracts \
+give both versions of a figure, state the consolidated figure and say it is \
+consolidated; you may add the standalone figure in a separate sentence, \
+labelled standalone. If the extracts give only one version, state it and \
+name its scope as its label gives it.
+- Answer only what was asked. Do not add other figures or background the \
+question did not ask for.
 - Be brief: two or three sentences unless the question needs more."""
 
 
@@ -151,8 +160,11 @@ def build_prompt(question: str, hits: list[dict], filing: str | None = None) -> 
     # small number is exactly what a citation looks like. The page is now the
     # only number in the label.
     for hit in hits:
+        # The page's own unit declarations ride in the label, beside the page
+        # number and scope that also come from metadata (retrieve/units.py).
+        units = f"; units on this page: {' / '.join(hit['units'])}" if hit.get("units") else ""
         extracts.append(f"--- extract from page {hit['page']} (chunk {hit['chunk']}; "
-                        f"statement scope: {hit.get('scope', 'unstated')}) ---\n{hit['text']}")
+                        f"statement scope: {hit.get('scope', 'unstated')}{units}) ---\n{hit['text']}")
     heading = f"Filing: {filing}\n\n" if filing else ""
     return f"{heading}Question: {question}\n\nExtracts:\n\n" + "\n\n".join(extracts)
 
@@ -210,6 +222,7 @@ def guarded_answer(
         "invalid_citations": [],
         "ungrounded": [],
         "recited": [],
+        "unitless": [],
         "scrubbed": [],
         "raw": "",
     }
@@ -237,6 +250,7 @@ def guarded_answer(
     text, invalid = validate_citations(text, {chunk["page"] for chunk in context})
     text, scrubbed = scrub_advice(text)
     ungrounded = ungrounded_figures(text, context)
+    unitless = unitless_figures(text, context)
     if not cited_pages(text):
         # Either every citation was invented, or none was given. An uncited
         # claim is exactly what this project promises never to publish (§6),
@@ -245,7 +259,7 @@ def guarded_answer(
         return {**verdict, "text": REFUSAL, "reason": reason, "invalid_citations": invalid, "scrubbed": scrubbed}
 
     return {**verdict, "text": text, "refused": False, "reason": "", "invalid_citations": invalid,
-            "ungrounded": ungrounded, "recited": recited, "scrubbed": scrubbed}
+            "ungrounded": ungrounded, "unitless": unitless, "recited": recited, "scrubbed": scrubbed}
 
 
 def filing_label(company: str | None, manifest: Path = Path("corpus/corpus.json")) -> str | None:

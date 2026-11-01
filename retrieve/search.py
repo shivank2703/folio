@@ -32,6 +32,7 @@ from fastembed import TextEmbedding
 
 from retrieve.embed import MODEL_NAME, TABLE_NAME, embed_texts, load_model
 from retrieve.spelling import correct
+from retrieve.units import attach_units
 
 # bge-small-en-v1.5 was trained with this instruction in front of queries and
 # nothing in front of passages. Chunks were embedded bare, so every question
@@ -92,6 +93,12 @@ SECTION_WORDS = [
     (re.compile(r"^\s*what (?:does|do|is) .{1,40}(?: do| does)?\s*\??\s*$|\bbusiness (?:model|overview)\b|\bwhat business\b", re.I),
      "business overview products"),
 ]
+
+
+# Financial-statement line items: a question naming one with no scope gets
+# consolidated candidates as well (search()).
+LINE_ITEM = re.compile(r"\b(revenues?|income|turnover|sales|profits?|loss|ebitda|assets|liabilities|equity|net worth|"
+                       r"borrowings|debt|cash flows?|expenses?|eps|earnings|receivables|inventor(?:y|ies)|order book)\b", re.I)
 
 
 def company_pattern(company: str) -> str:
@@ -164,7 +171,7 @@ def open_index(db_path: Path) -> lancedb.table.Table:
     return table
 
 
-def scoped(query, company: str | None, scope: str | None = None):
+def scoped(query, company: str | None, scope: str | None = None, strict: bool = False):
     """Restrict a query to one filing.
 
     Page numbers are only unique within a document: every filing in the index
@@ -178,7 +185,7 @@ def scoped(query, company: str | None, scope: str | None = None):
     if scope:
         if scope not in {"standalone", "consolidated"}:
             raise ValueError("Scope must be standalone or consolidated")
-        clauses.append(f"scope IN ('{scope}', 'unstated', 'mixed')")
+        clauses.append(f"scope = '{scope}'" if strict else f"scope IN ('{scope}', 'unstated', 'mixed')")
     return query.where(" AND ".join(clauses)) if clauses else query
 
 
@@ -191,9 +198,10 @@ def vector_hits(table: lancedb.table.Table, vector: np.ndarray, company: str | N
     return query.limit(FUSION_DEPTH).select([*FIELDS, "_distance"]).to_list()
 
 
-def keyword_hits(table: lancedb.table.Table, text: str, company: str | None, scope: str | None = None) -> list[dict]:
+def keyword_hits(table: lancedb.table.Table, text: str, company: str | None, scope: str | None = None,
+                 strict: bool = False) -> list[dict]:
     """The chunks whose words best match the question, from LanceDB's full-text index."""
-    query = scoped(table.search(text, query_type="fts"), company, scope)
+    query = scoped(table.search(text, query_type="fts"), company, scope, strict)
     return query.limit(FUSION_DEPTH).select([*FIELDS, "_score"]).to_list()
 
 
@@ -249,7 +257,16 @@ def search(
     requested_scope = next(iter(scopes)) if len(scopes) == 1 else None
     rankings = [vector_hits(table, vector, company, requested_scope)]
     if hybrid:
-        rankings.append(keyword_hits(table, keyword_query(question, company), company, requested_scope))
+        keywords = keyword_query(question, company)
+        rankings.append(keyword_hits(table, keywords, company, requested_scope))
+        # A line item asked for with no scope should be answered from the
+        # consolidated statements when the filing has them (the generator is
+        # told to prefer them), so they must reach the context: "Reliance's net
+        # profit" was answered standalone-only because no consolidated page
+        # ranked. A third ranking over consolidated chunks alone lets them
+        # compete without displacing what the question's own words found.
+        if requested_scope is None and LINE_ITEM.search(question):
+            rankings.append(keyword_hits(table, keywords, company, "consolidated", strict=True))
 
     # The refusal floor's statistic: how close the nearest chunk anywhere in
     # the filing comes to the question, whatever the fused ranking kept
@@ -327,7 +344,10 @@ def page_context(
         # A sibling was never ranked, so it carries no similarity of its own.
         context[key] = {**row, "score": None, "sibling": True}
         spent += row["tokens"]
-    return sorted(context.values(), key=lambda row: (first_seen[row["page"]], row["chunk"]))
+    packed = sorted(context.values(), key=lambda row: (first_seen[row["page"]], row["chunk"]))
+    # A unit declared once at a page's top belongs to every figure on it,
+    # including chunks the chunker could not label (retrieve/units.py).
+    return attach_units(table, packed)
 
 
 def main() -> None:

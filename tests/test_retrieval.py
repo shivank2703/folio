@@ -11,8 +11,9 @@ class Rows:
     def search(self): return self
     def where(self, expression):
         import re
-        page = int(re.search(r'page = (\d+)', expression)[1])
-        return Rows([r for r in self.rows if r['page'] == page])
+        one = re.search(r'page = (\d+)', expression)
+        pages = {int(one[1])} if one else {int(p) for p in re.search(r'page IN \(([^)]*)\)', expression)[1].split(',')}
+        return Rows([r for r in self.rows if r['page'] in pages])
     def limit(self, n): return self
     def select(self, fields): return self
     def to_list(self): return self.rows

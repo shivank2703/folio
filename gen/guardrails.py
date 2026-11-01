@@ -243,6 +243,46 @@ def ungrounded_figures(text: str, context: list[dict]) -> list[tuple[str, list[i
     return missing
 
 
+# Words that give an amount its size. "₹" alone does not: "₹1,48,819" is a
+# hundred-fold ambiguity between crore and lakh.
+MAGNITUDE_WORD = re.compile(r"\b(?:crores?|cr\.?|lakhs?|lacs?|millions?|mn|billions?|bn|thousands?|per\s*cent|percent)\b|%",
+                            re.IGNORECASE)
+DECLARED_IN_TEXT = re.compile(r"(?:\(|\bin\s+)(?:₹|rs\.?|inr)\s*(?:in\s+)?(?:crores?|cr\.?|lakhs?|lacs?|millions?|mn|billions?|bn|thousands?)\b",
+                              re.IGNORECASE)
+# An amount as statements print one: Indian or Western digit grouping, or a
+# decimal. Plain counts ("5,800 titles" aside) usually have neither form.
+AMOUNT = re.compile(r"(?<![\w.])\d{1,3}(?:,\d{2,3})+(?:\.\d+)?(?![\w])|(?<![\w.,])\d{3,}\.\d+(?![\w])")
+
+
+def unitless_figures(text: str, context: list[dict]) -> list[tuple[str, list[int]]]:
+    """Amounts stated with no magnitude although the cited page declares one.
+
+    The page knows the unit (retrieve/units.py puts it on every extract); an
+    answer that drops it hands the reader a figure that is a crore or a lakh
+    by guesswork. Flagged for the reader, not removed: the figure is right,
+    only its size is missing.
+    """
+    declared: dict[int, bool] = {}
+    for chunk in context:
+        if chunk.get("units"):
+            declared[chunk["page"]] = True
+    claims, _ = split_claims(text)
+    missing: list[tuple[str, list[int]]] = []
+    for claim, run in claims:
+        pages = [int(p) for p in CITATION.findall(run.group(0))]
+        sentence = REFERENCE.sub(" ", re.split(r"(?<=[.!?])\s+", claim.strip())[-1])
+        # A sentence that declares its unit, "(₹ crore)" or "in ₹ lakhs", covers every amount in it.
+        if not any(declared.get(page) for page in pages) or DECLARED_IN_TEXT.search(sentence):
+            continue
+        for match in AMOUNT.finditer(sentence):
+            # Each amount needs its own magnitude, right after it: in "grew 9.0% to
+            # ₹1,48,819", the % belongs to the growth, not to the amount.
+            if not MAGNITUDE_WORD.match(sentence[match.end(): match.end() + 16].lstrip(" ")):
+                if (match.group(0), pages) not in missing:
+                    missing.append((match.group(0), pages))
+    return missing
+
+
 def strip_after_refusal(text: str) -> tuple[str, bool]:
     """Cut a reply that opens with the refusal down to the refusal itself.
 

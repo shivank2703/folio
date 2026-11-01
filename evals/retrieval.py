@@ -36,10 +36,11 @@ from pathlib import Path
 from retrieve.embed import MODEL_NAME
 from retrieve.search import DEFAULT_K, EXPANSION_SEEDS, TEXT_FIELDS, page_context, search
 from retrieve.store import POINTER, source_of
+from retrieve.units import attach_units
 
 # Files whose change can change what search() and page_context() return. A
 # dump recorded before such a change no longer describes the code.
-CODE = [Path("retrieve/search.py"), Path("retrieve/embed.py"), Path("retrieve/spelling.py")]
+CODE = [Path("retrieve/search.py"), Path("retrieve/embed.py"), Path("retrieve/spelling.py"), Path("retrieve/units.py")]
 DB = Path("data/lancedb")
 
 
@@ -117,7 +118,7 @@ def replay(dump: dict, table, company: str, question: str) -> tuple[list[dict], 
         extra = {"gate": recorded["gate"]} if "gate" in recorded else {}
         return {**row, "score": recorded["score"], "sibling": recorded["sibling"], **extra}
 
-    return [rebuild(r) for r in entry["hits"]], [rebuild(r) for r in entry["context"]]
+    return [rebuild(r) for r in entry["hits"]], attach_units(table, [rebuild(r) for r in entry["context"]])
 
 
 def main() -> None:
